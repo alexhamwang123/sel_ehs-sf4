@@ -16,13 +16,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+@Test
 public class CreateNormalUser {
 
-	public static void main(String[] args) throws IOException {
+	public void CreateNormalUser() throws IOException, InterruptedException {
 		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
 		
 		WebDriver driver = new ChromeDriver();
 		
@@ -30,21 +33,22 @@ public class CreateNormalUser {
 		
 		driver.manage().window().maximize();
 		
-		driver.get("https://192.168.15.131:8330");
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("admin");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
+		driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+		File file=new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
-		String val = prop.getProperty("adminpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
+		String username = prop.getProperty("username");
+		String password = prop.getProperty("password");
+
+		driver.findElement(By.id("login_login_id")).sendKeys(username);
+		driver.findElement(By.id("login_password")).sendKeys(password);
 		
 		driver.findElement(By.name("submit")).click();
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -65,11 +69,16 @@ public class CreateNormalUser {
 		// Click on Create User
 		driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
 
+		Thread.sleep(3000);
+
 		// Enter the First Name of the user that you wish to create
-		driver.findElement(By.id("detailFirstName")).sendKeys("Hustin");
+		String id = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
+
+
+		driver.findElement(By.id("detailFirstName")).sendKeys(id);
 
 		// Enter the Last Name of the user that you wish to create
-		driver.findElement(By.id("detailLastName")).sendKeys("Rade");
+		driver.findElement(By.id("detailLastName")).sendKeys(id);
 
 		// Click on 'Select' for Site
 		driver.findElement(By.id("selectBtnSite")).click();
@@ -98,7 +107,7 @@ public class CreateNormalUser {
 		}
 
 		// Enter the email of the user that you wish to create
-		driver.findElement(By.name("detailEmailAddress")).sendKeys("hustin@trismax.com");
+		driver.findElement(By.name("detailEmailAddress")).sendKeys(id + "@trismax.com");
 
 		try {
 			Thread.sleep(2000);
@@ -115,6 +124,20 @@ public class CreateNormalUser {
 
 		// Click on 'Save' button
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
+		Thread.sleep(2000);
+		driver.findElement(By.id("lightbox")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
+		Thread.sleep(2500);
+
+		driver.findElement(By.id("login_login_id")).sendKeys(id);
+		driver.findElement(By.id("login_password")).sendKeys(id);
+
+		driver.findElement(By.name("submit")).click();
+
+		Thread.sleep(4500);
+		driver.quit();
 		
 
 	}

@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -17,35 +19,40 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+@Test
 public class Checklist_MyTrainingReport {
 
-	public static void main(String[] args) throws IOException {
+	public void Checklist_MyTrainingReport() throws IOException, InterruptedException {
 		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
 		
 		WebDriver driver = new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
-		driver.get("https://192.168.15.131:8330");
+		driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
 		
 		driver.manage().window().maximize();
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("X00001554");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
+
+		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
-		String val = prop.getProperty("userpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
+		String username = prop.getProperty("username");
+		String password = prop.getProperty("password");
+
+		driver.findElement(By.id("login_login_id")).sendKeys(username);
+		driver.findElement(By.id("login_password")).sendKeys(password);
 		
 		driver.findElement(By.name("submit")).click();
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(4500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -155,20 +162,63 @@ public class Checklist_MyTrainingReport {
 		}
 		
 		//Click on Back
-		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+		WebElement back = driver.findElement(By.cssSelector("input[type='button'][value='Back']"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()", back);
+
 
 		// - - - Now, we check whether the completed survey appears in My Training Report - - -//
 
 		// Click on 'My Training Report' under Reports
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[3]/a"));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", ele);
+		driver.findElement(By.partialLinkText("Reports")).click();
 
 		// Select Checklist from the drop down
 		new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Checklist");
 
+
+		Thread.sleep(1000);
+
+		Calendar calendar = new GregorianCalendar();
+		int month = calendar.get(Calendar.MONTH);
+		month ++;
+		String smonth;
+		if(month < 10) {
+			smonth = "0" + month;
+		} else {
+			smonth = "" + month;
+		}
+
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		String sday;
+		if(day < 10) {
+			sday = "0" + day;
+		} else {
+			sday = "" + day;
+		}
+
+		int year = calendar.get(Calendar.YEAR);
+
+
+		js.executeScript("document.getElementById('dateFrom').value='" + smonth + "/" + sday + "/" + year + "'");
+		js.executeScript("document.getElementById('dateTo').value='" + smonth + "/" + sday + "/" + year + "'");
+
+		Thread.sleep(750);
+
 		// Click on 'Go'
-		driver.findElement(By.cssSelector("input[type='button'][value='Go']")).click();
+		driver.findElement(By.id("Button_Go")).click();
+
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		if(!driver.getPageSource().contains("trismax accentrix")) {
+			Assert.fail("the completed checklist does not show up in 'My Training Report'");
+		}
+		Thread.sleep(3500);
+
+
+		driver.quit();
 		
 
 	}

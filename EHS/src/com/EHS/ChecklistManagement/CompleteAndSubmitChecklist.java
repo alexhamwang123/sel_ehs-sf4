@@ -17,39 +17,38 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+@Test
 public class CompleteAndSubmitChecklist {
 
-	public static void main(String[] args) throws IOException {
-		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
-		
+	public void CompleteAndSubmitChecklist() throws IOException, InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
+
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
-		driver.get("https://192.168.15.131:8330");
-		
+
+		driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
 		driver.manage().window().maximize();
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("X00001554");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
+
+		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
-		String val = prop.getProperty("userpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
-		
+		String username = prop.getProperty("username");
+		String password = prop.getProperty("password");
+
+		driver.findElement(By.id("login_login_id")).sendKeys(username);
+		driver.findElement(By.id("login_password")).sendKeys(password);
+
 		driver.findElement(By.name("submit")).click();
 		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(4500);
 		
         driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
 		
@@ -146,6 +145,8 @@ public class CompleteAndSubmitChecklist {
 		
 		//Click on the confirm pop up
 		driver.findElement(By.id("fancyConfirm_ok")).click();
+
+		driver.quit();
 		
 
 	}

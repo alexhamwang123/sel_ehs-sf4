@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fc9be15-94f5-4b99-9a16-5ffea49e1826" name="Default" comment="" />
+    <list default="true" id="3fc9be15-94f5-4b99-9a16-5ffea49e1826" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/EHS/Miscellaneous/ForgotPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/EHS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/EHS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/Checklist_MyTrainingReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/Checklist_MyTrainingReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CompleteAndSubmitChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CompleteAndSubmitChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CreateChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CreateChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CreateClassroomCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CreateClassroomCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateCourseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateNormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateNormalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateSuperAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateSuperAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUSAManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUSAManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUserSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUserSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/FindExistingUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/FindExistingUser.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,47 +26,80 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Checklist_MyTrainingReport.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/Checklist_MyTrainingReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="462">
+              <caret line="51" column="54" lean-forward="true" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateClassroomCourse.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CreateClassroomCourse.java">
+      <file leaf-file-name="CompleteAndSubmitChecklist.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CompleteAndSubmitChecklist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="1800">
+              <caret line="137" column="8" lean-forward="true" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateChecklist.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CreateChecklist.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="112" column="55" lean-forward="true" selection-start-line="112" selection-start-column="55" selection-end-line="112" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CreateClassroomCourse.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateNormalUser.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/Miscellaneous/ForgotPassword.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateCourseManager.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateSuperAdmin.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUSAManager.java" />
+        <option value="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUserSupport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/FindExistingUser.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/Checklist_MyTrainingReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CompleteAndSubmitChecklist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CreateChecklist.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="840" />
     <option name="y" value="23" />
-    <option name="width" value="1680" />
+    <option name="width" value="840" />
     <option name="height" value="976" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -64,11 +112,38 @@
               <item name="EHS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -82,18 +157,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Checklist_MyTrainingReport" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.EHS.ChecklistManagement.Checklist_MyTrainingReport" />
-      <module name="EHS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.EHS.ChecklistManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="TestNG.CreateChecklist.CreateChecklist">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -112,6 +176,151 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
+    </configuration>
+    <configuration name="Checklist_MyTrainingReport.Checklist_MyTrainingReport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHS.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.EHS.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.EHS.ChecklistManagement.Checklist_MyTrainingReport" />
+      <option name="METHOD_NAME" value="Checklist_MyTrainingReport" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="CompleteAndSubmitChecklist.CompleteAndSubmitChecklist" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHS.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.EHS.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.EHS.ChecklistManagement.CompleteAndSubmitChecklist" />
+      <option name="METHOD_NAME" value="CompleteAndSubmitChecklist" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="CreateChecklist.CreateChecklist" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHS.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.EHS.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.EHS.ChecklistManagement.CreateChecklist" />
+      <option name="METHOD_NAME" value="CreateChecklist" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="FindExistingUser.FindExistingUser" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHS.UserAdmin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.EHS.UserAdmin" />
+      <option name="MAIN_CLASS_NAME" value="com.EHS.UserAdmin.FindExistingUser" />
+      <option name="METHOD_NAME" value="FindExistingUser" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="/Users/arjunlathi/Library/Caches/IdeaIC2018.1/temp-testng-customsuite.xml" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHS.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/IdeaIC2018.1/temp-testng-customsuite.xml" />
+      <option name="PACKAGE_NAME" value="com.EHS.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.EHS.ChecklistManagement.CreateChecklist" />
+      <option name="METHOD_NAME" value="CreateChecklist" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -135,9 +344,20 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="TestNG.FindExistingUser.FindExistingUser" />
+      <item itemvalue="TestNG.Checklist_MyTrainingReport.Checklist_MyTrainingReport" />
+      <item itemvalue="TestNG.CompleteAndSubmitChecklist.CompleteAndSubmitChecklist" />
+      <item itemvalue="TestNG.CreateChecklist.CreateChecklist" />
+      <item itemvalue="TestNG./Users/arjunlathi/Library/Caches/IdeaIC2018.1/temp-testng-customsuite.xml" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Checklist_MyTrainingReport" />
+        <item itemvalue="TestNG.CreateChecklist.CreateChecklist" />
+        <item itemvalue="TestNG.Checklist_MyTrainingReport.Checklist_MyTrainingReport" />
+        <item itemvalue="TestNG./Users/arjunlathi/Library/Caches/IdeaIC2018.1/temp-testng-customsuite.xml" />
+        <item itemvalue="TestNG.CompleteAndSubmitChecklist.CompleteAndSubmitChecklist" />
+        <item itemvalue="TestNG.FindExistingUser.FindExistingUser" />
       </list>
     </recent_temporary>
   </component>
@@ -154,8 +374,40 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 13h 58m 24s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 04m 29s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 10m 50s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 13m 33s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 15m 12s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 16m 56s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 17m 04s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Checklist_MyTrainingReport_Checklist_MyTrainingReport - 2018.07.12 at 14h 17m 16s.xml">
+      <configuration name="Checklist_MyTrainingReport.Checklist_MyTrainingReport" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 18m 03s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateChecklist_CreateChecklist - 2018.07.12 at 14h 20m 06s.xml">
+      <configuration name="CreateChecklist.CreateChecklist" configurationId="TestNG" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="976" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="976" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -170,7 +422,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2077381" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2077381" />
       <window_info id="Learn" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -207,12 +459,173 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/Miscellaneous/ForgotPassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateNormalUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-376">
+          <caret line="37" column="89" lean-forward="true" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateCourseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateSuperAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUSAManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUserSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="133" column="65" lean-forward="true" selection-start-line="133" selection-start-column="65" selection-end-line="133" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/FindExistingUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CreateClassroomCourse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CompleteAndSubmitChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="137" column="8" lean-forward="true" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/Checklist_MyTrainingReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="51" column="54" lean-forward="true" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CreateChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="112" column="55" lean-forward="true" selection-start-line="112" selection-start-column="55" selection-end-line="112" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>EHS</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
