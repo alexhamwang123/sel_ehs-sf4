@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,39 +19,45 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+import static org.apache.commons.text.CharacterPredicates.DIGITS;
+import static org.apache.commons.text.CharacterPredicates.LETTERS;
+
+@Test
 public class SubmitIncompleteChecklist {
 
-	public static void main(String[] args) throws IOException {
-		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
-		
+	public void SubmitIncompleteChecklist() throws IOException, InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
+
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
-		driver.get("https://192.168.15.131:8330");
-		
+
+		driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
 		driver.manage().window().maximize();
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("X00001554");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
+
+		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
-		String val = prop.getProperty("userpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
-		
+		String username = prop.getProperty("username");
+		String password = prop.getProperty("password");
+
+		driver.findElement(By.id("login_login_id")).sendKeys(username);
+		driver.findElement(By.id("login_password")).sendKeys(password);
+
 		driver.findElement(By.name("submit")).click();
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
+
+		Thread.sleep(4500);
+
 		
         driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
 		
@@ -135,7 +142,41 @@ public class SubmitIncompleteChecklist {
 		}
 		
 		driver.findElement(By.id("fancyConfirm_ok")).click();
-		
+		Thread.sleep(1500);
+
+		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.id("fancyConfirm_ok")).click();
+		Thread.sleep(1500);
+
+		driver.findElement(By.partialLinkText("Courses")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.id("srch_fld")).sendKeys("trismax");
+
+		driver.findElement(By.name("searchButton")).click();
+
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+		String paused = driver.findElement(By.xpath("//*[@id=\"msg_headf3884a8ef079d9b188b2b4ddf3ddf1ee\"]/table/tbody/tr/td[3]")).getAttribute("innerHTML").substring(133,139);
+		System.out.println(paused);
+
+		if (!paused.equals("Paused")) {
+			Assert.fail("the course does not show up as paused");
+		}
+
+		Thread.sleep(3500);
+		driver.quit();
+
+
+		//Click on the Enroll button
+
+
+
 
 	}
 

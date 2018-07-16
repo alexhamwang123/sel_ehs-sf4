@@ -1,6 +1,3 @@
-//After the online course is completed and submitted, a message is displayed 
-//“Congratulations. You have successfully completed Trismax Testing Online Course for EHS”.
-
 package com.EHS.OnlineCourseManagement;
 
 import java.io.File;
@@ -17,42 +14,43 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+@Test
 public class OnlineCourse_CompleteAndSubmit {
 
-	public static void main(String[] args) throws IOException {
-		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
-		
+	public void OnlineCourse_CompleteAndSubmit() throws IOException, InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
+
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
+
+		driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
 		driver.manage().window().maximize();
-		
-		driver.get("https://192.168.15.131:8330");
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("X00001554");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
+
+		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
-		String val = prop.getProperty("userpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
-		
+		String username = prop.getProperty("username");
+		String password = prop.getProperty("password");
+
+		driver.findElement(By.id("login_login_id")).sendKeys(username);
+		driver.findElement(By.id("login_password")).sendKeys(password);
+
 		driver.findElement(By.name("submit")).click();
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		Thread.sleep(4500);
 		
 		driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
-		
+		Thread.sleep(1500);
 		driver.findElement(By.id("srch_fld")).sendKeys("trismax");
 		
 		driver.findElement(By.name("searchButton")).click();
@@ -177,7 +175,24 @@ public class OnlineCourse_CompleteAndSubmit {
 			e.printStackTrace();
 		}
 		 
-		driver.findElement(By.cssSelector("#buttons .DialogBoxButton.noTouch.scormSubmitGrade")).click(); 
+		driver.findElement(By.cssSelector("#buttons .DialogBoxButton.noTouch.scormSubmitGrade")).click();
+		Thread.sleep(2000);
+		WebElement exit = driver.findElement(By.xpath("//*[@id=\"nav_exit\"]"));
+		js.executeScript("arguments[0].click();", exit);
+		Thread.sleep(1500);
+		driver.switchTo().window(mainWindow);
+
+		driver.findElement(By.partialLinkText("My History")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"msg_head_cc58b92c0ccf8164d84fd405d994f073\"]/table/tbody/tr/td[1]/a")).click();
+		Thread.sleep(1500);
+		String pass = driver.findElement(By.xpath("//*[@id=\"search_result\"]/div[2]/div[2]/div/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML").substring(0,4);
+		if (!pass.equals("Pass")) {
+			Assert.fail("course does not show up as passed");
+		}
+		Thread.sleep(3500);
+		driver.quit();
+
 		
 
 	}
