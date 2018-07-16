@@ -1,4 +1,5 @@
-package com.EHS.OnlineCourseManagement;
+package com.EHS.ChecklistManagement;
+
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,8 +22,8 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 @Test
-public class OnlineCoursePrereq {
-    public void OnlineCoursePrereq() throws IOException, InterruptedException {
+public class ChecklistPrereq {
+    public void ChecklistPrereq() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -35,13 +35,13 @@ public class OnlineCoursePrereq {
         driver.manage().window().maximize();
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         driver.findElement(By.id("login_login_id")).sendKeys(username);
         driver.findElement(By.id("login_password")).sendKeys(password);
@@ -50,70 +50,54 @@ public class OnlineCoursePrereq {
 
         Thread.sleep(4500);
 
-        JavascriptExecutor js = (JavascriptExecutor)driver;
         WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
-        js.executeScript("arguments[0].click()", courseAdmin);
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        js.executeScript("arguments[0].click();", courseAdmin);
 
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
+        driver.findElement(By.partialLinkText("Checklist Management")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
-        Thread.sleep(4500);
-
+        Thread.sleep(3500);
         String courseId = generator.generate(10);
-        driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey Only");
-        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
-        new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText("Classroom1 - Classroom1");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2500);
+        driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
+        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
+        new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
+        new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("Classroom1 - Classroom1");
+        Thread.sleep(1000);
+        driver.findElement(By.id("saveBtn")).click();
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
-        String courseTitle = generator.generate(10);
-        driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
-        driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
-        driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
+        driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
+        driver.findElement(By.id("detailCheckListHeader")).sendKeys("test checklist header");
+        driver.findElement(By.id("detailCheckListDescription")).sendKeys("test checklist description");
+        driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
+        driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("createContent")).click();
         Thread.sleep(1000);
-        driver.findElement(By.id("btn_edit_content")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Create Page']")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"915d8c7314d1e2c0011512a0784d1726\"]/img")).click();
+        driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
+        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("addQBtn")).click();
-        Thread.sleep(1000);
-        js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
-        Thread.sleep(500);
-        driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");
-        driver.findElement(By.id("courseQuizAnswer2")).sendKeys("no, this is the correct answer");
-        driver.findElement(By.name("courseQuizCorrectAnswer")).sendKeys("2");
-        driver.findElement(By.name("courseQuizSourcePage")).sendKeys("1");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
-        Thread.sleep(1000);
+        driver.findElement(By.id("saveBtn")).click();
+        Thread.sleep(1500);
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.name("langIsViewable")).click();
+        Thread.sleep(3500);
+        driver.findElement(By.id("langIsViewable")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("detailCourseIsActive")).click();
+        driver.findElement(By.id("detailIsActive")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
@@ -137,7 +121,6 @@ public class OnlineCoursePrereq {
 
         Thread.sleep(2000);
         driver.quit();
-
 
 
     }

@@ -18,39 +18,39 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+@Test
 public class Manager_ChecklistCompletionReport {
 
-	public static void main(String[] args) throws IOException {
- 		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
-		
-		WebDriver driver = new ChromeDriver();
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		driver.manage().window().maximize();
-		
-		driver.get("https://192.168.15.131:8330");
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("admin");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
-		FileInputStream inStream=new FileInputStream(file);
-		Properties prop=new Properties();
-		prop.load(inStream);
-		String val = prop.getProperty("adminpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
-		
-		driver.findElement(By.name("submit")).click();
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void Manager_ChecklistCompletionReport() throws IOException, InterruptedException {
+
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.manage().window().maximize();
+        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+
+        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
+        FileInputStream inStream=new FileInputStream(file);
+        Properties prop=new Properties();
+        prop.load(inStream);
+        String username = prop.getProperty("username");
+        String password = prop.getProperty("password");
+        driver.findElement(By.id("login_login_id")).sendKeys(username);
+        driver.findElement(By.id("login_password")).sendKeys(password);
+
+        driver.findElement(By.name("submit")).click();
+
+        Thread.sleep(4500);
+
 		
 		//Clicking on Manager Reports under Reports
 		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[2]/a"));
@@ -78,7 +78,7 @@ public class Manager_ChecklistCompletionReport {
 		//js1.executeScript("window.scrollBy(0,250)", "");
 
 		// Click OK
-		driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
+		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
 
 		try {
 			Thread.sleep(2000);
@@ -88,8 +88,9 @@ public class Manager_ChecklistCompletionReport {
 		}
 
 		// Click 'Go' to generate the Survey Completion Report
-		driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
-		
+        driver.findElement(By.id("Button_Go")).click();
+		Thread.sleep(2500);
+		driver.quit();
 
 	}
 
