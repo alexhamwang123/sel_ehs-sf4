@@ -18,66 +18,57 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+@Test
 public class EHSR_CourseCompletionReport {
 
-	public static void main(String[] args) throws IOException {
-		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
-		
-		WebDriver driver = new ChromeDriver();
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		driver.manage().window().maximize();
-		
-		driver.get("https://192.168.15.131:8330");
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("admin");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
-		FileInputStream inStream=new FileInputStream(file);
-		Properties prop=new Properties();
-		prop.load(inStream);
-		String val = prop.getProperty("adminpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
-		
-		driver.findElement(By.name("submit")).click();
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void EHSR_CourseCompletionReport() throws IOException, InterruptedException {
+
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.manage().window().maximize();
+        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+
+        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
+        FileInputStream inStream=new FileInputStream(file);
+        Properties prop=new Properties();
+        prop.load(inStream);
+        String username = prop.getProperty("username");
+        String password = prop.getProperty("password");
+        driver.findElement(By.id("login_login_id")).sendKeys(username);
+        driver.findElement(By.id("login_password")).sendKeys(password);
+
+        driver.findElement(By.name("submit")).click();
+
+        Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
 		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
-		
+		Thread.sleep(1500);
 		//Select a Date Range. Click on Date From
-		driver.findElement(By.id("dateFrom")).click();
-		
-		//Select 1st Dec as the date 
-		driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[1]/td[6]/a")).click();
-		
-		//Click on Date To
-		driver.findElement(By.id("dateTo")).click();
-		
-		//Select 14th Dec as the date 
-		driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[3]/td[5]/a")).click();
-		
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		js.executeScript("document.getElementById('dateFrom').value='02/14/2031'");
+		Thread.sleep(500);
+		js.executeScript("document.getElementById('dateTo').value='04/17/2031'");
+
+		Thread.sleep(500);
 		
 		//Click on Go
 		driver.findElement(By.id("Button_Go")).click();
+
+		Thread.sleep(3500);
+
+		driver.quit();
 		
 		
 
