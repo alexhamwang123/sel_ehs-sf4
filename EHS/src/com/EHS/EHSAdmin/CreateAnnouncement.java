@@ -10,42 +10,53 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+import static org.apache.commons.text.CharacterPredicates.DIGITS;
+import static org.apache.commons.text.CharacterPredicates.LETTERS;
+
+@Test
 public class CreateAnnouncement {
 
-	public static void main(String[] args) throws IOException {
-		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
-		
-		WebDriver driver = new ChromeDriver();
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		driver.manage().window().maximize();
-		
-		driver.get("https://192.168.15.131:8330");
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("admin");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
-		FileInputStream inStream=new FileInputStream(file);
-		Properties prop=new Properties();
-		prop.load(inStream);
-		String val = prop.getProperty("adminpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
-		
-		driver.findElement(By.name("submit")).click();
+	public void CreateAnnouncement() throws IOException, InterruptedException {
+
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+        driver.manage().window().maximize();
+
+        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
+        FileInputStream inStream=new FileInputStream(file);
+        Properties prop=new Properties();
+        prop.load(inStream);
+        String username = prop.getProperty("username");
+        String password = prop.getProperty("password");
+
+        driver.findElement(By.id("login_login_id")).sendKeys(username);
+        driver.findElement(By.id("login_password")).sendKeys(password);
+
+        driver.findElement(By.name("submit")).click();
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -97,8 +108,8 @@ public class CreateAnnouncement {
 		}
 		
 		 //Clicking on Announcement Category: Welcome
-		 driver.findElement(By.cssSelector("input[type='radio'][value='DB_Welcome']")).click();
-		
+		 new Select(driver.findElement(By.name("detailAnnouncementStyle"))).selectByVisibleText("Welcome");
+		driver.findElement(By.name("detailAnnouncementRemarks")).sendKeys("this is the announcement remarks!");
 		 //Clicking on Announcement Category: Risk Survey Incomplete
 		 //driver.findElement(By.cssSelector("input[type='radio'][value='RS_Incomplete']")).click();
 			
@@ -114,12 +125,14 @@ public class CreateAnnouncement {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//Entering the 'Announcement Title'
-		driver.findElement(By.name("detailAnnouncementTitle")).sendKeys("Announcement 4");
-		
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+        String title = generator.generate(10);
+
+        //Entering the 'Announcement Title'
+		driver.findElement(By.name("detailAnnouncementTitle")).sendKeys(title);
+		Thread.sleep(1500);
 		//Entering the Announcement Content
-		driver.findElement(By.name("detailAnnouncementContent")).sendKeys("This is the latest announcement in the series");
+		driver.findElement(By.name("detailAnnouncementContent")).sendKeys("this is the announcement content !!");
 		
 		try {
 			Thread.sleep(2000);
@@ -130,7 +143,7 @@ public class CreateAnnouncement {
 		
 		//Clicking on 'Save'
 		driver.findElement(By.cssSelector("input[type='submit'][value='Save']")).click();
-		
+		Thread.sleep(1500);
 		//clicking on 'Back'
 		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 		
@@ -140,22 +153,50 @@ public class CreateAnnouncement {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		new Select(driver.findElement(By.xpath("//*[@id='EHSForm']/div[1]/div[2]/select"))).selectByVisibleText("Announcement Title");
-		
+
+        new Select(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/select"))).selectByVisibleText("Announcement Title");
 		try {
 			Thread.sleep(1500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		driver.findElement(By.id("srch_fld")).sendKeys("Announcement 1");
-		
+
+		Actions actions = new Actions(driver);
+		actions.moveToElement(driver.findElement(By.id("secondmenu")));
+		actions.click();
+		actions.sendKeys(title);
+		actions.build().perform();
 		//Click on the 'Go' button to display the result
 		driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
-		
+        Thread.sleep(2000);
+        driver.findElement(By.className("editAction")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.name("detailAnnouncementContent")).clear();
+        driver.findElement(By.name("detailAnnouncementContent")).sendKeys("im editing the announcement content !!");
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[value='Save']")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[value='Back']")).click();
+        Thread.sleep(1500);
+        new Select(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/select"))).selectByVisibleText("Announcement Title");
+        actions.moveToElement(driver.findElement(By.id("secondmenu")));
+        actions.click();
+        actions.sendKeys(title);
+        actions.build().perform();
+        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
 
-	}
+        Thread.sleep(2000);
+        driver.findElement(By.className("editAction")).click();
+        Thread.sleep(1500);
+        if(!driver.findElement(By.name("detailAnnouncementContent")).getAttribute("innerHTML").equals("im editing the announcement content !!")) {
+            Assert.fail("something went wrong with editing the announcement content");
+        }
+
+        Thread.sleep(2000);
+        driver.quit();
+
+
+    }
 
 }

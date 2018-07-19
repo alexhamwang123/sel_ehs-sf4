@@ -1,6 +1,3 @@
-//This script is created to create a new Certificate
-//Path: EHS UAT > Admin > EHS Admin > Certificate Management > Create Certificate
-
 package com.EHS.EHSAdmin;
 
 import java.io.File;
@@ -10,46 +7,53 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
+import static org.apache.commons.text.CharacterPredicates.DIGITS;
+import static org.apache.commons.text.CharacterPredicates.LETTERS;
+
+@Test
 public class CreateCertificate {
 
-	public static void main(String[] args) throws IOException {
-		
-        System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
-		
-		WebDriver driver = new ChromeDriver();
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		driver.manage().window().maximize();
-		
-		driver.get("https://192.168.15.131:8330");
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("admin");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
-		FileInputStream inStream=new FileInputStream(file);
-		Properties prop=new Properties();
-		prop.load(inStream);
-		String val = prop.getProperty("adminpassword");
-		driver.findElement(By.id("login_password")).sendKeys(val);
-		
-		driver.findElement(By.name("submit")).click();
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void CreateCertificate() throws InterruptedException, IOException {
+
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+        driver.manage().window().maximize();
+
+        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
+        FileInputStream inStream=new FileInputStream(file);
+        Properties prop=new Properties();
+        prop.load(inStream);
+        String username = prop.getProperty("username");
+        String password = prop.getProperty("password");
+
+        driver.findElement(By.id("login_login_id")).sendKeys(username);
+        driver.findElement(By.id("login_password")).sendKeys(password);
+
+        driver.findElement(By.name("submit")).click();
+
+        Thread.sleep(4500);
+
 		
 		//Clicking on EHS Admin
 		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[4]/a"));
@@ -64,7 +68,7 @@ public class CreateCertificate {
 		}
 		
 		//Clicking on 'Certificate Management'
-		driver.findElement(By.xpath("//*[@id='left']/table/tbody/tr[5]/td/a")).click();
+        driver.findElement(By.partialLinkText("Certificate Management")).click();
 
 		try {
 			Thread.sleep(2000);
@@ -83,11 +87,15 @@ public class CreateCertificate {
 			e.printStackTrace();
 		}
 
-		// Entering the Certificate Name that you want for the certificate
-		driver.findElement(By.name("detailCertName")).sendKeys("Certificate 4");
+
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+        String title = generator.generate(10);
+
+        // Entering the Certificate Name that you want for the certificate
+		driver.findElement(By.name("detailCertName")).sendKeys(title);
 
 		// Entering the Description that you want for your certificate
-		driver.findElement(By.name("detailCertDescr")).sendKeys("This is the latest certificate in the series");
+		driver.findElement(By.name("detailCertDescr")).sendKeys("this is the certificate description !");
 
 		try {
 			Thread.sleep(2000);
@@ -107,7 +115,7 @@ public class CreateCertificate {
 		}
 
 		// clicking the 'Back' button
-		driver.findElement(By.cssSelector("input[type=button'][value='Back']")).click();
+		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
 		try {
 			Thread.sleep(2000);
@@ -117,8 +125,39 @@ public class CreateCertificate {
 		}
 
 		// Searching for the lab name that you just created to show in the search result
-		driver.findElement(By.id("srch_fld")).sendKeys("Certificate 2");
-		
+        Actions actions = new Actions(driver);
+		actions.moveToElement(driver.findElement(By.id("secondmenu")));
+		actions.click();
+		actions.sendKeys(title);
+		actions.build().perform();
+
+		driver.findElement(By.cssSelector("input[value='Go']")).click();
+		Thread.sleep(2500);
+		driver.findElement(By.className("editAction")).click();
+		Thread.sleep(1500);
+
+		driver.findElement(By.name("detailCertDescr")).clear();
+		driver.findElement(By.name("detailCertDescr")).sendKeys("im editing the certificate description");
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector("input[value='Save']")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[value='Back']")).click();
+        Thread.sleep(1500);
+        actions.moveToElement(driver.findElement(By.id("secondmenu")));
+        actions.click();
+        actions.sendKeys(title);
+        actions.build().perform();
+
+        driver.findElement(By.cssSelector("input[value='Go']")).click();
+        Thread.sleep(2500);
+        driver.findElement(By.className("editAction")).click();
+        Thread.sleep(1500);
+        if(!driver.findElement(By.name("detailCertDescr")).getAttribute("innerHTML").equals("im editing the certificate description")) {
+            Assert.fail("something went wrong while editing the certificate");
+        }
+        Thread.sleep(2000);
+        driver.quit();
+
 
 	}
 
