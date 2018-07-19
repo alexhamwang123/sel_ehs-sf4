@@ -208,32 +208,22 @@ public class CreateLab {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		//Now searching for the Lab's name to see if it gets displayed in the list of the labs
-        Actions actions = new Actions(driver);
-		actions.moveToElement(driver.findElement(By.id("secondmenu")));
-		actions.click();
-		actions.sendKeys(title);
-		driver.findElement(By.cssSelector("input[value='Go']")).click();
-        Thread.sleep(2000);
         driver.findElement(By.className("editAction")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("detailLabDescr")).clear();
 
-        driver.findElement(By.name("detailLabDescr")).sendKeys("im editing the lab description !");
+        String description = generator.generate(20);
+        driver.findElement(By.name("detailLabDescr")).sendKeys("im editing the lab description with a random word: " + description);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[value='Save']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(1500);
-        actions.moveToElement(driver.findElement(By.id("secondmenu")));
-        actions.click();
-        actions.sendKeys(title);
-        driver.findElement(By.cssSelector("input[value='Go']")).click();
+
         Thread.sleep(2000);
         driver.findElement(By.className("editAction")).click();
         Thread.sleep(1500);
-        if (!driver.findElement(By.name("detailLabDescr")).getAttribute("innerHTML").equals("im editing the lab description !")) {
+        if (!driver.findElement(By.name("detailLabDescr")).getAttribute("innerHTML").equals("im editing the lab description with a random word: " + description)) {
             Assert.fail("something went wrong while editing the lab description");
         }
         Thread.sleep(2000);

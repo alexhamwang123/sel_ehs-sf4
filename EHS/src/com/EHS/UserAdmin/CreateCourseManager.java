@@ -142,7 +142,7 @@ public class CreateCourseManager {
 		driver.findElement(By.name("submit")).click();
 		Thread.sleep(4500);
 
-		//driver.quit();
+		driver.quit();
 		
 
 	}

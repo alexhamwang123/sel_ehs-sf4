@@ -99,6 +99,9 @@ public class NoShowNotPassedCompleted {
         if(day < 10) {
             sday = "0" + day;
         } else { sday = "" + day; }
+        if (day == 0) {
+            sday = "28";
+        }
 
         int year = calendar.get(Calendar.YEAR);
         System.out.println(month);

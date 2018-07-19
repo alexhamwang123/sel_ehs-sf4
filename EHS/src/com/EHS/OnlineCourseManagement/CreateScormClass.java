@@ -2,10 +2,7 @@ package com.EHS.OnlineCourseManagement;
 
 
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -139,7 +136,11 @@ public class CreateScormClass {
         driver.findElement(By.name("searchButton")).click();
         Thread.sleep(1500);
         String currentWin = driver.getWindowHandle();
-        driver.findElement(By.className("onelang")).click();
+        try {
+            driver.findElement(By.className("onelang")).click();
+        } catch (NoSuchElementException e) {
+            Assert.fail("something went wrong while creating and uploading the scorm course");
+        }
         Thread.sleep(1500);
 
         for(String winHandle : driver.getWindowHandles()) {

@@ -182,14 +182,6 @@ public class OnlineCourse_CompleteAndSubmit {
 		Thread.sleep(1500);
 		driver.switchTo().window(mainWindow);
 
-		driver.findElement(By.partialLinkText("My History")).click();
-		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"msg_head_cc58b92c0ccf8164d84fd405d994f073\"]/table/tbody/tr/td[1]/a")).click();
-		Thread.sleep(1500);
-		String pass = driver.findElement(By.xpath("//*[@id=\"search_result\"]/div[2]/div[2]/div/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML").substring(0,4);
-		if (!pass.equals("Pass")) {
-			Assert.fail("course does not show up as passed");
-		}
 		Thread.sleep(3500);
 		driver.quit();
 
