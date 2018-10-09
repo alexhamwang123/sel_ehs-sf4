@@ -59,7 +59,7 @@ public class NormalRefreshChecklist {
         Thread.sleep(3500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
-        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Refresh");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
