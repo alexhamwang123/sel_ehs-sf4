@@ -27,15 +27,17 @@ public class CreateOfferingRegister {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
-
-        driver.manage().window().maximize();
-
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
+        String urladdr = prop.getProperty("url");
+
+        driver.get(urladdr);
+
+        driver.manage().window().maximize();
+
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -59,7 +61,7 @@ public class CreateOfferingRegister {
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");

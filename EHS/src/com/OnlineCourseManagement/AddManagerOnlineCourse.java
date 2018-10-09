@@ -25,15 +25,18 @@ public class AddManagerOnlineCourse {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
-
-        driver.manage().window().maximize();
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
+        String urladdr = prop.getProperty("url");
+
+        driver.get(urladdr);
+
+        driver.manage().window().maximize();
+
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
@@ -48,14 +51,18 @@ public class AddManagerOnlineCourse {
         WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
+        String testCourseMgr = prop.getProperty("testCourseMgr");
+        String testCourseMgr1 = prop.getProperty("testCourseMgr1");
+        String testCourseMgr2 = prop.getProperty("testCourseMgr2");
+
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click(); //CREATE online course
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='A']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("arjun");
+        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr);
         driver.findElement(By.cssSelector("input[value='Search']")).click();
         Thread.sleep(1500);
         //driver.findElement(By.cssSelector("input[href*='selectCourseManager']")).click();
@@ -63,7 +70,7 @@ public class AddManagerOnlineCourse {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='B']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001617");
+        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr1);
         driver.findElement(By.cssSelector("input[value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
@@ -71,7 +78,7 @@ public class AddManagerOnlineCourse {
         WebElement c = driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='C']"));
         js.executeScript("arguments[0].click();", c);
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001618");
+        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr2);
         driver.findElement(By.cssSelector("input[value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();

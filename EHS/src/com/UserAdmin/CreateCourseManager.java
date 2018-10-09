@@ -34,12 +34,15 @@ public class CreateCourseManager {
 
 		driver.manage().window().maximize();
 
-		driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
-		File file=new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
+		String urladdr = prop.getProperty("url");
+
+		driver.get(urladdr);
+
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
@@ -71,9 +74,9 @@ public class CreateCourseManager {
 		driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
 
 		Thread.sleep(3500);
-
+		//自動會有detailBadgeNumber ，也就是我們要用的bdgeeNumber ID
 		String id = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
-
+System.out.println("id is " + id);
 
 		// Enter the First Name of the user that you wish to create
 		driver.findElement(By.id("detailFirstName")).sendKeys(id);
@@ -124,8 +127,8 @@ public class CreateCourseManager {
 		driver.findElement(By.cssSelector("input[type='checkbox'][value='40285a840b8ea1e4010b8ea1e5100010']")).click();
 		
 		// Clicking on Course Manager to assign the role
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='d4d49278dec011e69a9e40f2e9cb54a2']")).click();
-
+		driver.findElement(By.cssSelector("input[type='checkbox'][value='75611b62e78111e684a640f2e90c550c']")).click();
+//75611b62e78111e684a640f2e90c550c it's for Course Managher of ID
 		// Click on 'Save' button
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 

@@ -28,17 +28,14 @@ public class SaveAndCancel {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
-		driver.get("https://192.168.15.131:8330");
-		
-		driver.manage().window().maximize();
-		
-		driver.findElement(By.id("login_login_id")).sendKeys("X00001554");
-		
-		File file=new File(System.getProperty("user.dir")+"/EHS.password.properties");
+		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
+		String urladdr = prop.getProperty("url");
+		driver.get(urladdr);
+		driver.manage().window().maximize();
+		driver.findElement(By.id("login_login_id")).sendKeys("X00001554");
 		String val = prop.getProperty("userpassword");
 		driver.findElement(By.id("login_password")).sendKeys(val);
 		

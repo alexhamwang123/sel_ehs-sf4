@@ -34,14 +34,13 @@ public class Manager_ComplianceReport {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
-        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+		FileInputStream inStream=new FileInputStream(file);
+		Properties prop=new Properties();
+		prop.load(inStream);
+		String urladdr = prop.getProperty("url");
+		driver.get(urladdr);
 
-
-        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
-
-        FileInputStream inStream=new FileInputStream(file);
-        Properties prop=new Properties();
-        prop.load(inStream);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         driver.findElement(By.id("login_login_id")).sendKeys(username);

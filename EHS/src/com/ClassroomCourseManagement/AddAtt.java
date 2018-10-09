@@ -26,15 +26,17 @@ public class AddAtt {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
-
-        driver.manage().window().maximize();
-
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
+        String urladdr = prop.getProperty("url");
+
+        driver.get(urladdr);
+
+        driver.manage().window().maximize();
+
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -58,7 +60,7 @@ public class AddAtt {
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal & Refresh");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -99,7 +101,7 @@ public class AddAtt {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("arjun");
+        driver.findElement(By.name("badgeNo")).sendKeys(username);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
@@ -107,7 +109,7 @@ public class AddAtt {
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001615");
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001565");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
@@ -115,7 +117,7 @@ public class AddAtt {
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001622");
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001565");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);

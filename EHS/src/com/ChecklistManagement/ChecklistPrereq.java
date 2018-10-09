@@ -30,16 +30,17 @@ public class ChecklistPrereq {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
-
-        driver.manage().window().maximize();
-
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
-        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
+        String urladdr = prop.getProperty("url");
+
+        driver.get(urladdr);
+
+        driver.manage().window().maximize();
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
@@ -62,7 +63,7 @@ public class ChecklistPrereq {
         Thread.sleep(3500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
-        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("Classroom1 - Classroom1");

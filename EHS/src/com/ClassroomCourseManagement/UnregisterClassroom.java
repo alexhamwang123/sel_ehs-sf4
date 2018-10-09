@@ -26,16 +26,13 @@ public class UnregisterClassroom {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
-
-        driver.manage().window().maximize();
-
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
-
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
+        String urladdr = prop.getProperty("url");
+        driver.get(urladdr);
+        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         String normuser = prop.getProperty("testnormuser");

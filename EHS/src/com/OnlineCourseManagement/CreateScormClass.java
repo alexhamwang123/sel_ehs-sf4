@@ -30,7 +30,15 @@ public class CreateScormClass {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
+        FileInputStream inStream=new FileInputStream(file);
+        Properties prop=new Properties();
+        prop.load(inStream);
+        String urladdr = prop.getProperty("url");
+
+        driver.get(urladdr);
 
         Robot robot = new Robot();
         robot.setAutoDelay(250);
@@ -43,11 +51,6 @@ public class CreateScormClass {
 
         driver.manage().window().maximize();
 
-        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
-
-        FileInputStream inStream=new FileInputStream(file);
-        Properties prop=new Properties();
-        prop.load(inStream);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -71,7 +74,7 @@ public class CreateScormClass {
 
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");//We have to make it via manually, just in case.
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(500);
@@ -86,9 +89,11 @@ public class CreateScormClass {
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         java.awt.datatransfer.Clipboard clipboard = toolkit.getSystemClipboard();
-        String path = System.getProperty("user.dir") + "/Introduction to OneDrive.zip";
+        String path = System.getProperty("user.dir") + "/Intro_OneDrive.zip";
+        System.out.println("path="+path);
         StringSelection str = new StringSelection(path);
         clipboard.setContents(str, null);
+
 
         driver.findElement(By.cssSelector("input[type='radio'][value='scorm']")).click();
         Thread.sleep(1000);
@@ -133,6 +138,7 @@ public class CreateScormClass {
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
+
         driver.findElement(By.name("searchButton")).click();
         Thread.sleep(1500);
         String currentWin = driver.getWindowHandle();

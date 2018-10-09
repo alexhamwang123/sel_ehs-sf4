@@ -212,4 +212,51 @@ public class OnlinePrereqComplete {
         driver.quit();
 
     }
+
+    @Test
+    public static class EHSR_EvaluationCompletionReport {
+
+        public void EHSR_EvaluationCompletionReport() throws IOException, InterruptedException {
+
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+            WebDriver driver = new ChromeDriver();
+
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+            driver.manage().window().maximize();
+            driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+
+            File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
+            FileInputStream inStream=new FileInputStream(file);
+            Properties prop=new Properties();
+            prop.load(inStream);
+            String username = prop.getProperty("username");
+            String password = prop.getProperty("password");
+            driver.findElement(By.id("login_login_id")).sendKeys(username);
+            driver.findElement(By.id("login_password")).sendKeys(password);
+
+            driver.findElement(By.name("submit")).click();
+
+            Thread.sleep(4500);
+
+            //Clicking on EHS Reports under Reports
+            WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
+            JavascriptExecutor js = (JavascriptExecutor)driver;
+            js.executeScript("arguments[0].click();",ele);
+            Thread.sleep(1500);
+            //Click on Evaluation Completion Report
+            driver.findElement(By.xpath("//*[@id='content']/div[1]/div/div/a[4]")).click();
+            Thread.sleep(1500);
+            //Click on Go
+            driver.findElement(By.id("Button_Go")).click();
+            Thread.sleep(3500);
+
+            driver.quit();
+
+        }
+
+    }
 }

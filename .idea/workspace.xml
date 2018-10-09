@@ -1,70 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/AddChecklistManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/ChecklistButtonSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/ChecklistPrereq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/ChecklistPrereqComplete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CompleteAndSubmitChecklist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/CreateChecklist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/NormalRefreshChecklist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/PrereqDecreaseChecklist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/RefreshChecklist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/SaveAndCancel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ChecklistManagement/SubmitIncompleteChecklist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/AddAtt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/AddClassroomManger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/AddWaitlist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CancelAndNotify.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/ClassroomPrereq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/ClassroomPrereqDecrease.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CreateFullOffering.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/CreateOfferingRegister.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/EmailAtt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/NoShowNotPassedCompleted.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/RefreshClassroomCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/RegisteringMechanics.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/UnregisterClassroom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/ClassroomCourseManagement/UnregisterWaitlist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/EHSAdmin/CreateAnnouncement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/EHSAdmin/CreateCertificate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/EHSAdmin/CreateFAQ.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/EHSAdmin/CreateLab.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/EHSAdmin/CreateRiskCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Miscellaneous/EHS_ContactUs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Miscellaneous/EHS_SearchACourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Miscellaneous/ForgotPassword.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/AddManagerOnlineCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/CheckBookmark_ClickNo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/CheckBookmark_ClickYes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/CreateScormClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/NormalRefreshOnlineCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/OnlineButtonSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/OnlineCourseEditContent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/OnlineCoursePrereq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/OnlinePrereqComplete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/OnlineCourseManagement/RefreshOnlineCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/DirectReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/EHSR_ChecklistSubmissionReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/EHSR_ComplianceReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/EHSR_CourseCompletionReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/EHSR_CourseCompletionStatistic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/EHSR_EvaluationCompletionReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/EHSR_OrganizationReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/Manager_ChecklistCompletionReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/Reports/Manager_ComplianceReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateCourseManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateNormalUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateSuperAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUSAManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/CreateUserSupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHS/UserAdmin/FindExistingUser.java" beforeDir="false" />
+    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="change arjun username/password, to admin/passowrd">
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/EHS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/EHS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/Introduction to OneDrive.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddClassroomManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddClassroomManger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_EvaluationCompletionReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/AddAtt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/AddWaitlist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/EmailAtt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/ManuallyRemoveWaitlist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/AddChecklistManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/ChecklistButtonSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/ChecklistPrereq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/ChecklistPrereqComplete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/CompleteAndSubmitChecklist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/CreateChecklist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/NormalRefreshChecklist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/PrereqDecreaseChecklist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/RefreshChecklist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/SaveAndCancel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ChecklistManagement/SubmitIncompleteChecklist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/AddClassroomManger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/CancelAndNotify.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/ClassroomPrereq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/ClassroomPrereqDecrease.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/CreateFullOffering.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/CreateOfferingRegister.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/NoShowNotPassedCompleted.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/NormalRefreshClassroomCourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/RefreshClassroomCourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/RegisteringMechanics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/RegisteringMechanics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/UnregisterClassroom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/ClassroomCourseManagement/UnregisterWaitlist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/EHSAdmin/CreateAnnouncement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/EHSAdmin/CreateCertificate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/EHSAdmin/CreateFAQ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/EHSAdmin/CreateLab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/EHSAdmin/CreateRiskCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Miscellaneous/EHS_ContactUs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Miscellaneous/EHS_SearchACourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Miscellaneous/ForgotPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/AddManagerOnlineCourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/CheckBookmark_ClickNo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/CheckBookmark_ClickYes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/CreateScormClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/NormalRefreshOnlineCourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/OnlineButtonSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/OnlineCourseEditContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/OnlineCoursePrereq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/OnlinePrereqComplete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/OnlineCourseManagement/RefreshOnlineCourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/DirectReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/EHSR_ChecklistSubmissionReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/EHSR_ComplianceReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/EHSR_CourseCompletionReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/EHSR_CourseCompletionStatistic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/EHSR_EvaluationCompletionReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/EHSR_OrganizationReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/Manager_ChecklistCompletionReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/Reports/Manager_ComplianceReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/UserAdmin/CreateCourseManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/UserAdmin/CreateNormalUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/UserAdmin/CreateSuperAdmin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/UserAdmin/CreateUSAManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/UserAdmin/CreateUserSupport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHS/UserAdmin/FindExistingUser.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,6 +143,98 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sel_ehs$com_OnlineCourseManagement.ic" NAME="com.OnlineCourseManagement Coverage Results" MODIFIED="1539057463374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$ChecklistPrereq.ic" NAME="ChecklistPrereq Coverage Results" MODIFIED="1539090837722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateCourseManager.ic" NAME="CreateCourseManager Coverage Results" MODIFIED="1538980892973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.UserAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$com_ChecklistManagement.ic" NAME="com.ChecklistManagement Coverage Results" MODIFIED="1539089037954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CompleteAndSubmitChecklist.ic" NAME="CompleteAndSubmitChecklist Coverage Results" MODIFIED="1539091378406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateSuperAdmin.ic" NAME="CreateSuperAdmin Coverage Results" MODIFIED="1538980271658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.UserAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$_default_.ic" NAME="&lt;default&gt; Coverage Results" MODIFIED="1539017510515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sel_ehs$.ic" NAME=" Coverage Results" MODIFIED="1538637974893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sel_ehs$ChecklistPrereqComplete.ic" NAME="ChecklistPrereqComplete Coverage Results" MODIFIED="1539091249914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$ClassroomPrereq.ic" NAME="ClassroomPrereq Coverage Results" MODIFIED="1539079884719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$FinalDisabledCourseIfNeed.ic" NAME="FinalDisabledCourseIfNeed Coverage Results" MODIFIED="1539091388989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CheckBookmark_ClickYes.ic" NAME="CheckBookmark_ClickYes Coverage Results" MODIFIED="1538982361594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$DirectReport.ic" NAME="DirectReport Coverage Results" MODIFIED="1538709671784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.Reports.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$EHSR_ChecklistSubmissionReport.ic" NAME="EHSR_ChecklistSubmissionReport Coverage Results" MODIFIED="1538710047172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.Reports.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$ChecklistButtonSource.ic" NAME="ChecklistButtonSource Coverage Results" MODIFIED="1539090582345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CheckBookmark_ClickNo.ic" NAME="CheckBookmark_ClickNo Coverage Results" MODIFIED="1538981975373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$AddManagerOnlineCourse.ic" NAME="AddManagerOnlineCourse Coverage Results" MODIFIED="1538983715204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$FinalDisabledCourseIfNeed__1_.ic" NAME="FinalDisabledCourseIfNeed (1) Coverage Results" MODIFIED="1539083274789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$com_UserAdmin.ic" NAME="com.UserAdmin Coverage Results" MODIFIED="1538976136808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.UserAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$AddWaitlist.ic" NAME="AddWaitlist Coverage Results" MODIFIED="1539082884708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$AddChecklistManager.ic" NAME="AddChecklistManager Coverage Results" MODIFIED="1539089416046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$com_EHSAdmin.ic" NAME="com.EHSAdmin Coverage Results" MODIFIED="1538812531634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.EHSAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$createCourseManagerFirst.ic" NAME="createCourseManagerFirst Coverage Results" MODIFIED="1538975749949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.Step1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$com.ic" NAME="com Coverage Results" MODIFIED="1539088905183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateChecklist.ic" NAME="CreateChecklist Coverage Results" MODIFIED="1539081179869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourseEditContent.ic" NAME="OnlineCourseEditContent Coverage Results" MODIFIED="1538713830403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateScormClass.ic" NAME="CreateScormClass Coverage Results" MODIFIED="1539016859444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$AddAtt.ic" NAME="AddAtt Coverage Results" MODIFIED="1539089157084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="2" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="360" />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1965476586">
@@ -105,95 +268,150 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="2071871050">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.71" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="107" />
+          <entry key="properties" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="107" />
+          <entry key="Properties" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="4286" />
+          <entry key="properties" value="149" />
+          <entry key="txt" value="57" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="4286" />
+          <entry key="PLAIN_TEXT" value="57" />
+          <entry key="Properties" value="149" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="sel_ehs" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_EvaluationCompletionReport.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="248">
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="362">
+              <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="-688">
+              <caret line="60" column="99" lean-forward="true" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="104" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="-1035">
+              <caret line="53" column="60" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="17" selection-start-line="2" selection-end-line="3" />
+            <state relative-caret-position="66">
+              <caret line="49" column="54" lean-forward="true" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="32">
+              <caret line="62" column="113" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="113" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="236">
+              <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="252">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="119" selection-start-line="119" selection-end-line="119" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="86">
+              <caret line="55" column="54" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -207,25 +425,80 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>c58b92c0ccf8164d84fd405d994f073</find>
+      <find>testCourseMgr</find>
+      <find>detailCourseIs</find>
+      <find>badgenoNo</find>
+      <find>Select</find>
+      <find>findElemet</find>
+      <find>New S</find>
+      <find>submit</find>
+      <find>Save</find>
+      <find>Back</find>
+      <find>langIsViewable</find>
+      <find>Survey</find>
+      <find>k3tU60Gu6B</find>
+      <find>xpath</find>
+      <find>List</find>
+      <find>detailCourseIsActive</find>
+      <find>InnerLoop</find>
+      <find>myresultList</find>
+      <find>java.io</find>
+      <find>07c599bf6b81f83d89f2906811433696</find>
+      <find>myResult3ak2</find>
+      <find>generator</find>
+      <find>Survey_Only_Selenium</find>
+      <find>Classroom1</find>
+      <find>Create Course</find>
+      <find>detailIsActive</find>
+      <find>searchCategory`</find>
+      <find>idstr5</find>
+      <find>selectByVisibleText</find>
+      <find>content</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddClassroomManger.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" />
@@ -236,41 +509,26 @@
         <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_EvaluationCompletionReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddClassroomManger.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="973" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -280,8 +538,45 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="ChecklistManagement" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="ClassroomCourseManagement" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="OnlineCourseManagement" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,16 +595,67 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ClassroomCourseManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="OnlineCourseManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
+          <expand>
+            <path>
+              <item name="sel_ehs" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="EHS" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="EHS" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534363936582" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539091388722" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ChecklistManagement" />
+      <recent name="com.ClassroomCourseManagement" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -323,7 +669,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RegisteringMechanics.RegisteringMechanics">
+  <component name="RunManager" selected="TestNG.FinalDisabledCourseIfNeed">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -336,18 +682,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisteringMechanics.RegisteringMechanics" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ChecklistButtonSource" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.EHS.ClassroomCourseManagement.*" />
+          <option name="PATTERN" value="com.ChecklistManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.EHS.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.EHS.ClassroomCourseManagement.RegisteringMechanics" />
-      <option name="METHOD_NAME" value="RegisteringMechanics" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PACKAGE_NAME" value="com.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.ChecklistManagement.ChecklistButtonSource" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -355,10 +699,67 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ChecklistPrereq" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.ChecklistManagement.ChecklistPrereq" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChecklistPrereqComplete" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.ChecklistManagement.ChecklistPrereqComplete" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompleteAndSubmitChecklist" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.ChecklistManagement.CompleteAndSubmitChecklist" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinalDisabledCourseIfNeed" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ChecklistManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.ChecklistManagement.FinalDisabledCourseIfNeed" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -374,50 +775,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.EHS.OnlineCourseManagement" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="com" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.EHS.OnlineCourseManagement.*" />
+          <option name="PATTERN" value="com.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.EHS.OnlineCourseManagement" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="com" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.EHS.Reports" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="createCourseManagerFirst" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.EHS.Reports.*" />
+          <option name="PATTERN" value="com.Step1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.EHS.Reports" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.EHS.UserAdmin" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.EHS.UserAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.EHS.UserAdmin" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="PACKAGE_NAME" value="com.Step1" />
+      <option name="MAIN_CLASS_NAME" value="com.Step1.createCourseManagerFirst" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -426,19 +817,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.com.EHS.OnlineCourseManagement" />
-      <item itemvalue="TestNG.com.EHS.Reports" />
-      <item itemvalue="TestNG.com.EHS.UserAdmin" />
-      <item itemvalue="TestNG.&lt;default&gt;" />
-      <item itemvalue="TestNG.RegisteringMechanics.RegisteringMechanics" />
+      <item itemvalue="TestNG.com" />
+      <item itemvalue="TestNG.createCourseManagerFirst" />
+      <item itemvalue="TestNG.ChecklistButtonSource" />
+      <item itemvalue="TestNG.ChecklistPrereq" />
+      <item itemvalue="TestNG.ChecklistPrereqComplete" />
+      <item itemvalue="TestNG.CompleteAndSubmitChecklist" />
+      <item itemvalue="TestNG.FinalDisabledCourseIfNeed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.RegisteringMechanics.RegisteringMechanics" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="TestNG.com.EHS.UserAdmin" />
-        <item itemvalue="TestNG.com.EHS.Reports" />
-        <item itemvalue="TestNG.com.EHS.OnlineCourseManagement" />
+        <item itemvalue="TestNG.FinalDisabledCourseIfNeed" />
+        <item itemvalue="TestNG.CompleteAndSubmitChecklist" />
+        <item itemvalue="TestNG.ChecklistPrereqComplete" />
+        <item itemvalue="TestNG.ChecklistPrereq" />
+        <item itemvalue="TestNG.ChecklistButtonSource" />
       </list>
     </recent_temporary>
   </component>
@@ -456,59 +849,60 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateLab_CreateLab - 2018.07.19 at 11h 35m 12s.xml">
-      <configuration name="CreateLab.CreateLab" configurationId="TestNG" />
+    <history-entry file="FinalDisabledCourseIfNeed_(1) - 2018.10.09 at 19h 09m 29s.xml">
+      <configuration name="FinalDisabledCourseIfNeed (1)" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="CreateLab_CreateLab - 2018.07.19 at 11h 38m 24s.xml">
-      <configuration name="CreateLab.CreateLab" configurationId="TestNG" />
+    <history-entry file="com - 2018.10.09 at 20h 42m 58s.xml">
+      <configuration name="com" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="CreateLab_CreateLab - 2018.07.19 at 11h 40m 13s.xml">
-      <configuration name="CreateLab.CreateLab" configurationId="TestNG" />
+    <history-entry file="AddAtt - 2018.10.09 at 20h 48m 12s.xml">
+      <configuration name="AddAtt" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="com_EHS_Miscellaneous - 2018.07.19 at 11h 41m 11s.xml">
-      <configuration name="com.EHS.Miscellaneous" configurationId="TestNG" />
+    <history-entry file="AddChecklistManager - 2018.10.09 at 20h 51m 12s.xml">
+      <configuration name="AddChecklistManager" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="com_EHS_OnlineCourseManagement - 2018.07.19 at 11h 42m 10s.xml">
-      <configuration name="com.EHS.OnlineCourseManagement" configurationId="TestNG" />
+    <history-entry file="com_ChecklistManagement - 2018.10.09 at 20h 58m 37s.xml">
+      <configuration name="com.ChecklistManagement" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="com_EHS_OnlineCourseManagement - 2018.07.19 at 11h 58m 00s.xml">
-      <configuration name="com.EHS.OnlineCourseManagement" configurationId="TestNG" />
+    <history-entry file="ChecklistButtonSource - 2018.10.09 at 21h 11m 13s.xml">
+      <configuration name="ChecklistButtonSource" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="com_EHS_Reports - 2018.07.19 at 12h 01m 32s.xml">
-      <configuration name="com.EHS.Reports" configurationId="TestNG" />
+    <history-entry file="ChecklistPrereq - 2018.10.09 at 21h 12m 29s.xml">
+      <configuration name="ChecklistPrereq" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_default_ - 2018.07.23 at 12h 36m 06s.xml">
-      <configuration name="&lt;default&gt;" configurationId="TestNG" />
+    <history-entry file="ChecklistPrereq - 2018.10.09 at 21h 15m 16s.xml">
+      <configuration name="ChecklistPrereq" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="RegisteringMechanics_RegisteringMechanics - 2018.08.07 at 19h 31m 57s.xml">
-      <configuration name="RegisteringMechanics.RegisteringMechanics" configurationId="TestNG" />
+    <history-entry file="ChecklistPrereqComplete - 2018.10.09 at 21h 16m 57s.xml">
+      <configuration name="ChecklistPrereqComplete" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="RegisteringMechanics_RegisteringMechanics - 2018.08.07 at 19h 34m 47s.xml">
-      <configuration name="RegisteringMechanics.RegisteringMechanics" configurationId="TestNG" />
+    <history-entry file="ChecklistPrereqComplete - 2018.10.09 at 21h 19m 11s.xml">
+      <configuration name="ChecklistPrereqComplete" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="973" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29073483" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" show_stripe_button="false" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32942328" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3280363" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998045" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32882413" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4941427" visible="true" weight="0.508845" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.39958376" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32942328" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946752" weight="0.3298647" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5058573" side_tool="true" weight="0.6024974" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32882413" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4909478" weight="0.32882413" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -517,375 +911,492 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.3290735" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddClassroomManger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" lean-forward="true" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="13" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="16" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" lean-forward="true" selection-end-line="1" />
+        <state relative-caret-position="267">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="114">
+          <caret line="36" column="91" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="195">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="225">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_EvaluationCompletionReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="180">
+          <caret line="37" column="91" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="210">
+          <caret line="36" column="91" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="45">
+          <caret line="36" column="91" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-end-line="3" />
+        <state relative-caret-position="210">
+          <caret line="36" column="91" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="60">
+          <caret line="35" column="91" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="1665">
+          <caret line="132" column="84" selection-start-line="132" selection-start-column="84" selection-end-line="132" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="240">
+          <caret line="34" column="91" selection-start-line="34" selection-start-column="91" selection-end-line="34" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="195">
+          <caret line="35" column="91" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+        <state relative-caret-position="165">
+          <caret line="35" column="91" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="38" column="136" selection-start-line="38" selection-start-column="136" selection-end-line="38" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="32" column="91" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="29" column="72" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="47" column="136" selection-start-line="47" selection-start-column="136" selection-end-line="47" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" column="72" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="26" column="72" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="32" column="72" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="74" column="113" selection-start-line="74" selection-start-column="113" selection-end-line="74" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="71" column="106" lean-forward="true" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddClassroomManger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Step1/createCourseManagerFirst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="12" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="62" column="113" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1035">
+          <caret line="53" column="60" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-688">
+          <caret line="60" column="99" lean-forward="true" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="49" column="54" lean-forward="true" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="54" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>groovy-2.4.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>EHS</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Introduction to OneDrive</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
