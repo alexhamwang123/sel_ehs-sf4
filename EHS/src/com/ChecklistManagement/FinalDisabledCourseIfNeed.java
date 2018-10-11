@@ -85,7 +85,7 @@ restartLoop:
             }
 
 // type in value
-            inputOne.sendKeys("Course Category");
+            inputOne.sendKeys("Category");
 
 
 // click away to fire blur event
@@ -108,7 +108,7 @@ restartLoop:
 
             myResults = driver.findElements(By.tagName("td"));
             if (myResults.size() > 0) {
-                System.out.println("There is one record above.");
+//                System.out.println("There is one record above.");
                 for (int $p = 0; $p <myResults.size(); $p++) {
                     if (isBreak) break;
                     WebElement myResult4;
@@ -163,6 +163,9 @@ restartLoop:
                             $j++;
                         }
                         $p++;
+                    }
+                    else {
+                        System.out.println("There is no record for active status at all.");
                     }
                 }// Nothing is active. So we have to break it out first.
                 isBreak = true;

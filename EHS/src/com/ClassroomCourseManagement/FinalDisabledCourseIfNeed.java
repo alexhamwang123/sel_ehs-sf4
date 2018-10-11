@@ -107,7 +107,7 @@ public class FinalDisabledCourseIfNeed {
 
             myResults = driver.findElements(By.tagName("td"));
             if (myResults.size() > 0) {
-                System.out.println("There is one record above.");
+//                System.out.println("There is one record above.");
                 for (int $p = 0; $p <myResults.size(); $p++) {
                     if (isBreak) break;
                     WebElement myResult4;
@@ -163,6 +163,9 @@ public class FinalDisabledCourseIfNeed {
                         }
                         $p++;
                     }
+                    else {
+                        System.out.println("There is no record for active status at all.");
+                    }
                 }// Nothing is active. So we have to break it out first.
                 isBreak = true;
                 //we should break it again.
@@ -195,7 +198,7 @@ public class FinalDisabledCourseIfNeed {
         robot.keyRelease(KeyEvent.VK_ENTER);
 
         Thread.sleep(1500);
-        driver.findElement(By.id("lightbox")).click();
+    driver.findElement(By.id("lightbox")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
         Thread.sleep(2000);
