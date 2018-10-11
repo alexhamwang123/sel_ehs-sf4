@@ -70,7 +70,8 @@ public class FindExistingUser {
 	    //driver.findElement(By.id("searchBadgeNo")).sendKeys("X00001700");
 	    
 	    //Or, if you want to find by the first name
-	    driver.findElement(By.id("searchFirstName")).sendKeys("Bhavesh");
+		String findExistingUserStr = prop.getProperty("findExistingUser");
+	    driver.findElement(By.id("searchFirstName")).sendKeys(findExistingUserStr);
 	    
 	    //Or, if you want to find by the last name 
 	    //driver.findElement(By.id("searchLastName")).sendKeys("Varu");
