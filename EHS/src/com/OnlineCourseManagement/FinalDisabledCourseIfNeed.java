@@ -62,6 +62,9 @@ public class FinalDisabledCourseIfNeed {
 
         Thread.sleep(4500);
         Boolean isBreak = false;
+        String currentPageNo = "0";
+        Boolean isPaging = false;
+        Boolean firstTimeVisit = true;
 restartLoop:
         while (true) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -103,6 +106,12 @@ restartLoop:
             driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div/div/input")).click();
             Thread.sleep(1500);
 
+            if (firstTimeVisit) {
+                firstTimeVisit = false;
+                currentPageNo = driver.findElement(By.id("pageNo")).getAttribute("value");
+            }
+else
+                currentPageNo = String.valueOf(Integer.valueOf(currentPageNo)+1);
             java.util.List<WebElement> myResults;
 
             myResults = driver.findElements(By.tagName("td"));
@@ -166,15 +175,52 @@ restartLoop:
                     else {
                         System.out.println("There is no record for active status at all.");
                     }
-                }// Nothing is active. So we have to break it out first.
+                }
+                // Nothing is active. So we have to break it out first.
+                String currentPageMax = driver.findElement(By.id("pageMax")).getAttribute("value");
+//                currentPageNo = String.valueOf(Integer.valueOf(currentPageNo)+1);
+                Integer currentPageNoInt = Integer.valueOf(currentPageNo);
+                System.out.println("currentPageMax="+Integer.valueOf(currentPageMax));
+                System.out.println("currentPageNoInt="+currentPageNoInt);
+
+                if (Integer.valueOf(currentPageMax) >= currentPageNoInt) {
+                    //Let us go to next
+                    //we have to go to next.
+                    WebElement inputTHREE = driver.findElement(By.id("pageNo"));
+
+// to set focus?
+                    inputTHREE.click();
+                    System.out.println("inputTHREE.getAttribute(\"value\").length()="+inputTHREE.getAttribute("value").length());
+                    // erase any existing value (because clear does not send any events
+                    for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
+//                        inputTHREE = driver.findElement(By.id("pageNo"));
+                        inputTHREE.sendKeys(Keys.BACK_SPACE);
+                        inputTHREE.sendKeys(Keys.TAB);
+                    }
+//                    inputTHREE.sendKeys(Keys.TAB);
+//                    inputTHREE.sendKeys(Keys.TAB);
+
+// type in value
+                    inputTHREE.sendKeys(currentPageNo);
+
+
+//                    driver.findElement(By.id("pageNo")).click();
+//                    inputTHREE.click();
+                    continue restartLoop;
+
+                }
+                else {
+                    isPaging = true;
+                }
                    isBreak = true;
                 //we should break it again.
-                if (isBreak)break;
+                if (isBreak && isPaging)break;
             } else {
                 System.out.println("There is no record at all.");
                 break;
             }
         }
+
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.VK_G);

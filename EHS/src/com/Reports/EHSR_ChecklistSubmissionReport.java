@@ -61,8 +61,10 @@ public class EHSR_ChecklistSubmissionReport {
 		//Click on Select button that appears in front of Checklist 
 		driver.findElement(By.id("selectCourseDisabled")).click();
 		Thread.sleep(1500);
-		//Choose a course. Here, we choose 8787 Document Management 
-		driver.findElement(By.id("72658f6b2724bdc1a0ed1bcc67d8a57f")).click();
+		//Choose a course. Here, we choose 8787 Document Management \
+		//Checklist-001_OLD3-2-2012 Home Office Checklist
+		driver.findElement(By.id("9165941f21199eab012119a105f25506")).click();
+//		driver.findElement(By.id("72658f6b2724bdc1a0ed1bcc67d8a57f")).click();
 		Thread.sleep(1500);
 		//Click on the Ok button
 		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();

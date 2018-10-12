@@ -62,7 +62,9 @@ public class EHSR_ComplianceReport {
 		driver.findElement(By.id("jobClassNo")).click();
 		Thread.sleep(1500);
 		//Choose a risk category, say 2
-		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
+		// AHA 4028f6bb21ec62fe0121ec6425eb0001
+		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
+//		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
 		Thread.sleep(1500);
 		//Click the Ok button
 		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();

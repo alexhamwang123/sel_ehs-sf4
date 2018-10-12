@@ -70,8 +70,9 @@ public class Manager_ComplianceReport {
 		}
 		
 		//Choose a Risk Category. Lets say we choose 2
-		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
-		
+		//AHA 4028f6bb21ec62fe0121ec6425eb0001
+//		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
+		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
 		try {
 			Thread.sleep(1500);
 		} catch (InterruptedException e) {

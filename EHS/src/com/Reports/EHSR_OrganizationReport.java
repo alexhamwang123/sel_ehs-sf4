@@ -68,7 +68,7 @@ public class EHSR_OrganizationReport {
 		}
 		
 		//Enter the First Name of the manager you wish to find and select 
-		driver.findElement(By.name("firstName")).sendKeys("Bugra");
+		driver.findElement(By.name("firstName")).sendKeys("kevin_first");
 		
 		//Click on Search 
 		driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
@@ -87,8 +87,10 @@ public class EHSR_OrganizationReport {
 		driver.findElement(By.id("jobClassNo")).click();
 		Thread.sleep(1500);
 		//Select a Risk Category by id. Here we select 2
-		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
-		
+		//AHA 4028f6bb21ec62fe0121ec6425eb0001
+//		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
+		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {

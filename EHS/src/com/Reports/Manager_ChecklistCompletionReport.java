@@ -62,8 +62,9 @@ public class Manager_ChecklistCompletionReport {
 		driver.findElement(By.id("selectCourseDisabled")).click();
 
 		// Let's select a course 'CHK01 Checklist 1' by clicking on it
-		driver.findElement(By.id("876fbb07572270e686f2d68f06515e8c")).click();
-
+		//Checklist-001_OLD3-2-2012 Home Office Checklist
+		driver.findElement(By.id("9165941f21199eab012119a105f25506")).click();
+//		driver.findElement(By.id("876fbb07572270e686f2d68f06515e8c")).click();
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
