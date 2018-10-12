@@ -113,7 +113,7 @@ public class CreateLab {
 		driver.findElement(By.id("selectBtnTeam")).click();
 
 		// Enter the Badge Number
-		driver.findElement(By.name("badgeNo")).sendKeys("arjun");
+		driver.findElement(By.name("badgeNo")).sendKeys(username);
 
 		try {
 			Thread.sleep(2000);
@@ -132,7 +132,7 @@ public class CreateLab {
 			e1.printStackTrace();
 		}
 
-		// Choosing the user '173999' from the list for this case
+		// Choosing the user username from the list for this case
         driver.findElement(By.cssSelector("a[href*='selectTeamMemberNew']")).click();
 
 

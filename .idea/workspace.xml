@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="change arjun username/password, to admin/passowrd">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/AddAtt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/AddAtt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/CreateFullOffering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/CreateFullOffering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/CreateOfferingRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/CreateOfferingRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,14 +13,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sel_ehs$com_Miscellaneous.ic" NAME="com.Miscellaneous Coverage Results" MODIFIED="1539331653741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.Miscellaneous.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$com_OnlineCourseManagement.ic" NAME="com.OnlineCourseManagement Coverage Results" MODIFIED="1539057463374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$ChecklistPrereq.ic" NAME="ChecklistPrereq Coverage Results" MODIFIED="1539090837722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$NormalRefreshOnlineCourse.ic" NAME="NormalRefreshOnlineCourse Coverage Results" MODIFIED="1539246049313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$AddClassroomManger.ic" NAME="AddClassroomManger Coverage Results" MODIFIED="1539092772542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
@@ -44,34 +31,21 @@
     <SUITE FILE_PATH="coverage/sel_ehs$Manager_ComplianceReport.ic" NAME="Manager_ComplianceReport Coverage Results" MODIFIED="1539331141197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.Reports.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$CreateUserSupport.ic" NAME="CreateUserSupport Coverage Results" MODIFIED="1539224216375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.UserAdmin.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$CreateCourseManager.ic" NAME="CreateCourseManager Coverage Results" MODIFIED="1539225092955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.UserAdmin.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$FindExistingUser.ic" NAME="FindExistingUser Coverage Results" MODIFIED="1539224592892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.UserAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$com_ChecklistManagement.ic" NAME="com.ChecklistManagement Coverage Results" MODIFIED="1539089037954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$CompleteAndSubmitChecklist.ic" NAME="CompleteAndSubmitChecklist Coverage Results" MODIFIED="1539091378406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ChecklistManagement.*</FILTER>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateRiskCategory.ic" NAME="CreateRiskCategory Coverage Results" MODIFIED="1539333117525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$_default_.ic" NAME="&lt;default&gt; Coverage Results" MODIFIED="1539017510515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/sel_ehs$CreateSuperAdmin.ic" NAME="CreateSuperAdmin Coverage Results" MODIFIED="1539223775812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.UserAdmin.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$.ic" NAME=" Coverage Results" MODIFIED="1538637974893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sel_ehs$FinalDisabledCourseIfNeed__2_.ic" NAME="FinalDisabledCourseIfNeed (2) Coverage Results" MODIFIED="1539274538433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$ChecklistPrereqComplete.ic" NAME="ChecklistPrereqComplete Coverage Results" MODIFIED="1539091249914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$ClassroomPrereq.ic" NAME="ClassroomPrereq Coverage Results" MODIFIED="1539079884719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$EHSR_ComplianceReport.ic" NAME="EHSR_ComplianceReport Coverage Results" MODIFIED="1539329955523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.Reports.*</FILTER>
@@ -85,16 +59,65 @@
     <SUITE FILE_PATH="coverage/sel_ehs$DirectReport.ic" NAME="DirectReport Coverage Results" MODIFIED="1538709671784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.Reports.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$PrereqDecreaseChecklist.ic" NAME="PrereqDecreaseChecklist Coverage Results" MODIFIED="1539092513463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ChecklistManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$EHSR_ChecklistSubmissionReport.ic" NAME="EHSR_ChecklistSubmissionReport Coverage Results" MODIFIED="1539329635574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.Reports.*</FILTER>
+    <SUITE FILE_PATH="coverage/sel_ehs$_Users_shuang_Library_Caches_IdeaIC2018_2_temp_testng_customsuite_xml.ic" NAME="$USER_HOME$/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml Coverage Results" MODIFIED="1539333218614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$CreateUSAManager.ic" NAME="CreateUSAManager Coverage Results" MODIFIED="1539223876240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.UserAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$EHSR_OrganizationReport.ic" NAME="EHSR_OrganizationReport Coverage Results" MODIFIED="1539330622767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.Reports.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$AddWaitlist.ic" NAME="AddWaitlist Coverage Results" MODIFIED="1539082884708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$com_UserAdmin.ic" NAME="com.UserAdmin Coverage Results" MODIFIED="1539328422735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.UserAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$com_EHSAdmin.ic" NAME="com.EHSAdmin Coverage Results" MODIFIED="1539331783292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.EHSAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$createCourseManagerFirst.ic" NAME="createCourseManagerFirst Coverage Results" MODIFIED="1538975749949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.Step1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$Manager_ChecklistCompletionReport.ic" NAME="Manager_ChecklistCompletionReport Coverage Results" MODIFIED="1539331282709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.Reports.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourseEditContent.ic" NAME="OnlineCourseEditContent Coverage Results" MODIFIED="1538713830403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$AddAtt.ic" NAME="AddAtt Coverage Results" MODIFIED="1539327099250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$com_ClassroomCourseManagement.ic" NAME="com.ClassroomCourseManagement Coverage Results" MODIFIED="1539327476634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$NormalRefreshOnlineCourse.ic" NAME="NormalRefreshOnlineCourse Coverage Results" MODIFIED="1539246049313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateUserSupport.ic" NAME="CreateUserSupport Coverage Results" MODIFIED="1539224216375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.UserAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateCourseManager.ic" NAME="CreateCourseManager Coverage Results" MODIFIED="1539225092955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.UserAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateLab.ic" NAME="CreateLab Coverage Results" MODIFIED="1539332984711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.EHSAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CompleteAndSubmitChecklist.ic" NAME="CompleteAndSubmitChecklist Coverage Results" MODIFIED="1539091378406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateSuperAdmin.ic" NAME="CreateSuperAdmin Coverage Results" MODIFIED="1539223775812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.UserAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$.ic" NAME=" Coverage Results" MODIFIED="1538637974893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sel_ehs$ClassroomPrereq.ic" NAME="ClassroomPrereq Coverage Results" MODIFIED="1539079884719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$PrereqDecreaseChecklist.ic" NAME="PrereqDecreaseChecklist Coverage Results" MODIFIED="1539092513463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$EHSR_ChecklistSubmissionReport.ic" NAME="EHSR_ChecklistSubmissionReport Coverage Results" MODIFIED="1539329635574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.Reports.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$ChecklistButtonSource.ic" NAME="ChecklistButtonSource Coverage Results" MODIFIED="1539090582345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -109,17 +132,8 @@
     <SUITE FILE_PATH="coverage/sel_ehs$FinalDisabledCourseIfNeed__1_.ic" NAME="FinalDisabledCourseIfNeed (1) Coverage Results" MODIFIED="1539274399617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$AddWaitlist.ic" NAME="AddWaitlist Coverage Results" MODIFIED="1539082884708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ClassroomCourseManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$com_UserAdmin.ic" NAME="com.UserAdmin Coverage Results" MODIFIED="1539328422735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.UserAdmin.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$AddChecklistManager.ic" NAME="AddChecklistManager Coverage Results" MODIFIED="1539089416046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$com_EHSAdmin.ic" NAME="com.EHSAdmin Coverage Results" MODIFIED="1538812531634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourse_PartiallyCompleteAndSubmit.ic" NAME="OnlineCourse_PartiallyCompleteAndSubmit Coverage Results" MODIFIED="1539272133918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.OnlineCourseManagement.*</FILTER>
@@ -130,32 +144,17 @@
     <SUITE FILE_PATH="coverage/sel_ehs$NormalRefreshChecklist.ic" NAME="NormalRefreshChecklist Coverage Results" MODIFIED="1539091968574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$createCourseManagerFirst.ic" NAME="createCourseManagerFirst Coverage Results" MODIFIED="1538975749949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.Step1.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$CreateTipEditor.ic" NAME="CreateTipEditor Coverage Results" MODIFIED="1539244158847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.UserAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$com.ic" NAME="com Coverage Results" MODIFIED="1539322076007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$Manager_ChecklistCompletionReport.ic" NAME="Manager_ChecklistCompletionReport Coverage Results" MODIFIED="1539331282709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.Reports.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$CreateChecklist.ic" NAME="CreateChecklist Coverage Results" MODIFIED="1539081179869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourseEditContent.ic" NAME="OnlineCourseEditContent Coverage Results" MODIFIED="1538713830403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.OnlineCourseManagement.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$CreateScormClass.ic" NAME="CreateScormClass Coverage Results" MODIFIED="1539246038928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.OnlineCourseManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$AddAtt.ic" NAME="AddAtt Coverage Results" MODIFIED="1539327099250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ClassroomCourseManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$com_ClassroomCourseManagement.ic" NAME="com.ClassroomCourseManagement Coverage Results" MODIFIED="1539327476634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
   </component>
   <component name="CoverageOptionsProvider">
@@ -221,7 +220,7 @@
           <entry key="chromedriver" value="1" />
           <entry key="class" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="153" />
+          <entry key="java" value="158" />
           <entry key="properties" value="7" />
         </counts>
       </usages-collector>
@@ -229,21 +228,21 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="153" />
+          <entry key="JAVA" value="158" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6357" />
+          <entry key="java" value="6391" />
           <entry key="properties" value="403" />
           <entry key="txt" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6357" />
+          <entry key="JAVA" value="6391" />
           <entry key="PLAIN_TEXT" value="57" />
           <entry key="Properties" value="403" />
         </counts>
@@ -256,15 +255,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-405">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="55">
@@ -274,37 +264,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java">
+        <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-155">
-              <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
+            <state relative-caret-position="-166">
+              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-456">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="-876">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="-720">
+              <caret line="70" column="15" lean-forward="true" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-166">
-              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="74">
+              <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -336,15 +344,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="122" column="86" selection-start-line="122" selection-start-column="73" selection-end-line="122" selection-end-column="105" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -356,7 +355,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>myResult3ak2</find>
       <find>generator</find>
       <find>Survey_Only_Selenium</find>
       <find>Classroom1</find>
@@ -386,6 +384,7 @@
       <find>courseId</find>
       <find>id</find>
       <find>id is</find>
+      <find>username</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -418,8 +417,6 @@
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" />
@@ -452,11 +449,14 @@
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" />
         <option value="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="248" />
+    <option name="y" value="27" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
   </component>
@@ -546,7 +546,14 @@
               <item name="EHS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="Reports" type="462c0819:PsiDirectoryNode" />
+              <item name="EHSAdmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="Miscellaneous" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
@@ -560,7 +567,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539331399889" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539333385438" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -586,7 +593,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.com.Reports">
+  <component name="RunManager" selected="TestNG./Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -599,16 +606,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EHSR_ComplianceReport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateLab" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Reports.*" />
+          <option name="PATTERN" value="com.EHSAdmin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Reports" />
-      <option name="MAIN_CLASS_NAME" value="com.Reports.EHSR_ComplianceReport" />
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateLab" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -616,16 +623,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EHSR_OrganizationReport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateRiskCategory" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Reports.*" />
+          <option name="PATTERN" value="com.EHSAdmin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Reports" />
-      <option name="MAIN_CLASS_NAME" value="com.Reports.EHSR_OrganizationReport" />
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateRiskCategory" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -633,33 +640,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Manager_ChecklistCompletionReport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="/Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Reports.*" />
+          <option name="PATTERN" value="com.EHSAdmin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Reports" />
-      <option name="MAIN_CLASS_NAME" value="com.Reports.Manager_ChecklistCompletionReport" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Manager_ComplianceReport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Reports.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Reports" />
-      <option name="MAIN_CLASS_NAME" value="com.Reports.Manager_ComplianceReport" />
+      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateRiskCategory" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -699,15 +691,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.Reports" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="com.EHSAdmin" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Reports.*" />
+          <option name="PATTERN" value="com.EHSAdmin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Reports" />
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Miscellaneous" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Miscellaneous.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Miscellaneous" />
       <option name="TEST_OBJECT" value="PACKAGE" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
@@ -736,19 +745,19 @@
     <list>
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.EHSR_ComplianceReport" />
-      <item itemvalue="TestNG.EHSR_OrganizationReport" />
-      <item itemvalue="TestNG.Manager_ChecklistCompletionReport" />
-      <item itemvalue="TestNG.Manager_ComplianceReport" />
-      <item itemvalue="TestNG.com.Reports" />
+      <item itemvalue="TestNG.com.Miscellaneous" />
+      <item itemvalue="TestNG.com.EHSAdmin" />
+      <item itemvalue="TestNG.CreateLab" />
+      <item itemvalue="TestNG.CreateRiskCategory" />
+      <item itemvalue="TestNG./Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.com.Reports" />
-        <item itemvalue="TestNG.Manager_ChecklistCompletionReport" />
-        <item itemvalue="TestNG.Manager_ComplianceReport" />
-        <item itemvalue="TestNG.EHSR_OrganizationReport" />
-        <item itemvalue="TestNG.EHSR_ComplianceReport" />
+        <item itemvalue="TestNG./Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
+        <item itemvalue="TestNG.CreateRiskCategory" />
+        <item itemvalue="TestNG.CreateLab" />
+        <item itemvalue="TestNG.com.EHSAdmin" />
+        <item itemvalue="TestNG.com.Miscellaneous" />
       </list>
     </recent_temporary>
   </component>
@@ -766,21 +775,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="com_ClassroomCourseManagement - 2018.10.12 at 15h 13m 22s.xml">
-      <configuration name="com.ClassroomCourseManagement" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="com_UserAdmin - 2018.10.12 at 15h 20m 43s.xml">
-      <configuration name="com.UserAdmin" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="com_Reports - 2018.10.12 at 15h 28m 12s.xml">
-      <configuration name="com.Reports" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="EHSR_ChecklistSubmissionReport - 2018.10.12 at 15h 34m 53s.xml">
-      <configuration name="EHSR_ChecklistSubmissionReport" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="EHSR_ComplianceReport - 2018.10.12 at 15h 36m 09s.xml">
-      <configuration name="EHSR_ComplianceReport" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="EHSR_ComplianceReport - 2018.10.12 at 15h 40m 08s.xml">
       <configuration name="EHSR_ComplianceReport" configurationId="TestNG" />
     </history-entry>
@@ -796,9 +790,24 @@
     <history-entry file="Manager_ChecklistCompletionReport - 2018.10.12 at 16h 02m 07s.xml">
       <configuration name="Manager_ChecklistCompletionReport" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="com_Reports - 2018.10.12 at 16h 08m 36s.xml">
+      <configuration name="com.Reports" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="com_Miscellaneous - 2018.10.12 at 16h 09m 07s.xml">
+      <configuration name="com.Miscellaneous" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="com_EHSAdmin - 2018.10.12 at 16h 16m 05s.xml">
+      <configuration name="com.EHSAdmin" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateLab - 2018.10.12 at 16h 31m 26s.xml">
+      <configuration name="CreateLab" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateRiskCategory - 2018.10.12 at 16h 33m 06s.xml">
+      <configuration name="CreateRiskCategory" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="248" y="27" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2180937" />
@@ -838,41 +847,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="32" column="72" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1200,6 +1174,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-166">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-876">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720">
+          <caret line="70" column="15" lean-forward="true" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
         </state>
       </provider>
     </entry>

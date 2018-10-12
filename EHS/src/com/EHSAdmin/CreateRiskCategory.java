@@ -100,7 +100,7 @@ public class CreateRiskCategory {
 		Thread.sleep(500);
 		driver.findElement(By.id("selectBtnCreMaA")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.name("badgeNo")).sendKeys("arjun");
+		driver.findElement(By.name("badgeNo")).sendKeys(username);
 		driver.findElement(By.cssSelector("input[value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
