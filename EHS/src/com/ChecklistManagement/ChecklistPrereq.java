@@ -66,12 +66,13 @@ public class ChecklistPrereq {
         new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
+        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("Classroom1 - Classroom1");
         Thread.sleep(1000);
         driver.findElement(By.id("saveBtn")).click();
-        Thread.sleep(3500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
+        Thread.sleep(2000);
         driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
         driver.findElement(By.id("detailCheckListHeader")).sendKeys("test checklist header");
         driver.findElement(By.id("detailCheckListDescription")).sendKeys("test checklist description");

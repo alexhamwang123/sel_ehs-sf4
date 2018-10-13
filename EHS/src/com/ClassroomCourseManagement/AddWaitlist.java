@@ -81,7 +81,7 @@ public class AddWaitlist {
         Thread.sleep(1500);
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
-        driver.findElement(By.name("detailClassRoom")).sendKeys("");
+        driver.findElement(By.name("detailClassRoom")).sendKeys("room1");
         driver.findElement(By.name("detailClassMaxSize")).sendKeys("1");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd")).click();
@@ -101,7 +101,7 @@ public class AddWaitlist {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("arjun");
+        driver.findElement(By.name("badgeNo")).sendKeys(username);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
