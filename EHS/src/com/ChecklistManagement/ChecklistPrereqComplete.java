@@ -78,6 +78,8 @@ public class ChecklistPrereqComplete {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(2000);
+        driver.findElement(By.id("createContent")).click();
+        Thread.sleep(1000);
         driver.findElement(By.id("addClass")).click();
         Thread.sleep(2500);
         driver.findElement(By.id("site_radio")).click();

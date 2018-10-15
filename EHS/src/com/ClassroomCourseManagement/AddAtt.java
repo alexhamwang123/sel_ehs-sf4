@@ -40,6 +40,8 @@ public class AddAtt {
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
+        String testnormuser33 = prop.getProperty("testnormuser33");
+        String testnormuser34 = prop.getProperty("testnormuser34");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         driver.findElement(By.id("login_login_id")).sendKeys(username);
@@ -70,7 +72,7 @@ public class AddAtt {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(3000);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();
@@ -110,7 +112,7 @@ public class AddAtt {
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001565");
+        driver.findElement(By.name("badgeNo")).sendKeys(testnormuser33);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
@@ -118,7 +120,7 @@ public class AddAtt {
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001565");
+        driver.findElement(By.name("badgeNo")).sendKeys(testnormuser34);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);

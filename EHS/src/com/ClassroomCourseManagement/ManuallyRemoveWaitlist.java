@@ -102,7 +102,7 @@ public class ManuallyRemoveWaitlist {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("arjun");
+        driver.findElement(By.name("badgeNo")).sendKeys(username);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);

@@ -77,9 +77,9 @@ public class ClassroomPrereqDecrease {
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+        Thread.sleep(3500);
         driver.findElement(By.id("addClass")).click();
         Thread.sleep(2500);
         driver.findElement(By.id("site_radio")).click();
@@ -181,7 +181,7 @@ public class ClassroomPrereqDecrease {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(3500);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();

@@ -59,7 +59,7 @@ public class RegisteringMechanics {
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -100,7 +100,7 @@ public class RegisteringMechanics {
         driver.findElement(By.name("searchButton")).click();
         Thread.sleep(1500);
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("lightbox")).click();

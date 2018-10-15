@@ -101,7 +101,7 @@ public class EmailAtt {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("arjun");
+        driver.findElement(By.name("badgeNo")).sendKeys(username);
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
@@ -121,10 +121,14 @@ public class EmailAtt {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
+//        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
+//        Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
+//        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+//        Thread.sleep(1500);
         driver.findElement(By.id("chkall")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         driver.findElement(By.id("emailUserButton")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("emailsubject")).sendKeys("this is the email subject");
