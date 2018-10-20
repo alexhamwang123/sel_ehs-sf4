@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
 public class RefreshChecklist {
     public void RefreshChecklist() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

@@ -58,7 +58,7 @@ public class CheckBookmark_ClickYes {
 
         driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
 
-        driver.findElement(By.id("srch_fld")).sendKeys("trismax");
+        driver.findElement(By.id("srch_fld")).sendKeys("EHS-1000");
 
         driver.findElement(By.name("searchButton")).click();
 
@@ -70,8 +70,8 @@ public class CheckBookmark_ClickYes {
         }
 
         String mainWindow = driver.getWindowHandle();
-
-        driver.findElement(By.xpath("//*[@id='msg_headcc58b92c0ccf8164d84fd405d994f073']/table/tbody/tr/td[5]/img")).click();
+        //msg_head857e61d0-2598-102a-b70c-b707fad2 -> it is a EHS-1000 - EHS Essentials
+        driver.findElement(By.xpath("//*[@id='msg_head857e61d0-2598-102a-b70c-b707fad2']/table/tbody/tr/td[5]/img")).click();
 
         for(String winHandle : driver.getWindowHandles()){
             if(winHandle!=mainWindow)
@@ -86,9 +86,10 @@ public class CheckBookmark_ClickYes {
             e.printStackTrace();
         }
 
+//        driver.findElement(By.partialLinkText("English")).click();
         driver.findElement(By.partialLinkText("English")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.className("clickYes")).click();
+//        Thread.sleep(3000);
+//        driver.findElement(By.className("clickYes")).click();
 
         try {
             Thread.sleep(4000);

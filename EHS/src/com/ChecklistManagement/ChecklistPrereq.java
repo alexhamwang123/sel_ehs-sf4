@@ -67,7 +67,7 @@ public class ChecklistPrereq {
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
-        new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("Classroom1 - Classroom1");
+        new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("EHS-1000 - EHS Essentials");
         Thread.sleep(1000);
         driver.findElement(By.id("saveBtn")).click();
         Thread.sleep(1500);
@@ -96,6 +96,8 @@ public class ChecklistPrereq {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(3500);
         driver.findElement(By.id("langIsViewable")).click();
         Thread.sleep(1500);
@@ -117,8 +119,8 @@ public class ChecklistPrereq {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.equals("Required prerequisite course:Classroom1")) {
-            Assert.fail("user was ale to register for the course without completing the prereq");
+        if(!working.equals("Required prerequisite course:EHS-1000")) {
+            Assert.fail("user was able to register for the course without completing the prereq");
         }
 
         Thread.sleep(2000);

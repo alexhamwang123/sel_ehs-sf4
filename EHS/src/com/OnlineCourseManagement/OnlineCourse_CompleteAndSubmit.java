@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+@Test(dependsOnGroups={"OnlineCourse_PartiallyCompleteAndSubmit"})//{dependOnClasses=OnlineCourse_PartiallyCompleteAndSubmit}
 public class OnlineCourse_CompleteAndSubmit {
 
 	public void OnlineCourse_CompleteAndSubmit() throws IOException, InterruptedException {
@@ -53,7 +53,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		
 		driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.id("srch_fld")).sendKeys("trismax");
+		driver.findElement(By.id("srch_fld")).sendKeys("EHS-11111");
 		
 		driver.findElement(By.name("searchButton")).click();
 		
@@ -65,8 +65,8 @@ public class OnlineCourse_CompleteAndSubmit {
 		}
 		
 		String mainWindow = driver.getWindowHandle();
-		
-        driver.findElement(By.xpath("//*[@id='msg_headcc58b92c0ccf8164d84fd405d994f073']/table/tbody/tr/td[5]/img")).click();
+		//It is a EHS-11111 course id of msg_id.
+        driver.findElement(By.xpath("//*[@id='msg_heade8ea5225ec494d9664eaac39290cde79']/table/tbody/tr/td[5]/img")).click();
 		
 		for(String winHandle : driver.getWindowHandles()){
 			 if(winHandle!=mainWindow)
@@ -74,7 +74,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		    }
 		
         driver.findElement(By.partialLinkText("English")).click();
-		
+		//Welcome back. Would you like to resume the course from where you last left off?, Let choice the Yes.
 		driver.findElement(By.xpath("//*[@id='label']")).click();
 		
 		try {
@@ -86,7 +86,10 @@ public class OnlineCourse_CompleteAndSubmit {
 		
 		//Clicking on Page 1's Questions 1 and 2
 		JavascriptExecutor js = (JavascriptExecutor)driver;
+//Q1 the answer is 1 .
+		//counting fron 0 to the end. 0,1,2,3,4,5,6.7.8,9
 		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
+//Q2 the answer is  2.
 		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[3].click();");
 		
 		try {
@@ -134,7 +137,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 //Clicking on Page 3's Questions 1 and 2
 		 JavascriptExecutor js2 = (JavascriptExecutor)driver;
 		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[4].click();");
+		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[6].click();");
 		 
 		 try {
 			Thread.sleep(2000);
@@ -176,7 +179,7 @@ public class OnlineCourse_CompleteAndSubmit {
 			
 			e.printStackTrace();
 		}
-		 
+		//gradeQuiz_lightbox, it's gonna show the lightbox question, Grade quiz now?
 		driver.findElement(By.cssSelector("#buttons .DialogBoxButton.noTouch.scormSubmitGrade")).click();
 		Thread.sleep(2000);
 		WebElement exit = driver.findElement(By.xpath("//*[@id=\"nav_exit\"]"));

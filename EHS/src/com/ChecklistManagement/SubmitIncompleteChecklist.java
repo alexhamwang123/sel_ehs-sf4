@@ -59,7 +59,7 @@ public class SubmitIncompleteChecklist {
 		
         driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
 		
-		driver.findElement(By.id("srch_fld")).sendKeys("trismax");
+		driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ"); //checklist name on localhost
 		
 		driver.findElement(By.name("searchButton")).click();
 		
@@ -72,7 +72,7 @@ public class SubmitIncompleteChecklist {
 		
 
 		//Click on the Enroll button
-		driver.findElement(By.xpath("//*[@id='msg_headf3884a8ef079d9b188b2b4ddf3ddf1ee']/table/tbody/tr/td[5]/img")).click();
+		driver.findElement(By.xpath("//*[@id='msg_head2de548d2586576409ea28da91094de5d']/table/tbody/tr/td[5]/img")).click();
 		
 		try {
 			Thread.sleep(2000);
@@ -94,7 +94,7 @@ public class SubmitIncompleteChecklist {
 		//Clicking the Radio Button
 		//driver.findElement(By.xpath("//*[@name='cf29c8de74fb0d0f2846573a541e8737'][@value='N']")).click();
 		
-		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
+//		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
 		
 		try {
 			Thread.sleep(2000);
@@ -104,11 +104,11 @@ public class SubmitIncompleteChecklist {
 		}
 		
 		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='2333436002495318bfdbf2418975d5ee']")).click();
+		driver.findElement(By.cssSelector("input[type='checkbox'][value='f9afd6c5a8b080abf4cbc6d619e85035']")).click(); // Cat
 		
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='e0c1339bc52e35535bf77bf81173da25']")).click();
+		driver.findElement(By.cssSelector("input[type='checkbox'][value='549f47c268cde4860100fa4b633f9e46']")).click(); // Elephant
 		
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='3f1caee76cbd14813ce7b01fa73b6a9b']")).click();
+		driver.findElement(By.cssSelector("input[type='checkbox'][value='1f45ad3cc1074ee5b26528345a6e2301']")).click(); // Fox
 		
 		try {
 			Thread.sleep(2000);
@@ -119,9 +119,18 @@ public class SubmitIncompleteChecklist {
 		
 		//Entering value in text box for Question 4
 		
-		driver.findElement(By.xpath("//*[@id='775cdb32e2e8cc9145320877a80040a5']")).clear();
+		driver.findElement(By.xpath("//*[@id='44fd22b14dd5c98132776aea73d18988']")).clear();
 		
-		driver.findElement(By.xpath("//*[@id='775cdb32e2e8cc9145320877a80040a5']")).sendKeys("40");
+		driver.findElement(By.xpath("//*[@id='44fd22b14dd5c98132776aea73d18988']")).sendKeys("40");
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+		//not Submit, it's gonna to  be Saved value.
+//		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 		
 		try {
 			Thread.sleep(3000);
@@ -130,26 +139,18 @@ public class SubmitIncompleteChecklist {
 			e.printStackTrace();
 		}
 		
-		driver.findElement(By.cssSelector("input[type='button'][value='Submit']")).click();
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-		
-		driver.findElement(By.id("fancyConfirm_ok")).click();
-		Thread.sleep(1500);
+//		driver.findElement(By.id("fancyConfirm_ok")).click();
+//		Thread.sleep(1500);
 
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+//		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.id("fancyConfirm_ok")).click();
 		Thread.sleep(1500);
 
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.id("srch_fld")).sendKeys("trismax");
+		driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ");//checklist name is on localhost
 
 		driver.findElement(By.name("searchButton")).click();
 
@@ -159,9 +160,9 @@ public class SubmitIncompleteChecklist {
 
 			e.printStackTrace();
 		}
-
-		String paused = driver.findElement(By.xpath("//*[@id=\"msg_headf3884a8ef079d9b188b2b4ddf3ddf1ee\"]/table/tbody/tr/td[3]")).getAttribute("innerHTML").substring(133,139);
-		System.out.println(paused);
+		//it's for 04a1awuKpJ
+		String paused = driver.findElement(By.xpath("//*[@id=\"msg_head2de548d2586576409ea28da91094de5d\"]/table/tbody/tr/td[3]")).getAttribute("innerHTML").substring(133,139);
+//		System.out.println(paused);
 
 		if (!paused.equals("Paused")) {
 			Assert.fail("the course does not show up as paused");

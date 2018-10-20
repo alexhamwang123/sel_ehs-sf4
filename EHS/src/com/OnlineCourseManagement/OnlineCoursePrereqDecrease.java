@@ -173,7 +173,7 @@ public class OnlineCoursePrereqDecrease {
         //Fill in Fields
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId0);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -217,7 +217,7 @@ public class OnlineCoursePrereqDecrease {
         String courseId1 = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId1);
         System.out.println("online course being made: " + courseId1);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - test classroom course");
@@ -262,17 +262,17 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1700);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1600);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(4500);
         driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1700);
         driver.findElement(By.id("detailCourseIsActive")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1800);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1900);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId1);

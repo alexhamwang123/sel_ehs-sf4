@@ -63,7 +63,7 @@ public class OnlineButtonSource {
 
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(500);

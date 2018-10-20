@@ -56,7 +56,7 @@ public class PrereqDecreaseChecklist {
 
 
         //Click on classroom course management
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[2]")).click();
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")).click();
         Thread.sleep(1500);
 
         //Click on Create course
@@ -168,7 +168,7 @@ public class PrereqDecreaseChecklist {
         //Fill in Fields
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId0);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -212,7 +212,7 @@ public class PrereqDecreaseChecklist {
         String courseId1 = generator.generate(10);
         System.out.println("Checklist id: " + courseId1);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId1);
-        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - test classroom course");

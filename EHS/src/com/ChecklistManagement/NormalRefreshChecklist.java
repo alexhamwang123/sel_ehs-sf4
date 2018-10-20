@@ -20,7 +20,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 
-@Test
+//@Test
 public class NormalRefreshChecklist {
     public void NormalRefreshChecklist() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -102,8 +102,13 @@ public class NormalRefreshChecklist {
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(1500);
 
-        driver.findElement(By.partialLinkText("Classroom Course Management")).click();
+//        driver.findElement(By.partialLinkText("Classroom Course Management")).click();
+        driver.findElement(By.partialLinkText("Checklist Management")).click();
         Thread.sleep(1500);
+
+
+        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
+        Thread.sleep(1000);
 
         driver.findElement(By.className("editAction")).click();
         Thread.sleep(3500);
@@ -113,10 +118,11 @@ public class NormalRefreshChecklist {
         Thread.sleep(1000);
 
         try {
+           System.out.println(courseId + " - test checklist title");
             new Select(driver.findElement(By.id("detailCourseRefreshCourse1"))).selectByVisibleText(courseId + " - test checklist title");
             Thread.sleep(3500);
         } catch (org.openqa.selenium.NoSuchElementException e) {
-            Assert.fail("the refresh checklist did not show up in the refresh course list while creating a classroom course with expiration of 6 months");
+            Assert.fail("the refresh checklist did not show up in the refresh course list while creating a checklist course with expiration of 6 months");
         }
 
         driver.quit();

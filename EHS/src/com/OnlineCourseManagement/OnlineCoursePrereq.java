@@ -64,10 +64,10 @@ public class OnlineCoursePrereq {
 
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey Only");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText("Classroom1 - Classroom1");
+        new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText("EHS-2200 - Bloodborne Pathogens");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(2500);
@@ -108,9 +108,9 @@ public class OnlineCoursePrereq {
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1900);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1800);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(4500);
         driver.findElement(By.name("langIsViewable")).click();
@@ -133,7 +133,7 @@ public class OnlineCoursePrereq {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.equals("Required prerequisite course:Classroom1")) {
+        if(!working.equals("Required prerequisite course:EHS-2200")) {
             Assert.fail("user was ale to register for the course without completing the prereq");
         }
 
