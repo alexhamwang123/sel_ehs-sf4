@@ -20,47 +20,84 @@
             <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
+            <class name="com.OnlineCourseManagement.AddManagerOnlineCourse"/>
             <class name="com.ClassroomCourseManagement.AddAtt"/>
+            <class name="com.ClassroomCourseManagement.AddClassroomManger"/>
+            <class name="com.ClassroomCourseManagement.AddWaitlist"/>
+            <class name="com.ClassroomCourseManagement.CancelAndNotify"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrereq"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrereqDecrease"/>
+            <class name="com.ClassroomCourseManagement.CreateFullOffering"/>
+            <class name="com.ClassroomCourseManagement.CreateOfferingRegister"/>
+            <class name="com.ClassroomCourseManagement.EmailAtt"/>
+            <class name="com.ClassroomCourseManagement.ManuallyRemoveWaitlist"/>
+            <class name="com.ClassroomCourseManagement.NormalRefreshClassroomCourse"/>
+            <class name="com.ClassroomCourseManagement.NoShowNotPassedCompleted"/>
+            <class name="com.ClassroomCourseManagement.RefreshClassroomCourse"/>
+            <class name="com.ClassroomCourseManagement.RegisteringMechanics"/>
+            <class name="com.ClassroomCourseManagement.UnregisterClassroom"/>
+            <class name="com.ClassroomCourseManagement.UnregisterWaitlist"/>
+            <class name="com.ClassroomCourseManagement.FinalDisabledCourseIfNeed"/>
+            <class name="com.OnlineCourseManagement.AddManagerOnlineCourse"/>
+            <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
+            <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>
+            <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
+            <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursePrereq"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursePrereqDecrease"/>
+            <class name="com.OnlineCourseManagement.OnlinePrereqComplete"/>
+            <class name="com.OnlineCourseManagement.RefreshOnlineCourse"/>
             <class name="com.OnlineCourseManagement.OnlineCourseEditContent"/>
+            <class name="com.OnlineCourseManagement.FinalDisabledCourseIfNeed"/>
+            <class name="com.ChecklistManagement.ChecklistButtonSource"/>
+            <class name="com.ChecklistManagement.ChecklistPrereq"/>
+            <class name="com.ChecklistManagement.ChecklistPrereqComplete"/>
+            <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
+            <class name="com.ChecklistManagement.CreateChecklist"/>
+            <class name="com.ChecklistManagement.SaveAndCancel"/>
+            <class name="com.ChecklistManagement.RefreshChecklist"/>
+            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
+            <class name="com.ChecklistManagement.NormalRefreshChecklist"/>
+            <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
         </classes>
     </test>
-    <!--<test name="EHSAdmin">-->
-        <!--<classes>-->
-            <!--<class name="com.EHSAdmin.CreateAnnouncement"/>-->
-            <!--<class name="com.EHSAdmin.CreateCertificate"/>-->
-            <!--<class name="com.EHSAdmin.CreateFAQ"/>-->
-            <!--<class name="com.EHSAdmin.CreateLab"/>-->
-            <!--<class name="com.EHSAdmin.CreateRiskCategory"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="Misellaneous">-->
-        <!--<classes>-->
-            <!--<class name="com.Miscellaneous.EHS_ContactUs"/>-->
-            <!--<class name="com.Miscellaneous.EHS_SearchACourse"/>-->
-            <!--<class name="com.Miscellaneous.ForgotPassword"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="UserAdmin">-->
-        <!--<classes>-->
-            <!--<class name="com.UserAdmin.CreateCourseManager"/>-->
-            <!--<class name="com.UserAdmin.CreateNormalUser"/>-->
-            <!--<class name="com.UserAdmin.CreateSuperAdmin"/>-->
-            <!--<class name="com.UserAdmin.CreateTipEditor"/>-->
-            <!--<class name="com.UserAdmin.CreateUSAManager"/>-->
-            <!--<class name="com.UserAdmin.CreateUserSupport"/>-->
-            <!--<class name="com.UserAdmin.FindExistingUser"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="Reports">-->
-        <!--<classes>-->
-            <!--<class name="com.Reports.DirectReport"/>-->
-            <!--<class name="com.Reports.EHSR_ChecklistSubmissionReport"/>-->
-            <!--<class name="com.Reports.EHSR_ComplianceReport"/>-->
-            <!--<class name="com.Reports.EHSR_CourseCompletionReport"/>-->
-            <!--<class name="com.Reports.EHSR_CourseCompletionStatistic"/>-->
-            <!--<class name="com.Reports.EHSR_OrganizationReport"/>-->
-            <!--<class name="com.Reports.Manager_ChecklistCompletionReport"/>-->
-            <!--<class name="com.Reports.Manager_ComplianceReport"/>-->
-        <!--</classes>-->
-    <!--</test>-->
+    <test name="EHSAdmin">
+        <classes>
+            <class name="com.EHSAdmin.CreateAnnouncement"/>
+            <class name="com.EHSAdmin.CreateCertificate"/>
+            <class name="com.EHSAdmin.CreateFAQ"/>
+            <class name="com.EHSAdmin.CreateLab"/>
+            <class name="com.EHSAdmin.CreateRiskCategory"/>
+        </classes>
+    </test>
+    <test name="Misellaneous">
+        <classes>
+            <class name="com.Miscellaneous.EHS_ContactUs"/>
+            <class name="com.Miscellaneous.EHS_SearchACourse"/>
+            <class name="com.Miscellaneous.ForgotPassword"/>
+        </classes>
+    </test>
+    <test name="UserAdmin">
+        <classes>
+            <class name="com.UserAdmin.CreateCourseManager"/>
+            <class name="com.UserAdmin.CreateNormalUser"/>
+            <class name="com.UserAdmin.CreateSuperAdmin"/>
+            <class name="com.UserAdmin.CreateTipEditor"/>
+            <class name="com.UserAdmin.CreateUSAManager"/>
+            <class name="com.UserAdmin.CreateUserSupport"/>
+            <class name="com.UserAdmin.FindExistingUser"/>
+        </classes>
+    </test>
+    <test name="Reports">
+        <classes>
+            <class name="com.Reports.DirectReport"/>
+            <class name="com.Reports.EHSR_ChecklistSubmissionReport"/>
+            <class name="com.Reports.EHSR_ComplianceReport"/>
+            <class name="com.Reports.EHSR_CourseCompletionReport"/>
+            <class name="com.Reports.EHSR_CourseCompletionStatistic"/>
+            <class name="com.Reports.EHSR_OrganizationReport"/>
+            <class name="com.Reports.Manager_ChecklistCompletionReport"/>
+            <class name="com.Reports.Manager_ComplianceReport"/>
+        </classes>
+    </test>
 </suite>

@@ -1,4 +1,4 @@
-package com.EHS.ClassroomCourseManagement;
+package com.ClassroomCourseManagement;
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.By;
