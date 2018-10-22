@@ -51,7 +51,7 @@ public class CompleteAndSubmitChecklist {
 		
         driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
 		
-		driver.findElement(By.id("srch_fld")).sendKeys("trismax");
+		driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ");
 		
 		driver.findElement(By.name("searchButton")).click();
 		
@@ -64,7 +64,7 @@ public class CompleteAndSubmitChecklist {
 		
 
 		//Click on the Enroll button
-		driver.findElement(By.xpath("//*[@id='msg_headf3884a8ef079d9b188b2b4ddf3ddf1ee']/table/tbody/tr/td[5]/img")).click();
+		driver.findElement(By.xpath("//*[@id='msg_headd96dd51c141c3643425434a4898d8e09']/table/tbody/tr/td[5]/img")).click();
 		
 		try {
 			Thread.sleep(2000);
@@ -87,32 +87,31 @@ public class CompleteAndSubmitChecklist {
 		//driver.findElement(By.xpath("//*[@name='cf29c8de74fb0d0f2846573a541e8737'][@value='N']")).click();
 		
 		//Clicking on Question 1
-		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		//Clicking on Question 2
-		driver.findElement(By.cssSelector("input[type='radio'][value='e2b2820a092849b866dded7b5ca71f3a']")).click();
-
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//
+//		//Clicking on Question 2
+//		driver.findElement(By.cssSelector("input[type='radio'][value='e2b2820a092849b866dded7b5ca71f3a']")).click();
+//
+//
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='2333436002495318bfdbf2418975d5ee']")).click();
+		driver.findElement(By.cssSelector("input[type='checkbox'][value='13c496ea53471d3bce0c72e9b4a63b66']")).click();
 		
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='e0c1339bc52e35535bf77bf81173da25']")).click();
+		driver.findElement(By.cssSelector("input[type='checkbox'][value='4bd53adf7e6118d7c8625537fdd551c6']")).click();
 		
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='3f1caee76cbd14813ce7b01fa73b6a9b']")).click();
+		driver.findElement(By.cssSelector("input[type='checkbox'][value='9dadf671b25ecf8ba926941141405bf9']")).click();
 		
 		try {
 			Thread.sleep(2000);
@@ -121,9 +120,9 @@ public class CompleteAndSubmitChecklist {
 			e.printStackTrace();
 		}
 		
-		driver.findElement(By.xpath("//*[@id='775cdb32e2e8cc9145320877a80040a5']")).clear();
+		driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).clear();
 		
-		driver.findElement(By.xpath("//*[@id='775cdb32e2e8cc9145320877a80040a5']")).sendKeys("40");
+		driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).sendKeys("40");
 		
 		try {
 			Thread.sleep(3000);
@@ -144,7 +143,7 @@ public class CompleteAndSubmitChecklist {
 		
 		//Click on the confirm pop up
 		driver.findElement(By.id("fancyConfirm_ok")).click();
-
+		Thread.sleep(2000);
 		driver.quit();
 		
 

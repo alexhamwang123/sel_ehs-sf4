@@ -64,8 +64,8 @@ public class FinalDisabledCourseIfNeed {
 
         Thread.sleep(4500);
         Boolean isBreak = false;
-        String currentPageMax = "-2";
-        String currentPageNo = "-1";
+        String currentPageMax = "0";
+        String currentPageNo = "0";
         Boolean isPaging = false;
         Boolean firstTimeVisit = true;
         Boolean isPage = false;
@@ -113,19 +113,20 @@ public class FinalDisabledCourseIfNeed {
                 driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div/div/input")).click();
                 Thread.sleep(1500);
 
-                if (firstTimeVisit) {
-                    firstTimeVisit = false;
-                    try {
-                        WebElement test = driver.findElement(By.id("pageNo"));
-                        currentPageNo = test.getAttribute("value");
-                        isPage = true;
-                    } catch (NoSuchElementException e) {
-                    }
+
+                try {
+                    WebElement test = driver.findElement(By.id("pageNo"));
+                    currentPageNo = test.getAttribute("value");
+                    isPage = true;
+                } catch (NoSuchElementException e) {
                 }
 
+                if (firstTimeVisit) {
+                    firstTimeVisit = false;
+                }
                 else {
-//                    System.out.println("currentPageNo=" + currentPageNo);
-                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo) + 1);
+                  //  System.out.println("Line 135 currentPageNo=" + currentPageNo);
+                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                 }
 
 
@@ -225,12 +226,10 @@ public class FinalDisabledCourseIfNeed {
                     } catch (NoSuchElementException e) {
                         break;
                     }
-//                    String currentPageMax = driver.findElement(By.id("pageMax")).getAttribute("value");
-
-//                currentPageNo = String.valueOf(Integer.valueOf(currentPageNo)+1);
-                    Integer currentPageNoInt = Integer.valueOf(currentPageNo);
-//                   System.out.println("currentPageMax=" + Integer.valueOf(currentPageMax));
-                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage) {
+//                    currentPageMax = driver.findElement(By.id("pageMax")).getAttribute("value");
+                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
+                    Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
+                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage ) {
                         //Let us go to next
                         //we have to go to next.
                         WebElement inputTHREE = driver.findElement(By.id("pageNo"));
@@ -251,7 +250,7 @@ public class FinalDisabledCourseIfNeed {
 //                    inputTHREE.sendKeys(Keys.TAB);
 
 // type in value
-                        inputTHREE.sendKeys(currentPageNo);
+                        inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
                         //We have to next.
                         String strPagination = "pagination";
                         driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
@@ -301,8 +300,7 @@ public class FinalDisabledCourseIfNeed {
         driver.findElement(By.id("login_password")).sendKeys(password);
 
         driver.findElement(By.name("submit")).click();
-        Thread.sleep(500);
-
+        Thread.sleep(1500);
         driver.quit();
 
     }

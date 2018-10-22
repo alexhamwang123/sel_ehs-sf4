@@ -62,8 +62,8 @@ public class FinalDisabledCourseIfNeed {
 
         Thread.sleep(4500);
         Boolean isBreak = false;
-        String currentPageMax = "-2";
-        String currentPageNo = "-1";
+        String currentPageMax = "0";
+        String currentPageNo = "0";
         Boolean isPaging = false;
         Boolean firstTimeVisit = true;
         Boolean isPage = false;
@@ -115,19 +115,17 @@ restartLoop:
                 driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div/div/input")).click();
                 Thread.sleep(1500);
 
+                try {
+                    WebElement test = driver.findElement(By.id("pageNo"));
+                    currentPageNo = test.getAttribute("value");
+                    isPage = true;
+                } catch (NoSuchElementException e) {
+                }
+
                 if (firstTimeVisit) {
                     firstTimeVisit = false;
-                    try {
-                        WebElement test = driver.findElement(By.id("pageNo"));
-                        currentPageNo = test.getAttribute("value");
-                        isPage = true;
-
-                    } catch (NoSuchElementException e) {
-                    }
-
                 }
                 else {
-//                    System.out.println("currentPageNo=" + currentPageNo);
                     currentPageNo = String.valueOf(Integer.valueOf(currentPageNo) + 1);
                 }
                 java.util.List<WebElement> myResults;
@@ -183,7 +181,9 @@ restartLoop:
                             }
                             $p++;
                         } else {
-//                            System.out.println("There is no record for active status at all.");
+//                            v
+//
+// .out.println("There is no record for active status at all.");
                         }
                     }
                     // Nothing is active. So we have to break it out first.
@@ -193,8 +193,8 @@ restartLoop:
                     } catch (NoSuchElementException e) {
                         break;
                     }
-
-                    Integer currentPageNoInt = Integer.valueOf(currentPageNo);
+                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
+                    Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
 
                     if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage) {                        //Let us go to next
                         //we have to go to next.

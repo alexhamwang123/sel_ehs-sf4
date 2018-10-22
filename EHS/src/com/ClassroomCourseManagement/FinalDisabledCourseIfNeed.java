@@ -167,7 +167,7 @@ public class FinalDisabledCourseIfNeed {
 //getText();
 
                                     String id3a = myResult3a.getAttribute("class");
-                                    if (idstr5.equals(idstr3a)) {
+                                    if (idstr5.equals(idstr3a) && !idstr3a.equals("1122334455")) {
 //                                        System.out.println("id3a is " + id3a);
                                         System.out.println("idstr3a is " + idstr3a);
                                         Thread.sleep(1000);
@@ -239,14 +239,6 @@ public class FinalDisabledCourseIfNeed {
 
 //                currentPageNo = String.valueOf(Integer.valueOf(currentPageNo)+1);
                     Integer currentPageNoInt = Integer.valueOf(currentPageNo);
-                    System.out.println("currentPageMax=" + Integer.valueOf(currentPageMax));
-                    System.out.println("currentPageNoInt=" + currentPageNoInt);
-                    if(currentPageNoInt.equals(0)) {
-                        System.out.println("currentPageMax=" + Integer.valueOf(currentPageMax));
-                        System.out.println("currentPageNoInt=" + currentPageNoInt);
-                        // currentPageMax = "-2";// currentPageNo = "-1";
-
-                    }
 
 ////                currentPageNo = String.valueOf(Integer.valueOf(currentPageNo)+1);
 //                    Integer currentPageNoInt = Integer.valueOf(currentPageNo);
