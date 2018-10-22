@@ -155,9 +155,9 @@ restartLoop:
                                 for (WebElement myResult3a : myResults3a) {
                                     String idstr3a = myResult3a.getText();
                                     String id3a = myResult3a.getAttribute("id");
-                                    if (idstr5.equals(idstr3a)) {
+                                    if (idstr5.equals(idstr3a) && !idstr3a.equals("EHS-11111")) {
                                         // System.out.println("$ j is " + $j);
-
+//System.out.println("idstr3a is" + idstr3a);
                                         driver.findElement(By.xpath("//a[@id='" + id3a + "']")).click();
                                         Thread.sleep(1500);
                                         driver.findElement(By.name("detailCourseIsActive")).click();

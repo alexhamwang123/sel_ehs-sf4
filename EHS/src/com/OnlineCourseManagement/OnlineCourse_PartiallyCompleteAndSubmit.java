@@ -70,7 +70,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		String mainWindow = driver.getWindowHandle();
 		//It is a EHS-11111 course id of msg_id.
-		driver.findElement(By.xpath("//*[@id='msg_heade8ea5225ec494d9664eaac39290cde79']/table/tbody/tr/td[5]/img")).click();
+		driver.findElement(By.xpath("//*[@id='msg_headb7d0d73b5e1ae80d8d245fed08ac7e7c']/table/tbody/tr/td[5]/img")).click();
 //		driver.findElement(By.xpath("//*[@id='msg_headcc58b92c0ccf8164d84fd405d994f073']/table/tbody/tr/td[5]/img")).click();
 
 		for (String winHandle : driver.getWindowHandles()) {
@@ -87,7 +87,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		driver.findElement(By.partialLinkText("English")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id='label']")).click();
+//		driver.findElement(By.xpath("//*[@id='label']")).click();
 
 		try {
 			Thread.sleep(3000);
@@ -166,7 +166,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 		Thread.sleep(1500);
 		driver.findElement(By.name("searchButton")).click();
 		Thread.sleep(1500);
-		String paused = driver.findElement(By.xpath("//*[@id=\"msg_heade8ea5225ec494d9664eaac39290cde79\"]/table/tbody/tr/td[3]")).getAttribute("innerHTML").substring(133,139);
+		String paused = driver.findElement(By.xpath("//*[@id=\"msg_headb7d0d73b5e1ae80d8d245fed08ac7e7c\"]/table/tbody/tr/td[3]")).getAttribute("innerHTML").substring(133,139);
 		if (!paused.equals("Paused")) {
 			Assert.fail("the online course does not show up as paused");
 		}

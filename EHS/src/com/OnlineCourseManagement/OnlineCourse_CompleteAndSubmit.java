@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test(dependsOnGroups={"OnlineCourse_PartiallyCompleteAndSubmit"})//{dependOnClasses=OnlineCourse_PartiallyCompleteAndSubmit}
+@Test
 public class OnlineCourse_CompleteAndSubmit {
 
 	public void OnlineCourse_CompleteAndSubmit() throws IOException, InterruptedException {
@@ -66,7 +66,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		
 		String mainWindow = driver.getWindowHandle();
 		//It is a EHS-11111 course id of msg_id.
-        driver.findElement(By.xpath("//*[@id='msg_heade8ea5225ec494d9664eaac39290cde79']/table/tbody/tr/td[5]/img")).click();
+        driver.findElement(By.xpath("//*[@id='msg_headb7d0d73b5e1ae80d8d245fed08ac7e7c']/table/tbody/tr/td[5]/img")).click();
 		
 		for(String winHandle : driver.getWindowHandles()){
 			 if(winHandle!=mainWindow)
