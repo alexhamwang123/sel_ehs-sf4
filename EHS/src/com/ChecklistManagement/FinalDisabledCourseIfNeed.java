@@ -155,7 +155,7 @@ public class FinalDisabledCourseIfNeed {
                                 for (WebElement myResult3a : myResults3a) {
                                     String idstr3a = myResult3a.getText();
                                     String id3a = myResult3a.getAttribute("class");
-                                    if (idstr5.equals(idstr3a)) {
+                                    if (idstr5.equals(idstr3a) && !idstr3a.equals("04a1awuKpJ")) {
 //                                        System.out.println("id3a is " + id3a);
                                         System.out.println("idstr3a is " + idstr3a);
                                         Thread.sleep(1000);
