@@ -55,17 +55,17 @@
         <classes>
             <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
-            <class name="com.OnlineCourseManagement.AddManagerOnlineCourse"/>g
+            <class name="com.OnlineCourseManagement.AddManagerOnlineCourse"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>
             <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
             <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
-            <class name="com.OnlineCourseManagement.OnlineCourseEditContemt"/>
             <class name="com.OnlineCourseManagement.OnlineCoursePrereq"/>
             <class name="com.OnlineCourseManagement.OnlineCoursePrereqDecrease"/>
             <class name="com.OnlineCourseManagement.OnlinePrereqComplete"/>
             <class name="com.OnlineCourseManagement.RefreshOnlineCourse"/>
             <class name="com.OnlineCourseManagement.OnlineCourseEditContent"/>
+            <class name="com.OnlineCourseManagement.CreateScormClass"/>
             <class name="com.OnlineCourseManagement.FinalDisabledCourseIfNeed"/>
         </classes>
     </test>
