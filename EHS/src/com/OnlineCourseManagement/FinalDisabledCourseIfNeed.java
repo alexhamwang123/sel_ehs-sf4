@@ -126,7 +126,7 @@ restartLoop:
                     firstTimeVisit = false;
                 }
                 else {
-                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo) + 1);
+                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                 }
                 java.util.List<WebElement> myResults;
 
@@ -196,7 +196,8 @@ restartLoop:
                     currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                     Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
 
-                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage) {                        //Let us go to next
+                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage && (Integer.valueOf(currentPageMax) > 0) && (currentPageNoInt > 0) ) {
+                        //Let us go to next
                         //we have to go to next.
                         WebElement inputTHREE = driver.findElement(By.id("pageNo"));
                         // erase any existing value (because clear does not send any events
@@ -204,7 +205,7 @@ restartLoop:
                             inputTHREE.sendKeys(Keys.BACK_SPACE);
                         }
                         inputTHREE.clear();
-                        inputTHREE.sendKeys(currentPageNo);
+                        inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
                         //We have to next.
                         String strPagination = "pagination";
                         driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();

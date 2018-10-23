@@ -125,7 +125,6 @@ public class FinalDisabledCourseIfNeed {
                     firstTimeVisit = false;
                 }
                 else {
-                  //  System.out.println("Line 135 currentPageNo=" + currentPageNo);
                     currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                 }
 
@@ -172,25 +171,14 @@ public class FinalDisabledCourseIfNeed {
                                                 throw new NoSuchElementException("Just a test line 190");
                                             }
                                         } catch (NoSuchElementException e) {
-//                                            System.out.println("No Such Element Exception Just a test line 193");
-                                            //     return true;
                                         }
                                         Thread.sleep(1500);
                                         driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
                                         Thread.sleep(1000);
                                         driver.findElement(By.name("detailIsActive")).click();
                                         Thread.sleep(1900);
-//                                        driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
-//                                        Thread.sleep(1500);
                                         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
                                         Thread.sleep(1000);
-//                                        driver.findElement(By.partialLinkText("Courses")).click();
-//                                        Thread.sleep(1500);
-//                                        driver.findElement(By.id("srch_fld")).sendKeys(idstr3a);
-//                                        Thread.sleep(1500);
-//                                        driver.findElement(By.name("searchButton")).click();
-//                                        Thread.sleep(1500);
-//                                        String GV = driver.getWindowHandle();
                                         String currentWin = driver.getWindowHandle();
                                         try {
                                             driver.findElement(By.className("onelang")).click();
@@ -214,22 +202,13 @@ public class FinalDisabledCourseIfNeed {
                     // Nothing is active. So we have to break it out first.
                     try {
                         WebElement pageMaxEle= driver.findElement(By.id("pageMax"));
-                        //if(pageMaxEle.isSelected()) {
-                            currentPageMax = pageMaxEle.getAttribute("value");
-                        //}
-//                        else {
-                            //we can't find it at all. let it to be .
-//                            System.out.println("we can't find it at all. let it to be at line 241");
-//                            break;
-
-//                        }
+                        currentPageMax = pageMaxEle.getAttribute("value");
                     } catch (NoSuchElementException e) {
                         break;
                     }
-//                    currentPageMax = driver.findElement(By.id("pageMax")).getAttribute("value");
                     currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                     Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
-                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage ) {
+                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage && (Integer.valueOf(currentPageMax) > 0) && (currentPageNoInt > 0) ) {
                         //Let us go to next
                         //we have to go to next.
                         WebElement inputTHREE = driver.findElement(By.id("pageNo"));
@@ -245,11 +224,6 @@ public class FinalDisabledCourseIfNeed {
                             //  inputTHREE.sendKeys(Keys.TAB);
                         }
                         inputTHREE.clear();
-
-//                    inputTHREE.sendKeys(Keys.TAB);
-//                    inputTHREE.sendKeys(Keys.TAB);
-
-// type in value
                         inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
                         //We have to next.
                         String strPagination = "pagination";
