@@ -20,7 +20,8 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+//@Test
+@Test(priority=84)
 public class CreateTipEditor {
 
     public void CreateTipEditor() throws IOException, InterruptedException {

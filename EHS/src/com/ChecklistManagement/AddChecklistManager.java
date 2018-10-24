@@ -11,11 +11,52 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
+import java.util.*;
+//import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+//import java.util.List;
+import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtMethod;
+import javassist.NotFoundException;
 
-@Test
-public class AddChecklistManager {
+import org.testng.IMethodInstance;
+import org.testng.IMethodInterceptor;
+import org.testng.ITestContext;
+
+@Test(groups="ehs" ,priority=1)
+public class AddChecklistManager implements IMethodInterceptor {
+    public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
+
+        Comparator<IMethodInstance> comparator = new Comparator<IMethodInstance>() {
+            private int getLineNo(IMethodInstance mi) {
+                int result = 0;
+
+                String methodName = mi.getMethod().getConstructorOrMethod().getMethod().getName();
+                String className  = mi.getMethod().getConstructorOrMethod().getDeclaringClass().getCanonicalName();
+                ClassPool pool    = ClassPool.getDefault();
+
+                try {
+                    CtClass cc        = pool.get(className);
+                    CtMethod ctMethod = cc.getDeclaredMethod(methodName);
+                    result            = ctMethod.getMethodInfo().getLineNumber(0);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                return result;
+            }
+
+            public int compare(IMethodInstance m1, IMethodInstance m2) {
+                return getLineNo(m1) - getLineNo(m2);
+            }
+        };
+
+        IMethodInstance[] array = methods.toArray(new IMethodInstance[methods.size()]);
+        Arrays.sort(array, comparator);
+        return Arrays.asList(array);
+    }
+
     public void AddChecklistManager() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 

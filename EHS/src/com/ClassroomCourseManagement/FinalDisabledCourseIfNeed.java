@@ -20,7 +20,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=30)
 public class FinalDisabledCourseIfNeed {
 
     public void FinalDisabledCourseIfNeed() throws InterruptedException, IOException, AWTException {

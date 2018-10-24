@@ -17,7 +17,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=35)
 public class NormalRefreshOnlineCourse {
     public void NormalRefreshOnlineCourse() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

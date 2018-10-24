@@ -21,7 +21,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=25)
 public class NoShowNotPassedCompleted {
     public void NoShowNotPassedCompleted() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

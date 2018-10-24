@@ -23,7 +23,8 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 
-@Test
+//@Test
+@Test(priority=93)
 public class EHSR_ComplianceReport {
 
 	public void EHSR_ComplianceReport() throws IOException, InterruptedException {

@@ -18,7 +18,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=39)
 public class OnlineCoursePrereqDecrease {
     public void OnlineCoursePrereqDecrease() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -65,7 +66,8 @@ public class OnlineCoursePrereqDecrease {
         Thread.sleep(1500);
 
         //Click on Create course
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
+//        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
+        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(3500);
         String courseId = generator.generate(10);
         System.out.println("completed prerequisite course: " + courseId);

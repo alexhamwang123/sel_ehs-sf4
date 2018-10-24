@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+@Test(groups = "ehs",priority=2)
 public class OnlineCourse_PartiallyCompleteAndSubmit {
 	
 	public void OnlineCourse_PartiallyCompleteAndSubmit() throws IOException, InterruptedException {

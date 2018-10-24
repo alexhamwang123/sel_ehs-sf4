@@ -11,7 +11,8 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-@Test
+//@Test
+@Test(priority=91)
 public class DirectReport {
     public void DirectReport() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

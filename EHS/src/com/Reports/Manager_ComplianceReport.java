@@ -22,7 +22,8 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+//@Test
+@Test(priority=98)
 public class Manager_ComplianceReport {
 
 	public void Manager_ComplianceReport() throws IOException, InterruptedException {

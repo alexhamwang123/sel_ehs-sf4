@@ -20,7 +20,8 @@ package com.OnlineCourseManagement;
         import static org.apache.commons.text.CharacterPredicates.DIGITS;
         import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=41)
 public class FinalDisabledCourseIfNeed {
 
     public void FinalDisabledCourseIfNeed() throws InterruptedException, IOException, AWTException {

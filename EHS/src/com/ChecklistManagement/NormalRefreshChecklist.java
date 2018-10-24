@@ -20,7 +20,8 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 
-//@Test
+@Test(priority=13)
+//@Test(dependsOnGroups = "ehs1",priority=13)
 public class NormalRefreshChecklist {
     public void NormalRefreshChecklist() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -60,7 +61,7 @@ public class NormalRefreshChecklist {
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
         new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
-        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Refresh");
+        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(1000);
@@ -119,8 +120,9 @@ public class NormalRefreshChecklist {
 
         try {
            System.out.println(courseId + " - test checklist title");
-            new Select(driver.findElement(By.id("detailCourseRefreshCourse1"))).selectByVisibleText(courseId + " - test checklist title");
-            Thread.sleep(3500);
+           //Checklist　Management沒有Refresh Course1,2,3 也就是只有Pre
+            new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - test checklist title");
+            Thread.sleep(3500);//
         } catch (org.openqa.selenium.NoSuchElementException e) {
             Assert.fail("the refresh checklist did not show up in the refresh course list while creating a checklist course with expiration of 6 months");
         }

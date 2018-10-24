@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+@Test(dependsOnGroups = "ehs1",priority=8)
 public class ChecklistButtonSource {
     public void ChecklistButtonSource() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

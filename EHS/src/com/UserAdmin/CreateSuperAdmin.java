@@ -20,7 +20,8 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+//@Test
+@Test(priority=83)
 public class CreateSuperAdmin {
 
 	public void CreateSuperAdmin() throws IOException, InterruptedException {

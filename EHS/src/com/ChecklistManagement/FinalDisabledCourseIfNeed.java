@@ -22,7 +22,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test(dependsOnGroups={"NormalRefreshChecklist","PrereqDecreaseChecklist","RefreshChecklist","SaveAndCancel","PrereqDecreaseChecklist"})
-@Test
+@Test(dependsOnGroups = "c ",priority=7)
 public class FinalDisabledCourseIfNeed {
 
     public void FinalDisabledCourseIfNeed() throws InterruptedException, IOException, AWTException {
@@ -208,6 +208,8 @@ public class FinalDisabledCourseIfNeed {
                     }
                     currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                     Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
+                    System.out.println("currentPageMax="+ currentPageMax);
+                    System.out.println("currentPageNoInt="+ currentPageNoInt);
                     if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage && (Integer.valueOf(currentPageMax) > 0) && (currentPageNoInt > 0) ) {
                         //Let us go to next
                         //we have to go to next.

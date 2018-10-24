@@ -22,7 +22,8 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+//@Test
+@Test(priority=92)
 public class EHSR_ChecklistSubmissionReport {
 
 	public void EHSR_ChecklistSubmissionReport() throws IOException, InterruptedException {

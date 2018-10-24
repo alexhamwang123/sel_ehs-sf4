@@ -2,29 +2,29 @@ package com.OnlineCourseManagement;
 
 
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=39)
 public class OnlinePrereqComplete {
-    public void OnlinePrereqComplete() throws IOException, InterruptedException {
+    public void OnlinePrereqComplete() throws InterruptedException, IOException, AWTException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -32,6 +32,16 @@ public class OnlinePrereqComplete {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
+
+        Robot robot = new Robot();
+        robot.setAutoDelay(250);
+        robot.keyPress(KeyEvent.VK_META);
+        robot.keyPress(KeyEvent.VK_SHIFT);
+        robot.keyPress(KeyEvent.VK_TAB);
+        robot.keyRelease(KeyEvent.VK_META);
+        robot.keyRelease(KeyEvent.VK_SHIFT);
+        robot.keyRelease(KeyEvent.VK_TAB);
+
 
         driver.manage().window().maximize();
 
@@ -56,97 +66,19 @@ public class OnlinePrereqComplete {
         js.executeScript("arguments[0].click();", courseAdmin);
 
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")).click();
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
-        Thread.sleep(3500);
+        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+//        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
+//        Thread.sleep(1500);
+//        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
+        Thread.sleep(1500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
+//        driver.findElement(By.name("detailCourseTitle")).sendKeys("test online course");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
-        driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
-        driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("searchName")).sendKeys("SCV");
-        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
-        Thread.sleep(1500);
-        String building = generator.generate(15);
-        driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
-        driver.findElement(By.name("detailClassRoom")).sendKeys("room01");
-        driver.findElement(By.name("detailClassMaxSize")).sendKeys("5");
-        Thread.sleep(1500);
-        driver.findElement(By.id("TimeAdd")).click();
-        Thread.sleep(1500);
-        js.executeScript("document.getElementById('TimeAdd_datepicker').value='Dec 25,2030'");
-        new Select(driver.findElement(By.name("detailClassStartHourSelect"))).selectByVisibleText("06");
-        new Select(driver.findElement(By.name("detailClassStartMinuteSelect"))).selectByVisibleText("45");
-        new Select(driver.findElement(By.id("detailClassDuration"))).selectByVisibleText("13");
-        Thread.sleep(1500);
-        driver.findElement(By.id("TimeAdd_Save")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("saveClassCourse")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(1500);
-        WebElement courseAdmin0 = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
-        js.executeScript("arguments[0].click()", courseAdmin0);
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")).click();
-        Thread.sleep(1500);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.id("secondmenu")));
-        actions.click();
-        actions.sendKeys(courseId);
-        actions.build().perform();
-
-        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.className("editAction")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[1]")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.name("emailme")).click();
-        Thread.sleep(500);
-        new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark Completed");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
-        Thread.sleep(1500);
-        WebElement ok = driver.findElement(By.id("ok"));
-        js.executeScript("arguments[0].click();", ok);
-
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(1500);
-
-
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
-        Thread.sleep(4500);
-
-        String courseId0 = generator.generate(10);
-        driver.findElement(By.name("detailCourseNo")).sendKeys(courseId0);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey Only");
-        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
-        new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - test classroom course");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(2500);
@@ -191,72 +123,77 @@ public class OnlinePrereqComplete {
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(4500);
+//        Toolkit toolkit = Toolkit.getDefaultToolkit();
+//        java.awt.datatransfer.Clipboard clipboard = toolkit.getSystemClipboard();
+//        String path = System.getProperty("user.dir") + "/Intro_OneDrive.zip";
+//        System.out.println("path="+path);
+//        StringSelection str = new StringSelection(path);
+//        clipboard.setContents(str, null);
+//
+//
+//        driver.findElement(By.cssSelector("input[type='radio'][value='scorm']")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.id("file_Scorm_File")).click();
+//        Thread.sleep(2500);
+
+        robot.keyPress(KeyEvent.VK_META);
+        robot.keyPress(KeyEvent.VK_SHIFT);
+        robot.keyPress(KeyEvent.VK_G);
+        robot.keyRelease(KeyEvent.VK_META);
+        robot.keyRelease(KeyEvent.VK_SHIFT);
+        robot.keyRelease(KeyEvent.VK_G);
+
+        Thread.sleep(1500);
+
+        robot.keyPress(KeyEvent.VK_META);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_META);
+        robot.keyRelease(KeyEvent.VK_V);
+
+        Thread.sleep(1500);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(1500);
+
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
+        Thread.sleep(1500);
         driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("detailCourseIsActive")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1000);
+        driver.findElement(By.name("detailCourseIsActive")).click();
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.partialLinkText("Courses")).click();
+        driver.findElement(By.cssSelector("input[value='Edit']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId0);
-        driver.findElement(By.name("searchButton")).click();
+        driver.findElement(By.cssSelector("input[value='Create Button Sources ']")).click();
         Thread.sleep(1500);
-        try {
-            driver.findElement(By.className("onelang")).click();
-        } catch (NoSuchElementException e) {
-            Assert.fail("was not able to start online course even after completing the required prereq");
+        String mainWin = driver.getWindowHandle();
+        WebElement landingPage = driver.findElement(By.cssSelector("input[value='Sample Landing Page']"));
+        js.executeScript("arguments[0].click();", landingPage);
+
+        Thread.sleep(1500);
+        for(String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
         }
-        Thread.sleep(3500);
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector("input[value='Take Course']")).click();
+        Thread.sleep(1500);
+        for(String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
+        }
+        Thread.sleep(500);
+        WebElement exit = driver.findElement(By.xpath("//*[@id=\"nav_exit\"]"));
+        js.executeScript("arguments[0].click();", exit);
+        Thread.sleep(1500);
+        driver.findElement(By.className("scormPauseCourse")).click();
+        Thread.sleep(1500);
+        driver.switchTo().window(mainWin);
+        Thread.sleep(2000);
         driver.quit();
 
     }
 
-    @Test
-    public static class EHSR_EvaluationCompletionReport {
 
-        public void EHSR_EvaluationCompletionReport() throws IOException, InterruptedException {
-
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-
-            WebDriver driver = new ChromeDriver();
-
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-            driver.manage().window().maximize();
-            driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
-
-
-            File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
-
-            FileInputStream inStream=new FileInputStream(file);
-            Properties prop=new Properties();
-            prop.load(inStream);
-            String username = prop.getProperty("username");
-            String password = prop.getProperty("password");
-            driver.findElement(By.id("login_login_id")).sendKeys(username);
-            driver.findElement(By.id("login_password")).sendKeys(password);
-
-            driver.findElement(By.name("submit")).click();
-
-            Thread.sleep(4500);
-
-            //Clicking on EHS Reports under Reports
-            WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
-            JavascriptExecutor js = (JavascriptExecutor)driver;
-            js.executeScript("arguments[0].click();",ele);
-            Thread.sleep(1500);
-            //Click on Evaluation Completion Report
-            driver.findElement(By.xpath("//*[@id='content']/div[1]/div/div/a[4]")).click();
-            Thread.sleep(1500);
-            //Click on Go
-            driver.findElement(By.id("Button_Go")).click();
-            Thread.sleep(3500);
-
-            driver.quit();
-
-        }
-
-    }
 }

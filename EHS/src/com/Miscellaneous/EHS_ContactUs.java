@@ -15,7 +15,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-@Test
+//@Test
+@Test(priority=71)
 public class EHS_ContactUs {
 
 	public void EHS_ContactUs() throws IOException {

@@ -27,7 +27,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=61)
 public class CreateAnnouncement {
 
 	public void CreateAnnouncement() throws IOException, InterruptedException {

@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+@Test(dependsOnGroups = "ehs1",priority=10)
 public class ChecklistPrereqComplete {
     public void ChecklistPrereqComplete() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -115,8 +115,8 @@ public class ChecklistPrereqComplete {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.equals("Required prerequisite course:Classroom1")) {
-            Assert.fail("user was ale to register for the course without completing the prereq");
+        if(!working.equals("Required prerequisite course:EHS-4100")) {
+            Assert.fail("user was not able to register for the course without completing the prereq");
         }
         //we have to makr it completed as this user's via UI.
 

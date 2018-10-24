@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+@Test(priority=4)
 public class PrereqDecreaseChecklist {
     public void PrereqDecreaseChecklist() throws IOException, InterruptedException{
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -241,9 +241,9 @@ public class PrereqDecreaseChecklist {
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1600);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1700);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(3500);
         driver.findElement(By.id("langIsViewable")).click();

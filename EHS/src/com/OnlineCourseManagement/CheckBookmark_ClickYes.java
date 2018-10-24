@@ -22,7 +22,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=33)
 public class CheckBookmark_ClickYes {
 
     public void CheckBookmark_ClickYes() throws IOException, InterruptedException {

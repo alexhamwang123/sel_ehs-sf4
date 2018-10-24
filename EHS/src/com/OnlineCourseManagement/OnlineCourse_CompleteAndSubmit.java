@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+@Test(groups = "ehs",priority=3)
 public class OnlineCourse_CompleteAndSubmit {
 
 	public void OnlineCourse_CompleteAndSubmit() throws IOException, InterruptedException {

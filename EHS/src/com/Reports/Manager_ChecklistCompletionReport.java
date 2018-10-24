@@ -22,7 +22,8 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+//@Test
+@Test(priority=97)
 public class Manager_ChecklistCompletionReport {
 
 	public void Manager_ChecklistCompletionReport() throws IOException, InterruptedException {

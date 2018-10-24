@@ -14,24 +14,22 @@
         <!--</class>-->
     <!--</classes>-->
 <!--</test>-->
-    <test name="ChecklistManagement">
+    <test name="EHS">
         <classes>
-            <class name="com.ChecklistManagement.AddChecklistManager"/>
             <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
+            <class name="com.ChecklistManagement.AddChecklistManager"/>
+            <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
+            <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
+            <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
+            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
+            <class name="com.ChecklistManagement.CreateChecklist"/>
+            <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
             <class name="com.ChecklistManagement.ChecklistButtonSource"/>
             <class name="com.ChecklistManagement.ChecklistPrereq"/>
             <class name="com.ChecklistManagement.ChecklistPrereqComplete"/>
-            <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
-            <class name="com.ChecklistManagement.CreateChecklist"/>
             <class name="com.ChecklistManagement.SaveAndCancel"/>
             <class name="com.ChecklistManagement.RefreshChecklist"/>
-            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
             <class name="com.ChecklistManagement.NormalRefreshChecklist"/>
-            <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
-        </classes>
-    </test>
-    <test name="ClassroomManagement">
-        <classes>
             <class name="com.ClassroomCourseManagement.AddAtt"/>
             <class name="com.ClassroomCourseManagement.AddClassroomManger"/>
             <class name="com.ClassroomCourseManagement.AddWaitlist"/>
@@ -49,12 +47,6 @@
             <class name="com.ClassroomCourseManagement.UnregisterClassroom"/>
             <class name="com.ClassroomCourseManagement.UnregisterWaitlist"/>
             <class name="com.ClassroomCourseManagement.FinalDisabledCourseIfNeed"/>
-        </classes>
-    </test>
-    <test name="OnlineCourseManagement">
-        <classes>
-            <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
-            <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
             <class name="com.OnlineCourseManagement.AddManagerOnlineCourse"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>

@@ -20,7 +20,8 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 
-@Test
+//@Test
+@Test(priority=37)
 public class OnlineCourseEditContent {
     public void OnlineCourseEditContent() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

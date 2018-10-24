@@ -22,7 +22,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=18)
 public class ClassroomPrereq {
     public void ClassroomPrereq() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

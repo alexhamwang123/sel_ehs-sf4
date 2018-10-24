@@ -21,7 +21,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=34)
 public class CreateScormClass {
     public void CreateScormClass() throws InterruptedException, IOException, AWTException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

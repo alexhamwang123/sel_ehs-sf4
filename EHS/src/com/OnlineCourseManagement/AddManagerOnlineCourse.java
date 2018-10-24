@@ -16,7 +16,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 
-@Test
+//@Test
+@Test(priority=31)
 public class AddManagerOnlineCourse {
     public void AddManagerOnlineCourse() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

@@ -18,7 +18,8 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+//@Test
+@Test(priority=28)
 public class UnregisterClassroom {
     public void UnregisterClassroom() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

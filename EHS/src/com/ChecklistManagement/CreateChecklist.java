@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test
+@Test(groups = "ehs1",priority=6)
 public class CreateChecklist {
 
 	public void CreateChecklist() throws IOException, InterruptedException {

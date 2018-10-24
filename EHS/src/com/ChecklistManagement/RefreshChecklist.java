@@ -20,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-
-//@Test
+@Test(priority=12)
+//@Test(dependsOnGroups = "ehs1",priority=12)
 public class RefreshChecklist {
     public void RefreshChecklist() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -61,7 +61,7 @@ public class RefreshChecklist {
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
         new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
-        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Refresh");
+        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(1000);
@@ -114,7 +114,7 @@ public class RefreshChecklist {
         Thread.sleep(1000);
 
         try {
-            new Select(driver.findElement(By.id("detailCourseRefreshCourse1"))).selectByVisibleText(courseId + " - test checklist title");
+            new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - test checklist title");
             Thread.sleep(3500);
         } catch (org.openqa.selenium.NoSuchElementException e) {
             Assert.fail("the refresh checklist did not show up in the refresh course list while creating a classroom course with expiration of 6 months");

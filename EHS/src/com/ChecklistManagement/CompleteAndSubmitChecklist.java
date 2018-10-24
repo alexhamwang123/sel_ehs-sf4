@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@Test
+@Test(dependsOnGroups = "ehs",priority=4)
 public class CompleteAndSubmitChecklist {
 
 	public void CompleteAndSubmitChecklist() throws IOException, InterruptedException {
