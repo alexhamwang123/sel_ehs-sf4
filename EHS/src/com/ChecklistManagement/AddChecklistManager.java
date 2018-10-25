@@ -23,8 +23,8 @@ import javassist.NotFoundException;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
-
-@Test(groups="ehs" ,priority=1)
+@Test(priority=1)
+//@Test(groups="ehs" ,priority=1)
 public class AddChecklistManager implements IMethodInterceptor {
     public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
 

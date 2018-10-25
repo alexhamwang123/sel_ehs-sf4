@@ -20,8 +20,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
-
-@Test(dependsOnGroups = "ehs",priority=4)
+@Test(priority=4)
+//@Test(dependsOnGroups = "ehs",priority=4)
 public class CompleteAndSubmitChecklist {
 
 	public void CompleteAndSubmitChecklist() throws IOException, InterruptedException {

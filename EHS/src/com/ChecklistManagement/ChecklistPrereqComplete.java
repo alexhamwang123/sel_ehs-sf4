@@ -21,8 +21,8 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-
-@Test(dependsOnGroups = "ehs1",priority=10)
+@Test(priority=10)
+//@Test(dependsOnGroups = "ehs1",priority=10)
 public class ChecklistPrereqComplete {
     public void ChecklistPrereqComplete() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -118,12 +118,13 @@ public class ChecklistPrereqComplete {
         if(!working.equals("Required prerequisite course:EHS-4100")) {
             Assert.fail("user was not able to register for the course without completing the prereq");
         }
+        driver.quit();
         //we have to makr it completed as this user's via UI.
 
         //Let it search first. then click the result.
-        driver.findElement(By.id("srch_fld")).sendKeys("Classroom1");
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
+//        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
+//        Thread.sleep(1000);
+/*        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
         Thread.sleep(1500);
 
         driver.findElement(By.className("editAction")).click();
@@ -133,7 +134,7 @@ public class ChecklistPrereqComplete {
 //        driver.findElement(By.name("searchButton")).click();
 
         Thread.sleep(2000);
-        driver.quit();
+        driver.quit();*/
 //        Thread.sleep(1000);
 //        driver.findElement(By.id("addClass")).click();
 //        Thread.sleep(2500);
