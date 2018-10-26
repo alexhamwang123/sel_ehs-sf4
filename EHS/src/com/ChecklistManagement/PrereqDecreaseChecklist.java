@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test(priority=4)
+@Test(priority=6)
 public class PrereqDecreaseChecklist {
     public void PrereqDecreaseChecklist() throws IOException, InterruptedException{
         System.setProperty("webdriver.chrome.driver", "chromedriver");

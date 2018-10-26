@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-@Test(priority=7)
+@Test(priority=14)
 //@Test(dependsOnGroups={"NormalRefreshChecklist","PrereqDecreaseChecklist","RefreshChecklist","SaveAndCancel","PrereqDecreaseChecklist"})
 //@Test(dependsOnGroups = "ehs1",priority=7)
 public class FinalDisabledCourseIfNeed {

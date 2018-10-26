@@ -104,9 +104,13 @@ public class RefreshOnlineCourse {
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(4500);
         driver.findElement(By.name("langIsViewable")).click();

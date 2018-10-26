@@ -120,8 +120,12 @@ public class OnlinePrereqComplete {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(1500);
+        driver.findElement(By.id("fancyConfirm_ok")).click();
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 //        Toolkit toolkit = Toolkit.getDefaultToolkit();
 //        java.awt.datatransfer.Clipboard clipboard = toolkit.getSystemClipboard();
@@ -140,6 +144,8 @@ public class OnlinePrereqComplete {
         robot.keyPress(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.VK_G);
         robot.keyRelease(KeyEvent.VK_META);
+
+
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyRelease(KeyEvent.VK_G);
 

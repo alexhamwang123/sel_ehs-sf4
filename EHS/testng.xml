@@ -21,15 +21,15 @@
             <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
             <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
-            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
             <class name="com.ChecklistManagement.CreateChecklist"/>
-            <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
+            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
             <class name="com.ChecklistManagement.ChecklistButtonSource"/>
             <class name="com.ChecklistManagement.ChecklistPrereq"/>
             <class name="com.ChecklistManagement.ChecklistPrereqComplete"/>
             <class name="com.ChecklistManagement.SaveAndCancel"/>
             <class name="com.ChecklistManagement.RefreshChecklist"/>
             <class name="com.ChecklistManagement.NormalRefreshChecklist"/>
+            <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
             <class name="com.ClassroomCourseManagement.AddAtt"/>
             <class name="com.ClassroomCourseManagement.AddClassroomManger"/>
             <class name="com.ClassroomCourseManagement.AddWaitlist"/>
