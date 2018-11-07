@@ -21,7 +21,7 @@ package com.OnlineCourseManagement;
         import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=41)
+@Test(priority=46)
 public class FinalDisabledCourseIfNeed {
 
     public void FinalDisabledCourseIfNeed() throws InterruptedException, IOException, AWTException {
@@ -50,7 +50,7 @@ public class FinalDisabledCourseIfNeed {
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyRelease(KeyEvent.VK_TAB);
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -182,9 +182,6 @@ restartLoop:
                             }
                             $p++;
                         } else {
-//                            v
-//
-// .out.println("There is no record for active status at all.");
                         }
                     }
                     // Nothing is active. So we have to break it out first.

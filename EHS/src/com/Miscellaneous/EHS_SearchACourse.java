@@ -34,7 +34,7 @@ public class EHS_SearchACourse {
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);

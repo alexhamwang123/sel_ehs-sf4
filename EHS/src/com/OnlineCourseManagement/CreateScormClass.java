@@ -93,13 +93,15 @@ public class CreateScormClass {
         String path = System.getProperty("user.dir") + "/Intro_OneDrive.zip";
         System.out.println("path="+path);
         StringSelection str = new StringSelection(path);
-        clipboard.setContents(str, null);
+        clipboard.setContents(str, str);
 
 
         driver.findElement(By.cssSelector("input[type='radio'][value='scorm']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector(      "input[type='file']")).sendKeys(path);
         Thread.sleep(1000);
-        driver.findElement(By.id("file_Scorm_File")).click();
-        Thread.sleep(2500);
+//        driver.findElement(By.id("file_Scorm_File")).click();
+//        Thread.sleep(2500);
 
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_SHIFT);

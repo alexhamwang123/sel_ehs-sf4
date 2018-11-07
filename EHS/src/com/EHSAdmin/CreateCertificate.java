@@ -42,7 +42,7 @@ public class CreateCertificate {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
