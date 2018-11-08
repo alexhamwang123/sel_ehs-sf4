@@ -37,7 +37,7 @@ public class OnlineCoursePrereqDecrease {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 

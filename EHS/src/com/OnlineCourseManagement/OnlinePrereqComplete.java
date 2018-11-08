@@ -43,7 +43,7 @@ public class OnlinePrereqComplete {
         robot.keyRelease(KeyEvent.VK_TAB);
 
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 

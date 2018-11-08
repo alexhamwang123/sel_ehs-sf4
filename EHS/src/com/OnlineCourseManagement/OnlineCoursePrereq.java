@@ -40,7 +40,7 @@ public class OnlineCoursePrereq {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
