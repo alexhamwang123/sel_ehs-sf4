@@ -57,7 +57,7 @@ public class CreateCertificate {
 
 		
 		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[4]/a"));
+		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[8]/ul/li[4]/a"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 				
@@ -160,13 +160,13 @@ public class CreateCertificate {
 		//driver.findElement(By.className("editAction")).click()
 		//certificate_checkbox
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;
-		WebElement courseAdmin2 = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+		WebElement courseAdmin2 = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[8]/ul/li[3]/a"));
 		js1.executeScript("arguments[0].click()", courseAdmin2);
 
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();//Online Management.
+		Thread.sleep(1700);
+		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();//Create Web Course
 		Thread.sleep(4500);
 
 		String courseId2 = generator.generate(10);
@@ -486,7 +486,7 @@ public class CreateCertificate {
 		}
 		Thread.sleep(800);
 		JavascriptExecutor js2 = (JavascriptExecutor)driver;
-		WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[6]/ul/li[1]/a"));
+		WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
 		js2.executeScript("arguments[0].click()", myTrainingReport);
 		Thread.sleep(1000);
 		new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
