@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-
+import java.util.Random;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,13 +16,12 @@ import java.util.concurrent.TimeUnit;
 @Test
 public class Missing  {
     public void missing() throws IOException, InterruptedException{
-        int number=36;
+        int number;
+        int integer;
+        Random rand = new Random();
+        number= rand.nextInt(10000);
+        integer=rand.nextInt(10000);
 
-       /*public int checktheaccount (int number){
-            int number = number;
-            ++number;
-            return number;
-        };*/
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -55,7 +54,7 @@ public class Missing  {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-sm pull-right']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("detailCourseNo")).sendKeys("testforscriptMISSIN52");
+        driver.findElement(By.name("detailCourseNo")).sendKeys(integer+"testforscript"+number);
 
         WebElement element1 = driver.findElement(By.xpath("//select[@name='detailCourseCategory']"));
         Select oSelect = new Select(element1);
@@ -74,7 +73,7 @@ public class Missing  {
 
         Thread.sleep(14000);
         driver.findElement(By.xpath("//input[@value='Edit']")).click();
-        driver.findElement(By.xpath("//input[@id='detailCourseTitle']")).sendKeys("testforscriptMISSING02");
+        driver.findElement(By.xpath("//input[@id='detailCourseTitle']")).sendKeys("integer+\"testforscript\"+number");
 
         //driver.findElement(By.id("")).sendKeys("/Users/trismax/IdeaProjects/sel_ehs/EHS/Mantis Status (English).docx.pdf");
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -86,7 +85,7 @@ public class Missing  {
         driver.findElement(By.cssSelector("div.clearfix:nth-child(1) div.row div.col-md-9.col-xs-9 div.listTable:nth-child(18) table.tablesorter.table.table-hover.table-striped tbody:nth-child(2) tr:nth-child(1) td:nth-child(3) > button.btn.btn-primary.btn-xs.field-tip")).click();
 
         driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/table[1]/tbody[1]/tr[1]/td[2]/ul[1]/li[2]/a[1]/img[1]")).click();
-        driver.findElement(By.xpath("//input[@id='courseContentTitle']")).sendKeys("testforscriptMISSING02");
+        driver.findElement(By.xpath("//input[@id='courseContentTitle']")).sendKeys("integer+\"testforscript\"+number");
         driver.findElement(By.xpath("//div[@class='padded form-horizontal mt-3']//div[5]//input[3]")).click();
         Thread.sleep(5000);
         driver.findElement(By.xpath("/html[1]/body[1]/div[8]/div[1]/div[9]/div[1]/center[1]/input[1]")).click();
@@ -104,11 +103,13 @@ public class Missing  {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//input[@id='detailCourseIsActive']")).click();
         Thread.sleep(3000);
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//input[@id='langIsViewable']")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//input[@value='Save']")).click();
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
-        driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys("testforscriptMISSIN52");
+        driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(integer+"testforscript"+number);
         driver.findElement(By.xpath("//input[@value='Go']")).click();
 
 
