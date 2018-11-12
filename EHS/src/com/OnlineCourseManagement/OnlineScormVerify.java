@@ -66,7 +66,7 @@ public class OnlineScormVerify {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[8]/ul/li[3]/a"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
@@ -84,7 +84,7 @@ public class OnlineScormVerify {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         String courseTitle = generator.generate(10);
         driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -124,6 +124,7 @@ public class OnlineScormVerify {
         driver.findElement(By.name("searchButton")).click();
         Thread.sleep(1500);
         String currentWin = driver.getWindowHandle();
+        Thread.sleep(1500);
         try {
             driver.findElement(By.className("onelang")).click();
         } catch (NoSuchElementException e) {
@@ -194,7 +195,7 @@ public class OnlineScormVerify {
             executor.executeScript("arguments[0].click();", targetDiv);
         }
         else {
-            Assert.fail("Should not be submitted here line 228");
+            Assert.fail("Should not be submitted here line 192");
         }
         Thread.sleep(1000);
         String continueDivText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_63vTZMCZlM1 textlib\"]/canvas[@class=\"content\"]")).getText();
@@ -211,7 +212,7 @@ public class OnlineScormVerify {
             System.out.println("continueDivText=" + continueDivText);
       }
         else {
-            Assert.fail("Should not be submitted here line 245");
+            Assert.fail("Should not be submitted here line 209");
         }
         //Seocnd Questions
         Thread.sleep(1000);
@@ -237,7 +238,7 @@ public class OnlineScormVerify {
             System.out.println("secondQuestionElementDivText=" + secondQuestionElementDivText);
         }
         else {
-            Assert.fail("Should not be submitted here line 271");
+            Assert.fail("Should not be submitted here line 235");
         }
         Thread.sleep(500);
         driver.switchTo().defaultContent();
@@ -257,7 +258,7 @@ public class OnlineScormVerify {
             executor2.executeScript("arguments[0].click();", targetDiv2);
         }
         else {
-            Assert.fail("Should not be submitted here line 291");
+            Assert.fail("Should not be submitted here line 255");
         }
         Thread.sleep(1000);
         String continueDivText2 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6gytkCQVSz7 textlib\"]/canvas[@class=\"content\"]")).getText();
@@ -273,7 +274,7 @@ public class OnlineScormVerify {
             System.out.println("continueDivText2=" + continueDivText2);
         }
         else {
-            Assert.fail("Should not be submitted here line 307");
+            Assert.fail("Should not be submitted here line 271");
         }
         //Third Questions
         Thread.sleep(500);
@@ -318,7 +319,7 @@ public class OnlineScormVerify {
 
         }
         else {
-            Assert.fail("Should not be submitted here line 352");
+            Assert.fail("Should not be submitted here line 316");
         }
         Thread.sleep(500);
         driver.switchTo().defaultContent();
@@ -335,7 +336,7 @@ public class OnlineScormVerify {
             executor3.executeScript("arguments[0].click();", targetDiv3);
         }
         else {
-            Assert.fail("Should not be submitted here line 369");
+            Assert.fail("Should not be submitted here line 333");
         }
         Thread.sleep(1000);
         String continueDivText3 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5z66WgZXo0y textlib\"]/canvas[@class=\"content\"]")).getText();
@@ -351,7 +352,7 @@ public class OnlineScormVerify {
             System.out.println("continueDivText3=" + continueDivText3);
         }
         else {
-            Assert.fail("Should not be submitted here line 385");
+            Assert.fail("Should not be submitted here line 349");
         }
         //Submit Results.item image vectorshape item_6JIGnuBEjkK textlib
         Thread.sleep(1500);
@@ -369,7 +370,7 @@ public class OnlineScormVerify {
             drawActionSR.perform();
             System.out.println("submitResultsStr=" + submitResultsStr);
         } else {
-            Assert.fail("Should not be submitted here line 402");
+            Assert.fail("Should not be submitted here line 367");
         }
         // Click on All Classes tab
         // find a SCORM course and click play
@@ -388,7 +389,7 @@ public class OnlineScormVerify {
         }
         Thread.sleep(800);
         JavascriptExecutor js2 = (JavascriptExecutor)driver;
-        WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[6]/ul/li[1]/a"));
+        WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
         js2.executeScript("arguments[0].click()", myTrainingReport);
         Thread.sleep(1000);
         new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
@@ -481,7 +482,7 @@ public class OnlineScormVerify {
                 System.out.println("Ｗe find the same course id here");
                 break;
             } else {
-                Assert.fail("Should not be submitted here line 440");
+                Assert.fail("Should not be submitted here line 484");
             }
         }
         Thread.sleep(3000);

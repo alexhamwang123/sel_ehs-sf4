@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="change arjun username/password, to admin/passowrd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +34,7 @@
     <SUITE FILE_PATH="coverage/sel_ehs$RefreshChecklist.ic" NAME="RefreshChecklist Coverage Results" MODIFIED="1540449991282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$OnlineScormVerify.ic" NAME="OnlineScormVerify Coverage Results" MODIFIED="1541519928792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/sel_ehs$OnlineScormVerify.ic" NAME="OnlineScormVerify Coverage Results" MODIFIED="1541753162394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourse_CompleteAndSubmit.ic" NAME="OnlineCourse_CompleteAndSubmit Coverage Results" MODIFIED="1540174705831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -99,7 +98,7 @@
     <SUITE FILE_PATH="coverage/sel_ehs$com_EHSAdmin.ic" NAME="com.EHSAdmin Coverage Results" MODIFIED="1539331783292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$CreateCertificate.ic" NAME="CreateCertificate Coverage Results" MODIFIED="1541584849376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateCertificate.ic" NAME="CreateCertificate Coverage Results" MODIFIED="1541755715303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$createCourseManagerFirst.ic" NAME="createCourseManagerFirst Coverage Results" MODIFIED="1538975749949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -181,11 +180,11 @@
     <SUITE FILE_PATH="coverage/sel_ehs$CancelAndNotify.ic" NAME="CancelAndNotify Coverage Results" MODIFIED="1540466266229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$OnlinePrereqComplete.ic" NAME="OnlinePrereqComplete Coverage Results" MODIFIED="1540547205879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.OnlineCourseManagement.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$ChecklistButtonSource.ic" NAME="ChecklistButtonSource Coverage Results" MODIFIED="1540550786163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$OnlinePrereqComplete.ic" NAME="OnlinePrereqComplete Coverage Results" MODIFIED="1541747191247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$UnregisterClassroom.ic" NAME="UnregisterClassroom Coverage Results" MODIFIED="1539578240644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
@@ -282,7 +281,7 @@
     <session id="2071871050">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
@@ -291,7 +290,7 @@
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.30" value="1" />
@@ -300,26 +299,28 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.52" value="1" />
+          <entry key="project.open.time.59" value="1" />
+          <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="chromedriver" value="1" />
-          <entry key="class" value="13" />
+          <entry key="class" value="14" />
           <entry key="iml" value="1" />
-          <entry key="java" value="590" />
+          <entry key="java" value="591" />
           <entry key="properties" value="18" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="13" />
+          <entry key="CLASS" value="14" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="590" />
+          <entry key="JAVA" value="591" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="18" />
           <entry key="XML" value="14" />
@@ -328,8 +329,8 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="9" />
-          <entry key="java" value="16786" />
-          <entry key="properties" value="655" />
+          <entry key="java" value="17050" />
+          <entry key="properties" value="657" />
           <entry key="txt" value="57" />
           <entry key="xml" value="388" />
         </counts>
@@ -337,9 +338,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="9" />
-          <entry key="JAVA" value="16786" />
+          <entry key="JAVA" value="17050" />
           <entry key="PLAIN_TEXT" value="57" />
-          <entry key="Properties" value="655" />
+          <entry key="Properties" value="657" />
           <entry key="XML" value="388" />
         </counts>
       </usages-collector>
@@ -351,10 +352,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1965">
-              <caret line="131" column="73" selection-start-line="131" selection-start-column="59" selection-end-line="131" selection-end-column="73" />
+            <state relative-caret-position="3480">
+              <caret line="259" column="14" selection-start-line="259" selection-start-column="14" selection-end-line="259" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -363,10 +364,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java">
+        <entry file="jar://$PROJECT_DIR$/EHS/jars/selenium-server-standalone-3.11.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="2805">
+              <caret line="273" selection-start-line="273" selection-end-line="273" />
+              <folding>
+                <element signature="e#10929#10930#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -401,8 +405,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="90">
+              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -428,8 +432,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="200" column="26" selection-start-line="200" selection-start-column="15" selection-end-line="200" selection-end-column="26" />
+            <state relative-caret-position="299">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -454,18 +458,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>True</find>
-      <find>fail</find>
-      <find>AssertionError</find>
-      <find>assertTrue</find>
-      <find>courseIdTxt</find>
-      <find>pageNo</find>
-      <find>restart</find>
-      <find>Local Date Now</find>
-      <find>currentPageMax</find>
-      <find>while</find>
-      <find>restartLoop2</find>
-      <find>currentPageNo</find>
       <find>currentPageNoInt</find>
       <find>isBreak</find>
       <find>maximize</find>
@@ -474,7 +466,6 @@
       <find>maximizemaximize</find>
       <find>title</find>
       <find>Intro_OneDrive</find>
-      <find>courseId</find>
       <find>courseId2</find>
       <find>lang</find>
       <find>td</find>
@@ -483,7 +474,20 @@
       <find>parseString</find>
       <find>parseS</find>
       <find>System.out.print</find>
+      <find>path</find>
       <find>navPrimary</find>
+      <find>Course</find>
+      <find>7</find>
+      <find>/ul</find>
+      <find>ul</find>
+      <find>ul/li</find>
+      <find>ziop</find>
+      <find>courseId</find>
+      <find>UYBLDA1zc9</find>
+      <find>235</find>
+      <find>currentWin</find>
+      <find>line</find>
+      <find>crselink1</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -537,7 +541,6 @@
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" />
@@ -550,8 +553,9 @@
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" />
-        <option value="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" />
+        <option value="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" />
       </list>
     </option>
   </component>
@@ -562,8 +566,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="184" />
-    <option name="y" value="336" />
+    <option name="x" value="143" />
+    <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
   </component>
@@ -586,45 +590,6 @@
               <item name="sel_ehs" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="EHS" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
-              <item name="ChecklistManagement" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
-              <item name="ClassroomCourseManagement" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
-              <item name="OnlineCourseManagement" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -702,11 +667,50 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="ChecklistManagement" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="ClassroomCourseManagement" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="OnlineCourseManagement" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541666094102" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541756105506" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -764,24 +768,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateFAQ" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.EHSAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateFAQ" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FinalDisabledCourseIfNeed" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="OnlinePrereqComplete" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
@@ -790,7 +777,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.FinalDisabledCourseIfNeed" />
+      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlinePrereqComplete" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -808,6 +795,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
       <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineScormVerify" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OnlineScormVerify.CreateScormClass" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineScormVerify" />
+      <option name="METHOD_NAME" value="CreateScormClass" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="0" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -887,18 +894,18 @@
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
       <item itemvalue="TestNG.OnlineScormVerify" />
-      <item itemvalue="TestNG.FinalDisabledCourseIfNeed" />
-      <item itemvalue="TestNG.CreateFAQ" />
       <item itemvalue="TestNG.CreateCertificate" />
       <item itemvalue="TestNG./Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
+      <item itemvalue="TestNG.OnlineScormVerify.CreateScormClass" />
+      <item itemvalue="TestNG.OnlinePrereqComplete" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.CreateCertificate" />
-        <item itemvalue="TestNG./Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
-        <item itemvalue="TestNG.CreateFAQ" />
         <item itemvalue="TestNG.OnlineScormVerify" />
-        <item itemvalue="TestNG.FinalDisabledCourseIfNeed" />
+        <item itemvalue="TestNG.OnlinePrereqComplete" />
+        <item itemvalue="TestNG.OnlineScormVerify.CreateScormClass" />
+        <item itemvalue="TestNG./Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -916,34 +923,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateCertificate - 2018.11.08 at 12h 02m 40s.xml">
+    <history-entry file="OnlineScormVerify - 2018.11.09 at 15h 23m 19s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.09 at 15h 27m 19s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.09 at 16h 11m 10s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.09 at 16h 31m 09s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.09 at 16h 49m 00s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.09 at 16h 54m 12s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.09 at 16h 59m 47s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateCertificate - 2018.11.09 at 17h 15m 29s.xml">
       <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 12h 08m 51s.xml">
+    <history-entry file="CreateCertificate - 2018.11.09 at 17h 28m 21s.xml">
       <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 14h 44m 16s.xml">
-      <configuration name="CreateCertificate" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="_Users_shuang_Library_Caches_IdeaIC2018_2_temp-testng-customsuite_xml - 2018.11.08 at 14h 56m 09s.xml">
-      <configuration name="/Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 15h 33m 23s.xml">
-      <configuration name="CreateCertificate" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 15h 38m 44s.xml">
-      <configuration name="CreateCertificate" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 16h 12m 58s.xml">
-      <configuration name="CreateCertificate" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 16h 18m 31s.xml">
-      <configuration name="CreateCertificate" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 16h 21m 11s.xml">
-      <configuration name="CreateCertificate" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateCertificate - 2018.11.08 at 16h 32m 41s.xml">
+    <history-entry file="CreateCertificate - 2018.11.09 at 17h 32m 58s.xml">
       <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -957,10 +964,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="184" y="336" width="1920" height="1053" extended-state="0" />
+    <frame x="143" y="23" width="1920" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49788135" visible="true" weight="0.11608094" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49788135" visible="true" weight="0.11927582" />
       <window_info id="Structure" order="1" sideWeight="0.50211865" side_tool="true" weight="0.14696486" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -969,8 +976,8 @@
       <window_info id="Favorites" order="6" show_stripe_button="false" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32674298" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7092652" weight="0.541103" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.62726307" visible="true" weight="0.55879295" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7092652" visible="true" weight="0.541103" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.62726307" weight="0.55879295" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
@@ -1036,9 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1119,20 +1123,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/EHS/jars/selenium-server-standalone-3.11.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="492" column="56" selection-start-line="492" selection-start-column="49" selection-end-line="492" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="77" column="65" selection-start-line="77" selection-start-column="63" selection-end-line="77" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,9 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,9 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1181,9 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="126" column="64" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1247,9 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,31 +1277,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="154" column="60" selection-start-line="154" selection-start-column="60" selection-end-line="154" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1541580718000" expanded="true" signature="24353:24389" ph="..." />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
+        <state relative-caret-position="1695">
           <caret line="131" column="73" selection-start-line="131" selection-start-column="59" selection-end-line="131" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="259" column="14" selection-start-line="259" selection-start-column="14" selection-end-line="259" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java">
+    <entry file="jar://$PROJECT_DIR$/EHS/jars/selenium-server-standalone-3.11.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="2805">
+          <caret line="273" selection-start-line="273" selection-end-line="273" />
+          <folding>
+            <element signature="e#10929#10930#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,8 +1334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="90">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1374,8 +1362,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="200" column="26" selection-start-line="200" selection-start-column="15" selection-end-line="200" selection-end-column="26" />
+        <state relative-caret-position="299">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
