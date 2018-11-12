@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 @Test
-public class Createonlineclass {
+public class CreateonlineCourseclass {
     public void OnlineCourseCreation() throws IOException, InterruptedException{
         int number;
         int integer;
