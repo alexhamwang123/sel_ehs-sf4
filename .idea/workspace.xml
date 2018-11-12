@@ -1,76 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="New Class Missing">
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="Visible_OnlineCourse_Creation">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/AddChecklistManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/ChecklistButtonSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/ChecklistPrereq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/ChecklistPrereqComplete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/CompleteAndSubmitChecklist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/CreateChecklist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/NormalRefreshChecklist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/PrereqDecreaseChecklist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/RefreshChecklist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/SaveAndCancel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ChecklistManagement/SubmitIncompleteChecklist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/AddAtt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/AddClassroomManger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/AddWaitlist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/CancelAndNotify.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/ClassroomPrereq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/ClassroomPrereqDecrease.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/CreateFullOffering.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/CreateOfferingRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/EmailAtt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/NoShowNotPassedCompleted.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/RefreshClassroomCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/UnregisterClassroom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/ClassroomCourseManagement/UnregisterWaitlist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateFAQ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateLab.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateRiskCategory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_SearchACourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/AddManagerOnlineCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/CheckBookmark_ClickNo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/CheckBookmark_ClickYes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/CreateScormClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/NormalRefreshOnlineCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineButtonSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCourseEditContent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlinePrereqComplete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/RefreshOnlineCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/DirectReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/EHSR_ChecklistSubmissionReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/EHSR_ComplianceReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/EHSR_CourseCompletionReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/EHSR_CourseCompletionStatistic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/EHSR_OrganizationReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/Manager_ChecklistCompletionReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Reports/Manager_ComplianceReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/UserAdmin/CreateCourseManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/UserAdmin/CreateNormalUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/UserAdmin/CreateSuperAdmin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/UserAdmin/CreateTipEditor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/UserAdmin/CreateUSAManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/UserAdmin/CreateUserSupport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/UserAdmin/FindExistingUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Createonlineclass.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -401,25 +335,25 @@
     <session id="1667281820">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="319" />
-          <entry key="txt" value="17" />
+          <entry key="java" value="580" />
+          <entry key="txt" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="319" />
-          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="JAVA" value="580" />
+          <entry key="PLAIN_TEXT" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -438,24 +372,15 @@
     <favorites_list name="sel_ehs" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Createonlineclass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="225">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -518,7 +443,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" />
@@ -567,8 +491,9 @@
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/missing.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Createonlineclass.java" />
       </list>
     </option>
   </component>
@@ -579,6 +504,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="5" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="977" />
@@ -591,40 +517,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
+      <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
-              <item name="ChecklistManagement" type="1f31426a:PackageElementNode" />
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
-              <item name="ClassroomCourseManagement" type="1f31426a:PackageElementNode" />
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistManagement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="com" type="1f31426a:PackageElementNode" />
-              <item name="OnlineCourseManagement" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
-              <item name="EHS" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="OnlineCourseManagement" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -673,37 +596,40 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="ChecklistManagement" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ChecklistManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="ClassroomCourseManagement" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="OnlineCourseManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="OnlineCourseManagement" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="58d84e3e:PackageViewProjectNode" />
+              <item name="EHS" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -713,7 +639,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541759470779" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541987464277" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -740,7 +666,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.Missing.missing">
+  <component name="RunManager" selected="TestNG.Createonlineclass.missing">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -789,7 +715,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Missing.missing" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Createonlineclass.missing" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
@@ -798,7 +724,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.Missing" />
+      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.Createonlineclass" />
       <option name="METHOD_NAME" value="missing" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -902,11 +828,11 @@
       <item itemvalue="TestNG.AddChecklistManager" />
       <item itemvalue="TestNG./Users/trismax/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
       <item itemvalue="TestNG.missing.missing" />
-      <item itemvalue="TestNG.Missing.missing" />
+      <item itemvalue="TestNG.Createonlineclass.missing" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Missing.missing" />
+        <item itemvalue="TestNG.Createonlineclass.missing" />
         <item itemvalue="TestNG.missing.missing" />
         <item itemvalue="TestNG.AddChecklistManager.AddChecklistManager" />
         <item itemvalue="TestNG./Users/trismax/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
@@ -946,31 +872,24 @@
       <option name="project" value="LOCAL" />
       <updated>1541757752760</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New Class so called Missing">
+      <created>1541759542483</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541759542483</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Visible_OnlineCourse_Creation">
+      <created>1541767002848</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1541767002848</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="missing_missing - 2018.11.09 at 16h 58m 47s.xml">
-      <configuration name="missing.missing" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="missing_missing - 2018.11.09 at 17h 03m 04s.xml">
-      <configuration name="missing.missing" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="missing_missing - 2018.11.09 at 17h 06m 10s.xml">
-      <configuration name="missing.missing" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="missing_missing - 2018.11.09 at 17h 15m 29s.xml">
-      <configuration name="missing.missing" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="missing_missing - 2018.11.09 at 17h 17m 13s.xml">
-      <configuration name="missing.missing" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="missing_missing - 2018.11.09 at 17h 28m 03s.xml">
-      <configuration name="missing.missing" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="missing_missing - 2018.11.09 at 17h 31m 01s.xml">
-      <configuration name="missing.missing" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="missing_missing - 2018.11.09 at 17h 34m 20s.xml">
       <configuration name="missing.missing" configurationId="TestNG" />
     </history-entry>
@@ -979,6 +898,27 @@
     </history-entry>
     <history-entry file="missing_missing - 2018.11.09 at 17h 40m 25s.xml">
       <configuration name="missing.missing" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Missing_missing - 2018.11.09 at 19h 55m 40s.xml">
+      <configuration name="Missing.missing" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Missing_missing - 2018.11.09 at 20h 03m 21s.xml">
+      <configuration name="Missing.missing" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Missing_missing - 2018.11.09 at 20h 05m 58s.xml">
+      <configuration name="Missing.missing" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Missing_missing - 2018.11.09 at 20h 27m 26s.xml">
+      <configuration name="Missing.missing" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Missing_missing - 2018.11.09 at 20h 30m 12s.xml">
+      <configuration name="Missing.missing" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Missing_missing - 2018.11.09 at 20h 33m 37s.xml">
+      <configuration name="Missing.missing" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Missing_missing - 2018.11.12 at 09h 01m 23s.xml">
+      <configuration name="Missing.missing" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -991,9 +931,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="977" extended-state="0" />
+    <frame x="5" y="23" width="1920" height="977" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983127" visible="true" weight="0.16347177" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983127" visible="true" weight="0.16506922" />
       <window_info id="Structure" order="1" sideWeight="0.50211865" side_tool="true" weight="0.14696486" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1002,15 +943,15 @@
       <window_info id="Favorites" order="6" sideWeight="0.5016873" side_tool="true" weight="0.15548456" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7119276" weight="0.54292345" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71086264" visible="true" weight="0.54292345" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49307775" weight="0.39675173" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32674298" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.37380192" side_tool="true" visible="true" weight="0.32482597" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.2891374" side_tool="true" visible="true" weight="0.54292345" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.62619805" visible="true" weight="0.32482597" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.6256656" weight="0.32482597" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1028,7 +969,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New Class Missing" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Class Missing" />
+    <MESSAGE value="New Class so called Missing" />
+    <MESSAGE value="Visible_OnlineCourse_Creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visible_OnlineCourse_Creation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
@@ -1379,15 +1322,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        <state relative-caret-position="225">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Createonlineclass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="225">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

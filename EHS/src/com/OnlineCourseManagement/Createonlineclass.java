@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 @Test
-public class Missing  {
-    public void missing() throws IOException, InterruptedException{
+public class Createonlineclass {
+    public void OnlineCourseCreation() throws IOException, InterruptedException{
         int number;
         int integer;
         Random rand = new Random();
@@ -111,6 +111,7 @@ public class Missing  {
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
         driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(integer+"testforscript"+number);
         driver.findElement(By.xpath("//input[@value='Go']")).click();
+        driver.quit();
 
 
 
