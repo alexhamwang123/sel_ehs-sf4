@@ -26,18 +26,8 @@
     <SUITE FILE_PATH="coverage/sel_ehs$com_ChecklistManagement.ic" NAME="com.ChecklistManagement Coverage Results" MODIFIED="1540293253939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
     </SUITE>
-<<<<<<< HEAD
-    <SUITE FILE_PATH="coverage/sel_ehs$OnlineScormVerify.ic" NAME="OnlineScormVerify Coverage Results" MODIFIED="1541753162394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.OnlineCourseManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourse_CompleteAndSubmit.ic" NAME="OnlineCourse_CompleteAndSubmit Coverage Results" MODIFIED="1540174705831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.OnlineCourseManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$FindExistingUser.ic" NAME="FindExistingUser Coverage Results" MODIFIED="1539224592892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-=======
     <SUITE FILE_PATH="coverage/sel_ehs$_Users_shuang_NetBeansProjects_NEW_GIT_KEVIN_sel_ehs_EHS_testng_xml.ic" NAME="$PROJECT_DIR$/EHS/testng.xml Coverage Results" MODIFIED="1540555760091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sel_ehs$com_UserAdmin.ic" NAME="com.UserAdmin Coverage Results" MODIFIED="1539328422735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
->>>>>>> DEV_DWANG
       <FILTER>com.UserAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$ClassroomPrereq.ic" NAME="ClassroomPrereq Coverage Results" MODIFIED="1539566100237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -82,20 +72,9 @@
     <SUITE FILE_PATH="coverage/sel_ehs$AddClassroomManger.ic" NAME="AddClassroomManger Coverage Results" MODIFIED="1539092772542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
-<<<<<<< HEAD
-    <SUITE FILE_PATH="coverage/sel_ehs$com_EHSAdmin.ic" NAME="com.EHSAdmin Coverage Results" MODIFIED="1539331783292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.EHSAdmin.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$CreateCertificate.ic" NAME="CreateCertificate Coverage Results" MODIFIED="1541755715303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.EHSAdmin.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$createCourseManagerFirst.ic" NAME="createCourseManagerFirst Coverage Results" MODIFIED="1538975749949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.Step1.*</FILTER>
-=======
     <SUITE FILE_PATH="coverage/sel_ehs$_default_.ic" NAME="&lt;default&gt; Coverage Results" MODIFIED="1539017510515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sel_ehs$CancelAndNotify.ic" NAME="CancelAndNotify Coverage Results" MODIFIED="1540466266229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
->>>>>>> DEV_DWANG
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$CreateUserSupport.ic" NAME="CreateUserSupport Coverage Results" MODIFIED="1539224216375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.UserAdmin.*</FILTER>
@@ -310,32 +289,18 @@
     <session id="2071871050">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-<<<<<<< HEAD
-          <entry key="project.closed" value="24" />
-          <entry key="project.open.time.1" value="5" />
-          <entry key="project.open.time.10" value="2" />
-=======
           <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
->>>>>>> DEV_DWANG
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.19" value="1" />
-<<<<<<< HEAD
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.21" value="2" />
-          <entry key="project.open.time.23" value="2" />
-          <entry key="project.open.time.30" value="1" />
-=======
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
->>>>>>> DEV_DWANG
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
-<<<<<<< HEAD
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.59" value="1" />
@@ -343,29 +308,19 @@
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.opened" value="35" />
-=======
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.opened" value="19" />
->>>>>>> DEV_DWANG
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="chromedriver" value="1" />
-<<<<<<< HEAD
-          <entry key="class" value="14" />
-          <entry key="iml" value="1" />
-          <entry key="java" value="591" />
-          <entry key="properties" value="18" />
-          <entry key="xml" value="14" />
-=======
           <entry key="class" value="6" />
           <entry key="iml" value="1" />
           <entry key="java" value="522" />
           <entry key="properties" value="13" />
           <entry key="xml" value="13" />
->>>>>>> DEV_DWANG
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -386,28 +341,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-<<<<<<< HEAD
-          <entry key="class" value="9" />
-          <entry key="java" value="17050" />
-          <entry key="properties" value="657" />
-=======
           <entry key="class" value="1" />
           <entry key="java" value="12019" />
           <entry key="properties" value="523" />
->>>>>>> DEV_DWANG
           <entry key="txt" value="57" />
           <entry key="xml" value="367" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-<<<<<<< HEAD
-          <entry key="CLASS" value="9" />
-          <entry key="JAVA" value="17050" />
-          <entry key="PLAIN_TEXT" value="57" />
-          <entry key="Properties" value="657" />
-          <entry key="XML" value="388" />
-=======
           <entry key="CLASS" value="1" />
           <entry key="JAVA" value="12019" />
           <entry key="PLAIN_TEXT" value="57" />
@@ -448,7 +390,6 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="3" />
->>>>>>> DEV_DWANG
         </counts>
       </usages-collector>
     </session>
@@ -461,13 +402,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Createonlineclass.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="3480">
-              <caret line="259" column="14" selection-start-line="259" selection-start-column="14" selection-end-line="259" selection-end-column="14" />
-=======
             <state relative-caret-position="225">
               <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
->>>>>>> DEV_DWANG
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -475,93 +411,7 @@
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/EHS/jars/selenium-server-standalone-3.11.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
-              <caret line="273" selection-start-line="273" selection-end-line="273" />
-              <folding>
-                <element signature="e#10929#10930#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="63" column="65" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/testng.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/reflect/NativeConstructorAccessorImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-=======
->>>>>>> DEV_DWANG
+
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -689,43 +539,20 @@
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" />
-<<<<<<< HEAD
-=======
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" />
->>>>>>> DEV_DWANG
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.ja
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" />
         <option value="$PROJECT_DIR$/EHS/testng.xml" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" />
-        <option value="$PROJECT_DIR$/EHS/testng.xml" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" />
-        <option value="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" />
-=======
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/missing.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Createonlineclass.java" />
->>>>>>> DEV_DWANG
       </list>
     </option>
   </component>
@@ -736,11 +563,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-<<<<<<< HEAD
-    <option name="x" value="143" />
-=======
     <option name="x" value="5" />
->>>>>>> DEV_DWANG
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="977" />
@@ -786,24 +609,7 @@
               <item name="EHS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="EHSAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="Miscellaneous" type="462c0819:PsiDirectoryNode" />
-=======
               <item name="OnlineCourseManagement" type="462c0819:PsiDirectoryNode" />
->>>>>>> DEV_DWANG
             </path>
           </expand>
           <select />
@@ -1320,15 +1126,9 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5016873" side_tool="true" weight="0.15548456" />
       <window_info anchor="bottom" id="Message" order="0" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32674298" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7092652" visible="true" weight="0.541103" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.62726307" weight="0.55879295" />
-=======
       <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71086264" visible="true" weight="0.54292345" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49307775" weight="0.39675173" />
->>>>>>> DEV_DWANG
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
@@ -1358,9 +1158,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Visible_OnlineCourse_Creation" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java">
-=======
     <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1369,7 +1166,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
->>>>>>> DEV_DWANG
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
@@ -1397,9 +1193,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java">
-=======
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1408,7 +1201,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java">
->>>>>>> DEV_DWANG
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
@@ -1417,13 +1209,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="615">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-=======
         <state relative-caret-position="105">
           <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
->>>>>>> DEV_DWANG
+>
         </state>
       </provider>
     </entry>
@@ -1504,12 +1292,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="77" column="65" selection-start-line="77" selection-start-column="63" selection-end-line="77" selection-end-column="65" />
-=======
     <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1521,7 +1303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
->>>>>>> DEV_DWANG
         </state>
       </provider>
     </entry>
@@ -1534,25 +1315,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="115">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-=======
         <state relative-caret-position="225">
           <caret line="92" column="61" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="71" />
->>>>>>> DEV_DWANG
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="70">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-=======
         <state relative-caret-position="76">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
->>>>>>> DEV_DWANG
         </state>
       </provider>
     </entry>
@@ -1565,20 +1336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="115">
-          <caret line="65" column="57" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="126" column="64" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="89" />
-=======
         <state relative-caret-position="314">
           <caret line="82" column="27" lean-forward="true" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
->>>>>>> DEV_DWANG
         </state>
       </provider>
     </entry>
@@ -1603,9 +1362,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java">
-=======
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1614,7 +1370,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java">
->>>>>>> DEV_DWANG
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1485">
           <caret line="118" column="89" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
@@ -1643,12 +1398,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-1424">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="34" />
-=======
-        <state relative-caret-position="284">
+      <provider selected="true" editor-type-id="text-editor"><state relative-caret-position="284">
           <caret line="298" column="19" selection-start-line="298" selection-start-column="12" selection-end-line="298" selection-end-column="19" />
         </state>
       </provider>
@@ -1657,19 +1407,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2655">
           <caret line="195" column="57" selection-start-line="195" selection-start-column="41" selection-end-line="195" selection-end-column="57" />
->>>>>>> DEV_DWANG
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="330">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-=======
         <state relative-caret-position="1860">
           <caret line="138" column="1" lean-forward="true" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
->>>>>>> DEV_DWANG
         </state>
       </provider>
     </entry>
@@ -1680,9 +1424,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java">
-=======
     <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1691,7 +1432,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java">
->>>>>>> DEV_DWANG
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
@@ -1726,46 +1466,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="131" column="73" selection-start-line="131" selection-start-column="59" selection-end-line="131" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3480">
-          <caret line="259" column="14" selection-start-line="259" selection-start-column="14" selection-end-line="259" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/EHS/jars/selenium-server-standalone-3.11.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="273" selection-start-line="273" selection-end-line="273" />
-          <folding>
-            <element signature="e#10929#10930#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-=======
     <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1801,7 +1501,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
->>>>>>> DEV_DWANG
         </state>
       </provider>
     </entry>
