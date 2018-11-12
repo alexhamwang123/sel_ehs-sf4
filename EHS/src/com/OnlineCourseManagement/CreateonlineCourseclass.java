@@ -124,6 +124,7 @@ public class CreateonlineCourseclass {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
         driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(integer+"testforscript");
+        driver.findElement(By.xpath("//input[@value='Go']")).click();
         driver.findElement(By.className("onelang")).click();
 
          //driver.quit();
