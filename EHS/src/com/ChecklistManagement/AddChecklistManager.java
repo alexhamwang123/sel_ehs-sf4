@@ -62,9 +62,9 @@ public class AddChecklistManager implements IMethodInterceptor {
 
         WebDriver driver = new ChromeDriver();
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
@@ -80,10 +80,9 @@ public class AddChecklistManager implements IMethodInterceptor {
 
         Thread.sleep(4500);
 
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
-
-        js.executeScript("arguments[0].click();", courseAdmin);
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
 
