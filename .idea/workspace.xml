@@ -34,7 +34,7 @@
     <SUITE FILE_PATH="coverage/sel_ehs$RefreshChecklist.ic" NAME="RefreshChecklist Coverage Results" MODIFIED="1540449991282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$OnlineScormVerify.ic" NAME="OnlineScormVerify Coverage Results" MODIFIED="1542081746438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/sel_ehs$OnlineScormVerify.ic" NAME="OnlineScormVerify Coverage Results" MODIFIED="1542082357429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourse_CompleteAndSubmit.ic" NAME="OnlineCourse_CompleteAndSubmit Coverage Results" MODIFIED="1540174705831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -237,7 +237,7 @@
     <option name="myAddOrReplace" value="2" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="62" />
+    <option name="myElementSize" value="52" />
   </component>
   <component name="ErrorTreeViewConfiguration">
     <option name="hideWarnings" value="true" />
@@ -322,7 +322,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="12021" />
+          <entry key="java" value="12023" />
           <entry key="properties" value="523" />
           <entry key="txt" value="57" />
           <entry key="xml" value="367" />
@@ -331,7 +331,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="12021" />
+          <entry key="JAVA" value="12023" />
           <entry key="PLAIN_TEXT" value="57" />
           <entry key="Properties" value="523" />
           <entry key="XML" value="367" />
@@ -406,8 +406,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="85" column="74" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="75" />
+            <state relative-caret-position="38">
+              <caret line="479" column="47" lean-forward="true" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -530,9 +530,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-130" />
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="6" />
+    <option name="y" value="66" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
   </component>
@@ -659,7 +659,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542081758441" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542082990336" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -906,12 +906,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Missing_missing - 2018.11.09 at 20h 30m 12s.xml">
-      <configuration name="Missing.missing" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Missing_missing - 2018.11.09 at 20h 33m 37s.xml">
-      <configuration name="Missing.missing" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="Missing_missing - 2018.11.12 at 09h 01m 23s.xml">
       <configuration name="Missing.missing" configurationId="TestNG" />
     </history-entry>
@@ -936,6 +930,12 @@
     <history-entry file="OnlineScormVerify - 2018.11.13 at 12h 04m 22s.xml">
       <configuration name="OnlineScormVerify" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.13 at 12h 14m 15s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="OnlineScormVerify - 2018.11.13 at 12h 19m 27s.xml">
+      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -947,7 +947,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="6" y="66" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983127" visible="true" weight="0.25282714" />
@@ -959,13 +959,13 @@
       <window_info id="Favorites" order="6" sideWeight="0.5016873" side_tool="true" weight="0.15548456" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71001613" visible="true" weight="0.5418502" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49192247" weight="0.5154185" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71001613" weight="0.5418502" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4911147" visible="true" weight="0.5154185" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32674298" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.28998384" side_tool="true" visible="true" weight="0.5418502" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5088853" side_tool="true" visible="true" weight="0.5154185" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.6256656" weight="0.32482597" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
@@ -1345,8 +1345,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="85" column="74" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="75" />
+        <state relative-caret-position="38">
+          <caret line="479" column="47" lean-forward="true" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
         </state>
       </provider>
     </entry>

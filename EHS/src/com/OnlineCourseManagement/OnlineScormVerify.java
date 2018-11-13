@@ -82,7 +82,7 @@ public class OnlineScormVerify {
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(600);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(2000);
         String courseTitle = generator.generate(10);
@@ -483,7 +483,7 @@ public class OnlineScormVerify {
                 System.out.println("Ｗe find the same course id here");
                 break;
             } else {
-                Assert.fail("Should not be submitted here line 484");
+                Assert.fail("Should not be submitted here line 486");
             }
         }
         Thread.sleep(3000);
