@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="Visible_OnlineCourse_Creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,6 +97,9 @@
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$com_EHSAdmin.ic" NAME="com.EHSAdmin Coverage Results" MODIFIED="1539331783292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.EHSAdmin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$CreateCertificate.ic" NAME="CreateCertificate Coverage Results" MODIFIED="1542099614998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$createCourseManagerFirst.ic" NAME="createCourseManagerFirst Coverage Results" MODIFIED="1538975749949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -237,7 +241,7 @@
     <option name="myAddOrReplace" value="2" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="52" />
+    <option name="myElementSize" value="109" />
   </component>
   <component name="ErrorTreeViewConfiguration">
     <option name="hideWarnings" value="true" />
@@ -279,7 +283,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="14" />
-          <entry key="project.open.time.1" value="4" />
+          <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.14" value="2" />
@@ -296,7 +300,7 @@
           <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -304,7 +308,7 @@
           <entry key="chromedriver" value="1" />
           <entry key="class" value="6" />
           <entry key="iml" value="1" />
-          <entry key="java" value="525" />
+          <entry key="java" value="528" />
           <entry key="properties" value="13" />
           <entry key="xml" value="13" />
         </counts>
@@ -313,7 +317,7 @@
         <counts>
           <entry key="CLASS" value="6" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="525" />
+          <entry key="JAVA" value="528" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="13" />
           <entry key="XML" value="13" />
@@ -322,7 +326,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="12023" />
+          <entry key="java" value="12055" />
           <entry key="properties" value="523" />
           <entry key="txt" value="57" />
           <entry key="xml" value="367" />
@@ -331,7 +335,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="12023" />
+          <entry key="JAVA" value="12055" />
           <entry key="PLAIN_TEXT" value="57" />
           <entry key="Properties" value="523" />
           <entry key="XML" value="367" />
@@ -382,8 +386,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="120" column="28" lean-forward="true" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
+            <state relative-caret-position="92">
+              <caret line="125" column="8" lean-forward="true" selection-start-line="125" selection-start-column="8" selection-end-line="126" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -394,8 +398,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="69" />
+            <state relative-caret-position="1860">
+              <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -403,11 +407,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="479" column="47" lean-forward="true" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
+            <state relative-caret-position="83">
+              <caret line="125" column="8" lean-forward="true" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1160">
+              <caret line="92" column="61" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="120" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="179" selection-start-line="179" selection-end-line="179" />
             </state>
           </provider>
         </entry>
@@ -423,9 +454,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>OnlineCourseManagement</find>
-      <find>FinalDisabledCourseIfNeed</find>
-      <find>OnlineCourseEditContent</find>
       <find>T1yVGgbehP</find>
       <find>langIsViewable</find>
       <find>CompleteAndSubmitChecklist</find>
@@ -453,6 +481,9 @@
       <find>detailCourseTitle</find>
       <find>div.clearfix:nth-child(1) div.row div.col-md-9.col-xs-9 div.listTable:nth-child(18) table.tablesorter.table.table-hover.table-striped tbody:nth-child(2) tr:nth-child(1) td:nth-child(3) &gt; button.btn.btn-primary.btn-xs.field-tip</find>
       <find>onelan</find>
+      <find>Go</find>
+      <find>secondmenu</find>
+      <find>courseId2</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -477,7 +508,6 @@
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" />
@@ -521,6 +551,7 @@
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Missing.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/Createonlineclass.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" />
       </list>
     </option>
   </component>
@@ -583,35 +614,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="OnlineCourseManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -655,11 +657,47 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="EHSAdmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="OnlineCourseManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542082990336" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542099867079" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -686,7 +724,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.OnlineScormVerify">
+  <component name="RunManager" selected="TestNG.CreateCertificate">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -695,6 +733,23 @@
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateCertificate" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHSAdmin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateCertificate" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -818,41 +873,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="missing.missing" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.missing" />
-      <option name="METHOD_NAME" value="missing" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.missing.missing" />
       <item itemvalue="TestNG.Createonlineclass.missing" />
       <item itemvalue="TestNG.CreateonlineCourseclass" />
       <item itemvalue="TestNG.OnlineCoursewithExpiration" />
       <item itemvalue="TestNG.OnlineScormVerify" />
+      <item itemvalue="TestNG.CreateCertificate" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CreateCertificate" />
         <item itemvalue="TestNG.OnlineScormVerify" />
         <item itemvalue="TestNG.OnlineCoursewithExpiration" />
         <item itemvalue="TestNG.CreateonlineCourseclass" />
         <item itemvalue="TestNG.Createonlineclass.missing" />
-        <item itemvalue="TestNG.missing.missing" />
       </list>
     </recent_temporary>
   </component>
@@ -906,35 +942,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Missing_missing - 2018.11.12 at 09h 01m 23s.xml">
-      <configuration name="Missing.missing" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 12h 48m 47s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="CreateonlineCourseclass - 2018.11.12 at 18h 55m 22s.xml">
-      <configuration name="CreateonlineCourseclass" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 15h 15m 12s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineCoursewithExpiration - 2018.11.12 at 19h 07m 49s.xml">
-      <configuration name="OnlineCoursewithExpiration" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 15h 20m 21s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineScormVerify - 2018.11.13 at 11h 49m 36s.xml">
-      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 15h 34m 26s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineScormVerify - 2018.11.13 at 11h 53m 45s.xml">
-      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 15h 37m 44s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineScormVerify - 2018.11.13 at 11h 57m 12s.xml">
-      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 15h 47m 16s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineScormVerify - 2018.11.13 at 12h 00m 27s.xml">
-      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 16h 01m 13s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineScormVerify - 2018.11.13 at 12h 04m 22s.xml">
-      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 16h 13m 30s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineScormVerify - 2018.11.13 at 12h 14m 15s.xml">
-      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 16h 55m 05s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="OnlineScormVerify - 2018.11.13 at 12h 19m 27s.xml">
-      <configuration name="OnlineScormVerify" configurationId="TestNG" />
+    <history-entry file="CreateCertificate - 2018.11.13 at 17h 03m 01s.xml">
+      <configuration name="CreateCertificate" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -950,7 +986,7 @@
     <frame x="6" y="66" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983127" visible="true" weight="0.25282714" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983127" visible="true" weight="0.25686592" />
       <window_info id="Structure" order="1" sideWeight="0.50211865" side_tool="true" weight="0.14696486" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -959,15 +995,15 @@
       <window_info id="Favorites" order="6" sideWeight="0.5016873" side_tool="true" weight="0.15548456" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71001613" weight="0.5418502" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4911147" visible="true" weight="0.5154185" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.70678514" visible="true" weight="0.70337737" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4878837" weight="0.39647576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32674298" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5088853" side_tool="true" visible="true" weight="0.5154185" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.29321486" side_tool="true" visible="true" weight="0.70337737" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.6256656" weight="0.32482597" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.62277865" weight="0.32452276" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -977,7 +1013,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49074075" weight="0.2172524" />
-      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5092593" side_tool="true" visible="true" weight="0.21647818" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5092593" side_tool="true" visible="true" weight="0.3279483" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1095,13 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="92" column="61" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1155,13 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1485">
           <caret line="118" column="89" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="120" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1316,37 +1338,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="69" />
+        <state relative-caret-position="1860">
+          <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="120" column="28" lean-forward="true" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1160">
+          <caret line="92" column="61" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="120" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="479" column="47" lean-forward="true" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
+        <state relative-caret-position="83">
+          <caret line="125" column="8" lean-forward="true" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="125" column="8" lean-forward="true" selection-start-line="125" selection-start-column="8" selection-end-line="126" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
         </state>
       </provider>
     </entry>

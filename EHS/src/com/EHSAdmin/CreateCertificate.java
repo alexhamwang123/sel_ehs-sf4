@@ -174,11 +174,11 @@ public class CreateCertificate {
 		new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");//We have to make it via manually, just in case.
 		new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
 		new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-		Thread.sleep(500);
+		Thread.sleep(600);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-		Thread.sleep(2500);
+		Thread.sleep(4500);
 		driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 		String courseTitle = generator.generate(10);
 		driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
 		driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -215,12 +215,18 @@ public class CreateCertificate {
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.partialLinkText("Courses")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId2);
+		driver.findElement(By.xpath("//input[@value='Go']")).click();
+//		driver.findElement(By.id("srch_fld")).sendKeys(courseId2);
+//
+//		Thread.sleep(1500);
+//
+//
+//		driver.findElement(By.name("searchButton")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.id("srch_fld")).sendKeys(courseId2);
-
-
-		driver.findElement(By.name("searchButton")).click();
-		Thread.sleep(1500);
+//		driver.findElement(By.xpath("//input[@value='Go']")).click();
+//		Thread.sleep(500);
 		String currentWin = driver.getWindowHandle();
 		try {
 			driver.findElement(By.className("onelang")).click();
