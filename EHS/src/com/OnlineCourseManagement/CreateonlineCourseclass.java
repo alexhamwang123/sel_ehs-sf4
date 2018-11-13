@@ -61,7 +61,7 @@ public class CreateonlineCourseclass {
         oSelect.selectByValue("40285a840b8ea220010b8ea2212f0009");
         WebElement element2 = driver.findElement(By.xpath("//select[@id='detailCourseFulfillType']"));
         Select iSelect = new Select(element2);
-        iSelect.selectByValue("2898734c-84a8-102a-bdfc-bb194e3a");
+        iSelect.selectByValue("765ecc62-9523-102a-b9c1-bc598aa8");
         WebElement element3 = driver.findElement(By.xpath("//select[@id='detailCourseExpiration']"));
         Select aSelect = new Select(element3);
         aSelect.selectByValue("0");
