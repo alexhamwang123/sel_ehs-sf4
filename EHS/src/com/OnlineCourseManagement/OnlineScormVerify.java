@@ -80,7 +80,7 @@ public class OnlineScormVerify {
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");//We have to make it via manually, just in case.
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(500);
+        Thread.sleep(600);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
@@ -123,6 +123,7 @@ public class OnlineScormVerify {
 
         driver.findElement(By.name("searchButton")).click();
         Thread.sleep(1500);
+        driver.findElement(By.xpath("//input[@value='Go']")).click();
         String currentWin = driver.getWindowHandle();
         Thread.sleep(1500);
         try {
