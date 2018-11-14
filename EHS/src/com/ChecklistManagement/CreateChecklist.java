@@ -111,8 +111,11 @@ public class CreateChecklist {
 		Thread.sleep(1500);
 		driver.findElement(By.className("onelang")).click();
 		Thread.sleep(10000);
+        WebElement jseffect = driver.findElement(By.id("crselink1"));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
 
-		driver.findElement(By.id("crselink1")).click();
+        js.executeScript("arguments[0].click();", jseffect);
+		//driver.findElement(By.id("crselink1")).click();
 		Thread.sleep(3500);
 		driver.quit();
 
