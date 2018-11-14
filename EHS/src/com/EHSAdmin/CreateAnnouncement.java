@@ -45,7 +45,6 @@ public class CreateAnnouncement {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-//        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
@@ -62,7 +61,7 @@ public class CreateAnnouncement {
 		}
 		
 		//Clicking on 'EHS Admin'
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[4]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		

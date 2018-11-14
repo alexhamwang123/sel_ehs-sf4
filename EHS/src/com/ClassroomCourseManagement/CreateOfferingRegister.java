@@ -37,8 +37,6 @@ public class CreateOfferingRegister {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
-
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();

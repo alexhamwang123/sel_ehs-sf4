@@ -31,8 +31,6 @@ public class CreateNormalUser {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		driver.manage().window().maximize();
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
@@ -56,7 +54,8 @@ public class CreateNormalUser {
 		}
 		
 		//Clicking on 'User Admin'
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[1]/a"));
+//		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[1]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		

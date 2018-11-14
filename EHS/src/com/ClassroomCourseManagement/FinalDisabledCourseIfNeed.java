@@ -50,8 +50,6 @@ public class FinalDisabledCourseIfNeed {
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyRelease(KeyEvent.VK_TAB);
 
-        driver.manage().window().maximize();
-
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -75,7 +73,7 @@ public class FinalDisabledCourseIfNeed {
         while (true) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
 
-            WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+            WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
             js.executeScript("arguments[0].click()", courseAdmin);
 
             Thread.sleep(2000);

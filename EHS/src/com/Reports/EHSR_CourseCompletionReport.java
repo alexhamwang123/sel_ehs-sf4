@@ -52,7 +52,8 @@ public class EHSR_CourseCompletionReport {
         Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
+//		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);

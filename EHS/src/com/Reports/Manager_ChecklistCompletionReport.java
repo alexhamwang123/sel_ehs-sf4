@@ -33,8 +33,6 @@ public class Manager_ChecklistCompletionReport {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -52,7 +50,8 @@ public class Manager_ChecklistCompletionReport {
 
 		
 		//Clicking on Manager Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[2]/a"));
+		//		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		

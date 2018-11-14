@@ -34,7 +34,6 @@ public class RegisteringMechanics {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         String normuser = prop.getProperty("testnormuser");
@@ -47,7 +46,7 @@ public class RegisteringMechanics {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);

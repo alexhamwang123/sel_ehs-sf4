@@ -122,7 +122,7 @@ public class OnlineScormVerify {
 
 
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//input[@value='Go']")).click();
         String currentWin = driver.getWindowHandle();
         Thread.sleep(1500);

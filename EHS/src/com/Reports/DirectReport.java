@@ -20,15 +20,12 @@ public class DirectReport {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        driver.manage().window().maximize();
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
-
         driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");

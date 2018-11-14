@@ -33,8 +33,6 @@ public class EHSR_ChecklistSubmissionReport {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -51,9 +49,9 @@ public class EHSR_ChecklistSubmissionReport {
         Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
+		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();",ele);
+		js.executeScript("arguments[0].click();",courseAdmin);
 
 		Thread.sleep(1500);
 		//Click on Checklist Submission Report 

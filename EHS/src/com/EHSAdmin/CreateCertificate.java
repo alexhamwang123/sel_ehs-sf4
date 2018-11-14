@@ -44,7 +44,6 @@ public class CreateCertificate {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-//        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
@@ -57,9 +56,9 @@ public class CreateCertificate {
 
 		
 		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[8]/ul/li[4]/a"));
+		WebElement EHSAdmin = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();",ele);
+		js.executeScript("arguments[0].click();",EHSAdmin);
 				
 		try {
 			Thread.sleep(2000);
@@ -160,7 +159,7 @@ public class CreateCertificate {
 		//driver.findElement(By.className("editAction")).click()
 		//certificate_checkbox
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;
-		WebElement courseAdmin2 = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[8]/ul/li[3]/a"));
+		WebElement courseAdmin2 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
 		js1.executeScript("arguments[0].click()", courseAdmin2);
 
 		Thread.sleep(1500);
@@ -217,6 +216,7 @@ public class CreateCertificate {
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId2);
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//input[@value='Go']")).click();
 //		driver.findElement(By.id("srch_fld")).sendKeys(courseId2);
 //
