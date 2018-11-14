@@ -38,7 +38,7 @@ public class CompleteAndSubmitChecklist {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
@@ -46,10 +46,12 @@ public class CompleteAndSubmitChecklist {
 		driver.findElement(By.id("login_password")).sendKeys(password);
 
 		driver.findElement(By.name("submit")).click();
-		
+
 		Thread.sleep(4500);
-		
-        driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
+		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Courses')]"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+
+		js.executeScript("arguments[0].click();", courseAdmin);
 		
 		driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ");
 		
@@ -61,13 +63,14 @@ public class CompleteAndSubmitChecklist {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		Thread.sleep(7000);
+
 
 		//Click on the Enroll button
-		driver.findElement(By.xpath("//*[@id='msg_headd96dd51c141c3643425434a4898d8e09']/table/tbody/tr/td[5]/img")).click();
+		driver.findElement(By.className("onelang")).click();
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,7 +80,7 @@ public class CompleteAndSubmitChecklist {
 		driver.findElement(By.id("crselink1")).click();
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
