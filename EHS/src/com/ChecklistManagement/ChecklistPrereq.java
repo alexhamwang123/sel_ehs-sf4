@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test(dependsOnGroups = "ehs1",priority=9)
+@Test(priority=9)
 public class ChecklistPrereq {
     public void ChecklistPrereq() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -39,7 +39,7 @@ public class ChecklistPrereq {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -51,7 +51,7 @@ public class ChecklistPrereq {
 
         Thread.sleep(4500);
 
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -68,9 +68,9 @@ public class ChecklistPrereq {
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("EHS-1000 - EHS Essentials");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.id("saveBtn")).click();
-        Thread.sleep(1500);
+        Thread.sleep(10000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
@@ -78,13 +78,13 @@ public class ChecklistPrereq {
         driver.findElement(By.id("detailCheckListDescription")).sendKeys("test checklist description");
         driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
         driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.findElement(By.id("createContent")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("saveBtn")).click();
@@ -94,11 +94,11 @@ public class ChecklistPrereq {
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3500);
+        Thread.sleep(7000);
         driver.findElement(By.id("langIsViewable")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("detailIsActive")).click();
@@ -109,8 +109,8 @@ public class ChecklistPrereq {
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.className("viewglass")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//img[@class='viewglass']")).click();
         Thread.sleep(1500);
         String working = "";
         try {
