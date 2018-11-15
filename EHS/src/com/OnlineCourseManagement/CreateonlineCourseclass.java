@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-@Test
+@Test (priority=47)
 public class CreateonlineCourseclass {
     public void OnlineCourseCreation() throws IOException, InterruptedException{
         int number;
@@ -128,7 +128,7 @@ public class CreateonlineCourseclass {
         Thread.sleep(3000);
         driver.findElement(By.className("onelang")).click();
 
-         //driver.quit();
+        driver.quit();
 
 
 
