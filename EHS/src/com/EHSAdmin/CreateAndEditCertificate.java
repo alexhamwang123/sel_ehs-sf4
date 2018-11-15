@@ -24,8 +24,8 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=62)
-public class CreateCertificate {
+@Test(priority=67)
+public class CreateAndEditCertificate {
 
 	public void CreateCertificate() throws InterruptedException, IOException {
 
@@ -43,7 +43,7 @@ public class CreateCertificate {
 		driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-
+		String testnormuser = prop.getProperty("testnormuser");
         driver.findElement(By.id("login_login_id")).sendKeys(username);
         driver.findElement(By.id("login_password")).sendKeys(password);
 
@@ -51,19 +51,19 @@ public class CreateCertificate {
 
         Thread.sleep(4500);
 
-		
+
 		//Clicking on EHS Admin
 		WebElement EHSAdmin = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",EHSAdmin);
-				
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		//Clicking on 'Certificate Management'
         driver.findElement(By.partialLinkText("Certificate Management")).click();
 
@@ -85,10 +85,10 @@ public class CreateCertificate {
 		}
 
 
-		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
-		String title = generator.generate(10);
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+        String title = generator.generate(10);
 
-		// Entering the Certificate Name that you want for the certificate
+        // Entering the Certificate Name that you want for the certificate
 		driver.findElement(By.name("detailCertName")).sendKeys(title);
 
 		// Entering the Description that you want for your certificate
@@ -124,37 +124,37 @@ public class CreateCertificate {
 //		driver.quit();
 
 		// Searching for the lab name that you just created to show in the search result
-        Actions actions = new Actions(driver);
-		actions.moveToElement(driver.findElement(By.id("secondmenu")));
-		actions.click();
-		actions.sendKeys(title);
-		actions.build().perform();
-
-		driver.findElement(By.cssSelector("input[value='Go']")).click();
-		Thread.sleep(2500);
-		driver.findElement(By.className("editAction")).click();
-		Thread.sleep(1500);
-
-		driver.findElement(By.name("detailCertDescr")).clear();
-		driver.findElement(By.name("detailCertDescr")).sendKeys("im editing the certificate description");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(1500);
-        actions.moveToElement(driver.findElement(By.id("secondmenu")));
-        actions.click();
-        actions.sendKeys(title);
-        actions.build().perform();
-
-        driver.findElement(By.cssSelector("input[value='Go']")).click();
-        Thread.sleep(2500);
-        driver.findElement(By.className("editAction")).click();
-        Thread.sleep(1500);
-        if(!driver.findElement(By.name("detailCertDescr")).getAttribute("innerHTML").equals("im editing the certificate description")) {
-            Assert.fail("something went wrong while editing the certificate");
-        }
-		Thread.sleep(2000);
+//        Actions actions = new Actions(driver);
+//		actions.moveToElement(driver.findElement(By.id("secondmenu")));
+//		actions.click();
+//		actions.sendKeys(title);
+//		actions.build().perform();
+//
+//		driver.findElement(By.cssSelector("input[value='Go']")).click();
+//		Thread.sleep(2500);
+//		driver.findElement(By.className("editAction")).click();
+//		Thread.sleep(1500);
+//
+//		driver.findElement(By.name("detailCertDescr")).clear();
+//		driver.findElement(By.name("detailCertDescr")).sendKeys("im editing the certificate description");
+//        Thread.sleep(500);
+//        driver.findElement(By.cssSelector("input[value='Save']")).click();
+//        Thread.sleep(1500);
+//        driver.findElement(By.cssSelector("input[value='Back']")).click();
+//        Thread.sleep(1500);
+//        actions.moveToElement(driver.findElement(By.id("secondmenu")));
+//        actions.click();
+//        actions.sendKeys(title);
+//        actions.build().perform();
+//
+//        driver.findElement(By.cssSelector("input[value='Go']")).click();
+//        Thread.sleep(2500);
+//        driver.findElement(By.className("editAction")).click();
+//        Thread.sleep(1500);
+//        if(!driver.findElement(By.name("detailCertDescr")).getAttribute("innerHTML").equals("im editing the certificate description")) {
+//            Assert.fail("something went wrong while editing the certificate");
+//        }
+        Thread.sleep(2000);
 		//driver.findElement(By.className("editAction")).click()
 		//certificate_checkbox
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;
@@ -215,17 +215,17 @@ public class CreateCertificate {
 
 //        driver.quit();
 //		Thread.sleep(2000);
-//		driver.findElement(By.id("lightbox")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
-//		Thread.sleep(2500);
-//
-//		driver.findElement(By.id("login_login_id")).sendKeys(testnormuser);
-//		driver.findElement(By.id("login_password")).sendKeys(password);
-//
-//		driver.findElement(By.name("submit")).click();
-//
-//		Thread.sleep(4500);
+		driver.findElement(By.id("lightbox")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
+		Thread.sleep(2500);
+
+		driver.findElement(By.id("login_login_id")).sendKeys(testnormuser);
+		driver.findElement(By.id("login_password")).sendKeys(password);
+
+		driver.findElement(By.name("submit")).click();
+
+		Thread.sleep(4500);
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId2);
@@ -498,7 +498,7 @@ public class CreateCertificate {
 		Thread.sleep(800);
 		JavascriptExecutor js2 = (JavascriptExecutor)driver;
 		//WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
-		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
+		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My History')]"));
 		js2.executeScript("arguments[0].click()", myTrainingReport);
 		Thread.sleep(1000);
 		new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
@@ -510,8 +510,8 @@ public class CreateCertificate {
 		Thread.sleep(500);
 		js.executeScript("document.getElementById('dateTo').value='" + "11/14/2018" + "'");
 		Thread.sleep(500);
-		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go for Reports
-//		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click(); //Go for My History.
+//		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go
+		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click();
 		Thread.sleep(1200);
 		String courseIdTxt="";
 		String currentPageMax = "0";
@@ -522,7 +522,8 @@ public class CreateCertificate {
 		restartLoop:
 		while (true) {
 			java.util.List<WebElement> myResults, myResults3a;
-			myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));
+//			myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));
+			myResults = driver.findElements(By.xpath("//div[@class=\"msg_head\"]/table/tbody/tr"));
 			if (myResults.size() > 0) {
 				for (int $p = 0; $p < myResults.size(); $p++) {
 					WebElement myResult;
@@ -533,7 +534,7 @@ public class CreateCertificate {
 						for (WebElement myResult3a : myResults3a) {
 							$i++;
 							String idstr3a = myResult3a.getText();
-//                            System.out.println("didstr3a=" + idstr3a);
+//                            System.out.println("idstr3a=" + idstr3a);
 							if (courseId2.equals(idstr3a)) {
 								$k = $i;
 								$kk = String.valueOf($k);
@@ -586,6 +587,8 @@ public class CreateCertificate {
 			if (isBreak){
 				break;
 			}
+			System.out.println("courseIdTxt=" + courseIdTxt);
+			System.out.println("courseId2=" + courseId2);
 			if (courseIdTxt.equals(courseId2)) {
 				System.out.println("courseIdTxt=" + courseIdTxt);
 				System.out.println("courseId2=" + courseId2);
@@ -599,13 +602,13 @@ public class CreateCertificate {
 		//let's save pdf file at first.
 		//GosavePDF()
 //		WebElement td4Element=
-		$kk = String.valueOf(Integer.valueOf($kk)%6);
-		$kk = String.valueOf(Integer.valueOf($kk)+1);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
-		Thread.sleep(1100);
-		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();//
-		Thread.sleep(3000);
+//		$kk = String.valueOf(Integer.valueOf($kk)%6);
+//		$kk = String.valueOf(Integer.valueOf($kk)+1);
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
+//		Thread.sleep(1100);
+//		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();//
+//		Thread.sleep(3000);
 
 
 	}
