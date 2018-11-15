@@ -50,7 +50,7 @@ public class CreateScormClass {
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyRelease(KeyEvent.VK_TAB);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -64,7 +64,7 @@ public class CreateScormClass {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
@@ -78,11 +78,12 @@ public class CreateScormClass {
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");//We have to make it via manually, just in case.
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+        Thread.sleep(10000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
+        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
+        Thread.sleep(3500);
         String courseTitle = generator.generate(10);
         driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -131,13 +132,13 @@ public class CreateScormClass {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3500);
-        driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.name("detailCourseIsActive")).click();
+        Thread.sleep(10000);
+        driver.findElement(By.id("langIsViewable")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.id("detailCourseIsActive")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(7000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
@@ -165,9 +166,10 @@ public class CreateScormClass {
         robot.keyRelease(KeyEvent.VK_W);
         Thread.sleep(500);
         driver.switchTo().window(currentWin);
-        Thread.sleep(500);
+        Thread.sleep(3500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        driver.findElement(By.name("searchButton")).click();
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//input[@value='Go']")).click();
         Thread.sleep(1500);
 
         if (!driver.getPageSource().contains("Paused")) {

@@ -48,7 +48,7 @@ public class CheckBookmark_ClickNo {
 		driver.get(urladdr);
 
 
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
@@ -61,7 +61,7 @@ public class CheckBookmark_ClickNo {
 		Thread.sleep(4500);
 
 		
-		driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 		 
 		 driver.findElement(By.id("srch_fld")).sendKeys("EHS-1000");
 		 

@@ -82,7 +82,7 @@ public class SubmitIncompleteChecklist {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
@@ -92,102 +92,102 @@ public class SubmitIncompleteChecklist {
 
 		driver.findElement(By.name("submit")).click();
 
-		Thread.sleep(4500);
+		Thread.sleep(10000);
 
-		
-        driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
-		
+
+		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
+
 		driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ"); //checklist name on localhost
-		
+
 		driver.findElement(By.name("searchButton")).click();
-		
+
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 
 		//Click on the Enroll button
 		driver.findElement(By.xpath("//*[@id='msg_headd96dd51c141c3643425434a4898d8e09']/table/tbody/tr/td[5]/img")).click();
-		
+
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 		//Click on 'Default-English' Language option
 		driver.findElement(By.id("crselink1")).click();
-		
+
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e1) {
-			
+
 			e1.printStackTrace();
 		}
-		
+
 		//Clicking the Radio Button
 		//driver.findElement(By.xpath("//*[@name='cf29c8de74fb0d0f2846573a541e8737'][@value='N']")).click();
-		
+
 //		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
-		
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
 		driver.findElement(By.cssSelector("input[type='checkbox'][value='13c496ea53471d3bce0c72e9b4a63b66']")).click(); // Cat
 
 		driver.findElement(By.cssSelector("input[type='checkbox'][value='4bd53adf7e6118d7c8625537fdd551c6']")).click(); // Elephant
-		
+
 		driver.findElement(By.cssSelector("input[type='checkbox'][value='9dadf671b25ecf8ba926941141405bf9']")).click(); // Fox
-		
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 		//Entering value in text box for Question 4
-		
+
 		driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).clear();
-		
+
 		driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).sendKeys("40");
-		
+
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
 		//not Submit, it's gonna to  be Saved value.
 //		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-		
+
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 //		driver.findElement(By.id("fancyConfirm_ok")).click();
 //		Thread.sleep(1500);
 
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 //		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-		Thread.sleep(1500);
+		Thread.sleep(5000);
 		driver.findElement(By.id("fancyConfirm_ok")).click();
-		Thread.sleep(1500);
+		Thread.sleep(5000);
 
 		driver.findElement(By.partialLinkText("Courses")).click();
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 		driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ");//checklist name is on localhost
 
 		driver.findElement(By.name("searchButton")).click();
