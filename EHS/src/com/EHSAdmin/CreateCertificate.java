@@ -533,7 +533,7 @@ public class CreateCertificate {
 						for (WebElement myResult3a : myResults3a) {
 							$i++;
 							String idstr3a = myResult3a.getText();
-//                            System.out.println("didstr3a=" + idstr3a);
+                            System.out.println("idstr3a=" + idstr3a);
 							if (courseId2.equals(idstr3a)) {
 								$k = $i;
 								$kk = String.valueOf($k);
@@ -602,7 +602,7 @@ public class CreateCertificate {
 		$kk = String.valueOf(Integer.valueOf($kk)%6);
 		$kk = String.valueOf(Integer.valueOf($kk)+1);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
+		driver.findElement(By.xpath("//table[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
 		Thread.sleep(1100);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();//
 		Thread.sleep(3000);
