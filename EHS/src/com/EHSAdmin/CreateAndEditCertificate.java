@@ -506,9 +506,9 @@ public class CreateAndEditCertificate {
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = new Date();
 //        System.out.println("Local Date Now=" + dateFormat.format(date));
-		js.executeScript("document.getElementById('dateFrom').value='" + "11/14/2018" + "'");
+		js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(date) + "'");
 		Thread.sleep(500);
-		js.executeScript("document.getElementById('dateTo').value='" + "11/14/2018" + "'");
+		js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
 		Thread.sleep(500);
 //		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go
 		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click();
