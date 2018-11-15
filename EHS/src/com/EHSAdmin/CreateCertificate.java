@@ -229,9 +229,9 @@ public class CreateCertificate {
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId2);
-		Thread.sleep(4800);
+		Thread.sleep(4900);
 		driver.findElement(By.xpath("//input[@value='Go']")).click();
-		Thread.sleep(2500);
+		Thread.sleep(2600);
 		String currentWin = driver.getWindowHandle();
 		try {
 			driver.findElement(By.className("onelang")).click();
@@ -506,9 +506,9 @@ public class CreateCertificate {
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = new Date();
 //        System.out.println("Local Date Now=" + dateFormat.format(date));
-		js.executeScript("document.getElementById('dateFrom').value='" + "11/14/2018" + "'");
+		js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(date) + "'");
 		Thread.sleep(500);
-		js.executeScript("document.getElementById('dateTo').value='" + "11/14/2018" + "'");
+		js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
 		Thread.sleep(500);
 		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go for Reports
 //		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click(); //Go for My History.
@@ -533,7 +533,7 @@ public class CreateCertificate {
 						for (WebElement myResult3a : myResults3a) {
 							$i++;
 							String idstr3a = myResult3a.getText();
-//                            System.out.println("didstr3a=" + idstr3a);
+                            System.out.println("idstr3a=" + idstr3a);
 							if (courseId2.equals(idstr3a)) {
 								$k = $i;
 								$kk = String.valueOf($k);
@@ -602,7 +602,7 @@ public class CreateCertificate {
 		$kk = String.valueOf(Integer.valueOf($kk)%6);
 		$kk = String.valueOf(Integer.valueOf($kk)+1);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
+		driver.findElement(By.xpath("//table[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
 		Thread.sleep(1100);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();//
 		Thread.sleep(3000);
