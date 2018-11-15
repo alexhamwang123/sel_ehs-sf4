@@ -39,7 +39,7 @@ public class OnlineButtonSource {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -53,7 +53,7 @@ public class OnlineButtonSource {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
@@ -67,85 +67,85 @@ public class OnlineButtonSource {
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(15000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(8000);
         String courseTitle = generator.generate(10);
         driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(8000);
         driver.findElement(By.id("btn_edit_content")).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.cssSelector("input[type='button'][value='Create Page']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button")).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"915d8c7314d1e2c0011512a0784d1726\"]/img")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
-        Thread.sleep(500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         driver.findElement(By.id("addQBtn")).click();
-        Thread.sleep(1000);
+        Thread.sleep(4000);
         js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
-        Thread.sleep(500);
+        Thread.sleep(3500);
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");
         driver.findElement(By.id("courseQuizAnswer2")).sendKeys("no, this is the correct answer");
         driver.findElement(By.name("courseQuizCorrectAnswer")).sendKeys("2");
         driver.findElement(By.name("courseQuizSourcePage")).sendKeys("1");
-        Thread.sleep(500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(7500);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(2000);
+        Thread.sleep(8000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(4500);
+        Thread.sleep(10500);
         driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("detailCourseIsActive")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(8000);
         driver.findElement(By.cssSelector("input[value='Edit']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(8000);
         driver.findElement(By.cssSelector("input[value='Create Button Sources ']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5000);
         String mainWin = driver.getWindowHandle();
         WebElement landingPage = driver.findElement(By.cssSelector("input[value='Sample Landing Page']"));
         js.executeScript("arguments[0].click();", landingPage);
 
-        Thread.sleep(1500);
+        Thread.sleep(5000);
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        Thread.sleep(500);
+        Thread.sleep(5000);
         driver.findElement(By.cssSelector("input[value='Take Course']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        Thread.sleep(500);
+        Thread.sleep(5000);
         WebElement exit = driver.findElement(By.xpath("//*[@id=\"nav_exit\"]"));
         js.executeScript("arguments[0].click();", exit);
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         driver.findElement(By.className("scormPauseCourse")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5000);
         driver.switchTo().window(mainWin);
         Thread.sleep(2000);
         driver.quit();
