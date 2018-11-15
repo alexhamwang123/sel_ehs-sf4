@@ -216,7 +216,7 @@ public class CreateCertificate {
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId2);
-		Thread.sleep(4000);
+		Thread.sleep(4800);
 		driver.findElement(By.xpath("//input[@value='Go']")).click();
 //		driver.findElement(By.id("srch_fld")).sendKeys(courseId2);
 //
@@ -224,7 +224,7 @@ public class CreateCertificate {
 //
 //
 //		driver.findElement(By.name("searchButton")).click();
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 //		driver.findElement(By.xpath("//input[@value='Go']")).click();
 //		Thread.sleep(500);
 		String currentWin = driver.getWindowHandle();
