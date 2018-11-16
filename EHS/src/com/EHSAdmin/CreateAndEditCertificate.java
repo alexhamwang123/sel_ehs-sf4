@@ -498,7 +498,7 @@ public class CreateAndEditCertificate {
 		Thread.sleep(800);
 		JavascriptExecutor js2 = (JavascriptExecutor)driver;
 		//WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
-		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My History')]"));
+		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
 		js2.executeScript("arguments[0].click()", myTrainingReport);
 		Thread.sleep(1000);
 		new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
@@ -507,11 +507,13 @@ public class CreateAndEditCertificate {
 		Date date = new Date();
 //        System.out.println("Local Date Now=" + dateFormat.format(date));
 		js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(date) + "'");
+//		js.executeScript("document.getElementById('dateFrom').value='" + "11/15/2018" + "'");
 		Thread.sleep(500);
 		js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
+//		js.executeScript("document.getElementById('dateTo').value='" + "11/15/2018" + "'");
 		Thread.sleep(500);
-//		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go
-		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click();
+		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go for Reports
+//		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click();//Go for My Historyå
 		Thread.sleep(1200);
 		String courseIdTxt="";
 		String currentPageMax = "0";
@@ -522,8 +524,8 @@ public class CreateAndEditCertificate {
 		restartLoop:
 		while (true) {
 			java.util.List<WebElement> myResults, myResults3a;
-//			myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));
-			myResults = driver.findElements(By.xpath("//div[@class=\"msg_head\"]/table/tbody/tr"));
+			myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));//Under The Reports
+//			myResults = driver.findElements(By.xpath("//div[@class=\"msg_head\"]/table/tbody/tr")); //Under My History
 			if (myResults.size() > 0) {
 				for (int $p = 0; $p < myResults.size(); $p++) {
 					WebElement myResult;
@@ -534,8 +536,9 @@ public class CreateAndEditCertificate {
 						for (WebElement myResult3a : myResults3a) {
 							$i++;
 							String idstr3a = myResult3a.getText();
-//                            System.out.println("idstr3a=" + idstr3a);
+//                          System.out.println("idstr3a=" + idstr3a);
 							if (courseId2.equals(idstr3a)) {
+								courseIdTxt = idstr3a;
 								$k = $i;
 								$kk = String.valueOf($k);
 								isBreak=true;
@@ -602,13 +605,13 @@ public class CreateAndEditCertificate {
 		//let's save pdf file at first.
 		//GosavePDF()
 //		WebElement td4Element=
-//		$kk = String.valueOf(Integer.valueOf($kk)%6);
-//		$kk = String.valueOf(Integer.valueOf($kk)+1);
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
-//		Thread.sleep(1100);
-//		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();//
-//		Thread.sleep(3000);
+		$kk = String.valueOf(Integer.valueOf($kk)%6);
+		$kk = String.valueOf(Integer.valueOf($kk)+1);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
+		Thread.sleep(1100);
+		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();//
+		Thread.sleep(3000);
 
 
 	}
