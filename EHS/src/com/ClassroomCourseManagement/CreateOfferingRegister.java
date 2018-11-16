@@ -94,6 +94,15 @@ public class CreateOfferingRegister {
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd_Save")).click();
         Thread.sleep(1500);
+        driver.findElement(By.id("TimeAdd")).click();
+        Thread.sleep(1500);
+        js.executeScript("document.getElementById('TimeAdd_datepicker').value='Dec 26,2030'");
+        new Select(driver.findElement(By.name("detailClassStartHourSelect"))).selectByVisibleText("06");
+        new Select(driver.findElement(By.name("detailClassStartMinuteSelect"))).selectByVisibleText("45");
+        new Select(driver.findElement(By.id("detailClassDuration"))).selectByVisibleText("13");
+        Thread.sleep(1500);
+        driver.findElement(By.id("TimeAdd_Save")).click();
+        Thread.sleep(1500);
         driver.findElement(By.id("saveClassCourse")).click();
         Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Courses")).click();
