@@ -42,7 +42,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		driver.get(urladdr);
 
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
@@ -52,13 +52,13 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		driver.findElement(By.name("submit")).click();
 
-		Thread.sleep(4500);
+		Thread.sleep(20500);
 
 
-		driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
-		Thread.sleep(1500);
+		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
+		Thread.sleep(3000);
 		driver.findElement(By.id("srch_fld")).sendKeys("EHS-11111");
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 		driver.findElement(By.name("searchButton")).click();
 
 		try {
@@ -86,11 +86,11 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 		}
 
 		driver.findElement(By.partialLinkText("English")).click();
-		Thread.sleep(1500);
+
 //		driver.findElement(By.xpath("//*[@id='label']")).click();
 
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -98,7 +98,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		//Clicking on Question 1
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
+		js.executeScript("document.getElementById('button0').click();");
 
 		try {
 			Thread.sleep(2000);
@@ -108,11 +108,12 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 		}
 
 		//Clicking on the 'Next' Button
+		JavascriptExecutor js0 = (JavascriptExecutor) driver;
 		WebElement nextButton = driver.findElement(By.cssSelector("#footer_Play .button_next.unbindelements"));
-		js.executeScript("arguments[0].click();", nextButton);
+		js0.executeScript("arguments[0].click();", nextButton);
 
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -120,30 +121,31 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		//Clicking on Page 2's Question 2 and Question 3
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[4].click();");
-		Thread.sleep(1000);
-		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[6].click();");
+		js1.executeScript("document.getElementById('top1').getElementsByTagName('input')[4].click();");
+		Thread.sleep(3000);
+		js1.executeScript("document.getElementById('top1').getElementsByTagName('input')[6].click();");
 
 		//Clicking on Next Button
 		WebElement nextButton1 = driver.findElement(By.cssSelector("#footer_Play .button_next.unbindelements"));
-		js.executeScript("arguments[0].click();", nextButton1);
+		js1.executeScript("arguments[0].click();", nextButton1);
 
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		//Clicking on Page 3's Question 1
-		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
-		Thread.sleep(1500);
+		JavascriptExecutor js2 = (JavascriptExecutor) driver;
+		js2.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
+		Thread.sleep(3500);
 		//Clicking on Next Button
 		WebElement nextButton2 = driver.findElement(By.cssSelector("#footer_Play .button_next.unbindelements"));
-		js.executeScript("arguments[0].click();", nextButton2);
+		js2.executeScript("arguments[0].click();", nextButton2);
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -151,21 +153,22 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		//Clicking on Page 4's Question 2
 		JavascriptExecutor js3 = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[2].click();");
+		js3.executeScript("document.getElementById('top1').getElementsByTagName('input')[2].click();");
 		Thread.sleep(2000);
 
 		WebElement exit = driver.findElement(By.xpath("//*[@id=\"nav_exit\"]"));
-		js.executeScript("arguments[0].click();", exit);
-		Thread.sleep(1500);
+		js3.executeScript("arguments[0].click();", exit);
+		Thread.sleep(3000);
 		driver.findElement(By.className("scormPauseCourse")).click();
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 
 		driver.switchTo().window(mainWindow);
+		Thread.sleep(3000);
 
 		driver.findElement(By.id("srch_fld")).sendKeys("EHS-11111");
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 		driver.findElement(By.name("searchButton")).click();
-		Thread.sleep(1500);
+		Thread.sleep(5000);
 		String paused = driver.findElement(By.xpath("//*[@id=\"msg_headb7d0d73b5e1ae80d8d245fed08ac7e7c\"]/table/tbody/tr/td[3]")).getAttribute("innerHTML").substring(133,139);
 		if (!paused.equals("Paused")) {
 			Assert.fail("the online course does not show up as paused");
