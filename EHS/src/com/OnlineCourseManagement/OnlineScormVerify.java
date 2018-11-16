@@ -390,7 +390,7 @@ public class OnlineScormVerify {
         }
         Thread.sleep(800);
         JavascriptExecutor js2 = (JavascriptExecutor)driver;
-        WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
+        WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
         js2.executeScript("arguments[0].click()", myTrainingReport);
         Thread.sleep(1000);
         new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
@@ -399,10 +399,12 @@ public class OnlineScormVerify {
         Date date = new Date();
 //        System.out.println("Local Date Now=" + dateFormat.format(date));
         js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(date)+ "'");
+//        js.executeScript("document.getElementById('dateFrom').value='" + "11/15/2018" + "'");
         Thread.sleep(500);
         js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
+//        js.executeScript("document.getElementById('dateTo').value='" + "11/15/2018" + "'");
         Thread.sleep(500);
-        driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go
+        driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go for Reports
         Thread.sleep(1200);
         String courseIdTxt="";
         String currentPageMax = "0";
@@ -411,7 +413,7 @@ public class OnlineScormVerify {
         restartLoop:
         while (true) {
             java.util.List<WebElement> myResults, myResults3a;
-            myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));
+            myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));//Under The Reports
             if (myResults.size() > 0) {
                 for (int $p = 0; $p < myResults.size(); $p++) {
                     WebElement myResult;
@@ -422,6 +424,7 @@ public class OnlineScormVerify {
                             String idstr3a = myResult3a.getText();
 //                            System.out.println("didstr3a=" + idstr3a);
                             if (courseId.equals(idstr3a)) {
+                                courseIdTxt = idstr3a;
                                 isBreak=true;
                                 break;//We dont need to do anything.
                                 //Maybe find it. So that we don't need to do anything at all.
