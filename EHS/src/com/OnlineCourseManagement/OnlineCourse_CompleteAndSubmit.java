@@ -39,7 +39,7 @@ public class OnlineCourse_CompleteAndSubmit {
 
 		driver.get(urladdr);
 
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
@@ -49,16 +49,16 @@ public class OnlineCourse_CompleteAndSubmit {
 
 		driver.findElement(By.name("submit")).click();
 
-		Thread.sleep(4500);
+		Thread.sleep(18000);
 		
-		driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.id("srch_fld")).sendKeys("EHS-11111");
 		
 		driver.findElement(By.name("searchButton")).click();
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -71,6 +71,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		for(String winHandle : driver.getWindowHandles()){
 			 if(winHandle!=mainWindow)
 	          driver.switchTo().window(winHandle);
+			Thread.sleep(5000);
 		    }
 		
         driver.findElement(By.partialLinkText("English")).click();
@@ -78,7 +79,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		driver.findElement(By.xpath("//*[@id='label']")).click();
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -93,7 +94,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[3].click();");
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,7 +105,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 js.executeScript("arguments[0].click();",nextButton);
 		 
 		 try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -117,7 +118,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[6].click();");
 		 
 		 try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -128,7 +129,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 js.executeScript("arguments[0].click();",nextButton1);
 		 
 		 try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -140,7 +141,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[6].click();");
 		 
 		 try {
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -151,7 +152,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 js.executeScript("arguments[0].click();",nextButton2);
 		 
 		 try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -163,7 +164,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[2].click();");
 		 
 		 try {
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -174,7 +175,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		 js.executeScript("arguments[0].click();",gradeButton);
 		 
 		 try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -184,7 +185,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		Thread.sleep(2000);
 		WebElement exit = driver.findElement(By.xpath("//*[@id=\"nav_exit\"]"));
 		js.executeScript("arguments[0].click();", exit);
-		Thread.sleep(1500);
+		Thread.sleep(3500);
 		driver.switchTo().window(mainWindow);
 
 		Thread.sleep(3500);
