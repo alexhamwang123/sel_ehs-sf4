@@ -123,7 +123,7 @@ public class OnlineCourseEditContent {
         driver.findElement(By.cssSelector("input[value='Back']")).click();
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(5500);
+        Thread.sleep(4500);
         driver.quit();
 
 
