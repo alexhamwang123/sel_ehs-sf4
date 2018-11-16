@@ -13,28 +13,30 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
-import java.util.stream.IntStream;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.*;
 import java.text.*;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
-//@Test
 @Test(priority=45)
 public class OnlineScormVerify {
+
+    private Date DateGet()
+
+    {
+        return new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000);
+    }
+//return new Date();
+//@Test
+
     public void CreateScormClass() throws InterruptedException, IOException, AWTException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
@@ -43,10 +45,10 @@ public class OnlineScormVerify {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
-        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+        File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
 
-        FileInputStream inStream=new FileInputStream(file);
-        Properties prop=new Properties();
+        FileInputStream inStream = new FileInputStream(file);
+        Properties prop = new Properties();
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
 
@@ -65,64 +67,64 @@ public class OnlineScormVerify {
 
         Thread.sleep(4500);
 
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
-        Thread.sleep(4500);
-
+        Thread.sleep(6500);
+        //String courseId = "sdhgsdhgoweoyrhv001";
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");//We have to make it via manually, just in case.
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+        Thread.sleep(13500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
+        Thread.sleep(4500);
         String courseTitle = generator.generate(10);
         driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         java.awt.datatransfer.Clipboard clipboard = toolkit.getSystemClipboard();
         String path = System.getProperty("user.dir") + "/Intro_OneDrive.zip";
-      //  System.out.println("path="+path);
+        //  System.out.println("path="+path);
         StringSelection str = new StringSelection(path);
         clipboard.setContents(str, str);
 
 //PLEASE Choice scorm type  and file_Scrom_Upload.
         driver.findElement(By.cssSelector("input[type='radio'][value='scorm']")).click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='file']")).sendKeys(path);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
-        Thread.sleep(1500);
+
         driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1700);
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3500);
+        Thread.sleep(13000);
         driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5000);
         driver.findElement(By.name("detailCourseIsActive")).click();
-        Thread.sleep(1700);
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(6000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5000);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-
+        Thread.sleep(1500);
 
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(8500);
         String currentWin = driver.getWindowHandle();
         try {
             driver.findElement(By.className("onelang")).click();
@@ -131,11 +133,11 @@ public class OnlineScormVerify {
         }
         Thread.sleep(1500);
 
-        for(String winHandle : driver.getWindowHandles()) {
+        for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
 
-        Thread.sleep(500);
+        Thread.sleep(7500);
         driver.findElement(By.className("crselink1")).click();
         Thread.sleep(1500);
 //        robot.keyPress(KeyEvent.VK_META);
@@ -146,169 +148,164 @@ public class OnlineScormVerify {
         //we have to finish the course first, then complete it for scorm.
         //first one
         driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         //second one
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //time in second
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
-        String innerText=driver.findElement(By.xpath("//*[@id=\"control-next\"]/div")).getText();
+        String innerText = driver.findElement(By.xpath("//*[@id=\"control-next\"]/div")).getText();
         System.out.println("innerText=" + innerText);
-        if(innerText.equals("NEXT")){
-        driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
+        if (innerText.equals("NEXT")) {
+            driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
         }
 
-        Thread.sleep(1500);
+        Thread.sleep(4500);
 
         driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.switchTo().defaultContent();
         //gThread.sleep(1000);
         //first one
         driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
         //driver.switchTo().defaultContent();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         //second one
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //time in second
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath("//*[@id=\"item_6RV08inxbAS\"]/div/div[1]/div")).click();//.selectByVisibleText("True");
         //Then submit
         driver.switchTo().defaultContent();
-        Thread.sleep(1000);
+        Thread.sleep(4000);
         //first one
         driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
         //driver.switchTo().defaul
         //
         // tContent();
-        Thread.sleep(1500);
+        Thread.sleep(4000);
         //second one
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
-        Thread.sleep(1000);
+        Thread.sleep(3500);
         //submit first one
-        String submitText=driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]/div")).getText();
+        String submitText = driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]/div")).getText();
         System.out.println("SubmitText=" + submitText);
-        if(submitText.equals("SUBMIT")){
+        if (submitText.equals("SUBMIT")) {
             WebElement targetDiv = driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]"));
-            JavascriptExecutor executor= (JavascriptExecutor)driver;
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", targetDiv);
-        }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 228");
         }
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         String continueDivText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_63vTZMCZlM1 textlib\"]/canvas[@class=\"content\"]")).getText();
         System.out.println("continueDivText=" + continueDivText);
-        if(continueDivText.equals("")){
+        if (continueDivText.equals("")) {
             //Then submit
-            Thread.sleep(600);
+            Thread.sleep(3600);
             Actions builder = new Actions(driver);
             WebElement continueDivEle = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_63vTZMCZlM1 textlib\"]/canvas[@class=\"content\"]"));
-            Action drawAction = builder.moveToElement(continueDivEle,136/2,34/2)  // start point
+            Action drawAction = builder.moveToElement(continueDivEle, 136 / 2, 34 / 2)  // start point
                     .click()
                     .build();
             drawAction.perform();
             System.out.println("continueDivText=" + continueDivText);
-      }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 245");
         }
         //Seocnd Questions
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.switchTo().defaultContent();
-        Thread.sleep(600);
+        Thread.sleep(1600);
         //first one
         driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
-        Thread.sleep(700);
+        Thread.sleep(4700);
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
-        Thread.sleep(800);
+        Thread.sleep(4800);
         //Let's Choice the Microsoft
-        String secondQuestionElementDivText =driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dkZK7ONPxW textlib\"]/canvas[@class=\"content\"]")).getText();
+        String secondQuestionElementDivText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dkZK7ONPxW textlib\"]/canvas[@class=\"content\"]")).getText();
         System.out.println("secondQuestionElementDivText=" + secondQuestionElementDivText);
-        if(secondQuestionElementDivText.equals("")){
+        if (secondQuestionElementDivText.equals("")) {
             //Then submit
-            Thread.sleep(500);
+            Thread.sleep(1500);
             Actions builder = new Actions(driver);
             WebElement secondQuestionElementDiv = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dkZK7ONPxW textlib\"]/canvas[@class=\"content\"]"));
-            Action drawAction = builder.moveToElement(secondQuestionElementDiv,689/2,58/2)  // start point
+            Action drawAction = builder.moveToElement(secondQuestionElementDiv, 689 / 2, 58 / 2)  // start point
                     .click()
                     .build();
             drawAction.perform();
             System.out.println("secondQuestionElementDivText=" + secondQuestionElementDivText);
-        }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 271");
         }
-        Thread.sleep(500);
+        Thread.sleep(1500);
         driver.switchTo().defaultContent();
-        Thread.sleep(600);
+        Thread.sleep(4600);
         //first one
         driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
-        Thread.sleep(700);
+        Thread.sleep(4700);
         //second one
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
-        Thread.sleep(800);
+        Thread.sleep(4800);
         //first one
-        String submitText2=driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]/div")).getText();
+        String submitText2 = driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]/div")).getText();
         System.out.println("submitText2=" + submitText2);
-        if(submitText2.equals("SUBMIT")){
+        if (submitText2.equals("SUBMIT")) {
             WebElement targetDiv2 = driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]"));
-            JavascriptExecutor executor2= (JavascriptExecutor)driver;
+            JavascriptExecutor executor2 = (JavascriptExecutor) driver;
             executor2.executeScript("arguments[0].click();", targetDiv2);
-        }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 291");
         }
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         String continueDivText2 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6gytkCQVSz7 textlib\"]/canvas[@class=\"content\"]")).getText();
         System.out.println("continueDivText2=" + continueDivText2);
-        if(continueDivText2.equals("")){
-            Thread.sleep(600);
+        if (continueDivText2.equals("")) {
+            Thread.sleep(2600);
             Actions builder2 = new Actions(driver);
             WebElement continueDivEle2 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6gytkCQVSz7 textlib\"]/canvas[@class=\"content\"]"));
-            Action drawAction2 = builder2.moveToElement(continueDivEle2,136/2,34/2)  // start point
+            Action drawAction2 = builder2.moveToElement(continueDivEle2, 136 / 2, 34 / 2)  // start point
                     .click()
                     .build();
             drawAction2.perform();
             System.out.println("continueDivText2=" + continueDivText2);
-        }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 307");
         }
         //Third Questions
-        Thread.sleep(500);
+        Thread.sleep(2500);
         driver.switchTo().defaultContent();
-        Thread.sleep(600);
+        Thread.sleep(3600);
         driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
-        Thread.sleep(700);
+        Thread.sleep(3700);
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
-        Thread.sleep(800);
+        Thread.sleep(3800);
         //Let's Choice the THree. Videos and Docuemnts and Photos
-        String thirdQuestionElementDivVideosText =driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6SbbAbd8vb3 textlib\"]/canvas[@class=\"content\"]")).getText();
-        String thirdQuestionElementDivDocuemntsText =driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6l8QiU7zo26 textlib\"]/canvas[@class=\"content\"]")).getText();
-        String thirdQuestionElementDivPhotosText =driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dfOOSV7gny textlib\"]/canvas[@class=\"content\"]")).getText();
+        String thirdQuestionElementDivVideosText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6SbbAbd8vb3 textlib\"]/canvas[@class=\"content\"]")).getText();
+        String thirdQuestionElementDivDocuemntsText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6l8QiU7zo26 textlib\"]/canvas[@class=\"content\"]")).getText();
+        String thirdQuestionElementDivPhotosText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dfOOSV7gny textlib\"]/canvas[@class=\"content\"]")).getText();
 
         System.out.println("thirdQuestionElementDivVideosText=" + thirdQuestionElementDivVideosText);
         System.out.println("thirdQuestionElementDivDocuemntsText=" + thirdQuestionElementDivDocuemntsText);
         System.out.println("thirdQuestionElementDivPhotosText=" + thirdQuestionElementDivPhotosText);
-        if(thirdQuestionElementDivVideosText.equals("") && thirdQuestionElementDivVideosText.equals("") && thirdQuestionElementDivVideosText.equals("")){
+        if (thirdQuestionElementDivVideosText.equals("") && thirdQuestionElementDivVideosText.equals("") && thirdQuestionElementDivVideosText.equals("")) {
             //Then submit
-            Thread.sleep(500);
+            Thread.sleep(2500);
             Actions builderVedio = new Actions(driver);
             Actions builderDocuemnt = new Actions(driver);
             Actions builderPhoto = new Actions(driver);
             WebElement thirdQuestionElementDivVideo = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6SbbAbd8vb3 textlib\"]/canvas[@class=\"content\"]"));
             WebElement thirdQuestionElementDivDocuemnt = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6l8QiU7zo26 textlib\"]/canvas[@class=\"content\"]"));
             WebElement thirdQuestionElementDivPhoto = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dfOOSV7gny textlib\"]/canvas[@class=\"content\"]"));
-            Action drawActionVideo = builderVedio.moveToElement(thirdQuestionElementDivVideo,649/2,45/2)  // start point
+            Action drawActionVideo = builderVedio.moveToElement(thirdQuestionElementDivVideo, 649 / 2, 45 / 2)  // start point
                     .click()
                     .build();
             drawActionVideo.perform();
-            Action drawActionDocuemnt = builderDocuemnt.moveToElement(thirdQuestionElementDivDocuemnt,649/2,45/2)  // start point
+            Action drawActionDocuemnt = builderDocuemnt.moveToElement(thirdQuestionElementDivDocuemnt, 649 / 2, 45 / 2)  // start point
                     .click()
                     .build();
             drawActionDocuemnt.perform();
-            Action drawActionPhoto = builderPhoto.moveToElement(thirdQuestionElementDivPhoto,649/2,45/2)  // start point
+            Action drawActionPhoto = builderPhoto.moveToElement(thirdQuestionElementDivPhoto, 649 / 2, 45 / 2)  // start point
                     .click()
                     .build();
             drawActionPhoto.perform();
@@ -316,54 +313,51 @@ public class OnlineScormVerify {
             System.out.println("thirdQuestionElementDivDocuemntsText=" + thirdQuestionElementDivDocuemntsText);
             System.out.println("thirdQuestionElementDivPhotosText=" + thirdQuestionElementDivPhotosText);
 
-        }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 352");
         }
-        Thread.sleep(500);
+        Thread.sleep(2500);
         driver.switchTo().defaultContent();
-        Thread.sleep(600);
+        Thread.sleep(3600);
         driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
-        Thread.sleep(700);
+        Thread.sleep(3700);
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
-        Thread.sleep(800);
-        String submitText3=driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]/div")).getText();
+        Thread.sleep(3800);
+        String submitText3 = driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]/div")).getText();
         System.out.println("SubmitText3=" + submitText3);
-        if(submitText3.equals("SUBMIT")){
+        if (submitText3.equals("SUBMIT")) {
             WebElement targetDiv3 = driver.findElement(By.xpath("//div[@class=\"contentpane\"]/*[@id=\"controls\"]/*[@id=\"control-submit\"]"));
-            JavascriptExecutor executor3= (JavascriptExecutor)driver;
+            JavascriptExecutor executor3 = (JavascriptExecutor) driver;
             executor3.executeScript("arguments[0].click();", targetDiv3);
-        }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 369");
         }
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         String continueDivText3 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5z66WgZXo0y textlib\"]/canvas[@class=\"content\"]")).getText();
         System.out.println("continueDivText3=" + continueDivText3);
-        if(continueDivText3.equals("")){
-            Thread.sleep(600);
+        if (continueDivText3.equals("")) {
+            Thread.sleep(1600);
             Actions builder3 = new Actions(driver);
             WebElement continueDivEle3 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5z66WgZXo0y textlib\"]/canvas[@class=\"content\"]"));
-            Action drawAction3 = builder3.moveToElement(continueDivEle3,136/2,34/2)  // start point
+            Action drawAction3 = builder3.moveToElement(continueDivEle3, 136 / 2, 34 / 2)  // start point
                     .click()
                     .build();
             drawAction3.perform();
             System.out.println("continueDivText3=" + continueDivText3);
-        }
-        else {
+        } else {
             Assert.fail("Should not be submitted here line 385");
         }
         //Submit Results.item image vectorshape item_6JIGnuBEjkK textlib
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         String submitResultsStr = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6JIGnuBEjkK textlib\"]/canvas[@class=\"content\"]")).getText();
         System.out.println("submitResultsStr=" + submitResultsStr);
         String mainWin = driver.getWindowHandle();
-        if(continueDivText2.equals("")){
+        if (continueDivText2.equals("")) {
             //Then submit
-            Thread.sleep(600);
+            Thread.sleep(1600);
             Actions builderSR = new Actions(driver);
             WebElement submitResultsEle = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6JIGnuBEjkK textlib\"]/canvas[@class=\"content\"]"));
-            Action drawActionSR = builderSR.moveToElement(submitResultsEle,179/2,51/2)  // start point
+            Action drawActionSR = builderSR.moveToElement(submitResultsEle, 179 / 2, 51 / 2)  // start point
                     .click()
                     .build();
             drawActionSR.perform();
@@ -382,30 +376,33 @@ public class OnlineScormVerify {
 //        WebDriver driver2 = new ChromeDriver();
 //        driver2.switchTo().defaultContent();
         Thread.sleep(1500);
-        for(String winHandle : driver.getWindowHandles()) {
+        for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
             break;
         }
-        Thread.sleep(800);
-        JavascriptExecutor js2 = (JavascriptExecutor)driver;
-        WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[6]/ul/li[1]/a"));
+        Thread.sleep(1800);
+        JavascriptExecutor js2 = (JavascriptExecutor) driver;
+        WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
         js2.executeScript("arguments[0].click()", myTrainingReport);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
-        Thread.sleep(1600);
+        Thread.sleep(2000);
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date date = new Date();
+        Date yesterday = DateGet();
+
+
 //        System.out.println("Local Date Now=" + dateFormat.format(date));
-        js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(date)+ "'");
-        Thread.sleep(500);
+        js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(yesterday) + "'");
+        Thread.sleep(1500);
         js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
-        Thread.sleep(500);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go
-        Thread.sleep(1200);
-        String courseIdTxt="";
+        Thread.sleep(4000);
+        String courseIdText = "";
         String currentPageMax = "0";
         String currentPageNo = "0";
-        Boolean isBreak =false;
+        Boolean isBreak = false;
         restartLoop:
         while (true) {
             java.util.List<WebElement> myResults, myResults3a;
@@ -420,7 +417,7 @@ public class OnlineScormVerify {
                             String idstr3a = myResult3a.getText();
 //                            System.out.println("didstr3a=" + idstr3a);
                             if (courseId.equals(idstr3a)) {
-                                isBreak=true;
+                                isBreak = true;
                                 break;//We dont need to do anything.
                                 //Maybe find it. So that we don't need to do anything at all.
                             }
@@ -429,54 +426,53 @@ public class OnlineScormVerify {
                         while (true) {
 
                             try {
-                                    WebElement pageMaxEle = driver.findElement(By.id("pageMax"));
-                                    currentPageMax = pageMaxEle.getAttribute("value");
-                                    WebElement pageNo = driver.findElement(By.id("pageNo"));
-                                    currentPageNo = pageNo.getAttribute("value");
-                                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
-                                    Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
+                                WebElement pageMaxEle = driver.findElement(By.id("pageMax"));
+                                currentPageMax = pageMaxEle.getAttribute("value");
+                                WebElement pageNo = driver.findElement(By.id("pageNo"));
+                                currentPageNo = pageNo.getAttribute("value");
+                                currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
+                                Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
                                 System.out.println("Before taking the isBreak yet, isBreak=" + isBreak);
-                                    System.out.println("Before taking the currentPageNoInt yet, currentPageNoInt=" + currentPageNoInt);
-                                    System.out.println("Before taking the currentPageMax yet, currentPageMax=" + currentPageMax);
-                                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isBreak) {
-                                        //we have to go to next.
-                                        WebElement inputTHREE = driver.findElement(By.id("pageNo"));
-                                        // erase any existing value (because clear does not send any events
-                                        for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
-                                            inputTHREE.sendKeys(Keys.BACK_SPACE);
-                                        }
-                                        inputTHREE.clear();
-                                        inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
-                                        //We have to next.
-                                        String strPagination = "pagination";
-                                        driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
-                                        continue restartLoop2;
+                                System.out.println("Before taking the currentPageNoInt yet, currentPageNoInt=" + currentPageNoInt);
+                                System.out.println("Before taking the currentPageMax yet, currentPageMax=" + currentPageMax);
+                                if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isBreak) {
+                                    //we have to go to next.
+                                    WebElement inputTHREE = driver.findElement(By.id("pageNo"));
+                                    // erase any existing value (because clear does not send any events
+                                    for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
+                                        inputTHREE.sendKeys(Keys.BACK_SPACE);
                                     }
-                                    else {
-                                        break;
-                                    }
+                                    inputTHREE.clear();
+                                    inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
+                                    //We have to next.
+                                    String strPagination = "pagination";
+                                    driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
+                                    continue restartLoop2;
+                                } else {
+                                    break;
+                                }
 //                                    System.out.println("After taking the currentPageNoInt yet, currentPageNoInt=" + currentPageNoInt);
 //                                    System.out.println("After taking the course id yet, currentPageMax=" + currentPageMax);
 //                                    continue restartLoop2;
-                                    // break;
+                                // break;
 
                             } catch (NoSuchElementException e) {
                                 break;
                             }
                         }
-                        if (isBreak){
+                        if (isBreak) {
                             break;
                         }
                     }
                 }
             }
-            if (isBreak){
+            if (isBreak) {
                 break;
             }
-//            System.out.println("Before taking the course id yet, courseIdTxt=" + courseIdTxt);
+     //       System.out.println("Before taking the course id yet, courseIdTxt=" + courseIdText);
 //            System.out.println("Before taking the course id yet, courseId=" + courseId);
-            if (courseIdTxt.equals(courseId)) {
-                System.out.println("courseIdTxt=" + courseIdTxt);
+            if (courseIdText.equals(courseId)) {
+                System.out.println("courseIdTxt=" + courseIdText);
                 System.out.println("courseId=" + courseId);
                 System.out.println("Ｗe find the same course id here");
                 break;
@@ -487,4 +483,5 @@ public class OnlineScormVerify {
         Thread.sleep(3000);
 //        driver.quit();
     }
+
 }
