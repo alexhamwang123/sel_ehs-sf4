@@ -47,7 +47,7 @@ public class CreateOfferingRegister {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -67,17 +67,18 @@ public class CreateOfferingRegister {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("addClass")).click();
+        Thread.sleep(2500);
+        driver.findElement(By.xpath("//a[@id='addClass']")).click();
         Thread.sleep(2500);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
         Thread.sleep(1500);
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
@@ -98,18 +99,26 @@ public class CreateOfferingRegister {
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1800);
+//        driver.findElement(By.name("searchButton")).click();
+        driver.findElement(By.xpath("//input[@value='Go']")).click();
+        Thread.sleep(4200);
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
+//        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
+//        driver.findElement(By.name("searchButton")).click();
+//        Thread.sleep(1500);
+//        driver.findElement(By.className("viewglass")).click();
+//        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
+        Thread.sleep(2500);
         try {
             WebElement cancel = driver.findElement(By.cssSelector("input[type='button'][value='Cancel']"));
         } catch (NoSuchElementException e) {
             Assert.fail("was not able to enroll in the course");
         }
         Thread.sleep(3500);
-        driver.quit();
+        //driver.quit();
 
 
 
