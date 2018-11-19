@@ -34,7 +34,7 @@ public class Manager_ChecklistCompletionReport {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -52,7 +52,7 @@ public class Manager_ChecklistCompletionReport {
 
 		
 		//Clicking on Manager Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[2]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		
@@ -61,7 +61,7 @@ public class Manager_ChecklistCompletionReport {
 		
 		//Click on 'Select' button against Checklist
 		driver.findElement(By.id("selectCourseDisabled")).click();
-
+		Thread.sleep(4500);
 		// Let's select a course 'CHK01 Checklist 1' by clicking on it
 		//Checklist-001_OLD3-2-2012 Home Office Checklist
 		driver.findElement(By.id("9165941f21199eab012119a105f25506")).click();

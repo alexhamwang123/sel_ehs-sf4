@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EHS_Ordering" verbose="1" parallel="classes" thread-count="1">
+    <!--<test name="Nopackage" >-->
+    <!--<classes>-->
+    <!--<class name="NoPackageTest" />-->
+    <!--</classes>-->
+    <!--</test>-->
+    <!--<classes>-->
+    <!--<class name="test.IndividualMethodsTest">-->
+    <!--<methods>-->
+    <!--<include name="testMethod" />-->
+    <!--</methods>-->
+    <!--</class>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <test name="EHS-OnlineandChecklist" preserve-order="true">
+        <classes>
+            <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
+            <class name="com.ChecklistManagement.AddChecklistManager"/>
+            <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
+            <class name="com.ChecklistManagement.CreateChecklist"/>
+            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
+            <class name="com.ChecklistManagement.ChecklistButtonSource"/>
+            <class name="com.ChecklistManagement.ChecklistPrereq"/>
+            <class name="com.ChecklistManagement.ChecklistPrereqComplete"/>
+            <class name="com.ChecklistManagement.SaveAndCancel"/>
+            <class name="com.ChecklistManagement.RefreshChecklist"/>
+            <class name="com.ChecklistManagement.NormalRefreshChecklist"/>
+            <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
+        </classes>
+    </test>
+
+</suite>

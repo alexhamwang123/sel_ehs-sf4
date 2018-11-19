@@ -78,7 +78,7 @@ public class AddChecklistManager implements IMethodInterceptor {
 
         driver.findElement(By.name("submit")).click();
 
-        Thread.sleep(4500);
+        Thread.sleep(7500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));

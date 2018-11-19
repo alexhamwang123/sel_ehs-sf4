@@ -2,18 +2,18 @@
 
 <suite name="EHS_Ordering" verbose="1" >
     <!--<test name="Nopackage" >-->
-        <!--<classes>-->
-            <!--<class name="NoPackageTest" />-->
-        <!--</classes>-->
+    <!--<classes>-->
+    <!--<class name="NoPackageTest" />-->
+    <!--</classes>-->
     <!--</test>-->
     <!--<classes>-->
-        <!--<class name="test.IndividualMethodsTest">-->
-            <!--<methods>-->
-                <!--<include name="testMethod" />-->
-            <!--</methods>-->
-        <!--</class>-->
+    <!--<class name="test.IndividualMethodsTest">-->
+    <!--<methods>-->
+    <!--<include name="testMethod" />-->
+    <!--</methods>-->
+    <!--</class>-->
     <!--</classes>-->
-<!--</test>-->
+    <!--</test>-->
     <test name="EHS">
         <classes>
             <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
