@@ -76,7 +76,7 @@ restartLoop:
         while (true) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
 
-            WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+            WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
             js.executeScript("arguments[0].click()", courseAdmin);
 
             Thread.sleep(2000);

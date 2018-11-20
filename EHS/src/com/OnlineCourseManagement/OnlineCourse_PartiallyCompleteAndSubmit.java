@@ -52,7 +52,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		driver.findElement(By.name("submit")).click();
 
-		Thread.sleep(20500);
+		Thread.sleep(23000);
 
 
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();

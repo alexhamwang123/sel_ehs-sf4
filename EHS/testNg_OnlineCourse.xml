@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EHS_Ordering" verbose="1" parallel="classes" thread-count="1">
+    <!--<test name="Nopackage" >-->
+    <!--<classes>-->
+    <!--<class name="NoPackageTest" />-->
+    <!--</classes>-->
+    <!--</test>-->
+    <!--<classes>-->
+    <!--<class name="test.IndividualMethodsTest">-->
+    <!--<methods>-->
+    <!--<include name="testMethod" />-->
+    <!--</methods>-->
+    <!--</class>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <test name="EHS-OnlineandChecklist" preserve-order="true">
+        <classes>
+
+            <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
+            <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
+
+
+            <class name="com.OnlineCourseManagement.AddManagerOnlineCourse"/>
+            <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
+            <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>
+            <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
+            <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursePrereq"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursePrereqDecrease"/>
+            <class name="com.OnlineCourseManagement.OnlinePrereqComplete"/>
+            <class name="com.OnlineCourseManagement.RefreshOnlineCourse"/>
+            <class name="com.OnlineCourseManagement.OnlineCourseEditContent"/>
+            <class name="com.OnlineCourseManagement.CreateScormClass"/>
+            <class name="com.OnlineCourseManagement.OnlineScormVerify"/>
+            <class name="com.OnlineCourseManagement.FinalDisabledCourseIfNeed"/>
+        </classes>
+    </test>
+
+</suite>

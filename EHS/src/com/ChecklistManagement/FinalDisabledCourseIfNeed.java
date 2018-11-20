@@ -51,7 +51,7 @@ public class FinalDisabledCourseIfNeed {
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyRelease(KeyEvent.VK_TAB);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -73,7 +73,7 @@ public class FinalDisabledCourseIfNeed {
         while (true) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
 
-            WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+            WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
             js.executeScript("arguments[0].click()", courseAdmin);
 
             Thread.sleep(2000);
@@ -109,8 +109,8 @@ public class FinalDisabledCourseIfNeed {
                 inputSec.sendKeys(Keys.TAB);
 //        Survey_Only_New
                 new Select(driver.findElement(By.id("secondmenu")).findElement(By.id("searchCategory"))).selectByVisibleText("Survey_Only_New");//By.xpath("//option[@value='f9bbb962d5b1aa58b2115a7bf3b4c9a8']")));
-                Thread.sleep(1500);
-                driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div/div/input")).click();
+                Thread.sleep(5000);
+                driver.findElement(By.xpath("//input[@value='Go']")).click();
                 Thread.sleep(1500);
 
 
@@ -120,6 +120,7 @@ public class FinalDisabledCourseIfNeed {
                     isPage = true;
                 } catch (NoSuchElementException e) {
                 }
+
 
                 if (firstTimeVisit) {
                     firstTimeVisit = false;

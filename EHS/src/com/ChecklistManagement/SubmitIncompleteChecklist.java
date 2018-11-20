@@ -92,7 +92,7 @@ public class SubmitIncompleteChecklist {
 
 		driver.findElement(By.name("submit")).click();
 
-		Thread.sleep(10000);
+		Thread.sleep(22000);
 
 
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
