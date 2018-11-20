@@ -34,7 +34,7 @@ public class EHSR_OrganizationReport {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -51,7 +51,7 @@ public class EHSR_OrganizationReport {
         Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[4]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
@@ -73,12 +73,12 @@ public class EHSR_OrganizationReport {
 		
 		//Click on Search 
 		driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 		//Click on the search result 
 		driver.findElement(By.xpath("//*[@id='teammanager_result']/div/table/tbody/tr/td[2]/a")).click();
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -86,14 +86,14 @@ public class EHSR_OrganizationReport {
 		
 		//Now, Select a Risk Category, by clicking on Select button
 		driver.findElement(By.id("jobClassNo")).click();
-		Thread.sleep(1500);
+		Thread.sleep(4500);
 		//Select a Risk Category by id. Here we select 2
 		//AHA 4028f6bb21ec62fe0121ec6425eb0001
 //		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
 		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -103,7 +103,7 @@ public class EHSR_OrganizationReport {
 		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -113,7 +113,7 @@ public class EHSR_OrganizationReport {
 		driver.findElement(By.id("Button_Go")).click();
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

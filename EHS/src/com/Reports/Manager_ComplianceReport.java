@@ -34,7 +34,7 @@ public class Manager_ComplianceReport {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -52,19 +52,19 @@ public class Manager_ComplianceReport {
         Thread.sleep(4500);
 		
 		//Clicking on Manager Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[6]/ul/li[2]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 		//Click on Compliance Report
 		driver.findElement(By.xpath("//*[@id='content']/div[1]/div[1]/div/a[4]")).click();
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 		//We must select a Risk Category to generate the Compliance Report.
 		//Click on the Select button for Risk category
 		driver.findElement(By.id("jobClassNo")).click();
 		
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(4500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class Manager_ComplianceReport {
 //		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
 		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(4500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Manager_ComplianceReport {
 		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
 		
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(4500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

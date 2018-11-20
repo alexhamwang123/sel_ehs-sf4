@@ -67,7 +67,7 @@ public class Manager_ChecklistCompletionReport {
 		driver.findElement(By.id("9165941f21199eab012119a105f25506")).click();
 //		driver.findElement(By.id("876fbb07572270e686f2d68f06515e8c")).click();
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,7 +81,7 @@ public class Manager_ChecklistCompletionReport {
 		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
