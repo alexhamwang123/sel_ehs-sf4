@@ -67,7 +67,7 @@ public class ChecklistButtonSource {
         driver.findElement(By.xpath("//div[@class='center']//input[@id='saveBtn']")).click();
         driver.findElement(By.xpath("//div[@class='center']//input[@id='saveBtn']")).click();
 
-        Thread.sleep(80000);
+        Thread.sleep(10000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
@@ -106,7 +106,7 @@ public class ChecklistButtonSource {
 
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2000);
+        Thread.sleep(8000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(5000);
         driver.findElement(By.cssSelector("input[type='button'][value='Create Button Sources")).click();

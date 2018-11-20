@@ -49,7 +49,7 @@ public class OnlineCourse_CompleteAndSubmit {
 
 		driver.findElement(By.name("submit")).click();
 
-		Thread.sleep(18000);
+		Thread.sleep(20000);
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 		Thread.sleep(1500);

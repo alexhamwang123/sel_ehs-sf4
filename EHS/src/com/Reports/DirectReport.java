@@ -20,6 +20,8 @@ public class DirectReport {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        //driver.manage().window().maximize();
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
         FileInputStream inStream=new FileInputStream(file);
@@ -33,7 +35,7 @@ public class DirectReport {
         driver.findElement(By.id("login_password")).sendKeys(password);
 
         driver.findElement(By.name("submit")).click();
-        Thread.sleep(4500);
+        Thread.sleep(23500);
 
         driver.findElement(By.partialLinkText("Manager's Portal")).click();
         Thread.sleep(2500);

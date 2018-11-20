@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EHS_Ordering" verbose="1" >
+    <!--<test name="Nopackage" >-->
+    <!--<classes>-->
+    <!--<class name="NoPackageTest" />-->
+    <!--</classes>-->
+    <!--</test>-->
+    <!--<classes>-->
+    <!--<class name="test.IndividualMethodsTest">-->
+    <!--<methods>-->
+    <!--<include name="testMethod" />-->
+    <!--</methods>-->
+    <!--</class>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <test name="Reports">
+        <classes>
+            <class name="com.Reports.DirectReport"/>
+            <class name="com.Reports.EHSR_ChecklistSubmissionReport"/>
+            <class name="com.Reports.EHSR_ComplianceReport"/>
+            <class name="com.Reports.EHSR_CourseCompletionReport"/>
+            <class name="com.Reports.EHSR_CourseCompletionStatistic"/>
+            <class name="com.Reports.EHSR_OrganizationReport"/>
+            <class name="com.Reports.Manager_ChecklistCompletionReport"/>
+            <class name="com.Reports.Manager_ComplianceReport"/>
+        </classes>
+    </test>
+</suite>
