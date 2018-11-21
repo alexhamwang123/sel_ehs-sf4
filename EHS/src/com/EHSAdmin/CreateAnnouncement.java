@@ -31,7 +31,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 @Test(priority=61)
 public class CreateAnnouncement {
 
-	public void CreateAnnouncement() throws IOException, InterruptedException {
+	public void CreateAnnouncement1() throws IOException, InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 

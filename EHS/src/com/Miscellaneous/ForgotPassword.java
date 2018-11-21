@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 //@Test
 @Test(priority=73)
 public class ForgotPassword {
-    public void ForgotPassword() throws IOException, InterruptedException {
+    public void ForgotPassword1() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
