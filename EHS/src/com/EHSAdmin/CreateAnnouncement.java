@@ -31,7 +31,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 @Test(priority=61)
 public class CreateAnnouncement {
 
-	public void CreateAnnouncement() throws IOException, InterruptedException {
+	public void CreateAnnouncement1() throws IOException, InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
@@ -62,7 +62,7 @@ public class CreateAnnouncement {
 		}
 		
 		//Clicking on 'EHS Admin'
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[4]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		

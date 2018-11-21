@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 @Test(priority=71)
 public class EHS_ContactUs {
 
-	public void EHS_ContactUs() throws IOException {
+	public void EHS_ContactUs1() throws IOException {
 		
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		
@@ -42,7 +42,7 @@ public class EHS_ContactUs {
         driver.findElement(By.name("submit")).click();
 		
 		try {
-			Thread.sleep(4500);
+			Thread.sleep(18500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,8 +61,13 @@ public class EHS_ContactUs {
 		
 		//Enter the detail
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("document.getElementById('datepicker').value='02/14/2015'");
-
+        js.executeScript("document.getElementById('datepicker').value='04/29/2011'");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         driver.findElement(By.name("content")).sendKeys("I am not able to connect to the server. My internet connection is active. Please help me");
 		

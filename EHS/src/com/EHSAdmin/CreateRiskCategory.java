@@ -56,7 +56,7 @@ public class CreateRiskCategory {
         Thread.sleep(4500);
 		
 		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[4]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 				
@@ -112,7 +112,7 @@ public class CreateRiskCategory {
 		
 		//Click on the 'Save' button
 		driver.findElement(By.id("saveJC")).click();
-		Thread.sleep(1500);
+		Thread.sleep(4500);
         driver.findElement(By.id("addCourse")).click();
         Thread.sleep(1500);
         WebElement secondmenu = driver.findElement(By.id("secondmenu"));

@@ -50,7 +50,7 @@ public class CreateFAQ {
         Thread.sleep(4500);
 		
 		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[7]/ul/li[4]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 				

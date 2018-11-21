@@ -56,7 +56,7 @@ public class EHS_SearchACourse {
 			e.printStackTrace();
 		}
 		
-		WebElement ele = driver.findElement(By.xpath("//*[@id='navPrimary']/li[2]/a"));
+		WebElement ele = driver.findElement(By.xpath("//a[@href='/courses']"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		
