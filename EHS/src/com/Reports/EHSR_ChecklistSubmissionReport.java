@@ -51,7 +51,7 @@ public class EHSR_ChecklistSubmissionReport {
         Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
+		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",courseAdmin);
 

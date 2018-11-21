@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="108d4bb(OnlineCourseEditContent)">
-      <change afterPath="$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/testNG_Miscellaneous.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/EHS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/EHS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateRiskCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateTipEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateTipEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,6 +28,9 @@
     <SUITE FILE_PATH="coverage/sel_ehs$AddClassroomManger.ic" NAME="AddClassroomManger Coverage Results" MODIFIED="1539092772542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs$ChecklistButtonSource_ChecklistButtonSourceClass.ic" NAME="ChecklistButtonSource.ChecklistButtonSourceClass Coverage Results" MODIFIED="1542552981388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ChecklistManagement.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$CreateNormalUser.ic" NAME="CreateNormalUser Coverage Results" MODIFIED="1539223679354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.UserAdmin.*</FILTER>
     </SUITE>
@@ -50,9 +39,6 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$RefreshChecklist.ic" NAME="RefreshChecklist Coverage Results" MODIFIED="1540449991282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ChecklistManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$OnlineScormVerify.ic" NAME="OnlineScormVerify Coverage Results" MODIFIED="1542082357429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$OnlineCourse_CompleteAndSubmit.ic" NAME="OnlineCourse_CompleteAndSubmit Coverage Results" MODIFIED="1540174705831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.OnlineCourseManagement.*</FILTER>
@@ -113,9 +99,6 @@
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$com_EHSAdmin.ic" NAME="com.EHSAdmin Coverage Results" MODIFIED="1539331783292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.EHSAdmin.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$CreateCertificate.ic" NAME="CreateCertificate Coverage Results" MODIFIED="1542099614998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$createCourseManagerFirst.ic" NAME="createCourseManagerFirst Coverage Results" MODIFIED="1538975749949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -206,11 +189,8 @@
     <SUITE FILE_PATH="coverage/sel_ehs$CheckBookmark_ClickNo.ic" NAME="CheckBookmark_ClickNo Coverage Results" MODIFIED="1539858901606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$ChecklistButtonSource_ChecklistButtonSourceClass.ic" NAME="ChecklistButtonSource.ChecklistButtonSourceClass Coverage Results" MODIFIED="1542552981388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ChecklistManagement.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sel_ehs$FinalDisabledCourseIfNeed_FinalDisabledCourseIfNeed.ic" NAME="FinalDisabledCourseIfNeed.FinalDisabledCourseIfNeed Coverage Results" MODIFIED="1539679038959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.ClassroomCourseManagement.*</FILTER>
+    <SUITE FILE_PATH="coverage/sel_ehs$AddManagerOnlineCourse.ic" NAME="AddManagerOnlineCourse Coverage Results" MODIFIED="1540477169702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.OnlineCourseManagement.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sel_ehs$UnregisterClassroom.ic" NAME="UnregisterClassroom Coverage Results" MODIFIED="1539578240644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.ClassroomCourseManagement.*</FILTER>
@@ -260,7 +240,7 @@
     <option name="myAddOrReplace" value="2" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="109" />
+    <option name="myElementSize" value="122" />
   </component>
   <component name="ErrorTreeViewConfiguration">
     <option name="hideWarnings" value="true" />
@@ -302,50 +282,47 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="14" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.52" value="1" />
-          <entry key="project.open.time.59" value="1" />
-          <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="chromedriver" value="1" />
           <entry key="class" value="6" />
-          <entry key="iml" value="1" />
-          <entry key="java" value="529" />
+          <entry key="iml" value="2" />
+          <entry key="java" value="523" />
           <entry key="properties" value="13" />
-          <entry key="xml" value="13" />
+          <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="529" />
+          <entry key="IDEA_MODULE" value="2" />
+          <entry key="JAVA" value="523" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="13" />
-          <entry key="XML" value="13" />
+          <entry key="XML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="12055" />
+          <entry key="java" value="12025" />
           <entry key="properties" value="523" />
           <entry key="txt" value="57" />
           <entry key="xml" value="367" />
@@ -354,7 +331,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="12055" />
+          <entry key="JAVA" value="12025" />
           <entry key="PLAIN_TEXT" value="57" />
           <entry key="Properties" value="523" />
           <entry key="XML" value="367" />
@@ -422,18 +399,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EHS/testNg_Checklist.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java">
+        <entry file="file://$PROJECT_DIR$/EHS/EHS.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="7" column="22" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -441,90 +419,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="125" column="8" lean-forward="true" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1160">
-              <caret line="92" column="61" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="120" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="179" selection-start-line="179" selection-end-line="179" />
+            <state relative-caret-position="-338">
+              <caret line="404" column="27" selection-start-line="404" selection-start-column="15" selection-end-line="404" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-        <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="64" column="91" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/testng.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="104" selection-end-line="104" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="91">
+              <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -532,17 +437,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/testNG_Miscellaneous.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="22" column="57" lean-forward="true" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+            <state relative-caret-position="330">
+              <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -550,8 +455,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+            <state relative-caret-position="705">
+              <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -559,8 +464,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="56" column="8" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+            <state relative-caret-position="585">
+              <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -577,9 +482,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
-      <find>Create Page</find>
+            <state relative-caret-position="61">
+              <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
       <find>915d8c7314d1e2c0011512a0784d1726</find>
       <find>MCE.activeEditor.setConten</find>
       <find>detailCourseCategory</find>
@@ -590,6 +509,26 @@
       <find>failed to change window state</find>
       <find>maximize</find>
       <find>div.clearfix:nth-child(1) div.row div.col-md-9.col-xs-9 div.listTable:nth-child(18) table.tablesorter.table.table-hover.table-striped tbody:nth-child(2) tr:nth-child(1) td:nth-child(3) &gt; button.btn.btn-primary.btn-xs.field-tip</find>
+      <find>detailCourseIsActive</find>
+      <find>courseId</find>
+      <find>langIsViewable</find>
+      <find>idstr2</find>
+      <find>$j</find>
+      <find>Paused</find>
+      <find>Course Admin</find>
+      <find>Edit</find>
+      <find>detailCourseTitle</find>
+      <find>&quot;navPrimary</find>
+      <find>date1</find>
+      <find>pagination</find>
+      <find>id</find>
+      <find>Create Button Sources</find>
+      <find>js</find>
+      <find>fancyConfirm_ok</find>
+      <find>prerequisite</find>
+      <find>save</find>
+      <find>courseIdTxt</find>
+      <find>courseIdText</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -621,7 +560,6 @@
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrereqComplete.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/AddChecklistManager.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" />
@@ -632,7 +570,6 @@
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java" />
@@ -654,25 +591,12 @@
         <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" />
-      <find>detailCourseIsActive</find>
-      <find>courseId</find>
-      <find>langIsViewable</find>
-      <find>idstr2</find>
-      <find>$j</find>
-      <find>Paused</find>
-      <find>Course Admin</find>
-      <find>Edit</find>
-      <find>detailCourseTitle</find>
-      <find>&quot;navPrimary</find>
-      <find>date1</find>
-      <find>courseIdText</find>
-      <find>pagination</find>
-      <find>id</find>
-      <find>Create Button Sources</find>
-      <find>js</find>
-      <find>fancyConfirm_ok</find>
-      <find>prerequisite</find>
-      <find>save</find>
+        <option value="$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml" />
+        <option value="$PROJECT_DIR$/EHS/testNG_Miscellaneous.xml" />
+        <option value="$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml" />
+        <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" />
       </list>
     </option>
   </component>
@@ -682,6 +606,11 @@
       <select />
     </treeState>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="192" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -730,6 +659,39 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="UserAdmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -773,61 +735,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-        <option value="$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml" />
-        <option value="$PROJECT_DIR$/EHS/testNG_Miscellaneous.xml" />
-        <option value="$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="18" />
-    <option name="y" value="24" />
-    <option name="width" value="1920" />
-    <option name="height" value="977" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-              <item name="EHSAdmin" type="462c0819:PsiDirectoryNode" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542806475968" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -856,7 +771,7 @@
       </list>
     </option>
   </component>
-              <item name="Miscellaneous" type="462c0819:PsiDirectoryNode" />
+  <component name="RunManager" selected="TestNG.com.ClassroomCourseManagement">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -865,57 +780,6 @@
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-              <item name="Reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sel_ehs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EHS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="UserAdmin" type="462c0819:PsiDirectoryNode" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542780655477" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateUserSupport.CreateUserSupport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.UserAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.UserAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.CreateUserSupport" />
-      <option name="METHOD_NAME" value="CreateUserSupport" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  <component name="RunManager" selected="TestNG.FindExistingUser.FindExistingUser">
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -952,6 +816,91 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.ClassroomCourseManagement" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.EHSAdmin" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHSAdmin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Miscellaneous" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Miscellaneous.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Miscellaneous" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.OnlineCourseManagement" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Reports" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Reports.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Reports" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="createCourseManagerFirst" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
@@ -972,37 +921,19 @@
     <list>
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-    <configuration name="CreateSuperAdmin.CreateSuperAdmin" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.UserAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.UserAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.CreateSuperAdmin" />
-      <option name="METHOD_NAME" value="CreateSuperAdmin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateTipEditor.CreateTipEditor" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.UserAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.UserAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.CreateTipEditor" />
-      <option name="METHOD_NAME" value="CreateTipEditor" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <item itemvalue="TestNG.com.Reports" />
+      <item itemvalue="TestNG.com.OnlineCourseManagement" />
+      <item itemvalue="TestNG.com.Miscellaneous" />
+      <item itemvalue="TestNG.com.EHSAdmin" />
+      <item itemvalue="TestNG.com.ClassroomCourseManagement" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.com.ClassroomCourseManagement" />
+        <item itemvalue="TestNG.com.EHSAdmin" />
+        <item itemvalue="TestNG.com.Miscellaneous" />
+        <item itemvalue="TestNG.com.OnlineCourseManagement" />
+        <item itemvalue="TestNG.com.Reports" />
       </list>
     </recent_temporary>
   </component>
@@ -1182,18 +1113,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <configuration name="CreateUSAManager.CreateUSAManager" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.UserAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.UserAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.CreateUSAManager" />
-      <option name="METHOD_NAME" value="CreateUSAManager" />
-      <option name="TEST_OBJECT" value="METHOD" />
+    <history-entry file="CreateNormalUser_CreateNormalUser - 2018.11.20 at 21h 53m 10s.xml">
+      <configuration name="CreateNormalUser.CreateNormalUser" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateSuperAdmin_CreateSuperAdmin - 2018.11.20 at 21h 53m 59s.xml">
+      <configuration name="CreateSuperAdmin.CreateSuperAdmin" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateSuperAdmin_CreateSuperAdmin - 2018.11.20 at 21h 56m 34s.xml">
+      <configuration name="CreateSuperAdmin.CreateSuperAdmin" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateTipEditor_CreateTipEditor - 2018.11.20 at 21h 57m 08s.xml">
+      <configuration name="CreateTipEditor.CreateTipEditor" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateTipEditor_CreateTipEditor - 2018.11.20 at 21h 58m 58s.xml">
+      <configuration name="CreateTipEditor.CreateTipEditor" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateUSAManager_CreateUSAManager - 2018.11.20 at 22h 00m 30s.xml">
+      <configuration name="CreateUSAManager.CreateUSAManager" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateUserSupport_CreateUserSupport - 2018.11.20 at 22h 02m 16s.xml">
+      <configuration name="CreateUserSupport.CreateUserSupport" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FindExistingUser_FindExistingUser - 2018.11.20 at 22h 04m 04s.xml">
+      <configuration name="FindExistingUser.FindExistingUser" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_Users_shuang_NetBeansProjects_NEW_GIT_KEVIN_sel_ehs_EHS_testng_xml - 2018.11.21 at 18h 38m 12s.xml">
+      <configuration name="/Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testng.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_Users_shuang_NetBeansProjects_NEW_GIT_KEVIN_sel_ehs_EHS_testNG_EHSAdmin_xml - 2018.11.21 at 18h 42m 05s.xml">
+      <configuration name="/Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_EHSAdmin.xml" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1206,43 +1154,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <configuration name="FindExistingUser.FindExistingUser" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.UserAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.UserAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.FindExistingUser" />
-      <option name="METHOD_NAME" value="FindExistingUser" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <window_info id="Structure" order="1" sideWeight="0.50211865" side_tool="true" weight="0.14696486" />
+    <frame x="192" y="23" width="1280" height="773" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4914842" visible="true" weight="0.32229403" />
+      <window_info id="Structure" order="1" sideWeight="0.50507617" side_tool="true" weight="0.17625134" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5016873" side_tool="true" weight="0.15548456" />
+      <window_info id="Favorites" order="6" sideWeight="0.50851583" side_tool="true" weight="0.18423855" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
-      <item itemvalue="TestNG.CreateSuperAdmin.CreateSuperAdmin" />
-      <item itemvalue="TestNG.CreateTipEditor.CreateTipEditor" />
-      <item itemvalue="TestNG.CreateUSAManager.CreateUSAManager" />
-      <item itemvalue="TestNG.CreateUserSupport.CreateUserSupport" />
-      <item itemvalue="TestNG.FindExistingUser.FindExistingUser" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="TestNG.FindExistingUser.FindExistingUser" />
-        <item itemvalue="TestNG.CreateUserSupport.CreateUserSupport" />
-        <item itemvalue="TestNG.CreateUSAManager.CreateUSAManager" />
-        <item itemvalue="TestNG.CreateTipEditor.CreateTipEditor" />
-        <item itemvalue="TestNG.CreateSuperAdmin.CreateSuperAdmin" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7028754" weight="0.54292345" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4914803" weight="0.39647576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32674298" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.38045233" side_tool="true" visible="true" weight="0.32452276" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" sideWeight="0.61954767" visible="true" weight="0.32452276" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1252,6 +1184,38 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49074075" weight="0.2172524" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5092593" side_tool="true" weight="0.2172524" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983127" visible="true" weight="0.17465389" />
+      <window_info id="Structure" order="1" sideWeight="0.50211865" side_tool="true" weight="0.14696486" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5016873" side_tool="true" weight="0.15548456" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7055378" visible="true" weight="0.54292345" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49201277" weight="0.39675173" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32674298" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.2944622" side_tool="true" visible="true" weight="0.54292345" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.62406814" weight="0.32482597" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.1650641" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49074075" weight="0.2172524" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5092593" side_tool="true" weight="0.2172524" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1278,35 +1242,28 @@
     <option name="LAST_COMMIT_MESSAGE" value="20／Nov PUSH" />
   </component>
   <component name="editorHistoryManager">
-    <history-entry file="CreateNormalUser_CreateNormalUser - 2018.11.20 at 21h 49m 48s.xml">
-      <configuration name="CreateNormalUser.CreateNormalUser" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateNormalUser_CreateNormalUser - 2018.11.20 at 21h 51m 07s.xml">
-      <configuration name="CreateNormalUser.CreateNormalUser" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateNormalUser_CreateNormalUser - 2018.11.20 at 21h 53m 10s.xml">
-      <configuration name="CreateNormalUser.CreateNormalUser" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateSuperAdmin_CreateSuperAdmin - 2018.11.20 at 21h 53m 59s.xml">
-      <configuration name="CreateSuperAdmin.CreateSuperAdmin" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateSuperAdmin_CreateSuperAdmin - 2018.11.20 at 21h 56m 34s.xml">
-      <configuration name="CreateSuperAdmin.CreateSuperAdmin" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateTipEditor_CreateTipEditor - 2018.11.20 at 21h 57m 08s.xml">
-      <configuration name="CreateTipEditor.CreateTipEditor" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateTipEditor_CreateTipEditor - 2018.11.20 at 21h 58m 58s.xml">
-      <configuration name="CreateTipEditor.CreateTipEditor" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateUSAManager_CreateUSAManager - 2018.11.20 at 22h 00m 30s.xml">
-      <configuration name="CreateUSAManager.CreateUSAManager" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateUserSupport_CreateUserSupport - 2018.11.20 at 22h 02m 16s.xml">
-      <configuration name="CreateUserSupport.CreateUserSupport" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FindExistingUser_FindExistingUser - 2018.11.20 at 22h 04m 04s.xml">
-      <configuration name="FindExistingUser.FindExistingUser" configurationId="TestNG" />
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66" />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.xml" />
+    <entry file="file://$PROJECT_DIR$/EHS/src/testNg_OnlineCourse" />
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="53" column="80" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="22" />
@@ -1317,13 +1274,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/testNg_Checklist.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1411,40 +1361,14 @@
         </state>
       </provider>
     </entry>
-    <frame x="18" y="24" width="1920" height="977" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49492386" visible="true" weight="0.1826411" />
-      <window_info id="Structure" order="1" sideWeight="0.50507617" side_tool="true" weight="0.17625134" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.50507617" side_tool="true" weight="0.17625134" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7028754" visible="true" weight="0.54292345" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49201277" weight="0.39675173" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32674298" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.2971246" side_tool="true" visible="true" weight="0.54292345" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.6235357" weight="0.32482597" />
-      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.1650641" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49074075" weight="0.2172524" />
-      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5092593" side_tool="true" weight="0.2172524" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983127" visible="true" weight="0.17465389" />
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="55" column="89" lean-forward="true" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="124" column="22" lean-forward="true" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="22" />
@@ -1500,8 +1424,14 @@
         </state>
       </provider>
     </entry>
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7055378" visible="true" weight="0.54292345" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49201277" weight="0.39675173" />
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
@@ -1529,9 +1459,14 @@
         </state>
       </provider>
     </entry>
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.2944622" side_tool="true" visible="true" weight="0.54292345" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.62406814" weight="0.32482597" />
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="62" column="88" lean-forward="true" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="60" column="54" lean-forward="true" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
@@ -1552,18 +1487,10 @@
         </state>
       </provider>
     </entry>
-      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5092593" side_tool="true" weight="0.2172524" />
-    </layout-to-restore>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="161">
+          <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1574,87 +1501,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java">
+    <entry file="file://$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="1560">
           <caret line="104" selection-end-line="104" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml">
+    <entry file="file://$PROJECT_DIR$/EHS/testNg_Checklist.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="510">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/testNG_Miscellaneous.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
+    <entry file="file://$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6720">
-          <caret line="448" column="121" selection-start-line="448" selection-start-column="121" selection-end-line="448" selection-end-column="121" />
+        <state relative-caret-position="330">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+        <state relative-caret-position="705">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/PasswordFileEHS.properties">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66" />
+        <state relative-caret-position="585">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.xml" />
-    <entry file="file://$PROJECT_DIR$/EHS/src/testNg_OnlineCourse" />
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateLab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="53" column="80" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="80" />
+        <state relative-caret-position="450">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/EHS.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        <state relative-caret-position="61">
+          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java">
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="102" />
+        <state relative-caret-position="-338">
+          <caret line="404" column="27" selection-start-line="404" selection-start-column="15" selection-end-line="404" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1699,7 +1626,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>11 (1)</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1759,11 +1686,3 @@
     </states>
   </component>
 </project>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="55" column="89" lean-forward="true" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java">

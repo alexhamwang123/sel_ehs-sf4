@@ -402,7 +402,7 @@ public class OnlineScormVerify {
         Thread.sleep(500);
         driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go for Reports
         Thread.sleep(1200);
-        String courseIdTxt="";
+        String courseIdText="";
         String currentPageMax = "0";
         String currentPageNo = "0";
         Boolean isBreak = false;
@@ -471,10 +471,10 @@ public class OnlineScormVerify {
             if (isBreak) {
                 break;
             }
-     //       System.out.println("Before taking the course id yet, courseIdTxt=" + courseIdText);
+     //       System.out.println("Before taking the course id yet, courseIdText=" + courseIdText);
 //            System.out.println("Before taking the course id yet, courseId=" + courseId);
             if (courseIdText.equals(courseId)) {
-                System.out.println("courseIdTxt=" + courseIdText);
+                System.out.println("courseIdText=" + courseIdText);
                 System.out.println("courseId=" + courseId);
                 System.out.println("Ｗe find the same course id here");
                 break;
@@ -487,4 +487,4 @@ public class OnlineScormVerify {
     }
 
 }
-                                isBreak = true;
+
