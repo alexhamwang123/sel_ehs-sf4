@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EHS_Ordering" verbose="1" >
+    <!--<test name="Nopackage" >-->
+    <!--<classes>-->
+    <!--<class name="NoPackageTest" />-->
+    <!--</classes>-->
+    <!--</test>-->
+    <!--<classes>-->
+    <!--<class name="test.IndividualMethodsTest">-->
+    <!--<methods>-->
+    <!--<include name="testMethod" />-->
+    <!--</methods>-->
+    <!--</class>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <test name="UserAdmin">
+        <classes>
+            <class name="com.UserAdmin.CreateCourseManager"/>
+            <class name="com.UserAdmin.CreateNormalUser"/>
+            <class name="com.UserAdmin.CreateSuperAdmin"/>
+            <class name="com.UserAdmin.CreateTipEditor"/>
+            <class name="com.UserAdmin.CreateUSAManager"/>
+            <class name="com.UserAdmin.CreateUserSupport"/>
+            <class name="com.UserAdmin.FindExistingUser"/>
+        </classes>
+    </test>
+
+</suite>
