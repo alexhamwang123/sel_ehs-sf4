@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="108d4bb(OnlineCourseEditContent)">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="108d4bb(OnlineCourseEditContent)" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -403,10 +401,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EHS/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1560">
+            <state relative-caret-position="975">
               <caret line="104" selection-end-line="104" />
             </state>
           </provider>
@@ -439,7 +437,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="137">
@@ -751,7 +749,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542796735051" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542797083226" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -783,7 +781,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_EHSAdmin.xml">
+  <component name="RunManager" selected="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_Report.xml">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -792,25 +790,6 @@
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateUserSupport.CreateUserSupport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.UserAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.UserAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.CreateUserSupport" />
-      <option name="METHOD_NAME" value="CreateUserSupport" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -837,6 +816,17 @@
     <configuration name="/Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_EHSAdmin.xml" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="/Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_Report.xml" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/EHS/testNG_Report.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
@@ -919,19 +909,19 @@
     <list>
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.CreateUserSupport.CreateUserSupport" />
       <item itemvalue="TestNG.FindExistingUser.FindExistingUser" />
       <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNg_Checklist.xml" />
       <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testng.xml" />
       <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_EHSAdmin.xml" />
+      <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_Report.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_Report.xml" />
         <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_EHSAdmin.xml" />
         <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testng.xml" />
         <item itemvalue="TestNG./Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNg_Checklist.xml" />
         <item itemvalue="TestNG.FindExistingUser.FindExistingUser" />
-        <item itemvalue="TestNG.CreateUserSupport.CreateUserSupport" />
       </list>
     </recent_temporary>
   </component>
@@ -1111,12 +1101,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateNormalUser_CreateNormalUser - 2018.11.20 at 21h 49m 48s.xml">
-      <configuration name="CreateNormalUser.CreateNormalUser" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateNormalUser_CreateNormalUser - 2018.11.20 at 21h 51m 07s.xml">
-      <configuration name="CreateNormalUser.CreateNormalUser" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="CreateNormalUser_CreateNormalUser - 2018.11.20 at 21h 53m 10s.xml">
       <configuration name="CreateNormalUser.CreateNormalUser" configurationId="TestNG" />
     </history-entry>
@@ -1141,6 +1125,12 @@
     <history-entry file="FindExistingUser_FindExistingUser - 2018.11.20 at 22h 04m 04s.xml">
       <configuration name="FindExistingUser.FindExistingUser" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="_Users_shuang_NetBeansProjects_NEW_GIT_KEVIN_sel_ehs_EHS_testng_xml - 2018.11.21 at 18h 38m 12s.xml">
+      <configuration name="/Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testng.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_Users_shuang_NetBeansProjects_NEW_GIT_KEVIN_sel_ehs_EHS_testNG_EHSAdmin_xml - 2018.11.21 at 18h 42m 05s.xml">
+      <configuration name="/Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/testNG_EHSAdmin.xml" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1154,22 +1144,22 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="773" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49492386" visible="true" weight="0.18423855" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4914842" visible="true" weight="0.18423855" />
       <window_info id="Structure" order="1" sideWeight="0.50507617" side_tool="true" weight="0.17625134" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.50507617" side_tool="true" weight="0.17625134" />
+      <window_info id="Favorites" order="6" sideWeight="0.50851583" side_tool="true" visible="true" weight="0.18423855" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3274596" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7028754" weight="0.54292345" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49201277" weight="0.39675173" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4914803" visible="true" weight="0.39647576" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840257" weight="0.3298647" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32674298" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.2971246" side_tool="true" visible="true" weight="0.5418502" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5085197" side_tool="true" visible="true" weight="0.39647576" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32882413" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.6235357" weight="0.32482597" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32892805" />
@@ -1515,13 +1505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1575,6 +1558,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="104" selection-end-line="104" />
         </state>
       </provider>
     </entry>
