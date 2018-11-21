@@ -53,7 +53,7 @@ public class CreateCertificate {
 
 		
 		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+		WebElement EHSAdmin = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",EHSAdmin);
 				
