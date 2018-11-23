@@ -23,7 +23,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 @Test
 
-public class CompletetheprerequisitebeforetakingaChecklist {
+public class CompletetheprerequisitebeforetakingaOnlineCourse {
     public void CompletetheprerequisitebeforetakingChecklist() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
@@ -44,8 +44,7 @@ public class CompletetheprerequisitebeforetakingaChecklist {
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        String normuser = prop.getProperty("testnormuser");
-        String normuser0 = prop.getProperty("testnormuser2");
+
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         driver.findElement(By.id("login_login_id")).sendKeys(username);
