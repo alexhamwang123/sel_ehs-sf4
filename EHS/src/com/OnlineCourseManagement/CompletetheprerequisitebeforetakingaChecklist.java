@@ -247,10 +247,10 @@ public class CompletetheprerequisitebeforetakingaChecklist {
 
         driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).sendKeys("40");
 
-            Thread.sleep(3000);
+            Thread.sleep(5000);
 
 
-        driver.findElement(By.cssSelector("input[type='button'][value='submit']")).click();
+        driver.findElement(By.cssSelector("input[type='button'][value='Submit']")).click();
 //		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(5000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
@@ -262,15 +262,25 @@ public class CompletetheprerequisitebeforetakingaChecklist {
         driver.findElement(By.id("srch_fld")).sendKeys("EHS-1310");
         driver.findElement(By.name("searchButton")).click();
         Thread.sleep(1500);
-        driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        driver.findElement(By.className("onelang")).click();
+        Thread.sleep(10500);
+        String handle= driver.getWindowHandle();
+        for (String winHandle : driver.getWindowHandles()) {
 
-        if( driver.findElement(By.xpath("//*[@id=\"errorMsg_data\"]")).getAttribute("innerHTML")=="Required prerequisite course:04a1awuKpJ")
-        {System.out.println("was able to register for the course without completing the prereq");
+            if(!winHandle.equals(handle)){
+                driver.switchTo().window(winHandle);
+                WebElement Successconfrimbtn=driver.findElement(By.xpath("//div[@id='selectLanguage_lightbox']"));
+                if(Successconfrimbtn.isDisplayed()){
+                    System.out.println("Test is successful");
+                }
+
+            }
         }
-        else{
-            System.out.println("was able to register for the course  completing the prereq");
-        }
+       driver.quit();
+
+
+
+
 
 
     }
