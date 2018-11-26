@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -41,8 +42,6 @@ public class ClassroomPrereq {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
-
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -53,7 +52,7 @@ public class ClassroomPrereq {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -74,17 +73,20 @@ public class ClassroomPrereq {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("addClass")).click();
         Thread.sleep(2500);
+        driver.findElement(By.xpath("//a[@id='addClass']")).click();
+        Thread.sleep(2500);
+        driver.switchTo().defaultContent();
+        Thread.sleep(1000);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
         Thread.sleep(1500);
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
@@ -103,16 +105,35 @@ public class ClassroomPrereq {
         driver.findElement(By.id("saveClassCourse")).click();
         Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1800);
+        driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId);
+        Thread.sleep(1800);
+//        driver.findElement(By.name("searchButton")).click();
+        driver.findElement(By.xpath("//input[@value='Go']")).click();
+        Thread.sleep(4200);
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+//        WebElement viewGlass= driver.findElement(By.xpath("//img[@class='viewglass']"));
+//        JavascriptExecutor js1 = (JavascriptExecutor)driver;
+//        js1.executeScript("arguments[0].click();", viewGlass);
+//        driver.findElement(By.cssSelector("input[class='viewglass']")).click();
+//        driver.findElement(By.xpath("//div[@class='msg_head']/table/tbody/tr/td[5]/img[@class='viewglass']")).click();//img[@class="viewglass"]
+//        WebElement submitResultsEle=driver.findElement(By.xpath("//div[@class='msg_head']/table/tbody/tr/td[5]/img"));//img[@class="viewglass"]]
+//        Actions builderSR = new Actions(driver);
+//        Action drawActionSR = builderSR.moveToElement(submitResultsEle,16/2,16/2)  // start point
+//                .click()
+//                .build();
+//        Thread.sleep(1800);
+//        drawActionSR.perform();
+//        Thread.sleep(1800);
+        //System.out.println("submitResultsStr=" + submitResultsStr);
+        //div[@class='msg_head']/table/tbody/tr/td[5]/img[@class='viewglass']
+        Thread.sleep(2500);
+//        driver.switchTo().defaultContent();
+//        Thread.sleep(1900);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         if(!driver.getPageSource().contains("Required prerequisite course: Classroom1")) {
-            Assert.fail("the user was able to register for the course without completing the required prereq");
+            System.out.println("the user was able to register for the course without completing the required prereq");
         }
 
         Thread.sleep(2000);

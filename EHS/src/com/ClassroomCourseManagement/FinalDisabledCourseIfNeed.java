@@ -50,8 +50,6 @@ public class FinalDisabledCourseIfNeed {
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyRelease(KeyEvent.VK_TAB);
 
-        driver.manage().window().maximize();
-
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -75,7 +73,7 @@ public class FinalDisabledCourseIfNeed {
         while (true) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
 
-            WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+            WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
             js.executeScript("arguments[0].click()", courseAdmin);
 
             Thread.sleep(2000);
@@ -168,7 +166,7 @@ public class FinalDisabledCourseIfNeed {
                                             Thread.sleep(1000);//if find any,.
                                         } catch (NoSuchElementException e) {
 //                                            System.out.println("No Such Element Exception");
-                                       //     return true;
+                                            //     return true;
                                         }
                                         Thread.sleep(1000);
                                         Boolean isLoop5 =  false;
@@ -186,55 +184,55 @@ public class FinalDisabledCourseIfNeed {
                                         Boolean isBreakToLoop =  false;
                                         if(isLoop5){
 
-                                        java.util.List<WebElement> myResults3b;
+                                            java.util.List<WebElement> myResults3b;
                                             java.util.List<WebElement> myResults3c;
-                                        restartloop5:
-                                        while (true) {
+                                            restartloop5:
+                                            while (true) {
 
 
-                                        //driver.findElement(By.xpath());
-                                        myResults3b= driver.findElements(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr"));
+                                                //driver.findElement(By.xpath());
+                                                myResults3b= driver.findElements(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr"));
 
-if(myResults3b.size()>0)
-{
+                                                if(myResults3b.size()>0)
+                                                {
 
-    for (int $m = 1; $m <= myResults3b.size(); $m++) {
-    //foreach(Int $k=1;$k<=.size();$k++){
-    //    System.out.println("How many accs need to be removed?" + myResults3b.size());
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr["+$m+"]/td[8]/button")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(1500);
-        $m++;
-    }
-    myResults3c= driver.findElements(By.xpath("//*[@id=\"accordion_WaitingList_Table\"]/tbody/tr"));
-    if(myResults3c.size()>0) {
-        for (int $n = 1; $n <= myResults3c.size(); $n++) {
-            driver.findElement(By.xpath("//*[@id=\"accordion_WaitingList_Table\"]/tbody/tr[" + $n + "]/td[5]/button")).click();
-            Thread.sleep(1000);
-            driver.findElement(By.id("fancyConfirm_ok")).click();
-            isBreakToLoop = true;
-            $n++;
-        }
+                                                    for (int $m = 1; $m <= myResults3b.size(); $m++) {
+                                                        //foreach(Int $k=1;$k<=.size();$k++){
+                                                        //    System.out.println("How many accs need to be removed?" + myResults3b.size());
+                                                        Thread.sleep(1000);
+                                                        driver.findElement(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr["+$m+"]/td[8]/button")).click();
+                                                        Thread.sleep(1000);
+                                                        driver.findElement(By.id("fancyConfirm_ok")).click();
+                                                        Thread.sleep(1500);
+                                                        $m++;
+                                                    }
+                                                    myResults3c= driver.findElements(By.xpath("//*[@id=\"accordion_WaitingList_Table\"]/tbody/tr"));
+                                                    if(myResults3c.size()>0) {
+                                                        for (int $n = 1; $n <= myResults3c.size(); $n++) {
+                                                            driver.findElement(By.xpath("//*[@id=\"accordion_WaitingList_Table\"]/tbody/tr[" + $n + "]/td[5]/button")).click();
+                                                            Thread.sleep(1000);
+                                                            driver.findElement(By.id("fancyConfirm_ok")).click();
+                                                            isBreakToLoop = true;
+                                                            $n++;
+                                                        }
 
-    }
-    else {
-        isBreakToLoop = true;
-//／        System.out.println("Can't find tr-td/records in the user waiting listing for classroom");
-    }
-    //
-    // System.out.println("How many accs need to be removed?" + myResults3b.size());
-}
-else {
-    isBreakToLoop = true;
+                                                    }
+                                                    else {
+                                                        isBreakToLoop = true;
+//嚗�        System.out.println("Can't find tr-td/records in the user waiting listing for classroom");
+                                                    }
+                                                    //
+                                                    // System.out.println("How many accs need to be removed?" + myResults3b.size());
+                                                }
+                                                else {
+                                                    isBreakToLoop = true;
 //    System.out.println("Can't find tr-td/records in the user list for classroom");
-}
-                                            if(isBreakToLoop)break restartloop5;
-                                        }
-                                       // driver.findElement(By.cssSelector("button[type='button']")).click();
+                                                }
+                                                if(isBreakToLoop)break restartloop5;
+                                            }
+                                            // driver.findElement(By.cssSelector("button[type='button']")).click();
 //                                        driver.findElement(By.name("detailCourseIsActive")).click();
-                                        Thread.sleep(1900);
+                                            Thread.sleep(1900);
 //                                        driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
 //                                        Thread.sleep(1500);
 
@@ -340,4 +338,3 @@ else {
     }
 
 }
-

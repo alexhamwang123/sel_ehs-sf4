@@ -36,7 +36,7 @@ public class AddWaitlist {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -48,7 +48,7 @@ public class AddWaitlist {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -68,9 +68,9 @@ public class AddWaitlist {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(6500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(3500);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();
@@ -99,7 +99,7 @@ public class AddWaitlist {
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("a[href*='attendList']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys(username);
@@ -107,19 +107,19 @@ public class AddWaitlist {
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(5500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001615");
-        Thread.sleep(500);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(5500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001622");
-        Thread.sleep(500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();

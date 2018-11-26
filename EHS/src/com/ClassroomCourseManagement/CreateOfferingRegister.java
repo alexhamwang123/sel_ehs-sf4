@@ -37,7 +37,7 @@ public class CreateOfferingRegister {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -49,7 +49,7 @@ public class CreateOfferingRegister {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -69,9 +69,9 @@ public class CreateOfferingRegister {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(5500);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();
@@ -101,7 +101,7 @@ public class CreateOfferingRegister {
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.className("viewglass")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
