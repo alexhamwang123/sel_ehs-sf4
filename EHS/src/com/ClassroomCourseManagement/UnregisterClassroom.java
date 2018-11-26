@@ -64,11 +64,11 @@ public class UnregisterClassroom {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("selectBtnSite")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
@@ -96,11 +96,11 @@ public class UnregisterClassroom {
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(6500);
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.cssSelector("input[type='button'][value='Cancel']")).click();
         Thread.sleep(3500);
 

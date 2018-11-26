@@ -66,18 +66,15 @@ public class RegisteringMechanics {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("searchName")).sendKeys("SCV");
-        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//tbody//tr[6]//td[1]//a[1]")).click();
+        Thread.sleep(3500);
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
         driver.findElement(By.name("detailClassRoom")).sendKeys("room01");
@@ -93,40 +90,43 @@ public class RegisteringMechanics {
         driver.findElement(By.id("TimeAdd_Save")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("saveClassCourse")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(6500);
         driver.findElement(By.className("viewglass")).click();
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("lightbox")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
         Thread.sleep(2000);
 
+
+        System.out.println("Check Point 1");
         driver.findElement(By.id("login_login_id")).sendKeys(normuser);
         driver.findElement(By.id("login_password")).sendKeys(normuser);
         driver.findElement(By.name("submit")).click();
-        Thread.sleep(4500);
+        Thread.sleep(22500);
 
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(6500);
 
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
         Thread.sleep(1500);
         if(!driver.getPageSource().contains("Waitlisted")) {
             Assert.fail("the user did not get waitlisted for the course");
         }
         Thread.sleep(500);
+        System.out.println("Check Point 2");
         driver.findElement(By.id("lightbox")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
@@ -134,17 +134,19 @@ public class RegisteringMechanics {
         driver.findElement(By.id("login_login_id")).sendKeys(normuser0);
         driver.findElement(By.id("login_password")).sendKeys(normuser0);
         driver.findElement(By.name("submit")).click();
-        Thread.sleep(4500);
+        Thread.sleep(16500);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
 
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(6500);
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
         Thread.sleep(1500);
+
+        System.out.println("Check Point 3");
         driver.findElement(By.id("lightbox")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
@@ -153,19 +155,20 @@ public class RegisteringMechanics {
         driver.findElement(By.id("login_login_id")).sendKeys(username);
         driver.findElement(By.id("login_password")).sendKeys(password);
         driver.findElement(By.name("submit")).click();
-        Thread.sleep(4500);
+        Thread.sleep(22500);
 
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
 
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
 
         driver.findElement(By.cssSelector("input[type='button'][value='Cancel']")).click();
         Thread.sleep(1500);
+        System.out.println("Check Point 4");
 
         driver.findElement(By.id("lightbox")).click();
         Thread.sleep(1500);
@@ -175,15 +178,15 @@ public class RegisteringMechanics {
         driver.findElement(By.id("login_login_id")).sendKeys(normuser);
         driver.findElement(By.id("login_password")).sendKeys(normuser);
         driver.findElement(By.name("submit")).click();
-        Thread.sleep(4500);
+        Thread.sleep(8500);
 
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(6500);
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
 
         if(!driver.getPageSource().contains("Enrolled")) {
             Assert.fail("the user first in line on the waitlist did not get automatically enrolled when one of the enrolled users unregistered");

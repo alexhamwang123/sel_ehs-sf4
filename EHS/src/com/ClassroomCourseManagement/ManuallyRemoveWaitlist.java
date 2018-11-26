@@ -67,13 +67,13 @@ public class ManuallyRemoveWaitlist {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
@@ -98,7 +98,7 @@ public class ManuallyRemoveWaitlist {
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("a[href*='attendList']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys(username);
@@ -106,7 +106,7 @@ public class ManuallyRemoveWaitlist {
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001615");
@@ -114,7 +114,7 @@ public class ManuallyRemoveWaitlist {
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001622");
@@ -122,9 +122,9 @@ public class ManuallyRemoveWaitlist {
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr/td[8]/button")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(3500);
         driver.quit();

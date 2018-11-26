@@ -62,11 +62,11 @@ public class RefreshClassroomCourse {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("selectBtnSite")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
