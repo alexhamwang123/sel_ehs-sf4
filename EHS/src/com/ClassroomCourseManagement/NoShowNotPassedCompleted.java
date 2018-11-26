@@ -37,7 +37,6 @@ public class NoShowNotPassedCompleted {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -48,7 +47,7 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -68,9 +67,9 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();
@@ -142,13 +141,13 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys(username);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         driver.findElement(By.xpath("//*[@id=\"directreport\"]/tbody/tr/td[1]/a")).click();
-        Thread.sleep(2000);
+        Thread.sleep(8000);
         driver.findElement(By.name("emailme")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark No Show");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
         Thread.sleep(1500);
         WebElement lilok = driver.findElement(By.cssSelector("input[type='button'][value='ok']"));
@@ -156,48 +155,49 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(3000);
         String noshow = "";
         try {
-            Thread.sleep(1000);
-            noshow = driver.findElement(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr/td[6]")).getAttribute("innerHTML").substring(45,52);
+            Thread.sleep(4000);
+            noshow = driver.findElement(By.xpath("//td[contains(text(),'No Show')]")).getAttribute("innerHTML").substring(45,52);
         } catch (IndexOutOfBoundsException e) {
         }
         if(!noshow.equals("No Show")) {
             Assert.fail("user is not marked as No Show");
         }
+        Thread.sleep(3000);
         driver.findElement(By.name("emailme")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark Not Passed");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         WebElement lilok0 = driver.findElement(By.cssSelector("input[type='button'][value='ok']"));
         js.executeScript("arguments[0].click();", lilok0);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         String notPassed = "";
         try {
             Thread.sleep(3000);
-            notPassed = driver.findElement(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr/td[6]")).getAttribute("innerHTML").substring(45,55);
-         } catch (IndexOutOfBoundsException e) {
+            notPassed = driver.findElement(By.xpath("//td[contains(text(),'Not Passed')]")).getAttribute("innerHTML").substring(45,55);
+        } catch (IndexOutOfBoundsException e) {
 
         }
         if(!notPassed.equals("Not Passed")) {
             Assert.fail("user is not marked as Not Passed");
         }
-        Thread.sleep(1500);
+        Thread.sleep(3500);
 
         driver.findElement(By.name("emailme")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark Completed");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         WebElement lilok1 = driver.findElement(By.cssSelector("input[type='button'][value='ok']"));
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         js.executeScript("arguments[0].click();", lilok1);
         Thread.sleep(2000);
         String complete = "";
         try {
             Thread.sleep(3000);
-            complete = driver.findElement(By.xpath("//*[@id=\"accordion_AttendeeList_Table\"]/tbody/tr/td[6]")).getAttribute("innerHTML").substring(45,48);
+            complete = driver.findElement(By.xpath("//td[contains(text(),'yes')]")).getAttribute("innerHTML").substring(45,48);
             Thread.sleep(1500);
         } catch (IndexOutOfBoundsException e) {
 
@@ -206,17 +206,17 @@ public class NoShowNotPassedCompleted {
         if (!complete.equals("yes")) {
             Assert.fail("user is not marked as completed");
         }
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.partialLinkText("My History")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
 
         js.executeScript("document.getElementById('dateFrom').value='" + cmonth + "/" + sday + "/" + year + "'");
         js.executeScript("document.getElementById('dateTo').value='" + cmonth + "/" + sday + "/" + year + "'");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.id("searchHistory")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.partialLinkText(courseId)).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         if (!driver.getPageSource().contains("Completed")) {
             Assert.fail("the course did not show up as completed in my history");
         }

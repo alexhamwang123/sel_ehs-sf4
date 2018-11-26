@@ -36,8 +36,6 @@ public class EmailAtt {
 
         driver.get(urladdr);
 
-        driver.manage().window().maximize();
-
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -48,7 +46,7 @@ public class EmailAtt {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -68,17 +66,18 @@ public class EmailAtt {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("addClass")).click();
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//a[@id='addClass']")).click();
         Thread.sleep(2500);
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
         Thread.sleep(1500);
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
@@ -108,6 +107,8 @@ public class EmailAtt {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
         Thread.sleep(2500);
+        driver.switchTo().defaultContent();
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001615");
@@ -116,6 +117,8 @@ public class EmailAtt {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
         Thread.sleep(2500);
+        driver.switchTo().defaultContent();
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001622");
@@ -125,17 +128,17 @@ public class EmailAtt {
 //        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 //        Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(3500);
+        Thread.sleep(5800);
 //        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
 //        Thread.sleep(1500);
-        driver.findElement(By.id("chkall")).click();
-        Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@id=\"chkall\"]")).click();
+        Thread.sleep(3000);
         driver.findElement(By.id("emailUserButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(1800);
         driver.findElement(By.id("emailsubject")).sendKeys("this is the email subject");
-        Thread.sleep(1500);
+        Thread.sleep(1900);
         js.executeScript("tinyMCE.activeEditor.setContent('this is the email content')");
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         WebElement send = driver.findElement(By.xpath("//*[@id=\"emailcontent\"]/div[2]/input[1]"));
         js.executeScript("arguments[0].click();", send);
         Thread.sleep(1500);

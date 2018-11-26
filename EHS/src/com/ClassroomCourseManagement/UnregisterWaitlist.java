@@ -35,7 +35,6 @@ public class UnregisterWaitlist {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         String normuser = prop.getProperty("testnormuser");
@@ -47,7 +46,7 @@ public class UnregisterWaitlist {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[3]/a"));
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -67,18 +66,15 @@ public class UnregisterWaitlist {
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5500);
         driver.findElement(By.id("addClass")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("searchName")).sendKeys("SCV");
-        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//tbody//tr[6]//td[1]//a[1]")).click();
+        Thread.sleep(3500);
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
         driver.findElement(By.name("detailClassRoom")).sendKeys("room01");
@@ -99,11 +95,11 @@ public class UnregisterWaitlist {
         Thread.sleep(1500);
         driver.findElement(By.id("srch_fld")).sendKeys(courseId);
         driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("lightbox")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
