@@ -114,11 +114,12 @@ restartLoop:
                 new Select(driver.findElement(By.id("secondmenu")).findElement(By.id("searchCategory"))).selectByVisibleText("Survey_Only_New");//By.xpath("//option[@value='f9bbb962d5b1aa58b2115a7bf3b4c9a8']")));
                 Thread.sleep(1500);
                 driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div/div/input")).click();
-                Thread.sleep(1500);
+                Thread.sleep(3500);
 
                 try {
                     WebElement test = driver.findElement(By.id("pageNo"));
                     currentPageNo = test.getAttribute("value");
+
                     isPage = true;
                 } catch (NoSuchElementException e) {
                 }
@@ -131,13 +132,16 @@ restartLoop:
                 }
                 java.util.List<WebElement> myResults;
 
-                myResults = driver.findElements(By.tagName("td"));
+                //myResults = driver.findElements(By.tagName("td"));
+                myResults = driver.findElements(By.xpath("//table[@id=\"userRecord\"]/tbody/tr/td"));
                 if (myResults.size() > 0) {
                     for (int $p = 0; $p < myResults.size(); $p++) {
                         if (isBreak) break;
                         WebElement myResult4;
                         myResult4 = (WebElement) myResults.get($p);
                         String idstr2 = myResult4.getText();
+                        //It must be Survey_Only_New
+                        System.out.println("Line 142 idstr2=" + idstr2 );
                         if ("Active".equals(idstr2)) {
                             //we have to  make one to be inactived at least if it mets.
                             int $k = 0;
@@ -146,15 +150,20 @@ restartLoop:
                             WebElement myResult5;
                             myResult5 = (WebElement) myResults.get($p);
                             String idstr5 = myResult5.getText();
+                            System.out.println(" Line 150 idstr5=" + idstr5 );
                             java.util.List<WebElement> myResults3a;
-                            myResults3a = driver.findElements(By.tagName("a"));
+//                            myResults3a = driver.findElements(By.tagName("a"));
+                            myResults3a = driver.findElements(By.xpath("//table[@id=\"userRecord\"]/tbody/tr/td/a"));
                             int $j = 0;
                             $p = $k;
                             if (myResults3a.size() > 0) {
                                 for (WebElement myResult3a : myResults3a) {
                                     String idstr3a = myResult3a.getText();
+                                    System.out.println("idstr3a=" + idstr3a );
                                     String id3a = myResult3a.getAttribute("id");
-                                    if (idstr5.equals(idstr3a) && !idstr3a.equals("EHS-11111")) {
+                                    if (idstr5.equals(idstr3a) && !idstr3a.equals("EHS-11111    ")) {
+                                        System.out.println("Line 163 idstr3a=" + idstr3a );
+                                        System.out.println("Line 164 idstr5=" + idstr5 );
                                         // System.out.println("$ j is " + $j);
 //System.out.println("idstr3a is" + idstr3a);
                                         driver.findElement(By.xpath("//a[@id='" + id3a + "']")).click();
@@ -163,6 +172,12 @@ restartLoop:
                                         Thread.sleep(1500);
                                         driver.findElement(By.name("langIsViewable")).click();
                                         Thread.sleep(1900);
+                                        try {
+                                            //ErrorMsg
+
+                                        } catch (Exception $e) {
+
+                                        }
                                         driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
                                         Thread.sleep(1500);
                                         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();

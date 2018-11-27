@@ -127,7 +127,9 @@ public class FinalDisabledCourseIfNeed {
                 }
                 java.util.List<WebElement> myResults;
 
-                myResults = driver.findElements(By.tagName("td"));
+//                myResults = driver.findElements(By.tagName("td"));
+                myResults = driver.findElements(By.xpath("//table[@id=\"userRecord\"]/tbody/tr/td"));
+
                 if (myResults.size() > 0) {
 //               System.out.println("There is one record  above.");
                     for (int $p = 0; $p < myResults.size(); $p++) {
@@ -144,12 +146,16 @@ public class FinalDisabledCourseIfNeed {
                             myResult5 = (WebElement) myResults.get($p);
                             String idstr5 = myResult5.getText();
                             java.util.List<WebElement> myResults3a;
-                            myResults3a = driver.findElements(By.tagName("a"));
+//                            myResults3a = driver.findElements(By.tagName("a"));
+                            myResults3a = driver.findElements(By.xpath("//table[@id=\"userRecord\"]/tbody/tr/td/a"));
                             int $j = 0;
                             $p = $k;
+                            System.out.println("idstr2 is " + idstr2);
+                            System.out.println("idstr5 is " + idstr5);
                             if (myResults3a.size() > 0) {
                                 for (WebElement myResult3a : myResults3a) {
                                     String idstr3a = myResult3a.getText();//getAttribute("innerHTML");
+                                    System.out.println("idstr3a is " + idstr3a);
 //getText();
 
                                     String id3a = myResult3a.getAttribute("class");

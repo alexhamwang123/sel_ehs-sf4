@@ -132,7 +132,7 @@ public class AddAtt {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
         Thread.sleep(3500);
-//        driver.quit();
+        driver.quit();
 
 
     }

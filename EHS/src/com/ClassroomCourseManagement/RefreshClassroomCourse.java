@@ -68,10 +68,11 @@ public class RefreshClassroomCourse {
         driver.findElement(By.id("site_radio")).click();
         Thread.sleep(3500);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
+        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
         Thread.sleep(1500);
         String building = generator.generate(15);
