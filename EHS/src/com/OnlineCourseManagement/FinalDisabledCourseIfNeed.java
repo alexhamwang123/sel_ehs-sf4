@@ -12,6 +12,12 @@ package com.OnlineCourseManagement;
         import java.io.File;
         import java.io.FileInputStream;
         import java.io.IOException;
+        import java.util.List;
+//        import java.util.ArrayList;
+        import java.util.Hashtable;
+
+//        import java.util.List;
+        import java.util.Enumeration;
 
         import java.security.Key;
         import java.util.Properties;
@@ -72,6 +78,12 @@ public class FinalDisabledCourseIfNeed {
 //        Boolean isPaging = false;
 //        Boolean firstTimeVisit = true;
 //        Boolean isPage = false;
+
+        Hashtable arrL = new Hashtable();
+        //ArrayList<String> arrL = new ArrayList<String>();
+        arrL.put("1","EHS-11111");
+
+        int $r = 0;
 restartLoop:
         while (true) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -132,25 +144,36 @@ restartLoop:
                 }
                 java.util.List<WebElement> myResults;
 
+                Boolean doWeHaveToJump = false;
+                Boolean firstTimeEntry = true;
+
                 //myResults = driver.findElements(By.tagName("td"));
                 myResults = driver.findElements(By.xpath("//table[@id=\"userRecord\"]/tbody/tr/td"));
                 if (myResults.size() > 0) {
                     for (int $p = 0; $p < myResults.size(); $p++) {
                         if (isBreak) break;
                         WebElement myResult4;
+                        System.out.println("Line 147 $p=" + $p );
                         myResult4 = (WebElement) myResults.get($p);
                         String idstr2 = myResult4.getText();
                         //It must be Survey_Only_New
-                        System.out.println("Line 142 idstr2=" + idstr2 );
+                        System.out.println("Line 151 idstr2=" + idstr2 );
                         if ("Active".equals(idstr2)) {
                             //we have to  make one to be inactived at least if it mets.
                             int $k = 0;
+
+                            if (doWeHaveToJump)
+                                $p = $p + 3;
+                            else
+                                $p = $p - 3;
                             $k = $p;
-                            $p = $p - 3;
+                            System.out.println(" Line 160 $p=" + $p );
+                            System.out.println(" Line 161 $k=" + $k );
                             WebElement myResult5;
                             myResult5 = (WebElement) myResults.get($p);
                             String idstr5 = myResult5.getText();
-                            System.out.println(" Line 150 idstr5=" + idstr5 );
+
+                            System.out.println(" Line 165 idstr5=" + idstr5 );
                             java.util.List<WebElement> myResults3a;
 //                            myResults3a = driver.findElements(By.tagName("a"));
                             myResults3a = driver.findElements(By.xpath("//table[@id=\"userRecord\"]/tbody/tr/td/a"));
@@ -159,38 +182,103 @@ restartLoop:
                             if (myResults3a.size() > 0) {
                                 for (WebElement myResult3a : myResults3a) {
                                     String idstr3a = myResult3a.getText();
-                                    System.out.println("idstr3a=" + idstr3a );
+                                    System.out.println("Line 174 idstr3a=" + idstr3a );
                                     String id3a = myResult3a.getAttribute("id");
-                                    if (idstr5.equals(idstr3a) && !idstr3a.equals("EHS-11111    ")) {
-                                        System.out.println("Line 163 idstr3a=" + idstr3a );
-                                        System.out.println("Line 164 idstr5=" + idstr5 );
-                                        // System.out.println("$ j is " + $j);
+                                    System.out.println("Line 176 id3a=" + id3a );
+
+
+
+                                    if (idstr5.equals(idstr3a) ) { // !idstr3a.equals("EHS-11111") ) {
+                                        System.out.println("Line 182 idstr3a=" + idstr3a );
+                                        System.out.println("Line 183 idstr5=" + idstr5 );
+                                        //for (int s = 0; s <  arrL.size(); s++) {
+                                            for (Enumeration<String> e = arrL.elements(); e.hasMoreElements();) {
+//                                                System.out.println(e.nextElement());]
+                                                System.out.println(" Line is 192 and arrL.size() is " + arrL.size());
+                                                System.out.println(" Line is 193 and idstr3aOri e is " + e);
+                                                String idstr3aOri = e.nextElement();
+                                                System.out.println(" Line is 194 and idstr3aOri is " + idstr3aOri);
+                                                if (idstr3a.equals(idstr3aOri)) {
+                                                    System.out.println(" Line is 196 and idstr3aOri  is " + idstr3aOri);
+                                                    doWeHaveToJump = true;
+                                                    if (firstTimeEntry) {
+                                                        driver.findElement(By.xpath("//a[@id='" + id3a + "']")).click();
+                                                        Thread.sleep(3500);
+                                                        driver.findElement(By.name("detailCourseIsActive")).click();
+                                                        Thread.sleep(1500);
+                                                        driver.findElement(By.name("langIsViewable")).click();
+                                                        Thread.sleep(1900);
+                                                        driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
+                                                        Thread.sleep(1500);
+                                                        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+                                                        Thread.sleep(1700);
+                                                        firstTimeEntry = false;
+                                                        try {
+                                                            $r++;
+                                                            String stroutput= String.valueOf(Integer.valueOf($p));
+                                                            arrL.put(stroutput,idstr3a);
+                                                            String returnMSG = driver.findElement(By.xpath("//label[@class=\"err_msg\"]")).getAttribute("innerHTML");
+                                                            if (!returnMSG.equals("This course may not be made inactive or invisible because it is included in a RC.")) {
+                                                                continue restartLoop;
+                                                                // Assert.fail("the online course does not show up as Record saved successfully.");
+                                                            }//Record saved successfully.
+
+                                                        } catch (NoSuchElementException $e) {
+                                                            continue restartLoop;
+                                                        }
+
+
+                                                        String currentWin = driver.getWindowHandle();
+                                                        try {
+                                                            driver.findElement(By.className("onelang")).click();
+                                                        } catch (NoSuchElementException ae) {
+                                                            continue restartLoop;
+                                                        }
+
+                                                        Thread.sleep(1500);
+
+                                                    }
+
+
+                                                }
+                                                else {
+                                                    //we dont need to do it now.
+                                                    driver.findElement(By.xpath("//a[@id='" + id3a + "']")).click();
+                                                    Thread.sleep(3500);
+                                                    driver.findElement(By.name("detailCourseIsActive")).click();
+                                                    Thread.sleep(1500);
+                                                    driver.findElement(By.name("langIsViewable")).click();
+                                                    Thread.sleep(1900);
+                                                    driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
+                                                    Thread.sleep(1500);
+                                                    driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+                                                    Thread.sleep(1700);
+                                                    firstTimeEntry = false;
+
+                                                }
+                                            }
+                                       // }
+//                                        if(index >= arrL.size()){
+//                                            //index not exists
+//                                        }else{
+//                                            // index exists
+//                                        }
+
+                                        System.out.println("Line 197 idstr3a=" + idstr3a );
+                                        System.out.println("Line 198 idstr5=" + idstr5 );
+                                         System.out.println("$p is " + $p);
+
+                                        System.out.println("doWeHaveToJump is " + doWeHaveToJump);
+
 //System.out.println("idstr3a is" + idstr3a);
-                                        driver.findElement(By.xpath("//a[@id='" + id3a + "']")).click();
-                                        Thread.sleep(1500);
-                                        driver.findElement(By.name("detailCourseIsActive")).click();
-                                        Thread.sleep(1500);
-                                        driver.findElement(By.name("langIsViewable")).click();
-                                        Thread.sleep(1900);
-                                        try {
-                                            //ErrorMsg
 
-                                        } catch (Exception $e) {
 
-                                        }
-                                        driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
-                                        Thread.sleep(1500);
-                                        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-                                        Thread.sleep(1000);
-                                        String currentWin = driver.getWindowHandle();
-                                        try {
-                                            driver.findElement(By.className("onelang")).click();
-                                        } catch (NoSuchElementException e) {
-                                            continue restartLoop;
-                                        }
-                                        Thread.sleep(1500);
+                                    }//We Have to go to next because there is no same situation
+//                                    else {
+//
+//                                        System.out.println("Line is 216 $r is " + $r);
+//                                    }
 
-                                    }
 
                                 }
                                 $j++;
