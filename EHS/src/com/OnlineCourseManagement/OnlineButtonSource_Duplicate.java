@@ -23,7 +23,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
 @Test(priority=39)
-public class OnlinePrereqComplete {
+public class OnlineButtonSource_Duplicate {
     public void OnlinePrereqComplete() throws InterruptedException, IOException, AWTException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
@@ -33,7 +33,7 @@ public class OnlinePrereqComplete {
 
         driver.get("https://twn:WrongAdeeDow2-@demo.accentrixus.com:8330");
 
-        Robot robot = new Robot();
+   /*     Robot robot = new Robot();
         robot.setAutoDelay(250);
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_SHIFT);
@@ -198,6 +198,8 @@ public class OnlinePrereqComplete {
         Thread.sleep(5500);
         driver.switchTo().window(mainWin);
         Thread.sleep(4000);
+
+        */
         driver.quit();
 
     }
