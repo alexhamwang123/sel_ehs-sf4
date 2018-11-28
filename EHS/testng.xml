@@ -17,7 +17,7 @@
     <test name="EHS">
         <classes>
             <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
-            <class name="com.ChecklistManagement.AddChecklistManager"/>
+            <class name="com.ChecklistManagement.NormalChecklistAndAddChecklistManager"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
             <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
@@ -25,13 +25,13 @@
             <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
             <class name="com.ChecklistManagement.ChecklistButtonSource"/>
             <class name="com.ChecklistManagement.ChecklistPrereq"/>
-            <class name="com.ChecklistManagement.ChecklistPrereqComplete"/>
+            <class name="com.ChecklistManagement.ChecklistPrereqComplete_Duplicate"/>
             <class name="com.ChecklistManagement.SaveAndCancel"/>
             <class name="com.ChecklistManagement.RefreshChecklist"/>
             <class name="com.ChecklistManagement.NormalRefreshChecklist"/>
             <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
             <class name="com.ClassroomCourseManagement.AddAtt"/>
-            <class name="com.ClassroomCourseManagement.AddClassroomManger"/>
+            <class name="com.ClassroomCourseManagement.NormalClassroomAndAddClassroomCourseManager"/>
             <class name="com.ClassroomCourseManagement.AddWaitlist"/>
             <class name="com.ClassroomCourseManagement.CancelAndNotify"/>
             <class name="com.ClassroomCourseManagement.ClassroomPrereq"/>
@@ -47,14 +47,14 @@
             <class name="com.ClassroomCourseManagement.UnregisterClassroom"/>
             <class name="com.ClassroomCourseManagement.UnregisterWaitlist"/>
             <class name="com.ClassroomCourseManagement.FinalDisabledCourseIfNeed"/>
-            <class name="com.OnlineCourseManagement.AddManagerOnlineCourse"/>
+            <class name="com.OnlineCourseManagement.NormalOnlineAndAddOnlineCourseManager"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>
             <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
             <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
             <class name="com.OnlineCourseManagement.OnlineCoursePrereq"/>
             <class name="com.OnlineCourseManagement.OnlineCoursePrereqDecrease"/>
-            <class name="com.OnlineCourseManagement.OnlinePrereqComplete"/>
+            <class name="com.OnlineCourseManagement.OnlineButtonSource_Duplicate"/>
             <class name="com.OnlineCourseManagement.RefreshOnlineCourse"/>
             <class name="com.OnlineCourseManagement.OnlineCourseEditContent"/>
             <class name="com.OnlineCourseManagement.CreateScormClass"/>
