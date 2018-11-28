@@ -25,7 +25,7 @@ import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
 @Test(priority=1)
 //@Test(groups="ehs" ,priority=1)
-public class AddChecklistManager implements IMethodInterceptor {
+public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor {
     public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
 
         Comparator<IMethodInstance> comparator = new Comparator<IMethodInstance>() {

@@ -23,7 +23,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 @Test
 
-public class CompletetheprerequisitebeforetakingaOnlineCourse {
+public class OnlineCoursePrereqComplete {
     public void CompletetheprerequisitebeforetakingChecklist() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 

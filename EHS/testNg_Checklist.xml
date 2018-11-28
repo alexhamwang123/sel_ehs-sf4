@@ -18,13 +18,13 @@
     <test name="EHS-OnlineandChecklist" preserve-order="true">
         <classes>
             <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
-            <class name="com.ChecklistManagement.AddChecklistManager"/>
+            <class name="com.ChecklistManagement.NormalChecklistAndAddChecklistManager"/>
             <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
             <class name="com.ChecklistManagement.CreateChecklist"/>
             <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
             <class name="com.ChecklistManagement.ChecklistButtonSource"/>
             <class name="com.ChecklistManagement.ChecklistPrereq"/>
-            <class name="com.ChecklistManagement.ChecklistPrereqComplete"/>
+            <class name="com.ChecklistManagement.ChecklistPrereqComplete_Duplicate"/>
             <class name="com.ChecklistManagement.SaveAndCancel"/>
             <class name="com.ChecklistManagement.RefreshChecklist"/>
             <class name="com.ChecklistManagement.NormalRefreshChecklist"/>
