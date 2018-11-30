@@ -13,6 +13,12 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
+//        import java.util.ArrayList;
+import java.util.Hashtable;
+
+//        import java.util.List;
+import java.util.Enumeration;
 
 import java.security.Key;
 import java.util.Properties;
@@ -69,6 +75,12 @@ public class FinalDisabledCourseIfNeed {
         Boolean isPaging = false;
         Boolean firstTimeVisit = true;
         Boolean isPage = false;
+        Hashtable arrL = new Hashtable();
+        //ArrayList<String> arrL = new ArrayList<String>();
+        arrL.put("1","04a1awuKpJ");
+        int $p = 0;
+//        int $t=0;
+//        int $r = 0;
         restartLoop:
         while (true) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -132,14 +144,24 @@ public class FinalDisabledCourseIfNeed {
 
                 java.util.List<WebElement> myResults;
 
-                myResults = driver.findElements(By.tagName("td"));
+//                myResults = driver.findElements(By.tagName("td"));
+                driver.switchTo().defaultContent();
+                Thread.sleep(1500);
+                myResults = driver.findElements(By.xpath("//table[@id=\"mainTable\"]/tbody/tr/td"));
                 if (myResults.size() > 0) {
 //               System.out.println("There is one record  above.");
-                    for (int $p = 0; $p < myResults.size(); $p++) {
+                    for (;$p < myResults.size(); $p++) {
                         if (isBreak) break;
                         WebElement myResult4;
+                        if ($p <= 4) $p=0;
+                        driver.switchTo().defaultContent();
+                        Thread.sleep(1500);
                         myResult4 = (WebElement) myResults.get($p);
+                        if ($p <= 4) $p=4;
+                        Thread.sleep(1500);
+//                        System.out.println("myResult4" + myResult4);
                         String idstr2 = myResult4.getText();
+                        Thread.sleep(1500);
                         if ("Active".equals(idstr2)) {
                             //we have to  make one to be inactived at least if it mets.
                             int $k = 0;
@@ -149,16 +171,24 @@ public class FinalDisabledCourseIfNeed {
                             myResult5 = (WebElement) myResults.get($p);
                             String idstr5 = myResult5.getText();
                             java.util.List<WebElement> myResults3a;
-                            myResults3a = driver.findElements(By.tagName("a"));
+//                            myResults3a = driver.findElements(By.tagName("a"));
+                            myResults3a = driver.findElements(By.xpath("//table[@id=\"mainTable\"]/tbody/tr/td/a"));
                             int $j = 0;
                             $p = $k;
+//                            String mainWin = driver.getWindowHandle();
+                            driver.switchTo().defaultContent();
+                            Thread.sleep(1500);
                             if (myResults3a.size() > 0) {
                                 for (WebElement myResult3a : myResults3a) {
-                                    String idstr3a = myResult3a.getText();
-                                    String id3a = myResult3a.getAttribute("class");
+//                                    System.out.println("Line 162 idstr5=" + idstr5 );
+                                    String idstr3a = idstr5;
+//                                    String idstr3a = myResult3a.getText();
+//                                    String id3a = myResult3a.getAttribute("id");
                                     if (idstr5.equals(idstr3a) && !idstr3a.equals("04a1awuKpJ")) {
-//                                        System.out.println("id3a is " + id3a);
-                                        System.out.println("idstr3a is " + idstr3a);
+                                        System.out.println("Line 165 idstr3a=" + idstr3a );
+//                                        System.out.println("Line 166 id3a=" + id3a );
+
+
                                         Thread.sleep(1000);
                                         driver.findElement(By.xpath("//*[contains(text(),'"+idstr3a+"')]")).click();
                                         Thread.sleep(1500);
