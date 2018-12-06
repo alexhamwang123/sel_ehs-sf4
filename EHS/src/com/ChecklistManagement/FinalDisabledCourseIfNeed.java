@@ -76,13 +76,21 @@ public class FinalDisabledCourseIfNeed {
         Boolean firstTimeVisit = true;
         Boolean isPage = false;
         Hashtable arrL = new Hashtable();
+        Boolean $resetCounterP = false;
         //ArrayList<String> arrL = new ArrayList<String>();
-        arrL.put("1","04a1awuKpJ");
+//        arrL.put("1","04a1awuKpJ");
+        arrL.put("04a1awuKpJ","04a1awuKpJ");
         int $p = 0;
-//        int $t=0;
-//        int $r = 0;
+        int $t=0;
+        int $tu=0;
+        Boolean firstTimeEntry1 = true;
         restartLoop:
         while (true) {
+
+            if($resetCounterP) {
+                $p = 0;
+                $tu=0;
+            }
             JavascriptExecutor js = (JavascriptExecutor) driver;
 
             WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -121,10 +129,9 @@ public class FinalDisabledCourseIfNeed {
                 inputSec.sendKeys(Keys.TAB);
 //        Survey_Only_New
                 new Select(driver.findElement(By.id("secondmenu")).findElement(By.id("searchCategory"))).selectByVisibleText("Survey_Only_New");//By.xpath("//option[@value='f9bbb962d5b1aa58b2115a7bf3b4c9a8']")));
-                Thread.sleep(5000);
-                driver.findElement(By.xpath("//input[@value='Go']")).click();
                 Thread.sleep(1500);
-
+                driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div/div/input")).click();
+                Thread.sleep(3500);
 
                 try {
                     WebElement test = driver.findElement(By.id("pageNo"));
@@ -133,40 +140,45 @@ public class FinalDisabledCourseIfNeed {
                 } catch (NoSuchElementException e) {
                 }
 
-
                 if (firstTimeVisit) {
                     firstTimeVisit = false;
                 }
                 else {
                     currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                 }
-
-
                 java.util.List<WebElement> myResults;
 
-//                myResults = driver.findElements(By.tagName("td"));
-                driver.switchTo().defaultContent();
-                Thread.sleep(1500);
+                Boolean doWeHaveToJump = false;
+                Boolean firstTimeEntry = false;
+                //myResults = driver.findElements(By.tagName("td"));
                 myResults = driver.findElements(By.xpath("//table[@id=\"mainTable\"]/tbody/tr/td"));
                 if (myResults.size() > 0) {
-//               System.out.println("There is one record  above.");
                     for (;$p < myResults.size(); $p++) {
+
                         if (isBreak) break;
+                        if ($p >= (myResults.size()) ) {
+                            $tu=$p/6;
+                            $p=$p-myResults.size();
+//                            $tu= 0;
+                            break;
+                        }
+                        else if (($p  < 0 && $tu <= 0 )) {
+                            $tu=$p/6;
+                            $p=0;
+//                            $tu= 0;
+                            break;
+                        }
                         WebElement myResult4;
-                        if ($p <= 4) $p=0;
-                        driver.switchTo().defaultContent();
-                        Thread.sleep(1500);
                         myResult4 = (WebElement) myResults.get($p);
-                        if ($p <= 4) $p=4;
-                        Thread.sleep(1500);
-//                        System.out.println("myResult4" + myResult4);
                         String idstr2 = myResult4.getText();
-                        Thread.sleep(1500);
+                        //It must be Survey_Only_New
+
                         if ("Active".equals(idstr2)) {
                             //we have to  make one to be inactived at least if it mets.
                             int $k = 0;
                             $k = $p;
                             $p = $p - 4;
+
                             WebElement myResult5;
                             myResult5 = (WebElement) myResults.get($p);
                             String idstr5 = myResult5.getText();
@@ -175,98 +187,206 @@ public class FinalDisabledCourseIfNeed {
                             myResults3a = driver.findElements(By.xpath("//table[@id=\"mainTable\"]/tbody/tr/td/a"));
                             int $j = 0;
                             $p = $k;
-//                            String mainWin = driver.getWindowHandle();
-                            driver.switchTo().defaultContent();
-                            Thread.sleep(1500);
                             if (myResults3a.size() > 0) {
-                                for (WebElement myResult3a : myResults3a) {
-//                                    System.out.println("Line 162 idstr5=" + idstr5 );
-                                    String idstr3a = idstr5;
-//                                    String idstr3a = myResult3a.getText();
-//                                    String id3a = myResult3a.getAttribute("id");
-                                    if (idstr5.equals(idstr3a) && !idstr3a.equals("04a1awuKpJ")) {
-                                        System.out.println("Line 165 idstr3a=" + idstr3a );
-//                                        System.out.println("Line 166 id3a=" + id3a );
+                                for (; $tu<myResults3a.size(); $tu++){
+                                    if ($p >= 6)$tu=($p/6);
+                                        else if ($p==0)
+                                            $tu=0;
+                                        else $tu=($p/6);
+                                    if ($tu <0) $tu = 0;
+                                    if($tu >= 20)$tu= 20;
+                                    WebElement myResult3a = myResults3a.get($tu);
 
-
-                                        Thread.sleep(1000);
-                                        driver.findElement(By.xpath("//*[contains(text(),'"+idstr3a+"')]")).click();
-                                        Thread.sleep(1500);
-                                        try {
-                                            WebElement langIsViewable=driver.findElement(By.name("langIsViewable"));
-                                            if(langIsViewable.isSelected()) {
-                                                langIsViewable.click();
-                                                Thread.sleep(1000);//if find any,.
+                                    String idstr3a = myResult3a.getText();
+                                    String id3a = myResult3a.getAttribute("id");
+                                    if (idstr5.equals(idstr3a)) {
+                                        for (Enumeration<String> e = arrL.elements(); e.hasMoreElements();) {
+                                            //we do not know this record yet. Please do it now.
+                                            String idstr3aOri = e.nextElement();
+                                            if (!idstr3a.equals(idstr3aOri) ) {//Let do it now.
+                                                if (idstr3a.equals(idstr3aOri)) {
+                                                    continue;
+                                                }
+                                                $t++;
+                                                doWeHaveToJump = true;
+                                                if (!idstr3a.equals(idstr3aOri)) {
+                                                    driver.findElement(By.xpath("//a[@id='" + id3a + "']")).click();
+                                                    Thread.sleep(6500);
+                                                    driver.findElement(By.name("detailIsActive")).click();
+                                                    Thread.sleep(1500);
+                                                    driver.findElement(By.name("langIsViewable")).click();
+                                                    Thread.sleep(1800);
+                                                    driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
+                                                    Thread.sleep(1700);
+                                                    driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+                                                    Thread.sleep(2000);
+                                                    try {
+                                                        $p = $p*arrL.size();
+                                                        arrL.put(idstr3a,idstr3a);
+                                                        String returnMSG = driver.findElement(By.xpath("//label[@class=\"err_msg\"]")).getAttribute("innerHTML");
+                                                            if (!returnMSG.equals("Record saved successfully.")) {
+                                                                 Assert.fail("Please ask Administrator for the detail why could be this one. Thank you.");
+                                                            }
+                                                    } catch (NoSuchElementException $e) {
+                                                        continue restartLoop;
+                                                    }
+                                                    String currentWin = driver.getWindowHandle();
+                                                    try {
+                                                        driver.findElement(By.className("onelang")).click();
+                                                    } catch (NoSuchElementException ae) {
+                                                        continue restartLoop;
+                                                    }
+                                                    Thread.sleep(1500);
+                                                }
                                             }
                                             else {
-                                                throw new NoSuchElementException("Just a test line 190");
+                                                //we dont need to do it now.
+                                                if (!idstr3a.equals(idstr3aOri))
+                                                    break;
+                                                    Thread.sleep(1500);
+                                                    driver.findElement(By.xpath("//a[@id='" + id3a + "']")).click();
+                                                    Thread.sleep(7500);
+                                                    driver.findElement(By.name("detailIsActive")).click();
+                                                    Thread.sleep(1500);
+                                                    driver.findElement(By.name("langIsViewable")).click();
+                                                    Thread.sleep(1100);
+                                                    driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
+                                                    Thread.sleep(1950);
+                                                    driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+                                                    Thread.sleep(2100);
+                                                try {
+                                                    $p = $p  * arrL.size();
+                                                    if ($p >= (myResults.size()-4) ) {
+                                                        $p=0;
+                                                    }
+                                                    String returnMSG = driver.findElement(By.xpath("//label[@class=\"err_msg\"]")).getAttribute("innerHTML");
+                                                    arrL.put(idstr3a,idstr3a);
+                                                    if (returnMSG.equals("This course may not be made inactive or invisible because it is included in a RC.")) {
+                                                        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+                                                        Thread.sleep(2000);
+                                                    }//Record saved successfully.
+                                                    else if (!returnMSG.equals("This course may not be made inactive or invisible because it is included in a RC.")) {
+                                                        Assert.fail("Please ask Administrator for the detail why could be this one. Thank you.");
+                                                    }
+
+                                                } catch (NoSuchElementException $e) {
+                                                    $p = 120;
+                                                    $resetCounterP = true;
+                                                    break restartLoop2;
+                                                }  catch (Exception $excep) {
+                                                    continue restartLoop;
+                                                }
+                                                String currentWin = driver.getWindowHandle();
+                                                try {
+                                                    driver.findElement(By.className("onelang")).click();
+                                                } catch (NoSuchElementException ae) {
+                                                    continue;
+                                                }
                                             }
-                                        } catch (NoSuchElementException e) {
                                         }
-                                        Thread.sleep(1500);
-                                        driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
-                                        Thread.sleep(1000);
-                                        driver.findElement(By.name("detailIsActive")).click();
-                                        Thread.sleep(1900);
-                                        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-                                        Thread.sleep(1000);
-                                        String currentWin = driver.getWindowHandle();
+                                    }
+                                    //We Have to go to next because there is no same situation
+                                    else {
+                                        if (id3a.equals("")) continue;
                                         try {
-                                            driver.findElement(By.className("onelang")).click();
-                                        } catch (NoSuchElementException e) {
-//                                            System.out.println("restartLoop is starting before logging");
+                                            if(arrL.size() > 0)
+                                            $p = $p * arrL.size();
+                                            else
+                                                $p= $p;//Nothing is changed
+                                            if ($p >= 116){
+                                                break;
+                                            }
+                                            String returnMSG = driver.findElement(By.xpath("//label[@class=\"err_msg\"]")).getAttribute("innerHTML");
+                                          if (!returnMSG.equals("Record saved successfully.")) {
+                                                continue restartLoop;
+                                            }else
+                                            {
+                                                continue restartLoop;
+                                            }
+
+                                        } catch (NoSuchElementException $e) {
+                                            break;
+                                        } catch (Exception $excep) {
                                             continue restartLoop;
                                         }
-                                        Thread.sleep(500);
+
 
                                     }
-                                    $j++;
 
+                                    //paging here
+                                    // Nothing is active. So we have to break it out first.
+                                    try {
+                                        arrL.put(idstr3a,idstr3a);
+                                        $resetCounterP = true;
+                                        WebElement pageMaxEle= driver.findElement(By.id("pageMax"));
+                                        currentPageMax = pageMaxEle.getAttribute("value");
+                                    } catch (NoSuchElementException e) {
+                                        break;
+                                    }
+                                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
+                                    Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
+                                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage && (Integer.valueOf(currentPageMax) > 0) && (currentPageNoInt > 0) ) {
+                                        //Let us go to next
+                                        WebElement inputTHREE = driver.findElement(By.id("pageNo"));
+                                        // erase any existing value (because clear does not send any events
+                                        for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
+                                            inputTHREE.sendKeys(Keys.BACK_SPACE);
+                                        }
+                                        inputTHREE.clear();
+                                        inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
+                                        //We have to next.
+                                        String strPagination = "pagination";
+                                        driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
+                                        continue restartLoop2; //Only marked first records.
+                                    } else {
+                                        isPaging = true;
+                                    }
+                                    isBreak = true;
+                                    //we should break it again.
+                                    if (isBreak && isPaging) break;
                                 }
-
+                                $j++;
                             }
                             $p++;
-                        } else {
-//                            System.out.println("There is no record for active status at all.");
-                        }
+                        } //it is active if-else.
                     }
                     // Nothing is active. So we have to break it out first.
                     try {
                         WebElement pageMaxEle= driver.findElement(By.id("pageMax"));
                         currentPageMax = pageMaxEle.getAttribute("value");
+                        if($p == myResults.size()) {
+                            $resetCounterP=false;
+                            $p =0;
+                            $tu = 0;
+                            if(firstTimeEntry1) {
+                                firstTimeEntry1 = false;
+                                continue restartLoop2;
+                            }
+                        }
                     } catch (NoSuchElementException e) {
                         break;
                     }
                     currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
                     Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
-                    System.out.println("currentPageMax="+ currentPageMax);
-                    System.out.println("currentPageNoInt="+ currentPageNoInt);
                     if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isPage && (Integer.valueOf(currentPageMax) > 0) && (currentPageNoInt > 0) ) {
                         //Let us go to next
                         //we have to go to next.
                         WebElement inputTHREE = driver.findElement(By.id("pageNo"));
-//                    WebElement inputTHREE = driver.findElement(By.cssSelector("page-link"));
-//                    driver.findElement(By.cssSelector("input[type='submit'][value='Yes']")).click();
-
-// to set focus?
-                        //inputTHREE.click();
                         // erase any existing value (because clear does not send any events
                         for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
-//                        inputTHREE = driver.findElement(By.id("pageNo"));
                             inputTHREE.sendKeys(Keys.BACK_SPACE);
-                            //  inputTHREE.sendKeys(Keys.TAB);
                         }
                         inputTHREE.clear();
                         inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
                         //We have to next.
                         String strPagination = "pagination";
                         driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
-                        continue restartLoop2;
+                        continue;
                     } else {
                         isPaging = true;
                     }
                     isBreak = true;
-                    //we should break it again.
+//                    //we should break it again.
                     if (isBreak && isPaging) break;
                 } else {
                     System.out.println("There is no record at all.");
