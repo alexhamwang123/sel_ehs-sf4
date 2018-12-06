@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="108d4bb(OnlineCourseEditContent)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateRiskCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateRiskCategory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_SearchACourse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_SearchACourse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlinePrereqComplete.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -328,7 +327,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="15654" />
+          <entry key="java" value="15745" />
           <entry key="properties" value="523" />
           <entry key="txt" value="57" />
           <entry key="xml" value="367" />
@@ -337,7 +336,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="15654" />
+          <entry key="JAVA" value="15745" />
           <entry key="PLAIN_TEXT" value="57" />
           <entry key="Properties" value="523" />
           <entry key="XML" value="367" />
@@ -407,7 +406,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
+            <state relative-caret-position="-489">
               <caret line="391" column="38" selection-start-line="391" selection-start-column="20" selection-end-line="391" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -416,20 +415,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="202" column="152" selection-start-line="202" selection-start-column="152" selection-end-line="202" selection-end-column="152" />
+            <state relative-caret-position="15">
+              <caret line="424" selection-start-line="424" selection-end-line="435" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-468">
-              <caret line="228" column="76" selection-start-line="228" selection-start-column="76" selection-end-line="228" selection-end-column="76" />
+            <state relative-caret-position="231">
+              <caret line="402" column="30" selection-start-line="402" selection-start-column="20" selection-end-line="402" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -445,10 +444,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.put</find>
-      <find>461</find>
-      <find>26</find>
-      <find>Line is 234 and idstr5 is = bmTrlZS85k</find>
       <find>244</find>
       <find>066f8e512adb2c451d043ca5f88e9c90</find>
       <find>178</find>
@@ -471,10 +466,14 @@
       <find>Course Category</find>
       <find>main</find>
       <find>RC</find>
-      <find>System.out</find>
-      <find>tu</find>
       <find>userRecord</find>
+      <find>tu</find>
+      <find>System.out.printlns</find>
+      <find>idstr3aOri</find>
+      <find>myResults</find>
+      <find>System.out</find>
       <find>System.out.println</find>
+      <find>System</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -540,8 +539,8 @@
         <option value="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" />
-        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" />
+        <option value="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" />
         <option value="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" />
       </list>
     </option>
@@ -553,8 +552,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-65" />
-    <option name="y" value="27" />
+    <option name="x" value="243" />
+    <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
   </component>
@@ -692,7 +691,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544117070093" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544118912573" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -724,7 +723,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.FinalDisabledCourseIfNeed (2)">
+  <component name="RunManager" selected="TestNG.FinalDisabledCourseIfNeed (1)">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -884,8 +883,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FinalDisabledCourseIfNeed (2)" />
         <item itemvalue="TestNG.FinalDisabledCourseIfNeed (1)" />
+        <item itemvalue="TestNG.FinalDisabledCourseIfNeed (2)" />
         <item itemvalue="TestNG.FinalDisabledCourseIfNeed" />
         <item itemvalue="TestNG.com.ChecklistManagement" />
         <item itemvalue="TestNG./Users/shuang/Library/Caches/IdeaIC2018.2/temp-testng-customsuite.xml" />
@@ -1068,24 +1067,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FinalDisabledCourseIfNeed_(1) - 2018.12.07 at 00h 21m 52s.xml">
-      <configuration name="FinalDisabledCourseIfNeed (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FinalDisabledCourseIfNeed_(1) - 2018.12.07 at 00h 29m 22s.xml">
-      <configuration name="FinalDisabledCourseIfNeed (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FinalDisabledCourseIfNeed_(1) - 2018.12.07 at 00h 34m 41s.xml">
-      <configuration name="FinalDisabledCourseIfNeed (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FinalDisabledCourseIfNeed_(1) - 2018.12.07 at 00h 53m 46s.xml">
-      <configuration name="FinalDisabledCourseIfNeed (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FinalDisabledCourseIfNeed_(1) - 2018.12.07 at 00h 59m 02s.xml">
-      <configuration name="FinalDisabledCourseIfNeed (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FinalDisabledCourseIfNeed_(1) - 2018.12.07 at 01h 01m 21s.xml">
-      <configuration name="FinalDisabledCourseIfNeed (1)" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 05m 24s.xml">
       <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
     </history-entry>
@@ -1096,6 +1077,24 @@
       <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
     </history-entry>
     <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 21m 47s.xml">
+      <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 25m 53s.xml">
+      <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 30m 11s.xml">
+      <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 42m 22s.xml">
+      <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 47m 48s.xml">
+      <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 50m 46s.xml">
+      <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FinalDisabledCourseIfNeed_(2) - 2018.12.07 at 01h 52m 16s.xml">
       <configuration name="FinalDisabledCourseIfNeed (2)" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -1109,7 +1108,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-65" y="27" width="1920" height="1053" extended-state="0" />
+    <frame x="243" y="23" width="1920" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4914842" visible="true" weight="0.34132054" />
@@ -1517,16 +1516,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-468">
-          <caret line="228" column="76" selection-start-line="228" selection-start-column="76" selection-end-line="228" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
+        <state relative-caret-position="-489">
           <caret line="391" column="38" selection-start-line="391" selection-start-column="20" selection-end-line="391" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1536,8 +1528,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="202" column="152" selection-start-line="202" selection-start-column="152" selection-end-line="202" selection-end-column="152" />
+        <state relative-caret-position="15">
+          <caret line="424" selection-start-line="424" selection-end-line="435" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="402" column="30" selection-start-line="402" selection-start-column="20" selection-end-line="402" selection-end-column="30" />
         </state>
       </provider>
     </entry>
