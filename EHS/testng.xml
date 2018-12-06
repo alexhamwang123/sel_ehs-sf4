@@ -34,7 +34,7 @@
             <class name="com.ClassroomCourseManagement.NormalClassroomAndAddClassroomCourseManager"/>
             <class name="com.ClassroomCourseManagement.AddWaitlist"/>
             <class name="com.ClassroomCourseManagement.CancelAndNotify"/>
-            <class name="com.ClassroomCourseManagement.ClassroomPrereq"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrereq_Duplicate"/>
             <class name="com.ClassroomCourseManagement.ClassroomPrereqDecrease"/>
             <class name="com.ClassroomCourseManagement.CreateFullOffering"/>
             <class name="com.ClassroomCourseManagement.CreateOfferingRegister"/>
@@ -74,7 +74,7 @@
     <test name="Misellaneous">
         <classes>
             <class name="com.Miscellaneous.EHS_ContactUs"/>
-            <class name="com.Miscellaneous.EHS_SearchACourse"/>
+            <class name="com.Miscellaneous.EHS_SearchACourseName"/>
             <class name="com.Miscellaneous.ForgotPassword"/>
         </classes>
     </test>

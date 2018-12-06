@@ -18,7 +18,7 @@
     <test name="Misellaneous">
         <classes>
             <class name="com.Miscellaneous.EHS_ContactUs"/>
-            <class name="com.Miscellaneous.EHS_SearchACourse"/>
+            <class name="com.Miscellaneous.EHS_SearchACourseName"/>
             <class name="com.Miscellaneous.ForgotPassword"/>
         </classes>
     </test>
