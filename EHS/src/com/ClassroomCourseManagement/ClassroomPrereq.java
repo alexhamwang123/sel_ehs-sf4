@@ -200,12 +200,10 @@ public class ClassroomPrereq {
         driver.findElement(By.xpath("//a[@id='lightboxOverLayClickFalse']")).click();
         Thread.sleep(6500);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1800);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        Thread.sleep(1800);
-//        driver.findElement(By.name("searchButton")).click();
-        driver.findElement(By.xpath("//input[@value='Go']")).click();
-        Thread.sleep(4200);
+        Thread.sleep(4500);
+        driver.findElement(By.id("srch_fld")).sendKeys("EHS-3500");
+        driver.findElement(By.name("searchButton")).click();
+        Thread.sleep(1500);
         driver.findElement(By.className("viewglass")).click();
         Thread.sleep(2500);
         driver.findElement(By.xpath("//input[@id='5ae1f1f07f81acd38400be131cad2def']")).click();
