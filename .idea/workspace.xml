@@ -694,7 +694,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544490255892" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544491047959" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -726,7 +726,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.ClassroomPrereq">
+  <component name="RunManager" selected="TestNG.com.ChecklistManagement">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -735,74 +735,6 @@
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClassroomPrereq" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.ClassroomPrereq" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FinalDisabledCourseIfNeed (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.FinalDisabledCourseIfNeed" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FinalDisabledCourseIfNeed (2)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.FinalDisabledCourseIfNeed" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FinalDisabledCourseIfNeed" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ChecklistManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ChecklistManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ChecklistManagement.FinalDisabledCourseIfNeed" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -856,6 +788,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.ClassroomCourseManagement" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.EHSAdmin" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.EHSAdmin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Miscellaneous" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Miscellaneous.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Miscellaneous" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Reports" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Reports.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Reports" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="createCourseManagerFirst" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
@@ -876,19 +876,19 @@
     <list>
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.FinalDisabledCourseIfNeed" />
-      <item itemvalue="TestNG.FinalDisabledCourseIfNeed (2)" />
+      <item itemvalue="TestNG.com.Reports" />
+      <item itemvalue="TestNG.com.Miscellaneous" />
+      <item itemvalue="TestNG.com.EHSAdmin" />
+      <item itemvalue="TestNG.com.ClassroomCourseManagement" />
       <item itemvalue="TestNG.com.ChecklistManagement" />
-      <item itemvalue="TestNG.FinalDisabledCourseIfNeed (1)" />
-      <item itemvalue="TestNG.ClassroomPrereq" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ClassroomPrereq" />
-        <item itemvalue="TestNG.FinalDisabledCourseIfNeed (1)" />
-        <item itemvalue="TestNG.FinalDisabledCourseIfNeed (2)" />
-        <item itemvalue="TestNG.FinalDisabledCourseIfNeed" />
         <item itemvalue="TestNG.com.ChecklistManagement" />
+        <item itemvalue="TestNG.com.ClassroomCourseManagement" />
+        <item itemvalue="TestNG.com.EHSAdmin" />
+        <item itemvalue="TestNG.com.Miscellaneous" />
+        <item itemvalue="TestNG.com.Reports" />
       </list>
     </recent_temporary>
   </component>
