@@ -41,10 +41,10 @@ public class ClassroomPrereqDecrease {
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -71,7 +71,7 @@ public class ClassroomPrereqDecrease {
         //Fill in Fields
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -113,14 +113,15 @@ public class ClassroomPrereqDecrease {
         WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Courses')]"));
         js.executeScript("arguments[0].click();", courseAdmin1);
         Thread.sleep(1800);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         Thread.sleep(1800);
 //        driver.findElement(By.name("searchButton")).click();
-        driver.findElement(By.xpath("//input[@value='Go']")).click();
+//        driver.findElement(By.xpath("//input[@value='Go']")).click();
         Thread.sleep(4200);
-        driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(5500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+
         Thread.sleep(1500);
 
         //Click on Course Admin
@@ -269,21 +270,20 @@ public class ClassroomPrereqDecrease {
         //Go to courses tab and enroll in course just made
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId1);
-        driver.findElement(By.name("searchButton")).click();
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId1);
+//        driver.findElement(By.name("searchButton")).click();
         Thread.sleep(1500);
-        driver.findElement(By.className("viewglass")).click();
-
-        Thread.sleep(5500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+        Thread.sleep(3500);
         String working = "";
         try {
-            working = driver.findElement(By.className("errMsg")).getAttribute("innerHTML").substring(17);
+            working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
         } catch (NoSuchElementException e) {
             Assert.fail("user was able to register for the course without taking the required prereqs");
         }
-        if(!working.equals("Required prerequisite course: " + courseId0)) {
+        if(!working.contains(courseId0)) {
             System.out.println("something is wrong with the prerequisite courses");
         }
 

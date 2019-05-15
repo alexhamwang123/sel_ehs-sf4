@@ -10,11 +10,15 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
+import java.text.*;
+import java.util.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -31,9 +35,9 @@ public class NoShowNotPassedCompleted {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
-        FileInputStream inStream=new FileInputStream(file);
-        Properties prop=new Properties();
+        File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
+        FileInputStream inStream = new FileInputStream(file);
+        Properties prop = new Properties();
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
@@ -41,12 +45,14 @@ public class NoShowNotPassedCompleted {
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
+
+
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
@@ -59,6 +65,7 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(3500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
+        System.out.println(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
@@ -130,7 +137,7 @@ public class NoShowNotPassedCompleted {
         new Select(driver.findElement(By.id("detailClassDuration"))).selectByVisibleText("13");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd_Save")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("saveClassCourse")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
@@ -207,33 +214,137 @@ public class NoShowNotPassedCompleted {
             Assert.fail("user is not marked as completed");
         }
         Thread.sleep(3500);
+
+
         driver.findElement(By.partialLinkText("My History")).click();
         Thread.sleep(3500);
 
-        js.executeScript("document.getElementById('dateFrom').value='" + cmonth + "/" + sday + "/" + year + "'");
-        js.executeScript("document.getElementById('dateTo').value='" + cmonth + "/" + sday + "/" + year + "'");
+        JavascriptExecutor js1 = (JavascriptExecutor)driver;
+        List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[3]/div[2]/div[2]/div/span"));
+        SimpleDateFormat ShowTodayOnlyFormat = new SimpleDateFormat("dd");
+
+        Date DateofToday= new Date();
+
+        String TodayOnly= ShowTodayOnlyFormat.format(DateofToday);
+        if (TodayOnly.equals("01")){
+            TodayOnly="1";
+        }
+        if (TodayOnly.equals("02")){
+            TodayOnly="2";
+        }
+        if (TodayOnly.equals("03")){
+            TodayOnly="3";
+        }
+        if (TodayOnly.equals("04")){
+            TodayOnly="4";
+        }
+        if (TodayOnly.equals("05")){
+            TodayOnly="5";
+        }
+        if (TodayOnly.equals("06")){
+            TodayOnly="6";
+        }
+        if (TodayOnly.equals("07")){
+            TodayOnly="7";
+        }
+        if (TodayOnly.equals("08")){
+            TodayOnly="8";
+        }
+        if (TodayOnly.equals("09")){
+            TodayOnly="9";
+        }
+        System.out.println("TodayOnly is"+TodayOnly);
+
+
+        String Number= TodayOnly;
+
+        for(WebElement e : list) {
+            String dateofcanlendar = e.getAttribute("textContent");
+
+            System.out.println(dateofcanlendar);
+
+                  if (dateofcanlendar.equals(Number)) {
+               System.out.println("Object Found Yeah Yeah Yeah");
+                js1.executeScript("arguments[0].click();", e);
+                break;
+            }
+            else{System.out.println("Object Not Found ");
+            }
+        }
+        //Click the last page button
+        Thread.sleep(1500);
+        WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
+        if(Last_Page.isDisplayed()){
+            Last_Page.click();
+        }
+
         Thread.sleep(3000);
-        driver.findElement(By.id("searchHistory")).click();
-        Thread.sleep(3500);
-        driver.findElement(By.partialLinkText(courseId)).click();
-        Thread.sleep(3000);
-        if (!driver.getPageSource().contains("Completed")) {
+        if (!driver.getPageSource().contains(courseId)) {
             Assert.fail("the course did not show up as completed in my history");
         }
 
-        driver.findElement(By.partialLinkText("Reports")).click();
-        Thread.sleep(1500);
-        new Select(driver.findElement(By.id("selectedCourseType"))).selectByVisibleText("Classroom");
+        WebElement MytrainingReport=driver.findElement(By.xpath("//*[@id=\"navbarSupportedContent\"]/ul/li[6]/div/a[1]"));
+        js.executeScript("arguments[0].click();", MytrainingReport);
 
-        js.executeScript("document.getElementById('dateFrom').value='" + cmonth + "/" + sday + "/" + year + "'");
-        js.executeScript("document.getElementById('dateTo').value='" + cmonth + "/" + sday + "/" + year + "'");
-//        Thread.sleep(1000);
-//        driver.findElement(By.id("Button_Go")).click();
-//        Thread.sleep(1500);
-//        if (!driver.getPageSource().contains(courseId)) {
-//            Assert.fail("the course does not show as completed in my training report");
-//        }
-//        Thread.sleep(2000);
+        Thread.sleep(1500);
+        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[2]/div[1]/div/select"))).selectByVisibleText("Classroom");
+
+
+        List<WebElement> list1 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]/div/span"));
+
+
+        String TodayOnly1= ShowTodayOnlyFormat.format(DateofToday);
+
+        if (TodayOnly1.equals("01")){
+            TodayOnly1="1";
+        }
+        if (TodayOnly1.equals("02")){
+            TodayOnly1="2";
+        }
+        if (TodayOnly1.equals("03")){
+            TodayOnly1="3";
+        }
+        if (TodayOnly1.equals("04")){
+            TodayOnly1="4";
+        }
+        if (TodayOnly1.equals("05")){
+            TodayOnly1="5";
+        }
+        if (TodayOnly1.equals("06")){
+            TodayOnly1="6";
+        }
+        if (TodayOnly1.equals("07")){
+            TodayOnly1="7";
+        }
+        if (TodayOnly1.equals("08")){
+            TodayOnly1="8";
+        }
+        if (TodayOnly1.equals("09")){
+            TodayOnly1="9";
+        }
+        String Number1= TodayOnly1;
+
+
+        for(WebElement e : list1) {
+            String dateofcanlendar1 = e.getAttribute("textContent");
+
+            System.out.println(dateofcanlendar1);
+
+            if (dateofcanlendar1.equals(Number1)) {
+                System.out.println("Object Found Yeah Yeah Yeah");
+                js1.executeScript("arguments[0].click();", e);
+                break;
+            }
+            else{System.out.println("Object Not Found ");
+            }
+        }
+        Thread.sleep(1000);
+         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[2]/div[3]/div/button[1]")).click();
+         Thread.sleep(1500);
+        if (!driver.getPageSource().contains(courseId)) {
+            Assert.fail("the course does not show as completed in my training report");
+        }
+        Thread.sleep(2000);
 
 
 

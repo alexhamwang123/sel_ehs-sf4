@@ -38,29 +38,32 @@ public class CreateFAQ {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-		
-		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();",ele);
-				
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
+        //Clicking on EHS Admin
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();",ele);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+
+        js.executeScript("arguments[0].click();",ele1);
+        Thread.sleep(2000);
 		//Click on FAQ Management
         driver.findElement(By.partialLinkText("FAQ Management")).click();
 		Thread.sleep(1500);

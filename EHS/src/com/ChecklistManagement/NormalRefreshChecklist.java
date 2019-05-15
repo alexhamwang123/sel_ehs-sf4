@@ -41,10 +41,10 @@ public class NormalRefreshChecklist {
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -60,8 +60,8 @@ public class NormalRefreshChecklist {
         Thread.sleep(3500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
-        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
-        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
+        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
+        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal & Refresh");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(3000);
@@ -92,8 +92,8 @@ public class NormalRefreshChecklist {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        //Thread.sleep(3000);
+        //driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(10000);
         driver.findElement(By.id("langIsViewable")).click();
         Thread.sleep(3000);

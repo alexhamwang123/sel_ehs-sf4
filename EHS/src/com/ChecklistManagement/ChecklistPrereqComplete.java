@@ -42,17 +42,17 @@ public class ChecklistPrereqComplete {
 
         driver.get(urladdr);
 
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
         //go to onlinecourseManagement
@@ -68,12 +68,12 @@ public class ChecklistPrereqComplete {
 
         //pick a class  & Assign prerequisite
 
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("08igNekqEB");
+        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("1bLkHwGarU");
         driver.findElement(By.xpath("//input[@value='Go']")).click();
         Thread.sleep(4500);
-        driver.findElement(By.xpath("//a[@id='b82e79b753f265a8b424d90713e4476f']")).click();
+        driver.findElement(By.className("editAction")).click();
         Thread.sleep(3500);
-        new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText("04a1awuKpJ - test checklist title");
+        new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText("kimi-online-006 - kimi-online-006");
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(8500);
@@ -148,76 +148,87 @@ public class ChecklistPrereqComplete {
         Thread.sleep(2000);
 
         // Click on 'Save' button
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
 
-        Thread.sleep(3000);
+        Thread.sleep(4000);
 
         // sign out current user
-        driver.findElement(By.xpath("//a[@id='lightbox']")).click();
+        WebElement Logout0=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js1.executeScript("arguments[0].click()", Logout0);
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
-        Thread.sleep(2000);
+       // driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
+        //Thread.sleep(2000);
         //Sign in the user that never completed the prerequisite & try the prerequisite
-        driver.findElement(By.id("login_login_id")).sendKeys(userid);
-        driver.findElement(By.id("login_password")).sendKeys(userid);
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.id("username")).sendKeys(userid);
+        driver.findElement(By.id("password")).sendKeys(userid);
+
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+
         Thread.sleep(4500);
-        driver.findElement(By.xpath("//span[contains(text(),'No thanks')]")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.xpath("//input[@id='No_e12f18af182b98a6ec02af470818d89f']")).click();
+        driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//input[@id='No_5394802c250b20fa96a6754de28aed31']")).click();
-        driver.findElement(By.xpath("//input[@id='No_dfe0fc112f0d741fe30acdfd38aa669c']")).click();
-        driver.findElement(By.xpath("//input[@id='No_cc79fac4584b10803beb7a7a61c39611']")).click();
-        driver.findElement(By.xpath("//input[@id='No_ca5cdb2bd18473f189b312c6e939837a']")).click();
-        driver.findElement(By.xpath("//input[@id='No_07bd927b3f4f4cec18863f3e00417c37']")).click();
-        driver.findElement(By.xpath("//input[@id='No_46f358fe68654f6468a5f557a9ec7070']")).click();
-        driver.findElement(By.xpath("//input[@id='No_e6a6c5871a396a96beceff1a212d9f27']")).click();
+        driver.findElement(By.name("question[4586]")).click();
+        driver.findElement(By.name("question[1361]")).click();
+        driver.findElement(By.name("question[4562]")).click();
+        driver.findElement(By.name("question[4225]")).click();
+        driver.findElement(By.name("question[4193]")).click();
+        driver.findElement(By.name("question[145]")).click();
+        driver.findElement(By.name("question[1164]")).click();
+        driver.findElement(By.name("question[4676]")).click();
+
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//div[@id='DivResult']//a[contains(@class,'BlueButton BlueButtonFont submit')]")).click();
+
+        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
         Thread.sleep(4500);
-        driver.findElement(By.xpath("//a[@id='lightboxOverLayClickFalse']")).click();
+
+        driver.findElement(By.id("annContinue")).click();
         Thread.sleep(4500);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(4500);
-        driver.findElement(By.id("srch_fld")).sendKeys("08igNekqEB");
-        driver.findElement(By.name("searchButton")).click();
+
+        //Search the Course
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("1bLkHwGarU");
         Thread.sleep(1500);
-        driver.findElement(By.className("viewglass")).click();
+         driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
         Thread.sleep(1500);
         String working = "";
         try {
-            working = driver.findElement(By.xpath("//*[@id=\"errorMsg_data\"]")).getAttribute("innerHTML");
+            working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
         } catch (NoSuchElementException e) {
             Assert.fail("was able to register for the course without completing the prereq");
         }
+        System.out.println(working);
 
-        if (!working.equals("Required prerequisite course:04a1awuKpJ")) {
+        if (!working.contains("kimi-online-006")) {
             Assert.fail("user was ale to register for the course without completing the prereq");
         }
-        driver.findElement(By.xpath("//div[@class='roundType1']//div//input[@value='OK']")).click();
 
         Thread.sleep(2000);
 
         //got to the prerequisite and complete it
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
-        driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ"); //checklist name on localhost
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-online-006"); //checklist name on localhost
 
-        driver.findElement(By.name("searchButton")).click();
 
         Thread.sleep(3000);
 
 
 
         //Click on the Enroll button
-        driver.findElement(By.xpath("//*[@id='msg_headd96dd51c141c3643425434a4898d8e09']/table/tbody/tr/td[5]/img")).click();
+        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
+        for(String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
+        }
 
 
         //Click on 'Default-English' Language option
-        driver.findElement(By.id("crselink1")).click();
+        JavascriptExecutor js2 = (JavascriptExecutor) driver;
+        WebElement Language_English=driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
+        js2.executeScript("arguments[0].click();",Language_English);
 
 
         Thread.sleep(3000);
@@ -232,45 +243,36 @@ public class ChecklistPrereqComplete {
         Thread.sleep(2000);
 
         //Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
-        driver.findElement(By.cssSelector("input[type='checkbox'][value='13c496ea53471d3bce0c72e9b4a63b66']")).click(); // Cat
-
-        driver.findElement(By.cssSelector("input[type='checkbox'][value='4bd53adf7e6118d7c8625537fdd551c6']")).click(); // Elephant
-
-        driver.findElement(By.cssSelector("input[type='checkbox'][value='9dadf671b25ecf8ba926941141405bf9']")).click(); // Fox
-
+        driver.findElement(By.xpath("//input[@value='10039']")).click(); // Cat
 
         Thread.sleep(2000);
 
+        driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+        Thread.sleep(2000);
 
-        //Entering value in text box for Question 4
-
-        driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).clear();
-
-        driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).sendKeys("40");
-
-        Thread.sleep(5000);
-
-
-        driver.findElement(By.cssSelector("input[type='button'][value='Submit']")).click();
-//		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(5000);
-
-        //After completion of prerequisite, try "08igNekqEB" again.
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn float-right']")).click();
+        Thread.sleep(2000);
+        WebElement Exit=driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button[2]"));
+        js2.executeScript("arguments[0].click();",Exit);
+        Thread.sleep(2000);
+        //After completion of prerequisite, try "1bLkHwGarU" again.
+        for(String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
+        }
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(4500);
-        driver.findElement(By.id("srch_fld")).sendKeys("08igNekqEB");
-        driver.findElement(By.name("searchButton")).click();
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("1bLkHwGarU");
         Thread.sleep(1500);
-        driver.findElement(By.className("onelang")).click();
-        Thread.sleep(10500);
+        driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
+        Thread.sleep(1500);
         String handle= driver.getWindowHandle();
         for (String winHandle : driver.getWindowHandles()) {
 
             if(!winHandle.equals(handle)){
                 driver.switchTo().window(winHandle);
-                WebElement Successconfrimbtn=driver.findElement(By.xpath("//div[@id='selectLanguage_lightbox']"));
+                WebElement Successconfrimbtn=driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
                 if(Successconfrimbtn.isDisplayed()){
                     System.out.println("Test is successful");
                 }

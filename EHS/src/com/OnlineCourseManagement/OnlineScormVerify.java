@@ -54,39 +54,39 @@ public class OnlineScormVerify {
 
         driver.get(urladdr);
 
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor)driver;
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        Thread.sleep(3500);
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(3500);
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
-        Thread.sleep(6500);
-        //String courseId = "sdhgsdhgoweoyrhv001";
+        Thread.sleep(4500);
+
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");//We have to make it via manually, just in case.
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(13500);
+        Thread.sleep(15000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(4500);
+        Thread.sleep(8000);
         String courseTitle = generator.generate(10);
         driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -99,7 +99,7 @@ public class OnlineScormVerify {
         StringSelection str = new StringSelection(path);
         clipboard.setContents(str, str);
 
-//PLEASE Choice scorm type  and file_Scrom_Upload.
+        //PLEASE Choice scorm type  and file_Scrom_Upload.
         driver.findElement(By.cssSelector("input[type='radio'][value='scorm']")).click();
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='file']")).sendKeys(path);
@@ -120,14 +120,14 @@ public class OnlineScormVerify {
         Thread.sleep(6000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(5000);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        Thread.sleep(1500);
+        System.out.println(courseId);
 
-        driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(8500);
+
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+        Thread.sleep(1500);
         String currentWin = driver.getWindowHandle();
         try {
-            driver.findElement(By.className("onelang")).click();
+            driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
         } catch (NoSuchElementException e) {
             Assert.fail("something went wrong while creating and uploading the scorm course");
         }
@@ -138,7 +138,8 @@ public class OnlineScormVerify {
         }
 
         Thread.sleep(7500);
-        driver.findElement(By.className("crselink1")).click();
+        WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
+        js.executeScript("arguments[0].click();",English);
         Thread.sleep(1500);
 //        robot.keyPress(KeyEvent.VK_META);
 //        robot.keyPress(KeyEvent.VK_W);
@@ -385,7 +386,7 @@ public class OnlineScormVerify {
         WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
         js2.executeScript("arguments[0].click()", myTrainingReport);
         Thread.sleep(3000);
-        new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
+        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Online");
         Thread.sleep(2000);
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date date = new Date();
@@ -393,11 +394,13 @@ public class OnlineScormVerify {
 
 
 //        System.out.println("Local Date Now=" + dateFormat.format(date));
-        js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(yesterday) + "'");
+        WebElement From= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[1]/input"));
+        js.executeScript("arguments[0].value='" + dateFormat.format(yesterday) + "'",From);
         Thread.sleep(1500);
-        js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
+        WebElement To= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[2]/div[1]/input"));
+        js.executeScript("arguments[0].value='" + dateFormat.format(date) + "'",To);
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go
         Thread.sleep(4000);
         String courseIdText = "";
         String currentPageMax = "0";
@@ -469,9 +472,10 @@ public class OnlineScormVerify {
             if (isBreak) {
                 break;
             }
+
      //       System.out.println("Before taking the course id yet, courseIdTxt=" + courseIdText);
 //            System.out.println("Before taking the course id yet, courseId=" + courseId);
-            if (courseIdText.equals(courseId)) {
+            if (driver.getPageSource().contains(courseId)) {
                 System.out.println("courseIdTxt=" + courseIdText);
                 System.out.println("courseId=" + courseId);
                 System.out.println("Ｗe find the same course id here");

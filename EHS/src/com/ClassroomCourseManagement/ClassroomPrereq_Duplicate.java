@@ -46,10 +46,10 @@ public class ClassroomPrereq_Duplicate {
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -130,7 +130,8 @@ public class ClassroomPrereq_Duplicate {
         Thread.sleep(2500);
 //        driver.switchTo().defaultContent();
 //        Thread.sleep(1900);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
+        //Enroll
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(2500);
         if(!driver.getPageSource().contains("Required prerequisite course: Classroom1")) {
             System.out.println("the user was able to register for the course without completing the required prereq");

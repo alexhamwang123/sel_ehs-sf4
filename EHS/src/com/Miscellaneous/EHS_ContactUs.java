@@ -12,7 +12,11 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 //@Test
@@ -26,8 +30,8 @@ public class EHS_ContactUs {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-//		driver.manage().window().maximize();
+        WebDriverWait Wait= new WebDriverWait(driver,30);
+ 		driver.manage().window().maximize();
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
@@ -36,43 +40,53 @@ public class EHS_ContactUs {
         driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
-		
-		try {
-			Thread.sleep(18500);
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+        try {
+			Thread.sleep(3500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+        //Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Logout')]")));
 		//Click on the Contact button
-		//driver.findElement(By.id("helpMenu")).click();
-		driver.findElement(By.xpath("//*[@id='topbar']/div[3]")).click();
+
+        WebElement Contact=driver.findElement(By.xpath("//i[@class='fa fa-envelope-square']"));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",Contact);
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		//Enter the detail
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("document.getElementById('datepicker').value='04/29/2011'");
+
+        WebElement DatePick= driver.findElement(By.xpath("//div[@class='vdp-datepicker']//div//input[@type='text']"));
+        js.executeScript("arguments[0].value='09/01/2019'",DatePick);
+
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        driver.findElement(By.name("content")).sendKeys("I am not able to connect to the server. My internet connection is active. Please help me");
+        new Select(driver.findElement(By.xpath("//*[@id=\"__BVID__7___BV_modal_body_\"]/div/div[4]/div/select"))).selectByVisibleText("Can’t Login");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        driver.findElement(By.xpath("//textarea[@class='form-control']")).sendKeys("I am not able to connect to the server. My internet connection is active. Please help me");
 		
 		//Click on 'Submit'
-	    driver.findElement(By.cssSelector("input[type='button'][value='Submit']")).click();
+	    driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
 
         try {
             Thread.sleep(2500);

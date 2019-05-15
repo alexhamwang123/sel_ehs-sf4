@@ -44,12 +44,12 @@ public class Manager_ComplianceReport {
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
+		Thread.sleep(4500);
 		
 		//Clicking on Manager Reports under Reports
 		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]"));
@@ -57,11 +57,11 @@ public class Manager_ComplianceReport {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(2500);
 		//Click on Compliance Report
-		driver.findElement(By.xpath("//*[@id='content']/div[1]/div[1]/div/a[4]")).click();
+		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[4]")).click();
 		Thread.sleep(2500);
 		//We must select a Risk Category to generate the Compliance Report.
 		//Click on the Select button for Risk category
-		driver.findElement(By.id("jobClassNo")).click();
+		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/button")).click();
 		
 		try {
 			Thread.sleep(4500);
@@ -73,7 +73,7 @@ public class Manager_ComplianceReport {
 		//Choose a Risk Category. Lets say we choose 2
 		//AHA 4028f6bb21ec62fe0121ec6425eb0001
 //		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
-		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
+		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr[2]/td")).click();
 		try {
 			Thread.sleep(4500);
 		} catch (InterruptedException e) {
@@ -82,7 +82,7 @@ public class Manager_ComplianceReport {
 		}
 		
 		//Click on OK
-		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__13___BV_modal_footer_\"]/button")).click();
 		
 		try {
 			Thread.sleep(4500);
@@ -92,7 +92,8 @@ public class Manager_ComplianceReport {
 		}
 		
 		//Click on Go to generate the report
-		driver.findElement(By.id("Button_Go")).click();
+		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[5]/div/button[1]"));
+		js.executeScript("arguments[0].click();",Go);
 		Thread.sleep(3500);
 
 		driver.quit();

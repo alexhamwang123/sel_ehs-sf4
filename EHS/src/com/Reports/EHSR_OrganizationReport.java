@@ -43,10 +43,10 @@ public class EHSR_OrganizationReport {
 		driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 		
@@ -56,10 +56,10 @@ public class EHSR_OrganizationReport {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
 		//Click on Organization Report 
-		driver.findElement(By.xpath("//*[@id='content']/div[1]/div/div/a[6]")).click();
+		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/a[6]")).click();
 		Thread.sleep(1500);
 		//Click on Select for selecting a Manager
-		driver.findElement(By.cssSelector("input[type='button'][value='Select']")).click();
+		driver.findElement(By.xpath("//*[@id=\"searchSection\"]/div[1]/div/div/span/a[1]/input")).click();
 		
 		try {
 			Thread.sleep(1500);
@@ -69,13 +69,13 @@ public class EHSR_OrganizationReport {
 		}
 		
 		//Enter the First Name of the manager you wish to find and select 
-		driver.findElement(By.name("firstName")).sendKeys("kevin_first");
+		driver.findElement(By.name("badgeNo")).sendKeys("X00001572");
 		
 		//Click on Search 
-		driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+		driver.findElement(By.xpath("//*[@id=\"selectManagerForm\"]/center/input[1]")).click();
 		Thread.sleep(2500);
 		//Click on the search result 
-		driver.findElement(By.xpath("//*[@id='teammanager_result']/div/table/tbody/tr/td[2]/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]")).click();
 		
 		try {
 			Thread.sleep(4000);
@@ -83,34 +83,19 @@ public class EHSR_OrganizationReport {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//Now, Select a Risk Category, by clicking on Select button
-		driver.findElement(By.id("jobClassNo")).click();
-		Thread.sleep(4500);
-		//Select a Risk Category by id. Here we select 2
-		//AHA 4028f6bb21ec62fe0121ec6425eb0001
-//		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
-		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
 
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//Click Ok
-		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
-		
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+        //Select RC
+        driver.findElement(By.id("jobClassNo")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("99")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"course_result\"]/center/input")).click();
+        Thread.sleep(2000);
+
+
 		//Click on Go
-		driver.findElement(By.id("Button_Go")).click();
+		WebElement Go=driver.findElement(By.id("Button_Go"));
+		js.executeScript("arguments[0].click();",Go);
 		
 		try {
 			Thread.sleep(4000);
@@ -118,11 +103,11 @@ public class EHSR_OrganizationReport {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//Clicking on the pop up that appears after clicking Go
-		driver.findElement(By.id("fancyConfirm_ok")).click();
-		Thread.sleep(3500);
-		driver.quit();
+
+        driver.findElement(By.id("fancyConfirm_ok")).click();
+        Thread.sleep(2000);
+
+        driver.quit();
 
 	}
 

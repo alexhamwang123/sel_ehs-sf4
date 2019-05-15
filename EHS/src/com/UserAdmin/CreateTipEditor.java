@@ -35,18 +35,21 @@ public class CreateTipEditor {
         //driver.manage().window().maximize();
 
         File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
+
         FileInputStream inStream = new FileInputStream(file);
         Properties prop = new Properties();
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
+
         driver.get(urladdr);
+
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         try {
             Thread.sleep(4500);
@@ -69,21 +72,17 @@ public class CreateTipEditor {
 
         // Click on Create User
         driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
-        Thread.sleep(3000);
+
+        Thread.sleep(3500);
+        //自動會有detailBadgeNumber ，也就是我們要用的bdgeeNumber ID
         String id = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
-        String oid = id;
-        id=id.substring(id.lastIndexOf("000")+2);
-        System.out.println("id 000 is " + id);
-        id="TipEditor" + id;
-        System.out.println("id append TipEditor is　" + id);
-        String password2 = id;
-        System.out.println("password2 is " + password2);
+        System.out.println("id is " + id);
 
         // Enter the First Name of the user that you wish to create
-        driver.findElement(By.id("detailFirstName")).sendKeys(id + "_First");
+        driver.findElement(By.id("detailFirstName")).sendKeys(id);
 
         // Enter the Last Name of the user that you wish to create
-        driver.findElement(By.id("detailLastName")).sendKeys(id + "_Last");
+        driver.findElement(By.id("detailLastName")).sendKeys(id);
 
         // Click on 'Select' for Site
         driver.findElement(By.id("selectBtnSite")).click();
@@ -124,33 +123,26 @@ public class CreateTipEditor {
         JavascriptExecutor js1 = ((JavascriptExecutor) driver);
         js1.executeScript("window.scrollBy(0,850)", "");
 
-        // Clicking on USA Normal User
-
-        // IT's gonna have 40285a840b8ea1e4010b8ea1e5100010 of USA Normal User via default
-        // If you try to do it again, it's gonna have no this role anymore.
-        // driver.findElement(By.cssSelector("input[type='checkbox'][value='40285a840b8ea1e4010b8ea1e5100010']")).click();
-
-        // Clicking on Tip Editor to assign the role
-        driver.findElement(By.cssSelector("input[type='checkbox'][value='964e22e8a9b811e8824240f2e9cb54a2']")).click();
-
+        driver.findElement(By.xpath("//label[contains(text(),'Tip Editor')]")).click();
         // Click on 'Save' button
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         Thread.sleep(2000);
-        driver.findElement(By.id("lightbox")).click();
+
+        WebElement Logout = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click()", Logout);
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.id("login_login_id")).sendKeys(oid);
-        driver.findElement(By.id("login_password")).sendKeys(oid);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(1000);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.id("username")).sendKeys(id);
+        driver.findElement(By.id("password")).sendKeys(id);
+
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(4500);
-
 
         driver.quit();
 
 
     }
-
 }

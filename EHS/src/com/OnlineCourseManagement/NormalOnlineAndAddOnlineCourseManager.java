@@ -36,15 +36,15 @@ public class NormalOnlineAndAddOnlineCourseManager {
 
         driver.get(urladdr);
 
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -61,33 +61,34 @@ public class NormalOnlineAndAddOnlineCourseManager {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click(); //CREATE online course
         Thread.sleep(4500);
-        driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='A']")).click();
-        driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='A']")).click();
+        driver.findElement(By.id("selectBtnCreMaA")).click();
+//        driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='A']")).click();
         Thread.sleep(5000);
         driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr);
         driver.findElement(By.cssSelector("input[value='Search']")).click();
         Thread.sleep(1500);
-        //driver.findElement(By.cssSelector("input[href*='selectCourseManager']")).click();
-        driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
+        driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.id("selectBtnCreMaB")).click();
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='B']")).click();
-        driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='B']")).click();
+
+ //       driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='B']")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr1);
         driver.findElement(By.cssSelector("input[value='Search']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
+        driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
         Thread.sleep(5000);
-        WebElement c = driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='C']"));
-        js.executeScript("arguments[0].click();", c);
+        driver.findElement(By.id("selectBtnCreMaC")).click();
         Thread.sleep(3000);
         driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr2);
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[value='Search']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
+        driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
         Thread.sleep(3500);
         driver.quit();
+
 
 
 

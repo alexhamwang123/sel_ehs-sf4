@@ -53,19 +53,19 @@ public class CheckBookmark_ClickNo {
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
-		driver.findElement(By.id("login_login_id")).sendKeys(username);
-		driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		Thread.sleep(4500);
 
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 		 
-		 driver.findElement(By.id("srch_fld")).sendKeys("EHS-1000");
+		 driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("EHS-1000");
 		 
-		 driver.findElement(By.name("searchButton")).click();
+	//	 driver.findElement(By.name("searchButton")).click();
 		 
 		 try {
 			Thread.sleep(2000);
@@ -76,7 +76,7 @@ public class CheckBookmark_ClickNo {
 		 
 		 String mainWindow = driver.getWindowHandle();
 		 //msg_head857e61d0-2598-102a-b70c-b707fad2 -> it is a EHS-1000 - EHS Essentials
-		 driver.findElement(By.xpath("//*[@id='msg_head857e61d0-2598-102a-b70c-b707fad2']/table/tbody/tr/td[5]/img")).click();
+		 driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
 		 
 		 for(String winHandle : driver.getWindowHandles()){
 			 if(winHandle!=mainWindow)
@@ -90,8 +90,10 @@ public class CheckBookmark_ClickNo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		 
-		 driver.findElement(By.partialLinkText("English")).click();
+		 JavascriptExecutor js= (JavascriptExecutor)driver;
+
+		 WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
+		 js.executeScript("arguments[0].click();",English);
 		 Thread.sleep(1500);
 //         driver.findElement(By.xpath("//*[@id='label']")).click();
 		 

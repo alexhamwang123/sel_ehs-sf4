@@ -40,10 +40,10 @@ public class UnregisterWaitlist {
         String normuser = prop.getProperty("testnormuser");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -93,37 +93,37 @@ public class UnregisterWaitlist {
         Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        driver.findElement(By.name("searchButton")).click();
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+ //       driver.findElement(By.name("searchButton")).click();
         Thread.sleep(3500);
-        driver.findElement(By.className("viewglass")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
         Thread.sleep(3500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
+        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
         Thread.sleep(3500);
-        driver.findElement(By.id("lightbox")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
+        WebElement Logout= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click();", Logout);
         Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(normuser);
-        driver.findElement(By.id("login_password")).sendKeys(normuser);
-        driver.findElement(By.name("submit")).click();
-        Thread.sleep(4500);
+        driver.findElement(By.id("username")).sendKeys(normuser);
+        driver.findElement(By.id("password")).sendKeys(normuser);
+
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(1500);
 
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        driver.findElement(By.name("searchButton")).click();
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         Thread.sleep(1500);
+        driver.findElement(By.xpath("//button[@title='View Detail']")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
 
-        driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         if(!driver.getPageSource().contains("Waitlisted")) {
             Assert.fail("the user did not get waitlisted for the course");
         }
-        driver.findElement(By.cssSelector("input[type='button'][value='Cancel']")).click();
+        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-danger']")).click();
 
         Thread.sleep(3500);
         driver.quit();

@@ -40,10 +40,10 @@ public class EmailAtt {
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -92,7 +92,7 @@ public class EmailAtt {
         new Select(driver.findElement(By.id("detailClassDuration"))).selectByVisibleText("13");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd_Save")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.id("saveClassCourse")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
@@ -111,7 +111,7 @@ public class EmailAtt {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001615");
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001533");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
@@ -121,7 +121,7 @@ public class EmailAtt {
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys("X00001622");
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001534");
         Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);

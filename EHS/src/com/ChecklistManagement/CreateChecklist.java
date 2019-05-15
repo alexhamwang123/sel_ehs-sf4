@@ -14,7 +14,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -30,7 +32,7 @@ public class CreateChecklist {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-
+		WebDriverWait Wait= new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -45,11 +47,11 @@ public class CreateChecklist {
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
-		driver.findElement(By.id("login_login_id")).sendKeys(username);
-		driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-		driver.findElement(By.name("submit")).click();
-		
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+
 		Thread.sleep(4500);
 		
 		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -63,13 +65,16 @@ public class CreateChecklist {
 		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
 		Thread.sleep(3500);
 		String courseId = generator.generate(10);
+		System.out.println(courseId);
 		driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
-		new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
+		new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
 		new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
 		new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-		Thread.sleep(3000);
+		Wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
 		driver.findElement(By.id("saveBtn")).click();
-		Thread.sleep(10000);
+
+		Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
@@ -96,8 +101,9 @@ public class CreateChecklist {
 		Thread.sleep(3500);
 		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 		Thread.sleep(3500);
-		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-		Thread.sleep(7000);
+		//driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+		//Thread.sleep(1500);
+		Wait.until(ExpectedConditions.elementToBeClickable(By.id("langIsViewable")));
 		driver.findElement(By.id("langIsViewable")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.id("detailIsActive")).click();
@@ -106,10 +112,10 @@ public class CreateChecklist {
 		Thread.sleep(1500);
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-		driver.findElement(By.name("searchButton")).click();
+		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+		//driver.findElement(By.name("searchButton")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.className("onelang")).click();
+		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
 
 		driver.quit();
 

@@ -43,12 +43,12 @@ public class Manager_ChecklistCompletionReport {
 		driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
+		Thread.sleep(4500);
 
 		
 		//Clicking on Manager Reports under Reports
@@ -57,14 +57,16 @@ public class Manager_ChecklistCompletionReport {
 		js.executeScript("arguments[0].click();",ele);
 		
 		//Click on Checklist Completion Report
-		driver.findElement(By.xpath("//*[@id='content']/div[1]/div[1]/div/a[3]")).click();
+		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[3]")).click();
 		
 		//Click on 'Select' button against Checklist
-		driver.findElement(By.id("selectCourseDisabled")).click();
+		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/div/button")).click();
 		Thread.sleep(4500);
+		//Search the Course
+		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("006");
 		// Let's select a course 'CHK01 Checklist 1' by clicking on it
 		//Checklist-001_OLD3-2-2012 Home Office Checklist
-		driver.findElement(By.id("9165941f21199eab012119a105f25506")).click();
+		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
 //		driver.findElement(By.id("876fbb07572270e686f2d68f06515e8c")).click();
 		try {
 			Thread.sleep(4000);
@@ -78,7 +80,7 @@ public class Manager_ChecklistCompletionReport {
 		//js1.executeScript("window.scrollBy(0,250)", "");
 
 		// Click OK
-		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__13___BV_modal_footer_\"]/button")).click();
 
 		try {
 			Thread.sleep(4000);
@@ -88,7 +90,8 @@ public class Manager_ChecklistCompletionReport {
 		}
 
 		// Click 'Go' to generate the Survey Completion Report
-        driver.findElement(By.id("Button_Go")).click();
+		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[5]/div/button[1]"));
+		js.executeScript("arguments[0].click();",Go);
 		Thread.sleep(2500);
 		driver.quit();
 

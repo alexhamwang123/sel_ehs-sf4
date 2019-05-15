@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -44,151 +45,172 @@ public class OnlineCourse_CompleteAndSubmit {
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
-		driver.findElement(By.id("login_login_id")).sendKeys(username);
-		driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-		Thread.sleep(20000);
-		
-		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
-		Thread.sleep(1500);
-		driver.findElement(By.id("srch_fld")).sendKeys("EHS-11111");
-		
-		driver.findElement(By.name("searchButton")).click();
-		
+		Thread.sleep(2000);
+
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
+		JavascriptExecutor js0 = (JavascriptExecutor)driver;
+		js0.executeScript("arguments[0].click();",ele);
+
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		String mainWindow = driver.getWindowHandle();
-		//It is a EHS-11111 course id of msg_id.
-        driver.findElement(By.xpath("//*[@id='msg_headb7d0d73b5e1ae80d8d245fed08ac7e7c']/table/tbody/tr/td[5]/img")).click();
-		
-		for(String winHandle : driver.getWindowHandles()){
-			 if(winHandle!=mainWindow)
-	          driver.switchTo().window(winHandle);
-			Thread.sleep(5000);
-		    }
-		
-        driver.findElement(By.partialLinkText("English")).click();
-		//Welcome back. Would you like to resume the course from where you last left off?, Let choice the Yes.
-		driver.findElement(By.xpath("//*[@id='label']")).click();
-		
+
+		// Click on Create User
+		driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
+
+		Thread.sleep(3000);
+
+		// Enter the First Name of the user that you wish to create
+		String userid = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
+
+
+		driver.findElement(By.id("detailFirstName")).sendKeys(userid);
+
+		// Enter the Last Name of the user that you wish to create
+		driver.findElement(By.id("detailLastName")).sendKeys(userid);
+
+		// Click on 'Select' for Site
+		driver.findElement(By.id("selectBtnSite")).click();
+
+		// Enter the search value as "SCV"
+		driver.findElement(By.id("searchName")).sendKeys("SCV");
+
+		// Click on Search
+		driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
 		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//Clicking on Page 1's Questions 1 and 2
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-//Q1 the answer is 1 .
-		//counting fron 0 to the end. 0,1,2,3,4,5,6.7.8,9
-		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
-//Q2 the answer is  2.
-		js.executeScript("document.getElementById('top1').getElementsByTagName('input')[3].click();");
-		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//Clicking on the 'Next' Button
-		 WebElement nextButton= driver.findElement(By.cssSelector("#footer_Play .button_next.unbindelements"));
-		 js.executeScript("arguments[0].click();",nextButton);
-		 
-		 try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 
-		//Clicking on Page 2's Question 1, 2 and 3
-		 JavascriptExecutor js1 = (JavascriptExecutor)driver;
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[4].click();");
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[6].click();");
-		 
-		 try {
-			Thread.sleep(5000);
+			Thread.sleep(1500);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		 
-		 //Clicking on the 'Next' button
-		 WebElement nextButton1= driver.findElement(By.cssSelector("#footer_Play .button_next.unbindelements"));
-		 js.executeScript("arguments[0].click();",nextButton1);
-		 
-		 try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 
-		 //Clicking on Page 3's Questions 1 and 2
-		 JavascriptExecutor js2 = (JavascriptExecutor)driver;
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[6].click();");
-		 
-		 try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 
-		 //Clicking on the Next button
-		 WebElement nextButton2 = driver.findElement(By.cssSelector("#footer_Play .button_next.unbindelements"));
-		 js.executeScript("arguments[0].click();",nextButton2);
-		 
-		 try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-		 
-		//Clicking on Page 4's Question 1 and 2
-		 JavascriptExecutor js3 = (JavascriptExecutor)driver;
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[0].click();");
-		 js.executeScript("document.getElementById('top1').getElementsByTagName('input')[2].click();");
-		 
-		 try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 
-		 //Clicking the 'grade quiz' button
-		 WebElement gradeButton = driver.findElement(By.cssSelector(".buttonSet input"));
-		 js.executeScript("arguments[0].click();",gradeButton);
-		 
-		 try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-		//gradeQuiz_lightbox, it's gonna show the lightbox question, Grade quiz now?
-		driver.findElement(By.cssSelector("#buttons .DialogBoxButton.noTouch.scormSubmitGrade")).click();
-		Thread.sleep(2000);
-		WebElement exit = driver.findElement(By.xpath("//*[@id=\"nav_exit\"]"));
-		js.executeScript("arguments[0].click();", exit);
-		Thread.sleep(3500);
-		driver.switchTo().window(mainWindow);
 
-		Thread.sleep(3500);
+		// Click on 'SCV' from the search results
+		driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// Enter the email of the user that you wish to create
+		driver.findElement(By.name("detailEmailAddress")).sendKeys(userid + "@trismax.com");
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		JavascriptExecutor js1 = ((JavascriptExecutor) driver);
+		js1.executeScript("window.scrollBy(0,850)", "");
+
+		// Clicking on USA Normal User
+		//driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
+		Thread.sleep(2000);
+
+		// Click on 'Save' button
+		driver.findElement(By.xpath("//input[@value='Save']")).click();
+
+		Thread.sleep(4000);
+
+		// sign out current user
+		WebElement Logout0=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+		js1.executeScript("arguments[0].click()", Logout0);
+		Thread.sleep(1500);
+		// driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
+		//Thread.sleep(2000);
+		//Sign in the user that never completed the prerequisite & try the prerequisite
+		driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.id("username")).sendKeys(userid);
+		driver.findElement(By.id("password")).sendKeys(userid);
+
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+
+		Thread.sleep(4500);
+		driver.findElement(By.id("welcomeShowRS")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.name("question[4586]")).click();
+		driver.findElement(By.name("question[1361]")).click();
+		driver.findElement(By.name("question[4562]")).click();
+		driver.findElement(By.name("question[4225]")).click();
+		driver.findElement(By.name("question[4127]")).click();
+		driver.findElement(By.name("question[4193]")).click();
+		driver.findElement(By.name("question[145]")).click();
+		driver.findElement(By.name("question[1164]")).click();
+		driver.findElement(By.name("question[4676]")).click();
+
+		Thread.sleep(1500);
+
+		driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+		Thread.sleep(4500);
+
+		driver.findElement(By.id("annContinue")).click();
+		Thread.sleep(4500);
+
+		//got to the prerequisite and complete it
+		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
+
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-online-006"); //checklist name on localhost
+
+
+		Thread.sleep(3000);
+
+
+
+		//Click on the Enroll button
+		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+
+		Thread.sleep(3000);
+		for(String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+
+
+		//Click on 'Default-English' Language option
+		JavascriptExecutor js2 = (JavascriptExecutor) driver;
+		WebElement Language_English=driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
+		js2.executeScript("arguments[0].click();",Language_English);
+
+
+
+
+		//Clicking the Radio Button
+		//driver.findElement(By.xpath("//*[@name='cf29c8de74fb0d0f2846573a541e8737'][@value='N']")).click();
+
+//		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
+
+
+		Thread.sleep(2000);
+
+		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
+		driver.findElement(By.xpath("//*[@id=\"c-quiz\"]/ol/li/div[2]/label[4]/input")).click(); // Cat
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//*[@id=\"c-body\"]/div/div[2]/div[2]/button")).click();
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='btn btn-primary btn float-right']")).click();
+		Thread.sleep(2000);
+		WebElement Exit=driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
+		js2.executeScript("arguments[0].click();",Exit);
+		Thread.sleep(2000);
 		driver.quit();
 
 		

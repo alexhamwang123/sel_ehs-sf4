@@ -28,11 +28,11 @@ public class ForgotPassword {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
         String username = prop.getProperty("testnormuser");
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("//*[@id=\"login-box\"]/div[3]/center/a[3]")).click();
+        driver.findElement(By.xpath("//*[@id=\"login\"]/div[3]/div/div[2]/div/div/a[2]")).click();
         Thread.sleep(250);
         driver.findElement(By.xpath("//*[@id=\"login-box\"]/div[3]/center/a[3]")).click();
         Thread.sleep(750);

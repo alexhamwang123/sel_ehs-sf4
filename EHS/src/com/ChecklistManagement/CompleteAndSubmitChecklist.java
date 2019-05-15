@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.xpath.operations.Variable;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -38,115 +39,63 @@ public class CompleteAndSubmitChecklist {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-		driver.findElement(By.id("login_login_id")).sendKeys(username);
-		driver.findElement(By.id("login_password")).sendKeys(password);
-
-		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		Thread.sleep(4500);
-		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Courses')]"));
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+        driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
-		js.executeScript("arguments[0].click();", courseAdmin);
-		
-		driver.findElement(By.id("srch_fld")).sendKeys("04a1awuKpJ");
-		
-		driver.findElement(By.name("searchButton")).click();
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Thread.sleep(7000);
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-checklist-006"); //checklist name on localhost
 
 
-		//Click on the Enroll button
-		driver.findElement(By.className("onelang")).click();
-		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//Click on 'Default-English' Language option
-		driver.findElement(By.id("crselink1")).click();
-		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		//Clicking the Radio Button
-		//driver.findElement(By.xpath("//*[@name='cf29c8de74fb0d0f2846573a541e8737'][@value='N']")).click();
-		
-		//Clicking on Question 1
-//		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//
-//		//Clicking on Question 2
-//		driver.findElement(By.cssSelector("input[type='radio'][value='e2b2820a092849b866dded7b5ca71f3a']")).click();
-//
-//
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='13c496ea53471d3bce0c72e9b4a63b66']")).click();
-		
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='4bd53adf7e6118d7c8625537fdd551c6']")).click();
-		
-		driver.findElement(By.cssSelector("input[type='checkbox'][value='9dadf671b25ecf8ba926941141405bf9']")).click();
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).clear();
-		
-		driver.findElement(By.xpath("//*[@id='78b39db9d6c9f3801f1792d2073b9c32']")).sendKeys("40");
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//Click on the Submit button
-		driver.findElement(By.cssSelector("input[type='button'][value='Submit']")).click();
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//Click on the confirm pop up
-		driver.findElement(By.id("fancyConfirm_ok")).click();
-		Thread.sleep(2000);
+        Thread.sleep(3000);
+
+
+
+        //Click on the Enroll button
+        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+
+        Thread.sleep(3000);
+        for(String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
+        }
+
+
+        //Click on 'Default-English' Language option
+        JavascriptExecutor js2 = (JavascriptExecutor) driver;
+        WebElement Language_English=driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
+        js2.executeScript("arguments[0].click();",Language_English);
+
+
+        Thread.sleep(3000);
+
+
+        //Clicking the Radio Button
+        driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[1]/div/div[3]/label[2]/input")).click();
+
+ 		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[2]/div/div[3]/label[1]/input")).click();
+
+
+        Thread.sleep(2000);
+
+        //Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
+        //driver.findElement(By.xpath("//input[@value='Y']")).click(); // Cat
+
+        Thread.sleep(2000);
+
+        driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[1]/div/button[3]")).click();
+        Thread.sleep(2000);
+
+        driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]")).click();
+        Thread.sleep(2000);
+
 		driver.quit();
 		
 
