@@ -31,11 +31,11 @@ public class DirectReport {
         driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
-        Thread.sleep(23500);
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(3500);
 
         driver.findElement(By.partialLinkText("Manager's Portal")).click();
         Thread.sleep(2500);

@@ -44,10 +44,10 @@ public class OnlineCoursePrereqDecrease {
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -121,14 +121,14 @@ public class OnlineCoursePrereqDecrease {
 
         //Go to courses tab and enroll in course just made
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(7500);
-        driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(7500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(7000);
+        Thread.sleep(2500);
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+ //       driver.findElement(By.name("searchButton")).click();
+ //       Thread.sleep(7500);
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
+        Thread.sleep(2000);
 
         //Click on Course Admin
         WebElement courseAdmin0 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -180,7 +180,7 @@ public class OnlineCoursePrereqDecrease {
         //Fill in Fields
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId0);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -215,6 +215,8 @@ public class OnlineCoursePrereqDecrease {
         Thread.sleep(4500);
         driver.findElement(By.id("saveClassCourse")).click();
         Thread.sleep(5500);
+
+
         driver.findElement(By.partialLinkText("Online Course Management")).click();
         Thread.sleep(4500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
@@ -224,7 +226,7 @@ public class OnlineCoursePrereqDecrease {
         String courseId1 = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId1);
         System.out.println("online course being made: " + courseId1);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - test classroom course");
@@ -247,7 +249,7 @@ public class OnlineCoursePrereqDecrease {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button")).click();
         Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"915d8c7314d1e2c0011512a0784d1726\"]/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"3\"]/img")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
         Thread.sleep(2500);
@@ -269,15 +271,11 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3700);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(2500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(4600);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(8500);
+        Thread.sleep(4500);
         driver.findElement(By.name("langIsViewable")).click();
         Thread.sleep(4700);
         driver.findElement(By.id("detailCourseIsActive")).click();
@@ -286,23 +284,21 @@ public class OnlineCoursePrereqDecrease {
         Thread.sleep(3900);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(4500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId1);
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId1);
         Thread.sleep(1500);
-        driver.findElement(By.name("searchButton")).click();
-        Thread.sleep(5500);
-        driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(4500);
+ //       driver.findElement(By.name("searchButton")).click();
+ //      Thread.sleep(5500);
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        Thread.sleep(1500);
         String working = "";
         try {
-            working = driver.findElement(By.xpath("//*[@id=\"errorMsg_data\"]")).getAttribute("innerHTML");
+            working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
         } catch (NoSuchElementException e) {
             Assert.fail("user was able to register for the course without taking the required prereqs");
         }
-        if(!working.equals("Required prerequisite course:" + courseId0)) {
+        if(!working.contains(courseId0)) {
             Assert.fail("something is wrong with the prerequisite courses");
         }
-
-        driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
         Thread.sleep(3500);
         driver.quit();
 

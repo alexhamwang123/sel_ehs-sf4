@@ -44,38 +44,30 @@ public class CreateRiskCategory {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-		
-		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();",ele);
-				
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		
-		//Click on RC Management
-        driver.findElement(By.partialLinkText("RC Management")).click();
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        //Clicking on EHS Admin
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();",ele);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        driver.findElement(By.xpath("//a[contains(text(),'RC Management')]")).click();
 		
 		//Click on the 'Create Risk Category' button
 		driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']")).click();
@@ -98,23 +90,23 @@ public class CreateRiskCategory {
 		//Enter the description
 		driver.findElement(By.name("detailJobClassDescr")).sendKeys("this is the description!");
 
-		Thread.sleep(500);
-		driver.findElement(By.id("selectBtnCreMaA")).click();
 		Thread.sleep(1500);
+		driver.findElement(By.id("selectBtnCreMaA")).click();
+		Thread.sleep(2500);
 		driver.findElement(By.name("badgeNo")).sendKeys(username);
 		driver.findElement(By.cssSelector("input[value='Search']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
 
 
 
 		
 		//Click on the 'Save' button
 		driver.findElement(By.id("saveJC")).click();
-		Thread.sleep(4500);
+		Thread.sleep(7500);
         driver.findElement(By.id("addCourse")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         WebElement secondmenu = driver.findElement(By.id("secondmenu"));
 
         Actions actions = new Actions(driver);
@@ -137,37 +129,37 @@ public class CreateRiskCategory {
 
 
 
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         actions.moveToElement(driver.findElement(By.id("secondmenu")));
         actions.click();
         actions.sendKeys(title);
         actions.build().perform();
         driver.findElement(By.cssSelector("input[value='Go']")).click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.className("editAction")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.name("detailJobClassDescr")).clear();
         driver.findElement(By.name("detailJobClassDescr")).sendKeys("im editing the description !");
         Thread.sleep(500);
 
         driver.findElement(By.cssSelector("input[value='Save']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         actions.moveToElement(driver.findElement(By.id("secondmenu")));
         actions.click();
         actions.sendKeys(title);
         actions.build().perform();
         driver.findElement(By.cssSelector("input[value='Go']")).click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.className("editAction")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
 
         if(!driver.findElement(By.name("detailJobClassDescr")).getAttribute("innerHTML").equals("im editing the description !")) {
             Assert.fail("something went wrong while editing the description");

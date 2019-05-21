@@ -34,7 +34,7 @@ public class EHS_SearchACourseName {
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-//		driver.manage().window().maximize();
+		driver.manage().window().maximize();
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
@@ -44,10 +44,10 @@ public class EHS_SearchACourseName {
 		driver.get(urladdr);
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
-		driver.findElement(By.id("login_login_id")).sendKeys(username);
-		driver.findElement(By.id("login_password")).sendKeys(password);
-		
-		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
+
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		try {
 			Thread.sleep(4500);
@@ -56,7 +56,7 @@ public class EHS_SearchACourseName {
 			e.printStackTrace();
 		}
 		
-		WebElement ele = driver.findElement(By.xpath("//a[@href='/courses']"));
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'Courses')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		
@@ -68,10 +68,10 @@ public class EHS_SearchACourseName {
 		}
 		
 		//Enter the name of the course here that you wish to search
-		driver.findElement(By.id("srch_fld")).sendKeys("trismax");
+		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("AED Practical Skills");
 		
 		//Clicks on the Search button
-		driver.findElement(By.name("searchButton")).click();
+		//driver.findElement(By.name("searchButton")).click();
 
         try {
             Thread.sleep(2500);

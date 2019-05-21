@@ -34,7 +34,7 @@ public class EHSR_ChecklistSubmissionReport {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -43,12 +43,12 @@ public class EHSR_ChecklistSubmissionReport {
 		driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
+		Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
 		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
@@ -57,31 +57,36 @@ public class EHSR_ChecklistSubmissionReport {
 
 		Thread.sleep(1500);
 		//Click on Checklist Submission Report 
-		driver.findElement(By.xpath("//*[@id='content']/div[1]/div/div/a[3]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Checklist Submission Report')]")).click();
 		Thread.sleep(1500);
 		//Click on Select button that appears in front of Checklist 
 		driver.findElement(By.id("selectCourseDisabled")).click();
 		Thread.sleep(1500);
 		//Choose a course. Here, we choose 8787 Document Management \
 		//Checklist-001_OLD3-2-2012 Home Office Checklist
-		driver.findElement(By.id("9165941f21199eab012119a105f25506")).click();
-//		driver.findElement(By.id("72658f6b2724bdc1a0ed1bcc67d8a57f")).click();
+		driver.findElement(By.id("srch_fld")).sendKeys("EHS-3600");
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"applesearch\"]/div/div[6]/input")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"86\"]")).click();
 		Thread.sleep(1500);
 		//Click on the Ok button
-		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
+		driver.findElement(By.xpath("//*[@id=\"course_result\"]/center/input")).click();
 		
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(3500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		//Click on Go button to display the Report 
-		driver.findElement(By.id("Button_Go")).click();
+		WebElement Go=driver.findElement(By.id("Button_Go"));
+		js.executeScript("arguments[0].click();",Go);
 		Thread.sleep(3500);
 
 		driver.quit();
+
 
 	}
 

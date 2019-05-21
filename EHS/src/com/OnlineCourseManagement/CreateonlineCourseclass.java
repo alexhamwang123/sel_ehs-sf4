@@ -37,14 +37,14 @@ public class CreateonlineCourseclass {
 
         driver.get(urladdr);
 
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(1500);
         JavascriptExecutor js = (JavascriptExecutor)driver;
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -52,22 +52,19 @@ public class CreateonlineCourseclass {
         Thread.sleep(1500);
         driver.findElement(By.linkText("Online Course Management")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-sm pull-right']")).click();
+        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("detailCourseNo")).sendKeys(integer+"testforscript"+number);
 
         WebElement element1 = driver.findElement(By.xpath("//select[@name='detailCourseCategory']"));
         Select oSelect = new Select(element1);
-        oSelect.selectByValue("40285a840b8ea220010b8ea2212f0009");
+        oSelect.selectByValue("37");
         WebElement element2 = driver.findElement(By.xpath("//select[@id='detailCourseFulfillType']"));
         Select iSelect = new Select(element2);
-        iSelect.selectByValue("765ecc62-9523-102a-b9c1-bc598aa8");
+        iSelect.selectByValue("1");
         WebElement element3 = driver.findElement(By.xpath("//select[@id='detailCourseExpiration']"));
         Select aSelect = new Select(element3);
         aSelect.selectByValue("0");
-        WebElement element4 = driver.findElement(By.xpath("//select[@id='detailCourseGracePeriod']"));
-        Select bSelect = new Select(element4);
-        bSelect.selectByValue("30");
 
         driver.findElement(By.xpath("//input[@value='Save']")).click();
 
@@ -88,19 +85,19 @@ public class CreateonlineCourseclass {
         driver.findElement(By.xpath("//input[@id='courseContentTitle']")).sendKeys("testforscript"+number);
         driver.findElement(By.xpath("//div[@class='padded form-horizontal mt-3']//div[5]//input[3]")).click();
         Thread.sleep(5000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[8]/div[1]/div[9]/div[1]/center[1]/input[1]")).click();
-        Thread.sleep(3000);
+        driver.findElement(By.id("fancyConfirm_ok")).click();
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[8]/div[1]/div[9]/div[1]/center[1]/input[1]")).click();
-        Thread.sleep(3000);
+        driver.findElement(By.id("fancyConfirm_ok")).click();
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
 
         Thread.sleep(3000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
-        Thread.sleep(10000);
+        Thread.sleep(4000);
 
         driver.findElement(By.xpath("//input[@id='langIsViewable']")).click();
         Thread.sleep(3000);
@@ -118,16 +115,16 @@ public class CreateonlineCourseclass {
         Select gselect= new Select(element6);
         gselect.selectByValue("English");*/
         driver.findElement(By.xpath("//input[@value='Save']")).click();
-        Thread.sleep(10000);
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        Thread.sleep(4000);
+
         driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
-        driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(integer+"testforscript");
-        driver.findElement(By.xpath("//input[@value='Go']")).click();
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(integer+"testforscript");
+ //       driver.findElement(By.xpath("//input[@value='Go']")).click();
         Thread.sleep(3000);
-        driver.findElement(By.className("onelang")).click();
-
+        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+        Thread.sleep(3000);
         driver.quit();
 
 

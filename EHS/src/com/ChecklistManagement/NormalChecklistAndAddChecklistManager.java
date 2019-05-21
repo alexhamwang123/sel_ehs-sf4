@@ -6,6 +6,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -61,10 +63,10 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
@@ -73,11 +75,10 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
-
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(7500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -87,11 +88,11 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         Thread.sleep(1500);
 
         driver.findElement(By.partialLinkText("Checklist Management")).click();
-        Thread.sleep(1500);
-
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(4500);
 
+        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+        Thread.sleep(1500);
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("selectBtnCreMaA")));
         driver.findElement(By.id("selectBtnCreMaA")).click();
         Thread.sleep(1500);
 

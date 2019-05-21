@@ -34,7 +34,7 @@
             <class name="com.OnlineCourseManagement.OnlineCourseEditContent"/>
             <class name="com.OnlineCourseManagement.CreateScormClass"/>
             <class name="com.OnlineCourseManagement.OnlineScormVerify"/>
-            <class name="com.OnlineCourseManagement.FinalDisabledCourseIfNeed"/>
+
         </classes>
     </test>
 

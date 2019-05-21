@@ -45,10 +45,10 @@ public class EHSR_CourseCompletionStatistic {
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 		
@@ -58,10 +58,14 @@ public class EHSR_CourseCompletionStatistic {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
 		//Click on Course Completion Statistic 
-		driver.findElement(By.xpath("//*[@id='content']/div[1]/div/div/a[2]")).click();
+		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/a[2]")).click();
 		Thread.sleep(4500);
+		//Select Date
+        driver.findElement(By.id("dateFrom")).sendKeys("04/01/2019");
+        driver.findElement(By.id("dateTo")).sendKeys("04/21/2019");
 		//Click on Go to display the complete Course Completion Statistic
-		driver.findElement(By.id("Button_Go")).click();
+        WebElement Go=driver.findElement(By.id("Button_Go"));
+        js.executeScript("arguments[0].click();",Go);
 		
 		Thread.sleep(1500);
 		

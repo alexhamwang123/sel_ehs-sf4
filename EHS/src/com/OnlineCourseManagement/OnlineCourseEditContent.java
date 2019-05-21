@@ -39,15 +39,15 @@ public class OnlineCourseEditContent {
 
         driver.get(urladdr);
 
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -93,12 +93,13 @@ public class OnlineCourseEditContent {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button")).click();
         Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"915d8c7314d1e2c0011512a0784d1726\"]/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"3\"]/img")).click();
         Thread.sleep(4500);
         driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
         Thread.sleep(5000);
+        System.out.println("checkpoint1");
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(5500);
         driver.findElement(By.id("addQBtn")).click();
@@ -112,12 +113,15 @@ public class OnlineCourseEditContent {
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
         Thread.sleep(4000);
+        System.out.println("checkpoint2");
+
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(4000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(4500);
+        System.out.println("checkpoint3");
+
+
         driver.findElement(By.cssSelector("input[value='Back']")).click();
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[value='Back']")).click();

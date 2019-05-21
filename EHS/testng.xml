@@ -14,22 +14,9 @@
     <!--</class>-->
     <!--</classes>-->
     <!--</test>-->
-    <test name="EHS">
+    <test name="EHS_ClassroomCourse">
         <classes>
-            <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
-            <class name="com.ChecklistManagement.NormalChecklistAndAddChecklistManager"/>
-            <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
-            <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
-            <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
-            <class name="com.ChecklistManagement.CreateChecklist"/>
-            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
-            <class name="com.ChecklistManagement.ChecklistButtonSource"/>
-            <class name="com.ChecklistManagement.ChecklistPrereq"/>
-            <class name="com.ChecklistManagement.ChecklistPrereqComplete_Duplicate"/>
-            <class name="com.ChecklistManagement.SaveAndCancel"/>
-            <class name="com.ChecklistManagement.RefreshChecklist"/>
-            <class name="com.ChecklistManagement.NormalRefreshChecklist"/>
-            <class name="com.ChecklistManagement.FinalDisabledCourseIfNeed"/>
+
             <class name="com.ClassroomCourseManagement.AddAtt"/>
             <class name="com.ClassroomCourseManagement.NormalClassroomAndAddClassroomCourseManager"/>
             <class name="com.ClassroomCourseManagement.AddWaitlist"/>
@@ -47,58 +34,8 @@
             <class name="com.ClassroomCourseManagement.UnregisterClassroom"/>
             <class name="com.ClassroomCourseManagement.UnregisterWaitlist"/>
             <class name="com.ClassroomCourseManagement.FinalDisabledCourseIfNeed"/>
-            <class name="com.OnlineCourseManagement.NormalOnlineAndAddOnlineCourseManager"/>
-            <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
-            <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>
-            <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
-            <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
-            <class name="com.OnlineCourseManagement.OnlineCoursePrereq"/>
-            <class name="com.OnlineCourseManagement.OnlineCoursePrereqDecrease"/>
-            <class name="com.OnlineCourseManagement.OnlineButtonSource_Duplicate"/>
-            <class name="com.OnlineCourseManagement.RefreshOnlineCourse"/>
-            <class name="com.OnlineCourseManagement.OnlineCourseEditContent"/>
-            <class name="com.OnlineCourseManagement.CreateScormClass"/>
-            <class name="com.OnlineCourseManagement.OnlineScormVerify"/>
-            <class name="com.OnlineCourseManagement.FinalDisabledCourseIfNeed"/>
+
         </classes>
     </test>
-    <test name="EHSAdmin">
-        <classes>
-            <class name="com.EHSAdmin.CreateAnnouncement"/>
-            <class name="com.EHSAdmin.CreateCertificate"/>
-            <class name="com.EHSAdmin.CreateFAQ"/>
-            <class name="com.EHSAdmin.CreateLab"/>
-            <class name="com.EHSAdmin.CreateRiskCategory"/>
-        </classes>
-    </test>
-    <test name="Misellaneous">
-        <classes>
-            <class name="com.Miscellaneous.EHS_ContactUs"/>
-            <class name="com.Miscellaneous.EHS_SearchACourseName"/>
-            <class name="com.Miscellaneous.ForgotPassword"/>
-        </classes>
-    </test>
-    <test name="UserAdmin">
-        <classes>
-            <class name="com.UserAdmin.CreateCourseManager"/>
-            <class name="com.UserAdmin.CreateNormalUser"/>
-            <class name="com.UserAdmin.CreateSuperAdmin"/>
-            <class name="com.UserAdmin.CreateTipEditor"/>
-            <class name="com.UserAdmin.CreateUSAManager"/>
-            <class name="com.UserAdmin.CreateUserSupport"/>
-            <class name="com.UserAdmin.FindExistingUser"/>
-        </classes>
-    </test>
-    <test name="Reports">
-        <classes>
-            <class name="com.Reports.DirectReport"/>
-            <class name="com.Reports.EHSR_ChecklistSubmissionReport"/>
-            <class name="com.Reports.EHSR_ComplianceReport"/>
-            <class name="com.Reports.EHSR_CourseCompletionReport"/>
-            <class name="com.Reports.EHSR_CourseCompletionStatistic"/>
-            <class name="com.Reports.EHSR_OrganizationReport"/>
-            <class name="com.Reports.Manager_ChecklistCompletionReport"/>
-            <class name="com.Reports.Manager_ComplianceReport"/>
-        </classes>
-    </test>
+
 </suite>

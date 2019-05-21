@@ -45,27 +45,33 @@ public class CreateLab {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
+        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-		
-		//Clicking on EHS Admin
-		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();",ele);
-				
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+        //Clicking on EHS Admin
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();",ele);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+
+        js.executeScript("arguments[0].click();",ele1);
+        Thread.sleep(2000);
+
 
 		// Click on 'Lab Management'
         driver.findElement(By.partialLinkText("Lab Management")).click();
@@ -116,7 +122,7 @@ public class CreateLab {
 		driver.findElement(By.name("badgeNo")).sendKeys(username);
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -126,7 +132,7 @@ public class CreateLab {
 		driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -137,7 +143,7 @@ public class CreateLab {
 
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -147,7 +153,7 @@ public class CreateLab {
 		driver.findElement(By.id("selectBtnSite")).click();
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -156,29 +162,29 @@ public class CreateLab {
 		// Choosing the site 'DLL' for this case
         driver.findElement(By.id("searchName")).sendKeys("SCV");
 		driver.findElement(By.cssSelector("input[value='Search']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         driver.findElement(By.cssSelector("a[onclick*='cliskselectSite']")).click();
 
 
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         driver.findElement(By.id("selectBtnBuilding")).click();
-        Thread.sleep(2500);
+        Thread.sleep(4500);
         driver.findElement(By.name("searchBuilding[buildingName]")).sendKeys("Almanor");
         driver.findElement(By.cssSelector("input[value='Search']")).click();
 		// Click on 'Building' to select a building where the lab session would be held
-        Thread.sleep(1500);
+        Thread.sleep(4500);
         driver.findElement(By.cssSelector("a[onclick*='cliskselectBuilding']")).click();
 
 
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -191,7 +197,7 @@ public class CreateLab {
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

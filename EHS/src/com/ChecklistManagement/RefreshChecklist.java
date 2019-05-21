@@ -1,6 +1,5 @@
 package com.ChecklistManagement;
 
-
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,16 +13,17 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-@Test(priority=12)
-//@Test(dependsOnGroups = "ehs1",priority=12)
+
+
+@Test(priority=13)
+//@Test(dependsOnGroups = "ehs1",priority=13)
 public class RefreshChecklist {
-    public void RefreshChecklist() throws IOException, InterruptedException {
+    public void NormalRefreshChecklist() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -41,10 +41,10 @@ public class RefreshChecklist {
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -60,11 +60,11 @@ public class RefreshChecklist {
         Thread.sleep(3500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
-        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("Survey_Only_New");
-        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
+        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
+        new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Refresh");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.id("saveBtn")).click();
         Thread.sleep(10000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
@@ -74,56 +74,62 @@ public class RefreshChecklist {
         driver.findElement(By.id("detailCheckListDescription")).sendKeys("test checklist description");
         driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
         driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(5000);
         driver.findElement(By.id("createContent")).click();
-        Thread.sleep(8000);
-        driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
         Thread.sleep(8000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         driver.findElement(By.id("saveBtn")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(3000);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(8000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        //Thread.sleep(3000);
+        //driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(10000);
         driver.findElement(By.id("langIsViewable")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         driver.findElement(By.id("detailIsActive")).click();
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(1500);
 
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3000);
+        Thread.sleep(1500);
 
-        driver.findElement(By.partialLinkText("Classroom Course Management")).click();
-        Thread.sleep(3000);
+//        driver.findElement(By.partialLinkText("Classroom Course Management")).click();
+        driver.findElement(By.partialLinkText("Checklist Management")).click();
+        Thread.sleep(1500);
+
+
+        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
+        Thread.sleep(1000);
 
         driver.findElement(By.className("editAction")).click();
         Thread.sleep(3500);
 
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("6 months");
 
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         try {
+            System.out.println(courseId + " - test checklist title");
+            //Checklist　Management沒有Refresh Course1,2,3 也就是只有Pre
             new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - test checklist title");
-            Thread.sleep(3500);
+            Thread.sleep(3500);//
         } catch (org.openqa.selenium.NoSuchElementException e) {
-            Assert.fail("the refresh checklist did not show up in the refresh course list while creating a classroom course with expiration of 6 months");
+            Assert.fail("the refresh checklist did not show up in the refresh course list while creating a checklist course with expiration of 6 months");
         }
 
         driver.quit();
-
-
     }
 
 }

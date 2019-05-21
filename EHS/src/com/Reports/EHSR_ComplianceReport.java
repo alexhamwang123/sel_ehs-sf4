@@ -44,31 +44,31 @@ public class EHSR_ComplianceReport {
 		driver.get(urladdr);
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
+		Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
 		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
-		Thread.sleep(1500);
+		Thread.sleep(3500);
 		//Click on Compliance Report 
-		driver.findElement(By.xpath("//*[@id='content']/div[1]/div/div/a[5]")).click();
-		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/a[5]")).click();
+		Thread.sleep(3500);
 		//Click on Select for choosing a Risk Category
 		driver.findElement(By.id("jobClassNo")).click();
-		Thread.sleep(1500);
+		Thread.sleep(4500);
 		//Choose a risk category, say 2
 		// AHA 4028f6bb21ec62fe0121ec6425eb0001
-		driver.findElement(By.id("4028f6bb21ec62fe0121ec6425eb0001")).click();
+		driver.findElement(By.id("99")).click();
 //		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
 		Thread.sleep(1500);
 		//Click the Ok button
-		driver.findElement(By.cssSelector("input[type='button'][value='Ok']")).click();
+		driver.findElement(By.xpath("//*[@id=\"course_result\"]/center/input")).click();
 		
 		try {
 			Thread.sleep(4500);
@@ -78,8 +78,8 @@ public class EHSR_ComplianceReport {
 		}
 		
 		//Click on Go to generate the report 
-		driver.findElement(By.id("Button_Go")).click();
-
+		WebElement Go=driver.findElement(By.id("Button_Go"));
+		js.executeScript("arguments[0].click();",Go);
 		Thread.sleep(3500);
 		driver.quit();
 		

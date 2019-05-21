@@ -42,10 +42,10 @@ public class RefreshOnlineCourse {
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -55,43 +55,45 @@ public class RefreshOnlineCourse {
 
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(4500);
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(4500);
 
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Refresh");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(2500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(13500);
+        Thread.sleep(15000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(7500);
+        //       driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
+
+        Thread.sleep(6000);
         String courseTitle = generator.generate(10);
         driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(7000);
+        Thread.sleep(8000);
         driver.findElement(By.id("btn_edit_content")).click();
         Thread.sleep(5000);
         driver.findElement(By.cssSelector("input[type='button'][value='Create Page']")).click();
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button")).click();
-        Thread.sleep(8000);
-        driver.findElement(By.xpath("//*[@id=\"915d8c7314d1e2c0011512a0784d1726\"]/img")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
-        Thread.sleep(2500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
         Thread.sleep(7000);
+        driver.findElement(By.xpath("//*[@id=\"3\"]/img")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
+        Thread.sleep(5500);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
+        Thread.sleep(5000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(3500);
+        Thread.sleep(5000);
         driver.findElement(By.id("addQBtn")).click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
         Thread.sleep(1500);
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");
@@ -100,31 +102,29 @@ public class RefreshOnlineCourse {
         driver.findElement(By.name("courseQuizSourcePage")).sendKeys("1");
         Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
-        Thread.sleep(6000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(3500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(6000);
+        Thread.sleep(5000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(6000);
+        Thread.sleep(4000);
+        //       driver.findElement(By.id("fancyConfirm_ok")).click();
+        //       Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(6000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(13500);
+        Thread.sleep(6000);
         driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(4500);
+        Thread.sleep(3500);
         driver.findElement(By.id("detailCourseIsActive")).click();
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(7500);
+        Thread.sleep(3500);
         driver.findElement(By.partialLinkText("Classroom Course Management")).click();
-        Thread.sleep(7500);
+        Thread.sleep(5500);
         driver.findElement(By.className("editAction")).click();
         Thread.sleep(4500);
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("6 months");
-        Thread.sleep(1500);
+        Thread.sleep(500);
         try {
             new Select(driver.findElement(By.name("detailCourseRefreshCourse1"))).selectByVisibleText(courseId + " - " + courseTitle);
         } catch (NoSuchElementException e) {

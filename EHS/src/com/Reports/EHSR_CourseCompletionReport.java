@@ -44,10 +44,10 @@ public class EHSR_CourseCompletionReport {
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 		
@@ -57,14 +57,18 @@ public class EHSR_CourseCompletionReport {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
 		//Select a Date Range. Click on Date From
-		js.executeScript("document.getElementById('dateFrom').value='02/14/2031'");
+        WebElement From= driver.findElement(By.id("dateFrom"));
+		js.executeScript("arguments[0].value='01/01/2019'",From);
 		Thread.sleep(500);
-		js.executeScript("document.getElementById('dateTo').value='04/17/2031'");
+		WebElement To=driver.findElement(By.id("dateTo"));
 
-		Thread.sleep(500);
+		js.executeScript("arguments[0].value='01/04/2019'",To);
+
+		Thread.sleep(3500);
 		
 		//Click on Go
-		driver.findElement(By.id("Button_Go")).click();
+        WebElement Go=driver.findElement(By.id("Button_Go"));
+        js.executeScript("arguments[0].click();",Go);
 
 		Thread.sleep(3500);
 

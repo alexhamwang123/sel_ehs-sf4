@@ -36,16 +36,16 @@ public class NormalRefreshOnlineCourse {
 
         driver.get(urladdr);
 
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
 
@@ -61,14 +61,14 @@ public class NormalRefreshOnlineCourse {
 
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal & Refresh");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
+ //       driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 
         Thread.sleep(6000);
         String courseTitle = generator.generate(10);
@@ -84,7 +84,7 @@ public class NormalRefreshOnlineCourse {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button")).click();
         Thread.sleep(7000);
-        driver.findElement(By.xpath("//*[@id=\"915d8c7314d1e2c0011512a0784d1726\"]/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"3\"]/img")).click();
         Thread.sleep(5000);
         driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
         Thread.sleep(5500);
@@ -107,15 +107,13 @@ public class NormalRefreshOnlineCourse {
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(4000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(3500);
+ //       driver.findElement(By.id("fancyConfirm_ok")).click();
+ //       Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(6000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(6000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(15000);
-        driver.findElement(By.name("langIsViewable")).click();
+         driver.findElement(By.name("langIsViewable")).click();
         Thread.sleep(3500);
         driver.findElement(By.id("detailCourseIsActive")).click();
         Thread.sleep(3500);

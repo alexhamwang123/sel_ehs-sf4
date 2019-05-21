@@ -43,11 +43,11 @@ public class FindExistingUser {
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
-		driver.findElement(By.id("login_login_id")).sendKeys(username);
-		driver.findElement(By.id("login_password")).sendKeys(password);
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 
-		driver.findElement(By.name("submit")).click();
-		
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+
 		try {
 			Thread.sleep(4500);
 		} catch (InterruptedException e) {
@@ -73,7 +73,7 @@ public class FindExistingUser {
 	    
 	    //Or, if you want to find by the first name
 		String findExistingUserStr = prop.getProperty("findExistingUser");
-	    driver.findElement(By.id("searchFirstName")).sendKeys(findExistingUserStr);
+	    driver.findElement(By.id("searchBadgeNo")).sendKeys(findExistingUserStr);
 	    
 	    //Or, if you want to find by the last name 
 	    //driver.findElement(By.id("searchLastName")).sendKeys("Varu");

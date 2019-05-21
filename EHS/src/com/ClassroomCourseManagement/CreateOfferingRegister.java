@@ -41,10 +41,10 @@ public class CreateOfferingRegister {
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -60,7 +60,7 @@ public class CreateOfferingRegister {
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -107,22 +107,14 @@ public class CreateOfferingRegister {
         Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-        Thread.sleep(1800);
-//        driver.findElement(By.name("searchButton")).click();
-        driver.findElement(By.xpath("//input[@value='Go']")).click();
-        Thread.sleep(4200);
-        driver.findElement(By.className("viewglass")).click();
-        Thread.sleep(2500);
-//        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
-//        driver.findElement(By.name("searchButton")).click();
-//        Thread.sleep(1500);
-//        driver.findElement(By.className("viewglass")).click();
-//        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
-        Thread.sleep(2500);
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+        //driver.findElement(By.name("searchButton")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
         try {
-            WebElement cancel = driver.findElement(By.cssSelector("input[type='button'][value='Cancel']"));
+            WebElement cancel = driver.findElement(By.xpath("//button[@class='btn btn-sm btn-danger']"));
         } catch (NoSuchElementException e) {
             Assert.fail("was not able to enroll in the course");
         }
