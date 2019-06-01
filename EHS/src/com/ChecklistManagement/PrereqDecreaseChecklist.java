@@ -5,7 +5,9 @@ import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,7 +26,7 @@ public class PrereqDecreaseChecklist {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -118,7 +120,7 @@ public class PrereqDecreaseChecklist {
         Thread.sleep(5000);
         //driver.findElement(By.xpath("viewglass")).click();
         //Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(1500);
 
         //Click on Course Admin
@@ -236,8 +238,14 @@ public class PrereqDecreaseChecklist {
         Thread.sleep(5000);
         driver.findElement(By.id("createContent")).click();
         Thread.sleep(5000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Create']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"detailChecklistContentSaveAs\"]")).click();
         driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
-        Thread.sleep(10000);
+
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("saveBtn")).click();

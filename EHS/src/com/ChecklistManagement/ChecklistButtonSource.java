@@ -118,10 +118,11 @@ public class ChecklistButtonSource {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
        // Thread.sleep(8000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
-        Thread.sleep(500);
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
        // Thread.sleep(5000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='Create Button Sources']")));
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//input[@value='Create Button Sources']")).click();
         Thread.sleep(1500);
         String mainWin = driver.getWindowHandle();
