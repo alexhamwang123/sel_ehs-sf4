@@ -44,12 +44,11 @@ public class CreateAndEditCertificate {
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 		String testnormuser = prop.getProperty("testnormuser");
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
-
-        Thread.sleep(4500);
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(1500);
 
 
 		//Clicking on EHS Admin
@@ -215,15 +214,17 @@ public class CreateAndEditCertificate {
 
 //        driver.quit();
 //		Thread.sleep(2000);
-		driver.findElement(By.id("lightbox")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
-		Thread.sleep(2500);
+        WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click()",Logout);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(1000);
 
-		driver.findElement(By.id("login_login_id")).sendKeys(testnormuser);
-		driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-		driver.findElement(By.name("submit")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(1500);
 
 		Thread.sleep(4500);
 		driver.findElement(By.partialLinkText("Courses")).click();
