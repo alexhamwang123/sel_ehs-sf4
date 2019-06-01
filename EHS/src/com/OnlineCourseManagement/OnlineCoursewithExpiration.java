@@ -5,7 +5,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import java.util.Random;
 import java.io.File;
@@ -25,7 +27,7 @@ public class OnlineCoursewithExpiration {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -101,12 +103,15 @@ public class OnlineCoursewithExpiration {
         driver.findElement(By.xpath("//input[@value='Back']")).click();
         Thread.sleep(4000);
 
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='langIsViewable']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@id='langIsViewable']")).click();
         Thread.sleep(3000);
         //Actions action= new Actions(driver);
 
         //action.click(driver.findElement(By.id("checklistDefaultRegion")))
-
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='detailCourseIsActive']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@id='detailCourseIsActive']")).click();
         Thread.sleep(3000);
         /*WebElement element5=driver.findElement(By.id("checklistDefaultRegion"));

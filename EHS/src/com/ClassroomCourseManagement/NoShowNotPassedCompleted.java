@@ -287,10 +287,10 @@ public class NoShowNotPassedCompleted {
         js.executeScript("arguments[0].click();", MytrainingReport);
 
         Thread.sleep(1500);
-        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[2]/div[1]/div/select"))).selectByVisibleText("Classroom");
+        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Classroom");
 
 
-        List<WebElement> list1 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]/div/span"));
+        List<WebElement> list1 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/span"));
 
 
         String TodayOnly1= ShowTodayOnlyFormat.format(DateofToday);
@@ -339,7 +339,7 @@ public class NoShowNotPassedCompleted {
             }
         }
         Thread.sleep(1000);
-         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[2]/div[3]/div/button[1]")).click();
+         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();
          Thread.sleep(1500);
         if (!driver.getPageSource().contains(courseId)) {
             Assert.fail("the course does not show as completed in my training report");

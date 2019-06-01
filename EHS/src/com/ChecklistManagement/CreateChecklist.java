@@ -32,9 +32,8 @@ public class CreateChecklist {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-		WebDriverWait Wait= new WebDriverWait(driver,30);
+		WebDriverWait wait= new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
 		FileInputStream inStream=new FileInputStream(file);
@@ -52,16 +51,16 @@ public class CreateChecklist {
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-		Thread.sleep(4500);
-		
+
 		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 
 		js.executeScript("arguments[0].click();", courseAdmin);
 
-		Thread.sleep(1500);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Management"))));
 		driver.findElement(By.partialLinkText("Checklist Management")).click();
-		Thread.sleep(1500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
 		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
 		Thread.sleep(3500);
 		String courseId = generator.generate(10);
@@ -70,10 +69,10 @@ public class CreateChecklist {
 		new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
 		new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
 		new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-		Wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
 		driver.findElement(By.id("saveBtn")).click();
 
-		Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 		Thread.sleep(1500);
@@ -82,39 +81,61 @@ public class CreateChecklist {
 		driver.findElement(By.id("detailCheckListDescription")).sendKeys("test checklist description");
 		driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
 		driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
-		Thread.sleep(1000);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-		Thread.sleep(5000);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("createContent"))));
 		driver.findElement(By.id("createContent")).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Create']"))));
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
-		Thread.sleep(5000);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-		Thread.sleep(1500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));
 		driver.findElement(By.id("saveBtn")).click();
-		Thread.sleep(1500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("fancyConfirm_ok"))));
+		Thread.sleep(1000);
 		driver.findElement(By.id("fancyConfirm_ok")).click();
-		Thread.sleep(1500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-		Thread.sleep(4000);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-		Thread.sleep(3500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-		Thread.sleep(3500);
+
 		//driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 		//Thread.sleep(1500);
-		Wait.until(ExpectedConditions.elementToBeClickable(By.id("langIsViewable")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("langIsViewable")));
+		Thread.sleep(1000);
 		driver.findElement(By.id("langIsViewable")).click();
-		Thread.sleep(5000);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("detailIsActive")));
+		Thread.sleep(1000);
 		driver.findElement(By.id("detailIsActive")).click();
-		Thread.sleep(1500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-		Thread.sleep(1500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+		Thread.sleep(1000);
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 		//driver.findElement(By.name("searchButton")).click();
-		Thread.sleep(1500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']"))));
 		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
 
 		driver.quit();

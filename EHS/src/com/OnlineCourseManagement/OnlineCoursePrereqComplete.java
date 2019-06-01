@@ -61,7 +61,7 @@ public class OnlineCoursePrereqComplete {
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(3500);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[2]")).click();
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
         Thread.sleep(5500);
 
         //pick a class  & Assign prerequisite
@@ -154,6 +154,9 @@ public class OnlineCoursePrereqComplete {
         WebElement Logout0=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js1.executeScript("arguments[0].click()", Logout0);
         Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(1500);
+
         // driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
         //Thread.sleep(2000);
         //Sign in the user that never completed the prerequisite & try the prerequisite
@@ -167,6 +170,7 @@ public class OnlineCoursePrereqComplete {
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("question[4586]")).click();
+        driver.findElement(By.name("question[4127]")).click();
         driver.findElement(By.name("question[1361]")).click();
         driver.findElement(By.name("question[4562]")).click();
         driver.findElement(By.name("question[4225]")).click();
@@ -252,8 +256,8 @@ public class OnlineCoursePrereqComplete {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn float-right']")).click();
         Thread.sleep(2000);
-        WebElement Exit=driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button[2]"));
-        js2.executeScript("arguments[0].click();",Exit);
+        WebElement OKBtn=driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
+        js2.executeScript("arguments[0].click();",OKBtn);
         Thread.sleep(2000);
         //After completion of prerequisite, try "1bLkHwGarU" again.
         for(String winHandle : driver.getWindowHandles()) {

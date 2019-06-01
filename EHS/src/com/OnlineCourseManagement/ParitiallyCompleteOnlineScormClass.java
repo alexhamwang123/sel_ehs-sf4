@@ -1,10 +1,11 @@
 package com.OnlineCourseManagement;
 
-
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,17 +15,15 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.security.Key;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-//@Test
-@Test(priority=34)
-public class CreateScormClass {
-    public void CreateScormClass() throws InterruptedException, IOException, AWTException {
+@Test
+public class ParitiallyCompleteOnlineScormClass {
+    public void ParitiallyCompleteOnlineScormClass() throws InterruptedException, IOException, AWTException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -51,6 +50,7 @@ public class CreateScormClass {
         robot.keyRelease(KeyEvent.VK_TAB);
 
         driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -68,8 +68,13 @@ public class CreateScormClass {
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(4500);
 
@@ -85,9 +90,15 @@ public class CreateScormClass {
         Select aSelect = new Select(element3);
         aSelect.selectByValue("0");
         Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Thread.sleep(500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(10000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
+
         Thread.sleep(3500);
         String courseTitle = generator.generate(10);
         driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
@@ -132,22 +143,40 @@ public class CreateScormClass {
         robot.keyRelease(KeyEvent.VK_ENTER);
 
         Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("btn_Scorm_UploadFile"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(10000);
-        driver.findElement(By.id("langIsViewable")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.id("detailCourseIsActive")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(7000);
 
-        /*
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("langIsViewable"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("langIsViewable")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("detailCourseIsActive"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("detailCourseIsActive")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
+
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         Thread.sleep(1500);
         String currentWin = driver.getWindowHandle();
@@ -174,19 +203,20 @@ public class CreateScormClass {
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(3500);
+        Thread.sleep(1500);
+
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+        Thread.sleep(1500);
 
         if (!driver.getPageSource().contains("Paused")) {
             Assert.fail("the scorm class does not show up as paused");
         }
 
-        */
-        Thread.sleep(3500);
         driver.quit();
-
 
     }
 
-}
+    }
