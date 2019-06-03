@@ -40,11 +40,10 @@ public class CreateOfferingRegisterWithMgrUserAndEmail {
         String testnormuser = prop.getProperty("testnormuser");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
-
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(4500);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -150,16 +149,16 @@ public class CreateOfferingRegisterWithMgrUserAndEmail {
         js4.executeScript("arguments[0].click();", HomeElement2);
         Thread.sleep(4600);
 
-        driver.findElement(By.id("lightbox")).click();
-        Thread.sleep(2800);
-        driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
-        Thread.sleep(4500);
+        WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click()",Logout);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(1000);
 
-        driver.findElement(By.id("login_login_id")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
+        driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.name("submit")).click();
-
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(4500);
         WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js2 = (JavascriptExecutor)driver;
