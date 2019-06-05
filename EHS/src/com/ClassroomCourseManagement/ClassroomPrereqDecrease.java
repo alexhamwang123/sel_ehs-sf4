@@ -110,6 +110,7 @@ public class ClassroomPrereqDecrease {
         driver.findElement(By.id("saveClassCourse")).click();
         Thread.sleep(1500);
         //Go to courses tab and enroll in course just made
+        driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1800);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         Thread.sleep(1800);

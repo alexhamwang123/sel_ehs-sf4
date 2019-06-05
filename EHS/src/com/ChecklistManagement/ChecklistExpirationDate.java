@@ -4,8 +4,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.util.Calendar;
+import java.util.Date;
+
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.Alert;
@@ -17,6 +23,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -24,25 +31,24 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test(groups = "ehs1",priority=5)
-public class CreateChecklist {
-
-	public void CreateChecklist() throws IOException, InterruptedException {
-
+@Test
+public class ChecklistExpirationDate {
+	public void ChecklistExpirationDate() throws IOException, InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-		WebDriverWait wait= new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+		File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
 
-		FileInputStream inStream=new FileInputStream(file);
-		Properties prop=new Properties();
+		FileInputStream inStream = new FileInputStream(file);
+		Properties prop = new Properties();
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-		//driver.manage().window().maximize();
-		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();;
+		driver.manage().window().maximize();
+		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+		;
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
@@ -53,7 +59,7 @@ public class CreateChecklist {
 
 
 		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -68,7 +74,7 @@ public class CreateChecklist {
 		driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
 		new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
 		new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
-		new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
+		new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("6 months");
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
 		driver.findElement(By.id("saveBtn")).click();
 
@@ -86,11 +92,11 @@ public class CreateChecklist {
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("createContent"))));
+		Thread.sleep(1000);
 		driver.findElement(By.id("createContent")).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Create']"))));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id=\"detailChecklistContentSaveAs\"]")).click();
 		driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
@@ -136,13 +142,62 @@ public class CreateChecklist {
 		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 		//driver.findElement(By.name("searchButton")).click();
 
+		//Complete the Course
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']"))));
 		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+
+		for(String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+
+		Thread.sleep(1000);
+		WebElement Language = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]"));
+		js.executeScript("arguments[0].click();", Language);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[3]/button[3]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[3]/button[3]")).click();
+
+		WebElement ButtonOK = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", ButtonOK);
+
+		Thread.sleep(1000);
+		WebElement ButtonExit = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button"));
+		js.executeScript("arguments[0].click();", ButtonExit);
+
+		for(String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+		//Search the Course  Again
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+		Thread.sleep(1000);
+		driver.findElement(By.partialLinkText("Courses")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+		System.out.println(courseId);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("My History"))));
+		Thread.sleep(1000);
+		driver.findElement(By.partialLinkText("My History")).click();
+
+		driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId);
+		Date current = new Date();
+		System.out.println(current);
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(current);
+		cal.set(Calendar.MONTH, (cal.get(Calendar.MONTH)+6));
+		Date SixMonthLater = cal.getTime();
+		DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+		System.out.println(dateFormat.format(SixMonthLater));
+		if(!driver.getPageSource().contains(dateFormat.format(SixMonthLater))){
+			Assert.fail("THere is no Expiration Date");
+		}
 
 		driver.quit();
 
 
-
 	}
+
 
 }

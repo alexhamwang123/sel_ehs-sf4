@@ -58,7 +58,7 @@ public class CreateOfferingRegisterWithMgrUserAndEmail {
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
@@ -104,38 +104,38 @@ public class CreateOfferingRegisterWithMgrUserAndEmail {
         js3.executeScript("arguments[0].click();", HomeElement);
         Thread.sleep(4600);
 
-        driver.findElement(By.id("lightbox")).click();
-        Thread.sleep(2800);
-        driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
-        Thread.sleep(4500);
+        WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click()",Logout);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(1000);
 
-        driver.findElement(By.id("login_login_id")).sendKeys(testnormuser);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(testnormuser);
+        driver.findElement(By.id("password")).sendKeys(testnormuser);
 
-        driver.findElement(By.name("submit")).click();
-
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(4500);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(2000);
         //driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId2);
 //        driver.findElement(By.partialLinkText("Courses")).click();
 //        Thread.sleep(1500);
-        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId);
         Thread.sleep(1800);
-//        driver.findElement(By.name("searchButton")).click();
-        driver.findElement(By.xpath("//input[@value='Go']")).click();
-        Thread.sleep(4700);
-        driver.findElement(By.className("viewglass")).click();
+
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
         Thread.sleep(2500);
 //        driver.findElement(By.id("srch_fld")).sendKeys(courseId);
 //        driver.findElement(By.name("searchButton")).click();
 //        Thread.sleep(1500);
 //        driver.findElement(By.className("viewglass")).click();
 //        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Enroll']")).click();
+        //Click Enroll Btn
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(2500);
+        //Try find Cancel Btn
         try {
-            WebElement cancelElement = driver.findElement(By.cssSelector("input[type='button'][value='Cancel']"));
+            WebElement cancelElement = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"));
             cancelElement.click();
         } catch (NoSuchElementException e) {
             Assert.fail("was not able to enroll in the course");
@@ -149,8 +149,8 @@ public class CreateOfferingRegisterWithMgrUserAndEmail {
         js4.executeScript("arguments[0].click();", HomeElement2);
         Thread.sleep(4600);
 
-        WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
-        js.executeScript("arguments[0].click()",Logout);
+        WebElement Logout1=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click()",Logout1);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
         Thread.sleep(1000);

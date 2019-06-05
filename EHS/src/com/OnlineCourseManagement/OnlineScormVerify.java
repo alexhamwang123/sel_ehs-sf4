@@ -384,7 +384,7 @@ public class OnlineScormVerify {
         }
         Thread.sleep(800);
         JavascriptExecutor js2 = (JavascriptExecutor)driver;
-        WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
+        WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
         js2.executeScript("arguments[0].click()", myTrainingReport);
         Thread.sleep(3000);
         new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Online");
