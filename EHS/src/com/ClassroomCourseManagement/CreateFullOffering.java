@@ -93,7 +93,7 @@ public class CreateFullOffering {
         driver.findElement(By.id("selectBtnSite")).click();
         Thread.sleep(3500);
         driver.findElement(By.xpath("//tbody//tr[6]//td[2]//a[1]")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.id("saveClassCourse")).click();
         Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Courses")).click();
@@ -126,7 +126,7 @@ public class CreateFullOffering {
 
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
         Thread.sleep(4500);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(1500);
         if(!driver.getPageSource().contains("Waitlisted")) {
             Assert.fail("the user did not get waitlisted for the course");

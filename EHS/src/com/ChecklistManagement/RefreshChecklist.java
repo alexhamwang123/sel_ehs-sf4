@@ -79,6 +79,7 @@ public class RefreshChecklist {
         Thread.sleep(5000);
         driver.findElement(By.id("createContent")).click();
         Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"detailChecklistContentSaveAs\"]")).click();
         driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
         Thread.sleep(8000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();

@@ -237,6 +237,8 @@ public class ClassroomRegionVisibility {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(4500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("question[4586]")).click();

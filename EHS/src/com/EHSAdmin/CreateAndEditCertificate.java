@@ -504,14 +504,60 @@ public class CreateAndEditCertificate {
 		Thread.sleep(1600);
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = new Date();
-//        System.out.println("Local Date Now=" + dateFormat.format(date));
-		js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(date) + "'");
-//		js.executeScript("document.getElementById('dateFrom').value='" + "11/15/2018" + "'");
-		Thread.sleep(500);
-		js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
-//		js.executeScript("document.getElementById('dateTo').value='" + "11/15/2018" + "'");
-		Thread.sleep(500);
-		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go for Reports
+		JavascriptExecutor js10 = (JavascriptExecutor)driver;
+		java.util.List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/span"));
+
+		SimpleDateFormat ShowTodayOnlyFormat = new SimpleDateFormat("dd");
+
+		Date DateofToday= new Date();
+
+		String TodayOnly= ShowTodayOnlyFormat.format(DateofToday);
+		if (TodayOnly.equals("01")){
+			TodayOnly="1";
+		}
+		if (TodayOnly.equals("02")){
+			TodayOnly="2";
+		}
+		if (TodayOnly.equals("03")){
+			TodayOnly="3";
+		}
+		if (TodayOnly.equals("04")){
+			TodayOnly="4";
+		}
+		if (TodayOnly.equals("05")){
+			TodayOnly="5";
+		}
+		if (TodayOnly.equals("06")){
+			TodayOnly="6";
+		}
+		if (TodayOnly.equals("07")){
+			TodayOnly="7";
+		}
+		if (TodayOnly.equals("08")){
+			TodayOnly="8";
+		}
+		if (TodayOnly.equals("09")){
+			TodayOnly="9";
+		}
+		System.out.println("TodayOnly is"+TodayOnly);
+
+
+		String Number= TodayOnly;
+
+		for(WebElement e : list) {
+			String dateofcanlendar = e.getAttribute("textContent");
+
+			System.out.println(dateofcanlendar);
+
+			if (dateofcanlendar.equals(Number)) {
+				System.out.println("Object Found Yeah Yeah Yeah");
+				js10.executeScript("arguments[0].click();", e);
+				break;
+			}
+			else{System.out.println("Object Not Found ");
+			}
+		}
+		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go for Reports
 //		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click();//Go for My Historyå
 		Thread.sleep(1200);
 		String courseIdTxt="";

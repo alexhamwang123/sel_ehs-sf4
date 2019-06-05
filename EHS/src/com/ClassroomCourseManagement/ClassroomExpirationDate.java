@@ -19,6 +19,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -147,9 +148,9 @@ public class ClassroomExpirationDate {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
 
         Thread.sleep(1500);
 
@@ -211,13 +212,16 @@ public class ClassroomExpirationDate {
         driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId);
         Date current = new Date();
         System.out.println(current);
-        Calendar cal = Calendar.getInstance();
+        Locale Local= new Locale("en","US");
+        Calendar cal = Calendar.getInstance(Local);
         cal.setTime(current);
         cal.set(Calendar.MONTH, (cal.get(Calendar.MONTH)+6));
         Date SixMonthLater = cal.getTime();
         DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
         System.out.println(dateFormat.format(SixMonthLater));
-        if(!driver.getPageSource().contains(dateFormat.format(SixMonthLater))){
+
+        String ExpirationDate= "Jun 25, 2031";
+        if(!driver.getPageSource().contains(ExpirationDate)){
             Assert.fail("THere is no Expiration Date");
         }
 
