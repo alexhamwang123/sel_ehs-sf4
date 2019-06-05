@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="108d4bb(OnlineCourseEditContent)">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -346,7 +345,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559737045592" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559737516167" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -753,7 +752,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559736986014</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="108d4bb(OnlineCourseEditContent)">
+      <created>1559737181293</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1559737181293</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -862,9 +868,9 @@
     <MESSAGE value="All Pass Version(Last Tryout)" />
     <MESSAGE value="1 Jun Push" />
     <MESSAGE value="5 June New Version" />
-    <MESSAGE value="108d4bb(OnlineCourseEditContent)" />
     <MESSAGE value="5 Jun Push 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="5 Jun Push 2" />
+    <MESSAGE value="108d4bb(OnlineCourseEditContent)" />
+    <option name="LAST_COMMIT_MESSAGE" value="108d4bb(OnlineCourseEditContent)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java">
