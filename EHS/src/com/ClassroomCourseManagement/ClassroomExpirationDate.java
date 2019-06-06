@@ -111,7 +111,7 @@ public class ClassroomExpirationDate {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Search']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-
+        Thread.sleep(3500);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
@@ -169,7 +169,7 @@ public class ClassroomExpirationDate {
         // Search up class just made and enrolled in
 
         driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(courseId);
-        Thread.sleep(1500);
+        Thread.sleep(3500);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Go']"))));
         Thread.sleep(1000);

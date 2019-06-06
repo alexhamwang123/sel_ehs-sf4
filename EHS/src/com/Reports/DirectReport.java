@@ -12,7 +12,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=91)
+@Test
 public class DirectReport {
     public void DirectReport() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

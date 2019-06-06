@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=95)
+@Test
 public class EHSR_CourseCompletionStatistic {
 
 	public void EHSR_CourseCompletionStatistic() throws IOException, InterruptedException {
