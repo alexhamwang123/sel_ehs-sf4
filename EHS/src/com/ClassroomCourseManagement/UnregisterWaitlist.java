@@ -98,7 +98,7 @@ public class UnregisterWaitlist {
         Thread.sleep(3500);
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
         Thread.sleep(3500);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(3500);
         WebElement Logout= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click();", Logout);
@@ -117,13 +117,13 @@ public class UnregisterWaitlist {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
 
         Thread.sleep(2000);
         if(!driver.getPageSource().contains("Waitlisted")) {
             Assert.fail("the user did not get waitlisted for the course");
         }
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-danger']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
 
         Thread.sleep(3500);
         driver.quit();
