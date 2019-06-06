@@ -19,9 +19,12 @@
         <classes>
 
             <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
+            <class name="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass"/>
+            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursePrereqComplete"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursewithExpiration"/>
+            <class name="com.OnlineCourseManagement.CreateonlineCourseclass"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
-
-
             <class name="com.OnlineCourseManagement.NormalOnlineAndAddOnlineCourseManager"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>
