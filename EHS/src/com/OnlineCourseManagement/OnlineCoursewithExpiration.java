@@ -90,11 +90,11 @@ public class OnlineCoursewithExpiration {
         driver.findElement(By.xpath("//div[@class='padded form-horizontal mt-3']//div[5]//input[3]")).click();
         Thread.sleep(5000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
 
         Thread.sleep(3000);

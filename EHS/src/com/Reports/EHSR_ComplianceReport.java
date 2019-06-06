@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 
 //@Test
-@Test(priority=93)
+@Test
 public class EHSR_ComplianceReport {
 
 	public void EHSR_ComplianceReport() throws IOException, InterruptedException {

@@ -113,11 +113,11 @@ public class OnlineCoursePrereq {
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(4500);
+        Thread.sleep(5500);
         driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.id("detailCourseIsActive")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Courses")).click();

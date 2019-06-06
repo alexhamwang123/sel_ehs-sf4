@@ -173,7 +173,7 @@ public class CreateCertificate {
 
 		String courseId2 = generator.generate(10);
 		driver.findElement(By.name("detailCourseNo")).sendKeys(courseId2);
-		new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");//We have to make it via manually, just in case.
+		new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");//We have to make it via manually, just in case.
 		new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
 		new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
 		Thread.sleep(600);
@@ -232,13 +232,11 @@ public class CreateCertificate {
 //		Thread.sleep(4500);
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='srch_fld']")).sendKeys(courseId2);
-		Thread.sleep(4900);
-		driver.findElement(By.xpath("//input[@value='Go']")).click();
+		driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId2);
 		Thread.sleep(2600);
 		String currentWin = driver.getWindowHandle();
 		try {
-			driver.findElement(By.className("onelang")).click();
+			driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 		} catch (NoSuchElementException e) {
 			Assert.fail("something went wrong while creating and uploading the scorm course");
 		}
@@ -249,7 +247,7 @@ public class CreateCertificate {
 		}
 
 		Thread.sleep(500);
-		driver.findElement(By.className("crselink1")).click();
+		driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]")).click();
 		Thread.sleep(1500);
 //        robot.keyPress(KeyEvent.VK_META);
 //        robot.keyPress(KeyEvent.VK_W);
@@ -502,114 +500,112 @@ public class CreateCertificate {
 		Thread.sleep(800);
 		JavascriptExecutor js2 = (JavascriptExecutor)driver;
 		//WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
-		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'Reports')]"));
+		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
 		js2.executeScript("arguments[0].click()", myTrainingReport);
 		Thread.sleep(1000);
-		new Select(driver.findElement(By.name("selectedCourseType"))).selectByVisibleText("Online");
+		new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Online");
 		Thread.sleep(1600);
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = new Date();
-//        System.out.println("Local Date Now=" + dateFormat.format(date));
-		js.executeScript("document.getElementById('dateFrom').value='" + dateFormat.format(date) + "'");
-		Thread.sleep(500);
-		js.executeScript("document.getElementById('dateTo').value='" + dateFormat.format(date) + "'");
-		Thread.sleep(500);
-		driver.findElement(By.cssSelector("button[type='submit'][value='Go']")).click();//Go for Reports
-//		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click(); //Go for My History.
-		Thread.sleep(1200);
-		String courseIdTxt="";
-		String currentPageMax = "0";
-		String currentPageNo = "0";
-		int $k = 0;
-		String $kk = "0";
-		Boolean isBreak =false;
-		restartLoop:
-		while (true) {
-			java.util.List<WebElement> myResults, myResults3a;
-			myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));
-			if (myResults.size() > 0) {
-				for (int $p = 0; $p < myResults.size(); $p++) {
-					WebElement myResult;
-					myResult = (WebElement) myResults.get($p);
-					int $i =0;
-					myResults3a = driver.findElements(By.tagName("td"));
-					if (myResults3a.size() > 0) {
-						for (WebElement myResult3a : myResults3a) {
-							$i++;
-							String idstr3a = myResult3a.getText();
-                            System.out.println("idstr3a=" + idstr3a);
-							if (courseId2.equals(idstr3a)) {
-								$k = $i;
-								$kk = String.valueOf($k);
-								isBreak=true;
-								break;//We dont need to do anything.
-							}
-						}
-						restartLoop2:
-						while (true) {
+		JavascriptExecutor js10 = (JavascriptExecutor)driver;
+		java.util.List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/span"));
+		java.util.List<WebElement> list1 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[2]/div[2]/div/span"));
+		SimpleDateFormat ShowTodayOnlyFormat = new SimpleDateFormat("dd");
 
-							try {
-								WebElement pageMaxEle = driver.findElement(By.id("pageMax"));
-								currentPageMax = pageMaxEle.getAttribute("value");
-								WebElement pageNo = driver.findElement(By.id("pageNo"));
-								currentPageNo = pageNo.getAttribute("value");
-								currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
-								Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
-								if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isBreak) {
-									//we have to go to next.
-									WebElement inputTHREE = driver.findElement(By.id("pageNo"));
-									// erase any existing value (because clear does not send any events
-									for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
-										inputTHREE.sendKeys(Keys.BACK_SPACE);
-									}
-									inputTHREE.clear();
-									inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
-									//We have to next.
-									String strPagination = "pagination";
-									driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
-									continue restartLoop2;
-								}
-								else if(isBreak){
-									break;
-								}
-								else {
-									break;
-								}
-								// break;
+		Date DateofToday= new Date();
 
-							} catch (NoSuchElementException e) {
-								break;
-							}
-						}
-						if (isBreak){
-							break;
-						}
-					}
-				}
-			}
-			if (isBreak){
+		String TodayOnly= ShowTodayOnlyFormat.format(DateofToday);
+		if (TodayOnly.equals("01")){
+			TodayOnly="1";
+		}
+		if (TodayOnly.equals("02")){
+			TodayOnly="2";
+		}
+		if (TodayOnly.equals("03")){
+			TodayOnly="3";
+		}
+		if (TodayOnly.equals("04")){
+			TodayOnly="4";
+		}
+		if (TodayOnly.equals("05")){
+			TodayOnly="5";
+		}
+		if (TodayOnly.equals("06")){
+			TodayOnly="6";
+		}
+		if (TodayOnly.equals("07")){
+			TodayOnly="7";
+		}
+		if (TodayOnly.equals("08")){
+			TodayOnly="8";
+		}
+		if (TodayOnly.equals("09")){
+			TodayOnly="9";
+		}
+		System.out.println("TodayOnly is"+TodayOnly);
+
+
+		String Number= TodayOnly;
+
+		for(WebElement e : list) {
+			String dateofcanlendar = e.getAttribute("textContent");
+
+			System.out.println(dateofcanlendar);
+
+			if (dateofcanlendar.equals(Number)) {
+				System.out.println("Object Found Yeah Yeah Yeah");
+				js10.executeScript("arguments[0].click();", e);
 				break;
 			}
-			if (courseIdTxt.equals(courseId2)) {
-				System.out.println("courseIdTxt=" + courseIdTxt);
-				System.out.println("courseId2=" + courseId2);
-				System.out.println("Ｗe find the same course id here");
-				break;
-			} else {
-				Assert.fail("Should not be submitted here line 440");
+			else{System.out.println("Object Not Found ");
 			}
 		}
-		//let's download the certificate if we need it.
-		//let's save pdf file at first.
-		//GosavePDF()
-//		WebElement td4Element=
-		$kk = String.valueOf(Integer.valueOf($kk)%6);
-		$kk = String.valueOf(Integer.valueOf($kk)+1);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//table[@id=\"userRecord\"]/tbody/tr["+$kk+"]/td[4]/a")).click();
-		Thread.sleep(1100);
-		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();//
-		Thread.sleep(3000);
+
+		for(WebElement e : list1) {
+			String dateofcanlendar = e.getAttribute("textContent");
+
+			System.out.println(dateofcanlendar);
+
+			if (dateofcanlendar.equals(Number)) {
+				System.out.println("Object Found Yeah Yeah Yeah");
+				js10.executeScript("arguments[0].click();", e);
+				break;
+			}
+			else{System.out.println("Object Not Found ");
+			}
+		}
+
+
+		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go for Reports
+
+		try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
+			if(Last_Page.isDisplayed()){
+				Last_Page.click();
+			}
+		}
+		catch(Exception e){
+			System.out.println("There is no last page element");}
+
+//		driver.findElement(By.cssSelector("Input[type='button'][value='Go']")).click();//Go for My Historyå
+		Thread.sleep(1200);
+
+		java.util.List<WebElement>  myResults3a;
+		WebElement myResult = driver.findElement(By.xpath("//*[@id=\"my-training\"]/div[2]/div/div[1]/div[2]/table/tbody"));//Under The Reports
+//			myResults = driver.findElements(By.xpath("//div[@class=\"msg_head\"]/table/tbody/tr")); //Under My History
+
+		myResults3a = myResult.findElements(By.tagName("td"));
+
+		for (WebElement myResult3a : myResults3a) {
+
+			String idstr3a = myResult3a.getText();
+
+			if (idstr3a.contains(courseId2)) {
+				System.out.println("Course has been found the test is successful");
+
+			}
+		}
+		driver.quit();
+
 
 
 	}

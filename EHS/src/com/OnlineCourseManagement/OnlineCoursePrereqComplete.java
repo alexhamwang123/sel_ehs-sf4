@@ -166,7 +166,7 @@ public class OnlineCoursePrereqComplete {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 
-        Thread.sleep(4500);
+        Thread.sleep(5500);
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("question[4586]")).click();
@@ -263,6 +263,7 @@ public class OnlineCoursePrereqComplete {
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(4500);
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("LElp0HwjbQ");
