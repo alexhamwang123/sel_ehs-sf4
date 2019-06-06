@@ -16,7 +16,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 @Test
 public class Manager_CourseCompletionReport {
-    public void Manager_CourseCompletionReport() throws IOException, InterruptedException {
+    public void Manager_CourseCompletionReport1() throws IOException, InterruptedException {
 
 
         System.setProperty("webdriver.chrome.driver", "chromedriver");
