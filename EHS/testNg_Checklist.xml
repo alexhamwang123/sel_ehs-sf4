@@ -18,6 +18,8 @@
     <test name="EHS-OnlineandChecklist" preserve-order="true">
         <classes>
             <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
+            <class name="com.ChecklistManagement.ChecklistExpirationDate"/>
+            <class name="com.ChecklistManagement.ChecklistRegionVisibility"/>
             <class name="com.ChecklistManagement.NormalChecklistAndAddChecklistManager"/>
             <class name="com.ChecklistManagement.CompleteAndSubmitChecklist"/>
             <class name="com.ChecklistManagement.CreateChecklist"/>

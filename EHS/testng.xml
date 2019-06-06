@@ -19,6 +19,11 @@
 
             <class name="com.ClassroomCourseManagement.AddAtt"/>
             <class name="com.ClassroomCourseManagement.NormalClassroomAndAddClassroomCourseManager"/>
+            <class name="com.ClassroomCourseManagement.ClassroomExpirationDate"/>
+            <class name="com.ClassroomCourseManagement.ClassroomMultiSections"/>
+            <class name="com.ClassroomCourseManagement.ClassroomRegionVisibility"/>
+            <class name="com.ClassroomCourseManagement.ClassroomSiteVisibility"/>
+            <class name="com.ClassroomCourseManagement.ClassroomVisibilityCheckbox"/>
             <class name="com.ClassroomCourseManagement.AddWaitlist"/>
             <class name="com.ClassroomCourseManagement.CancelAndNotify"/>
             <class name="com.ClassroomCourseManagement.ClassroomPrereq_Duplicate"/>
