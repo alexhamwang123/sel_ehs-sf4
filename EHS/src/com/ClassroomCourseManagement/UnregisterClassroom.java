@@ -99,9 +99,9 @@ public class UnregisterClassroom {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-danger']")).click();
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(3500);
 
         driver.quit();
