@@ -274,10 +274,13 @@ public class NoShowNotPassedCompleted {
         }
         //Click the last page button
         Thread.sleep(1500);
-        WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
-        if(Last_Page.isDisplayed()){
-            Last_Page.click();
+        try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
+            if(Last_Page.isDisplayed()){
+                Last_Page.click();
+            }
         }
+        catch(Exception e){
+            System.out.println("There is no last page element");}
 
         Thread.sleep(3000);
         if (!driver.getPageSource().contains(courseId)) {

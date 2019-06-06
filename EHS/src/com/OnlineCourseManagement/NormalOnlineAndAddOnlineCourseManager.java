@@ -60,8 +60,9 @@ public class NormalOnlineAndAddOnlineCourseManager {
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click(); //CREATE online course
-        Thread.sleep(5500);
-        driver.findElement(By.id("selectBtnCreMaB")).click();
+        Thread.sleep(7500);
+        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
+        driver.findElement(By.id("selectBtnCreMaA")).click();
 //        driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='A']")).click();
         Thread.sleep(5000);
         driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr);
@@ -69,7 +70,8 @@ public class NormalOnlineAndAddOnlineCourseManager {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
         Thread.sleep(5000);
-        driver.findElement(By.id("selectBtnCreMaA")).click();
+        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
+        driver.findElement(By.id("selectBtnCreMaB")).click();
         Thread.sleep(2000);
 
  //       driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='B']")).click();
@@ -79,6 +81,7 @@ public class NormalOnlineAndAddOnlineCourseManager {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
         Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
         driver.findElement(By.id("selectBtnCreMaC")).click();
         Thread.sleep(3000);
         driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr2);

@@ -145,7 +145,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 
-		Thread.sleep(4500);
+		Thread.sleep(5500);
 		driver.findElement(By.id("welcomeShowRS")).click();
 		Thread.sleep(3500);
 		driver.findElement(By.name("question[4586]")).click();
