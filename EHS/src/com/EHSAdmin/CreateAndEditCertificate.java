@@ -5,7 +5,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -32,7 +34,7 @@ public class CreateAndEditCertificate {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+		WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -575,7 +577,12 @@ public class CreateAndEditCertificate {
 
 		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go for Reports
 
-        try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
+		//Click OK
+		Thread.sleep(1000);
+		WebElement OkBtn=  driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
+		js10.executeScript("arguments[0].click();",OkBtn);
+
+		try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
             if(Last_Page.isDisplayed()){
                 Last_Page.click();
             }

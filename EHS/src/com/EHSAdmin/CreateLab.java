@@ -28,7 +28,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=64)
+@Test
 public class CreateLab {
 
 	public void CreateLab() throws InterruptedException, IOException {

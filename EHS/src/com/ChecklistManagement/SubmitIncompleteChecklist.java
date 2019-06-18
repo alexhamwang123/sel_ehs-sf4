@@ -37,38 +37,9 @@ import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
 
-@Test(priority=0)
+@Test
+
 public class SubmitIncompleteChecklist {
-	public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
-
-		Comparator<IMethodInstance> comparator = new Comparator<IMethodInstance>() {
-			private int getLineNo(IMethodInstance mi) {
-				int result = 0;
-
-				String methodName = mi.getMethod().getConstructorOrMethod().getMethod().getName();
-				String className  = mi.getMethod().getConstructorOrMethod().getDeclaringClass().getCanonicalName();
-				ClassPool pool    = ClassPool.getDefault();
-
-				try {
-					CtClass cc        = pool.get(className);
-					CtMethod ctMethod = cc.getDeclaredMethod(methodName);
-					result            = ctMethod.getMethodInfo().getLineNumber(0);
-				} catch (NotFoundException e) {
-					e.printStackTrace();
-				}
-
-				return result;
-			}
-
-			public int compare(IMethodInstance m1, IMethodInstance m2) {
-				return getLineNo(m1) - getLineNo(m2);
-			}
-		};
-
-		IMethodInstance[] array = methods.toArray(new IMethodInstance[methods.size()]);
-		Arrays.sort(array, comparator);
-		return Arrays.asList(array);
-	}
 
 	public void SubmitIncompleteChecklist() throws IOException, InterruptedException {
 
@@ -77,7 +48,7 @@ public class SubmitIncompleteChecklist {
 		WebDriver driver = new ChromeDriver();
 		WebDriverWait Wait= new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -95,17 +66,19 @@ public class SubmitIncompleteChecklist {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		Thread.sleep(2000);
-
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='text']")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-checklist-006"); //checklist name on localhost
-
-
-		Thread.sleep(3000);
 
 
 
 		//Click on the Enroll button
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
 
 		Thread.sleep(3000);
@@ -132,18 +105,24 @@ public class SubmitIncompleteChecklist {
 		Thread.sleep(2000);
 
 	//Click Save
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='buttons d-inline-block float-right']//button[@class='btn btn-secondary'][contains(text(),'Save')]")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='buttons d-inline-block float-right']//button[@class='btn btn-secondary'][contains(text(),'Save')]")).click();
-		Thread.sleep(2000);
 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(2000);
         driver.close();
 		for(String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
-		Thread.sleep(2000);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
+		Thread.sleep(1000);
 		driver.findElement(By.partialLinkText("Courses")).click();
-		Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("kimi-checklist-006");//checklist name is on localhost
 
 

@@ -146,7 +146,7 @@ public class ChecklistRegionVisibility {
 
         // Click on Create User
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create User']"))));
-
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
 
 
@@ -155,15 +155,21 @@ public class ChecklistRegionVisibility {
         System.out.println("id is " + id);
 
         // Enter the First Name of the user that you wish to create
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("detailFirstName"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("detailFirstName")).sendKeys(id);
 
         // Enter the Last Name of the user that you wish to create
         driver.findElement(By.id("detailLastName")).sendKeys(id);
 
         // Click on 'Select' for Site
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("selectBtnSite"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("selectBtnSite")).click();
 
-        // Enter the search value as "SCV"
+        // Enter the search value as "SAC"
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("searchName"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("searchName")).sendKeys("SAC");
 
         // Click on Search
@@ -175,22 +181,15 @@ public class ChecklistRegionVisibility {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr[1]/td[1]/a")).click();
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
 
         // Enter the email of the user that you wish to create
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("detailEmailAddress"))));
+        Thread.sleep(1000);
         driver.findElement(By.name("detailEmailAddress")).sendKeys(id + "@trismax.com");
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
+        Thread.sleep(2000);
+
 
         JavascriptExecutor js1 = ((JavascriptExecutor) driver);
         js1.executeScript("window.scrollBy(0,850)", "");
@@ -211,7 +210,9 @@ public class ChecklistRegionVisibility {
         driver.findElement(By.id("password")).sendKeys(id);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(4500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("question[4586]")).click();
@@ -224,6 +225,7 @@ public class ChecklistRegionVisibility {
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
         driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
         driver.findElement(By.id("annContinue")).click();
@@ -232,7 +234,9 @@ public class ChecklistRegionVisibility {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 
         if(driver.getPageSource().contains(courseId)){

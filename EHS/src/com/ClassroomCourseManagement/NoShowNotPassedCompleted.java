@@ -6,7 +6,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -26,13 +28,13 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=25)
+@Test
 public class NoShowNotPassedCompleted {
     public void NoShowNotPassedCompleted() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
@@ -54,43 +56,58 @@ public class NoShowNotPassedCompleted {
 
 
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        js.executeScript("arguments[0].click();", courseAdmin);
+        js.executeScript("arguments[0].click()", courseAdmin);
 
-        Thread.sleep(1500);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"search_result\"]/div/a")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
-        Thread.sleep(3500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        System.out.println(courseId);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("detailCourseTitle")));
+        Thread.sleep(1000);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Regular");
-        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
+        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
+        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal & Refresh");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(5500);
-        driver.findElement(By.id("addClass")).click();
-        Thread.sleep(4500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//a[@id='addClass']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
+        Thread.sleep(1000);
         driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("selectBtnSite")));
+        Thread.sleep(1000);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(3500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("searchName")));
+        Thread.sleep(1000);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
-        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
         Thread.sleep(1500);
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
         driver.findElement(By.name("detailClassRoom")).sendKeys("room01");
-        driver.findElement(By.name("detailClassMaxSize")).sendKeys("1");
+        driver.findElement(By.name("detailClassMaxSize")).sendKeys("5");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd")).click();
         Thread.sleep(1500);
@@ -136,28 +153,50 @@ public class NoShowNotPassedCompleted {
         new Select(driver.findElement(By.name("detailClassStartHourSelect"))).selectByVisibleText("06");
         new Select(driver.findElement(By.name("detailClassStartMinuteSelect"))).selectByVisibleText("45");
         new Select(driver.findElement(By.id("detailClassDuration"))).selectByVisibleText("13");
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("TimeAdd_Save")));
+        Thread.sleep(1000);
         driver.findElement(By.id("TimeAdd_Save")).click();
-        Thread.sleep(3500);
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("saveClassCourse")));
+        Thread.sleep(1000);
         driver.findElement(By.id("saveClassCourse")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[1]")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[1]")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("selectTeamMemberButton1")));
+        Thread.sleep(1000);
         driver.findElement(By.id("selectTeamMemberButton1")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
+        Thread.sleep(1000);
         driver.findElement(By.name("badgeNo")).sendKeys(username);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(4500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"directreport\"]/tbody/tr/td[1]/a")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"directreport\"]/tbody/tr/td[1]/a")).click();
-        Thread.sleep(8000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("emailme")));
+        Thread.sleep(2000);
         driver.findElement(By.name("emailme")).click();
-        Thread.sleep(3500);
-        new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark No Show");
+
         Thread.sleep(3000);
+        new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark No Show");
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='OK']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
+
         WebElement lilok = driver.findElement(By.cssSelector("input[type='button'][value='ok']"));
         js.executeScript("arguments[0].click();", lilok);
         Thread.sleep(3000);
@@ -170,11 +209,15 @@ public class NoShowNotPassedCompleted {
         if(!noshow.equals("No Show")) {
             Assert.fail("user is not marked as No Show");
         }
-        Thread.sleep(3000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("emailme")));
+        Thread.sleep(2000);
         driver.findElement(By.name("emailme")).click();
         Thread.sleep(3500);
         new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark Not Passed");
         Thread.sleep(3000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='OK']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
         Thread.sleep(3500);
         WebElement lilok0 = driver.findElement(By.cssSelector("input[type='button'][value='ok']"));
@@ -192,10 +235,14 @@ public class NoShowNotPassedCompleted {
         }
         Thread.sleep(3500);
 
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("emailme")));
+        Thread.sleep(2000);
         driver.findElement(By.name("emailme")).click();
         Thread.sleep(3500);
         new Select(driver.findElement(By.name("selectStatus"))).selectByVisibleText("Mark Completed");
         Thread.sleep(3000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='OK']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='OK']")).click();
         Thread.sleep(3500);
         WebElement lilok1 = driver.findElement(By.cssSelector("input[type='button'][value='ok']"));
@@ -224,7 +271,7 @@ public class NoShowNotPassedCompleted {
         List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[3]/div[2]/div[2]/div/span"));
         SimpleDateFormat ShowTodayOnlyFormat = new SimpleDateFormat("dd");
 
-        Date DateofToday= new Date();
+        int DateofToday= calendar.get(Calendar.DAY_OF_MONTH);
 
         String TodayOnly= ShowTodayOnlyFormat.format(DateofToday);
         if (TodayOnly.equals("01")){
@@ -274,7 +321,7 @@ public class NoShowNotPassedCompleted {
         }
         //Click the last page button
         Thread.sleep(1500);
-        try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
+        try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a"));
             if(Last_Page.isDisplayed()){
                 Last_Page.click();
             }
@@ -286,6 +333,8 @@ public class NoShowNotPassedCompleted {
         if (!driver.getPageSource().contains(courseId)) {
             Assert.fail("the course did not show up as completed in my history");
         }
+
+
 
         WebElement MytrainingReport=driver.findElement(By.xpath("//*[@id=\"navbarSupportedContent\"]/ul/li[6]/div/a[1]"));
         js.executeScript("arguments[0].click();", MytrainingReport);
@@ -343,8 +392,23 @@ public class NoShowNotPassedCompleted {
             }
         }
         Thread.sleep(1000);
-         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();
-         Thread.sleep(1500);
+        // Click Go Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]")).click();
+
+        try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a"));
+            if(Last_Page.isDisplayed()){
+                Last_Page.click();
+            }
+        }
+        catch(Exception e){
+            System.out.println("There is no last page element");}
+
         if (!driver.getPageSource().contains(courseId)) {
             Assert.fail("the course does not show as completed in my training report");
         }

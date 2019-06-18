@@ -149,23 +149,23 @@ public class ParitiallyCompleteOnlineScormClass {
         driver.findElement(By.id("btn_Scorm_UploadFile")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("langIsViewable"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.id("langIsViewable")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("detailCourseIsActive"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.id("detailCourseIsActive")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
@@ -175,8 +175,8 @@ public class ParitiallyCompleteOnlineScormClass {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
-
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         Thread.sleep(1500);
         String currentWin = driver.getWindowHandle();

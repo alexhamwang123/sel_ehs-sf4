@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import com.ClassroomCourseManagement.AddAtt;
+import com.Reports.Manager_CourseCompletionReport;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,11 +22,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
-@Test(dependsOnGroups = "ehs1",priority=11)
+@Test
 public class SaveAndCancel {
 
-	public static void main(String[] args) throws IOException {
-		
+	public void SaveAndCancel() throws IOException, InterruptedException {
+
         //System.setProperty("webdriver.chrome.driver", "/Users/bhavesh/Downloads/chromedriver-1.exe");
 		
 //		WebDriver driver = new ChromeDriver();

@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-@Test(priority=8)
+@Test
 //@Test(dependsOnGroups = "ehs1",priority=8)
 public class ChecklistButtonSource {
     public void ChecklistButtonSourceScript() throws IOException, InterruptedException {
@@ -55,9 +55,15 @@ public class ChecklistButtonSource {
         js.executeScript("arguments[0].click();", courseAdmin);
 
         Thread.sleep(1500);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Management"))));
+        Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Checklist Management")).click();
         Thread.sleep(1500);
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+
         Thread.sleep(3500);
         String courseId = generator.generate(10);
         System.out.println(courseId);
@@ -66,55 +72,76 @@ public class ChecklistButtonSource {
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//div[@class='center']//input[@id='saveBtn']")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='center']//input[@id='saveBtn']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='center']//input[@id='saveBtn']")).click();
 
-        Thread.sleep(10000);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
+
         driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
         driver.findElement(By.id("detailCheckListHeader")).sendKeys("test checklist header");
         driver.findElement(By.id("detailCheckListDescription")).sendKeys("test checklist description");
         driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
         driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.id("createContent")).click();
-        Thread.sleep(3000);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='row1']//input[@value='Create']")));
 
-        Thread.sleep(3000);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("createContent"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("createContent")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='row1']//input[@value='Create']")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"detailChecklistContentSaveAs\"]")).click();
         WebElement CreateButton = driver.findElement(By.xpath("//span[@class='row1']//input[@value='Create']"));
         js.executeScript("arguments[0].click();", CreateButton);
-        Thread.sleep(5000);
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("saveBtn")).click();
-        Thread.sleep(1500);
-        Wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("fancyConfirm_ok")));
+
+
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("fancyConfirm_ok")));
+        Thread.sleep(1000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(3000);
+
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3000);
+
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(3000);
+
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(3000);
+
       //  Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
       //  driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
       //  Thread.sleep(3000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("langIsViewable")));
+        Thread.sleep(1000);
         driver.findElement(By.id("langIsViewable")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("detailIsActive")));
+        Thread.sleep(1000);
         driver.findElement(By.id("detailIsActive")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
        // Thread.sleep(8000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
@@ -134,11 +161,15 @@ public class ChecklistButtonSource {
         }
 
         Thread.sleep(500);
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"content-main\"]/div/div[3]/div/form/button")));
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"content-main\"]/div/div[3]/div/form/button")).click();
         Thread.sleep(1500);
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]")));
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]")).click();
         Thread.sleep(2500);
        // driver.findElement(By.cssSelector("#ch-body > div > div > div.card-header > div > button.btn.btn-primary")).click();

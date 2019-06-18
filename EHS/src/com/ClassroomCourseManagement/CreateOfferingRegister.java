@@ -3,7 +3,9 @@ package com.ClassroomCourseManagement;
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,13 +21,13 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=21)
+@Test
 public class CreateOfferingRegister {
     public void CreateOfferingRegister() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -48,36 +50,52 @@ public class CreateOfferingRegister {
 
         Thread.sleep(4500);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        js.executeScript("arguments[0].click();", courseAdmin);
+        js.executeScript("arguments[0].click()", courseAdmin);
 
-        Thread.sleep(1500);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"search_result\"]/div/a")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
-        Thread.sleep(3500);
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("detailCourseTitle")));
+        Thread.sleep(1000);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
-        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
+        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal & Refresh");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(2500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
-        Thread.sleep(2500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
+        Thread.sleep(1000);
         driver.findElement(By.id("site_radio")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("selectBtnSite")));
+        Thread.sleep(1000);
         driver.findElement(By.id("selectBtnSite")).click();
-        Thread.sleep(3500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("searchName")));
+        Thread.sleep(1000);
         driver.findElement(By.id("searchName")).sendKeys("SCV");
-        Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-        Thread.sleep(3000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//table[@id=\"Deptdirectreport\"]/tbody/tr/td[1]/a")).click();
         Thread.sleep(1500);
         String building = generator.generate(15);
@@ -93,33 +111,34 @@ public class CreateOfferingRegister {
         new Select(driver.findElement(By.id("detailClassDuration"))).selectByVisibleText("13");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd_Save")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("TimeAdd")).click();
-        Thread.sleep(1500);
-        js.executeScript("document.getElementById('TimeAdd_datepicker').value='Dec 26,2030'");
-        new Select(driver.findElement(By.name("detailClassStartHourSelect"))).selectByVisibleText("06");
-        new Select(driver.findElement(By.name("detailClassStartMinuteSelect"))).selectByVisibleText("45");
-        new Select(driver.findElement(By.id("detailClassDuration"))).selectByVisibleText("13");
-        Thread.sleep(1500);
-        driver.findElement(By.id("TimeAdd_Save")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("saveClassCourse")));
+        Thread.sleep(1000);
         driver.findElement(By.id("saveClassCourse")).click();
-        Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
+        Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         //driver.findElement(By.name("searchButton")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr[1]//td[5]//button[1]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
+
+
         try {
-            WebElement cancel = driver.findElement(By.xpath("//button[@class='btn btn-sm btn-danger']"));
+            WebElement cancel = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"));
         } catch (NoSuchElementException e) {
             Assert.fail("was not able to enroll in the course");
         }
         Thread.sleep(3500);
-        //driver.quit();
+
+        driver.quit();
 
 
 

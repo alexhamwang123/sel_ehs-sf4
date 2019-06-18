@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=81)
+@Test
 public class CreateNormalUser {
 
 	public void CreateNormalUser() throws IOException, InterruptedException {

@@ -189,6 +189,6 @@ public class CreateAdmin {
         js.executeScript("arguments[0].click();",Contact);
 
         driver.quit();
-//New Version
+
     }
 }

@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -17,13 +19,13 @@ import java.util.concurrent.TimeUnit;
 
 
 //@Test
-@Test(priority=3)
+@Test
 public class NormalOnlineAndAddOnlineCourseManager {
     public void AddManagerOnlineCourse() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
@@ -56,38 +58,77 @@ public class NormalOnlineAndAddOnlineCourseManager {
         String testCourseMgr1 = prop.getProperty("testCourseMgr1");
         String testCourseMgr2 = prop.getProperty("testCourseMgr2");
 
-        Thread.sleep(1500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click(); //CREATE online course
-        Thread.sleep(7500);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
-        driver.findElement(By.id("selectBtnCreMaA")).click();
-//        driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='A']")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr);
-        driver.findElement(By.cssSelector("input[value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
-        driver.findElement(By.id("selectBtnCreMaB")).click();
-        Thread.sleep(2000);
 
- //       driver.findElement(By.cssSelector("input[value='Add Course Manager'][onclick*='B']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr1);
-        driver.findElement(By.cssSelector("input[value='Search']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
-        Thread.sleep(5000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
-        driver.findElement(By.id("selectBtnCreMaC")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr2);
-        Thread.sleep(3000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("selectBtnCreMaA"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("selectBtnCreMaA")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("badgeNo"))));
+        Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr);
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[value='Search']"))));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[value='Search']")).click();
-        Thread.sleep(1500);
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("selectBtnCreMaB"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("selectBtnCreMaB")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("badgeNo"))));
+        Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr1);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[value='Search']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[value='Search']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div[1]/input")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("selectBtnCreMaC"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("selectBtnCreMaC")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("badgeNo"))));
+        Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys(testCourseMgr2);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[value='Search']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[value='Search']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
         Thread.sleep(3500);
         driver.quit();

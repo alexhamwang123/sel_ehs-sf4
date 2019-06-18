@@ -30,7 +30,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=61)
+@Test
 public class CreateAnnouncement {
 
 	public void CreateAnnouncement1() throws IOException, InterruptedException {
@@ -120,6 +120,7 @@ public class CreateAnnouncement {
 		
 		 //Clicking on Announcement Category: Welcome
 		 new Select(driver.findElement(By.name("detailAnnouncementStyle"))).selectByVisibleText("Welcome");
+		Thread.sleep(1000);
 		driver.findElement(By.name("detailAnnouncementRemarks")).sendKeys("this is the announcement remarks!");
 		 //Clicking on Announcement Category: Risk Survey Incomplete
 		 //driver.findElement(By.cssSelector("input[type='radio'][value='RS_Incomplete']")).click();
@@ -143,8 +144,8 @@ public class CreateAnnouncement {
 		driver.findElement(By.name("detailAnnouncementTitle")).sendKeys(title);
 		Thread.sleep(1500);
 		//Entering the Announcement Content
-		driver.findElement(By.name("detailAnnouncementContent")).sendKeys("this is the announcement content !!");
-		
+		driver.findElement(By.xpath("//*[@id=\"mceu_23\"]")).click();
+		((ChromeDriver) driver).executeScript("tinyMCE.activeEditor.setContent('this is a test only ')");
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -182,10 +183,12 @@ public class CreateAnnouncement {
 		driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
         Thread.sleep(4000);
         driver.findElement(By.className("editAction")).click();
-        Thread.sleep(3500);
+        Thread.sleep(7500);
         System.out.println("checkpoint 1");
-        driver.findElement(By.name("detailAnnouncementContent")).clear();
-        driver.findElement(By.name("detailAnnouncementContent")).sendKeys("im editing the announcement content !!");
+		driver.findElement(By.xpath("//iframe[@id='ann-content_ifr']")).click();
+
+		//driver.findElement(By.xpath("//body[@id='tinymce']")).clear();
+		((ChromeDriver) driver).executeScript("tinyMCE.activeEditor.setContent('im editing the announcement content !!')");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[value='Save']")).click();
         Thread.sleep(1500);
@@ -201,7 +204,7 @@ public class CreateAnnouncement {
         Thread.sleep(2000);
         driver.findElement(By.className("editAction")).click();
         Thread.sleep(1500);
-        if(!driver.findElement(By.name("detailAnnouncementContent")).getAttribute("innerHTML").equals("im editing the announcement content !!")) {
+        if(!driver.findElement(By.name("detailAnnouncementContent")).getAttribute("innerHTML").contains("im editing the announcement content !!")) {
             Assert.fail("something went wrong with editing the announcement content");
         }
 

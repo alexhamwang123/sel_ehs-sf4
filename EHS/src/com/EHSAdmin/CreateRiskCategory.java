@@ -27,7 +27,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=65)
+@Test
 public class CreateRiskCategory {
 
 	public void CreateRiskCategory() throws IOException, InterruptedException {

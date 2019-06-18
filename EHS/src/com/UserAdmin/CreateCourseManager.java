@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=81)
+@Test
 public class CreateCourseManager {
 
 	public void CreateCourseManager() throws IOException, InterruptedException {

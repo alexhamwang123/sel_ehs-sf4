@@ -17,7 +17,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=21)
+@Test
 public class CreateOfferingRegisterWithMgrUserAndEmail {
     public void CreateOfferingRegisterWithMgrUserAndEmail() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

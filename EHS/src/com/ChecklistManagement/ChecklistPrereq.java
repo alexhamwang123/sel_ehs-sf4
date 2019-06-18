@@ -23,13 +23,13 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
-@Test(priority=9)
+@Test
 public class ChecklistPrereq {
     public void ChecklistPrereq() throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         WebDriverWait Wait= new WebDriverWait(driver,60);
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -59,8 +59,13 @@ public class ChecklistPrereq {
         js.executeScript("arguments[0].click();", courseAdmin);
 
         Thread.sleep(1500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Management"))));
+        Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Checklist Management")).click();
         Thread.sleep(1500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(3500);
         String courseId = generator.generate(11);
@@ -70,10 +75,13 @@ public class ChecklistPrereq {
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         new Select(driver.findElement(By.id("detailCourseFulfillType"))).selectByVisibleText("Normal");
         new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("EHS-1000 - EHS Essentials");
-        Thread.sleep(3000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("saveBtn")).click();
-        Thread.sleep(3000);
+
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='Edit']")));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
@@ -82,7 +90,11 @@ public class ChecklistPrereq {
         driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
         driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
         Thread.sleep(3000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("createContent")));
         Thread.sleep(1500);
         driver.findElement(By.id("createContent")).click();

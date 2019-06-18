@@ -27,7 +27,7 @@ package com.OnlineCourseManagement;
         import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=46)
+@Test
 public class FinalDisabledCourseIfNeed {
 
     public void FinalDisabledCourseIfNeed() throws InterruptedException, IOException, AWTException {

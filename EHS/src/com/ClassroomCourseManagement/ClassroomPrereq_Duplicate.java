@@ -24,7 +24,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=18)
+@Test
 public class ClassroomPrereq_Duplicate {
     public void ClassroomPrereq() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

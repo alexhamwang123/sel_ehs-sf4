@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 //@Test
-@Test(priority=71)
+@Test
 public class EHS_ContactUs {
 
 	public void EHS_ContactUs1() throws IOException {

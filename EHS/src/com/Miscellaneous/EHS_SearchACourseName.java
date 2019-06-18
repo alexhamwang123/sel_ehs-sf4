@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=72)
+@Test
 public class EHS_SearchACourseName {
 
 	public void EHS_SearchACourse() throws IOException {

@@ -25,7 +25,7 @@ import javassist.NotFoundException;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
-@Test(priority=1)
+@Test
 //@Test(groups="ehs" ,priority=1)
 public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor {
     public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
@@ -86,21 +86,30 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
-
-        driver.findElement(By.partialLinkText("Checklist Management")).click();
-        Thread.sleep(4500);
-
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Checklist Management")));
         Thread.sleep(1500);
+        driver.findElement(By.partialLinkText("Checklist Management")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"search_result\"]/div/button")));
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("selectBtnCreMaA")));
+        Thread.sleep(1500);
         driver.findElement(By.id("selectBtnCreMaA")).click();
         Thread.sleep(1500);
 
+        Wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
+        Thread.sleep(1500);
         driver.findElement(By.name("badgeNo")).sendKeys(username);
 
+        Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1500);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
         Thread.sleep(1500);
 
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")));
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
         Thread.sleep(3500);
 

@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -21,13 +23,13 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 
 //@Test
-@Test(priority=37)
+@Test
 public class OnlineCourseEditContent {
     public void OnlineCourseEditContent() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -55,8 +57,9 @@ public class OnlineCourseEditContent {
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Online Course Management")).click();
         Thread.sleep(4000);
 
         Actions actions = new Actions(driver);
@@ -70,11 +73,17 @@ public class OnlineCourseEditContent {
         Thread.sleep(3500);
         driver.findElement(By.name("detailCourseNo")).clear();
         driver.findElement(By.name("detailCourseNo")).sendKeys("online testing kevin");
-        Thread.sleep(4000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(4500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Edit']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@value='Edit']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("detailCourseTitle"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("detailCourseTitle")).clear();
         driver.findElement(By.id("detailCourseTitle")).sendKeys("online testing kevin");
         Thread.sleep(4000);
@@ -84,22 +93,32 @@ public class OnlineCourseEditContent {
         String description = generator.generate(30);
         driver.findElement(By.name("detailCourseDescription")).clear();
         driver.findElement(By.name("detailCourseDescription")).sendKeys("editing this with a randomly generated description: " + description);
-        Thread.sleep(5000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(8000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@value='Save']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit Content and Quiz']"))));
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit Content and Quiz']")).click();
-        Thread.sleep(5500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Create Page']")).click();
-        Thread.sleep(5000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Create Page']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@value='Create Page']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"question_sortable\"]/tr/td[3]/button")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"3\"]/img")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"2\"]/img"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"2\"]/img")).click();
         Thread.sleep(4500);
         driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
         Thread.sleep(4500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
         Thread.sleep(5000);
-        System.out.println("checkpoint1");
+        System.out.println("checkpoint10");
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(5500);
         driver.findElement(By.id("addQBtn")).click();
@@ -112,22 +131,24 @@ public class OnlineCourseEditContent {
         driver.findElement(By.name("courseQuizSourcePage")).sendKeys("1");
         Thread.sleep(3500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
-        Thread.sleep(4000);
-        System.out.println("checkpoint2");
-
+        System.out.println("Checkpoint 1");
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("fancyConfirm_ok"))));
+        Thread.sleep(1000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(4000);
-        System.out.println("checkpoint3");
+        Thread.sleep(1000);
 
+        System.out.println("Checkpoint 2");
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@value='Back']")).click();
+        System.out.println("Checkpoint 3");
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@value='Back']")).click();
 
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(4500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@value='Back']")).click();
         driver.quit();
 
 

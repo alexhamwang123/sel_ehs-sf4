@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-@Test(priority=10)
+@Test
 //@Test(dependsOnGroups = "ehs1",priority=10)
 public class ChecklistPrereqComplete_Duplicate {
     public void ChecklistPrereqComplete() throws IOException, InterruptedException {

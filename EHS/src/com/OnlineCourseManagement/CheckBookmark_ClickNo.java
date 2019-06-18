@@ -17,7 +17,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -26,7 +28,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=32)
+@Test
 public class CheckBookmark_ClickNo {
 
 	public void CheckBookmark_ClickNo() throws IOException, InterruptedException {
@@ -34,7 +36,7 @@ public class CheckBookmark_ClickNo {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
@@ -58,11 +60,13 @@ public class CheckBookmark_ClickNo {
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-		Thread.sleep(4500);
 
-		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
-		 
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
+		Thread.sleep(1000);
 		 driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("EHS-1000");
 		 
 	//	 driver.findElement(By.name("searchButton")).click();

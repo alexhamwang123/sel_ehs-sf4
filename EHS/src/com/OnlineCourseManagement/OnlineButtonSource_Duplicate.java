@@ -22,7 +22,7 @@ import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
-@Test(priority=39)
+@Test
 public class OnlineButtonSource_Duplicate {
     public void OnlinePrereqComplete() throws InterruptedException, IOException, AWTException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");

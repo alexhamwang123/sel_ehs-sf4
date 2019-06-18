@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=86)
+@Test
 public class CreateUserSupport {
 
 	public void CreateUserSupport() throws IOException, InterruptedException {

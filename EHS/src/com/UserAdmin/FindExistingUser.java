@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=87)
+@Test
 public class FindExistingUser {
 
 	public void FindExistingUser() throws IOException, InterruptedException {

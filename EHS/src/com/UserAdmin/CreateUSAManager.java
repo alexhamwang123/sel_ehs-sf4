@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 //@Test
-@Test(priority=85)
+@Test
 public class CreateUSAManager {
 
 	public void CreateUSAManager() throws IOException, InterruptedException {

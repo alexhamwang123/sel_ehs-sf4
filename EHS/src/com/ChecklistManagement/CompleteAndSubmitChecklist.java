@@ -17,12 +17,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
-@Test(priority=4)
-//@Test(dependsOnGroups = "ehs",priority=4)
+@Test
 public class CompleteAndSubmitChecklist {
 
 	public void CompleteAndSubmitChecklist() throws IOException, InterruptedException {
@@ -30,7 +31,7 @@ public class CompleteAndSubmitChecklist {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait = new WebDriverWait(driver, 30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -48,16 +49,19 @@ public class CompleteAndSubmitChecklist {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		Thread.sleep(4500);
-        driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Courses")).click();
 
+        //Search the Course
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@type='text']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-checklist-006"); //checklist name on localhost
 
 
-        Thread.sleep(3000);
-
-
-
         //Click on the Enroll button
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
 
         Thread.sleep(3000);
@@ -76,23 +80,27 @@ public class CompleteAndSubmitChecklist {
 
 
         //Clicking the Radio Button
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[1]/div/div[3]/label[2]/input"))));
+        Thread.sleep(1000);
+
         driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[1]/div/div[3]/label[2]/input")).click();
 
  		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[2]/div/div[3]/label[1]/input")).click();
 
 
-        Thread.sleep(2000);
-
         //Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
         //driver.findElement(By.xpath("//input[@value='Y']")).click(); // Cat
 
-        Thread.sleep(2000);
-
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[1]/div/button[3]"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[1]/div/button[3]")).click();
-        Thread.sleep(2000);
 
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]")).click();
-        Thread.sleep(2000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]")).click();
         Thread.sleep(2000);
 
