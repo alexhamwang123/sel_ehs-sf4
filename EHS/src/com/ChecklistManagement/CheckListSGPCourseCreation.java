@@ -70,9 +70,9 @@ public class CheckListSGPCourseCreation {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
         Thread.sleep(1000);
         driver.findElement(By.id("saveBtn")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
-        Thread.sleep(2000);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
@@ -107,15 +107,15 @@ public class CheckListSGPCourseCreation {
         driver.findElement(By.id("fancyConfirm_ok")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
         //driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
@@ -218,15 +218,15 @@ public class CheckListSGPCourseCreation {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[href*='selectCourseManager']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
-        Thread.sleep(2500);
+        Thread.sleep(3500);
 
 
 
 
         //Click on the 'Save' button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveJC"))));
-        Thread.sleep(2000);
-        driver.findElement(By.id("saveJC")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"saveJC\"]"))));
+        Thread.sleep(4500);
+        driver.findElement(By.xpath("//*[@id=\"saveJC\"]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("addCourse"))));
         Thread.sleep(1000);
@@ -313,10 +313,8 @@ public class CheckListSGPCourseCreation {
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-
+        Thread.sleep(4000);
         //Click English
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]"))));
-        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[1]/div/button[3]"))));
@@ -496,6 +494,8 @@ public class CheckListSGPCourseCreation {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("welcomeShowRS")));
         Thread.sleep(1500);
         driver.findElement(By.id("welcomeShowRS")).click();
+        Thread.sleep(4500);
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("question[4586]")));
         Thread.sleep(1500);
         driver.findElement(By.name("question[4586]")).click();
         driver.findElement(By.name("question[1361]")).click();

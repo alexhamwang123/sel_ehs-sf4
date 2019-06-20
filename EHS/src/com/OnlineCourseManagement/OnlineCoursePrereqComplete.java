@@ -185,12 +185,16 @@ public class OnlineCoursePrereqComplete {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
+        Thread.sleep(5000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("welcomeShowRS")).click();
-        Thread.sleep(1500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("question[4586]"))));
+        Thread.sleep(2000);
         driver.findElement(By.name("question[4586]")).click();
+
         driver.findElement(By.name("question[1361]")).click();
         driver.findElement(By.name("question[4562]")).click();
         driver.findElement(By.name("question[4225]")).click();

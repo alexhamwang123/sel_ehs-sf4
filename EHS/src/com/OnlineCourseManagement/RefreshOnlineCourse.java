@@ -152,8 +152,9 @@ public class RefreshOnlineCourse {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='langIsViewable']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@id='langIsViewable']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='detailCourseIsActive']"))));

@@ -139,12 +139,14 @@ public class PrereqDecreaseChecklist {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
-        Thread.sleep(1500);
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@title='View Detail']"))));
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
         //driver.findElement(By.xpath("viewglass")).click();
-        //Thread.sleep(3000);
+        Thread.sleep(5000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"))));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(1500);
 
@@ -364,9 +366,9 @@ public class PrereqDecreaseChecklist {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId1);
-
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         String working = "";
         try {
             working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");

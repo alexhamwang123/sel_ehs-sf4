@@ -396,9 +396,7 @@ public class NoShowNotPassedCompleted {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"))));
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]")).click();
 
         try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a"));

@@ -236,11 +236,13 @@ public class ClassroomRegionVisibility {
         driver.findElement(By.id("password")).sendKeys(id);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(4500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("welcomeShowRS")).click();
-        Thread.sleep(3500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("question[4586]"))));
+        Thread.sleep(2500);
         driver.findElement(By.name("question[4586]")).click();
         driver.findElement(By.name("question[1361]")).click();
         driver.findElement(By.name("question[4562]")).click();
