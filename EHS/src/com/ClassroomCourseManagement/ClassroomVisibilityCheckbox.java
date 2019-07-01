@@ -166,7 +166,7 @@ public class ClassroomVisibilityCheckbox {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[@id='addClass']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         driver.switchTo().defaultContent();
@@ -339,6 +339,8 @@ public class ClassroomVisibilityCheckbox {
         if(driver.getPageSource().contains(courseId)){
             Assert.fail("The user can see the course whose checkbox of visibility is not checked(RC is Not Assigned)");
         }
+
+        driver.quit();
     }
 
     }

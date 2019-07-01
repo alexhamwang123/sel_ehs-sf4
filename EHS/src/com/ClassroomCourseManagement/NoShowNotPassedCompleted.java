@@ -158,11 +158,11 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(1000);
         driver.findElement(By.id("TimeAdd_Save")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("saveClassCourse")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.id("saveClassCourse")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[1]")));
@@ -376,6 +376,7 @@ public class NoShowNotPassedCompleted {
             TodayOnly1="9";
         }
         String Number1= TodayOnly1;
+        System.out.println(Number1);
 
 
         for(WebElement e : list1) {
@@ -394,10 +395,8 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(1000);
         // Click Go Btn
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]")).click();
 
         try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a"));
             if(Last_Page.isDisplayed()){

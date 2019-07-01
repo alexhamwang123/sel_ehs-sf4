@@ -174,14 +174,14 @@ public class ClassroomExpirationDate {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Go']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[@class='editAction']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@class='editAction']")).click();
 
         //manage attendees
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[@class='btn field-tip btn-success btn-xs']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@class='btn field-tip btn-success btn-xs']")).click();
 
 

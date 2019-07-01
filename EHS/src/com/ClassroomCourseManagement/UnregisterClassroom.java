@@ -35,6 +35,7 @@ public class UnregisterClassroom {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         String normuser = prop.getProperty("testnormuser");
@@ -73,9 +74,9 @@ public class UnregisterClassroom {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
@@ -112,9 +113,9 @@ public class UnregisterClassroom {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("saveClassCourse")));
         Thread.sleep(1000);
         driver.findElement(By.id("saveClassCourse")).click();
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
 
 

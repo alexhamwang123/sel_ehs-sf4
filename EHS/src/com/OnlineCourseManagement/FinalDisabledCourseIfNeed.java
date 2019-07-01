@@ -46,7 +46,7 @@ public class FinalDisabledCourseIfNeed {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
-
+/*
         Robot robot = new Robot();
         robot.setAutoDelay(250);
         robot.keyPress(KeyEvent.VK_META);
@@ -439,7 +439,7 @@ public class FinalDisabledCourseIfNeed {
 
         driver.findElement(By.name("submit")).click();
         Thread.sleep(500);
-
+*/
         driver.quit();
 
         }

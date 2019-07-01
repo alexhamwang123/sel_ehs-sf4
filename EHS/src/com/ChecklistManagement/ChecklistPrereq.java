@@ -119,15 +119,15 @@ public class ChecklistPrereq {
         driver.findElement(By.id("fancyConfirm_ok")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
        // Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
@@ -146,14 +146,17 @@ public class ChecklistPrereq {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
+        Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Courses")).click();
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         System.out.println(courseId);
        // Wait.until(ExpectedConditions.elementToBeClickable(By.name("searchButton")));
        // driver.findElement(By.name("searchButton")).click();
        // Thread.sleep(15500);
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")));
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
         Thread.sleep(5500);
         String working = "";

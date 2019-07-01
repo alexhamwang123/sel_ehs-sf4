@@ -159,7 +159,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-
+		Thread.sleep(4500);
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
 		Thread.sleep(1000);
 		driver.findElement(By.id("welcomeShowRS")).click();
@@ -222,7 +222,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 //		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
 
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
 		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
 		driver.findElement(By.xpath("//input[@value='10039']")).click(); // Cat

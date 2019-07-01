@@ -48,7 +48,7 @@ public class FinalDisabledCourseIfNeed {
 
         driver.get(urladdr);
 
-        Robot robot = new Robot();
+  /*      Robot robot = new Robot();
         robot.setAutoDelay(250);
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_SHIFT);
@@ -428,6 +428,7 @@ public class FinalDisabledCourseIfNeed {
 
         driver.findElement(By.name("submit")).click();
         Thread.sleep(1500);
+        */
         driver.quit();
 
     }

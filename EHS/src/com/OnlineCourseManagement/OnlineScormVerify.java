@@ -403,7 +403,6 @@ public class OnlineScormVerify {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go
         Thread.sleep(4000);
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]")).click();//Click OK
         String courseIdText = "";
         String currentPageMax = "0";
         String currentPageNo = "0";

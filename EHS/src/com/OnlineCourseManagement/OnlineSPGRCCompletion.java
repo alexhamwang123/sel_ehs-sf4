@@ -22,10 +22,10 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-
 @Test
-public class OnlineSGPCourseCreation {
-    public void OnlineSGPCourseCreation() throws IOException, InterruptedException{
+public class OnlineSPGRCCompletion {
+    public void OnlineSPGRCCompletion() throws IOException, InterruptedException{
+
 
         int number;
         int integer;
@@ -183,35 +183,6 @@ public class OnlineSGPCourseCreation {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@value='Save']")).click();
-
-        //CLick Online Course Management
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
-        Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Online Course Management")).click();
-
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(courseId);
-
-        //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
-
-        //Click Go Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
-        Thread.sleep(3000);
-
-        if(driver.getPageSource().contains(courseId)){
-            System.out.println("SPG Course is searchable");
-        }
-        else{
-            Assert.fail("SPG Course is not searchable");
-        }
-
 
         //Create A new RC to add the SPG Online Course
         //Clicking on EHS Admin
@@ -474,157 +445,7 @@ public class OnlineSGPCourseCreation {
         //Click Close Btn
         driver.findElement(By.xpath("//*[@id=\"fancybox-close\"]")).click();
 
-        //Create new user and  Log in the newly Created User
-        WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
-        js.executeScript("arguments[0].click();",ele1);
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        // Click on Create User
-        driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
-
-        Thread.sleep(3500);
-        //自動會有detailBadgeNumber ，也就是我們要用的bdgeeNumber ID
-        String id = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
-        System.out.println("id is " + id);
-
-        // Enter the First Name of the user that you wish to create
-        driver.findElement(By.id("detailFirstName")).sendKeys(id);
-
-        // Enter the Last Name of the user that you wish to create
-        driver.findElement(By.id("detailLastName")).sendKeys(id);
-
-        // Click on 'Select' for Site
-        driver.findElement(By.id("selectBtnSite")).click();
-
-        // Enter the search value as "SCV"
-        driver.findElement(By.id("searchName")).sendKeys("SCV");
-
-        // Click on Search
-        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
-
-        // Click on 'SCV' from the search results
-        driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        // Enter the email of the user that you wish to create
-        driver.findElement(By.name("detailEmailAddress")).sendKeys(id + "@trismax.com");
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        js1.executeScript("window.scrollBy(0,850)", "");
-
-        driver.findElement(By.xpath("//label[contains(text(),'System Admin')]")).click();
-        // Click on 'Save' button
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
-        Thread.sleep(2000);
-
-        WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
-        js.executeScript("arguments[0].click()",Logout);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
-
-        driver.findElement(By.id("username")).sendKeys(id);
-        driver.findElement(By.id("password")).sendKeys(id);
-
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(4500);
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("welcomeShowRS")));
-        Thread.sleep(1500);
-        driver.findElement(By.id("welcomeShowRS")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.name("question[4586]")).click();
-        driver.findElement(By.name("question[1361]")).click();
-        driver.findElement(By.name("question[4562]")).click();
-        driver.findElement(By.name("question[4225]")).click();
-        driver.findElement(By.name("question[4127]")).click();
-        driver.findElement(By.name("question[4193]")).click();
-        driver.findElement(By.name("question[145]")).click();
-        driver.findElement(By.name("question[1164]")).click();
-        driver.findElement(By.name("question[4676]")).click();
-        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("annContinue")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Home')]"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();
-        Thread.sleep(3000);
-        if(!driver.getPageSource().contains(title)){
-            System.out.println("SPG Course RC is searchable in Home");
-        }
-        else{
-            Assert.fail("SPG Course RC is not searchable in Home");
-        }
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
-        Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
-        Thread.sleep(3000);
-        if(!driver.getPageSource().contains(courseId)){
-            System.out.println("SPG Course for new User is searchable in Courses");
-        }
-        else{
-            Assert.fail("SPG Course for new User is not searchable in Courses");
-        }
-
-        //Go to Course Admin
-        WebElement courseAdmin01 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
-        JavascriptExecutor js003 = (JavascriptExecutor)driver;
-        js003.executeScript("arguments[0].click();", courseAdmin01);
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
-        Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Online Course Management")).click();
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(courseId);
-
-        //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
-
-        //Click Go btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
-
-        if(!driver.getPageSource().contains(courseId)){
-            System.out.println("SPG Course for new User is searchable in Online Course Management");
-        }
-        else{
-            Assert.fail("SPG Course for new User is not searchable in Online Course Management");
-        }
-
         driver.quit();
-
     }
 
 

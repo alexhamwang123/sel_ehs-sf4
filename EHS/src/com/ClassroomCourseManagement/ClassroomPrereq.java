@@ -276,8 +276,6 @@ public class ClassroomPrereq {
         driver.findElement(By.xpath("//input[@value='10039']")).click(); // Cat
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"tc-okay\"]")).click();
-        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"c-body\"]/div/div[2]/div[2]/button")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();

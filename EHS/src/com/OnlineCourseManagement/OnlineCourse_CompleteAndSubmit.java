@@ -219,13 +219,14 @@ public class OnlineCourse_CompleteAndSubmit {
 		Thread.sleep(2000);
 
 		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"c-quiz\"]/ol/li/div[2]/label[4]/input"))));
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id=\"c-quiz\"]/ol/li/div[2]/label[4]/input")).click(); // Cat
+		Thread.sleep(3000);
 
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"tc-okay\"]")).click();
-		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"c-body\"]/div/div[2]/div[2]/button")).click();
-		Thread.sleep(2000);
+
+		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(2000);

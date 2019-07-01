@@ -226,6 +226,8 @@ public class ClassroomSiteVisibility {
         driver.findElement(By.id("password")).sendKeys(id);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(4500);
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]"))));
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]")).click();

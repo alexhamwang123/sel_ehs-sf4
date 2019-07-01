@@ -76,9 +76,9 @@ public class CancelAndNotify {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
@@ -119,7 +119,7 @@ public class CancelAndNotify {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
-
+        Thread.sleep(3000);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='cancel']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='cancel']")).click();

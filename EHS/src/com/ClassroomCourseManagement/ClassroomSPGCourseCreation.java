@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -20,12 +19,10 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
-
-
 @Test
+public class ClassroomSPGCourseCreation {
+    public void ClassroomSPGCourseCreation() throws IOException, InterruptedException {
 
-public class UnregisterWaitlist {
-    public void UnregisterWaitlist() throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -33,16 +30,18 @@ public class UnregisterWaitlist {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
+
         FileInputStream inStream=new FileInputStream(file);
         Properties prop=new Properties();
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
+
         driver.get(urladdr);
+
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         String normuser = prop.getProperty("testnormuser");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
-
         driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
 
@@ -62,13 +61,22 @@ public class UnregisterWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
         String courseId = generator.generate(10);
+        System.out.println(courseId);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='detailIsSPG']")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@id='detailIsSPG']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='isSPG']")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@id='isSPG']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("detailCourseTitle")));
         Thread.sleep(1000);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
-        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Refresh");
+        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal & Refresh");
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
         driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
@@ -116,59 +124,24 @@ public class UnregisterWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.id("saveClassCourse")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
+        //Click Classroom Course Management
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='active list-group-item list-group-item-action']")));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Courses")).click();
+        driver.findElement(By.xpath("//a[@class='active list-group-item list-group-item-action']")).click();
 
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='search[is_spg]']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
+        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(courseId);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        //Clilck Go Btn
+        driver.findElement(By.xpath("//input[@class='btn btn-primary']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")));
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
-
-        Thread.sleep(2000);
-        WebElement Logout= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Logout')]"));
-        js.executeScript("arguments[0].click();", Logout);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-
-        driver.findElement(By.id("username")).sendKeys(normuser);
-        driver.findElement(By.id("password")).sendKeys(normuser);
-
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(1500);
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Courses")).click();
-
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='View Detail']")));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@title='View Detail']")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")));
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
-
-        Thread.sleep(4000);
-        if(!driver.getPageSource().contains("Waitlisted")) {
-            Assert.fail("the user did not get waitlisted for the course");
-        }
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
-
-        Thread.sleep(3500);
         driver.quit();
+
     }
-}
+
+
+    }

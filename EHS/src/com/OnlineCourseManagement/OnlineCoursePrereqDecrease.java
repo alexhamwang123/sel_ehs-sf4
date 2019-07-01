@@ -110,12 +110,11 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.id("TimeAdd_Save")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("saveClassCourse")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         //Go to courses tab and enroll in course just made
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1800);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
-        Thread.sleep(1800);
 //        driver.findElement(By.name("searchButton")).click();
 //        driver.findElement(By.xpath("//input[@value='Go']")).click();
         Thread.sleep(4200);
@@ -266,7 +265,7 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.id("TimeAdd_Save")).click();
         Thread.sleep(1500);
         driver.findElement(By.id("saveClassCourse")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
 
 
 

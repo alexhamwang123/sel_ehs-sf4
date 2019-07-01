@@ -288,10 +288,6 @@ public class ChecklistPrereqComplete {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@value='10039']")).click(); // Cat
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"tc-okay\"]"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"tc-okay\"]")).click();
-
         Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"c-body\"]/div/div[2]/div[2]/button"))));
         Thread.sleep(2000);

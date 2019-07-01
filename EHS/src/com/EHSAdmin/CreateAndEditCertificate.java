@@ -175,7 +175,9 @@ public class CreateAndEditCertificate {
 		new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
 		Thread.sleep(1600);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-		Thread.sleep(6500);
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 		Thread.sleep(3000);
 		String courseTitle = generator.generate(10);

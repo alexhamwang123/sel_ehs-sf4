@@ -85,7 +85,7 @@ public class PrereqDecreaseChecklist {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[@id='addClass']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         driver.switchTo().defaultContent();
@@ -228,7 +228,7 @@ public class PrereqDecreaseChecklist {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[@id='addClass']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         driver.switchTo().defaultContent();
@@ -295,7 +295,7 @@ public class PrereqDecreaseChecklist {
         driver.findElement(By.id("saveBtn")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(3000);
 
@@ -320,7 +320,7 @@ public class PrereqDecreaseChecklist {
         driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));

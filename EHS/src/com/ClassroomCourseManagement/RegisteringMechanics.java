@@ -36,6 +36,7 @@ public class RegisteringMechanics {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         String normuser = prop.getProperty("testnormuser");
@@ -116,7 +117,7 @@ public class RegisteringMechanics {
         driver.findElement(By.id("saveClassCourse")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
@@ -128,7 +129,7 @@ public class RegisteringMechanics {
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']"))));
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
 
         Thread.sleep(1500);
@@ -145,7 +146,7 @@ public class RegisteringMechanics {
         Thread.sleep(1500);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
@@ -157,7 +158,7 @@ public class RegisteringMechanics {
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']"))));
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
 
         Thread.sleep(2000);
@@ -177,7 +178,7 @@ public class RegisteringMechanics {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
@@ -189,7 +190,7 @@ public class RegisteringMechanics {
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']"))));
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
 
         Thread.sleep(2000);
@@ -208,7 +209,7 @@ public class RegisteringMechanics {
         Thread.sleep(22500);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
@@ -220,7 +221,7 @@ public class RegisteringMechanics {
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn btn-sm btn-danger']"))));
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//button[@class='btn btn-sm btn-danger']")).click();
         Thread.sleep(1500);
         System.out.println("Check Point 4");
@@ -236,7 +237,7 @@ public class RegisteringMechanics {
             Thread.sleep(1500);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));

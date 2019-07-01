@@ -114,6 +114,8 @@ public class OnlineCoursePrereq {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"2\"]/img")).click();
         driver.findElement(By.id("courseContentTitle")).sendKeys("this is the title");
+        Thread.sleep(1000);
+
         driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("fancyConfirm_ok"))));
@@ -125,8 +127,9 @@ public class OnlineCoursePrereq {
         driver.findElement(By.id("addQBtn")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']"))));
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
+
         Thread.sleep(1500);
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");
         driver.findElement(By.id("courseQuizAnswer2")).sendKeys("no, this is the correct answer");

@@ -75,9 +75,9 @@ public class EmailAtt {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
@@ -114,9 +114,9 @@ public class EmailAtt {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("saveClassCourse")));
         Thread.sleep(1000);
         driver.findElement(By.id("saveClassCourse")).click();
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='attendList']")));
@@ -181,7 +181,7 @@ public class EmailAtt {
 //        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
 //        Thread.sleep(1500);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"chkall\"]")));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"chkall\"]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("emailUserButton")));
@@ -197,7 +197,7 @@ public class EmailAtt {
 
         WebElement send = driver.findElement(By.xpath("//*[@id=\"emailcontent\"]/div[2]/input[1]"));
         js.executeScript("arguments[0].click();", send);
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"fancybox-inner\"]/div/center/input[1]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"fancybox-inner\"]/div/center/input[1]")).click();

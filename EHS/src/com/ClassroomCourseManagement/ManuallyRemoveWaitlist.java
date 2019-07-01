@@ -38,7 +38,7 @@ public class ManuallyRemoveWaitlist {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
-
+        driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -76,9 +76,9 @@ public class ManuallyRemoveWaitlist {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
@@ -125,7 +125,7 @@ public class ManuallyRemoveWaitlist {
         driver.findElement(By.cssSelector("a[href*='attendList']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
@@ -143,7 +143,7 @@ public class ManuallyRemoveWaitlist {
 
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
@@ -160,7 +160,7 @@ public class ManuallyRemoveWaitlist {
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));

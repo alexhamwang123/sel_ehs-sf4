@@ -123,7 +123,7 @@ public class CreateonlineCourseclass {
         driver.findElement(By.id("addQBtn")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
         Thread.sleep(1500);
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");

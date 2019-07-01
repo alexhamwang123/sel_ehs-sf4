@@ -78,7 +78,7 @@ public class ChecklistButtonSource {
         driver.findElement(By.xpath("//div[@class='center']//input[@id='saveBtn']")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
 
@@ -104,7 +104,7 @@ public class ChecklistButtonSource {
         js.executeScript("arguments[0].click();", CreateButton);
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
 
@@ -118,15 +118,15 @@ public class ChecklistButtonSource {
         driver.findElement(By.id("fancyConfirm_ok")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
       //  Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Back']")));
@@ -145,7 +145,7 @@ public class ChecklistButtonSource {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
        // Thread.sleep(8000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
        // Thread.sleep(5000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value='Create Button Sources']")));

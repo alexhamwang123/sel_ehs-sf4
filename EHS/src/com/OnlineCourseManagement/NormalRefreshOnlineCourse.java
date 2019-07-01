@@ -121,7 +121,7 @@ public class NormalRefreshOnlineCourse {
         Thread.sleep(1000);
         driver.findElement(By.id("addQBtn")).click();
 
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
         Thread.sleep(1500);
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");

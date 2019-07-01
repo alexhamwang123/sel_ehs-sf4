@@ -41,7 +41,7 @@ public class ClassroomPrereq_Duplicate {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
-
+/*
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
@@ -138,6 +138,8 @@ public class ClassroomPrereq_Duplicate {
         }
 
         Thread.sleep(2000);
+
+        */
         driver.quit();
 
 

@@ -94,7 +94,7 @@ public class ClassroomRegionVisibility {
 
         driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("region_radio"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.id("region_radio")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("selectBtnRegion"))));

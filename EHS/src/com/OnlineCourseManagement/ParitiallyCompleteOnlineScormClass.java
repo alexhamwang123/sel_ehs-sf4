@@ -164,6 +164,8 @@ public class ParitiallyCompleteOnlineScormClass {
         Thread.sleep(2000);
         driver.findElement(By.id("langIsViewable")).click();
 
+        Thread.sleep(2000);
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("detailCourseIsActive"))));
         Thread.sleep(2000);
         driver.findElement(By.id("detailCourseIsActive")).click();
