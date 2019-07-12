@@ -73,7 +73,7 @@ public class ClassroomRegionVisibility {
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
 
         String courseId = generator.generate(10);
-        System.out.println("completed prerequisite course: " + courseId);
+        System.out.println("course: " + courseId);
 
         //Fill in Fields
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
@@ -87,7 +87,7 @@ public class ClassroomRegionVisibility {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
+        Thread.sleep(3000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[@id='addClass']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();

@@ -293,7 +293,7 @@ public class OnlineCoursePrereqComplete {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn float-right']")).click();
         Thread.sleep(2000);
-        WebElement OKBtn=driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
+        WebElement OKBtn=driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
         js2.executeScript("arguments[0].click();",OKBtn);
         Thread.sleep(2000);
         //After completion of prerequisite, try "1bLkHwGarU" again.

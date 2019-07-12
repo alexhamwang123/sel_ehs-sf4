@@ -398,8 +398,8 @@ public class OnlineSPGRCCompletion {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys(courseId);
 
-        if(!driver.getPageSource().contains(courseId)){
-            System.out.println("SPG Course is  searchable in Course Completion Reports");
+        if(driver.getPageSource().contains(courseId)){
+            System.out.println("SPG Course is searchable in Course Completion Reports");
         }
         else{
             Assert.fail("SPG Course is not searchable in Course Completion Reports");

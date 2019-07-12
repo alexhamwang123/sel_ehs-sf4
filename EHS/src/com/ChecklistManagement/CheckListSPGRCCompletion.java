@@ -293,13 +293,13 @@ public class CheckListSPGRCCompletion {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[1]/div/button[3]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button")).click();
 
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
@@ -338,11 +338,11 @@ public class CheckListSPGRCCompletion {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys(courseId);
 
-        if(!driver.getPageSource().contains(courseId)){
-            System.out.println("SPG Course is not searchable in Checklist Completion Reports");
+        if(driver.getPageSource().contains(courseId)){
+            System.out.println("SPG Course is searchable in Checklist Completion Reports");
         }
         else{
-            Assert.fail("SPG Course is  searchable in Checklist Completion Reports");
+            Assert.fail("SPG Course is not searchable in Checklist Completion Reports");
         }
         driver.findElement(By.xpath("//*[@id=\"__BVID__13___BV_modal_header_\"]/button")).click();
         Thread.sleep(1000);

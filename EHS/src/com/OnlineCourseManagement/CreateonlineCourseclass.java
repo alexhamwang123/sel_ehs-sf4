@@ -123,7 +123,7 @@ public class CreateonlineCourseclass {
         driver.findElement(By.id("addQBtn")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']"))));
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
         Thread.sleep(1500);
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");
@@ -144,16 +144,17 @@ public class CreateonlineCourseclass {
 
         System.out.println("Checkpoint 2");
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
         System.out.println("Checkpoint 3");
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@value='Back']")).click();
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@value='Back']")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='langIsViewable']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@id='langIsViewable']")).click();

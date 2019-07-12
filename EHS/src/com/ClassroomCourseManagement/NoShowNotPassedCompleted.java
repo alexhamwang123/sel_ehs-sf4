@@ -84,7 +84,7 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
@@ -118,6 +118,7 @@ public class NoShowNotPassedCompleted {
 
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         day --;
+        System.out.println("day is"+day);
         String sday = "";
         if(day < 10) {
             sday = "0" + day;
@@ -274,6 +275,7 @@ public class NoShowNotPassedCompleted {
         int DateofToday= calendar.get(Calendar.DAY_OF_MONTH);
 
         String TodayOnly= ShowTodayOnlyFormat.format(DateofToday);
+
         if (TodayOnly.equals("01")){
             TodayOnly="1";
         }

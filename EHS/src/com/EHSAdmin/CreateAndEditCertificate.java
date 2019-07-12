@@ -580,9 +580,7 @@ public class CreateAndEditCertificate {
 		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go for Reports
 
 		//Click OK
-		Thread.sleep(1000);
-		WebElement OkBtn=  driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
-		js10.executeScript("arguments[0].click();",OkBtn);
+		Thread.sleep(2000);
 
 		try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a/span[1]"));
             if(Last_Page.isDisplayed()){

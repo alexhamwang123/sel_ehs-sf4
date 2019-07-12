@@ -188,7 +188,6 @@ public class ClassroomPrereq {
 
 
         Thread.sleep(4500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
         Thread.sleep(1000);
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
@@ -282,7 +281,7 @@ public class ClassroomPrereq {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn float-right']")).click();
         Thread.sleep(2000);
-        WebElement Exit=driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
+        WebElement Exit=driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
         js2.executeScript("arguments[0].click();",Exit);
         Thread.sleep(2000);
         //After completion of prerequisite, try "1bLkHwGarU" again.

@@ -159,12 +159,12 @@ public class ChecklistExpirationDate {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[3]/button[3]")).click();
 
-		WebElement ButtonOK = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[2]"));
+		WebElement ButtonOK = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", ButtonOK);
 
 		Thread.sleep(1000);
-		WebElement ButtonExit = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button"));
+		WebElement ButtonExit = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button"));
 		js.executeScript("arguments[0].click();", ButtonExit);
 
 		for(String winHandle : driver.getWindowHandles()) {

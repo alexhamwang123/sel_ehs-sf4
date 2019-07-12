@@ -14,7 +14,7 @@
             <class name="com.ChecklistManagement.ChecklistPrereqComplete"/>
             <class name="com.ChecklistManagement.ChecklistPrereqComplete_Duplicate"/>
             <class name="com.ChecklistManagement.ChecklistRegionVisibility"/>
-            <class name="com.ChecklistManagement.CheckListSGPCourseCreation"/>
+            <class name="com.ChecklistManagement.CheckListSPGCourseCreation"/>
             <class name="com.ClassroomCourseManagement.ClassroomExpirationDate"/>
             <class name="com.ClassroomCourseManagement.ClassroomMultiSections"/>
             <class name="com.ClassroomCourseManagement.ClassroomPrereq"/>
@@ -82,7 +82,7 @@
             <class name="com.OnlineCourseManagement.OnlineCoursewithExpiration"/>
             <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
             <class name="com.OnlineCourseManagement.OnlineScormVerify"/>
-            <class name="com.OnlineCourseManagement.OnlineSGPCourseCreation"/>
+            <class name="com.OnlineCourseManagement.OnlineSPGCourseCreation"/>
             <class name="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass"/>
             <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
             <class name="com.ChecklistManagement.RefreshChecklist"/>
