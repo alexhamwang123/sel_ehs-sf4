@@ -35,7 +35,7 @@ public class EHSR_ComplianceReport {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -57,28 +57,31 @@ public class EHSR_ComplianceReport {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(3500);
 		//Click on Compliance Report 
-		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/a[5]")).click();
+		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[5]")).click();
 		Thread.sleep(3500);
 		//Click on Select for choosing a Risk Category
-		driver.findElement(By.id("jobClassNo")).click();
+		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/button")).click();
 		Thread.sleep(4500);
 		//Choose a risk category, say 2
 		// AHA 4028f6bb21ec62fe0121ec6425eb0001
-		driver.findElement(By.id("99")).click();
+		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("R2zMeXamXC");
 //		driver.findElement(By.id("c76d705254ea0780e87d67ee8d609000")).click();
 		Thread.sleep(1500);
 		//Click the Ok button
-		driver.findElement(By.xpath("//*[@id=\"course_result\"]/center/input")).click();
+		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"__BVID__10___BV_modal_footer_\"]/button")).click();
+
 		
 		try {
-			Thread.sleep(4500);
+			Thread.sleep(2500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		//Click on Go to generate the report 
-		WebElement Go=driver.findElement(By.id("Button_Go"));
+		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/button[1]"));
 		js.executeScript("arguments[0].click();",Go);
 		Thread.sleep(3500);
 		driver.quit();

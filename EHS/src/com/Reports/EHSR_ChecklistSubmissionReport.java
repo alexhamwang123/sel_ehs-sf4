@@ -57,21 +57,27 @@ public class EHSR_ChecklistSubmissionReport {
 
 		Thread.sleep(1500);
 		//Click on Checklist Submission Report 
-		driver.findElement(By.xpath("//a[contains(text(),'Checklist Submission Report')]")).click();
+		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[3]")).click();
 		Thread.sleep(1500);
+		//Select a Date Range. Click on Date From
+		WebElement From= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[1]/input"));
+		js.executeScript("arguments[0].value='01/01/2019'",From);
+		Thread.sleep(500);
+		WebElement To=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[2]/div[1]/input"));
+
+		js.executeScript("arguments[0].value='01/07/2019'",To);
+
 		//Click on Select button that appears in front of Checklist 
-		driver.findElement(By.id("selectCourseDisabled")).click();
+		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/button")).click();
 		Thread.sleep(1500);
 		//Choose a course. Here, we choose 8787 Document Management \
 		//Checklist-001_OLD3-2-2012 Home Office Checklist
-		driver.findElement(By.id("srch_fld")).sendKeys("EHS-3600");
+		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("EHS-3600");
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"applesearch\"]/div/div[6]/input")).click();
-		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"86\"]")).click();
+		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
 		Thread.sleep(1500);
 		//Click on the Ok button
-		driver.findElement(By.xpath("//*[@id=\"course_result\"]/center/input")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__10___BV_modal_footer_\"]/button")).click();
 		
 		try {
 			Thread.sleep(3500);
@@ -79,9 +85,10 @@ public class EHSR_ChecklistSubmissionReport {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
+
 		//Click on Go button to display the Report 
-		WebElement Go=driver.findElement(By.id("Button_Go"));
+		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/button[1]"));
 		js.executeScript("arguments[0].click();",Go);
 		Thread.sleep(3500);
 

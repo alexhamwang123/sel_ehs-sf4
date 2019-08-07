@@ -58,13 +58,17 @@ public class EHSR_CourseCompletionStatistic {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
 		//Click on Course Completion Statistic 
-		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/a[2]")).click();
+		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[2]")).click();
 		Thread.sleep(4500);
-		//Select Date
-        driver.findElement(By.id("dateFrom")).sendKeys("04/01/2019");
-        driver.findElement(By.id("dateTo")).sendKeys("04/21/2019");
+        //Select a Date Range. Click on Date From
+        WebElement From= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/div[1]/div[1]/input"));
+        js.executeScript("arguments[0].value='01/01/2019'",From);
+        Thread.sleep(500);
+        WebElement To=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/div[2]/div[1]/input"));
+
+        js.executeScript("arguments[0].value='01/04/2019'",To);
 		//Click on Go to display the complete Course Completion Statistic
-        WebElement Go=driver.findElement(By.id("Button_Go"));
+        WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[13]/div/button[1]"));
         js.executeScript("arguments[0].click();",Go);
 		
 		Thread.sleep(1500);

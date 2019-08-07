@@ -41,7 +41,7 @@ public class OnlineCoursePrereq {
 
         driver.get(urladdr);
 
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -157,8 +157,9 @@ public class OnlineCoursePrereq {
         driver.findElement(By.xpath("//input[@value='Back']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Back']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@value='Back']")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='langIsViewable']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@id='langIsViewable']")).click();

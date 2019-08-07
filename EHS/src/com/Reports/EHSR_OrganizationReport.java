@@ -56,10 +56,10 @@ public class EHSR_OrganizationReport {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
 		//Click on Organization Report 
-		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/a[6]")).click();
+		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[6]")).click();
 		Thread.sleep(1500);
 		//Click on Select for selecting a Manager
-		driver.findElement(By.xpath("//*[@id=\"searchSection\"]/div[1]/div/div/span/a[1]/input")).click();
+		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/button")).click();
 		
 		try {
 			Thread.sleep(1500);
@@ -69,13 +69,13 @@ public class EHSR_OrganizationReport {
 		}
 		
 		//Enter the First Name of the manager you wish to find and select 
-		driver.findElement(By.name("badgeNo")).sendKeys("X00001572");
+		driver.findElement(By.id("criteriaBadge")).sendKeys("X00001572");
 		
 		//Click on Search 
-		driver.findElement(By.xpath("//*[@id=\"selectManagerForm\"]/center/input[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__11___BV_modal_footer_\"]/div/button")).click();
 		Thread.sleep(2500);
 		//Click on the search result 
-		driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[2]/table/tbody/tr[1]/td[1]")).click();
 		
 		try {
 			Thread.sleep(4000);
@@ -85,16 +85,18 @@ public class EHSR_OrganizationReport {
 		}
 
         //Select RC
-        driver.findElement(By.id("jobClassNo")).click();
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/button")).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("99")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"course_result\"]/center/input")).click();
-        Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("R2zMeXamXC");
+		Thread.sleep(1500);
+		//Click the Ok button
+		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//*[@id=\"__BVID__13___BV_modal_footer_\"]/button")).click();
 
 
 		//Click on Go
-		WebElement Go=driver.findElement(By.id("Button_Go"));
+		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[5]/div/button[1]"));
 		js.executeScript("arguments[0].click();",Go);
 		
 		try {
@@ -104,8 +106,6 @@ public class EHSR_OrganizationReport {
 			e.printStackTrace();
 		}
 
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(2000);
 
         driver.quit();
 

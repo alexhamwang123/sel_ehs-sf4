@@ -50,9 +50,9 @@ public class EHSR_EvaluationCompletionReport {
         Thread.sleep(500);
         driver.findElement(By.xpath("//a[contains(text(),'Evaluation Completion Report')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@id='Button_Go']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[5]/div/button[1]"))));
         Thread.sleep(500);
-        driver.findElement(By.xpath("//button[@id='Button_Go']")).click();
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[5]/div/button[1]")).click();
         Thread.sleep(4500);
 
         driver.quit();

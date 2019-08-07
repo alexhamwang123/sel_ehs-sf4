@@ -17,7 +17,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -31,7 +33,7 @@ public class EHSR_CourseCompletionReport {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //driver.manage().window().maximize();
@@ -57,17 +59,38 @@ public class EHSR_CourseCompletionReport {
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
 		//Select a Date Range. Click on Date From
-        WebElement From= driver.findElement(By.id("dateFrom"));
+        WebElement From= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/div[1]/div[1]/input"));
 		js.executeScript("arguments[0].value='01/01/2019'",From);
 		Thread.sleep(500);
-		WebElement To=driver.findElement(By.id("dateTo"));
+		WebElement To=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/div[2]/div[1]/input"));
 
 		js.executeScript("arguments[0].value='01/04/2019'",To);
 
 		Thread.sleep(3500);
-		
+        //Click Course-Select Btn
+        Thread.sleep(2000);
+        WebElement CourseBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/label/input"));
+        js.executeScript("arguments[0].click();",CourseBtn);
+
+        Thread.sleep(1000);
+
+        WebElement SelectBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/div/button"));
+        js.executeScript("arguments[0].click();",SelectBtn);
+
+        //Search the Course
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).click();
+        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("FfPtZ8gYcv");
+
+        Thread.sleep(1000);
+        new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("Y");
+
+
+        //Click Btn Go
+        driver.findElement(By.xpath("//*[@id=\"__BVID__41___BV_modal_footer_\"]/button")).click();
 		//Click on Go
-        WebElement Go=driver.findElement(By.id("Button_Go"));
+        WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[15]/div/button[1]"));
         js.executeScript("arguments[0].click();",Go);
 
 		Thread.sleep(3500);
