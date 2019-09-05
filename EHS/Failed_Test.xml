@@ -3,20 +3,11 @@
 <suite name="Default Suite">
     <test name="sel_ehs-sf4">
         <classes>
-            <class name="com.OnlineCourseManagement.OnlineSPGCourseCreation"/>
-            <class name="com.ClassroomCourseManagement.ClassroomExpirationDate"/>
-            <class name="com.OnlineCourseManagement.OnlineCoursePrereq"/>
-            <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
-            <class name="com.OnlineCourseManagement.OnlineCoursePrereqComplete"/>
-            <class name="com.OnlineCourseManagement.NormalOnlineAndAddOnlineCourseManager"/>
-            <class name="com.OnlineCourseManagement.OnlineCourseEditContent"/>
-            <class name="com.ChecklistManagement.CheckListSPGCourseCreation"/>
-            <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
-            <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
-            <class name="com.OnlineCourseManagement.OnlineCoursewithExpiration"/>
-            <class name="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass"/>
+            <class name="com.EHSAdmin.CreateAndEditCertificate"/>
+            <class name="com.EHSAdmin.CreateCertificate"/>
+            <class name="com.ClassroomCourseManagement.CreateFullOffering"/>
+            <class name="com.ClassroomCourseManagement.NoShowNotPassedCompleted"/>
             <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
-            <class name="com.ChecklistManagement.RefreshChecklist"/>
         </classes>
     </test> <!-- sel_ehs-sf4 -->
 </suite> <!-- Default Suite -->

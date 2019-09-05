@@ -51,6 +51,7 @@ public class OnlineCourseSPGVisibility {
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click();", courseAdmin);
 
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Online Course Management")).click();
@@ -230,7 +231,6 @@ public class OnlineCourseSPGVisibility {
         driver.findElement(By.name("question[1361]")).click();
         driver.findElement(By.name("question[4562]")).click();
         driver.findElement(By.name("question[4225]")).click();
-        driver.findElement(By.name("question[4127]")).click();
         driver.findElement(By.name("question[4193]")).click();
         driver.findElement(By.name("question[145]")).click();
         driver.findElement(By.name("question[1164]")).click();

@@ -69,6 +69,7 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
         String courseId = generator.generate(10);
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
+        System.out.println(courseId);
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("detailCourseTitle")));
         Thread.sleep(1000);
@@ -88,7 +89,7 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.id("site_radio")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("selectBtnSite")));
@@ -166,9 +167,9 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[2]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[2]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("selectTeamMemberButton1")));
         Thread.sleep(1000);
@@ -269,68 +270,8 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(3500);
 
         JavascriptExecutor js1 = (JavascriptExecutor)driver;
-        List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[3]/div[2]/div[2]/div/span"));
-        SimpleDateFormat ShowTodayOnlyFormat = new SimpleDateFormat("dd");
 
-        int DateofToday= calendar.get(Calendar.DAY_OF_MONTH);
-
-        String TodayOnly= ShowTodayOnlyFormat.format(DateofToday);
-
-        if (TodayOnly.equals("01")){
-            TodayOnly="1";
-        }
-        if (TodayOnly.equals("02")){
-            TodayOnly="2";
-        }
-        if (TodayOnly.equals("03")){
-            TodayOnly="3";
-        }
-        if (TodayOnly.equals("04")){
-            TodayOnly="4";
-        }
-        if (TodayOnly.equals("05")){
-            TodayOnly="5";
-        }
-        if (TodayOnly.equals("06")){
-            TodayOnly="6";
-        }
-        if (TodayOnly.equals("07")){
-            TodayOnly="7";
-        }
-        if (TodayOnly.equals("08")){
-            TodayOnly="8";
-        }
-        if (TodayOnly.equals("09")){
-            TodayOnly="9";
-        }
-        System.out.println("TodayOnly is"+TodayOnly);
-
-
-        String Number= TodayOnly;
-
-        for(WebElement e : list) {
-            String dateofcanlendar = e.getAttribute("textContent");
-
-            System.out.println(dateofcanlendar);
-
-                  if (dateofcanlendar.equals(Number)) {
-               System.out.println("Object Found Yeah Yeah Yeah");
-                js1.executeScript("arguments[0].click();", e);
-                break;
-            }
-            else{System.out.println("Object Not Found ");
-            }
-        }
-        //Click the last page button
-        Thread.sleep(1500);
-        try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a"));
-            if(Last_Page.isDisplayed()){
-                Last_Page.click();
-            }
-        }
-        catch(Exception e){
-            System.out.println("There is no last page element");}
-
+        driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId);
         Thread.sleep(3000);
         if (!driver.getPageSource().contains(courseId)) {
             Assert.fail("the course did not show up as completed in my history");
@@ -347,8 +288,10 @@ public class NoShowNotPassedCompleted {
 
         List<WebElement> list1 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/span"));
 
-
-        String TodayOnly1= ShowTodayOnlyFormat.format(DateofToday);
+        int DateofToday= calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println("DateofToday:"+DateofToday);
+        String TodayOnly1= String.valueOf(DateofToday);
+        System.out.println("TodayOnly1:"+TodayOnly1);
 
         if (TodayOnly1.equals("01")){
             TodayOnly1="1";
@@ -400,9 +343,11 @@ public class NoShowNotPassedCompleted {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();
 
-        try{  WebElement Last_Page=driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a"));
-            if(Last_Page.isDisplayed()){
-                Last_Page.click();
+        try {
+            WebElement Last_Page = driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[2]/div[2]/nav/ul/li[5]/a"));
+            if (Last_Page.isDisplayed()) {
+                JavascriptExecutor js2 = (JavascriptExecutor)driver;
+                js2.executeScript("arguments[0].click();", Last_Page);
             }
         }
         catch(Exception e){

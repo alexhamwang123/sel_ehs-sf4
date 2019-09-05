@@ -69,9 +69,7 @@ public class EHS_SPGCourseCompletionStatistic {
 
         Thread.sleep(1500);
 
-        new Select(driver.findElement(By.xpath("//div[@id='__BVID__38___BV_modal_body_']//div[@class='input-group col col-sm-2 input-group-sm']//select[@class='custom-select form-control']"))).selectByVisibleText("N");
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("RLBgSzMbTE");
+        new Select(driver.findElement(By.xpath("//div[@class='input-group col col-sm-2 input-group-sm']//select[@class='custom-select form-control']"))).selectByVisibleText("N");
         if(!driver.getPageSource().contains("RLBgSzMbTE")){
             System.out.println("The SPG Filter as N works");
         }
@@ -79,7 +77,9 @@ public class EHS_SPGCourseCompletionStatistic {
         {
             Assert.fail("The SPG Filter as N Failed");
         }
-
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id=\"__BVID__38___BV_modal_header_\"]/button")).click();
+        Thread.sleep(1500);
         //Click Course-Select Btn
         WebElement CourseBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/label/input"));
         js.executeScript("arguments[0].click();",CourseBtn);
@@ -89,7 +89,7 @@ public class EHS_SPGCourseCompletionStatistic {
 
         new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("Y");
 
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("0sDvK3sEly");
+        driver.findElement(By.xpath("//div[@id='__BVID__41___BV_modal_body_']//input[@placeholder='Type to filter result']")).sendKeys("0sDvK3sEly");
 
         Thread.sleep(1500);
 
@@ -104,8 +104,6 @@ public class EHS_SPGCourseCompletionStatistic {
         Thread.sleep(1500);
 
         new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("N");
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("0sDvK3sEly");
 
         Thread.sleep(1500);
 

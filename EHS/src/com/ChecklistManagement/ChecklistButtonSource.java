@@ -161,9 +161,9 @@ public class ChecklistButtonSource {
         }
 
         Thread.sleep(500);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"content-main\"]/div/div[3]/div/form/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"course-take\"]/div[3]/div/form/button")));
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"content-main\"]/div/div[3]/div/form/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"course-take\"]/div[3]/div/form/button")).click();
         Thread.sleep(1500);
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);

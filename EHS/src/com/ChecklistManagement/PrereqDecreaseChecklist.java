@@ -180,7 +180,7 @@ public class PrereqDecreaseChecklist {
         Thread.sleep(3500);
 
         //manage attendees
-        driver.findElement(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id=\"crseRecord\"]/tbody/tr/td[7]/a[2]")).click();
         Thread.sleep(2000);
 
         //Mark as completed

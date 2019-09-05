@@ -33,7 +33,7 @@ public class CreateNormalUser {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 

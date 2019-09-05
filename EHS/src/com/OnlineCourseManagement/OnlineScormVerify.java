@@ -200,13 +200,13 @@ public class OnlineScormVerify {
             Assert.fail("Should not be submitted here line 228");
         }
         Thread.sleep(3000);
-        String continueDivText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_63vTZMCZlM1 textlib\"]/canvas[@class=\"content\"]")).getText();
+        String continueDivText = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/div[6]/div[10]/div[5]")).getText();
         System.out.println("continueDivText=" + continueDivText);
         if (continueDivText.equals("")) {
             //Then submit
             Thread.sleep(3600);
             Actions builder = new Actions(driver);
-            WebElement continueDivEle = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_63vTZMCZlM1 textlib\"]/canvas[@class=\"content\"]"));
+            WebElement continueDivEle = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/div[6]/div[10]/div[5]"));
             Action drawAction = builder.moveToElement(continueDivEle, 136 / 2, 34 / 2)  // start point
                     .click()
                     .build();
@@ -225,17 +225,19 @@ public class OnlineScormVerify {
         driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
         Thread.sleep(4800);
         //Let's Choice the Microsoft
-        String secondQuestionElementDivText = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dkZK7ONPxW textlib\"]/canvas[@class=\"content\"]")).getText();
+        String secondQuestionElementDivText = driver.findElement(By.xpath("//div[@class='item image vectorshape item_5dkZK7ONPxW textlib']")).getText();
         System.out.println("secondQuestionElementDivText=" + secondQuestionElementDivText);
         if (secondQuestionElementDivText.equals("")) {
             //Then submit
             Thread.sleep(1500);
             Actions builder = new Actions(driver);
-            WebElement secondQuestionElementDiv = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5dkZK7ONPxW textlib\"]/canvas[@class=\"content\"]"));
+            WebElement secondQuestionElementDiv = driver.findElement(By.xpath("//div[@class='item image vectorshape item_5dkZK7ONPxW textlib']"));
             Action drawAction = builder.moveToElement(secondQuestionElementDiv, 689 / 2, 58 / 2)  // start point
                     .click()
                     .build();
             drawAction.perform();
+            driver.findElement(By.xpath("//*[@id=\"item_6oOgDem4Ino\"]/div/div[2]")).click();//.Click Microsoft;
+
             System.out.println("secondQuestionElementDivText=" + secondQuestionElementDivText);
         } else {
             Assert.fail("Should not be submitted here line 271");
@@ -260,12 +262,12 @@ public class OnlineScormVerify {
             Assert.fail("Should not be submitted here line 291");
         }
         Thread.sleep(3000);
-        String continueDivText2 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6gytkCQVSz7 textlib\"]/canvas[@class=\"content\"]")).getText();
+        String continueDivText2 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/div[6]/div[10]/div[5]")).getText();
         System.out.println("continueDivText2=" + continueDivText2);
         if (continueDivText2.equals("")) {
             Thread.sleep(2600);
             Actions builder2 = new Actions(driver);
-            WebElement continueDivEle2 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_6gytkCQVSz7 textlib\"]/canvas[@class=\"content\"]"));
+            WebElement continueDivEle2 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/div[6]/div[10]/div[5]"));
             Action drawAction2 = builder2.moveToElement(continueDivEle2, 136 / 2, 34 / 2)  // start point
                     .click()
                     .build();
@@ -318,6 +320,10 @@ public class OnlineScormVerify {
         } else {
             Assert.fail("Should not be submitted here line 352");
         }
+        driver.findElement(By.xpath("//*[@id=\"item_6gT2Nvoe0S5\"]/div/div[3]")).click();//.selectTreeQuestion;
+        driver.findElement(By.xpath("//*[@id=\"item_6gT2Nvoe0S5\"]/div/div[2]")).click();//.selectTreeQuestion;
+        driver.findElement(By.xpath("//*[@id=\"item_6gT2Nvoe0S5\"]/div/div[4]")).click();//.selectTreeQuestion;
+
         Thread.sleep(2500);
         driver.switchTo().defaultContent();
         Thread.sleep(3600);
@@ -335,12 +341,12 @@ public class OnlineScormVerify {
             Assert.fail("Should not be submitted here line 369");
         }
         Thread.sleep(2000);
-        String continueDivText3 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5z66WgZXo0y textlib\"]/canvas[@class=\"content\"]")).getText();
+        String continueDivText3 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/div[6]/div[10]/div[5]")).getText();
         System.out.println("continueDivText3=" + continueDivText3);
         if (continueDivText3.equals("")) {
             Thread.sleep(1600);
             Actions builder3 = new Actions(driver);
-            WebElement continueDivEle3 = driver.findElement(By.xpath("//div[@class=\"item image vectorshape item_5z66WgZXo0y textlib\"]/canvas[@class=\"content\"]"));
+            WebElement continueDivEle3 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/div[6]/div[10]/div[5]"));
             Action drawAction3 = builder3.moveToElement(continueDivEle3, 136 / 2, 34 / 2)  // start point
                     .click()
                     .build();
@@ -367,6 +373,7 @@ public class OnlineScormVerify {
         } else {
             Assert.fail("Should not be submitted here line 367");
         }
+
         // Click on All Classes tab
         // find a SCORM course and click play
         // complete the course
@@ -485,7 +492,7 @@ public class OnlineScormVerify {
             }
         }
         Thread.sleep(3000);
-//        driver.quit();
+        driver.quit();
     }
 
 }

@@ -162,7 +162,6 @@ public class OnlineCourse_CompleteAndSubmit {
 		driver.findElement(By.name("question[1361]")).click();
 		driver.findElement(By.name("question[4562]")).click();
 		driver.findElement(By.name("question[4225]")).click();
-		driver.findElement(By.name("question[4127]")).click();
 		driver.findElement(By.name("question[4193]")).click();
 		driver.findElement(By.name("question[145]")).click();
 		driver.findElement(By.name("question[1164]")).click();

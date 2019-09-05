@@ -186,7 +186,7 @@ public class OnlineButtonSource {
         }
         //take the course
         Thread.sleep(5000);
-       WebElement TakeCourse= driver.findElement(By.xpath("//*[@id=\"content-main\"]/div/div[3]/div/form/button"));
+       WebElement TakeCourse= driver.findElement(By.xpath("//*[@id=\"course-take\"]/div[3]/div/form/button"));
         js.executeScript("arguments[0].click();",TakeCourse);
         Thread.sleep(3000);
         for(String winHandle : driver.getWindowHandles()) {

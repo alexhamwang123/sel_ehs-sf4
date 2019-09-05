@@ -39,8 +39,6 @@ public class RegisteringMechanics {
         driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
-        String normuser = prop.getProperty("testnormuser");
-        String normuser0 = prop.getProperty("testnormuser2");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         driver.findElement(By.id("username")).sendKeys(username);
@@ -132,18 +130,169 @@ public class RegisteringMechanics {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//button[@class='btn btn-sm btn-primary']")).click();
 
-        Thread.sleep(1500);
-        WebElement Logout= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Logout')]"));
+        //Create User
+        //Clicking on 'User Admin'
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
+        js.executeScript("arguments[0].click();",ele);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Click on Create User
+        driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
+
+        Thread.sleep(3500);
+        //自動會有detailBadgeNumber ，也就是我們要用的bdgeeNumber ID
+        String id = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
+        System.out.println("id is " + id);
+
+        // Enter the First Name of the user that you wish to create
+        driver.findElement(By.id("detailFirstName")).sendKeys(id);
+
+        // Enter the Last Name of the user that you wish to create
+        driver.findElement(By.id("detailLastName")).sendKeys(id);
+
+        // Click on 'Select' for Site
+        driver.findElement(By.id("selectBtnSite")).click();
+
+        // Enter the search value as "SCV"
+        driver.findElement(By.id("searchName")).sendKeys("SCV");
+
+        // Click on Search
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+
+        // Click on 'SCV' from the search results
+        driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Enter the email of the user that you wish to create
+        driver.findElement(By.name("detailEmailAddress")).sendKeys(id + "@trismax.com");
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        JavascriptExecutor js1 = ((JavascriptExecutor) driver);
+        js1.executeScript("window.scrollBy(0,850)", "");
+
+
+        // Click on 'Save' button
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
+        //Clicking on 'User Admin'
+        WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
+        js.executeScript("arguments[0].click();",ele1);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Click on Create User
+        driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
+
+        Thread.sleep(3500);
+        //自動會有detailBadgeNumber ，也就是我們要用的bdgeeNumber ID
+        String id1 = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
+        System.out.println("id is " + id);
+
+        // Enter the First Name of the user that you wish to create
+        driver.findElement(By.id("detailFirstName")).sendKeys(id1);
+
+        // Enter the Last Name of the user that you wish to create
+        driver.findElement(By.id("detailLastName")).sendKeys(id1);
+
+        // Click on 'Select' for Site
+        driver.findElement(By.id("selectBtnSite")).click();
+
+        // Enter the search value as "SCV"
+        driver.findElement(By.id("searchName")).sendKeys("SCV");
+
+        // Click on Search
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+
+        // Click on 'SCV' from the search results
+        driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Enter the email of the user that you wish to create
+        driver.findElement(By.name("detailEmailAddress")).sendKeys(id + "@trismax.com");
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        js1.executeScript("window.scrollBy(0,850)", "");
+
+
+        // Click on 'Save' button
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
+        Thread.sleep(2000);
+
+        WebElement Logout= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click();", Logout);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
 
         System.out.println("Check Point 1");
-        driver.findElement(By.id("username")).sendKeys(normuser);
-        driver.findElement(By.id("password")).sendKeys(normuser);
+        driver.findElement(By.id("username")).sendKeys(id);
+        driver.findElement(By.id("password")).sendKeys(id);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(1500);
+        driver.findElement(By.id("welcomeShowRS")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.name("question[4586]")).click();
+        driver.findElement(By.name("question[1361]")).click();
+        driver.findElement(By.name("question[4562]")).click();
+        driver.findElement(By.name("question[4225]")).click();
+        driver.findElement(By.name("question[4193]")).click();
+        driver.findElement(By.name("question[145]")).click();
+        driver.findElement(By.name("question[1164]")).click();
+        driver.findElement(By.name("question[4676]")).click();
+        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("annContinue")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(2000);
@@ -167,15 +316,29 @@ public class RegisteringMechanics {
         }
         Thread.sleep(500);
         System.out.println("Check Point 2");
-        WebElement Logout1= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Logout')]"));
+        WebElement Logout1= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click();", Logout1);
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
 
-        driver.findElement(By.id("username")).sendKeys(normuser0);
-        driver.findElement(By.id("password")).sendKeys(normuser0);
+        driver.findElement(By.id("username")).sendKeys(id1);
+        driver.findElement(By.id("password")).sendKeys(id1);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
+        driver.findElement(By.id("welcomeShowRS")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.name("question[4586]")).click();
+        driver.findElement(By.name("question[1361]")).click();
+        driver.findElement(By.name("question[4562]")).click();
+        driver.findElement(By.name("question[4225]")).click();
+        driver.findElement(By.name("question[4193]")).click();
+        driver.findElement(By.name("question[145]")).click();
+        driver.findElement(By.name("question[1164]")).click();
+        driver.findElement(By.name("question[4676]")).click();
+        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("annContinue")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(2000);
@@ -198,7 +361,7 @@ public class RegisteringMechanics {
             Assert.fail("the user did not get waitlisted for the course");
         }
             System.out.println("Check Point 3");
-            WebElement Logout2= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Logout')]"));
+            WebElement Logout2= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
             js.executeScript("arguments[0].click();", Logout2);
             Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
@@ -206,7 +369,7 @@ public class RegisteringMechanics {
         driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(22500);
+        Thread.sleep(2500);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(2000);
@@ -226,12 +389,12 @@ public class RegisteringMechanics {
         Thread.sleep(1500);
         System.out.println("Check Point 4");
 
-            WebElement Logout3= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Logout')]"));
+            WebElement Logout3= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
             js.executeScript("arguments[0].click();", Logout3);
             Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-            driver.findElement(By.id("username")).sendKeys(normuser);
-            driver.findElement(By.id("password")).sendKeys(normuser);
+            driver.findElement(By.id("username")).sendKeys(id);
+            driver.findElement(By.id("password")).sendKeys(id);
 
             driver.findElement(By.xpath("//button[@type='submit']")).click();
             Thread.sleep(1500);
