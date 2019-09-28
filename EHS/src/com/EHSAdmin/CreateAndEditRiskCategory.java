@@ -28,7 +28,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
 @Test
-public class CreateRiskCategory {
+public class CreateAndEditRiskCategory {
 
 	public void CreateRiskCategory() throws IOException, InterruptedException {
 

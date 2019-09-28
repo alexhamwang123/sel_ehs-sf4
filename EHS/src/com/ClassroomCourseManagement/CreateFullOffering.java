@@ -78,11 +78,11 @@ public class CreateFullOffering {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
-
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
         Thread.sleep(1000);
         driver.findElement(By.id("site_radio")).click();

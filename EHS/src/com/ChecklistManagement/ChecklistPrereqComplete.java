@@ -100,54 +100,49 @@ public class ChecklistPrereqComplete {
         js0.executeScript("arguments[0].click();",ele);
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        // Click on Create User
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create User']"))));
+
+// Click on Create User
+        WebElement Create_User=driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/ul/li[3]/div/a[1]"));
+        js.executeScript("arguments[0].click();", Create_User);
+
+
+// Enter the First Name of the user that you wish to create
+        String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
+        driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
+// Enter the Last Name of the user that you wish to create
+        driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
-        // Enter the First Name of the user that you wish to create
-        String userid = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("detailFirstName"))));
+// Click on 'Select' for Site
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.id("detailFirstName")).sendKeys(userid);
-
-        // Enter the Last Name of the user that you wish to create
-        driver.findElement(By.id("detailLastName")).sendKeys(userid);
-
-        // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("selectBtnSite"))));
+        driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
         Thread.sleep(1000);
-        driver.findElement(By.id("selectBtnSite")).click();
-
-        // Enter the search value as "SCV"
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("searchName"))));
+// Enter the search value as "SCV"
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.id("searchName")).sendKeys("SCV");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
-        // Click on Search
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Search']"))));
+
+// Click on 'SCV' from the search results
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
 
-        // Click on 'SCV' from the search results
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a"))));
+// Enter the email of the user that you wish to create
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
-
-
-        // Enter the email of the user that you wish to create
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("detailEmailAddress"))));
-        Thread.sleep(1000);
-        driver.findElement(By.name("detailEmailAddress")).sendKeys(userid + "@trismax.com");
+        driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
         try {
             Thread.sleep(2000);
@@ -159,11 +154,16 @@ public class ChecklistPrereqComplete {
         JavascriptExecutor js1 = ((JavascriptExecutor) driver);
         js1.executeScript("window.scrollBy(0,850)", "");
 
-        // Clicking on USA Normal User
-        //driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
+// Clicking on USA Normal User
+//driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
 
-        // Click on 'Save' button
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
+// Click on 'Save' button
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
+
+        Thread.sleep(2000);
+
+
+
 
         // sign out current user
         Thread.sleep(3000);
@@ -180,7 +180,7 @@ public class ChecklistPrereqComplete {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("username"))));
         Thread.sleep(1000);
         driver.findElement(By.id("username")).sendKeys(userid);
-        driver.findElement(By.id("password")).sendKeys(userid);
+        driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 

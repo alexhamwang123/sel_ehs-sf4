@@ -75,15 +75,17 @@ public class EHS_SPGCourseCompletionReport {
         {
             Assert.fail("The SPG Filter as N Failed");
         }
-
+        //Click Close Btn
+        driver.findElement(By.xpath("//*[@id=\"__BVID__38___BV_modal_header_\"]/button")).click();
+        Thread.sleep(1500);
         //Click Course-Select Btn
         WebElement CourseBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/label/input"));
         js.executeScript("arguments[0].click();",CourseBtn);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         WebElement SelectBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/div/button"));
         js.executeScript("arguments[0].click();",SelectBtn);
 
-        new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("Y");
+        new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("Y");
 
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("0sDvK3sEly");
 
@@ -99,7 +101,8 @@ public class EHS_SPGCourseCompletionReport {
 
         Thread.sleep(1500);
 
-        new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("N");
+        new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("N");
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).clear();
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("0sDvK3sEly");
 

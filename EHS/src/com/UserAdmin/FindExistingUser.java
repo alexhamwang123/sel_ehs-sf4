@@ -73,7 +73,7 @@ public class FindExistingUser {
 	    
 	    //Or, if you want to find by the first name
 		String findExistingUserStr = prop.getProperty("findExistingUser");
-	    driver.findElement(By.id("searchBadgeNo")).sendKeys(findExistingUserStr);
+	    driver.findElement(By.id("badgeNo")).sendKeys(findExistingUserStr);
 	    
 	    //Or, if you want to find by the last name 
 	    //driver.findElement(By.id("searchLastName")).sendKeys("Varu");
@@ -86,7 +86,7 @@ public class FindExistingUser {
 		}
 	    
 	    //Click on Search
-	    driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+	    driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/button[1]")).click();
 
 	    Thread.sleep(3500);
 	    driver.quit();

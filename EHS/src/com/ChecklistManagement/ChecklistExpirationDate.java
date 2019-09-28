@@ -99,9 +99,9 @@ public class ChecklistExpirationDate {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"detailChecklistContentSaveAs\"]")).click();
 		driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
-
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));
@@ -152,7 +152,7 @@ public class ChecklistExpirationDate {
 		}
 
 		Thread.sleep(1000);
-		WebElement Language = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]"));
+		WebElement Language = driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]"));
 		js.executeScript("arguments[0].click();", Language);
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[3]/button[3]"))));

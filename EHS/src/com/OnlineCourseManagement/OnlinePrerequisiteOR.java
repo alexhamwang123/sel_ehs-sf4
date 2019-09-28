@@ -252,12 +252,11 @@ public class OnlinePrerequisiteOR {
             driver.switchTo().window(handle);
         }
         Thread.sleep(1000);
-        String Required= driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]")).getAttribute("innerHTML");
-        if(Required.contains("Required prerequisite course")) {
-            Assert.fail("Prerequisite still exists when all the courses are complete ");
+        try {
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]")).click();
         }
-        else{
-            System.out.println("The test is successful");
+        catch(NoSuchElementException e){
+            Assert.fail("The test failed");
         }
 
         driver.quit();

@@ -29,7 +29,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 //@Test
 @Test
-public class CreateLab {
+public class CreateAndEditLab {
 
 	public void CreateLab() throws InterruptedException, IOException {
 

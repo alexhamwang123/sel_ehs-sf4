@@ -20,8 +20,8 @@
             <class name="com.EHSAdmin.CreateAnnouncement"/>
             <class name="com.EHSAdmin.CreateCertificate"/>
             <class name="com.EHSAdmin.CreateFAQ"/>
-            <class name="com.EHSAdmin.CreateLab"/>
-            <class name="com.EHSAdmin.CreateRiskCategory"/>
+            <class name="com.EHSAdmin.CreateAndEditLab"/>
+            <class name="com.EHSAdmin.CreateAndEditRiskCategory"/>
         </classes>
     </test>
 

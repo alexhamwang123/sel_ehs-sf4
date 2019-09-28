@@ -87,7 +87,7 @@ public class EHS_SPGCourseCompletionStatistic {
         WebElement SelectBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/div/button"));
         js.executeScript("arguments[0].click();",SelectBtn);
 
-        new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("Y");
+        new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("Y");
 
         driver.findElement(By.xpath("//div[@id='__BVID__41___BV_modal_body_']//input[@placeholder='Type to filter result']")).sendKeys("0sDvK3sEly");
 
@@ -103,7 +103,7 @@ public class EHS_SPGCourseCompletionStatistic {
 
         Thread.sleep(1500);
 
-        new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("N");
+        new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("N");
 
         Thread.sleep(1500);
 

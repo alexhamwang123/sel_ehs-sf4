@@ -65,58 +65,44 @@ public class OnlineCourse_CompleteAndSubmit {
 			e.printStackTrace();
 		}
 
-		// Click on Create User
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create User']"))));
+
+// Click on Create User
+		WebElement Create_User=driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/ul/li[3]/div/a[1]"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", Create_User);
+
+
+// Enter the First Name of the user that you wish to create
+		String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
 		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
+		driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
-		Thread.sleep(3000);
+// Enter the Last Name of the user that you wish to create
+		driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
-		// Enter the First Name of the user that you wish to create
-		String userid = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
-
-
-		driver.findElement(By.id("detailFirstName")).sendKeys(userid);
-
-		// Enter the Last Name of the user that you wish to create
-		driver.findElement(By.id("detailLastName")).sendKeys(userid);
-
-		// Click on 'Select' for Site
-		driver.findElement(By.id("selectBtnSite")).click();
-
-		// Enter the search value as "SCV"
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("searchName"))));
+// Click on 'Select' for Site
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
 		Thread.sleep(1000);
-		driver.findElement(By.id("searchName")).sendKeys("SCV");
-
-		// Click on Search
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Search']"))));
+		driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
-
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		// Click on 'SCV' from the search results
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a"))));
+// Enter the search value as "SCV"
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-		// Enter the email of the user that you wish to create
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("detailEmailAddress"))));
+// Click on 'SCV' from the search results
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
 		Thread.sleep(1000);
-		driver.findElement(By.name("detailEmailAddress")).sendKeys(userid + "@trismax.com");
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+
+
+// Enter the email of the user that you wish to create
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+		Thread.sleep(1000);
+		driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
 		try {
 			Thread.sleep(2000);
@@ -128,16 +114,13 @@ public class OnlineCourse_CompleteAndSubmit {
 		JavascriptExecutor js1 = ((JavascriptExecutor) driver);
 		js1.executeScript("window.scrollBy(0,850)", "");
 
-		// Clicking on USA Normal User
-		//driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
+// Clicking on USA Normal User
+//driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
+
+// Click on 'Save' button
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
+
 		Thread.sleep(2000);
-
-		// Click on 'Save' button
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@value='Save']")).click();
-
-		Thread.sleep(4000);
 
 		// sign out current user
 		WebElement Logout0=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
@@ -149,7 +132,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.id("username")).sendKeys(userid);
-		driver.findElement(By.id("password")).sendKeys(userid);
+		driver.findElement(By.id("password")).sendKeys(password);
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 

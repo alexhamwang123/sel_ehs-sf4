@@ -32,12 +32,12 @@
             <class name="com.UserAdmin.CreateCourseManager"/>
             <class name="com.EHSAdmin.CreateFAQ"/>
             <class name="com.ClassroomCourseManagement.CreateFullOffering"/>
-            <class name="com.EHSAdmin.CreateLab"/>
+            <class name="com.EHSAdmin.CreateAndEditLab"/>
             <class name="com.UserAdmin.CreateNormalUser"/>
             <class name="com.ClassroomCourseManagement.CreateOfferingRegister"/>
             <class name="com.ClassroomCourseManagement.CreateOfferingRegisterWithMgrUserAndEmail"/>
             <class name="com.OnlineCourseManagement.CreateonlineCourseclass"/>
-            <class name="com.EHSAdmin.CreateRiskCategory"/>
+            <class name="com.EHSAdmin.CreateAndEditRiskCategory"/>
             <class name="com.OnlineCourseManagement.CreateScormClass"/>
             <class name="com.UserAdmin.CreateSiteAdmin"/>
             <class name="com.UserAdmin.CreateSuperAdmin"/>

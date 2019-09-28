@@ -16,7 +16,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -31,6 +33,7 @@ public class CreateNormalUser {
 
 		WebDriver driver = new ChromeDriver();
 
+		WebDriverWait wait= new  WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.manage().window().maximize();
@@ -71,48 +74,45 @@ public class CreateNormalUser {
 			e.printStackTrace();
 		}
 
-		// Click on Create User
-		driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
 
-		Thread.sleep(3500);
-		//自動會有detailBadgeNumber ，也就是我們要用的bdgeeNumber ID
-		String id = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
-		System.out.println("id is " + id);
 
-		// Enter the First Name of the user that you wish to create
-		driver.findElement(By.id("detailFirstName")).sendKeys(id);
 
-		// Enter the Last Name of the user that you wish to create
-		driver.findElement(By.id("detailLastName")).sendKeys(id);
+// Click on Create User
+		WebElement Create_User=driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/ul/li[3]/div/a[1]"));
+		js.executeScript("arguments[0].click();", Create_User);
 
-		// Click on 'Select' for Site
-		driver.findElement(By.id("selectBtnSite")).click();
 
-		// Enter the search value as "SCV"
-		driver.findElement(By.id("searchName")).sendKeys("SCV");
+// Enter the First Name of the user that you wish to create
+		String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
 
-		// Click on Search
-		driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
+		Thread.sleep(1000);
+		driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+// Enter the Last Name of the user that you wish to create
+		driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
-		// Click on 'SCV' from the search results
-		driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
+// Click on 'Select' for Site
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+		Thread.sleep(1000);
+// Enter the search value as "SCV"
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-		// Enter the email of the user that you wish to create
-		driver.findElement(By.name("detailEmailAddress")).sendKeys(id + "@trismax.com");
+// Click on 'SCV' from the search results
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+
+
+// Enter the email of the user that you wish to create
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+		Thread.sleep(1000);
+		driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
 		try {
 			Thread.sleep(2000);
@@ -124,11 +124,15 @@ public class CreateNormalUser {
 		JavascriptExecutor js1 = ((JavascriptExecutor) driver);
 		js1.executeScript("window.scrollBy(0,850)", "");
 
+// Clicking on USA Normal User
+//driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
 
-		// Click on 'Save' button
-		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+// Click on 'Save' button
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
 
 		Thread.sleep(2000);
+
+
 
 		WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
 		js.executeScript("arguments[0].click()",Logout);
@@ -136,8 +140,8 @@ public class CreateNormalUser {
 		driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
 		Thread.sleep(1000);
 
-		driver.findElement(By.id("username")).sendKeys(id);
-		driver.findElement(By.id("password")).sendKeys(id);
+		driver.findElement(By.id("username")).sendKeys(userid);
+		driver.findElement(By.id("password")).sendKeys(password);
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(4500);

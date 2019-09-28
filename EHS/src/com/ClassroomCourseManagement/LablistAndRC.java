@@ -58,54 +58,49 @@ public class LablistAndRC {
         js.executeScript("arguments[0].click();",ele);
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        // Click on Create User
-        driver.findElement(By.cssSelector("input[type='button'][value='Create User']")).click();
 
-        Thread.sleep(3500);
-        //自動會有detailBadgeNumber ，也就是我們要用的bdgeeNumber ID
-        String id = driver.findElement(By.id("detailBadgeNumber")).getAttribute("value");
-        System.out.println("id is " + id);
+// Click on Create User
+        WebElement Create_User=driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/ul/li[3]/div/a[1]"));
+        js.executeScript("arguments[0].click();", Create_User);
 
-        // Enter the First Name of the user that you wish to create
-        driver.findElement(By.id("detailFirstName")).sendKeys(id);
 
-        // Enter the Last Name of the user that you wish to create
-        driver.findElement(By.id("detailLastName")).sendKeys(id);
+// Enter the First Name of the user that you wish to create
+        String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
 
-        // Click on 'Select' for Site
-        driver.findElement(By.id("selectBtnSite")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
-        // Enter the search value as "SCV"
-        driver.findElement(By.id("searchName")).sendKeys("SCV");
+// Enter the Last Name of the user that you wish to create
+        driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
-        // Click on Search
-        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+// Click on 'Select' for Site
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+        Thread.sleep(1000);
+// Enter the search value as "SCV"
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
 
-        // Click on 'SCV' from the search results
-        driver.findElement(By.xpath("//*[@id='Deptdirectreport']/tbody/tr/td[2]/a")).click();
+// Click on 'SCV' from the search results
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
 
-        // Enter the email of the user that you wish to create
-        driver.findElement(By.name("detailEmailAddress")).sendKeys(id + "@trismax.com");
+// Enter the email of the user that you wish to create
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
         try {
             Thread.sleep(2000);
@@ -117,9 +112,14 @@ public class LablistAndRC {
         JavascriptExecutor js1 = ((JavascriptExecutor) driver);
         js1.executeScript("window.scrollBy(0,850)", "");
 
+// Clicking on USA Normal User
+//driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
 
-        // Click on 'Save' button
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+// Click on 'Save' button
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
+
+        Thread.sleep(2000);
+
 
 
         //Go to Lab and Assign the User to the Lab with Manager of X00001572
@@ -151,7 +151,7 @@ public class LablistAndRC {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(id);
+        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(userid);
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='gobutton btn btn-primary']")));
         Thread.sleep(1000);
@@ -173,20 +173,24 @@ public class LablistAndRC {
         WebElement ele2 = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         JavascriptExecutor js3 = (JavascriptExecutor)driver;
         js3.executeScript("arguments[0].click();",ele2);
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='searchBadgeNo']")));
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("badgeNo")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@id='searchBadgeNo']")).sendKeys(id);
+        driver.findElement(By.id("badgeNo")).sendKeys(userid);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='row center mt-4']//input[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/button[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='row center mt-4']//input[1]")).click();
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/button[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(id)));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/table/tbody/tr")));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText(id)).click();
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/table/tbody/tr")).click();
+        Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='btn btn-success']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"__BVID__50___BV_tab_button__\"]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"__BVID__50___BV_tab_button__\"]")).click();
+        Thread.sleep(4000);
         if(driver.getPageSource().contains("2J4foMj3Sa")){
             System.out.println("Test is successful");
         }
