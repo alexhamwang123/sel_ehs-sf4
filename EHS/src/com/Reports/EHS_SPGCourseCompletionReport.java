@@ -65,7 +65,7 @@ public class EHS_SPGCourseCompletionReport {
 
         Thread.sleep(1500);
 
-        new Select(driver.findElement(By.xpath("//div[@id='__BVID__38___BV_modal_body_']//div[@class='input-group col col-sm-2 input-group-sm']//select[@class='custom-select form-control']"))).selectByVisibleText("N");
+        new Select(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[2]/div[2]/select"))).selectByVisibleText("N");
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).clear();
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("RLBgSzMbTE");
         if(!driver.getPageSource().contains("RLBgSzMbTE")){
@@ -76,7 +76,7 @@ public class EHS_SPGCourseCompletionReport {
             Assert.fail("The SPG Filter as N Failed");
         }
         //Click Close Btn
-        driver.findElement(By.xpath("//*[@id=\"__BVID__38___BV_modal_header_\"]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/header/button")).click();
         Thread.sleep(1500);
         //Click Course-Select Btn
         WebElement CourseBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/label/input"));

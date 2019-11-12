@@ -140,6 +140,8 @@ public class CreateFullOffering {
         js.executeScript("arguments[0].click();",Logout);
         Thread.sleep(3500);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(2000);
+
         driver.findElement(By.id("username")).sendKeys("X00001666");
         driver.findElement(By.id("password")).sendKeys("X00001666");
 
@@ -166,6 +168,7 @@ public class CreateFullOffering {
         if(!driver.getPageSource().contains("Waitlisted")) {
             Assert.fail("the user did not get waitlisted for the course");
         }
+
         Thread.sleep(3500);
         driver.quit();
 

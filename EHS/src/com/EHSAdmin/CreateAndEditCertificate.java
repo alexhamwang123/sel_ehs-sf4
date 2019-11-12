@@ -36,7 +36,7 @@ public class CreateAndEditCertificate {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 35);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -60,18 +60,16 @@ public class CreateAndEditCertificate {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",EHSAdmin);
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(2500);
+
 
 		//Clicking on 'Certificate Management'
-        driver.findElement(By.partialLinkText("Certificate Management")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Certificate Management"))));
+		Thread.sleep(2500);
+		driver.findElement(By.partialLinkText("Certificate Management")).click();
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,7 +79,7 @@ public class CreateAndEditCertificate {
 		driver.findElement(By.cssSelector("input[type='button'][value='Create Certificate']")).click();
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -164,22 +162,24 @@ public class CreateAndEditCertificate {
 		WebElement courseAdmin2 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
 		js1.executeScript("arguments[0].click()", courseAdmin2);
 
-		Thread.sleep(1500);
+		Thread.sleep(3500);
 		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();//Online Management.
-		Thread.sleep(1700);
+		Thread.sleep(2700);
 		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();//Create Web Course
-		Thread.sleep(4500);
-
+		Thread.sleep(1500);
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[14]/input[1]"))));
+		Thread.sleep(1500);
 		String courseId2 = generator.generate(10);
-		driver.findElement(By.name("detailCourseNo")).sendKeys(courseId2);
+		//Send Course No.
+		driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[1]/div[1]/input")).sendKeys(courseId2);
 		new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");//We have to make it via manually, just in case.
 		new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
 		new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
 		Thread.sleep(1600);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[16]/div/table/tbody/tr/td[5]/input"))));
+		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 		Thread.sleep(3000);
 		String courseTitle = generator.generate(10);
@@ -206,9 +206,15 @@ public class CreateAndEditCertificate {
 
 		Thread.sleep(1500);
 		driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-		Thread.sleep(1500);
+		Thread.sleep(10000);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 		Thread.sleep(3700);
+		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"versionRow1\"]/td[5]/input"))));
@@ -218,30 +224,18 @@ public class CreateAndEditCertificate {
 		driver.findElement(By.name("detailCourseIsActive")).click();
 		Thread.sleep(2700);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-		Thread.sleep(4500);
+		Thread.sleep(1500);
 
-//        driver.quit();
-//		Thread.sleep(2000);
-        WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
-        js.executeScript("arguments[0].click()",Logout);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
 
-        driver.findElement(By.id("username")).sendKeys(username);
-        driver.findElement(By.id("password")).sendKeys(password);
-
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(1500);
-
-		Thread.sleep(4500);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+		Thread.sleep(3000);
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId2);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/input")).sendKeys(courseId2);
+		System.out.println("courseId2="+courseId2);
 		Thread.sleep(2500);
-		String currentWin = driver.getWindowHandle();
 		try {
-			driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+			driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 		} catch (NoSuchElementException e) {
 			Assert.fail("something went wrong while creating and uploading the scorm course");
 		}
@@ -251,9 +245,12 @@ public class CreateAndEditCertificate {
 			driver.switchTo().window(winHandle);
 		}
 
-		Thread.sleep(500);
-		driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]"))));
 		Thread.sleep(1500);
+
+		WebElement English=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]"));
+		js1.executeScript("arguments[0].click()",English);
+		Thread.sleep(8500);
 //        robot.keyPress(KeyEvent.VK_META);
 //        robot.keyPress(KeyEvent.VK_W);
 //        robot.keyRelease(KeyEvent.VK_META);
@@ -262,21 +259,21 @@ public class CreateAndEditCertificate {
 		//we have to finish the course first, then complete it for scorm.
 		//first one
 		driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
-		Thread.sleep(4500);
+		Thread.sleep(2500);
 		//second one
 		driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //time in second
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 
 		String innerText = driver.findElement(By.xpath("//*[@id=\"control-next\"]/div")).getText();
 		System.out.println("innerText=" + innerText);
 		if (innerText.equals("NEXT")) {
-			driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
+			driver.findElement(By.xpath("//div[@id='control-next']")).click();
 		}
 
-		Thread.sleep(4500);
+		Thread.sleep(2500);
 
-		driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
+		driver.findElement(By.xpath("//div[@id='control-next']")).click();
 		Thread.sleep(5500);
 		driver.switchTo().defaultContent();
 		//gThread.sleep(1000);

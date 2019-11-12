@@ -136,11 +136,17 @@ public class OnlinePrerequisiteLInkedOR {
         Thread.sleep(1000);
         driver.findElement(By.id("addQBtn")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
         Thread.sleep(2000);
-        js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
-        js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
+        driver.switchTo().frame("editHtmlCode_ifr");
+        Thread.sleep(1000);
+        WebElement TextArea= driver.findElement(By.xpath("/html[1]/body[1]/p[1]"));
+        TextArea.clear();
+        TextArea.sendKeys("this is the test question!!!!!!!");
+       // js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
         Thread.sleep(1500);
+        driver.switchTo().defaultContent();
+
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");
         driver.findElement(By.id("courseQuizAnswer2")).sendKeys("no, this is the correct answer");
         driver.findElement(By.name("courseQuizCorrectAnswer")).sendKeys("2");
@@ -201,7 +207,7 @@ public class OnlinePrerequisiteLInkedOR {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.contains(unfinishedOnline.substring(0,9))) {
+        if(!working.contains(unfinishedOnline.substring(0,4))) {
             Assert.fail("user was ale to register for the course without completing the prereq");
         }
         Thread.sleep(1500);

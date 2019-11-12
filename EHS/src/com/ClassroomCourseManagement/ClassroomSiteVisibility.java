@@ -219,7 +219,7 @@ public class ClassroomSiteVisibility {
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
         driver.findElement(By.id("password")).sendKeys(password);

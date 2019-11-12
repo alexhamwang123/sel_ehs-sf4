@@ -172,7 +172,7 @@ public class ChecklistPrerequisiteLInkedAnd {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.contains(unfinishedOnline.substring(0,9))) {
+        if(!working.contains(unfinishedOnline.substring(0,4))) {
             Assert.fail("user was ale to register for the course without completing the prereq");
         }
         Thread.sleep(1500);

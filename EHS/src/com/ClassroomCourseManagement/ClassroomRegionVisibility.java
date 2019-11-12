@@ -96,9 +96,10 @@ public class ClassroomRegionVisibility {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("region_radio"))));
         Thread.sleep(2000);
         driver.findElement(By.id("region_radio")).click();
+        driver.findElement(By.id("region_radio")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("selectBtnRegion"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.id("selectBtnRegion")).click();
 
         Thread.sleep(3500);
@@ -187,10 +188,10 @@ public class ClassroomRegionVisibility {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
 
@@ -225,9 +226,9 @@ public class ClassroomRegionVisibility {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
@@ -239,7 +240,7 @@ public class ClassroomRegionVisibility {
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
         driver.findElement(By.id("password")).sendKeys(password);

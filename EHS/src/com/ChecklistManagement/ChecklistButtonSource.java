@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -71,6 +72,8 @@ public class ChecklistButtonSource {
         new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
+        new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText("EHS-1000 - EHS Essentials");
+
         Thread.sleep(3000);
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='center']//input[@id='saveBtn']"))));
@@ -161,7 +164,14 @@ public class ChecklistButtonSource {
         }
 
         Thread.sleep(500);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"course-take\"]/div[3]/div/form/button")));
+
+        if(driver.getPageSource().contains("Required prerequisite course: EHS-1000")){
+            System.out.println("The test is successful");
+        }
+        else{
+            Assert.fail("THe test Failed");
+        }
+  /*    Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"course-take\"]/div[3]/div/form/button")));
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"course-take\"]/div[3]/div/form/button")).click();
         Thread.sleep(1500);
@@ -179,6 +189,8 @@ public class ChecklistButtonSource {
       //  driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button")).click();
         driver.switchTo().window(mainWin);
         Thread.sleep(2000);
+        */
+
         driver.quit();
 
     }

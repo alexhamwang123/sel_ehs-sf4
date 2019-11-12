@@ -101,7 +101,7 @@ public class ManuallyRemoveWaitlist {
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
         driver.findElement(By.name("detailClassRoom")).sendKeys("room01");
-        driver.findElement(By.name("detailClassMaxSize")).sendKeys("1");
+        driver.findElement(By.name("detailClassMaxSize")).sendKeys("2");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd")).click();
         Thread.sleep(1500);
@@ -141,7 +141,7 @@ public class ManuallyRemoveWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 
-
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
@@ -150,15 +150,35 @@ public class ManuallyRemoveWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001515");
 
-
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
+        Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001666");
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
+
+
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
@@ -183,6 +203,12 @@ public class ManuallyRemoveWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
         Thread.sleep(3500);
+
+        WebElement AttendeeList= driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[2]"));
+        if(AttendeeList.getText().contains("X00001666")){
+            System.out.println("The test is successful");
+        }
+
         driver.quit();
 
 

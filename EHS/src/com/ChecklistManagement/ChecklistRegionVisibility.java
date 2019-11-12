@@ -203,7 +203,7 @@ public class ChecklistRegionVisibility {
 
 //Click Role Page
 
-        driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
         Thread.sleep(4000);
 
 //Click the DanielAdmin Btn
@@ -216,7 +216,7 @@ public class ChecklistRegionVisibility {
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
         driver.findElement(By.id("password")).sendKeys(password);

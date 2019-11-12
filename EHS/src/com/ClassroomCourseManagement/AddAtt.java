@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -44,7 +45,6 @@ public class AddAtt {
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         String testnormuser33 = prop.getProperty("testnormuser33");
-        String testnormuser34 = prop.getProperty("testnormuser34");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         driver.findElement(By.id("username")).sendKeys(username);
@@ -164,24 +164,33 @@ public class AddAtt {
         Thread.sleep(2500);
         driver.switchTo().defaultContent();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        System.out.println("Check Point 2");
+        WebElement Logout1= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click();", Logout1);
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(2500);
+        driver.findElement(By.id("username")).sendKeys(testnormuser33);
+        driver.findElement(By.id("password")).sendKeys("11111111");
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
-        Thread.sleep(1000);
-        driver.findElement(By.name("badgeNo")).sendKeys("550190");
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(4500);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Thread.sleep(2000);
+        driver.findElement(By.partialLinkText("Courses")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-        Thread.sleep(3500);
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+        Thread.sleep(2000);
+        if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getText().contains("Enrolled")){
+            System.out.println("The test is successful");
+        }
+        else{
+            Assert.fail("The test failed");
+        }
+
         driver.quit();
-
-
     }
 }

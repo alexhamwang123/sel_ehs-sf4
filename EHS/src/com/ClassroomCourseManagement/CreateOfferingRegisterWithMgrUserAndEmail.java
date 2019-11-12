@@ -108,7 +108,7 @@ public class CreateOfferingRegisterWithMgrUserAndEmail {
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(testnormuser);
         driver.findElement(By.id("password")).sendKeys(testnormuser);
@@ -153,7 +153,7 @@ public class CreateOfferingRegisterWithMgrUserAndEmail {
         js.executeScript("arguments[0].click()",Logout1);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);

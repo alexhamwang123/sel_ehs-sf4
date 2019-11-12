@@ -96,7 +96,7 @@ public class ClassroomPrerequisiteAndLogic {
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[@id='addClass']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
 
         driver.switchTo().defaultContent();
@@ -159,7 +159,7 @@ public class ClassroomPrerequisiteAndLogic {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.contains(unfinishedOnline.substring(0,9))) {
+        if(!working.contains(unfinishedOnline.substring(0,4))) {
             Assert.fail("user was ale to register for the course without completing the prereq");
         }
         Thread.sleep(1500);

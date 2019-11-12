@@ -52,8 +52,11 @@ public class ClasrromSPGVisibility {
         js.executeScript("arguments[0].click();", courseAdmin);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Classroom Course Management"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Classroom Course Management")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("0YC5wikw6d");
         //Click SPG Btn
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
@@ -89,7 +92,7 @@ public class ClasrromSPGVisibility {
             e.printStackTrace();
         }
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Management')]"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'RC Management')]")).click();
 
         //Click on the 'Create Risk Category' button
@@ -172,9 +175,9 @@ public class ClasrromSPGVisibility {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div/div[1]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -213,21 +216,21 @@ public class ClasrromSPGVisibility {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
+
         Thread.sleep(2000);
-        //Select Course Manager
-        driver.findElement(By.xpath("//*[@id=\"__BVID__52\"]/div/div[2]/div[15]/div/div")).click();
-        WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
-        js.executeScript("arguments[0].click()",Logout);
+        JavascriptExecutor js2 = (JavascriptExecutor)driver;
+        WebElement Logout=driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/nav[1]/div/ul/li[2]/div/a[5]"));
+        js2.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
         driver.findElement(By.id("password")).sendKeys(password);

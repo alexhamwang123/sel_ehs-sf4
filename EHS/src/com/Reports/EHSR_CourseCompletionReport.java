@@ -76,20 +76,35 @@ public class EHSR_CourseCompletionReport {
 
         WebElement SelectBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/div/button"));
         js.executeScript("arguments[0].click();",SelectBtn);
-
+        Thread.sleep(2000);
         //Search the Course
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("FfPtZ8gYcv");
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input")).sendKeys("FfPtZ8gYcv");
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("Y");
+        Thread.sleep(2000);
 
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr/td")).click();
+        //Click on OK
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/button")).click();
 
-        //Click Btn Go
-        driver.findElement(By.xpath("//*[@id=\"__BVID__41___BV_modal_footer_\"]/button")).click();
-		//Click on Go
+        //Date
+        WebElement July= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[1]/div[3]/span[7]"));
+        js.executeScript("arguments[0].click();",July);
+        Thread.sleep(2000);
+        WebElement Date_01= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[1]/div[2]/div/span[9]"));
+        JavascriptExecutor js1 = (JavascriptExecutor)driver;
+        js1.executeScript("arguments[0].click();",Date_01);
+        Thread.sleep(2000);
+        WebElement Date_02= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[2]/div[2]/div/span[13]"));
+        JavascriptExecutor js2=(JavascriptExecutor)driver;
+        js2.executeScript("arguments[0].click();",Date_02);
+
+        //Click on Go
+
         WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[15]/div/button[1]"));
         js.executeScript("arguments[0].click();",Go);
 

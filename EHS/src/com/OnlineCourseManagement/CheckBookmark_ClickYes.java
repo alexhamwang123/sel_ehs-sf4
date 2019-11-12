@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -62,7 +63,7 @@ public class CheckBookmark_ClickYes {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("EHS-1000");
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("kimi-online-004");
 
         //	 driver.findElement(By.name("searchButton")).click();
 
@@ -84,24 +85,36 @@ public class CheckBookmark_ClickYes {
 
 
         try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]")));
+        Thread.sleep(2000);
+
+        JavascriptExecutor js= (JavascriptExecutor)driver;
+        WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
+        js.executeScript("arguments[0].click();",English);
+
+        try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        JavascriptExecutor js= (JavascriptExecutor)driver;
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
+        Thread.sleep(3000);
 
-        WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
-        js.executeScript("arguments[0].click();",English);
-        Thread.sleep(1500);
-//         driver.findElement(By.xpath("//*[@id='label']")).click();
-
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        if(driver.getPageSource().contains("Page 2")){
+            System.out.println("The test is successful");
         }
+        else{
+            Assert.fail("The test failed");
+        }
+
+        driver.quit();
+
         driver.quit();
 
 

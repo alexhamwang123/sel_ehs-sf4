@@ -119,9 +119,9 @@ public class ClassroomSPGRC {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
@@ -328,7 +328,7 @@ public class ClassroomSPGRC {
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
 
         driver.findElement(By.id("username")).sendKeys(userid);

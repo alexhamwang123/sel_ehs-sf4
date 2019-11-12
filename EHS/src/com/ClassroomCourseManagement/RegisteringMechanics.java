@@ -275,7 +275,7 @@ public class RegisteringMechanics {
         js.executeScript("arguments[0].click();", Logout);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-
+        Thread.sleep(2000);
         System.out.println("Check Point 1");
         driver.findElement(By.id("username")).sendKeys(userid);
         driver.findElement(By.id("password")).sendKeys(password);
@@ -323,7 +323,7 @@ public class RegisteringMechanics {
         js.executeScript("arguments[0].click();", Logout1);
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-
+        Thread.sleep(2000);
         driver.findElement(By.id("username")).sendKeys(userid1);
         driver.findElement(By.id("password")).sendKeys(password);
 
@@ -368,6 +368,8 @@ public class RegisteringMechanics {
             js.executeScript("arguments[0].click();", Logout2);
             Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(2000);
+
         driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
 
@@ -396,7 +398,9 @@ public class RegisteringMechanics {
             js.executeScript("arguments[0].click();", Logout3);
             Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-            driver.findElement(By.id("username")).sendKeys(userid);
+        Thread.sleep(2000);
+
+        driver.findElement(By.id("username")).sendKeys(userid);
             driver.findElement(By.id("password")).sendKeys(password);
 
             driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -414,6 +418,7 @@ public class RegisteringMechanics {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@title='View Detail']")).click();
         Thread.sleep(2000);
+
             if(!driver.getPageSource().contains("Enrolled")) {
             Assert.fail("the user first in line on the waitlist did not get automatically enrolled when one of the enrolled users unregistered");
         }

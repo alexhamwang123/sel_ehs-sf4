@@ -173,13 +173,15 @@ public class RefreshOnlineCourse {
         Thread.sleep(1000);
         driver.findElement(By.className("editAction")).click();
         Thread.sleep(4500);
+
         new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("6 months");
-        Thread.sleep(500);
+        Thread.sleep(2500);
         try {
             new Select(driver.findElement(By.name("detailCourseRefreshCourse1"))).selectByVisibleText(courseId + " - " + courseTitle);
         } catch (NoSuchElementException e) {
             Assert.fail("the refresh online course does not show up in the refresh course menu while creating a classroom course");
         }
+
 
         Thread.sleep(3500);
         driver.quit();

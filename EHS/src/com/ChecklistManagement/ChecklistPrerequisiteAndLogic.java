@@ -167,7 +167,7 @@ public class ChecklistPrerequisiteAndLogic {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.contains(unfinishedOnline.substring(0,9))) {
+        if(!working.contains(unfinishedOnline.substring(0,4))) {
             Assert.fail("user was ale to register for the course without completing the prereq");
         }
         Thread.sleep(1500);
@@ -215,7 +215,7 @@ public class ChecklistPrerequisiteAndLogic {
         for(String handle:driver.getWindowHandles()){
             driver.switchTo().window(handle);
         }
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         try {
             driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]")).click();
         }

@@ -217,10 +217,45 @@ public class OnlineCourse_CompleteAndSubmit {
 		WebElement Exit=driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
 		js2.executeScript("arguments[0].click();",Exit);
 		Thread.sleep(2000);
+
+		for(String winhandle:driver.getWindowHandles()){
+			driver.switchTo().window(winhandle);
+		}
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("kimi-online-006"); //checklist name on localhost
+
+
+		Thread.sleep(3000);
+
+		if(driver.getPageSource().contains("Completed")){
+			System.out.println("The course page status is correct");
+		}
+		else{
+			System.out.println("The course page status is not correct");
+		}
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'My History')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//a[contains(text(),'My History')]")).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/input"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/input")).sendKeys("kimi-online-006"); //checklist name on localhost
+		Thread.sleep(2000);
+
+		if(driver.getPageSource().contains("kimi-online-006")){
+			System.out.println("The course page status is correct");
+		}
+		else{
+			System.out.println("The course page status is not correct");
+		}
 		driver.quit();
-
-		
-
 	}
 
 }

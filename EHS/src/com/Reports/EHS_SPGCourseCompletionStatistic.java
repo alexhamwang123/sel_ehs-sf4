@@ -78,7 +78,8 @@ public class EHS_SPGCourseCompletionStatistic {
             Assert.fail("The SPG Filter as N Failed");
         }
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__38___BV_modal_header_\"]/button")).click();
+        //Close Btn
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/header/button")).click();
         Thread.sleep(1500);
         //Click Course-Select Btn
         WebElement CourseBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/label/input"));
@@ -89,7 +90,7 @@ public class EHS_SPGCourseCompletionStatistic {
 
         new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("Y");
 
-        driver.findElement(By.xpath("//div[@id='__BVID__41___BV_modal_body_']//input[@placeholder='Type to filter result']")).sendKeys("0sDvK3sEly");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input")).sendKeys("0sDvK3sEly");
 
         Thread.sleep(1500);
 

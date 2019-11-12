@@ -174,7 +174,8 @@ public class CreateCertificate {
 		Thread.sleep(1700);
 		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();//Create Web Course
 		Thread.sleep(4500);
-
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+		Thread.sleep(1500);
 		String courseId2 = generator.generate(10);
 		driver.findElement(By.name("detailCourseNo")).sendKeys(courseId2);
 		new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");//We have to make it via manually, just in case.
@@ -209,9 +210,14 @@ public class CreateCertificate {
 
 		Thread.sleep(1500);
 		driver.findElement(By.id("btn_Scorm_UploadFile")).click();
+		Thread.sleep(10500);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
 		Thread.sleep(1500);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 		Thread.sleep(1700);
+		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+		Thread.sleep(1700);
+
 		driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 		Thread.sleep(3500);
 		driver.findElement(By.name("langIsViewable")).click();
@@ -221,19 +227,7 @@ public class CreateCertificate {
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 		Thread.sleep(4500);
 
-//        driver.quit();
-//		Thread.sleep(2000);
-//		driver.findElement(By.id("lightbox")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
-//		Thread.sleep(2500);
-//
-//		driver.findElement(By.id("login_login_id")).sendKeys(testnormuser);
-//		driver.findElement(By.id("login_password")).sendKeys(password);
-//
-//		driver.findElement(By.name("submit")).click();
-//
-//		Thread.sleep(4500);
+
 		driver.findElement(By.partialLinkText("Courses")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId2);
@@ -250,9 +244,13 @@ public class CreateCertificate {
 			driver.switchTo().window(winHandle);
 		}
 
-		Thread.sleep(500);
-		driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]"))));
 		Thread.sleep(1500);
+
+		WebElement English=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]"));
+        JavascriptExecutor js2= (JavascriptExecutor)driver;
+		js2.executeScript("arguments[0].click()",English);
+		Thread.sleep(8500);
 //        robot.keyPress(KeyEvent.VK_META);
 //        robot.keyPress(KeyEvent.VK_W);
 //        robot.keyRelease(KeyEvent.VK_META);
@@ -262,21 +260,21 @@ public class CreateCertificate {
 		//first one
 
 		driver.switchTo().frame(driver.findElement(By.id("scorm_iframe")));
-		Thread.sleep(4500);
+		Thread.sleep(2500);
 		//second one
 		driver.switchTo().frame(driver.findElement(By.name("scormdriver_content")));
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //time in second
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 
 		String innerText = driver.findElement(By.xpath("//*[@id=\"control-next\"]/div")).getText();
 		System.out.println("innerText=" + innerText);
 		if (innerText.equals("NEXT")) {
-			driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
+			driver.findElement(By.xpath("//div[@id='control-next']")).click();
 		}
 
-		Thread.sleep(4500);
+		Thread.sleep(3500);
 
-		driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
+		driver.findElement(By.xpath("//div[@id='control-next']")).click();
 		Thread.sleep(5500);
 		driver.switchTo().defaultContent();
 		//gThread.sleep(1000);
@@ -502,10 +500,10 @@ public class CreateCertificate {
 			break;
 		}
 		Thread.sleep(800);
-		JavascriptExecutor js2 = (JavascriptExecutor)driver;
+		JavascriptExecutor js3 = (JavascriptExecutor)driver;
 		//WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
 		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
-		js2.executeScript("arguments[0].click()", myTrainingReport);
+		js3.executeScript("arguments[0].click()", myTrainingReport);
 		Thread.sleep(1000);
 		new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Online");
 		Thread.sleep(1600);

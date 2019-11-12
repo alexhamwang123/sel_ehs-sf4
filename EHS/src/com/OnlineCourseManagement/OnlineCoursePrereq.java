@@ -184,6 +184,7 @@ public class OnlineCoursePrereq {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
         Thread.sleep(1500);
+
         String working = "";
         try {
             working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]")).getAttribute("innerHTML");

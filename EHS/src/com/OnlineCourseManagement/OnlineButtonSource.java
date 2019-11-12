@@ -186,16 +186,20 @@ public class OnlineButtonSource {
         }
         //take the course
         Thread.sleep(5000);
+
        WebElement TakeCourse= driver.findElement(By.xpath("//*[@id=\"course-take\"]/div[3]/div/form/button"));
         js.executeScript("arguments[0].click();",TakeCourse);
         Thread.sleep(3000);
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
+
         Thread.sleep(5000);
+
         WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
         js.executeScript("arguments[0].click();",English);
         Thread.sleep(5000);
+
         driver.quit();
 
     }

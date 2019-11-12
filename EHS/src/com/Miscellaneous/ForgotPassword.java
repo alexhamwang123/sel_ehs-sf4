@@ -29,18 +29,16 @@ public class ForgotPassword {
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
         driver.manage().window().maximize();
-        String username = prop.getProperty("testnormuser");
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("//*[@id=\"login\"]/div[3]/div/div[2]/div/div/a[2]")).click();
-        Thread.sleep(250);
-        driver.findElement(By.xpath("//*[@id=\"login-box\"]/div[3]/center/a[3]")).click();
+        //Click Forget Password
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/form/fieldset/div[2]/div/a")).click();
+        Thread.sleep(2250);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/input")).sendKeys("X00003037");
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[2]/input")).sendKeys("X00003037@trismax.com");
         Thread.sleep(750);
-        driver.findElement(By.id("badgeNo")).sendKeys(username);
-        driver.findElement(By.id("email")).sendKeys(username + "@trismax.com");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[type='submit'][value='Email password']")).click();
-        Thread.sleep(3500);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/button")).click();
+        Thread.sleep(2250);
         driver.quit();
 
     }

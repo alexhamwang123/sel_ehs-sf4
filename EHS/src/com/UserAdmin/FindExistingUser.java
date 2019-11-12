@@ -86,7 +86,7 @@ public class FindExistingUser {
 		}
 	    
 	    //Click on Search
-	    driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/button[1]")).click();
+	    driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/button[1]")).click();
 
 	    Thread.sleep(3500);
 	    driver.quit();

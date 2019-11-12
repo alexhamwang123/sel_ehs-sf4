@@ -41,8 +41,8 @@ public class CreateOfferingRegister {
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
+        String normuser = prop.getProperty("testnormuser");
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
-
         driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
 
@@ -76,11 +76,11 @@ public class CreateOfferingRegister {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
         Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='addClass']")));
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@id='addClass']")).click();
-
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(By.id("site_radio")));
         Thread.sleep(1000);
         driver.findElement(By.id("site_radio")).click();
@@ -101,7 +101,7 @@ public class CreateOfferingRegister {
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
         driver.findElement(By.name("detailClassRoom")).sendKeys("room01");
-        driver.findElement(By.name("detailClassMaxSize")).sendKeys("5");
+        driver.findElement(By.name("detailClassMaxSize")).sendKeys("1");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd")).click();
         Thread.sleep(1500);
@@ -119,28 +119,55 @@ public class CreateOfferingRegister {
         wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(1500);
-        //driver.findElement(By.name("searchButton")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
-        Thread.sleep(1500);
+        // driver.findElement(By.name("searchButton")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr[1]//td[5]//button[1]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
-
-
-        try {
-            WebElement cancel = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"));
-        } catch (NoSuchElementException e) {
-            Assert.fail("was not able to enroll in the course");
-        }
+        Thread.sleep(4500);
+        //Enroll
+        WebElement Enroll=driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"));
+        js.executeScript("arguments[0].click();",Enroll);
         Thread.sleep(3500);
+        //Logout
+        WebElement Logout= driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/ul/li[2]/div/a[5]"));
+        js.executeScript("arguments[0].click();",Logout);
+        Thread.sleep(3500);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        Thread.sleep(2000);
 
+        driver.findElement(By.id("username")).sendKeys("X00001666");
+        driver.findElement(By.id("password")).sendKeys("X00001666");
+
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(4500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Courses")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
+        //  driver.findElement(By.name("searchButton")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
+        Thread.sleep(1500);
+        if(!driver.getPageSource().contains("Waitlisted")) {
+            Assert.fail("the user did not get waitlisted for the course");
+        }
+
+        Thread.sleep(3500);
         driver.quit();
-
-
-
     }
 }

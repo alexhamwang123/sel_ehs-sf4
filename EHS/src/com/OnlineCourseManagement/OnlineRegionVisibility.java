@@ -173,7 +173,7 @@ public class OnlineRegionVisibility {
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SAC");
 
 
 // Click on 'SCV' from the search results
@@ -204,12 +204,11 @@ public class OnlineRegionVisibility {
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
 
 
-
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]"))));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
+        WebElement RolePage= driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"));
+        js.executeScript("arguments[0].click();", RolePage);
+        Thread.sleep(3000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
@@ -219,7 +218,7 @@ public class OnlineRegionVisibility {
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
         driver.findElement(By.id("password")).sendKeys(password);

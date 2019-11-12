@@ -177,6 +177,22 @@ public class AddWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
+        Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys("X00002380");
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
+
         driver.quit();
 
 

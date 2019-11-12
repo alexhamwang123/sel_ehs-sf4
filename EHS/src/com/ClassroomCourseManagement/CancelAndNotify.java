@@ -125,7 +125,7 @@ public class CancelAndNotify {
         driver.findElement(By.cssSelector("a[href*='cancel']")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("noteAtt")));
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.findElement(By.id("noteAtt")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Yes']")));

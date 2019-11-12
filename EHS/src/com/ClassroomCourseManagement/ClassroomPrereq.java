@@ -157,9 +157,9 @@ public class ClassroomPrereq {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__52___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
@@ -173,7 +173,7 @@ public class ClassroomPrereq {
         Thread.sleep(1500);
 
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         // driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
         //Thread.sleep(2000);
         //Sign in the user that never completed the prerequisite & try the prerequisite

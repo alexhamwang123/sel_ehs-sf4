@@ -286,6 +286,7 @@ public class ClassroomPrereqDecrease {
         } catch (NoSuchElementException e) {
             Assert.fail("user was able to register for the course without taking the required prereqs");
         }
+
         if(!working.contains(courseId0)) {
             System.out.println("something is wrong with the prerequisite courses");
         }

@@ -54,7 +54,7 @@ public class EmailAtt {
         js.executeScript("arguments[0].click()", courseAdmin);
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")));
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"search_result\"]/div/a")));
@@ -167,6 +167,25 @@ public class EmailAtt {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001666");
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
+
+        driver.switchTo().defaultContent();
+        Thread.sleep(1000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
+        Thread.sleep(1000);
         driver.findElement(By.name("badgeNo")).sendKeys("X00001534");
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
@@ -180,9 +199,10 @@ public class EmailAtt {
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 //        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
 //        Thread.sleep(1500);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"chkall\"]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[2]/table/tbody/tr[1]/td[1]/input")));
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"chkall\"]")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[2]/table/tbody/tr[1]/td[1]/input")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[2]/table/tbody/tr[2]/td[1]/input")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("emailUserButton")));
         Thread.sleep(1000);
@@ -202,7 +222,7 @@ public class EmailAtt {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"fancybox-inner\"]/div/center/input[1]")).click();
         Thread.sleep(3500);
-        driver.quit();
+       // driver.quit();
 
 
 

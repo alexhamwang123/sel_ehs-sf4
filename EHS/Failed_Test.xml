@@ -3,11 +3,7 @@
 <suite name="Default Suite">
     <test name="sel_ehs-sf4">
         <classes>
-            <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
-            <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
-            <class name="com.OnlineCourseManagement.OnlineCoursePrereqComplete"/>
-            <class name="com.OnlineCourseManagement.OnlineCourseSPGVisibility"/>
-            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
+            <class name="com.EHSAdmin.CreateCertificate"/>
         </classes>
     </test> <!-- sel_ehs-sf4 -->
 </suite> <!-- Default Suite -->

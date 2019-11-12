@@ -130,11 +130,17 @@ public class OnlinePrerequisiteAnd {
         Thread.sleep(1000);
         driver.findElement(By.id("addQBtn")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save & Back']"))));
-        Thread.sleep(5000);
-        js.executeScript("tinyMCE.activeEditor.setContent('this is the test question!')");
-
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
+        Thread.sleep(2000);
+        driver.switchTo().frame("editHtmlCode_ifr");
+        Thread.sleep(1000);
+        WebElement TextArea= driver.findElement(By.xpath("/html[1]/body[1]/p[1]"));
+        TextArea.clear();
+        TextArea.sendKeys("this is the test question!!!!!!!");
+        // js.executeScript("tinyMCE.activeEditor.setContent('<h1>this is the test question!</h1>TinyMCE')");
         Thread.sleep(1500);
+        driver.switchTo().defaultContent();
+
         driver.findElement(By.id("courseQuizAnswer1")).sendKeys("this is the correct answer");
         driver.findElement(By.id("courseQuizAnswer2")).sendKeys("no, this is the correct answer");
         driver.findElement(By.name("courseQuizCorrectAnswer")).sendKeys("2");
@@ -181,7 +187,7 @@ public class OnlinePrerequisiteAnd {
         driver.findElement(By.partialLinkText("Courses")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//tr[1]//td[5]//button[1]"))));
@@ -196,7 +202,7 @@ public class OnlinePrerequisiteAnd {
             Assert.fail("was able to register for the course without completing the prereq");
         }
 
-        if(!working.contains(unfinishedOnline.substring(0,9))) {
+        if(!working.contains(unfinishedOnline.substring(0,4))) {
             Assert.fail("user was ale to register for the course without completing the prereq");
         }
         Thread.sleep(1500);

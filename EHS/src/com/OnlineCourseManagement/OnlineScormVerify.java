@@ -73,7 +73,7 @@ public class OnlineScormVerify {
 
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(4500);
 
@@ -107,9 +107,12 @@ public class OnlineScormVerify {
 
 
         driver.findElement(By.id("btn_Scorm_UploadFile")).click();
+        Thread.sleep(10000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(4000);
+
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         Thread.sleep(13000);
         driver.findElement(By.name("langIsViewable")).click();
@@ -159,12 +162,12 @@ public class OnlineScormVerify {
         String innerText = driver.findElement(By.xpath("//*[@id=\"control-next\"]/div")).getText();
         System.out.println("innerText=" + innerText);
         if (innerText.equals("NEXT")) {
-            driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
+            driver.findElement(By.xpath("//div[@id='control-next']")).click();
         }
 
         Thread.sleep(4500);
 
-        driver.findElement(By.xpath("//*[@id=\"control-next\"]/a")).click();
+        driver.findElement(By.xpath("//div[@id='control-next']")).click();
         Thread.sleep(5500);
         driver.switchTo().defaultContent();
         //gThread.sleep(1000);

@@ -112,8 +112,6 @@ public class LablistAndRC {
         JavascriptExecutor js1 = ((JavascriptExecutor) driver);
         js1.executeScript("window.scrollBy(0,850)", "");
 
-// Clicking on USA Normal User
-//driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
 
 // Click on 'Save' button
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
@@ -131,45 +129,44 @@ public class LablistAndRC {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Lab Management')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("2J4foMj3Sa");
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("2J4foMj3Sa");
 
-        //Click Go Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='btn btn-primary no-margin']")));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@class='btn btn-primary no-margin']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("2J4foMj3Sa")));
+        //Click the Course
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/table/tbody/tr/td[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("2J4foMj3Sa")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/table/tbody/tr/td[1]")).click();
 
         //Click Add  btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='addLabMember']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@id='addLabMember']")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Add Member')]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(userid);
+        driver.findElement(By.xpath("//button[contains(text(),'Add Member')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='gobutton btn btn-primary']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("criteriaBadgeNumber")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@class='gobutton btn btn-primary']")).click();
+        driver.findElement(By.id("criteriaBadgeNumber")).sendKeys(userid);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[7]/div[1]/div[9]/form[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/input[1]")));
+        //Search Btn Click
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[1]/div[9]/form[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/input[1]")).click();
+        driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='squaredcorner modal-body']//input[5]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='squaredcorner modal-body']//input[5]")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")).click();
 
-        //Click Save
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='center mt-3']//input[@class='btn btn-success']")));
+        //Click Confirm Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='center mt-3']//input[@class='btn btn-success']")).click();
-        Thread.sleep(5000);
+        driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+
+        Thread.sleep(2000);
         WebElement ele2 = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         JavascriptExecutor js3 = (JavascriptExecutor)driver;
         js3.executeScript("arguments[0].click();",ele2);
@@ -178,18 +175,20 @@ public class LablistAndRC {
         Thread.sleep(1000);
         driver.findElement(By.id("badgeNo")).sendKeys(userid);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/button[1]")));
+        //Click Find User Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/button[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/button[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/button[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/table/tbody/tr")));
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div/div/table/tbody/tr/td[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/table/tbody/tr")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div/div/table/tbody/tr/td[1]")).click();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"__BVID__50___BV_tab_button__\"]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__50___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         Thread.sleep(4000);
         if(driver.getPageSource().contains("2J4foMj3Sa")){
             System.out.println("Test is successful");

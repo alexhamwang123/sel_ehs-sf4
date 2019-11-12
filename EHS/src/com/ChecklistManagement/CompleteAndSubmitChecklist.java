@@ -20,6 +20,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -102,11 +103,49 @@ public class CompleteAndSubmitChecklist {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
-		driver.quit();
-		
+        for(String Winhandle:driver.getWindowHandles()){
+            driver.switchTo().window(Winhandle);
+        }
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Courses")).click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@type='text']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-checklist-006");
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[1]/table/tbody/tr[1]/td[3]"))));
+        Thread.sleep(1000);
+        WebElement Status= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[1]/table/tbody/tr[1]/td[3]"));
+
+        if(Status.getText().contains("Completed")){
+            System.out.println("The Test is successful");
+        }
+        else
+        {
+            System.out.println("There is no Complete Status in Couse Page");
+        }
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("My History"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("My History")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" /html/body/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/input"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-checklist-006");
+
+        if(driver.getPageSource().contains("kimi-checklist-006")){
+            System.out.println("The Test is successful");
+        }
+        else
+        {
+            Assert.fail("the test failed in my history");
+        }
+
+        driver.quit();
 	}
 
 }

@@ -82,7 +82,7 @@ public class Manager_ComplianceReport {
 		}
 		
 		//Click on OK
-		driver.findElement(By.xpath("//*[@id=\"__BVID__13___BV_modal_footer_\"]/button")).click();
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/button")).click();
 		
 		try {
 			Thread.sleep(4500);

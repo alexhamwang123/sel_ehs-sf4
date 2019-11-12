@@ -169,7 +169,7 @@ public class UnregisterWaitlist {
         String building = generator.generate(15);
         driver.findElement(By.name("detailClassBuilding")).sendKeys(building);
         driver.findElement(By.name("detailClassRoom")).sendKeys("room01");
-        driver.findElement(By.name("detailClassMaxSize")).sendKeys("1");
+        driver.findElement(By.name("detailClassMaxSize")).sendKeys("3");
         Thread.sleep(1500);
         driver.findElement(By.id("TimeAdd")).click();
         Thread.sleep(1500);
@@ -184,48 +184,87 @@ public class UnregisterWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.id("saveClassCourse")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Courses")).click();
+        driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
 
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='attendList']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
+        driver.findElement(By.cssSelector("a[href*='attendList']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.name("badgeNo")).sendKeys(username);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")));
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
 
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
+        Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001515");
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
+
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
+        Thread.sleep(1000);
+        driver.findElement(By.name("badgeNo")).sendKeys("X00001666");
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='submit'][value='Search']")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
+
+        //Click Back
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/input[1]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/input[1]")).click();
+
+        //Save
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div[1]/div[1]/div[2]/div/form/div[2]/input[1]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div[1]/div[2]/div/form/div[2]/input[1]")).click();
+
+
+        Thread.sleep(4000);
         WebElement Logout= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click();", Logout);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
-
-        driver.findElement(By.id("username")).sendKeys(userid);
+        Thread.sleep(2000);
+        driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.id("welcomeShowRS")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.name("question[4586]")).click();
-        driver.findElement(By.name("question[1361]")).click();
-        driver.findElement(By.name("question[4562]")).click();
-        driver.findElement(By.name("question[4225]")).click();
-        driver.findElement(By.name("question[4193]")).click();
-        driver.findElement(By.name("question[145]")).click();
-        driver.findElement(By.name("question[1164]")).click();
-        driver.findElement(By.name("question[4676]")).click();
-        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("annContinue")).click();
+        Thread.sleep(3500);
 
         wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
         Thread.sleep(1000);
@@ -245,10 +284,9 @@ public class UnregisterWaitlist {
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
 
         Thread.sleep(4000);
-        if(!driver.getPageSource().contains("Waitlisted")) {
+        if(!driver.getPageSource().contains("Full")) {
             Assert.fail("the user did not get waitlisted for the course");
         }
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
 
         Thread.sleep(3500);
         driver.quit();

@@ -1,13 +1,16 @@
 package com.ChecklistManagement;
 
 
+import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -25,6 +28,10 @@ import javassist.NotFoundException;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
+
+import static org.apache.commons.text.CharacterPredicates.DIGITS;
+import static org.apache.commons.text.CharacterPredicates.LETTERS;
+
 @Test
 //@Test(groups="ehs" ,priority=1)
 public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor {
@@ -65,6 +72,7 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         WebDriver driver = new ChromeDriver();
         WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();;
 
         driver.manage().window().maximize();
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -79,7 +87,7 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(7500);
+        Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -90,10 +98,19 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         Thread.sleep(1500);
         driver.findElement(By.partialLinkText("Checklist Management")).click();
 
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"search_result\"]/div/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
+        Thread.sleep(3500);
+        String courseId = generator.generate(10);
+        System.out.println(courseId);
 
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"saveBtn\"]"))));
+
+        driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
+        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
+        new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
+        new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("selectBtnCreMaA")));
         Thread.sleep(1500);
         driver.findElement(By.id("selectBtnCreMaA")).click();
@@ -101,7 +118,7 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1500);
-        driver.findElement(By.name("badgeNo")).sendKeys(username);
+        driver.findElement(By.name("badgeNo")).sendKeys("X00002380");
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit'][value='Search']")));
         Thread.sleep(1500);
@@ -113,10 +130,51 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         driver.findElement(By.xpath("//*[@id=\"teammanager_result\"]/div/table/tbody/tr/td[1]/a")).click();
         Thread.sleep(3500);
 
-        driver.quit();
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+
+        Thread.sleep(3000);
+
+        WebElement Logout0=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+        js.executeScript("arguments[0].click()", Logout0);
+        Thread.sleep(1500);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
 
 
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("username"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("username")).sendKeys("X00002380");
+        driver.findElement(By.id("password")).sendKeys("X00002380");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(4500);
 
+        JavascriptExecutor js1 = (JavascriptExecutor)driver;
+        WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        js1.executeScript("arguments[0].click()", courseAdmin1);
+
+        Thread.sleep(1500);
+        Wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Checklist Management")));
+        Thread.sleep(1500);
+        driver.findElement(By.partialLinkText("Checklist Management")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[1]/div/div[5]/input")));
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[1]/div/div[5]/input")).sendKeys(courseId);
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")));
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
+        Thread.sleep(4500);
+        if(driver.getPageSource().contains(courseId)){
+            System.out.println("THe test is successful");
+        }
+        else{
+            Assert.fail("The test failed");
+        }
 
 
     }
