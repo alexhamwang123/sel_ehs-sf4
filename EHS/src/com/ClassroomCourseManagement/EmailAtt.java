@@ -120,12 +120,13 @@ public class EmailAtt {
         driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div[4]/a")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='attendList']")));
-        Thread.sleep(1000);
+        Thread.sleep(2500);
         driver.findElement(By.cssSelector("a[href*='attendList']")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        //Click add attendee
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -142,9 +143,9 @@ public class EmailAtt {
         Thread.sleep(2500);
         driver.switchTo().defaultContent();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -161,9 +162,9 @@ public class EmailAtt {
         driver.switchTo().defaultContent();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -180,9 +181,9 @@ public class EmailAtt {
         driver.switchTo().defaultContent();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -197,7 +198,7 @@ public class EmailAtt {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='selectStudent']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
-//        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+//        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 //        Thread.sleep(1500);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[2]/table/tbody/tr[1]/td[1]/input")));
         Thread.sleep(3000);
@@ -222,7 +223,7 @@ public class EmailAtt {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"fancybox-inner\"]/div/center/input[1]")).click();
         Thread.sleep(3500);
-       // driver.quit();
+        driver.quit();
 
 
 

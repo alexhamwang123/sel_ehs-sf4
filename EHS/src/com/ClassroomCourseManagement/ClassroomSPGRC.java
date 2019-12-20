@@ -215,9 +215,9 @@ public class ClassroomSPGRC {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Management')]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//a[contains(text(),'RC Management')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']"))));

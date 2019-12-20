@@ -88,13 +88,13 @@ public class CheckListSPGVisibility {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Management')]"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//a[contains(text(),'RC Management')]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']")).click();
 
         try {
@@ -169,10 +169,10 @@ public class CheckListSPGVisibility {
 
 // Enter the Last Name of the user that you wish to create
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
-
+        Thread.sleep(1000);
 // Click on 'Select' for Site
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
@@ -282,9 +282,9 @@ public class CheckListSPGVisibility {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Management')]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//a[contains(text(),'RC Management')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']"))));

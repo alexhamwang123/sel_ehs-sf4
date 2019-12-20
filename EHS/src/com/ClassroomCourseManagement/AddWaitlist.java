@@ -124,9 +124,9 @@ public class AddWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='attendList']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -143,9 +143,9 @@ public class AddWaitlist {
         driver.switchTo().defaultContent();
         Thread.sleep(1500);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -161,9 +161,9 @@ public class AddWaitlist {
         Thread.sleep(2500);
         driver.switchTo().defaultContent();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -177,9 +177,9 @@ public class AddWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);

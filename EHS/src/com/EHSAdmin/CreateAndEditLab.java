@@ -229,6 +229,7 @@ public class CreateAndEditLab {
         driver.navigate().back();
 
         Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div[1]/div/input")).clear();
 		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div[1]/div/input")).sendKeys(title);
         Thread.sleep(1500);
 		//Click the Lab

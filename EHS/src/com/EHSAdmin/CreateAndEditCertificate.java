@@ -206,7 +206,7 @@ public class CreateAndEditCertificate {
 
 		Thread.sleep(1500);
 		driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-		Thread.sleep(10000);
+		Thread.sleep(18000);
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();

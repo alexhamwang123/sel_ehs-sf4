@@ -1,6 +1,8 @@
 package com.EHSAdmin;
 
 import java.io.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -45,91 +47,109 @@ public class CreateFAQ {
         driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
 
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
+            driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
+            Thread.sleep(4500);
 
-        //Clicking on EHS Admin
-        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();",ele);
+            //Clicking on EHS Admin
+            WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+            JavascriptExecutor js = (JavascriptExecutor)driver;
+            js.executeScript("arguments[0].click();",ele);
 
-        try {
+
             Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+            //Click on FAQ Management
+            driver.findElement(By.partialLinkText("FAQ Management")).click();
+            Thread.sleep(3500);
+            // Click on Create FAQ
+            WebElement Create_FAQBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div[3]/ul/a"));
+            js.executeScript("arguments[0].click();",Create_FAQBtn);
+            Thread.sleep(1500);
+            // Enter the FAQ Title
+            RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+            String title = generator.generate(10);
 
-        js.executeScript("arguments[0].click();",ele1);
-        Thread.sleep(2000);
-		//Click on FAQ Management
-        driver.findElement(By.partialLinkText("FAQ Management")).click();
-		Thread.sleep(1500);
-		// Click on Create FAQ
-		driver.findElement(By.cssSelector("input[type='button'][value='Create FAQ']")).click();
-        Thread.sleep(1500);
-		// Enter the FAQ Title
-        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
-        String title = generator.generate(10);
+            driver.findElement(By.xpath("//*[@id=\"title\"]")).sendKeys(title);
 
-        driver.findElement(By.name("save[Title]")).sendKeys(title);
+            // Enter the FAQ description
+            driver.findElement(By.xpath("//*[@id=\"content\"]")).sendKeys("this is the faq description!");
 
-		// Enter the FAQ description
-		driver.findElement(By.name("save[Content]")).sendKeys("this is the faq description!");
+            try {
+                    Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            }
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+            //Select Category
+            new Select( driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[1]/div/div/select"))).selectByVisibleText("TRAINING PLAN");
+            //Click on Save
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[1]")).click();
+            Thread.sleep(3500);
+            //Click back
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[2]")).click();
+            Thread.sleep(3500);
+            //Select Category
+            new Select( driver.findElement(By.xpath("//*[@id=\"faqCate\"]"))).selectByVisibleText("TRAINING PLAN");
 
-		//Click on Save
-		driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(1500);
-        new Select(driver.findElement(By.className("form-control"))).selectByVisibleText("FAQ Title");
-
-        Actions actions = new Actions(driver);
+     /*   Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(By.id("secondmenu")));
         actions.click();
         actions.sendKeys(title);
         actions.build().perform();
-
-        driver.findElement(By.cssSelector("input[value='Go']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("a[onclick*='getFaqDetail']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.name("save[Content]")).clear();
-        driver.findElement(By.name("save[Content]")).sendKeys("im editing the faq description !");
-        Thread.sleep(500);
-        driver.findElement(By.cssSelector("input[value='Save']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(1500);
-
-        new Select(driver.findElement(By.className("form-control"))).selectByVisibleText("FAQ Title");
-
-        actions.moveToElement(driver.findElement(By.id("secondmenu")));
-        actions.click();
-        actions.sendKeys(title);
-        actions.build().perform();
-
-        driver.findElement(By.cssSelector("input[value='Go']")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.cssSelector("a[onclick*='getFaqDetail']")).click();
-        Thread.sleep(1500);
-
-        if(!driver.findElement(By.name("save[Content]")).getAttribute("innerHTML").equals("im editing the faq description !")) {
-            Assert.fail("something went wrong while editing the faq content");
-        }
-        Thread.sleep(2000);
-        driver.quit();
+     */
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div[1]/div/input")).sendKeys(title);
+            Thread.sleep(500);
+            //CLick the search result
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[2]/table/tbody/tr/td[2]")).click();
+            Thread.sleep(2500);
+            String Editing="editingTimes";
+            driver.findElement(By.xpath("//*[@id=\"content\"]")).clear();
+            driver.findElement(By.xpath("//*[@id=\"content\"]")).sendKeys(Editing);
+            Thread.sleep(500);
+            //Click on Save
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[1]")).click();
+            Thread.sleep(3500);
+            //Click back
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[2]")).click();
+            Thread.sleep(3500);
+            //Search the FAQ
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div[1]/div/input")).sendKeys(title);
+            //CLick the search result
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[2]/table/tbody/tr/td[2]")).click();
+            System.out.println("Checkpoint 1");
+            Thread.sleep(1500);
+            Thread.sleep(1500);
 
 
-	}
+            String Content= driver.findElement(By.id("content")).getText();
+            WebElement TextArea=driver.findElement(By.id("content"));
+            System.out.println("Checkpoint 2"+Content);
+            System.out.println("Checkpoint 3"+TextArea.getAttribute("value"));
+            if(!TextArea.getAttribute("value").contains(Editing)) {
+                    Assert.fail("something went wrong while editing the faq content");
+            }
+
+            Thread.sleep(2000);
+            WebElement Help=driver.findElement(By.xpath("//a[contains(text(),'Help')]"));
+            js.executeScript("arguments[0].click();",Help);
+
+            Thread.sleep(3000);
+            for(String winhandle: driver.getWindowHandles()){
+                    driver.switchTo().window(winhandle);
+            }
+
+            Thread.sleep(3000);
+            if(!driver.getPageSource().contains(title)){
+                    Assert.fail("The test fialed"); }
+            else{
+                    System.out.println("The test is successful");
+            }
+            Thread.sleep(2000);
+            driver.quit();
+
+
+
+    }
 
 }

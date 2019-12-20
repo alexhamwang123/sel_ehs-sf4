@@ -192,9 +192,9 @@ public class UnregisterWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='attendList']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(3000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -208,9 +208,9 @@ public class UnregisterWaitlist {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(3000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);
@@ -226,9 +226,9 @@ public class UnregisterWaitlist {
         driver.findElement(By.cssSelector("a[href*='selectStudent']")).click();
 
         Thread.sleep(1000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Add Attendee']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")));
         Thread.sleep(3000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Add Attendee']")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/form/div/div[3]/div[1]/input[1]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.name("badgeNo")));
         Thread.sleep(1000);

@@ -1,4 +1,4 @@
-//This script is written to create a new Risk Category under RC Management
+//This script is written to create a new Risk Category under RC Admin
 
 package com.EHSAdmin;
 
@@ -67,7 +67,7 @@ public class CreateAndEditRiskCategory {
             e.printStackTrace();
         }
 
-        driver.findElement(By.xpath("//a[contains(text(),'RC Management')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 		
 		//Click on the 'Create Risk Category' button
 		driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']")).click();

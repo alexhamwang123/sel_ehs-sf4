@@ -736,6 +736,12 @@
     <MESSAGE value="2019/09/28 EHS All Scripts Passed Version" />
     <option name="LAST_COMMIT_MESSAGE" value="2019/09/28 EHS All Scripts Passed Version" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="702" y="235" key="RollbackChangesDialog" timestamp="1576833428031">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="702" y="235" key="RollbackChangesDialog/0.23.1920.983@0.23.1920.983" timestamp="1576833428031" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$CreateAndEditCertificate_CreateAndEditCertificate__1_.ic" NAME="CreateAndEditCertificate.CreateAndEditCertificate (1) Coverage Results" MODIFIED="1566393554884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
