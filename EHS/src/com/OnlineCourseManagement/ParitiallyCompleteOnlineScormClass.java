@@ -147,7 +147,7 @@ public class ParitiallyCompleteOnlineScormClass {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("btn_Scorm_UploadFile"))));
         Thread.sleep(1000);
         driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-        Thread.sleep(7500);
+        Thread.sleep(17500);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();

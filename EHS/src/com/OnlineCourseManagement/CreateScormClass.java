@@ -144,7 +144,7 @@ public class CreateScormClass {
 
         Thread.sleep(1500);
         driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-
+        Thread.sleep(18000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@value='Save']")).click();

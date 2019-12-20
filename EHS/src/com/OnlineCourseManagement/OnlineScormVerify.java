@@ -107,7 +107,7 @@ public class OnlineScormVerify {
 
 
         driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-        Thread.sleep(10000);
+        Thread.sleep(18000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
