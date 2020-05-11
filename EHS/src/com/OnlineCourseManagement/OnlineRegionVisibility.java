@@ -1,10 +1,9 @@
 package com.OnlineCourseManagement;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.text.RandomStringGenerator;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,16 +15,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import static org.apache.commons.text.CharacterPredicates.DIGITS;
+import static org.apache.commons.text.CharacterPredicates.LETTERS;
+
 @Test
 public class OnlineRegionVisibility {
     public void OnlineRegionVisibility() throws InterruptedException, IOException, AWTException {
-        int number;
-        int integer;
-        Random rand = new Random();
-        number= rand.nextInt(10000);
-        integer=rand.nextInt(10000);
 
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
@@ -41,7 +38,10 @@ public class OnlineRegionVisibility {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
-
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+                actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         driver.manage().window().maximize();
 
         String username = prop.getProperty("username");
@@ -54,85 +54,163 @@ public class OnlineRegionVisibility {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
-        Thread.sleep(1500);
-        driver.findElement(By.linkText("Online Course Management")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
-        Thread.sleep(1500);
-        driver.findElement(By.name("detailCourseNo")).sendKeys(integer+"testforscript"+number);
 
-        WebElement element1 = driver.findElement(By.xpath("//select[@name='detailCourseCategory']"));
-        Select oSelect = new Select(element1);
-        oSelect.selectByValue("37");
-        WebElement element2 = driver.findElement(By.xpath("//select[@id='detailCourseFulfillType']"));
-        Select iSelect = new Select(element2);
-        iSelect.selectByValue("1");
-        WebElement element3 = driver.findElement(By.xpath("//select[@id='detailCourseExpiration']"));
-        Select aSelect = new Select(element3);
-        aSelect.selectByValue("0");
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Online Course Admin")).click();
 
-        WebElement element4 = driver.findElement(By.xpath("//select[@id='detailCourseSite']"));
-        Select RegionSelect = new Select(element4);
-        RegionSelect.selectByVisibleText("Taipei");
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Thread.sleep(1000);
+        WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
+        js.executeScript("arguments[0].click()", CreateBtn);
 
 
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
+        new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
-        Thread.sleep(14000);
-        driver.findElement(By.xpath("//input[@value='Edit']")).click();
-        driver.findElement(By.xpath("//input[@id='detailCourseTitle']")).sendKeys(integer+"testforscript");
+        String courseId = generator.generate(10);
+        System.out.println(courseId);
+        //input Course Number
+        driver.findElement(By.id("course-num")).sendKeys(courseId);
+        //input Course Title
+        driver.findElement(By.id("input-courseTitle")).clear();
+        driver.findElement(By.id("input-courseTitle")).sendKeys("This is title");
+        //input Course Description
 
-        //driver.findElement(By.id("")).sendKeys("/Users/trismax/IdeaProjects/sel_ehs/EHS/Mantis Status (English).docx.pdf");
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//input[@id='btn_edit_content']")).click();
-        driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[6]/div[1]/div[1]/div[1]/input[1]")).click();//第二次click Edit Content 按鈕
-        driver.findElement(By.xpath("//input[@value='Create Page']")).click();
-        driver.findElement(By.cssSelector("div.clearfix:nth-child(1) div.row div.col-md-9.col-xs-9 div.listTable:nth-child(18) table.tablesorter.table.table-hover.table-striped tbody:nth-child(2) tr:nth-child(1) td:nth-child(3) > button.btn.btn-primary.btn-xs.field-tip")).click();
+        driver.findElement(By.id("input-description")).sendKeys("This is description");
 
-        driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/table[1]/tbody[1]/tr[1]/td[2]/ul[1]/li[2]/a[1]/img[1]")).click();
-        driver.findElement(By.xpath("//input[@id='courseContentTitle']")).sendKeys("testforscript"+number);
-        driver.findElement(By.xpath("//div[@class='padded form-horizontal mt-3']//div[5]//input[3]")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
+        //Save btn
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Online Details
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//input[@value='Back']")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+
+        //input training time
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Thread.sleep(1000);
+        driver.findElement(By.id("course-trainingTime")).sendKeys("1");
+        //input credit
+        driver.findElement(By.id("course-credit")).sendKeys("1");
+
+        //Select Region
+        new Select(driver.findElement(By.id("course-region"))).selectByVisibleText("Taipei");
+
+        //Save btn
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Online Variants
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        //Click Edit Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+
+        //input course type
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
+        Thread.sleep(1000);
+        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Course Creator Content");
+
+        //Save btn
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Edit Course Content Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")).click();
+
+        for(String winHandle : driver.getWindowHandles()) {
+                driver.switchTo().window(winHandle);
+        }
+        Thread.sleep(1000);
+        //input content
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//input[@value='Back']")).click();
+        WebElement Frame= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/iframe"));
+        driver.switchTo().frame(Frame);
+        Thread.sleep(2000);
+        driver.findElement(By.id("tinymce")).sendKeys("This is a test only");
 
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("//input[@value='Back']")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("//input[@value='Back']")).click();
-        Thread.sleep(5000);
+        driver.switchTo().defaultContent();
 
-        driver.findElement(By.xpath("//input[@id='langIsViewable']")).click();
-        Thread.sleep(3000);
-        //Actions action= new Actions(driver);
+        driver.findElement(By.id("page-title-input")).sendKeys("TitileforTest");
+        Thread.sleep(1000);
+        //Click Save btn
+        Thread.sleep(1000);
 
-        //action.click(driver.findElement(By.id("checklistDefaultRegion")))
+        WebElement Save_Btn=driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]"));
+        js.executeScript("arguments[0].click()", Save_Btn);
+        Thread.sleep(1000);
+        //Click OK Btn
+        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button[2]")).click();
+        Thread.sleep(1000);
+        //Click Question Tab
+        driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/ul/li[2]/a")).click();
+        Thread.sleep(1000);
+        //Click Add Question Btn
+        driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/ul/div/button")).click();
 
-        driver.findElement(By.xpath("//input[@id='detailCourseIsActive']")).click();
-        Thread.sleep(3000);
-        /*WebElement element5=driver.findElement(By.id("checklistDefaultRegion"));
-        Select fseclect= new Select(element5);
-        fseclect.selectByValue("48a75e09cf08f298175f78d271a1eee6");
+        driver.switchTo().frame("question-content_ifr");
+        Thread.sleep(2000);
+        driver.findElement(By.id("tinymce")).sendKeys("This is a question content");
+        driver.switchTo().defaultContent();
+        Thread.sleep(1000);
+        //input answers
+        driver.findElement(By.xpath("/html/body/div[6]/div[1]/div/div/div/div/div[3]/div/div/div[2]/div[1]/input")).sendKeys("Correct Answer");
+        driver.findElement(By.xpath("/html/body/div[6]/div[1]/div/div/div/div/div[3]/div/div/div[3]/div[1]/input")).sendKeys("Wrong Answer");
+        //CLick the first answer as correct
+        WebElement CorrectBtn=driver.findElement(By.xpath("/html/body/div[6]/div[1]/div/div/div/div/div[3]/div/div/div[2]/div[2]/div/input"));
+        js.executeScript("arguments[0].click()", CorrectBtn);
 
-        WebElement element6= driver.findElement(By.id("checklistDefaultLanguage"));
-        Select gselect= new Select(element6);
-        gselect.selectByValue("English");*/
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        //Click OK btn
+        driver.findElement(By.xpath("/html/body/div[6]/div[1]/div/div/footer/button[2]")).click();
+
+        //Click Save Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        Thread.sleep(1000);
+        js.executeScript("arguments[0].click()", Save_Btn);
+
+        //Click OK Btn
+        driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/button[2]")).click();
+        Thread.sleep(1000);
+
+        //Close the window
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        Thread.sleep(1000);
+        driver.close();
+
+        for(String winHandle : driver.getWindowHandles()) {
+                driver.switchTo().window(winHandle);
+        }
+
+        //Click Online Variants
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+
+        //Click Visibility btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
+
+        WebElement VisibilityBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+        js.executeScript("arguments[0].click()", VisibilityBtn);
+
+        //Click viewable btn
+        WebElement ViewableBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[2]/div/input"));
+        js.executeScript("arguments[0].click()", ViewableBtn);
+
+        //Wait until the success message shows up
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(integer+"testforscript"+number);
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 
-        if(driver.getPageSource().contains(integer+"testforscript"+number)){
+        if(driver.getPageSource().contains(courseId)){
             Assert.fail("The User not in the Region can see the Course");
         }
 
@@ -166,9 +244,9 @@ public class OnlineRegionVisibility {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -206,7 +284,7 @@ public class OnlineRegionVisibility {
 
 //Click Role Page
         Thread.sleep(3000);
-        WebElement RolePage= driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"));
+        WebElement RolePage= driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]"));
         js.executeScript("arguments[0].click();", RolePage);
         Thread.sleep(3000);
 //Click the DanielAdmin Btn
@@ -235,7 +313,11 @@ public class OnlineRegionVisibility {
         driver.findElement(By.name("question[145]")).click();
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
-        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+        driver.findElement(By.name("question[7466]")).click();
+        driver.findElement(By.name("question[7467]")).click();
+
+
+            driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
         driver.findElement(By.id("annContinue")).click();
@@ -248,9 +330,9 @@ public class OnlineRegionVisibility {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(integer+"testforscript"+number);
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 
-        if(!driver.getPageSource().contains(integer+"testforscript"+number)){
+        if(!driver.getPageSource().contains(courseId)){
             Assert.fail("The user within the Region can't see the course");
         }
     }

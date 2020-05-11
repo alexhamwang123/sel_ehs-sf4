@@ -1,10 +1,8 @@
 package com.Reports;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -32,6 +30,9 @@ public class EHS_SPGCourseCompletionReport {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         driver.findElement(By.id("username")).sendKeys(username);
@@ -87,11 +88,12 @@ public class EHS_SPGCourseCompletionReport {
 
         new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("Y");
 
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("0sDvK3sEly");
+        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("DanielSPGTest02");
 
         Thread.sleep(1500);
+        Thread.sleep(1500);
 
-        if(driver.getPageSource().contains("0sDvK3sEly")){
+        if(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr/td")).isDisplayed()){
             System.out.println("The SPG Filter as Y works");
         }
         else
@@ -104,11 +106,11 @@ public class EHS_SPGCourseCompletionReport {
         new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("N");
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("0sDvK3sEly");
+        driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("DanielSPGTest02");
 
         Thread.sleep(1500);
 
-        if(!driver.getPageSource().contains("0sDvK3sEly")){
+        if(!driver.getPageSource().contains("DanielSPGTest02")){
             System.out.println("The SPG Filter as N works");
         }
         else

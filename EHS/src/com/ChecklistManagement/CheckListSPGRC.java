@@ -1,11 +1,9 @@
 package com.ChecklistManagement;
 
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -35,6 +33,9 @@ public class CheckListSPGRC {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         driver.manage().window().maximize();
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();;
         String username = prop.getProperty("username");
@@ -74,9 +75,9 @@ public class CheckListSPGRC {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -115,7 +116,7 @@ public class CheckListSPGRC {
         Thread.sleep(2000);
 
 
-        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
         //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
@@ -126,9 +127,9 @@ public class CheckListSPGRC {
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click();", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Management"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Checklist Management")).click();
+        driver.findElement(By.partialLinkText("Checklist Admin")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
@@ -229,10 +230,11 @@ public class CheckListSPGRC {
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']")).click();
-
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/ul/a[1]")).click();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -243,79 +245,82 @@ public class CheckListSPGRC {
         RandomStringGenerator generator1 = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String title = generator1.generate(10);
         //Enter the Risk Category Name
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("detailJobClassName"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
         Thread.sleep(1000);
-        driver.findElement(By.name("detailJobClassName")).sendKeys(title);
+        driver.findElement(By.id("input-name")).sendKeys(title);
 
         //Enter the Risk Category Abbr Name
-        driver.findElement(By.name("detailJobClassAbbrName")).sendKeys("RCR");
+        driver.findElement(By.id("input-abbrev")).sendKeys(title);
 
         //Enter the description
-        driver.findElement(By.name("detailJobClassDescr")).sendKeys("this is the description!");
+        driver.findElement(By.id("input-desc")).sendKeys("this is the description for at least 20 characters!");
 
         Thread.sleep(1500);
-        driver.findElement(By.id("selectBtnCreMaA")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
         Thread.sleep(2500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("badgeNo"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
-        driver.findElement(By.name("badgeNo")).sendKeys(username);
-        driver.findElement(By.cssSelector("input[value='Search']")).click();
+        driver.findElement(By.id("criteriaBadge")).sendKeys(username);
+        //Click Search
         Thread.sleep(2500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[href*='selectCourseManager']"))));
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+        Thread.sleep(2500);
+        //Click Result
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
-        Thread.sleep(7500);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+        Thread.sleep(1000);
+        //Click Save btn
+        WebElement Save= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/button"));
+        JavascriptExecutor js2 = (JavascriptExecutor)driver;
+        js2.executeScript("arguments[0].click();", Save);
 
-
-        driver.findElement(By.xpath("//*[@id=\"saveJC\"]")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("addCourse"))));
+        //Click add Required Course
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(2000);
-        driver.findElement(By.id("addCourse")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div/div[1]/div/label/input")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
+        //Click add course Btn
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(courseId);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys(courseId);
 
-        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
+        //Click result
         Thread.sleep(1000);
-        String value = driver.findElement(By.cssSelector("input[type='checkbox'][name='addCourse[]']")).getAttribute("value");
-        Thread.sleep(500);
-        System.out.println(value);
-        driver.findElement(By.id(value)).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
         Thread.sleep(500);
         //WebElement add = driver.findElement(By.cssSelector("input[type='button'][value='Add']"));
-        WebElement add = driver.findElement(By.xpath("//*[@id=\"paging_result\"]/input[6]"));
-        js.executeScript("arguments[0].click();", add);
-
-        Thread.sleep(3500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("fancyConfirm_ok"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-
+        WebElement addconfirmbtn = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
+        js.executeScript("arguments[0].click();", addconfirmbtn);
+        WebElement EmailUser = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
+        js.executeScript("arguments[0].click();", EmailUser);
 
         //Assign the RC
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"userAssign\"]"))));
+        //Click the Assign Btn
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[4]/a"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"userAssign\"]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[4]/a")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[4]/div/div[3]/div/button[1]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(userid);
-        driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div/div[1]/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[4]/div/div[3]/div/button[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr/td[1]/input"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"userRecord\"]/tbody/tr/td[1]/input")).click();
+        driver.findElement(By.id("criteriaBadge")).sendKeys(userid);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='search_result']//input[contains(@class,'btn-primary')]")).click();
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/footer/div/button")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[value='Save']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[value='Save']")).click();
+
+        //Click OK Btn
+        WebElement OKBtn = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]"));
+        js.executeScript("arguments[0].click();", OKBtn);
 
         Thread.sleep(2000);
 
@@ -357,6 +362,8 @@ public class CheckListSPGRC {
         driver.findElement(By.name("question[145]")).click();
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
+        driver.findElement(By.name("question[7466]")).click();
+        driver.findElement(By.name("question[7467]")).click();
         driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);

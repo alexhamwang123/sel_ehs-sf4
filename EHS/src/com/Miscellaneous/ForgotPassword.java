@@ -2,8 +2,10 @@ package com.Miscellaneous;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -28,6 +30,9 @@ public class ForgotPassword {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         driver.manage().window().maximize();
         Thread.sleep(1000);
 

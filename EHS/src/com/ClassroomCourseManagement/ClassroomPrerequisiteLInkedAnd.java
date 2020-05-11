@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -36,6 +37,9 @@ public class ClassroomPrerequisiteLInkedAnd {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String username = prop.getProperty("username");
@@ -65,9 +69,9 @@ public class ClassroomPrerequisiteLInkedAnd {
 
 
         //Click on classroom course management
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[3]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]")).click();
 
 
         //Click on Create course
@@ -175,9 +179,9 @@ public class ClassroomPrerequisiteLInkedAnd {
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Classroom Course Management")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys(courseId);
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
 
         //CLick Go Btn
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='btn btn-primary']"))));

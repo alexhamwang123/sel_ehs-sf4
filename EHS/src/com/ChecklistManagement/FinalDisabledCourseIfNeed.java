@@ -1,31 +1,20 @@
 package com.ChecklistManagement;
 
-import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
-//        import java.util.ArrayList;
-import java.util.Hashtable;
-
-//        import java.util.List;
-import java.util.Enumeration;
-
-import java.security.Key;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import static org.apache.commons.text.CharacterPredicates.DIGITS;
-import static org.apache.commons.text.CharacterPredicates.LETTERS;
+//        import java.util.ArrayList;
+//        import java.util.List;
 @Test
 //@Test(dependsOnGroups={"NormalRefreshChecklist","PrereqDecreaseChecklist","RefreshChecklist","SaveAndCancel","PrereqDecreaseChecklist"})
 //@Test(dependsOnGroups = "ehs1",priority=7)
@@ -47,6 +36,9 @@ public class FinalDisabledCourseIfNeed {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
   /*      Robot robot = new Robot();
         robot.setAutoDelay(250);

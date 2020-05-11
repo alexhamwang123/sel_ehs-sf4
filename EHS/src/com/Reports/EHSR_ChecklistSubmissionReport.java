@@ -4,22 +4,15 @@
 
 package com.Reports;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 //@Test
@@ -41,6 +34,9 @@ public class EHSR_ChecklistSubmissionReport {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 		driver.findElement(By.id("username")).sendKeys(username);
@@ -77,7 +73,7 @@ public class EHSR_ChecklistSubmissionReport {
 		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
 		Thread.sleep(1500);
 		//Click on the Ok button
-		driver.findElement(By.xpath("//*[@id=\"__BVID__10___BV_modal_footer_\"]/button")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__7___BV_modal_footer_\"]/button")).click();
 		
 		try {
 			Thread.sleep(3500);

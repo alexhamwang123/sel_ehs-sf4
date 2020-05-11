@@ -2,25 +2,19 @@
 
 package com.EHSAdmin;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
@@ -35,7 +29,7 @@ public class CreateAndEditRiskCategory {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+        WebDriverWait wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -44,6 +38,9 @@ public class CreateAndEditRiskCategory {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         driver.manage().window().maximize();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -70,98 +67,98 @@ public class CreateAndEditRiskCategory {
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 		
 		//Click on the 'Create Risk Category' button
-		driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']")).click();
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button"))));
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/ul/a[1]")).click();
+            try {
+                    Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            }
 
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String title = generator.generate(10);
-        //Enter the Risk Category Name
-		driver.findElement(By.name("detailJobClassName")).sendKeys(title);
-		
-		//Enter the Risk Category Abbr Name
-		driver.findElement(By.name("detailJobClassAbbrName")).sendKeys("RCR");
-		
-		//Enter the description
-		driver.findElement(By.name("detailJobClassDescr")).sendKeys("this is the description!");
+            //Enter the Risk Category Name
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
+            Thread.sleep(1000);
+            driver.findElement(By.id("input-name")).sendKeys(title);
 
-		Thread.sleep(1500);
-		driver.findElement(By.id("selectBtnCreMaA")).click();
-		Thread.sleep(2500);
-		driver.findElement(By.name("badgeNo")).sendKeys(username);
-		driver.findElement(By.cssSelector("input[value='Search']")).click();
-        Thread.sleep(2500);
-        driver.findElement(By.cssSelector("a[href*='selectCourseManager']")).click();
-        Thread.sleep(2500);
+            //Enter the Risk Category Abbr Name
+            driver.findElement(By.id("input-abbrev")).sendKeys(title);
 
+            //Enter the description
+            driver.findElement(By.id("input-desc")).sendKeys("this is the description for at least 20 characters!");
 
+            Thread.sleep(1500);
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
+            Thread.sleep(2500);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
+            Thread.sleep(1000);
+            driver.findElement(By.id("criteriaBadge")).sendKeys(username);
+            //Click Search
+            Thread.sleep(2500);
+            driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+            Thread.sleep(2500);
+            //Click Result
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+            Thread.sleep(1000);
+            //Click Save btn
+            WebElement Save= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/button"));
+            JavascriptExecutor js2 = (JavascriptExecutor)driver;
+            js2.executeScript("arguments[0].click();", Save);
 
-		
-		//Click on the 'Save' button
-		driver.findElement(By.id("saveJC")).click();
-		Thread.sleep(7500);
-        driver.findElement(By.id("addCourse")).click();
+        Thread.sleep(3500);
+            //Clicking on EHS Admin
+            WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+            JavascriptExecutor js1 = (JavascriptExecutor)driver;
+            js1.executeScript("arguments[0].click();",ele1);
+
+            try {
+                    Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            }
+
+            driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
         Thread.sleep(4500);
-        WebElement secondmenu = driver.findElement(By.id("secondmenu"));
-
-        Actions actions = new Actions(driver);
-        actions.moveToElement(secondmenu);
-        actions.click();
-        actions.sendKeys("Classroom1");
-        actions.build().perform();
-
-
-        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
-        Thread.sleep(1000);
-        String value = driver.findElement(By.cssSelector("input[type='checkbox'][name='addCourse[]']")).getAttribute("value");
-        Thread.sleep(500);
-        System.out.println(value);
-        driver.findElement(By.id(value)).click();
-        Thread.sleep(500);
-        //WebElement add = driver.findElement(By.cssSelector("input[type='button'][value='Add']"));
-        WebElement add = driver.findElement(By.xpath("//*[@id=\"paging_result\"]/input[6]"));
-        js.executeScript("arguments[0].click();", add);
-
-
-
-        Thread.sleep(3500);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-        Thread.sleep(3500);
-        driver.findElement(By.cssSelector("input[value='Save']")).click();
-        Thread.sleep(3500);
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(4500);
-        actions.moveToElement(driver.findElement(By.id("secondmenu")));
-        actions.click();
-        actions.sendKeys(title);
-        actions.build().perform();
-        driver.findElement(By.cssSelector("input[value='Go']")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/input")).sendKeys(title);
         Thread.sleep(4000);
-        driver.findElement(By.className("editAction")).click();
+        //CLick the result
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]")).click();
         Thread.sleep(3500);
-        driver.findElement(By.name("detailJobClassDescr")).clear();
-        driver.findElement(By.name("detailJobClassDescr")).sendKeys("im editing the description !");
+        driver.findElement(By.id("input-desc")).clear();
+        driver.findElement(By.id("input-desc")).sendKeys("im editing the description !");
         Thread.sleep(500);
-
-        driver.findElement(By.cssSelector("input[value='Save']")).click();
+        //Click Save
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/button")).click();
         Thread.sleep(4500);
-        driver.findElement(By.cssSelector("input[value='Back']")).click();
-        Thread.sleep(4500);
-        actions.moveToElement(driver.findElement(By.id("secondmenu")));
-        actions.click();
-        actions.sendKeys(title);
-        actions.build().perform();
-        driver.findElement(By.cssSelector("input[value='Go']")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.className("editAction")).click();
-        Thread.sleep(3500);
+            //Clicking on EHS Admin
+            WebElement ele2 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+            JavascriptExecutor js3 = (JavascriptExecutor)driver;
+            js3.executeScript("arguments[0].click();",ele2);
 
-        if(!driver.findElement(By.name("detailJobClassDescr")).getAttribute("innerHTML").equals("im editing the description !")) {
+            try {
+                    Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            }
+
+            driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
+            Thread.sleep(4500);
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/input")).sendKeys(title);
+            Thread.sleep(4000);
+            //CLick the result
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]")).click();
+            Thread.sleep(3500);
+
+        if(!driver.findElement(By.id("input-desc")).getAttribute("value").equals("im editing the description !")) {
             Assert.fail("something went wrong while editing the description");
         }
 

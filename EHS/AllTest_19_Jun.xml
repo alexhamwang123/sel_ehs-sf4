@@ -71,7 +71,7 @@
             <class name="com.ClassroomCourseManagement.NormalRefreshClassroomCourse"/>
             <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
             <class name="com.ClassroomCourseManagement.NoShowNotPassedCompleted"/>
-            <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
+            <class name="com.OnlineCourseManagement.OnlineButtonSource_DirectLink"/>
             <class name="com.OnlineCourseManagement.OnlineButtonSource_Duplicate"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit"/>
             <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>

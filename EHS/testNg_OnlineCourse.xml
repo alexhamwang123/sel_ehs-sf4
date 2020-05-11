@@ -29,7 +29,7 @@
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickNo"/>
             <class name="com.OnlineCourseManagement.CheckBookmark_ClickYes"/>
             <class name="com.OnlineCourseManagement.NormalRefreshOnlineCourse"/>
-            <class name="com.OnlineCourseManagement.OnlineButtonSource"/>
+            <class name="com.OnlineCourseManagement.OnlineButtonSource_DirectLink"/>
             <class name="com.OnlineCourseManagement.OnlineCoursePrereq"/>
             <class name="com.OnlineCourseManagement.OnlineCoursePrereqDecrease"/>
             <class name="com.OnlineCourseManagement.OnlineButtonSource_Duplicate"/>

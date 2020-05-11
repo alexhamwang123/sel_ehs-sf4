@@ -1,10 +1,8 @@
 package com.Reports;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -32,6 +30,9 @@ public class EHS_SPGCheckList_Submission_Report {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         driver.findElement(By.id("username")).sendKeys(username);

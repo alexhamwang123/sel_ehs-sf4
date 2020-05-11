@@ -3,26 +3,18 @@
 
 package com.ChecklistManagement;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.xpath.operations.Variable;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 @Test
 public class CompleteAndSubmitChecklist {
@@ -41,6 +33,11 @@ public class CompleteAndSubmitChecklist {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
+
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+         actions.build().perform(); }
+        catch (NoSuchElementException e)
+        { System.out.println("Bypass mode is no more needed"); }
 		driver.manage().window().maximize();
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
@@ -81,20 +78,20 @@ public class CompleteAndSubmitChecklist {
 
 
         //Clicking the Radio Button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[1]/div/div[3]/label[2]/input"))));
-        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[2]/div/div[1]/div/div[3]/label[2]/input"))));
+        Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[1]/div/div[3]/label[2]/input")).click();
+        driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[2]/div/div[1]/div/div[3]/label[2]/input")).click();
 
- 		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[2]/div[2]/div/div[3]/label[1]/input")).click();
+ 		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[2]/div/div[2]/div/div[3]/label[1]/input")).click();
 
 
         //Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
         //driver.findElement(By.xpath("//input[@value='Y']")).click(); // Cat
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[1]/div/button[3]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[3]/button[3]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[1]/div/button[3]")).click();
+        driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[3]/button[3]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"))));
         Thread.sleep(1000);

@@ -1,25 +1,20 @@
 package com.OnlineCourseManagement;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.NoSuchElementException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.NoSuchElementException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 @Test
@@ -41,6 +36,9 @@ public class OnlineCourse_CompleteAndSubmit {
 		String urladdr = prop.getProperty("url");
 
 		driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
 		driver.manage().window().maximize();
 
@@ -83,9 +81,9 @@ public class OnlineCourse_CompleteAndSubmit {
 		driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
 		Thread.sleep(1000);
 // Enter the search value as "SCV"
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -149,6 +147,8 @@ public class OnlineCourse_CompleteAndSubmit {
 		driver.findElement(By.name("question[145]")).click();
 		driver.findElement(By.name("question[1164]")).click();
 		driver.findElement(By.name("question[4676]")).click();
+		driver.findElement(By.name("question[7466]")).click();
+		driver.findElement(By.name("question[7467]")).click();
 
 		Thread.sleep(1500);
 

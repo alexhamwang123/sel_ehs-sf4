@@ -3,11 +3,12 @@ package com.OnlineCourseManagement;
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,11 +17,11 @@ import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.*;
-import java.text.*;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
@@ -43,7 +44,7 @@ public class OnlineScormVerify {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
+        WebDriverWait wait= new WebDriverWait(driver,30);
 
         File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
 
@@ -53,6 +54,9 @@ public class OnlineScormVerify {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+            actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         driver.manage().window().maximize();
 
@@ -71,64 +75,112 @@ public class OnlineScormVerify {
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[4]")).click();
-        Thread.sleep(3500);
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
-        Thread.sleep(4500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Online Course Admin")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Thread.sleep(1000);
+        WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
+        js.executeScript("arguments[0].click()", CreateBtn);
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
+        new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
         String courseId = generator.generate(10);
-        driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
-        new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
-        new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Normal");
-        new Select(driver.findElement(By.name("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        Thread.sleep(3500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(15000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(8000);
-        String courseTitle = generator.generate(10);
-        driver.findElement(By.name("detailCourseTitle")).sendKeys(courseTitle);
-        driver.findElement(By.name("detailCourseDescription")).sendKeys("this is the course description");
-        driver.findElement(By.name("detailInstructionalText")).sendKeys("gratz dude");
-        Thread.sleep(5000);
+        System.out.println(courseId);
+        //input Course Number
+        driver.findElement(By.id("course-num")).sendKeys(courseId);
+        //input Course Title
+        driver.findElement(By.id("input-courseTitle")).clear();
+        driver.findElement(By.id("input-courseTitle")).sendKeys("This is title");
+        //input Course Description
+
+        driver.findElement(By.id("input-description")).sendKeys("This is description");
+
+        //Save btn
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Online Details
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+
+        //input training time
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Thread.sleep(1000);
+        driver.findElement(By.id("course-trainingTime")).sendKeys("1");
+        //input credit
+        driver.findElement(By.id("course-credit")).sendKeys("1");
+
+        //Save btn
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Online Variants
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        //Click Edit Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+
+        //input course type
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
+        Thread.sleep(1000);
+        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Scorm Content");
+
+
+
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         java.awt.datatransfer.Clipboard clipboard = toolkit.getSystemClipboard();
         String path = System.getProperty("user.dir") + "/Intro_OneDrive.zip";
-        //  System.out.println("path="+path);
+        System.out.println("path="+path);
         StringSelection str = new StringSelection(path);
         clipboard.setContents(str, str);
 
-        //PLEASE Choice scorm type  and file_Scrom_Upload.
-        driver.findElement(By.cssSelector("input[type='radio'][value='scorm']")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.cssSelector("input[type='file']")).sendKeys(path);
-        Thread.sleep(3000);
+
+        Thread.sleep(2000);
+        driver.findElement(By.id("course-scorm")).sendKeys(path);
+        Thread.sleep(1000);
 
 
-        driver.findElement(By.id("btn_Scorm_UploadFile")).click();
-        Thread.sleep(18000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(4000);
+        Thread.sleep(1800);
 
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        Thread.sleep(13000);
-        driver.findElement(By.name("langIsViewable")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.name("detailCourseIsActive")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
-        Thread.sleep(6000);
+        //Save btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Online Variants
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+
+        //Click Visibility btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
+
+        WebElement VisibilityBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+        js.executeScript("arguments[0].click()", VisibilityBtn);
+
+        //Click viewable btn
+        WebElement ViewableBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[2]/div/input"));
+        js.executeScript("arguments[0].click()", ViewableBtn);
+
+        //Wait until the success message shows up
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
+
+
         driver.findElement(By.partialLinkText("Courses")).click();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         System.out.println(courseId);
 
 
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
-        Thread.sleep(1500);
-        String currentWin = driver.getWindowHandle();
         Thread.sleep(1500);
         try {
             driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();

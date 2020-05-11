@@ -1,10 +1,8 @@
 package com.Miscellaneous;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -33,6 +31,9 @@ public class SPGAccessinAllCourses {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         driver.manage().window().maximize();
 
@@ -49,9 +50,9 @@ public class SPGAccessinAllCourses {
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click();", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Management"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Checklist Management")).click();
+        driver.findElement(By.partialLinkText("Checklist Admin")).click();
         driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("0sDvK3sEly");
         //Click SPG Btn
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
@@ -75,24 +76,29 @@ public class SPGAccessinAllCourses {
             Assert.fail("The SPG Manager is not the current System User");
         }
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
+
+        driver.findElement(By.partialLinkText("Home")).click();
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("Online Course Management")).click();
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("1220testforscript9326");
+
+        JavascriptExecutor js1 = (JavascriptExecutor)driver;WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        js1.executeScript("arguments[0].click();", courseAdmin1);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Online Course Admin")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/input")).sendKeys("DanielSPGTestCourse01");
         //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
+        WebElement SPG=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/input"));
+        js1.executeScript("arguments[0].click();", SPG);
 
-        //Click Go btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("1220testforscript9326"))));
+        //CLick result
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("1220testforscript9326")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(1000);
         if(driver.getPageSource().contains("tom tom")){
             System.out.println("The SPG Manager is the current System User");
@@ -101,24 +107,20 @@ public class SPGAccessinAllCourses {
             Assert.fail("The SPG Manager is not the current System User");
         }
 
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Online Course Management")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Classroom Course Management"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Classroom Course Management")).click();
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("0YC5wikw6d");
-        //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]/div[1]/div/input")).sendKeys("DanielSPGTest02");
 
-        //Click Go btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("0YC5wikw6d"))));
-        Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("0YC5wikw6d")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
+        //Click result
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")).click();
+        Thread.sleep(2000);
         Thread.sleep(1000);
         if(driver.getPageSource().contains("tom tom")){
             System.out.println("The SPG Manager is the current System User");
@@ -132,10 +134,10 @@ public class SPGAccessinAllCourses {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        // 1220testforscript9326 is Online SPG course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("1220testforscript9326");
+        // DanielSPGTestCourse01 is Online SPG course
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTestCourse01");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("1220testforscript9326")){
+        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -148,7 +150,7 @@ public class SPGAccessinAllCourses {
         // 0sDvK3sEly is Checklist SPG Course
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("0sDvK3sEly");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("1220testforscript9326")){
+        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -158,10 +160,10 @@ public class SPGAccessinAllCourses {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        // 0sDvK3sEly is Classroom SPG Course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("0YC5wikw6d");
+        // DanielSPGTest02 is Classroom SPG Course
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTest02");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("0YC5wikw6d")){
+        if(!driver.getPageSource().contains("DanielSPGTest02")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -196,9 +198,9 @@ public class SPGAccessinAllCourses {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -224,8 +226,8 @@ public class SPGAccessinAllCourses {
             e.printStackTrace();
         }
 
-        JavascriptExecutor js1 = ((JavascriptExecutor) driver);
-        js1.executeScript("window.scrollBy(0,850)", "");
+        JavascriptExecutor js2 = ((JavascriptExecutor) driver);
+        js2.executeScript("window.scrollBy(0,850)", "");
 
 // Clicking on USA Normal User
 //driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
@@ -237,9 +239,9 @@ public class SPGAccessinAllCourses {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
@@ -268,7 +270,10 @@ public class SPGAccessinAllCourses {
         driver.findElement(By.name("question[145]")).click();
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
-        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+        driver.findElement(By.name("question[7466]")).click();
+        driver.findElement(By.name("question[7467]")).click();
+
+         driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
         driver.findElement(By.id("annContinue")).click();
@@ -280,10 +285,10 @@ public class SPGAccessinAllCourses {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        // 1220testforscript9326 is Online SPG course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("1220testforscript9326");
+        // DanielSPGTestCourse01 is Online SPG course
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTestCourse01");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("1220testforscript9326")){
+        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -296,7 +301,7 @@ public class SPGAccessinAllCourses {
         // 0sDvK3sEly is Checklist SPG Course
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("0sDvK3sEly");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("1220testforscript9326")){
+        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -306,10 +311,10 @@ public class SPGAccessinAllCourses {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        // 0sDvK3sEly is Classroom SPG Course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("0YC5wikw6d");
+        // haaKWcGLxR is Classroom SPG Course
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTest02");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("0YC5wikw6d")){
+        if(!driver.getPageSource().contains("DanielSPGTest02")){
             System.out.println("SPG Course is not searchable");
         }
         else{

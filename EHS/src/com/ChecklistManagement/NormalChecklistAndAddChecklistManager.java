@@ -1,36 +1,37 @@
 package com.ChecklistManagement;
 
 
+import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtMethod;
+import javassist.NotFoundException;
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.IMethodInstance;
+import org.testng.IMethodInterceptor;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.*;
-//import java.util.Properties;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-//import java.util.List;
-import javassist.ClassPool;
-import javassist.CtClass;
-import javassist.CtMethod;
-import javassist.NotFoundException;
-
-import org.testng.IMethodInstance;
-import org.testng.IMethodInterceptor;
-import org.testng.ITestContext;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
 import static org.apache.commons.text.CharacterPredicates.LETTERS;
+
+//import java.util.Properties;
+//import java.util.List;
 
 @Test
 //@Test(groups="ehs" ,priority=1)
@@ -81,6 +82,9 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         driver.findElement(By.id("username")).sendKeys(username);
@@ -94,9 +98,9 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Checklist Management")));
-        Thread.sleep(1500);
-        driver.findElement(By.partialLinkText("Checklist Management")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Checklist Admin")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
         Thread.sleep(1500);
@@ -157,9 +161,9 @@ public class NormalChecklistAndAddChecklistManager implements IMethodInterceptor
         js1.executeScript("arguments[0].click()", courseAdmin1);
 
         Thread.sleep(1500);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Checklist Management")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Checklist Admin")));
         Thread.sleep(1500);
-        driver.findElement(By.partialLinkText("Checklist Management")).click();
+        driver.findElement(By.partialLinkText("Checklist Admin")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[1]/div/div[5]/input")));
         Thread.sleep(1500);

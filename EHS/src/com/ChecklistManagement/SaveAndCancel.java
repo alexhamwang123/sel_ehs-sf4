@@ -3,25 +3,9 @@
 
 package com.ChecklistManagement;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import com.ClassroomCourseManagement.AddAtt;
-import com.Reports.Manager_CourseCompletionReport;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
 @Test
 public class SaveAndCancel {
 

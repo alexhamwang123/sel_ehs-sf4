@@ -1,31 +1,23 @@
 package com.ChecklistManagement;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-import java.util.Calendar;
-import java.util.Date;
-
-
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
@@ -46,6 +38,9 @@ public class ChecklistExpirationDate {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 		driver.manage().window().maximize();
 		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 		;
@@ -63,8 +58,9 @@ public class ChecklistExpirationDate {
 
 		js.executeScript("arguments[0].click();", courseAdmin);
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Management"))));
-		driver.findElement(By.partialLinkText("Checklist Management")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+		Thread.sleep(1000);
+		driver.findElement(By.partialLinkText("Checklist Admin")).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
 		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
@@ -155,9 +151,9 @@ public class ChecklistExpirationDate {
 		WebElement Language = driver.findElement(By.xpath("//*[@id=\"course-start\"]/div/div/div/div[2]/div/button[1]"));
 		js.executeScript("arguments[0].click();", Language);
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[3]/button[3]"))));
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div/div/div[3]/button[3]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[3]/button[3]"))));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[3]/button[3]")).click();
 
 		WebElement ButtonOK = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
 		Thread.sleep(1000);
@@ -181,9 +177,10 @@ public class ChecklistExpirationDate {
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("My History"))));
 		Thread.sleep(1000);
 		driver.findElement(By.partialLinkText("My History")).click();
-
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[1]/input"))));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId);
-		Date current = new Date();
+		Date current = new Date(System.currentTimeMillis() - 15 * 60 * 60 * 1000);
 		System.out.println(current);
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(current);

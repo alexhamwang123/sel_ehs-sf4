@@ -1,29 +1,23 @@
 package com.ChecklistManagement;
 
 
+import org.apache.commons.text.RandomStringGenerator;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
-        import org.apache.commons.text.RandomStringGenerator;
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.JavascriptExecutor;
-        import org.openqa.selenium.WebDriver;
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.chrome.ChromeDriver;
-        import org.openqa.selenium.support.ui.ExpectedConditions;
-        import org.openqa.selenium.support.ui.Select;
-        import org.openqa.selenium.support.ui.WebDriverWait;
-        import org.testng.Assert;
-        import org.testng.annotations.Test;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
-        import java.awt.event.KeyEvent;
-        import java.io.File;
-        import java.io.FileInputStream;
-        import java.io.IOException;
-        import java.util.NoSuchElementException;
-        import java.util.Properties;
-        import java.util.concurrent.TimeUnit;
-
-        import static org.apache.commons.text.CharacterPredicates.DIGITS;
-        import static org.apache.commons.text.CharacterPredicates.LETTERS;
+import static org.apache.commons.text.CharacterPredicates.DIGITS;
+import static org.apache.commons.text.CharacterPredicates.LETTERS;
 
 @Test
 
@@ -43,6 +37,9 @@ public class ChecklistPrereqComplete {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         driver.manage().window().maximize();
 
@@ -65,15 +62,15 @@ public class ChecklistPrereqComplete {
         js.executeScript("arguments[0].click()", courseAdmin);
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[2]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[2]")).click();
-        Thread.sleep(5500);
+        driver.findElement(By.partialLinkText("Checklist Admin")).click();
+        Thread.sleep(1500);
 
         //pick a class  & Assign prerequisite
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("1bLkHwGarU");
+        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("01292020-4");
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Go']"))));
         Thread.sleep(1000);
@@ -98,7 +95,7 @@ public class ChecklistPrereqComplete {
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@type='text']"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("1bLkHwGarU");
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("01292020-4");
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//tr[1]//td[5]//button[1]"))));
         Thread.sleep(1000);

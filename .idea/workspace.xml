@@ -1,18 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="SPG New Scripts 07 AUG">
+    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="All Pass Version 2 20/Dec">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryDeletion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryVisibility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/CreateAndEditCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionStatics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseCreation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/AllTest_19_Jun.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/AllTest_19_Jun.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/Failed_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/Failed_Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistDownLoadURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistDownLoadURL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete_Duplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete_Duplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteAndLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteAndLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedAnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteORLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteORLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistRegionVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalChecklistAndAddChecklistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalChecklistAndAddChecklistManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomMultiSections.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomMultiSections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq_Duplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq_Duplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedAnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomRegionVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGCourseCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSiteVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSiteVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomVisibilityCheckbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomVisibilityCheckbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegisterWithMgrUserAndEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegisterWithMgrUserAndEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/LablistAndRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/LablistAndRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalClassroomAndAddClassroomCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalClassroomAndAddClassroomCourseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAndEditCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAndEditCertificate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAndEditLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAndEditLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAndEditRiskCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAndEditRiskCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseName.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_Duplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_Duplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseSPGVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGCourseCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ParitiallyCompleteOnlineScormClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ParitiallyCompleteOnlineScormClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineDuplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineDuplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ChecklistSubmissionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_ComplianceReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionStatistic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_EvaluationCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_EvaluationCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_OrganizationReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCheckList_Submission_Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCheckList_Submission_Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCompliance_Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCompliance_Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionStatistic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionStatistic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGOrganizationReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGOrganizationReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ChecklistCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_ComplianceReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_CourseCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/Manager_CourseCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSiteAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSiteAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateTipEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateTipEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testNg_OnlineCourse.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/testNg_OnlineCourse.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$ChecklistPrereq_ChecklistPrereq.ic" NAME="ChecklistPrereq.ChecklistPrereq Coverage Results" MODIFIED="1547627276342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -47,9 +185,12 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1PS4FgZHvGMi931QahIyjNdNQck" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -58,6 +199,11 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/shuang/NetBeansProjects/NEW_GIT_KEVIN/sel_ehs/EHS/src/com/OnlineCourseManagement/AddManagerOnlineCourse.java&#10;'&#9;null&#9;null" />
     <property name="ToolWindowCoverage.ShowToolbar" value="false" />
@@ -68,7 +214,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.folder" value="$USER_HOME$/sel_ehs-sf4/EHS" />
   </component>
   <component name="RecentsManager">
@@ -82,7 +228,7 @@
       <recent name="$PROJECT_DIR$/EHS/src" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.&lt;default&gt;">
+  <component name="RunManager" selected="TestNG.EHS_SPGCourseCompletionReport and 1 more">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -114,88 +260,85 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateAndEditCertificate" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateSiteAdmin and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.UserAdmin.CreateSiteAdmin" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateSiteAdmin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.EHSAdmin.*" />
+          <option name="PATTERN" value="com.UserAdmin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateAndEditCertificate" />
+      <option name="PACKAGE_NAME" value="com.UserAdmin" />
+      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.CreateSiteAdmin" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+      <patterns>
+        <pattern testClass="com.UserAdmin.CreateSiteAdmin" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateAndEditCertificate.CreateAndEditCertificate" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="EHS_SPGCourseCompletionReport and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.EHSAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateAndEditCertificate" />
-      <option name="METHOD_NAME" value="CreateAndEditCertificate" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
+      <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+      <patterns>
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateCertificate.CreateCertificate" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="* and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.EHSAdmin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateCertificate" />
-      <option name="METHOD_NAME" value="CreateCertificate" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+      <patterns>
+        <pattern testClass="com.Reports.*" />
+        <pattern testClass="com.UserAdmin.*" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParitiallyCompleteOnlineScormClass.ParitiallyCompleteOnlineScormClass" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="/Users/trismax/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass" />
-      <option name="METHOD_NAME" value="ParitiallyCompleteOnlineScormClass" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
+      <patterns>
+        <pattern testClass="com.UserAdmin.CreateSiteAdmin" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -255,19 +398,19 @@
       <item itemvalue="TestNG.All testng-customsuite.xml" />
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.ParitiallyCompleteOnlineScormClass.ParitiallyCompleteOnlineScormClass" />
-      <item itemvalue="TestNG.CreateAndEditCertificate" />
-      <item itemvalue="TestNG.CreateAndEditCertificate.CreateAndEditCertificate" />
-      <item itemvalue="TestNG.CreateCertificate.CreateCertificate" />
-      <item itemvalue="TestNG.&lt;default&gt;" />
+      <item itemvalue="TestNG.* and 1 more" />
+      <item itemvalue="TestNG.CreateSiteAdmin and 2 more" />
+      <item itemvalue="TestNG.CreateSiteAdmin" />
+      <item itemvalue="TestNG./Users/trismax/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
+      <item itemvalue="TestNG.EHS_SPGCourseCompletionReport and 1 more" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="TestNG.CreateCertificate.CreateCertificate" />
-        <item itemvalue="TestNG.CreateAndEditCertificate.CreateAndEditCertificate" />
-        <item itemvalue="TestNG.CreateAndEditCertificate" />
-        <item itemvalue="TestNG.ParitiallyCompleteOnlineScormClass.ParitiallyCompleteOnlineScormClass" />
+        <item itemvalue="TestNG.EHS_SPGCourseCompletionReport and 1 more" />
+        <item itemvalue="TestNG./Users/trismax/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
+        <item itemvalue="TestNG.CreateSiteAdmin and 2 more" />
+        <item itemvalue="TestNG.CreateSiteAdmin" />
+        <item itemvalue="TestNG.* and 1 more" />
       </list>
     </recent_temporary>
   </component>
@@ -595,7 +738,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569686945689</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="All Pass Version 2 20/Dec">
+      <created>1576838923827</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1576838923827</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -636,7 +786,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="NormalRefreshOnlineCourse" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="OnlineButtonSource" />
     <MESSAGE value="OnlineCourse_CompleteAndSubmit" />
     <MESSAGE value="OnlineCourse_PartiallyCompleteAndSubmit" />
@@ -661,128 +811,142 @@
     <MESSAGE value="SPG New Scripts 07 AUG" />
     <MESSAGE value="New Enhancement and Elements Adjustment 5 Sept" />
     <MESSAGE value="2019/09/28 EHS All Scripts Passed Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019/09/28 EHS All Scripts Passed Version" />
+    <MESSAGE value="All Pass Version 2 20/Dec" />
+    <option name="LAST_COMMIT_MESSAGE" value="All Pass Version 2 20/Dec" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="639" y="117" key="CommitChangelistDialog2" timestamp="1576838302321">
+    <state x="560" y="181" key="#Console" timestamp="1586184985670">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state x="560" y="181" key="#Console/0.23.1920.985@0.23.1920.985" timestamp="1586184985670" />
+    <state x="560" y="180" width="800" height="717" key="#Intentions" timestamp="1585153331010">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state x="560" y="180" width="800" height="717" key="#Intentions/0.23.1920.985@0.23.1920.985" timestamp="1585153331010" />
+    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582678644469">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="639" y="117" key="CommitChangelistDialog2/0.23.1920.983@0.23.1920.983" timestamp="1576838302321" />
-    <state x="125" y="191" width="1720" height="783" key="DiffContextDialog" timestamp="1576838894422">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.983@0.23.1920.983" timestamp="1582678644469" />
+    <state x="698" y="269" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1586187318157">
+      <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="125" y="191" width="1720" height="783" key="DiffContextDialog/0.23.1920.983@0.23.1920.983" timestamp="1576838894422" />
-    <state x="702" y="235" key="RollbackChangesDialog" timestamp="1576833428031">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state x="698" y="269" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1920.985@0.23.1920.985" timestamp="1586187318157" />
+    <state x="676" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585169144633">
+      <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="702" y="235" key="RollbackChangesDialog/0.23.1920.983@0.23.1920.983" timestamp="1576833428031" />
-    <state x="640" y="276" width="639" height="476" key="find.popup" timestamp="1576838892829">
-      <screen x="0" y="23" width="1920" height="983" />
+    <state x="676" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.985@0.23.1920.985" timestamp="1585169144633" />
+    <state width="1878" height="413" key="GridCell.Tab.0.bottom" timestamp="1589171458581">
+      <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="640" y="276" width="639" height="476" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1576838892829" />
+    <state width="1878" height="394" key="GridCell.Tab.0.bottom/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301685" />
+    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684402" />
+    <state width="1878" height="279" key="GridCell.Tab.0.bottom/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242820" />
+    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229195" />
+    <state width="1878" height="321" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1585141775991" />
+    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.985@0.23.1920.985" timestamp="1589171458581" />
+    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.987@0.23.1920.987" timestamp="1589164842839" />
+    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1588850213223" />
+    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.990@0.23.1920.990" timestamp="1585497753224" />
+    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.991@0.23.1920.991" timestamp="1589119309522" />
+    <state width="1878" height="321" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1585057671814" />
+    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.996@0.23.1920.996" timestamp="1589116181129" />
+    <state width="1878" height="413" key="GridCell.Tab.0.center" timestamp="1589171458579">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state width="1878" height="394" key="GridCell.Tab.0.center/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301684" />
+    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684401" />
+    <state width="1878" height="279" key="GridCell.Tab.0.center/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242818" />
+    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229194" />
+    <state width="1878" height="321" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1585141775990" />
+    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.985@0.23.1920.985" timestamp="1589171458579" />
+    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.987@0.23.1920.987" timestamp="1589164842837" />
+    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1588850213221" />
+    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.990@0.23.1920.990" timestamp="1585497753223" />
+    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.991@0.23.1920.991" timestamp="1589119309521" />
+    <state width="1878" height="321" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1585057671812" />
+    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.996@0.23.1920.996" timestamp="1589116181127" />
+    <state width="1878" height="413" key="GridCell.Tab.0.left" timestamp="1589171458578">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state width="1878" height="394" key="GridCell.Tab.0.left/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301683" />
+    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684400" />
+    <state width="1878" height="279" key="GridCell.Tab.0.left/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242818" />
+    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229194" />
+    <state width="1878" height="321" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1585141775989" />
+    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.985@0.23.1920.985" timestamp="1589171458578" />
+    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.987@0.23.1920.987" timestamp="1589164842835" />
+    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1588850213219" />
+    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.990@0.23.1920.990" timestamp="1585497753222" />
+    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.991@0.23.1920.991" timestamp="1589119309518" />
+    <state width="1878" height="321" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1585057671811" />
+    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.996@0.23.1920.996" timestamp="1589116181125" />
+    <state width="1878" height="413" key="GridCell.Tab.0.right" timestamp="1589171458580">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state width="1878" height="394" key="GridCell.Tab.0.right/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301684" />
+    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684402" />
+    <state width="1878" height="279" key="GridCell.Tab.0.right/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242819" />
+    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229194" />
+    <state width="1878" height="321" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1585141775991" />
+    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.985@0.23.1920.985" timestamp="1589171458580" />
+    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1589164842838" />
+    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1588850213222" />
+    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.990@0.23.1920.990" timestamp="1585497753224" />
+    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.991@0.23.1920.991" timestamp="1589119309521" />
+    <state width="1878" height="321" key="GridCell.Tab.0.right/0.23.1920.994@0.23.1920.994" timestamp="1585057671813" />
+    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.996@0.23.1920.996" timestamp="1589116181128" />
+    <state width="1878" height="338" key="GridCell.Tab.1.bottom" timestamp="1589081390069">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.985@0.23.1920.985" timestamp="1589081390069" />
+    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.987@0.23.1920.987" timestamp="1586165082042" />
+    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.988@0.23.1920.988" timestamp="1585062135445" />
+    <state width="1878" height="338" key="GridCell.Tab.1.center" timestamp="1589081390068">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.985@0.23.1920.985" timestamp="1589081390068" />
+    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.987@0.23.1920.987" timestamp="1586165082040" />
+    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.988@0.23.1920.988" timestamp="1585062135443" />
+    <state width="1878" height="338" key="GridCell.Tab.1.left" timestamp="1589081390067">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.985@0.23.1920.985" timestamp="1589081390067" />
+    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.987@0.23.1920.987" timestamp="1586165082039" />
+    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.988@0.23.1920.988" timestamp="1585062135443" />
+    <state width="1878" height="338" key="GridCell.Tab.1.right" timestamp="1589081390068">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.985@0.23.1920.985" timestamp="1589081390068" />
+    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.987@0.23.1920.987" timestamp="1586165082041" />
+    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.988@0.23.1920.988" timestamp="1585062135444" />
+    <state x="653" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1589171158513">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state x="653" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1584875628454" />
+    <state x="653" y="348" key="com.intellij.ide.util.TipDialog/0.23.1920.985@0.23.1920.985" timestamp="1589171158513" />
+    <state x="639" y="212" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585170493697">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state x="639" y="212" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.985@0.23.1920.985" timestamp="1585170493697" />
+    <state x="698" y="275" key="extract.method.dialog" timestamp="1585052910271">
+      <screen x="0" y="23" width="1920" height="996" />
+    </state>
+    <state x="698" y="274" key="extract.method.dialog/0.23.1920.994@0.23.1920.994" timestamp="1585051052092" />
+    <state x="698" y="275" key="extract.method.dialog/0.23.1920.996@0.23.1920.996" timestamp="1585052910271" />
+    <state x="517" y="166" width="1159" height="842" key="find.popup" timestamp="1588765213077">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state x="434" y="253" width="782" height="550" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1585023877123" />
+    <state x="517" y="166" width="1159" height="842" key="find.popup/0.23.1920.985@0.23.1920.985" timestamp="1588765213077" />
+    <state x="553" y="72" width="1159" height="844" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1586250045869" />
+    <state x="553" y="72" width="1159" height="844" key="find.popup/0.23.1920.988@0.23.1920.988" timestamp="1586164907289" />
+    <state x="661" y="427" width="782" height="550" key="find.popup/0.23.1920.990@0.23.1920.990" timestamp="1585022835961" />
+    <state x="661" y="428" width="782" height="553" key="find.popup/0.23.1920.993@0.23.1920.993" timestamp="1585019711263" />
+    <state x="517" y="167" width="1159" height="850" key="find.popup/0.23.1920.996@0.23.1920.996" timestamp="1585487437300" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$CreateAndEditCertificate_CreateAndEditCertificate__1_.ic" NAME="CreateAndEditCertificate.CreateAndEditCertificate (1) Coverage Results" MODIFIED="1566393554884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>groovy-2.4.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>11 (1)</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>EHS</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>9</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>jars</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

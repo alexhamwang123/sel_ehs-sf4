@@ -1,11 +1,9 @@
 package com.ClassroomCourseManagement;
 
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -35,6 +33,9 @@ public class ClasrromSPGVisibility {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+        actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -55,25 +56,23 @@ public class ClasrromSPGVisibility {
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Classroom Course Management")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("0YC5wikw6d");
-        //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
 
-        //Click Go btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
+        //SPG Btn
+        WebElement SPG= driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/input[1]"));
+        js.executeScript("arguments[0].click();", SPG);
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("DanielSPGTest02");
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("0YC5wikw6d"))));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'DanielSPGTest02')]")));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//td[contains(text(),'DanielSPGTest02')]")).click();
+
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("course-title"))));
         Thread.sleep(1000);
-        driver.findElement(By.partialLinkText("0YC5wikw6d")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
-        Thread.sleep(1000);
-        if(driver.getPageSource().contains("0YC5wikw6d")){
+        if(driver.getPageSource().contains("DanielSPGTest02")){
             System.out.println("The SPG Manager is the current System User");
         }
         else {
@@ -96,10 +95,11 @@ public class ClasrromSPGVisibility {
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button")).click();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']")).click();
-
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/ul/a[1]")).click();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -107,38 +107,57 @@ public class ClasrromSPGVisibility {
             e.printStackTrace();
         }
 
-        RandomStringGenerator generator1 = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
-        String title = generator1.generate(10);
+        RandomStringGenerator generator2 = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+        String title1 = generator2.generate(10);
         //Enter the Risk Category Name
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("detailJobClassName"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
         Thread.sleep(1000);
-        driver.findElement(By.name("detailJobClassName")).sendKeys(title);
+        driver.findElement(By.id("input-name")).sendKeys(title1);
 
         //Enter the Risk Category Abbr Name
-        driver.findElement(By.name("detailJobClassAbbrName")).sendKeys("RCR");
+        driver.findElement(By.id("input-abbrev")).sendKeys(title1);
 
         //Enter the description
-        driver.findElement(By.name("detailJobClassDescr")).sendKeys("this is the description!");
+        driver.findElement(By.id("input-desc")).sendKeys("this is the description for at least 20 characters!");
 
         Thread.sleep(1500);
+        //Click Manager
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
+        Thread.sleep(2500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("criteriaBadge")).sendKeys(username);
+        //Click Search
+        Thread.sleep(2500);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+        Thread.sleep(2500);
+        //Click Result
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+        Thread.sleep(1000);
+        //Click Save btn
+        WebElement Save= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/button"));
+        JavascriptExecutor js2 = (JavascriptExecutor)driver;
+        js2.executeScript("arguments[0].click();", Save);
 
-        driver.findElement(By.xpath("//*[@id=\"saveJC\"]")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("addCourse"))));
+        //Click add Required Course
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(2000);
-        driver.findElement(By.id("addCourse")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div/div[1]/div/label/input")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
+        //Click add course Btn
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("0YC5wikw6d");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("DanielSPGTest02");
 
-        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
         Thread.sleep(1000);
 
-        if(driver.getPageSource().contains("0YC5wikw6d")){
+        if(driver.getPageSource().contains("DanielSPGTest02")){
             System.out.println("RC SPG is Searchable for SPG Manager");
         }
 
@@ -216,18 +235,18 @@ public class ClasrromSPGVisibility {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
 
         Thread.sleep(2000);
-        JavascriptExecutor js2 = (JavascriptExecutor)driver;
+        JavascriptExecutor js3 = (JavascriptExecutor)driver;
         WebElement Logout=driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/nav[1]/div/ul/li[2]/div/a[5]"));
-        js2.executeScript("arguments[0].click()",Logout);
+        js3.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
         Thread.sleep(2000);
@@ -247,7 +266,10 @@ public class ClasrromSPGVisibility {
         driver.findElement(By.name("question[145]")).click();
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
-        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+        driver.findElement(By.name("question[7466]")).click();
+        driver.findElement(By.name("question[7467]")).click();
+
+            driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
         driver.findElement(By.id("annContinue")).click();
@@ -258,18 +280,16 @@ public class ClasrromSPGVisibility {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Classroom Course Management"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Classroom Course Management")).click();
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("0YC5wikw6d");
-        //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("DanielSPGTest02");
 
-        //Click Go btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
+         //SPG Btn
+         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Classroom Course Management"))));
+         JavascriptExecutor js4 = (JavascriptExecutor)driver;
+         WebElement SPG1= driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/input[1]"));
+         js4.executeScript("arguments[0].click();", SPG1);
 
-        if(!driver.getPageSource().contains("0YC5wikw6d")){
+
+        if(!driver.getPageSource().contains("DanielSPGTest02")){
             System.out.println("RC SPG is not Searchable for Non SPG Manager");
         }
 
@@ -291,10 +311,11 @@ public class ClasrromSPGVisibility {
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Create Risk Category']")).click();
-
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/ul/a[1]")).click();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -302,38 +323,57 @@ public class ClasrromSPGVisibility {
             e.printStackTrace();
         }
 
-        RandomStringGenerator generator2 = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
-        String title1 = generator2.generate(10);
+        RandomStringGenerator generator1 = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
+        String title = generator1.generate(10);
         //Enter the Risk Category Name
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("detailJobClassName"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
         Thread.sleep(1000);
-        driver.findElement(By.name("detailJobClassName")).sendKeys(title1);
+        driver.findElement(By.id("input-name")).sendKeys(title);
 
         //Enter the Risk Category Abbr Name
-        driver.findElement(By.name("detailJobClassAbbrName")).sendKeys("RCR");
+        driver.findElement(By.id("input-abbrev")).sendKeys(title);
 
         //Enter the description
-        driver.findElement(By.name("detailJobClassDescr")).sendKeys("this is the description!");
+        driver.findElement(By.id("input-desc")).sendKeys("this is the description for at least 20 characters!");
+
 
         Thread.sleep(1500);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
+        Thread.sleep(2500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
+        Thread.sleep(1000);
+        driver.findElement(By.id("criteriaBadge")).sendKeys(username);
+        //Click Search
+        Thread.sleep(2500);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+        Thread.sleep(2500);
+        //Click Result
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+        Thread.sleep(1000);
+        //Click Save btn
+        WebElement Save2= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/button"));
+        JavascriptExecutor js5 = (JavascriptExecutor)driver;
+        js5.executeScript("arguments[0].click();", Save2);
 
-        driver.findElement(By.xpath("//*[@id=\"saveJC\"]")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("addCourse"))));
+        //Click add Required Course
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(2000);
-        driver.findElement(By.id("addCourse")).click();
-        Thread.sleep(4500);
-        driver.findElement(By.xpath("//*[@id=\"FirstForm\"]/div/div[1]/div/label/input")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
+        //Click add course Btn
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("0YC5wikw6d");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("DanielSPGTest02");
 
-        driver.findElement(By.cssSelector("input[type='submit'][value='Go']")).click();
         Thread.sleep(1000);
 
-        if(!driver.getPageSource().contains("0YC5wikw6d")){
+        if(!driver.getPageSource().contains("DanielSPGTest02")){
             System.out.println("RC SPG is not Searchable for Non SPG Manager");
         }
 

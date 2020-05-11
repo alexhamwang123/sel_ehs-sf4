@@ -3,7 +3,21 @@
 <suite name="Default Suite">
     <test name="sel_ehs-sf4">
         <classes>
-            <class name="com.EHSAdmin.CreateCertificate"/>
+
+            <!--等下一個版本 進一步測試-->
+            <class name="com.ChecklistManagement.CheckListSPGVisibility"/><!--RC Assign SPG Course 只有Classroom 可以看見-->
+            <class name="com.ClassroomCourseManagement.ClassroomRegionVisibility"/>
+            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
+
+
+            <!--Not Finished-->
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedAnd"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic"/>
+
+            <!--Not Finished in Coding-->
+
         </classes>
     </test> <!-- sel_ehs-sf4 -->
 </suite> <!-- Default Suite -->

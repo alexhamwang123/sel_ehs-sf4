@@ -3,21 +3,18 @@
 
 package com.Miscellaneous;
 
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
 //@Test
 @Test
@@ -38,6 +35,9 @@ public class EHS_ContactUs {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
         driver.findElement(By.id("username")).sendKeys(username);
@@ -76,7 +76,7 @@ public class EHS_ContactUs {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        new Select(driver.findElement(By.xpath("//*[@id=\"__BVID__7___BV_modal_body_\"]/div/div[4]/div/select"))).selectByVisibleText("Can’t Login");
+        new Select(driver.findElement(By.xpath("//*[@id=\"__BVID__4___BV_modal_body_\"]/div/div[4]/div/select"))).selectByVisibleText("Can’t Login");
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {

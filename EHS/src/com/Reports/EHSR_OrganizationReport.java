@@ -4,22 +4,15 @@
 
 package com.Reports;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 //@Test
@@ -41,6 +34,9 @@ public class EHSR_OrganizationReport {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 		driver.findElement(By.id("username")).sendKeys(username);
@@ -59,7 +55,7 @@ public class EHSR_OrganizationReport {
 		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[6]")).click();
 		Thread.sleep(1500);
 		//Click on Select for selecting a Manager
-		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/button")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div/button")).click();
 		
 		try {
 			Thread.sleep(1500);
@@ -72,7 +68,7 @@ public class EHSR_OrganizationReport {
 		driver.findElement(By.id("criteriaBadge")).sendKeys("X00001572");
 		
 		//Click on Search 
-		driver.findElement(By.xpath("//*[@id=\"__BVID__11___BV_modal_footer_\"]/div/button")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__8___BV_modal_footer_\"]/div/button")).click();
 		Thread.sleep(2500);
 		//Click on the search result 
 		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[2]/table/tbody/tr[1]/td[1]")).click();
@@ -92,7 +88,7 @@ public class EHSR_OrganizationReport {
 		//Click the Ok button
 		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"__BVID__13___BV_modal_footer_\"]/button")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__10___BV_modal_footer_\"]/button")).click();
 
 
 		//Click on Go

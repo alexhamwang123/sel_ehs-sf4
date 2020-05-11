@@ -6,8 +6,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -42,6 +42,9 @@ public class ClassroomPrereq {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+        actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         driver.manage().window().maximize();
 
@@ -63,31 +66,46 @@ public class ClassroomPrereq {
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[2]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Classroom Course Management")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a[2]")).click();
+        driver.findElement(By.partialLinkText("Classroom Course Management")).click();
 
         //pick a class  & Assign prerequisite
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("1bLkHwGarU");
-        driver.findElement(By.xpath("//input[@value='Go']")).click();
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("DanielClassroom02");
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.className("editAction")));
-        Thread.sleep(1000);
-        driver.findElement(By.className("editAction")).click();
+        //Click result
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.name("detailCoursePrerequisitesCourse1")));
-        Thread.sleep(1000);
-        new Select(driver.findElement(By.name("detailCoursePrerequisitesCourse1"))).selectByVisibleText("kimi-online-006 - kimi-online-006");
+        //Click Classroom Details
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
+        Thread.sleep(2000);
+        //see if the prereq exists
+        if(!driver.getPageSource().contains("006")) {
+            //CLick Prereq Btn
+            driver.findElement(By.xpath("//div[@class='prereq col']//div//button[@class='btn btn-primary'][contains(text(),'Select')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Save']")));
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+            //Search the course
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
+            driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys("kimi-online-006");
+
+            //CLick the result
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+            Thread.sleep(1000);
+            //Click Save
+            driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        }
 
         // make a normal user that never completed the prerequisite
         //Clicking on 'User Admin'
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         JavascriptExecutor js0 = (JavascriptExecutor)driver;
         js0.executeScript("arguments[0].click();",ele);
@@ -116,9 +134,9 @@ public class ClassroomPrereq {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__31\"]/div/div[1]/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -157,9 +175,9 @@ public class ClassroomPrereq {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__49___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
         WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
@@ -197,8 +215,11 @@ public class ClassroomPrereq {
         driver.findElement(By.name("question[145]")).click();
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
+        driver.findElement(By.name("question[7466]")).click();
+        driver.findElement(By.name("question[7467]")).click();
 
-        Thread.sleep(1500);
+
+            Thread.sleep(1500);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
@@ -214,7 +235,7 @@ public class ClassroomPrereq {
         //Search the Course
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("1bLkHwGarU");
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("DanielClassroom02");
         Thread.sleep(1500);
         driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
         Thread.sleep(1500);
@@ -281,13 +302,13 @@ public class ClassroomPrereq {
         WebElement Exit=driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
         js2.executeScript("arguments[0].click();",Exit);
         Thread.sleep(2000);
-        //After completion of prerequisite, try "1bLkHwGarU" again.
+        //After completion of prerequisite, try "DanielClassroom02" again.
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(4500);
-        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("1bLkHwGarU");
+        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("DanielClassroom02");
         Thread.sleep(1500);
         driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
         Thread.sleep(1500);

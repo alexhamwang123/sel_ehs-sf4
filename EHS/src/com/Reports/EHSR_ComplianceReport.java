@@ -4,22 +4,17 @@
 
 package com.Reports;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 
@@ -32,7 +27,7 @@ public class EHSR_ComplianceReport {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+		WebDriverWait wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
@@ -42,6 +37,9 @@ public class EHSR_ComplianceReport {
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
+try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+actions.build().perform(); }
+catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 		driver.findElement(By.id("username")).sendKeys(username);
@@ -50,11 +48,39 @@ public class EHSR_ComplianceReport {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		Thread.sleep(4500);
-		
-		//Clicking on EHS Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
+
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/input")));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/input")).sendKeys("R2zMeXamXC");
+
+		//Click the Result
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[1]")));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[1]")).click();
+		//CLick Statistics
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[6]/a")));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[6]/a")).click();
+		String Active_Number= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[6]/div/div[2]/div[2]/div/div[1]/span")).getText();
+		System.out.println(Active_Number);
+
+		//Clicking on EHS Reports under Reports
+		WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
+		JavascriptExecutor js1 = (JavascriptExecutor)driver;
+		js1.executeScript("arguments[0].click();",ele1);
 		Thread.sleep(3500);
 		//Click on Compliance Report 
 		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[5]")).click();
@@ -70,7 +96,7 @@ public class EHSR_ComplianceReport {
 		//Click the Ok button
 		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"__BVID__10___BV_modal_footer_\"]/button")).click();
+		driver.findElement(By.xpath("//*[@id=\"__BVID__7___BV_modal_footer_\"]/button")).click();
 
 		
 		try {
@@ -84,6 +110,7 @@ public class EHSR_ComplianceReport {
 		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/button[1]"));
 		js.executeScript("arguments[0].click();",Go);
 		Thread.sleep(3500);
+
 		driver.quit();
 		
 
