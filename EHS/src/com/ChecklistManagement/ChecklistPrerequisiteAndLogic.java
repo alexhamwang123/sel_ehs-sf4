@@ -57,10 +57,16 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -165,7 +171,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(1500);
         String working = "";
         try {
-            working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
+            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
             System.out.println(working);
         } catch (NoSuchElementException e) {
             Assert.fail("was able to register for the course without completing the prereq");
@@ -176,6 +182,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         }
         Thread.sleep(1500);
         JavascriptExecutor js2 = (JavascriptExecutor)driver;
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin1);
+        Thread.sleep(1000);
+
         WebElement courseAdmin2 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js2.executeScript("arguments[0].click()", courseAdmin2);
 
@@ -221,7 +234,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         }
         Thread.sleep(3000);
         try {
-            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]")).click();
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")).click();
         }
         catch(NoSuchElementException e){
             Assert.fail("The test failed");

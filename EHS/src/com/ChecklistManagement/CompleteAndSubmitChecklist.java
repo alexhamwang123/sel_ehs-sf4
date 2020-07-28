@@ -58,9 +58,9 @@ public class CompleteAndSubmitChecklist {
 
 
         //Click on the Enroll button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
         Thread.sleep(3000);
         for(String winHandle : driver.getWindowHandles()) {
@@ -93,9 +93,9 @@ public class CompleteAndSubmitChecklist {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"ch-body\"]/div/div/div[3]/button[3]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'OK')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]"))));
         Thread.sleep(1000);
@@ -105,6 +105,7 @@ public class CompleteAndSubmitChecklist {
         for(String Winhandle:driver.getWindowHandles()){
             driver.switchTo().window(Winhandle);
         }
+        /*
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
@@ -125,12 +126,14 @@ public class CompleteAndSubmitChecklist {
             System.out.println("There is no Complete Status in Couse Page");
         }
 
+         */
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("My History"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("My History")).click();
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" /html/body/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/input"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" //input[@class='form-control']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-checklist-006");
 

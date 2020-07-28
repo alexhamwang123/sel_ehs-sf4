@@ -1,4 +1,4 @@
-package CategoryManagement;
+package com.CategoryManagement;
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
@@ -56,9 +56,15 @@ public class CreateAndEditCategory {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -69,7 +75,7 @@ public class CreateAndEditCategory {
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Category Management"))));
         Thread.sleep(2000);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[1]/div/div/div/button")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/button[1]")).click();
         Thread.sleep(1500);
 
         //fill the Name
@@ -84,7 +90,7 @@ public class CreateAndEditCategory {
         //CLick Edit Btn of New Category
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Category Management"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[2]")).click();
 
         //Change the Category Name
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='categName']"))));
@@ -103,23 +109,23 @@ public class CreateAndEditCategory {
         }
 
         //Click add sub category
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[1]")).click();
         //Add the Sub Category Name
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='categName']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@id='categName']")).sendKeys("SubTestName");
         //Click Save
-        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/footer/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
         Thread.sleep(2000);
 
         //Click to Expand and show sub category
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div/span"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div")).click();
 
         //Click to Edit Sub Category
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[2]/ul/li/div/div/div/div/button[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[2]/ul/li/div/div/div/div/button[2]")).click();
 
         //Change the sub Category Name
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='categName']"))));
@@ -128,7 +134,7 @@ public class CreateAndEditCategory {
         driver.findElement(By.xpath("//input[@id='categName']")).sendKeys(CLassroom_Sub_Category_Name);
 
         //Click Save
-        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/footer/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
         Thread.sleep(1000);
 
 
@@ -144,7 +150,7 @@ public class CreateAndEditCategory {
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Category Management"))));
         Thread.sleep(2000);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[1]/div/div/div/button")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/button[1]")).click();
         Thread.sleep(1500);
 
         //fill the Name
@@ -161,7 +167,7 @@ public class CreateAndEditCategory {
         //CLick Edit Btn of New Category
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Category Management"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div/div/div/div/button[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div/div/div/div/button[2]")).click();
 
         //Change the Category Name
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='categName']"))));
@@ -180,7 +186,7 @@ public class CreateAndEditCategory {
         }
 
         //Click add sub category
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div/div/div/div/button[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div/div/div/div/button[1]")).click();
         //Add the Sub Category Name
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='categName']"))));
         Thread.sleep(1000);
@@ -189,17 +195,17 @@ public class CreateAndEditCategory {
         new Select(driver.findElement(By.id("courseType"))).selectByVisibleText("Online Course");
 
         //Click Save
-        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/footer/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
         Thread.sleep(2000);
 
         //Click to Expand and show sub category
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div/div"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div[1]/div"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div/div")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div[1]/div")).click();
 
         //Click to Edit Sub Category
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div[2]/ul/li/div/div/div/div/button[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[6]/div[2]/ul/li/div/div/div/div/button[2]")).click();
 
         //Change the sub Category Name
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@id='categName']"))));
@@ -208,7 +214,7 @@ public class CreateAndEditCategory {
         driver.findElement(By.xpath("//input[@id='categName']")).sendKeys(ONline_Sub_Category_Name);
 
         //Click Save
-        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/footer/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
         Thread.sleep(1000);
 
 

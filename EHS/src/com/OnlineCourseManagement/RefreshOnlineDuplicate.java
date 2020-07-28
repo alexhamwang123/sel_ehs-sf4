@@ -47,7 +47,14 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(1500);
@@ -56,7 +63,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(4500);
 
+                String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("EHS - Ergonomics");
         new Select(driver.findElement(By.name("detailCourseFulfillType"))).selectByVisibleText("Refresh");

@@ -52,9 +52,15 @@ public class ChecklistButtonSource {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -69,7 +75,11 @@ public class ChecklistButtonSource {
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
 
         Thread.sleep(3500);
+                String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         System.out.println(courseId);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
         new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
@@ -187,7 +197,7 @@ public class ChecklistButtonSource {
         Thread.sleep(2500);
        // driver.findElement(By.cssSelector("#ch-body > div > div > div.card-header > div > button.btn.btn-primary")).click();
       //  Thread.sleep(1500);
-      //  driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button[2]")).click();
+      //  driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
       //  Thread.sleep(1500);
       //  driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button")).click();
         driver.switchTo().window(mainWin);

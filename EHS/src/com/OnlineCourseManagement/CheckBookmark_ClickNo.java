@@ -38,9 +38,9 @@ public class CheckBookmark_ClickNo {
 		String urladdr = prop.getProperty("url");
 
 		driver.get(urladdr);
-try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-actions.build().perform(); }
-catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+		try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+			actions.build().perform(); }
+		catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
 
 		driver.manage().window().maximize();
@@ -73,7 +73,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		 
 		 String mainWindow = driver.getWindowHandle();
 		 //msg_head857e61d0-2598-102a-b70c-b707fad2 -> it is a EHS-1000 - EHS Essentials
-		 driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+		 driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 		 
 		 for(String winHandle : driver.getWindowHandles()){
 			 if(winHandle!=mainWindow)
@@ -87,7 +87,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
 		Thread.sleep(2000);
 		JavascriptExecutor js= (JavascriptExecutor)driver;
 		 WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
@@ -101,26 +101,24 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 			e.printStackTrace();
 		}
 		 //Click Cancel to not resume where left last time
-		 driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[1]")).click();
-		Thread.sleep(2000);
-		 driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/div[2]/div/ol/li/div[2]/label[2]/input")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Cancel')]")).click();
 
 		Thread.sleep(5000);
 		 //Next Btn
 		JavascriptExecutor js0= (JavascriptExecutor)driver;
-		WebElement NextBtn= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[3]/div/div[2]/button[3]"));
+		WebElement NextBtn= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div/div[2]/button[3]"));
 		js0.executeScript("arguments[0].click();",NextBtn);
 		Thread.sleep(2000);
 
 		//Click Exit Btn
 		JavascriptExecutor js1= (JavascriptExecutor)driver;
-		WebElement ExitBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[3]/div/div[3]/ul/li[3]"));
+		WebElement ExitBtn=driver.findElement(By.xpath("//li[contains(text(),'Exit')]"));
 		js1.executeScript("arguments[0].click();",ExitBtn);
 
 		Thread.sleep(2000);
 		//Click OK Btn for Exit
 
-		driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(2000);
 
 
@@ -133,13 +131,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("kimi-online-004");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 		Thread.sleep(2000);
 		for(String winhandle:driver.getWindowHandles()){
 			driver.switchTo().window(winhandle);
 		}
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
 		Thread.sleep(2000);
 
 		JavascriptExecutor js2= (JavascriptExecutor)driver;
@@ -147,7 +145,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		js2.executeScript("arguments[0].click();",English1);
 		Thread.sleep(2500);
 
-		driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Cancel')]")).click();
 		Thread.sleep(3000);
 
 		if(driver.getPageSource().contains("Page 1 of 45")){

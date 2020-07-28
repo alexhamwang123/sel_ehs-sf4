@@ -49,9 +49,15 @@ public class CancelAndNotify {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click()", courseAdmin);
 
@@ -69,22 +75,22 @@ public class CancelAndNotify {
         driver.findElement(By.xpath("//td[contains(text(),'DanielClassroom02')]")).click();
 
         //Click Offer Schedule
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Add attendee
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
-        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[2]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[2]"));
         js.executeScript("arguments[0].click()", AddAttendee);
         //CLick Attendee Tab
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")).click();
 
         //Click Add attendee btn
         Thread.sleep(1000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]")));
-        WebElement AttendeeBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[4]/ul/li[1]/a"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
+        WebElement AttendeeBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[4]/ul/li[1]/a"));
         js.executeScript("arguments[0].click()", AttendeeBtn);
 
         //Send in Badge No
@@ -98,10 +104,10 @@ public class CancelAndNotify {
         //Click Result
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[4]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")));
         driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
-
-
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         //CLick Select User
-        driver.findElement(By.xpath("//table[@class='table table-sm m-0 table-hover']//tbody//tr//td//input")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/table/thead/tr/th[1]/input")).click();
 
         //Email User
         WebElement EmailBtn= driver.findElement(By.xpath("//a[@class='dropdown-item'][contains(text(),'Email Attendees')]"));
@@ -125,7 +131,7 @@ public class CancelAndNotify {
         WebElement Remove= driver.findElement(By.xpath("//div[@class='btn-tools']//button[@id='remove']"));
         js.executeScript("arguments[0].click()", Remove);
         //Click OK Btn
-
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
 

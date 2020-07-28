@@ -55,10 +55,16 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -159,13 +165,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
        // Wait.until(ExpectedConditions.elementToBeClickable(By.name("searchButton")));
        // driver.findElement(By.name("searchButton")).click();
        // Thread.sleep(15500);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
         Thread.sleep(5500);
         String working = "";
         try {
-            working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
+            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
         } catch (NoSuchElementException e) {
             Assert.fail("was able to register for the course without completing the prereq");
         }

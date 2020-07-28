@@ -7,6 +7,9 @@ import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -27,7 +30,7 @@ public class CreateAndEditLab {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+		WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -51,7 +54,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 
         //Clicking on EHS Admin
-        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
+		Thread.sleep(1000);
+
+		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();",ele);
 
@@ -61,10 +68,6 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
-
-        js.executeScript("arguments[0].click();",ele1);
-        Thread.sleep(2000);
 
 
 		// Click on 'Lab Management'
@@ -112,7 +115,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		// Click on 'Lab Manager' to assign a manager to the lab you wish to create
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div[1]/div/button")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div[1]/div/button")).click();
 
 		// Enter the Badge Number
 		driver.findElement(By.id("criteriaBadge")).sendKeys(username);
@@ -146,7 +149,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		// Click on 'Site'
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[6]/div/div/div[1]/button")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[6]/div/div/div[1]/button")).click();
 
 		try {
 			Thread.sleep(4000);
@@ -169,7 +172,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 			e.printStackTrace();
 		}
 		//Select Building
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[5]/div/div/div[1]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[5]/div/div/div[1]/button")).click();
         Thread.sleep(4500);
         driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys("Almanor");
         Thread.sleep(4500);
@@ -188,7 +191,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.id("input-labRoom")).sendKeys("114");
         Thread.sleep(1000);
 		// Click the 'Save' button to save the lab session record to display in the list of Labs
-		WebElement Save=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button"));
+		WebElement Save=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/button"));
 		js1.executeScript("arguments[0].click();",Save);
 
 		try {
@@ -208,30 +211,30 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 			e.printStackTrace();
 		}
 		//Now searching for the Lab's name to see if it gets displayed in the list of the labs
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div[1]/div/input")).sendKeys(title);
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(title);
 		Thread.sleep(1500);
         //Click the Lab
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/table/tbody/tr/td[1]")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div[1]/table/tbody/tr/td[1]")).click();
 		Thread.sleep(3000);
 		String description = generator.generate(20);
 		driver.findElement(By.id("input-labDesc")).clear();
         driver.findElement(By.id("input-labDesc")).sendKeys("im editing the lab description with a random word: " + description);
         Thread.sleep(1500);
-        WebElement Save01=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button"));
+        WebElement Save01=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/button"));
 		js1.executeScript("arguments[0].click();",Save01);
         Thread.sleep(3500);
         driver.navigate().back();
 
         Thread.sleep(2000);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div[1]/div/input")).clear();
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div[1]/div/input")).sendKeys(title);
-        Thread.sleep(1500);
+		driver.findElement(By.xpath("//input[@class='form-control']")).clear();
+		driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(title);
+		Thread.sleep(1500);
 		//Click the Lab
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/table/tbody/tr/td[1]")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div[1]/table/tbody/tr/td[1]")).click();
 		Thread.sleep(4000);
-		//if (!driver.getPageSource().contains(description)) {
-        //    Assert.fail("something went wrong while editing the lab description");
-        //}
+		if (!driver.findElement(By.id("input-labDesc")).getAttribute("value").contains(description)) {
+            Assert.fail("something went wrong while editing the lab description");
+        }
         driver.quit();
 
 

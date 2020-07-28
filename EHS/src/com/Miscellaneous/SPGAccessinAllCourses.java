@@ -47,7 +47,14 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         //Check the SPG Manager of the 3 types Courses
         JavascriptExecutor js = (JavascriptExecutor)driver;
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js.executeScript("arguments[0].click();", courseAdmin);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
@@ -80,25 +87,33 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.partialLinkText("Home")).click();
         Thread.sleep(1000);
 
-        JavascriptExecutor js1 = (JavascriptExecutor)driver;WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        JavascriptExecutor js1 = (JavascriptExecutor)driver;
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin1);
+        Thread.sleep(1000);
+        WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js1.executeScript("arguments[0].click();", courseAdmin1);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Online Course Admin")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/input")).sendKeys("DanielSPGTestCourse01");
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("DanielSPGCourse01");
         //Click SPG Btn
         Thread.sleep(1000);
-        WebElement SPG=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/input"));
+        WebElement SPG=driver.findElement(By.xpath("//input[@class='custom-control-input']"));
         js1.executeScript("arguments[0].click();", SPG);
 
 
         //CLick result
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(1000);
         if(driver.getPageSource().contains("tom tom")){
             System.out.println("The SPG Manager is the current System User");
@@ -115,11 +130,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Classroom Course Management")).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]/div[1]/div/input")).sendKeys("DanielSPGTest02");
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]/div[1]/div/input")).sendKeys("DanielSPGTestCourse03");
 
         //Click result
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
         Thread.sleep(2000);
         Thread.sleep(1000);
         if(driver.getPageSource().contains("tom tom")){
@@ -134,10 +149,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        // DanielSPGTestCourse01 is Online SPG course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTestCourse01");
+        // DanielSPGCourse01 is Online SPG course
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGCourse01");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
+        if(!driver.getPageSource().contains("DanielSPGCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -150,7 +165,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         // 0sDvK3sEly is Checklist SPG Course
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("0sDvK3sEly");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
+        if(!driver.getPageSource().contains("DanielSPGCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -160,10 +175,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        // DanielSPGTest02 is Classroom SPG Course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTest02");
+        // DanielSPGTestCourse03 is Classroom SPG Course
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTestCourse03");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("DanielSPGTest02")){
+        if(!driver.getPageSource().contains("DanielSPGTestCourse03")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -171,6 +186,12 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         }
 
         //Clicking on 'User Admin'
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin2=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin2);
+        Thread.sleep(1000);
+
         WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         js.executeScript("arguments[0].click();",ele);
 
@@ -183,7 +204,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 // Click on Create User
-        WebElement Create_User=driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/ul/li[3]/div/a[1]"));
+        WebElement Create_User=driver.findElement(By.xpath("//a[contains(text(),'Create new user')]"));
         js.executeScript("arguments[0].click();", Create_User);
 
 
@@ -198,10 +219,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
-        Thread.sleep(1000);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
+            Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
@@ -233,18 +254,18 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 //driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
 
 // Click on 'Save' button
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/button")).click();
 
         Thread.sleep(2000);
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
-        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
+        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__92\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
 
         Thread.sleep(2000);
@@ -252,7 +273,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
         Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
@@ -260,6 +281,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(4500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("question[4586]")).click();
@@ -278,6 +300,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(1000);
         driver.findElement(By.id("annContinue")).click();
 
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
@@ -285,10 +308,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        // DanielSPGTestCourse01 is Online SPG course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTestCourse01");
+        // DanielSPGCourse01 is Online SPG course
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGCourse01");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
+        if(!driver.getPageSource().contains("DanielSPGCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -301,7 +324,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         // 0sDvK3sEly is Checklist SPG Course
         driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("0sDvK3sEly");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("DanielSPGTestCourse01")){
+        if(!driver.getPageSource().contains("DanielSPGCourse01")){
             System.out.println("SPG Course is not searchable");
         }
         else{
@@ -312,9 +335,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
         // haaKWcGLxR is Classroom SPG Course
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTest02");
+        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys("DanielSPGTestCourse03");
         Thread.sleep(1000);
-        if(!driver.getPageSource().contains("DanielSPGTest02")){
+        if(!driver.getPageSource().contains("DanielSPGTestCourse03")){
             System.out.println("SPG Course is not searchable");
         }
         else{

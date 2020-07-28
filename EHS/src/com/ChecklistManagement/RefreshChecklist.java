@@ -36,9 +36,9 @@ public class RefreshChecklist {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-actions.build().perform(); }
-catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+        actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         //driver.manage().window().maximize();
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String username = prop.getProperty("username");
@@ -49,10 +49,16 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -63,7 +69,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(3500);
+        String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         System.out.println(courseId);
         driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
         new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
@@ -135,7 +145,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
 
-//        driver.findElement(By.partialLinkText("Classroom Course Management")).click();
+//      driver.findElement(By.partialLinkText("Classroom Course Management")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Management"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Checklist Management")).click();

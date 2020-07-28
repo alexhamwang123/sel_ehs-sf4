@@ -56,7 +56,14 @@ public class OnlineCourseEditContent {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js.executeScript("arguments[0].click()", courseAdmin);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
@@ -73,7 +80,11 @@ public class OnlineCourseEditContent {
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
+        String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         System.out.println(courseId);
         //input Course Number
         driver.findElement(By.id("course-num")).sendKeys(courseId);
@@ -90,7 +101,7 @@ public class OnlineCourseEditContent {
         //Click Online Details
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         //input training time
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
@@ -105,11 +116,11 @@ public class OnlineCourseEditContent {
         //Click Online Variants
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+        driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //input course type
         wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
@@ -120,16 +131,16 @@ public class OnlineCourseEditContent {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Edit Course Content Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Edit Course Content')]")).click();
 
         for(String winHandle : driver.getWindowHandles()) {
                 driver.switchTo().window(winHandle);
         }
         Thread.sleep(1000);
         //input content
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(2000);
         WebElement Frame= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/iframe"));
         driver.switchTo().frame(Frame);
@@ -143,11 +154,12 @@ public class OnlineCourseEditContent {
         //Click Save btn
         Thread.sleep(1000);
 
-        WebElement Save_Btn=driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]"));
+        WebElement Save_Btn=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
         js.executeScript("arguments[0].click()", Save_Btn);
         Thread.sleep(1000);
         //Click OK Btn
-        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
         //Click Question Tab
         driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/ul/li[2]/a")).click();
@@ -168,19 +180,21 @@ public class OnlineCourseEditContent {
         js.executeScript("arguments[0].click()", CorrectBtn);
 
         //Click OK btn
-        driver.findElement(By.xpath("/html/body/div[6]/div[1]/div/div/footer/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Click Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         js.executeScript("arguments[0].click()", Save_Btn);
 
         //Click OK Btn
-        driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
 
         //Close the window
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         driver.close();
 
@@ -189,31 +203,33 @@ public class OnlineCourseEditContent {
         }
 
         //Click Online Variants
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Visibility btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
 
-        WebElement VisibilityBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+        WebElement VisibilityBtn=driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
         js.executeScript("arguments[0].click()", VisibilityBtn);
 
         //Click viewable btn
-        WebElement ViewableBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[2]/div/input"));
+        WebElement ViewableBtn=driver.findElement(By.xpath("//a[2]//div[1]//input[1]"));
         js.executeScript("arguments[0].click()", ViewableBtn);
 
         //Wait until the success message shows up
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
-
+        if(!ViewableBtn.isEnabled()){
+            Assert.fail("Creation Failed");
+        }
         //CLick Edit Variant Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+        driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //Click Edit Course Content Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Edit Course Content')]")).click();
 
         for(String winHandle : driver.getWindowHandles()) {
                 driver.switchTo().window(winHandle);
@@ -238,22 +254,24 @@ public class OnlineCourseEditContent {
         driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/div/div/div[3]/div/div/div[2]/div[1]/input")).sendKeys("Edited Correct Answer");
 
         //Click OK btn
-        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/footer/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Click Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         Thread.sleep(1000);
-        WebElement Save_Btn1=driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]"));
+        WebElement Save_Btn1=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
         JavascriptExecutor js1 = (JavascriptExecutor)driver;
         js1.executeScript("arguments[0].click()", Save_Btn1);
 
         //Click OK Btn
-        driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
 
         //Close the window
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         driver.close();
 
@@ -274,9 +292,9 @@ public class OnlineCourseEditContent {
         driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
 
         //Click on the Enroll button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
         Thread.sleep(3000);
         for(String winHandle : driver.getWindowHandles()) {

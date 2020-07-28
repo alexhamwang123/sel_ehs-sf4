@@ -1,4 +1,4 @@
-package CategoryManagement;
+package com.CategoryManagement;
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
@@ -51,9 +51,15 @@ public class CategoryVisibility {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -64,7 +70,7 @@ public class CategoryVisibility {
         Thread.sleep(2000);
 
         //Click the Active button to disable it
-        WebElement ActiveBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/input"));
+        WebElement ActiveBtn=driver.findElement(By.xpath("//input[@class='custom-control-input']"));
         js.executeScript("arguments[0].click();", ActiveBtn);
         Thread.sleep(2000);
         if(driver.getPageSource().contains(CreateAndEditCategory.CLassroom_Category_Name)){

@@ -2,12 +2,16 @@ package com.OnlineCourseManagement;
 
 
 import org.apache.commons.text.RandomStringGenerator;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -16,6 +20,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +31,7 @@ import static org.apache.commons.text.CharacterPredicates.LETTERS;
 @Test
 public class CreateScormClass {
     public void CreateScormClass() throws InterruptedException, IOException, AWTException {
+
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -46,7 +52,7 @@ public class CreateScormClass {
         catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         Robot robot = new Robot();
-        robot.setAutoDelay(250);
+        robot.setAutoDelay(200);
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.VK_TAB);
@@ -68,7 +74,14 @@ public class CreateScormClass {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js.executeScript("arguments[0].click()", courseAdmin);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
@@ -85,8 +98,11 @@ public class CreateScormClass {
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
+        String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
         System.out.println(courseId);
+
         //input Course Number
         driver.findElement(By.id("course-num")).sendKeys(courseId);
         //input Course Title
@@ -102,7 +118,7 @@ public class CreateScormClass {
         //Click Online Details
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         //input training time
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
@@ -117,11 +133,11 @@ public class CreateScormClass {
         //Click Online Variants
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+        driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //input course type
         wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
@@ -149,29 +165,28 @@ public class CreateScormClass {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         Thread.sleep(1000);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        Thread.sleep(21000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Visibility btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
 
-        WebElement VisibilityBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+        WebElement VisibilityBtn=driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
         js.executeScript("arguments[0].click()", VisibilityBtn);
 
         //Click viewable btn
-        WebElement ViewableBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[2]/div/input"));
+        WebElement ViewableBtn=driver.findElement(By.xpath("//a[2]//div[1]//input[1]"));
         js.executeScript("arguments[0].click()", ViewableBtn);
 
         //Wait until the success message shows up
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
-
-
-
-        /*
+        if(!ViewableBtn.isEnabled()){
+            Assert.fail("Creation Failed");
+        }
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
@@ -190,6 +205,10 @@ public class CreateScormClass {
         WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
         js.executeScript("arguments[0].click();",English);
         Thread.sleep(3500);
+        for(String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
+        }
+
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_W);
         robot.keyRelease(KeyEvent.VK_META);
@@ -208,9 +227,10 @@ public class CreateScormClass {
             Assert.fail("the scorm class does not show up as paused");
         }
 
-        */
+
         Thread.sleep(3500);
         driver.quit();
+
 
 
     }

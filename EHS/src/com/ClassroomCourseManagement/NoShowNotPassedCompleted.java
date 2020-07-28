@@ -50,10 +50,13 @@ public class NoShowNotPassedCompleted {
 
         Thread.sleep(4500);
 
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1500);
+        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click()", courseAdmin);
 
         Thread.sleep(2000);
@@ -71,7 +74,11 @@ public class NoShowNotPassedCompleted {
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
+                String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         String Building = generator.generate(11);
         System.out.println(courseId);
         driver.findElement(By.id("course-num")).sendKeys(courseId);
@@ -89,13 +96,17 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Classroom Details
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
         new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
+        Thread.sleep(2000);;
 
 
         //input Classroom Details
         wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
+        //CLick Viewable btn
+        WebElement ViewBtn = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[2]/div/input"));
+         js.executeScript("arguments[0].click()", ViewBtn);
         driver.findElement(By.id("training-hour")).sendKeys("3");
         driver.findElement(By.id("credit-hour")).sendKeys("3");
 
@@ -105,17 +116,17 @@ public class NoShowNotPassedCompleted {
         //Click Offer Schedule
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Add offer
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")).click();
 
         //Click Site Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[2]/div/div/div/button")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[2]/div/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")).click();
 
         //Search SCV
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
@@ -133,28 +144,31 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.id("class-size")).sendKeys("5");
 
         //Click Edit Btn of time schedule
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[6]/div/button[2]")).click();
-        //Click Calendar
-        WebElement Calendar0 =driver.findElement(By.id("date"));
-        js.executeScript("arguments[0].click()", Calendar0);
-        Thread.sleep(2000);
-        System.out.println("CheckPoint 1");
+        driver.findElement(By.xpath("//*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[2]")).click();
+        Thread.sleep(1000);
+        //Click the left calendar
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[7]/table/tbody/tr/td[1]/div/div/label")).click();
+        Thread.sleep(1000);
+        WebElement CalendarBox02=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[7]/table/tbody/tr/td[1]/div/div/div/div/div/div[2]/div[2]"));
+        List<WebElement> list2 = CalendarBox02.findElements(By.tagName("span"));
+        //Reverse the list to find the end day in case there are two todays or two yesterdays
+        Collections.reverse(list2);
+        Calendar calendar1 = new GregorianCalendar();
+        int DateofToday1= calendar1.get(Calendar.DAY_OF_MONTH);
+        System.out.println("DateofToday:"+DateofToday1);
 
-        //Click Year(may not need twice click to select year)
-        WebElement YearArea0= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[1]/div/div/div[2]/header/span[2]"));
-        js.executeScript("arguments[0].click()", YearArea0);
-        Thread.sleep(2000);
-        System.out.println("CheckPoint 2");
-
-        //Click the Current Date
-        JavascriptExecutor js2 = (JavascriptExecutor)driver;
-        Calendar calendar2 = new GregorianCalendar();
-        List<WebElement> list3 = driver.findElements(By.xpath("//*[@id=\"classTimeTable\"]/tbody/tr/td[1]/div/div/div[2]/div/span"));
-        int DateofToday2= calendar2.get(Calendar.DAY_OF_MONTH);
-        System.out.println("DateofToday:"+DateofToday2);
-
-        String TodayOnly2= String.valueOf(DateofToday2);
+        String TodayOnly2= String.valueOf(DateofToday1);
         System.out.println("TodayOnly:"+TodayOnly2);
+        /*
+        calendar.add(Calendar.DATE,1);
+        Date date= calendar.getTime();
+        String FullDateofToday= date.toString();
+        String DateofToday=FullDateofToday.substring(FullDateofToday.length()-2);
+        System.out.println("DateofToday:"+DateofToday);
+        String TodayOnly1= DateofToday;
+        System.out.println("TodayOnly1:"+TodayOnly1);
+
+         */
 
         if (TodayOnly2.equals("01")){
             TodayOnly2="1";
@@ -187,14 +201,14 @@ public class NoShowNotPassedCompleted {
         System.out.println(Number2);
 
 
-        for(WebElement e : list3) {
-            String dateofcanlendar1 = e.getAttribute("textContent");
+        for(WebElement e : list2) {
+            String dateofcanlendar2 = e.getAttribute("textContent");
 
-            System.out.println(dateofcanlendar1);
+            System.out.println(dateofcanlendar2);
 
-            if (dateofcanlendar1.equals(Number2)) {
+            if (dateofcanlendar2.equals(Number2)) {
                 System.out.println("Object Found Yeah Yeah Yeah");
-                js2.executeScript("arguments[0].click();", e);
+                js.executeScript("arguments[0].click();", e);
                 break;
             }
             else{System.out.println("Object Not Found ");
@@ -202,8 +216,8 @@ public class NoShowNotPassedCompleted {
         }
         Thread.sleep(1000);
 
-        //click save
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[6]/div/button[1]")).click();
+        // Calendar&Time//click save
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[7]/table/tbody/tr/td[6]/div/button[1]")).click();
         Thread.sleep(1000);
         //Click the Save Btn
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
@@ -213,22 +227,22 @@ public class NoShowNotPassedCompleted {
 
 
         //Click Offer Schedule
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Add attendee
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
-        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[2]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[2]"));
         js.executeScript("arguments[0].click()", AddAttendee);
         //CLick Attendee Tab
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")).click();
 
         //Click Add attendee btn
         Thread.sleep(1000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]")));
-        WebElement AttendeeBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[4]/ul/li[1]/a"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
+        WebElement AttendeeBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[4]/ul/li[1]/a"));
         js.executeScript("arguments[0].click()", AttendeeBtn);
         //Send in Badge No
         wait.until(ExpectedConditions.elementToBeClickable(By.id("criteriaBadge")));
@@ -244,11 +258,11 @@ public class NoShowNotPassedCompleted {
 
 
         //CLick Select User
-        driver.findElement(By.xpath("//table[@class='table table-sm m-0 table-hover']//tbody//tr//td//input")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[2]/table/thead/tr/th[1]/input")).click();
 
         //Mark as No Show
         Thread.sleep(1000);
-        new Select(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/select[1]"))).
+        new Select(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/select"))).
                 selectByVisibleText("No Show");
 
         Thread.sleep(3000);
@@ -265,7 +279,7 @@ public class NoShowNotPassedCompleted {
 
         //Mark as Not Passed
         Thread.sleep(1000);
-        new Select(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/select[1]"))).
+        new Select(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/select"))).
                 selectByVisibleText("Not Passed");
 
 
@@ -283,7 +297,7 @@ public class NoShowNotPassedCompleted {
 
         //Mark as completed
         Thread.sleep(1000);
-        new Select(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/select[1]"))).
+        new Select(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/select"))).
                 selectByVisibleText("Completed");
         String complete = "";
         try {
@@ -304,23 +318,33 @@ public class NoShowNotPassedCompleted {
 
         JavascriptExecutor js1 = (JavascriptExecutor)driver;
 
-        driver.findElement(By.xpath("//*[@id=\"my-courses\"]/div/div/div[1]/div/div[1]/input")).sendKeys(courseId);
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
         Thread.sleep(3000);
         if (!driver.getPageSource().contains(courseId)) {
             Assert.fail("the course did not show up as completed in my history");
         }
 
 
-
-        WebElement MytrainingReport=driver.findElement(By.xpath("//*[@id=\"navbarSupportedContent\"]/ul/li[6]/div/a[1]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Reports')]"));
+        js.executeScript("arguments[0].click()", Admin1);
+        Thread.sleep(1500);
+        WebElement MytrainingReport=driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
         js.executeScript("arguments[0].click();", MytrainingReport);
 
         Thread.sleep(1500);
-        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Classroom");
+        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[3]/div/div[1]/div/select"))).selectByVisibleText("Classroom");
 
+
+        //Click the left calendar
+        driver.findElement(By.xpath("//div[@class='input-group']//div[1]//button[1]")).click();
+        Thread.sleep(1000);
+        WebElement CalendarBox01=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[2]"));
+        List<WebElement> list1 = CalendarBox01.findElements(By.tagName("span"));
+        //Reverse the list to find the end day in case there are two todays or two yesterdays
+        Collections.reverse(list1);
         Calendar calendar = new GregorianCalendar();
-        List<WebElement> list1 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/span"));
-        List<WebElement> list2 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[2]/div[2]/div/span"));
         int DateofToday= calendar.get(Calendar.DAY_OF_MONTH);
         System.out.println("DateofToday:"+DateofToday);
 
@@ -382,7 +406,15 @@ public class NoShowNotPassedCompleted {
             }
         }
         Thread.sleep(1000);
-        for(WebElement e : list2) {
+
+        //Click the right calendar
+        driver.findElement(By.xpath("//div[@class='form-group row']//div[2]//button[1]")).click();
+        Thread.sleep(1000);
+        WebElement CalendarBox3=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[2]/div/div/div/div[2]"));
+        List<WebElement> list3 = CalendarBox3.findElements(By.tagName("span"));
+        //Reverse the list to find the end day in case there are two todays or two yesterdays
+        Collections.reverse(list3);
+        for(WebElement e : list3) {
             String dateofcanlendar2 = e.getAttribute("textContent");
 
             System.out.println(dateofcanlendar2);
@@ -397,12 +429,18 @@ public class NoShowNotPassedCompleted {
         }
         Thread.sleep(1000);
         // Click Go Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary mr-1']")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();
+        driver.findElement(By.xpath("//button[@class='btn btn-primary mr-1']")).click();
+
+        //Click OK Btn
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+
 
         try {
-            WebElement Last_Page = driver.findElement(By.xpath("//*[@id=\"my-training\"]/div[2]/div/div[1]/div[2]/div/nav/ul/li[5]"));
+            WebElement Last_Page = driver.findElement(By.xpath("//a[@class='page-link last icon']"));
             if (Last_Page.isDisplayed()) {
                 JavascriptExecutor js3 = (JavascriptExecutor)driver;
                 js3.executeScript("arguments[0].click();", Last_Page);

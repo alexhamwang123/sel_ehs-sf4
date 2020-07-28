@@ -73,9 +73,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 		//Click on the Enroll button
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']"))));
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
 		Thread.sleep(3000);
 		for(String winHandle : driver.getWindowHandles()) {
@@ -93,8 +93,8 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 		try {
-			if (driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[1]")).isDisplayed()) {
-				driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[1]")).click();
+			if (driver.findElement(By.xpath("//button[contains(text(),'OK')]")).isDisplayed()) {
+				driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 			}
 		}
 		catch(Exception e){
@@ -120,11 +120,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		//Search the Course
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-online-006");
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
-		Thread.sleep(1500);
 		String working = "";
 
-		working = driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
+		working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
 
 		System.out.println(working);
 

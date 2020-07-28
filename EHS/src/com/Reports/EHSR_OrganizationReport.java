@@ -7,6 +7,8 @@ package com.Reports;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -24,7 +26,7 @@ public class EHSR_OrganizationReport {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+		WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //driver.manage().window().maximize();
@@ -47,6 +49,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
+		Thread.sleep(1000);
+
 		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
@@ -55,7 +61,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.xpath("//*[@id=\"sub-menu\"]/div/a[6]")).click();
 		Thread.sleep(1500);
 		//Click on Select for selecting a Manager
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div/button")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]")).click();
 		
 		try {
 			Thread.sleep(1500);
@@ -68,7 +74,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.id("criteriaBadge")).sendKeys("X00001572");
 		
 		//Click on Search 
-		driver.findElement(By.xpath("//*[@id=\"__BVID__8___BV_modal_footer_\"]/div/button")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
 		Thread.sleep(2500);
 		//Click on the search result 
 		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[2]/table/tbody/tr[1]/td[1]")).click();
@@ -81,22 +87,22 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
         //Select RC
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/button")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
         Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("R2zMeXamXC");
 		Thread.sleep(1500);
 		//Click the Ok button
 		driver.findElement(By.xpath("//*[@id=\"select-results\"]/div[1]/div[2]/table/tbody/tr/td")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//*[@id=\"__BVID__10___BV_modal_footer_\"]/button")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
 
-
+		Thread.sleep(2500);
 		//Click on Go
-		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[5]/div/button[1]"));
+		WebElement Go=driver.findElement(By.xpath("//button[contains(text(),'Go')]"));
 		js.executeScript("arguments[0].click();",Go);
 		
 		try {
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

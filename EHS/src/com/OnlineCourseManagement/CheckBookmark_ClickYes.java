@@ -20,6 +20,9 @@ public class CheckBookmark_ClickYes {
 
     public void CheckBookmark_ClickYes() throws IOException, InterruptedException {
 
+
+
+
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -35,9 +38,9 @@ public class CheckBookmark_ClickYes {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
-try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-actions.build().perform(); }
-catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+            actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         driver.manage().window().maximize();
 
@@ -55,7 +58,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("kimi-online-004");
+        driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("DanielOnline01");
 
         //	 driver.findElement(By.name("searchButton")).click();
 
@@ -68,7 +71,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         String mainWindow = driver.getWindowHandle();
         //msg_head857e61d0-2598-102a-b70c-b707fad2 -> it is a EHS-1000 - EHS Essentials
-        driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
         for(String winHandle : driver.getWindowHandles()){
             if(winHandle!=mainWindow)
@@ -82,7 +85,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
         Thread.sleep(2000);
 
         JavascriptExecutor js= (JavascriptExecutor)driver;
@@ -95,10 +98,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(3000);
 
-        if(driver.getPageSource().contains("Page 1 of 45")){
+        if(driver.getPageSource().contains("Page 2 of 2")){
             System.out.println("The test is successful");
         }
         else{
@@ -107,7 +110,6 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.quit();
 
-        driver.quit();
 
 
     }

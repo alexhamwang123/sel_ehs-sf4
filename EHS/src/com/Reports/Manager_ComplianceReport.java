@@ -7,6 +7,8 @@ package com.Reports;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -24,7 +26,7 @@ public class Manager_ComplianceReport {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-
+		WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
@@ -48,6 +50,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(4500);
 		
 		//Clicking on Manager Reports under Reports
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
+		Thread.sleep(1000);
+
 		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
@@ -57,7 +63,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(2500);
 		//We must select a Risk Category to generate the Compliance Report.
 		//Click on the Select button for Risk category
-		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/button")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/button")).click();
 		
 		try {
 			Thread.sleep(4500);
@@ -78,7 +84,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 		
 		//Click on OK
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/button")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
 		
 		try {
 			Thread.sleep(4500);
@@ -86,10 +92,16 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//Click on Go to generate the report
-		WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[5]/div/button[1]"));
+
+		//Click on Go button to display the Report
+		WebElement Go=driver.findElement(By.xpath("//button[contains(text(),'Go')]"));
 		js.executeScript("arguments[0].click();",Go);
+		Thread.sleep(3500);
+
+		//Click OK Btn
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(3500);
 
 		driver.quit();

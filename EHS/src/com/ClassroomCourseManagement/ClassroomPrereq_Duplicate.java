@@ -45,7 +45,14 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -55,7 +62,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
         Thread.sleep(3500);
+                String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
         driver.findElement(By.name("detailCourseTitle")).sendKeys("test classroom course");
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_Selenium");
@@ -124,7 +135,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 //        driver.switchTo().defaultContent();
 //        Thread.sleep(1900);
         //Enroll
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
         Thread.sleep(2500);
         if(!driver.getPageSource().contains("Required prerequisite course: Classroom1")) {
             System.out.println("the user was able to register for the course without completing the required prereq");

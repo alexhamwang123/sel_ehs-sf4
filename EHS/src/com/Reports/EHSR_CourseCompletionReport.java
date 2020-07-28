@@ -5,6 +5,7 @@
 package com.Reports;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +16,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 //@Test
@@ -51,27 +52,123 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
-		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
+        Thread.sleep(1000);
+
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",ele);
 		Thread.sleep(1500);
-		//Select a Date Range. Click on Date From
-        WebElement From= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/div[1]/div[1]/input"));
-		js.executeScript("arguments[0].value='01/01/2019'",From);
-		Thread.sleep(500);
-		WebElement To=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/div[2]/div[1]/input"));
 
-		js.executeScript("arguments[0].value='01/04/2020'",To);
+
+
+            //Click the left calendar
+            JavascriptExecutor js1 = (JavascriptExecutor)driver;
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[1]/div/div/div[1]/label")).click();
+            Thread.sleep(1000);
+            WebElement CalendarBox01=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[1]/div/div/div[1]/div/div/div/div[2]"));
+            List<WebElement> list1 = CalendarBox01.findElements(By.tagName("span"));
+            //Reverse the list to find the end day in case there are two todays or two yesterdays
+            Collections.reverse(list1);
+
+            Calendar calendar = new GregorianCalendar();
+            int DateofToday= calendar.get(Calendar.DAY_OF_MONTH);
+            System.out.println("DateofToday:"+DateofToday);
+
+            String TodayOnly1= String.valueOf(DateofToday);
+            System.out.println("TodayOnly:"+TodayOnly1);
+        /*
+        calendar.add(Calendar.DATE,1);
+        Date date= calendar.getTime();
+        String FullDateofToday= date.toString();
+        String DateofToday=FullDateofToday.substring(FullDateofToday.length()-2);
+        System.out.println("DateofToday:"+DateofToday);
+        String TodayOnly1= DateofToday;
+        System.out.println("TodayOnly1:"+TodayOnly1);
+
+         */
+
+            if (TodayOnly1.equals("01")){
+                    TodayOnly1="1";
+            }
+            if (TodayOnly1.equals("02")){
+                    TodayOnly1="2";
+            }
+            if (TodayOnly1.equals("03")){
+                    TodayOnly1="3";
+            }
+            if (TodayOnly1.equals("04")){
+                    TodayOnly1="4";
+            }
+            if (TodayOnly1.equals("05")){
+                    TodayOnly1="5";
+            }
+            if (TodayOnly1.equals("06")){
+                    TodayOnly1="6";
+            }
+            if (TodayOnly1.equals("07")){
+                    TodayOnly1="7";
+            }
+            if (TodayOnly1.equals("08")){
+                    TodayOnly1="8";
+            }
+            if (TodayOnly1.equals("09")){
+                    TodayOnly1="9";
+            }
+            String Number1= TodayOnly1;
+            System.out.println(Number1);
+
+
+            for(WebElement e : list1) {
+                    String dateofcanlendar1 = e.getAttribute("textContent");
+
+                    System.out.println(dateofcanlendar1);
+
+                    if (dateofcanlendar1.equals(Number1)) {
+                            System.out.println("Object Found Yeah Yeah Yeah");
+                            js1.executeScript("arguments[0].click();", e);
+                            break;
+                    }
+                    else{System.out.println("Object Not Found ");
+                    }
+            }
+            Thread.sleep(1000);
+
+            //Click the right calendar
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[1]/div/div/div[2]/label")).click();
+            Thread.sleep(1000);
+            WebElement CalendarBox02=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[1]/div/div/div[2]/div/div/div/div[2]"));
+            List<WebElement> list2 = CalendarBox02.findElements(By.tagName("span"));
+            //Reverse the list to find the end day in case there are two todays or two yesterdays
+            Collections.reverse(list2);
+
+            for(WebElement e : list2) {
+                    String dateofcanlendar2 = e.getAttribute("textContent");
+
+                    System.out.println(dateofcanlendar2);
+
+                    if (dateofcanlendar2.equals(Number1)) {
+                            System.out.println("Object Found Yeah Yeah Yeah");
+                            js1.executeScript("arguments[0].click();", e);
+                            break;
+                    }
+                    else{System.out.println("Object Not Found ");
+                    }
+            }
+            Thread.sleep(1000);
+
+
 
 		Thread.sleep(3500);
         //Click Course-Select Btn
         Thread.sleep(2000);
-        WebElement CourseBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/label/input"));
+        WebElement CourseBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[12]/label/input"));
         js.executeScript("arguments[0].click();",CourseBtn);
 
         Thread.sleep(1000);
 
-        WebElement SelectBtn=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[12]/div/div/button"));
+        WebElement SelectBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[12]/div/div/button"));
         js.executeScript("arguments[0].click();",SelectBtn);
         Thread.sleep(2000);
         //Search the Course
@@ -86,28 +183,20 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr/td")).click();
         //Click on OK
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
 
-        //Date
-        WebElement July= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[1]/div[3]/span[7]"));
-        js.executeScript("arguments[0].click();",July);
-        Thread.sleep(2000);
-        WebElement Date_01= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[1]/div[2]/div/span[9]"));
-        JavascriptExecutor js1 = (JavascriptExecutor)driver;
-        js1.executeScript("arguments[0].click();",Date_01);
-        Thread.sleep(2000);
-        WebElement Date_02= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[2]/div[2]/div/span[13]"));
-        JavascriptExecutor js2=(JavascriptExecutor)driver;
-        js2.executeScript("arguments[0].click();",Date_02);
 
         //Click on Go
 
-        WebElement Go=driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[15]/div/button[1]"));
+        WebElement Go=driver.findElement(By.xpath("//button[contains(text(),'Go')]"));
         js.executeScript("arguments[0].click();",Go);
 
-		Thread.sleep(3500);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+        Thread.sleep(3500);
 
-		driver.quit();
+        driver.quit();
 
 
 		

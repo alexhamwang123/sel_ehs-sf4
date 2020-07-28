@@ -2,6 +2,7 @@ package com.OnlineCourseManagement;
 
 
 import org.apache.commons.text.RandomStringGenerator;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
@@ -19,8 +20,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
@@ -44,7 +44,7 @@ public class OnlineScormVerify {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
 
         File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
 
@@ -54,9 +54,13 @@ public class OnlineScormVerify {
         String urladdr = prop.getProperty("url");
 
         driver.get(urladdr);
-        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-            actions.build().perform(); }
-        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+        try {
+            Actions actions = new Actions(driver);
+            actions.sendKeys("thisisunsafe");
+            actions.build().perform();
+        } catch (NoSuchElementException e) {
+            System.out.println("Bypass mode is no more needed");
+        }
 
         driver.manage().window().maximize();
 
@@ -69,10 +73,16 @@ public class OnlineScormVerify {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
 
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin = driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js.executeScript("arguments[0].click()", courseAdmin);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
@@ -89,7 +99,11 @@ public class OnlineScormVerify {
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
+        String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         System.out.println(courseId);
         //input Course Number
         driver.findElement(By.id("course-num")).sendKeys(courseId);
@@ -106,7 +120,7 @@ public class OnlineScormVerify {
         //Click Online Details
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         //input training time
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
@@ -121,11 +135,11 @@ public class OnlineScormVerify {
         //Click Online Variants
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+        driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //input course type
         wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
@@ -133,11 +147,10 @@ public class OnlineScormVerify {
         new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Scorm Content");
 
 
-
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         java.awt.datatransfer.Clipboard clipboard = toolkit.getSystemClipboard();
         String path = System.getProperty("user.dir") + "/Intro_OneDrive.zip";
-        System.out.println("path="+path);
+        System.out.println("path=" + path);
         StringSelection str = new StringSelection(path);
         clipboard.setContents(str, str);
 
@@ -154,27 +167,28 @@ public class OnlineScormVerify {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         Thread.sleep(1000);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        Thread.sleep(20000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Visibility btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
 
-        WebElement VisibilityBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+        WebElement VisibilityBtn = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
         js.executeScript("arguments[0].click()", VisibilityBtn);
 
         //Click viewable btn
-        WebElement ViewableBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[2]/div/input"));
+        WebElement ViewableBtn = driver.findElement(By.xpath("//a[2]//div[1]//input[1]"));
         js.executeScript("arguments[0].click()", ViewableBtn);
 
         //Wait until the success message shows up
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
-
-
+        if (!ViewableBtn.isEnabled()) {
+            Assert.fail("Creation Failed");
+        }
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(2000);
         System.out.println(courseId);
@@ -194,8 +208,8 @@ public class OnlineScormVerify {
         }
 
         Thread.sleep(7500);
-        WebElement English= driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
-        js.executeScript("arguments[0].click();",English);
+        WebElement English = driver.findElement(By.xpath("//button[contains(text(),'Default - English')]"));
+        js.executeScript("arguments[0].click();", English);
         Thread.sleep(1500);
 //        robot.keyPress(KeyEvent.VK_META);
 //        robot.keyPress(KeyEvent.VK_W);
@@ -445,110 +459,231 @@ public class OnlineScormVerify {
             break;
         }
         Thread.sleep(800);
-        JavascriptExecutor js2 = (JavascriptExecutor)driver;
-        WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
-        js2.executeScript("arguments[0].click()", myTrainingReport);
-        Thread.sleep(3000);
-        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Online");
-        Thread.sleep(2000);
-        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        Date date = new Date();
-        Date yesterday = DateGet();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin1 = driver.findElement(By.xpath("//span[contains(text(),'Reports')]"));
+        js.executeScript("arguments[0].click()", Admin1);
+        Thread.sleep(1500);
+        WebElement MytrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
+        js.executeScript("arguments[0].click();", MytrainingReport);
+
+        Thread.sleep(1500);
+        new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[3]/div/div[1]/div/select"))).selectByVisibleText("Online");
+
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        //Click the left calendar
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[1]/label")).click();
+        Thread.sleep(1000);
+        WebElement CalendarBox01 = driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[2]"));
+        java.util.List<WebElement> list1 = CalendarBox01.findElements(By.tagName("span"));
+        //Reverse the list to find the end day in case there are two todays or two yesterdays
+        Collections.reverse(list1);
 
 
-//        System.out.println("Local Date Now=" + dateFormat.format(date));
-        WebElement From= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[1]/input"));
-        js.executeScript("arguments[0].value='" + dateFormat.format(yesterday) + "'",From);
-        Thread.sleep(1500);
-        WebElement To= driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[2]/div[1]/input"));
-        js.executeScript("arguments[0].value='" + dateFormat.format(date) + "'",To);
-        Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go
-        Thread.sleep(4000);
-        String courseIdText = "";
-        String currentPageMax = "0";
-        String currentPageNo = "0";
-        Boolean isBreak = false;
-        restartLoop:
-        while (true) {
-            java.util.List<WebElement> myResults, myResults3a;
-            myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));//Under The Reports
-            if (myResults.size() > 0) {
-                for (int $p = 0; $p < myResults.size(); $p++) {
-                    WebElement myResult;
-                    myResult = (WebElement) myResults.get($p);
-                    myResults3a = driver.findElements(By.tagName("td"));
-                    if (myResults3a.size() > 0) {
-                        for (WebElement myResult3a : myResults3a) {
-                            String idstr3a = myResult3a.getText();
+        //Get Yesterday
+        Date DateYesterday = DateGet();
+
+        DateFormat dateFormat = new SimpleDateFormat("dd");
+        String Yesterday = dateFormat.format(DateYesterday);
+        ;
+
+        int IntYesterday = Integer.parseInt(Yesterday);
+
+        //if Yesterday is 01 to 09 make it 1 to 9
+        if (IntYesterday < 10) {
+            Yesterday = Yesterday.substring(1);
+
+
+        }
+        System.out.println("Yesterday is" + Yesterday);
+
+        //Get Today
+        Calendar calendar = new GregorianCalendar();
+        int DateofToday = calendar.get(Calendar.DAY_OF_MONTH);
+
+        System.out.println("DateofToday:" + DateofToday);
+
+        String TodayOnly1 = String.valueOf(DateofToday);
+        System.out.println("TodayOnly:" + TodayOnly1);
+        /*
+        calendar.add(Calendar.DATE,1);
+        Date date= calendar.getTime();
+        String FullDateofToday= date.toString();
+        String DateofToday=FullDateofToday.substring(FullDateofToday.length()-2);
+        System.out.println("DateofToday:"+DateofToday);
+        String TodayOnly1= DateofToday;
+        System.out.println("TodayOnly1:"+TodayOnly1);
+
+         */
+
+        if (TodayOnly1.equals("01")) {
+            TodayOnly1 = "1";
+        }
+        if (TodayOnly1.equals("02")) {
+            TodayOnly1 = "2";
+        }
+        if (TodayOnly1.equals("03")) {
+            TodayOnly1 = "3";
+        }
+        if (TodayOnly1.equals("04")) {
+            TodayOnly1 = "4";
+        }
+        if (TodayOnly1.equals("05")) {
+            TodayOnly1 = "5";
+        }
+        if (TodayOnly1.equals("06")) {
+            TodayOnly1 = "6";
+        }
+        if (TodayOnly1.equals("07")) {
+            TodayOnly1 = "7";
+        }
+        if (TodayOnly1.equals("08")) {
+            TodayOnly1 = "8";
+        }
+        if (TodayOnly1.equals("09")) {
+            TodayOnly1 = "9";
+        }
+        String Number1 = TodayOnly1;
+        System.out.println(Number1);
+
+        //Count the Yesterday Number in Calendar(There may be 2 Yesterdays)
+        for (WebElement e : list1) {
+            String dateofcanlendar1 = e.getAttribute("textContent");
+
+            System.out.println(dateofcanlendar1);
+            if (dateofcanlendar1.equals(Yesterday)) {
+                js1.executeScript("arguments[0].click();", e);
+                break;
+            }
+        }
+            Thread.sleep(1000);
+
+            //Click the right calendar
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[2]/button")).click();
+            Thread.sleep(1000);
+            WebElement CalendarBox02 = driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[2]/div/div/div/div[2]"));
+            java.util.List<WebElement> list2 = CalendarBox02.findElements(By.tagName("span"));
+            //Reverse the list to find the end day in case there are two todays or two yesterdays
+            Collections.reverse(list2);
+            for (WebElement e : list2) {
+                String dateofcanlendar2 = e.getAttribute("textContent");
+
+                System.out.println(dateofcanlendar2);
+
+                if (dateofcanlendar2.equals(Number1)) {
+                    System.out.println("Object Found Yeah Yeah Yeah");
+                    js1.executeScript("arguments[0].click();", e);
+                    break;
+                } else {
+                    System.out.println("Object Not Found ");
+                }
+            }
+            Thread.sleep(1000);
+            // Click Go Btn
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary mr-1']")));
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//button[@class='btn btn-primary mr-1']")).click();
+
+            //Click OK Btn
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+
+
+            try {
+                WebElement Last_Page = driver.findElement(By.xpath("//a[@class='page-link last icon']"));
+                if (Last_Page.isDisplayed()) {
+                    JavascriptExecutor js3 = (JavascriptExecutor) driver;
+                    js3.executeScript("arguments[0].click();", Last_Page);
+                }
+            } catch (Exception e) {
+                System.out.println("There is no last page element");
+            }
+            Thread.sleep(4000);
+            String courseIdText = "";
+            String currentPageMax = "0";
+            String currentPageNo = "0";
+            Boolean isBreak = false;
+            restartLoop:
+            while (true) {
+                java.util.List<WebElement> myResults, myResults3a;
+                myResults = driver.findElements(By.xpath("//*[@id=\"userRecord\"]/tbody/tr"));//Under The Reports
+                if (myResults.size() > 0) {
+                    for (int $p = 0; $p < myResults.size(); $p++) {
+                        WebElement myResult;
+                        myResult = (WebElement) myResults.get($p);
+                        myResults3a = driver.findElements(By.tagName("td"));
+                        if (myResults3a.size() > 0) {
+                            for (WebElement myResult3a : myResults3a) {
+                                String idstr3a = myResult3a.getText();
 //                            System.out.println("didstr3a=" + idstr3a);
-                            if (courseId.equals(idstr3a)) {
-                                break;//We dont need to do anything.
-                                //Maybe find it. So that we don't need to do anything at all.
-                            }
-                        }
-                        restartLoop2:
-                        while (true) {
-
-                            try {
-                                WebElement pageMaxEle = driver.findElement(By.id("pageMax"));
-                                currentPageMax = pageMaxEle.getAttribute("value");
-                                WebElement pageNo = driver.findElement(By.id("pageNo"));
-                                currentPageNo = pageNo.getAttribute("value");
-                                currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
-                                Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
-                                System.out.println("Before taking the isBreak yet, isBreak=" + isBreak);
-                                System.out.println("Before taking the currentPageNoInt yet, currentPageNoInt=" + currentPageNoInt);
-                                System.out.println("Before taking the currentPageMax yet, currentPageMax=" + currentPageMax);
-                                if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isBreak) {
-                                    //we have to go to next.
-                                    WebElement inputTHREE = driver.findElement(By.id("pageNo"));
-                                    // erase any existing value (because clear does not send any events
-                                    for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
-                                        inputTHREE.sendKeys(Keys.BACK_SPACE);
-                                    }
-                                    inputTHREE.clear();
-                                    inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
-                                    //We have to next.
-                                    String strPagination = "pagination";
-                                    driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
-                                    continue restartLoop2;
-                                } else {
-                                    break;
+                                if (courseId.equals(idstr3a)) {
+                                    break;//We dont need to do anything.
+                                    //Maybe find it. So that we don't need to do anything at all.
                                 }
+                            }
+                            restartLoop2:
+                            while (true) {
+
+                                try {
+                                    WebElement pageMaxEle = driver.findElement(By.id("pageMax"));
+                                    currentPageMax = pageMaxEle.getAttribute("value");
+                                    WebElement pageNo = driver.findElement(By.id("pageNo"));
+                                    currentPageNo = pageNo.getAttribute("value");
+                                    currentPageNo = String.valueOf(Integer.valueOf(currentPageNo));
+                                    Integer currentPageNoInt = Integer.valueOf(currentPageNo) + 1;
+                                    System.out.println("Before taking the isBreak yet, isBreak=" + isBreak);
+                                    System.out.println("Before taking the currentPageNoInt yet, currentPageNoInt=" + currentPageNoInt);
+                                    System.out.println("Before taking the currentPageMax yet, currentPageMax=" + currentPageMax);
+                                    if (Integer.valueOf(currentPageMax) >= currentPageNoInt && isBreak) {
+                                        //we have to go to next.
+                                        WebElement inputTHREE = driver.findElement(By.id("pageNo"));
+                                        // erase any existing value (because clear does not send any events
+                                        for (int i = 0; i < inputTHREE.getAttribute("value").length(); i++) {
+                                            inputTHREE.sendKeys(Keys.BACK_SPACE);
+                                        }
+                                        inputTHREE.clear();
+                                        inputTHREE.sendKeys(String.valueOf(currentPageNoInt));
+                                        //We have to next.
+                                        String strPagination = "pagination";
+                                        driver.findElement(By.xpath("//ul[@class='" + strPagination + "']/li[4]/a")).click();
+                                        continue restartLoop2;
+                                    } else {
+                                        break;
+                                    }
 //                                    System.out.println("After taking the currentPageNoInt yet, currentPageNoInt=" + currentPageNoInt);
 //                                    System.out.println("After taking the course id yet, currentPageMax=" + currentPageMax);
 //                                    continue restartLoop2;
-                                // break;
+                                    // break;
 
-                            } catch (NoSuchElementException e) {
+                                } catch (NoSuchElementException e) {
+                                    break;
+                                }
+                            }
+                            if (isBreak) {
                                 break;
                             }
                         }
-                        if (isBreak) {
-                            break;
-                        }
                     }
                 }
-            }
-            if (isBreak) {
-                break;
-            }
+                if (isBreak) {
+                    break;
+                }
 
-     //       System.out.println("Before taking the course id yet, courseIdTxt=" + courseIdText);
+                //       System.out.println("Before taking the course id yet, courseIdTxt=" + courseIdText);
 //            System.out.println("Before taking the course id yet, courseId=" + courseId);
-            if (driver.getPageSource().contains(courseId)) {
-                System.out.println("courseIdTxt=" + courseIdText);
-                System.out.println("courseId=" + courseId);
-                System.out.println("Ｗe find the same course id here");
-                break;
-            } else {
-                Assert.fail("Should not be submitted here line 486");
+                if (driver.getPageSource().contains(courseId)) {
+                    System.out.println("courseIdTxt=" + courseIdText);
+                    System.out.println("courseId=" + courseId);
+                    System.out.println("Ｗe find the same course id here");
+                    break;
+                } else {
+                    Assert.fail("Should not be submitted here line 486");
+                }
             }
+            Thread.sleep(3000);
+            driver.quit();
         }
-        Thread.sleep(3000);
-        driver.quit();
-    }
 
 }
 

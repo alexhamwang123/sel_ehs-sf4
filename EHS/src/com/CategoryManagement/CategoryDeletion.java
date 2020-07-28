@@ -1,4 +1,4 @@
-package CategoryManagement;
+package com.CategoryManagement;
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
@@ -22,6 +22,7 @@ public class CategoryDeletion {
     public void CategoryDeletion() throws IOException,InterruptedException {
 
 
+        //EHS 13.4-D3
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
@@ -52,62 +53,69 @@ public class CategoryDeletion {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         Thread.sleep(4500);
-
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
         Thread.sleep(1500);
 
         //Click to Expand and show Classroom sub category
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div/span"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div")).click();
 
         //Delete the Classroom New Sub Category
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[2]/ul/li/div/div/div/div/button[3]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[2]/ul/li/div/div/div/div/button[3]")).click();
         Thread.sleep(1000);
         //Click OK btn
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'OK')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Delete the Classroom New  Category
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Category Management"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[3]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[3]")).click();
 
         //Click OK btn
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'OK')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(3000);
 
 
         //Click to Expand and show Online sub category
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div/span"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[1]/div")).click();
 
         //Delete the Online New Sub Category
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[2]/ul/li/div/div/div/div/button[3]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div[2]/ul/li/div/div/div/div/button[3]")).click();
         Thread.sleep(1000);
         //Click OK btn
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'OK')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Delete the Online New  Category
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Category Management"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[3]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/div/ul/li/div[2]/ul/li[5]/div/div/div/div/button[3]")).click();
 
         //Click OK btn
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'OK')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(3000);
+        driver.quit();
     }
 
     }

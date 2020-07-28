@@ -2,6 +2,7 @@ package com.EHSAdmin;
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -18,10 +19,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.text.CharacterPredicates.DIGITS;
@@ -61,6 +59,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		
 		//Clicking on EHS Admin
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
+		Thread.sleep(1000);
+
 		WebElement EHSAdmin = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",EHSAdmin);
@@ -71,6 +73,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
+		Thread.sleep(1000);
+
 		WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
 
 		js.executeScript("arguments[0].click();",ele1);
@@ -86,7 +92,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		// Clicking on 'Create Certificate'
-		WebElement CreateCert=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div[2]/ul/a"));
+		//driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[1]/div[2]/button")).click();
+		//Thread.sleep(1500);
+		WebElement CreateCert=driver.findElement(By.xpath("//a[contains(text(),'Create New Certificate')]"));
 		js.executeScript("arguments[0].click();",CreateCert);
 
 		try {
@@ -104,7 +112,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.id("name")).sendKeys(title);
 
 		// Entering the Description that you want for your certificate
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[2]/div/div/textarea")).sendKeys("this is the certificate description !");
+		driver.findElement(By.id("descr")).sendKeys("this is the certificate description !");
 
 		try {
 			Thread.sleep(2000);
@@ -114,7 +122,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		// Clicking on the 'Save' button
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[1]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Save')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 
 		try {
 			Thread.sleep(2000);
@@ -124,7 +134,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 		Thread.sleep(2000);
 		// clicking the 'Back' button
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[2]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Back')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 
 		try {
 			Thread.sleep(2000);
@@ -136,33 +148,37 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		// Searching for the lab name that you just created to show in the search result
         Actions actions = new Actions(driver);
-		actions.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div[1]/div/input")));
+		actions.moveToElement(driver.findElement(By.xpath("//input[@class='form-control']")));
 		actions.click();
 		actions.sendKeys(title);
 		actions.build().perform();
 
 		//Click the first result
 		Thread.sleep(2500);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
 		Thread.sleep(1500);
 
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[2]/div/div/textarea")).clear();
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[2]/div/div/textarea")).sendKeys("im editing the certificate description");
+		driver.findElement(By.id("descr")).clear();
+		driver.findElement(By.id("descr")).sendKeys("im editing the certificate description");
         Thread.sleep(500);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[1]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Save')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
         Thread.sleep(1500);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[4]/fieldset/div/div/button[2]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Back')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
         Thread.sleep(1500);
-		actions.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div[1]/div/input")));
-        actions.click();
-        actions.sendKeys(title);
-        actions.build().perform();
+		actions.moveToElement(driver.findElement(By.xpath("//input[@class='form-control']")));
+		actions.click();
+		actions.sendKeys(title);
+		actions.build().perform();
 
 		//Click the first result
 		Thread.sleep(2500);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
         Thread.sleep(1500);
-		String Edit = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/div[2]/div/div/textarea")).getAttribute("value");
+		String Edit = driver.findElement(By.id("descr")).getAttribute("value");
 
 		System.out.println(Edit);
 
@@ -172,6 +188,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(2000);
 		//driver.findElement(By.className("editAction")).click()
 		//certificate_checkbox
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
+		Thread.sleep(1000);
+
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;
 		WebElement courseAdmin2 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
 		js1.executeScript("arguments[0].click()", courseAdmin2);
@@ -208,7 +228,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		//Click Online Details
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
 		//input training time
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
@@ -223,11 +243,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		//Click Online Variants
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 		//Click Edit Btn
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+		driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
 		//input course type
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
@@ -255,21 +275,21 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
 		//Click Online Variants
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
 		Thread.sleep(1000);
 		Thread.sleep(1000);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+		Thread.sleep(21000);
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
 		//Click Visibility btn
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
 		Thread.sleep(1000);
 
-		WebElement VisibilityBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+		WebElement VisibilityBtn=driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
 		js.executeScript("arguments[0].click()", VisibilityBtn);
 
 		//Click viewable btn
-		WebElement ViewableBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[2]/div/input"));
+		WebElement ViewableBtn=driver.findElement(By.xpath("//a[2]//div[1]//input[1]"));
 		js.executeScript("arguments[0].click()", ViewableBtn);
 
 		//Wait until the success message shows up
@@ -282,7 +302,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(2600);
 		String currentWin = driver.getWindowHandle();
 		try {
-			driver.findElement(By.xpath("//*[@id=\"courses\"]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+			driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 		} catch (NoSuchElementException e) {
 			Assert.fail("something went wrong while creating and uploading the scorm course");
 		}
@@ -292,10 +312,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 			driver.switchTo().window(winHandle);
 		}
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]"))));
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]"))));
 		Thread.sleep(1500);
 
-		WebElement English=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/button[1]"));
+		WebElement English=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]"));
         JavascriptExecutor js2= (JavascriptExecutor)driver;
 		js2.executeScript("arguments[0].click()",English);
 		Thread.sleep(8500);
@@ -549,17 +569,26 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 		Thread.sleep(800);
 		JavascriptExecutor js3 = (JavascriptExecutor)driver;
-		//WebElement myTrainingReport = driver.findElement(By.xpath("//*[@id=\"navPrimary\"]/li[7]/ul/li[1]/a"));
+		driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
+		Thread.sleep(1000);
 		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
 		js3.executeScript("arguments[0].click()", myTrainingReport);
 		Thread.sleep(1000);
-		new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/select"))).selectByVisibleText("Online");
+		new Select(driver.findElement(By.xpath("//*[@id=\"main\"]/div[3]/div/div[1]/div/select"))).selectByVisibleText("Online");
 		Thread.sleep(1600);
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = new Date();
+
+
 		JavascriptExecutor js10 = (JavascriptExecutor)driver;
-		java.util.List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/span"));
-		java.util.List<WebElement> list1 = driver.findElements(By.xpath("//*[@id=\"main\"]/div[2]/div/div[2]/div/div/div[2]/div[2]/div/span"));
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[1]/label")).click();
+		Thread.sleep(1600);
+		WebElement box1= driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[2]/div[2]"));
+		java.util.List<WebElement> list = box1.findElements(By.tagName("span"));
+		//Reverse the list to find the end day in case there are two todays or two yesterdays
+		Collections.reverse(list);
+
+
 		Calendar calendar = new GregorianCalendar();
 		int DateofToday= calendar.get(Calendar.DAY_OF_MONTH);
 		System.out.println("DateofToday:"+DateofToday);
@@ -605,12 +634,21 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 			if (dateofcanlendar.equals(Number)) {
 				System.out.println("Object Found Yeah Yeah Yeah");
-				js10.executeScript("arguments[0].click();", e);
+				JavascriptExecutor js4 = (JavascriptExecutor)driver;
+				js4.executeScript("arguments[0].click();", e);
 				break;
 			}
 			else{System.out.println("Object Not Found ");
 			}
 		}
+
+
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[2]/label")).click();
+		Thread.sleep(1600);
+		WebElement box2= driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[2]/div/div/div/div[2]/div[2]"));
+		java.util.List<WebElement> list1 = box2.findElements(By.tagName("span"));
+		//Reverse the list to find the end day in case there are two todays or two yesterdays
+		Collections.reverse(list1);
 
 		for(WebElement e : list1) {
 			String dateofcanlendar = e.getAttribute("textContent");
@@ -619,7 +657,8 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 			if (dateofcanlendar.equals(Number)) {
 				System.out.println("Object Found Yeah Yeah Yeah");
-				js10.executeScript("arguments[0].click();", e);
+				JavascriptExecutor js5 = (JavascriptExecutor)driver;
+				js5.executeScript("arguments[0].click();", e);
 				break;
 			}
 			else{System.out.println("Object Not Found ");
@@ -627,10 +666,14 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 
-		driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[3]/div/button[1]")).click();//Go for Reports
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Go')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),'Go')]")).click();
 
 		//Click OK
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'OK')]"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
 
 		try {
@@ -645,21 +688,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		Thread.sleep(1200);
 
-		java.util.List<WebElement>  myResults3a;
-		WebElement myResult = driver.findElement(By.xpath("//*[@id=\"my-training\"]/div[2]/div/div[1]/div[2]/table/tbody"));//Under The Reports
-//			myResults = driver.findElements(By.xpath("//div[@class=\"msg_head\"]/table/tbody/tr")); //Under My History
-
-		myResults3a = myResult.findElements(By.tagName("td"));
-
-		for (WebElement myResult3a : myResults3a) {
-
-			String idstr3a = myResult3a.getText();
-
-			if (idstr3a.contains(courseId2)) {
-				System.out.println("Course has been found the test is successful");
-
-			}
+		if(driver.getPageSource().contains(courseId2)){
+			System.out.println("Successful");
 		}
+		else{
+			Assert.fail("Failed");
+		}
+
 		driver.quit();
 
 

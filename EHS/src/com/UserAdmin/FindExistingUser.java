@@ -6,6 +6,8 @@ package com.UserAdmin;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -25,17 +27,17 @@ public class FindExistingUser {
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		//driver.manage().window().maximize();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-actions.build().perform(); }
-catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+		try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+			actions.build().perform(); }
+		catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 
@@ -52,6 +54,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 		
 		//Clicking on 'User Admin'
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
+		Thread.sleep(1000);
+
 
 		WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -82,7 +88,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 	    
 	    //Click on Search
-	    driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/button[1]")).click();
+	    driver.findElement(By.xpath("//button[contains(text(),'Find Users')]")).click();
 
 	    Thread.sleep(3500);
 	    driver.quit();

@@ -44,16 +44,17 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        try {
-            Thread.sleep(4500);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
 
         //Clicking on 'User Admin'
-        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         js.executeScript("arguments[0].click();",ele);
 
         try {
@@ -65,7 +66,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 // Click on Create User
-        WebElement Create_User=driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/ul/li[3]/div/a[1]"));
+        WebElement Create_User=driver.findElement(By.xpath("//a[contains(text(),'Create new user')]"));
         js.executeScript("arguments[0].click();", Create_User);
 
 
@@ -80,10 +81,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
-        Thread.sleep(1000);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
+            Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
@@ -115,18 +116,18 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 //driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
 
 // Click on 'Save' button
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/button")).click();
 
         Thread.sleep(2000);
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
-        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
+        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__92\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
 
         Thread.sleep(2000);
@@ -134,13 +135,14 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
         Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
         driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
         Thread.sleep(1000);
         driver.findElement(By.id("welcomeShowRS")).click();
@@ -156,7 +158,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.name("question[7466]")).click();
         driver.findElement(By.name("question[7467]")).click();
 
-            driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
         driver.findElement(By.id("annContinue")).click();
@@ -169,19 +171,19 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),\"Manager's Portal\")]")).click();
 
-        driver.findElement(By.xpath("//*[@id=\"annContinue\"]/span")).click();
+        driver.navigate().refresh();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'My Labs')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'My Labs')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"NavDropdown-20\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"NavDropdown-20\"]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"NavDropdown-25\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//span[contains(text(),'Admin')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"NavDropdown-25\"]")).click();
+        driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 
 
         driver.quit();

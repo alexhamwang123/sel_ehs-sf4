@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="All Pass Version 2 20/Dec">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryDeletion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryVisibility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/CreateAndEditCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionStatics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseCreation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" afterDir="false" />
+    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="All Pass (Except PrereqLink Scripts) 2 11/May">
+      <change afterPath="$PROJECT_DIR$/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/NewCategoryCourseCompletionReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/NewCategoryCourseCompletionStatics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/AllTest_19_Jun.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/AllTest_19_Jun.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/Failed_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/Failed_Test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryDeletion.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryDeletion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/CreateAndEditCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CreateAndEditCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionStatics.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" afterDir="false" />
@@ -36,12 +39,12 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SaveAndCancel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseCreation.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" afterDir="false" />
@@ -79,8 +82,6 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseName.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_SearchACourseNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" afterDir="false" />
@@ -90,7 +91,7 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_Duplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_Duplicate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" afterDir="false" />
@@ -135,7 +136,12 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testNg_OnlineCourse.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/testNg_OnlineCourse.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testNG_Miscellaneous.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testNg_Checklist.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testNg_OnlineCourse.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" afterDir="false" />
@@ -163,14 +169,7 @@
   <component name="CoverageViewManager">
     <option name="myElementSize" value="122" />
   </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="hideWarnings" value="true" />
-    <option name="HIDE_WARNINGS" value="true" />
-  </component>
   <component name="ExportTestResults" exportFormat="Xml" outputFolder="$USER_HOME$/Desktop" userTempatePath="" />
-  <component name="FavoritesManager">
-    <favorites_list name="sel_ehs-sf4" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -194,7 +193,6 @@
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
@@ -210,11 +208,11 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565853942063" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
     <property name="two.files.diff.last.used.folder" value="$USER_HOME$/sel_ehs-sf4/EHS" />
   </component>
   <component name="RecentsManager">
@@ -228,7 +226,7 @@
       <recent name="$PROJECT_DIR$/EHS/src" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.EHS_SPGCourseCompletionReport and 1 more">
+  <component name="RunManager" selected="TestNG.CategoryDeletion.CategoryDeletion">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -260,84 +258,71 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateSiteAdmin and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <option name="TEST_OBJECT" value="PATTERN" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <patterns>
-        <pattern testClass="com.UserAdmin.CreateSiteAdmin" />
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateSiteAdmin" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryDeletion" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.UserAdmin.*" />
+          <option name="PATTERN" value="com.CategoryManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.UserAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.UserAdmin.CreateSiteAdmin" />
+      <option name="PACKAGE_NAME" value="com.CategoryManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.CategoryManagement.CategoryDeletion" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
-      <patterns>
-        <pattern testClass="com.UserAdmin.CreateSiteAdmin" />
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
-      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EHS_SPGCourseCompletionReport and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryDeletion.CategoryDeletion" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CategoryManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.CategoryManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.CategoryManagement.CategoryDeletion" />
+      <option name="METHOD_NAME" value="CategoryDeletion" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClassroomSPGRC.ClassroomSPGRCCompletion" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.ClassroomSPGRC" />
+      <option name="METHOD_NAME" value="ClassroomSPGRCCompletion" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewCategoryCourseCompletionReport and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
       <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
       <patterns>
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="* and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <option name="TEST_OBJECT" value="PATTERN" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <patterns>
-        <pattern testClass="com.Reports.*" />
-        <pattern testClass="com.UserAdmin.*" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="/Users/trismax/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <patterns>
-        <pattern testClass="com.UserAdmin.CreateSiteAdmin" />
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
-        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
+        <pattern testClass="com.CategoryManagement.NewCategoryCourseCompletionReport" />
+        <pattern testClass="com.CategoryManagement.NewCategoryCourseCompletionStatics" />
       </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -376,6 +361,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.CategoryManagement" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CategoryManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.CategoryManagement" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="createCourseManagerFirst" type="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
@@ -398,33 +400,21 @@
       <item itemvalue="TestNG.All testng-customsuite.xml" />
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.* and 1 more" />
-      <item itemvalue="TestNG.CreateSiteAdmin and 2 more" />
-      <item itemvalue="TestNG.CreateSiteAdmin" />
-      <item itemvalue="TestNG./Users/trismax/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
-      <item itemvalue="TestNG.EHS_SPGCourseCompletionReport and 1 more" />
+      <item itemvalue="TestNG.ClassroomSPGRC.ClassroomSPGRCCompletion" />
+      <item itemvalue="TestNG.CategoryDeletion" />
+      <item itemvalue="TestNG.com.CategoryManagement" />
+      <item itemvalue="TestNG.NewCategoryCourseCompletionReport and 1 more" />
+      <item itemvalue="TestNG.CategoryDeletion.CategoryDeletion" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.EHS_SPGCourseCompletionReport and 1 more" />
-        <item itemvalue="TestNG./Users/trismax/Library/Caches/IdeaIC2019.3/temp-testng-customsuite.xml" />
-        <item itemvalue="TestNG.CreateSiteAdmin and 2 more" />
-        <item itemvalue="TestNG.CreateSiteAdmin" />
-        <item itemvalue="TestNG.* and 1 more" />
+        <item itemvalue="TestNG.CategoryDeletion.CategoryDeletion" />
+        <item itemvalue="TestNG.CategoryDeletion" />
+        <item itemvalue="TestNG.NewCategoryCourseCompletionReport and 1 more" />
+        <item itemvalue="TestNG.com.CategoryManagement" />
+        <item itemvalue="TestNG.ClassroomSPGRC.ClassroomSPGRCCompletion" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -745,7 +735,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576838923827</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="All Pass (Except PrereqLink Scripts) 2 11/May">
+      <created>1589171719423</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1589171719423</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -763,9 +760,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -784,10 +779,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="OnlineButtonSource" />
     <MESSAGE value="OnlineCourse_CompleteAndSubmit" />
     <MESSAGE value="OnlineCourse_PartiallyCompleteAndSubmit" />
     <MESSAGE value="OnlineCourseEditContent" />
@@ -812,141 +807,175 @@
     <MESSAGE value="New Enhancement and Elements Adjustment 5 Sept" />
     <MESSAGE value="2019/09/28 EHS All Scripts Passed Version" />
     <MESSAGE value="All Pass Version 2 20/Dec" />
-    <option name="LAST_COMMIT_MESSAGE" value="All Pass Version 2 20/Dec" />
+    <MESSAGE value="All Pass (Except PrereqLink Scripts) 2 11/May" />
+    <option name="LAST_COMMIT_MESSAGE" value="All Pass (Except PrereqLink Scripts) 2 11/May" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="181" key="#Console" timestamp="1586184985670">
+    <state x="560" y="180" width="800" height="765" key="#Intentions" timestamp="1590096041488">
       <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="560" y="181" key="#Console/0.23.1920.985@0.23.1920.985" timestamp="1586184985670" />
-    <state x="560" y="180" width="800" height="717" key="#Intentions" timestamp="1585153331010">
+    <state x="560" y="180" width="800" height="765" key="#Intentions/0.23.1920.985@0.23.1920.985" timestamp="1590096041488" />
+    <state x="732" y="122" key="#OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" timestamp="1594262014480">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state x="732" y="122" key="#OnlineRandomQuestionOrder.OnlineRandomQuestionOrder/0.23.1920.982@0.23.1920.982" timestamp="1594262014480" />
+    <state x="698" y="288" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1590224818880">
       <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="560" y="180" width="800" height="717" key="#Intentions/0.23.1920.985@0.23.1920.985" timestamp="1585153331010" />
-    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582678644469">
+    <state x="698" y="288" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.985@0.23.1920.985" timestamp="1590224818880" />
+    <state x="553" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595597522940">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state x="553" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.982@0.23.1920.982" timestamp="1595597522940" />
+    <state x="798" y="232" width="686" height="564" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1590690372999">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.983@0.23.1920.983" timestamp="1582678644469" />
-    <state x="698" y="269" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1586187318157">
+    <state x="798" y="232" width="686" height="564" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.23.1920.983@0.23.1920.983" timestamp="1590690372999" />
+    <state x="747" y="406" width="423" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590166184647">
       <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="698" y="269" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.23.1920.985@0.23.1920.985" timestamp="1586187318157" />
-    <state x="676" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585169144633">
+    <state x="747" y="406" width="423" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.985@0.23.1920.985" timestamp="1590166184647" />
+    <state x="747" y="407" width="427" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.987@0.23.1920.987" timestamp="1590090196191" />
+    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593281733448">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.982@0.23.1920.982" timestamp="1593281733448" />
+    <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.985@0.23.1920.985" timestamp="1590759784868" />
+    <state x="711" y="412" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595772386842">
+      <screen x="0" y="23" width="1920" height="983" />
+    </state>
+    <state x="711" y="412" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.983@0.23.1920.983" timestamp="1595772386842" />
+    <state x="581" y="118" key="CommitChangelistDialog2" timestamp="1589171717440">
       <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="676" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.985@0.23.1920.985" timestamp="1585169144633" />
-    <state width="1878" height="413" key="GridCell.Tab.0.bottom" timestamp="1589171458581">
-      <screen x="0" y="23" width="1920" height="985" />
+    <state x="581" y="118" key="CommitChangelistDialog2/0.23.1920.985@0.23.1920.985" timestamp="1589171717440" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom" timestamp="1595955311083">
+      <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="394" key="GridCell.Tab.0.bottom/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301685" />
-    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684402" />
-    <state width="1878" height="279" key="GridCell.Tab.0.bottom/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242820" />
-    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229195" />
-    <state width="1878" height="321" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1585141775991" />
-    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.985@0.23.1920.985" timestamp="1589171458581" />
-    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.987@0.23.1920.987" timestamp="1589164842839" />
-    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1588850213223" />
-    <state width="1878" height="284" key="GridCell.Tab.0.bottom/0.23.1920.990@0.23.1920.990" timestamp="1585497753224" />
-    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.991@0.23.1920.991" timestamp="1589119309522" />
-    <state width="1878" height="321" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1585057671814" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131289" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544655" />
+    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241918" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1595955311083" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1595952163540" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.985@0.23.1920.985" timestamp="1593624131372" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.987@0.23.1920.987" timestamp="1595922637238" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1590419669962" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.990@0.23.1920.990" timestamp="1591196017358" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.991@0.23.1920.991" timestamp="1591342440939" />
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.993@0.23.1920.993" timestamp="1590755346061" />
+    <state width="1878" height="325" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1592569631961" />
     <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.996@0.23.1920.996" timestamp="1589116181129" />
-    <state width="1878" height="413" key="GridCell.Tab.0.center" timestamp="1589171458579">
-      <screen x="0" y="23" width="1920" height="985" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center" timestamp="1595955311081">
+      <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="394" key="GridCell.Tab.0.center/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301684" />
-    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684401" />
-    <state width="1878" height="279" key="GridCell.Tab.0.center/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242818" />
-    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229194" />
-    <state width="1878" height="321" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1585141775990" />
-    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.985@0.23.1920.985" timestamp="1589171458579" />
-    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.987@0.23.1920.987" timestamp="1589164842837" />
-    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1588850213221" />
-    <state width="1878" height="284" key="GridCell.Tab.0.center/0.23.1920.990@0.23.1920.990" timestamp="1585497753223" />
-    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.991@0.23.1920.991" timestamp="1589119309521" />
-    <state width="1878" height="321" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1585057671812" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131288" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544654" />
+    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241852" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1595955311081" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1595952163539" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.985@0.23.1920.985" timestamp="1593624131371" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.987@0.23.1920.987" timestamp="1595922637235" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1590419669961" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.990@0.23.1920.990" timestamp="1591196017353" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.991@0.23.1920.991" timestamp="1591342440935" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.993@0.23.1920.993" timestamp="1590755346060" />
+    <state width="1878" height="325" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1592569631957" />
     <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.996@0.23.1920.996" timestamp="1589116181127" />
-    <state width="1878" height="413" key="GridCell.Tab.0.left" timestamp="1589171458578">
-      <screen x="0" y="23" width="1920" height="985" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left" timestamp="1595955311081">
+      <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="394" key="GridCell.Tab.0.left/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301683" />
-    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684400" />
-    <state width="1878" height="279" key="GridCell.Tab.0.left/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242818" />
-    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229194" />
-    <state width="1878" height="321" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1585141775989" />
-    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.985@0.23.1920.985" timestamp="1589171458578" />
-    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.987@0.23.1920.987" timestamp="1589164842835" />
-    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1588850213219" />
-    <state width="1878" height="284" key="GridCell.Tab.0.left/0.23.1920.990@0.23.1920.990" timestamp="1585497753222" />
-    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.991@0.23.1920.991" timestamp="1589119309518" />
-    <state width="1878" height="321" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1585057671811" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131288" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544652" />
+    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241812" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1595955311081" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1595952163539" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.985@0.23.1920.985" timestamp="1593624131370" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.987@0.23.1920.987" timestamp="1595922637234" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1590419669960" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.990@0.23.1920.990" timestamp="1591196017351" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.991@0.23.1920.991" timestamp="1591342440934" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.993@0.23.1920.993" timestamp="1590755346060" />
+    <state width="1878" height="325" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1592569631956" />
     <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.996@0.23.1920.996" timestamp="1589116181125" />
-    <state width="1878" height="413" key="GridCell.Tab.0.right" timestamp="1589171458580">
-      <screen x="0" y="23" width="1920" height="985" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right" timestamp="1595955311082">
+      <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="394" key="GridCell.Tab.0.right/0.23.1920.1001@0.23.1920.1001" timestamp="1582684301684" />
-    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.1007@0.23.1920.1007" timestamp="1586246684402" />
-    <state width="1878" height="279" key="GridCell.Tab.0.right/0.23.1920.1012@0.23.1920.1012" timestamp="1582765242819" />
-    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.1021@0.23.1920.1021" timestamp="1585486229194" />
-    <state width="1878" height="321" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1585141775991" />
-    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.985@0.23.1920.985" timestamp="1589171458580" />
-    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1589164842838" />
-    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1588850213222" />
-    <state width="1878" height="284" key="GridCell.Tab.0.right/0.23.1920.990@0.23.1920.990" timestamp="1585497753224" />
-    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.991@0.23.1920.991" timestamp="1589119309521" />
-    <state width="1878" height="321" key="GridCell.Tab.0.right/0.23.1920.994@0.23.1920.994" timestamp="1585057671813" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131289" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544655" />
+    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241908" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1595955311082" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1595952163540" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.985@0.23.1920.985" timestamp="1593624131371" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1595922637237" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1590419669961" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.990@0.23.1920.990" timestamp="1591196017355" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.991@0.23.1920.991" timestamp="1591342440936" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.993@0.23.1920.993" timestamp="1590755346061" />
+    <state width="1878" height="325" key="GridCell.Tab.0.right/0.23.1920.994@0.23.1920.994" timestamp="1592569631958" />
     <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.996@0.23.1920.996" timestamp="1589116181128" />
-    <state width="1878" height="338" key="GridCell.Tab.1.bottom" timestamp="1589081390069">
+    <state width="1878" height="336" key="GridCell.Tab.1.bottom" timestamp="1595787769557">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.23.1920.982@0.23.1920.982" timestamp="1595787769557" />
+    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.23.1920.983@0.23.1920.983" timestamp="1595773239095" />
+    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.985@0.23.1920.985" timestamp="1590225279883" />
+    <state width="1878" height="337" key="GridCell.Tab.1.bottom/0.23.1920.987@0.23.1920.987" timestamp="1590713743927" />
+    <state width="1878" height="336" key="GridCell.Tab.1.center" timestamp="1595787769556">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state width="1878" height="336" key="GridCell.Tab.1.center/0.23.1920.982@0.23.1920.982" timestamp="1595787769556" />
+    <state width="1878" height="336" key="GridCell.Tab.1.center/0.23.1920.983@0.23.1920.983" timestamp="1595773239094" />
+    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.985@0.23.1920.985" timestamp="1590225279883" />
+    <state width="1878" height="337" key="GridCell.Tab.1.center/0.23.1920.987@0.23.1920.987" timestamp="1590713743926" />
+    <state width="1878" height="336" key="GridCell.Tab.1.left" timestamp="1595787769556">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state width="1878" height="336" key="GridCell.Tab.1.left/0.23.1920.982@0.23.1920.982" timestamp="1595787769556" />
+    <state width="1878" height="336" key="GridCell.Tab.1.left/0.23.1920.983@0.23.1920.983" timestamp="1595773239094" />
+    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.985@0.23.1920.985" timestamp="1590225279882" />
+    <state width="1878" height="337" key="GridCell.Tab.1.left/0.23.1920.987@0.23.1920.987" timestamp="1590713743925" />
+    <state width="1878" height="336" key="GridCell.Tab.1.right" timestamp="1595787769557">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.982@0.23.1920.982" timestamp="1595787769557" />
+    <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.983@0.23.1920.983" timestamp="1595773239095" />
+    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.985@0.23.1920.985" timestamp="1590225279883" />
+    <state width="1878" height="337" key="GridCell.Tab.1.right/0.23.1920.987@0.23.1920.987" timestamp="1590713743926" />
+    <state x="448" y="96" key="SettingsEditor" timestamp="1594262701681">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state x="448" y="96" key="SettingsEditor/0.23.1920.982@0.23.1920.982" timestamp="1594262701681" />
+    <state x="448" y="96" key="SettingsEditor/0.23.1920.983@0.23.1920.983" timestamp="1590690669133" />
+    <state x="560" y="244" key="Vcs.Push.Dialog.v2" timestamp="1589171726009">
       <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.985@0.23.1920.985" timestamp="1589081390069" />
-    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.987@0.23.1920.987" timestamp="1586165082042" />
-    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.988@0.23.1920.988" timestamp="1585062135445" />
-    <state width="1878" height="338" key="GridCell.Tab.1.center" timestamp="1589081390068">
-      <screen x="0" y="23" width="1920" height="985" />
+    <state x="560" y="244" key="Vcs.Push.Dialog.v2/0.23.1920.985@0.23.1920.985" timestamp="1589171726009" />
+    <state x="653" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1590409480530">
+      <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.985@0.23.1920.985" timestamp="1589081390068" />
-    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.987@0.23.1920.987" timestamp="1586165082040" />
-    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.988@0.23.1920.988" timestamp="1585062135443" />
-    <state width="1878" height="338" key="GridCell.Tab.1.left" timestamp="1589081390067">
-      <screen x="0" y="23" width="1920" height="985" />
+    <state x="653" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1590409480530" />
+    <state x="653" y="348" key="com.intellij.ide.util.TipDialog/0.23.1920.985@0.23.1920.985" timestamp="1590251843464" />
+    <state x="440" y="192" width="1172" height="700" key="find.popup" timestamp="1595773185583">
+      <screen x="0" y="23" width="1920" height="983" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.985@0.23.1920.985" timestamp="1589081390067" />
-    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.987@0.23.1920.987" timestamp="1586165082039" />
-    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.988@0.23.1920.988" timestamp="1585062135443" />
-    <state width="1878" height="338" key="GridCell.Tab.1.right" timestamp="1589081390068">
-      <screen x="0" y="23" width="1920" height="985" />
+    <state x="425" y="140" width="1159" height="870" key="find.popup/0.23.1920.1017@0.23.1920.1017" timestamp="1589885221329" />
+    <state x="490" y="97" width="1159" height="840" key="find.popup/0.23.1920.982@0.23.1920.982" timestamp="1595597744932" />
+    <state x="440" y="192" width="1172" height="700" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1595773185583" />
+    <state x="557" y="74" width="1159" height="844" key="find.popup/0.23.1920.985@0.23.1920.985" timestamp="1590676087868" />
+    <state x="557" y="74" width="1159" height="844" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1591202713435" />
+    <state x="397" y="79" width="1159" height="844" key="find.popup/0.23.1920.988@0.23.1920.988" timestamp="1590226704468" />
+    <state x="661" y="184" width="1030" height="793" key="find.popup/0.23.1920.990@0.23.1920.990" timestamp="1590250499274" />
+    <state x="397" y="79" width="1159" height="847" key="find.popup/0.23.1920.991@0.23.1920.991" timestamp="1591342136233" />
+    <state x="383" y="177" key="new project wizard" timestamp="1594256181216">
+      <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.985@0.23.1920.985" timestamp="1589081390068" />
-    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.987@0.23.1920.987" timestamp="1586165082041" />
-    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.988@0.23.1920.988" timestamp="1585062135444" />
-    <state x="653" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1589171158513">
-      <screen x="0" y="23" width="1920" height="985" />
-    </state>
-    <state x="653" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1584875628454" />
-    <state x="653" y="348" key="com.intellij.ide.util.TipDialog/0.23.1920.985@0.23.1920.985" timestamp="1589171158513" />
-    <state x="639" y="212" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585170493697">
-      <screen x="0" y="23" width="1920" height="985" />
-    </state>
-    <state x="639" y="212" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.985@0.23.1920.985" timestamp="1585170493697" />
-    <state x="698" y="275" key="extract.method.dialog" timestamp="1585052910271">
-      <screen x="0" y="23" width="1920" height="996" />
-    </state>
-    <state x="698" y="274" key="extract.method.dialog/0.23.1920.994@0.23.1920.994" timestamp="1585051052092" />
-    <state x="698" y="275" key="extract.method.dialog/0.23.1920.996@0.23.1920.996" timestamp="1585052910271" />
-    <state x="517" y="166" width="1159" height="842" key="find.popup" timestamp="1588765213077">
-      <screen x="0" y="23" width="1920" height="985" />
-    </state>
-    <state x="434" y="253" width="782" height="550" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1585023877123" />
-    <state x="517" y="166" width="1159" height="842" key="find.popup/0.23.1920.985@0.23.1920.985" timestamp="1588765213077" />
-    <state x="553" y="72" width="1159" height="844" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1586250045869" />
-    <state x="553" y="72" width="1159" height="844" key="find.popup/0.23.1920.988@0.23.1920.988" timestamp="1586164907289" />
-    <state x="661" y="427" width="782" height="550" key="find.popup/0.23.1920.990@0.23.1920.990" timestamp="1585022835961" />
-    <state x="661" y="428" width="782" height="553" key="find.popup/0.23.1920.993@0.23.1920.993" timestamp="1585019711263" />
-    <state x="517" y="167" width="1159" height="850" key="find.popup/0.23.1920.996@0.23.1920.996" timestamp="1585487437300" />
+    <state x="383" y="177" key="new project wizard/0.23.1920.982@0.23.1920.982" timestamp="1594256181216" />
+    <state x="383" y="177" key="new project wizard/0.23.1920.983@0.23.1920.983" timestamp="1590690720144" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$CreateAndEditCertificate_CreateAndEditCertificate__1_.ic" NAME="CreateAndEditCertificate.CreateAndEditCertificate (1) Coverage Results" MODIFIED="1566393554884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs_sf4$com_ChecklistManagement___and_6_more.ic" NAME="com.ChecklistManagement.* and 6 more Coverage Results" MODIFIED="1590690930335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

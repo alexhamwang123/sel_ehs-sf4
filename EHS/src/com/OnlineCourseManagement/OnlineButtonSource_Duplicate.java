@@ -48,7 +48,14 @@ public class OnlineButtonSource_Duplicate {
         driver.findElement(By.name("submit")).click();
 
         Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
         js.executeScript("arguments[0].click();", courseAdmin);
@@ -61,7 +68,11 @@ public class OnlineButtonSource_Duplicate {
 //        Thread.sleep(1500);
 //        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/a")).click();
         Thread.sleep(3500);
+                String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         driver.findElement(By.name("detailCourseNo")).sendKeys(courseId);
 //        driver.findElement(By.name("detailCourseTitle")).sendKeys("test online course");
         new Select(driver.findElement(By.name("detailCourseCategory"))).selectByVisibleText("Survey_Only_New");

@@ -3,6 +3,7 @@ package com.Reports;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -42,6 +43,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 
         //Clicking on EHS Reports under Reports
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
+        Thread.sleep(1000);
+
         WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'EHS Reports')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();",ele);
@@ -51,7 +56,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(3500);
 
         //Click on Select for choosing a Risk Category
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div/div[1]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[1]/div/div/button")).click();
         Thread.sleep(4500);
 
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).sendKeys("RLBgSzMbTE");

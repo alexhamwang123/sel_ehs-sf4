@@ -48,9 +48,15 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-
-		WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
 		js.executeScript("arguments[0].click();", courseAdmin);
 
@@ -61,7 +67,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
 		driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
 		Thread.sleep(3500);
-		String courseId = generator.generate(10);
+		        String CapitalLetter = generator.generate(1).toUpperCase();
+        String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
 		System.out.println(courseId);
 		driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId);
 		new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
@@ -139,9 +149,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 		//driver.findElement(By.name("searchButton")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']"))));
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-success border-0']")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
 		driver.quit();
 

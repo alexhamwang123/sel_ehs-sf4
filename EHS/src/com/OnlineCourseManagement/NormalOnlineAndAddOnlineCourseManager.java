@@ -8,7 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -54,14 +53,23 @@ public class NormalOnlineAndAddOnlineCourseManager {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js.executeScript("arguments[0].click()", courseAdmin);
 
         String testCourseMgr ="X00002380";
+
+        String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
         System.out.println(courseId);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
@@ -89,7 +97,7 @@ public class NormalOnlineAndAddOnlineCourseManager {
 
         //Select Course Manager
         //CLick Select Btn
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div[1]/div/div/button")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         driver.findElement(By.id("criteriaBadge")).sendKeys(testCourseMgr);
 
@@ -105,13 +113,14 @@ public class NormalOnlineAndAddOnlineCourseManager {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
 
-
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Management"))));
+        Thread.sleep(2000);
         WebElement Logout0=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click()", Logout0);
         Thread.sleep(1500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
         Thread.sleep(2000);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("username"))));
@@ -120,7 +129,12 @@ public class NormalOnlineAndAddOnlineCourseManager {
         driver.findElement(By.id("password")).sendKeys("X00002380");
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(4500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin1);
+        Thread.sleep(1000);
 
         JavascriptExecutor js1 = (JavascriptExecutor)driver;
         WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
@@ -133,17 +147,17 @@ public class NormalOnlineAndAddOnlineCourseManager {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input")).sendKeys(courseId);
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        Thread.sleep(1000);
 
-        Thread.sleep(4500);
-        if(driver.getPageSource().contains(courseId)){
-            System.out.println("THe test is successful");
-        }
-        else{
-            Assert.fail("The test failed");
-        }
+        //CLick the result
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
 
 
-
+        driver.quit();
     }
 
 }

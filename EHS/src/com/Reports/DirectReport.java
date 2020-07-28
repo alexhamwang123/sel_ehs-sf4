@@ -43,10 +43,16 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
         //Clicking on 'User Admin'
-        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         js.executeScript("arguments[0].click();",ele);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("badgeNo"))));
@@ -54,26 +60,32 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.id("badgeNo")).sendKeys("X00001572");
 
         //CLick Find Button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/button[1]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Find Users')]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/form/div[2]/button[1]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Find Users')]")).click();
 
         //CLick on the User found
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" /html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div/div/table/tbody/tr/td[1]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" /html/body/div[1]/main/div/div[1]/div/div/div[2]/div/div/table/tbody/tr/td[1]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath(" /html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div/div/table/tbody/tr/td[1]")).click();
+        driver.findElement(By.xpath(" /html/body/div[1]/main/div/div[1]/div/div/div[2]/div/div/table/tbody/tr/td[1]")).click();
 
         //Click on the Direct Report Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("  /html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[5]/a"))));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("  /html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[5]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
+        Thread.sleep(1000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]")).click();
         Thread.sleep(2000);
         Thread.sleep(2000);
+
 
         //Array to contain the Badge name
         ArrayList<String> BadgeList= new ArrayList<String>();
         //Find Direct reports Table All TRS
-        List <WebElement> Profile_DirectReport_TableTRs= driver.findElements(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[5]/div/table/tbody/tr"));
+        List <WebElement> Profile_DirectReport_TableTRs= driver.findElements(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div/table/tbody/tr"));
         for(WebElement e:Profile_DirectReport_TableTRs){
             //Find Direct reports Table All TDS
 

@@ -37,12 +37,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(1000);
 
         //Click Forget Password
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/form/fieldset/div[2]/div/a")).click();
+        driver.findElement(By.partialLinkText("Forgot password?")).click();
         Thread.sleep(2250);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[1]/input")).sendKeys("X00003037");
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/div[2]/input")).sendKeys("X00003037@trismax.com");
+        driver.findElement(By.id("email")).sendKeys("X00003037@trismax.com");
         Thread.sleep(750);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/form/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"login-form\"]/div/div/form/button")).click();
         Thread.sleep(2250);
         driver.quit();
 

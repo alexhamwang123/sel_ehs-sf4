@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -48,8 +47,15 @@ public class OnlineSPGRC {
 
 
         //Clicking on 'User Admin'
-        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+
+        WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         js.executeScript("arguments[0].click();",ele);
 
         try {
@@ -61,7 +67,7 @@ public class OnlineSPGRC {
 
 
 // Click on Create User
-        WebElement Create_User=driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[1]/ul/li[3]/div/a[1]"));
+        WebElement Create_User=driver.findElement(By.xpath("//a[contains(text(),'Create new user')]"));
         js.executeScript("arguments[0].click();", Create_User);
 
 
@@ -76,9 +82,9 @@ public class OnlineSPGRC {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__28\"]/div/div[1]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -104,31 +110,38 @@ public class OnlineSPGRC {
             e.printStackTrace();
         }
 
-        JavascriptExecutor js0 = ((JavascriptExecutor) driver);
-        js0.executeScript("window.scrollBy(0,850)", "");
+        JavascriptExecutor js3 = ((JavascriptExecutor) driver);
+        js3.executeScript("window.scrollBy(0,850)", "");
 
 // Clicking on USA Normal User
 //driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
 
 // Click on 'Save' button
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/button")).click();
 
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"__BVID__46___BV_tab_button__\"]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
-        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__86\"]"));
+        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__92\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
 
         Thread.sleep(2000);
 
         //Create SPG Course
         JavascriptExecutor js1 = (JavascriptExecutor)driver;
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin1);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
         js1.executeScript("arguments[0].click()", courseAdmin);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
@@ -145,7 +158,11 @@ public class OnlineSPGRC {
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
+        String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
+
         System.out.println(courseId);
         //input Course Number
         driver.findElement(By.id("course-num")).sendKeys(courseId);
@@ -163,15 +180,16 @@ public class OnlineSPGRC {
         //Click Online Details
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         Thread.sleep(1000);
         //Click SPG Btn
-        WebElement SPG=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[3]/div/input"));
+        WebElement SPG=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[3]/div/input"));
         js1.executeScript("arguments[0].click()", SPG);
         Thread.sleep(1000);
         //Click OK BTN
-        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //input training time
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
@@ -186,11 +204,11 @@ public class OnlineSPGRC {
         //Click Online Variants
         wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[3]/button[2]")).click();
+        driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //input course type
         wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
@@ -201,16 +219,16 @@ public class OnlineSPGRC {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Edit Course Content Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[3]/div/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Edit Course Content')]")).click();
 
         for(String winHandle : driver.getWindowHandles()) {
                 driver.switchTo().window(winHandle);
         }
         Thread.sleep(1000);
         //input content
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(2000);
         WebElement Frame= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/iframe"));
         driver.switchTo().frame(Frame);
@@ -224,11 +242,12 @@ public class OnlineSPGRC {
         //Click Save btn
         Thread.sleep(1000);
 
-        WebElement Save_Btn=driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]"));
+        WebElement Save_Btn=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
         js1.executeScript("arguments[0].click()", Save_Btn);
         Thread.sleep(1000);
         //Click OK Btn
-        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
         //Click Question Tab
         driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/div[1]/ul/li[2]/a")).click();
@@ -249,19 +268,21 @@ public class OnlineSPGRC {
         js1.executeScript("arguments[0].click()", CorrectBtn);
 
         //Click OK btn
-        driver.findElement(By.xpath("/html/body/div[6]/div[1]/div/div/footer/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Click Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         js1.executeScript("arguments[0].click()", Save_Btn);
 
         //Click OK Btn
-        driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
 
         //Close the window
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/button[3]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         driver.close();
 
@@ -270,24 +291,31 @@ public class OnlineSPGRC {
         }
 
         //Click Online Variants
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Visibility btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
 
-        WebElement VisibilityBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+        WebElement VisibilityBtn=driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
         js1.executeScript("arguments[0].click()", VisibilityBtn);
 
         //Click viewable btn
-        WebElement ViewableBtn=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div/a[2]/div/input"));
+        WebElement ViewableBtn=driver.findElement(By.xpath("//a[2]//div[1]//input[1]"));
         js1.executeScript("arguments[0].click()", ViewableBtn);
 
         //Wait until the success message shows up
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
-
-        //Create A new RC to add the SPG Classroom
+        if(!ViewableBtn.isEnabled()){
+            Assert.fail("Creation Failed");
+        }//Create A new RC to add the SPG Classroom
         //Clicking on EHS Admin
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Thread.sleep(1000);
+        WebElement Admin2=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin2);
+        Thread.sleep(1000);
+
         WebElement ele1 = driver.findElement(By.xpath("//a[contains(text(),'EHS Admin')]"));
         js1.executeScript("arguments[0].click();",ele1);
 
@@ -302,11 +330,11 @@ public class OnlineSPGRC {
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/ul/a[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/ul/a[1]")).click();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -328,7 +356,7 @@ public class OnlineSPGRC {
         driver.findElement(By.id("input-desc")).sendKeys("this is the description for at least 20 characters!");
 
         Thread.sleep(1500);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
         Thread.sleep(2500);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
@@ -343,18 +371,18 @@ public class OnlineSPGRC {
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
         Thread.sleep(1000);
         //Click Save btn
-        WebElement Save= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/button"));
+        WebElement Save= driver.findElement(By.xpath("//*[@id=\"admin-curriculum\"]/div/div[2]/button"));
         JavascriptExecutor js2 = (JavascriptExecutor)driver;
         js2.executeScript("arguments[0].click();", Save);
 
         //Click add Required Course
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
         //Click add course Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
         Thread.sleep(1000);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -366,20 +394,24 @@ public class OnlineSPGRC {
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
         Thread.sleep(500);
         //WebElement add = driver.findElement(By.cssSelector("input[type='button'][value='Add']"));
-        WebElement addconfirmbtn = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
-        js.executeScript("arguments[0].click();", addconfirmbtn);
-        WebElement EmailUser = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/button[2]"));
-        js.executeScript("arguments[0].click();", EmailUser);
+        JavascriptExecutor js0 = (JavascriptExecutor)driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        WebElement addconfirmbtn = driver.findElement(By.xpath("//button[contains(text(),'OK')]"));
+        js0.executeScript("arguments[0].click();", addconfirmbtn);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        WebElement EmailUser = driver.findElement(By.xpath("//button[contains(text(),'OK')]"));
+        js0.executeScript("arguments[0].click();", EmailUser);
 
         //Assign the RC
         //Click the Assign Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[4]/a"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//main//li[4]//a[1]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[4]/a")).click();
+        driver.findElement(By.xpath("//main//li[4]//a[1]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[4]/div/div[3]/div/button[1]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Add Member')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[4]/div/div[3]/div/button[1]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Add Member')]")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
@@ -388,11 +420,12 @@ public class OnlineSPGRC {
         driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/footer/div/button")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
-
+        Thread.sleep(1500);
 
         //Click OK Btn
-        WebElement OKBtn = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/button[2]"));
-        js.executeScript("arguments[0].click();", OKBtn);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        WebElement OKBtn = driver.findElement(By.xpath("//button[contains(text(),'OK')]"));
+        js0.executeScript("arguments[0].click();", OKBtn);
 
         Thread.sleep(2000);
         //Click Home
@@ -408,12 +441,58 @@ public class OnlineSPGRC {
             System.out.println("The Unassigned User is not able to see the SPG RC");
         }
 
+        //Go to the Created SPG Course and the RC assigned course should be unable to be deactivated
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin3=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin3);
+        Thread.sleep(1500);
+        WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+        js.executeScript("arguments[0].click();", courseAdmin1);
+
+        Thread.sleep(1500);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Thread.sleep(1000);
+        driver.findElement(By.partialLinkText("Online Course Admin")).click();
+        Thread.sleep(1500);
+        //Search SPG Course
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
+
+        //CLick the result
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
+
+        //CLick the active btn, it should not be able to be deactivated
+
+        //CLick active btn
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Course Variants')]"))));
+        Thread.sleep(1500);
+        WebElement active=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[1]/div/input"));
+        js.executeScript("arguments[0].click();",active);
+
+        Thread.sleep(1000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Course Variants')]"))));
+        Thread.sleep(1000);
+        if(active.isSelected()){
+            System.out.println("The Assign RC course cant be deactivated");
+        }
+        else{
+            Assert.fail("RC course can be deactivated");
+        }
+
+
+
         //Login the Created User
 
         WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/h1/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
         Thread.sleep(2000);
 
 
@@ -421,7 +500,9 @@ public class OnlineSPGRC {
         driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        Thread.sleep(4500);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
+        Thread.sleep(1500);
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
         driver.findElement(By.name("question[4586]")).click();
@@ -435,42 +516,28 @@ public class OnlineSPGRC {
         driver.findElement(By.name("question[7466]")).click();
         driver.findElement(By.name("question[7467]")).click();
 
-            driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
         driver.findElement(By.id("annContinue")).click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Ok')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Home')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();
-
-        //Click the RC on Home Page
-        WebElement box= driver.findElement(By.xpath("//div[@class='bottom-shadow bg-white']//div[@class='card shadow-sm']//div[2]"));
-        List<WebElement> Links= box.findElements(By.tagName("td"));
-        for (WebElement Link:Links
-        ) {
-            if (Link.getText().contains(title)){
-                JavascriptExecutor js001 = (JavascriptExecutor)driver;
-                js001.executeScript("arguments[0].click();",Link);
-            }
-        }
         Thread.sleep(2000);
+        js2.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
+        Thread.sleep(2000);
+        //Find the RC Title and click it
+        String Title="New RC"+title;
+        driver.findElement(By.xpath("//figcaption[contains(text(),'"+Title+"')]")).click();
         //Click Start Btn   //--In General Find the Start Btn Row through TR(Row), then Break the Row into TD and Click it
         //Find the Row of Start Btn
-        List<WebElement> StartBtnsRows= box.findElements(By.tagName("table"));
-        for (WebElement StartBtnROw:StartBtnsRows){
-            if(StartBtnROw.getText().contains(courseId)){
-                System.out.println("The RC Table has been found");
-                WebElement StartBtn=StartBtnROw.findElement(By.tagName("button"));
-
-                JavascriptExecutor js002 = (JavascriptExecutor)driver;
-                js002.executeScript("arguments[0].click();",StartBtn);
-
-
-
-            }
-        }
+        driver.findElement(By.partialLinkText(courseId)).click();
 
 
         driver.quit();

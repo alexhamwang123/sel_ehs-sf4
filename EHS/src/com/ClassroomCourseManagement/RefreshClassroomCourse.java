@@ -46,53 +46,106 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        Thread.sleep(4500);
-        WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+
+        Thread.sleep(1000);
+        WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
+        js.executeScript("arguments[0].click()", Admin);
+        Thread.sleep(1000);
+         WebElement courseAdmin = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
+
 
         js.executeScript("arguments[0].click()", courseAdmin);
 
-            driver.navigate().refresh();
-            Thread.sleep(2000);
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
-            Thread.sleep(2000);
-            driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]")).click();
+        driver.navigate().refresh();
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]")).click();
 
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
-            Thread.sleep(1000);
-            WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
-            js.executeScript("arguments[0].click()", CreateBtn);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
+        Thread.sleep(1000);
+        WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
+        js.executeScript("arguments[0].click()", CreateBtn);
 
 
-            wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
-            new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
-            new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Refresh");
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
+        new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Refresh");
 
-            String courseId = generator.generate(10);
-            String Building = generator.generate(11);
-            System.out.println(courseId);
-            driver.findElement(By.id("course-num")).sendKeys(courseId);
+        String CapitalLetter = generator.generate(1).toUpperCase();
+        String courseId = generator.generate(10);
+        courseId=CapitalLetter.concat(courseId);
+        System.out.println(courseId);
 
-            //input description
-            driver.findElement(By.id("input-desc")).sendKeys("This is description");
+        String Building = generator.generate(11);
+        System.out.println(courseId);
+        driver.findElement(By.id("course-num")).sendKeys(courseId);
 
-            //Completion Message
-            driver.findElement(By.id("completion-message")).sendKeys("Congrats Completion");
+        //input description
+        driver.findElement(By.id("input-desc")).sendKeys("This is description");
 
-            //input Course Number
-            driver.findElement(By.id("course-title")).sendKeys("This is title");
+        //Completion Message
+        driver.findElement(By.id("completion-message")).sendKeys("Congrats Completion");
 
-            //Save btn
-            driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+        //input Course Number
+        driver.findElement(By.id("course-title")).sendKeys("This is title");
 
-            //Click Classroom Details
-            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
-            new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
+        //Save btn
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Classroom Details
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
+        WebElement Expiration=driver.findElement(By.id("expiration"));
+
+
+        //CLick Never expire, refresh and prereq Grays out
+        new Select(Expiration).selectByVisibleText("Never Expires");
+
+
+
+        //Try if refresh btn exists
+        try {
+
+            //if prereq or refresh btn displays, it fails
+            driver.findElement(By.xpath("//small[contains(text(),'Select up to 3 refresh courses. Refresh courses ar')]")).isDisplayed();
+        }
+        catch (NoSuchElementException e) { System.out.println("Fresh btn not exists"); }
+        //Try if Prereq btn exists
+        try {
+        driver.findElement(By.xpath("//div[@class='prereq col']//div//button[@class='btn btn-primary'][contains(text(),'Select')]")).isDisplayed();
+
+        }
+        catch (NoSuchElementException e) { System.out.println("Prereq btn not exists"); }
+
+
+
+        //Check 6 months, refresh and prereq Grays out
+        new Select(Expiration).selectByVisibleText("6 months");
+
+        //if prereq or refresh btn displays, it fails
+        //Try if refresh btn exists
+        try {
+
+            //if prereq or refresh btn displays, it fails
+            driver.findElement(By.xpath("//small[contains(text(),'Select up to 3 refresh courses. Refresh courses ar')]")).isDisplayed();
+        }
+        catch (NoSuchElementException e) { System.out.println("Fresh btn not exists"); }
+        //Try if Prereq btn exists
+        try {
+            driver.findElement(By.xpath("//div[@class='prereq col']//div//button[@class='btn btn-primary'][contains(text(),'Select')]")).isDisplayed();
+
+        }
+        catch (NoSuchElementException e) { System.out.println("Prereq btn not exists"); }
 
 
             //input Classroom Details
-            wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
+        //CLick Viewable btn
+        WebElement ViewBtn = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[2]/div/input"));
+         js.executeScript("arguments[0].click()", ViewBtn);
             driver.findElement(By.id("training-hour")).sendKeys("3");
             driver.findElement(By.id("credit-hour")).sendKeys("3");
 
@@ -102,17 +155,17 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             //Click Offer Schedule
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
             Thread.sleep(2000);
-            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
             //Click Add offer
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
             Thread.sleep(2000);
-            driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]")).click();
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")).click();
 
            //Click Site Btn
-           wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[2]/div/div/div/button")));
+           wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")));
            Thread.sleep(1000);
-           driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[2]/div/div/div/button")).click();
+           driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")).click();
 
            //Search SCV
            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
@@ -130,49 +183,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
            driver.findElement(By.id("class-size")).sendKeys("5");
 
            //Click Edit Btn of time schedule
-           driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[6]/div/button[2]")).click();
-           //Click Calendar
-           WebElement Calendar0 =driver.findElement(By.id("date"));
-           js.executeScript("arguments[0].click()", Calendar0);
-           Thread.sleep(2000);
-           System.out.println("CheckPoint 1");
-
-           //Click Year(need twice click to select year)
-           WebElement YearArea0= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[1]/div/div/div[2]/header/span[2]"));
-           js.executeScript("arguments[0].click()", YearArea0);
-           Thread.sleep(2000);
-           System.out.println("CheckPoint 2");
-           WebElement YearArea02=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[1]/div/div/div[3]/header/span[2]"));
-           js.executeScript("arguments[0].click()", YearArea02);
-           Thread.sleep(2000);
-           System.out.println("CheckPoint 3");
-           //click year 2029
-           WebElement Btn2029_0= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[1]/div/div/div[4]/span[10]"));
-           js.executeScript("arguments[0].click()", Btn2029_0);
-           Thread.sleep(2000);
-           System.out.println("CheckPoint 4");
-
-           //Click 2029Mar
-           WebElement Btn2029March_0= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[1]/div/div/div[3]/span[3]"));
-           js.executeScript("arguments[0].click()", Btn2029March_0);
-           Thread.sleep(2000);
-           System.out.println("CheckPoint 5");
-
-           WebElement Btn2029Mar02=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[1]/div/div/div[2]/div/span[12]"));
-           js.executeScript("arguments[0].click()", Btn2029Mar02);
-           Thread.sleep(2000);
-           System.out.println("CheckPoint 6");
-
-           //input time
-           WebElement TimeBtn0=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[2]/div/div/button"));
-           js.executeScript("arguments[0].click()", TimeBtn0);
-           Thread.sleep(1000);
-           Thread.sleep(1000);
-           WebElement CLickPlus0= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[2]/div/div/div/div/div/div[1]/button[1]"));
-           js.executeScript("arguments[0].click()", CLickPlus0);
-
-           //click save
-           driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[3]/div/div/div/div[3]/div[7]/table/tbody/tr/td[6]/div/button[1]")).click();
+           driver.findElement(By.xpath("//*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[2]")).click();
+   // Calendar&Time//click save
+           driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[7]/table/tbody/tr/td[6]/div/button[1]")).click();
            Thread.sleep(1000);
            //Click the Save Btn
            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
@@ -213,12 +226,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             //Click Classroom Details
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
             new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
+        Thread.sleep(2000);;
 
             //CLick Refresh Btn
-            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[6]/div/div/div/div/div/button")).click();
+            driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]")).click();
 
             //Search the Refresh Course
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
