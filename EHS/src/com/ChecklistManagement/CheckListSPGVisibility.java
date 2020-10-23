@@ -22,7 +22,7 @@ public class CheckListSPGVisibility {
     public void CheckListSPGVisibility() throws IOException, InterruptedException {
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -49,7 +49,7 @@ public class CheckListSPGVisibility {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
 
         Thread.sleep(1000);
@@ -60,25 +60,19 @@ public class CheckListSPGVisibility {
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Checklist Admin")).click();
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("2Q9QWCTnsY");
-        //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
 
-        //Click Go btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("DanielChecklistSPG01");
 
-        //CLick the result
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.className("editAction"))));
-        Thread.sleep(2000);
-        driver.findElement(By.className("editAction")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@value='Save']"))));
+        //Click result
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Course Management"))));
         Thread.sleep(1000);
         if(driver.getPageSource().contains("tom tom")){
             System.out.println("The SPG Manager is the current System User");
@@ -89,7 +83,7 @@ public class CheckListSPGVisibility {
 
         //Create A new RC to add the SPG Classroom
         //Clicking on EHS Admin
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         Thread.sleep(1000);
         WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -105,12 +99,12 @@ public class CheckListSPGVisibility {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button")).click();
         Thread.sleep(1000);
@@ -125,7 +119,7 @@ public class CheckListSPGVisibility {
         RandomStringGenerator generator2 = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String title1 = generator2.generate(10);
         //Enter the Risk Category Name
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-name")).sendKeys(title1);
 
@@ -140,17 +134,17 @@ public class CheckListSPGVisibility {
         //Click Manager
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
         Thread.sleep(2500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
         driver.findElement(By.id("criteriaBadge")).sendKeys(username);
         //Click Search
         Thread.sleep(2500);
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
         Thread.sleep(2500);
         //Click Result
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//td[contains(text(),'"+username+"')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+        driver.findElement(By.xpath("//td[contains(text(),'"+username+"')]")).click();
         Thread.sleep(1000);
         //Click Save btn
         WebElement Save= driver.findElement(By.xpath("//*[@id=\"admin-curriculum\"]/div/div[2]/button"));
@@ -158,31 +152,33 @@ public class CheckListSPGVisibility {
         js2.executeScript("arguments[0].click();", Save);
 
         //Click add Required Course
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
         //Click add course Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("2Q9QWCTnsY");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("DanielChecklistSPG01");
 
         Thread.sleep(1000);
 
-        if(driver.getPageSource().contains("2Q9QWCTnsY")){
+        if(driver.getPageSource().contains("DanielChecklistSPG01")){
             System.out.println("RC SPG is Searchable for SPG Manager");
         }
 
         else {
             Assert.fail("RC SPG is not Searchable for SPG Manager");
         }
+        //Close the search window
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/header/button")).click();
 
         //Clicking on 'User Admin'
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
 
         Thread.sleep(1000);
@@ -208,7 +204,7 @@ public class CheckListSPGVisibility {
 // Enter the First Name of the user that you wish to create
         String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
@@ -216,24 +212,24 @@ public class CheckListSPGVisibility {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
         Thread.sleep(1000);
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SCV"
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
 
 // Click on 'SCV' from the search results
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
 
 // Enter the email of the user that you wish to create
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
@@ -257,7 +253,7 @@ public class CheckListSPGVisibility {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
         Thread.sleep(2000);
@@ -277,7 +273,9 @@ public class CheckListSPGVisibility {
         driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
+
+        
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
         Thread.sleep(1500);
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
@@ -290,14 +288,25 @@ public class CheckListSPGVisibility {
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
         driver.findElement(By.name("question[7466]")).click();
-        driver.findElement(By.name("question[7467]")).click();
+
 
         driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
-        driver.findElement(By.id("annContinue")).click();
+         driver.findElement(By.id("annContinue")).click();
+         try {
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+         }
+         catch (Exception e){
+            System.out.println("there is no OK btn, and it is ok");
+        }
+
+
+
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
 
         Thread.sleep(1000);
@@ -307,28 +316,23 @@ public class CheckListSPGVisibility {
         WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js.executeScript("arguments[0].click();", courseAdmin1);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Checklist Admin")).click();
-        driver.findElement(By.xpath("//div[@id='secondmenu']//input[@id='srch_fld']")).sendKeys("2Q9QWCTnsY");
-        //Click SPG Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@name='search[is_spg]']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@name='search[is_spg]']")).click();
 
-        //Click Go btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"EHSForm\"]/div[1]/div/input")).click();
 
-        if(!driver.getPageSource().contains("2Q9QWCTnsY")){
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("DanielChecklistSPG01");
+
+
+        if(!driver.getPageSource().contains("DanielChecklistSPG01")){
             System.out.println("RC SPG is not Searchable for Non SPG Manager");
         }
 
         else {
             Assert.fail("RC SPG is Searchable for Non SPG Manager");
         }
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
 
         Thread.sleep(1000);
@@ -344,12 +348,12 @@ public class CheckListSPGVisibility {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
         //Click on the 'Create Risk Category' button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button")).click();
         Thread.sleep(1000);
@@ -364,7 +368,7 @@ public class CheckListSPGVisibility {
         RandomStringGenerator generator1 = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String title = generator1.generate(10);
         //Enter the Risk Category Name
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-name")).sendKeys(title);
 
@@ -378,17 +382,17 @@ public class CheckListSPGVisibility {
         Thread.sleep(1500);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
         Thread.sleep(2500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
         driver.findElement(By.id("criteriaBadge")).sendKeys(username);
         //Click Search
         Thread.sleep(2500);
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
         Thread.sleep(2500);
         //Click Result
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//td[contains(text(),'"+username+"')]"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+        driver.findElement(By.xpath("//td[contains(text(),'"+username+"')]")).click();
         Thread.sleep(1000);
         //Click Save btn
         WebElement Save1= driver.findElement(By.xpath("//*[@id=\"admin-curriculum\"]/div/div[2]/button"));
@@ -396,22 +400,22 @@ public class CheckListSPGVisibility {
         js3.executeScript("arguments[0].click();", Save1);
 
         //Click add Required Course
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
         //Click add course Btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("2Q9QWCTnsY");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("DanielChecklistSPG01");
 
         Thread.sleep(1000);
 
-        if(!driver.getPageSource().contains("2Q9QWCTnsY")){
+        if(!driver.getPageSource().contains("DanielChecklistSPG01")){
             System.out.println("RC SPG is not Searchable for Non SPG Manager");
         }
 

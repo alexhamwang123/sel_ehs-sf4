@@ -30,7 +30,7 @@ public class CreateAndEditLab {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -54,7 +54,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 
         //Clicking on EHS Admin
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 
@@ -128,7 +128,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		// Click the 'Search' button
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
 
 		try {
 			Thread.sleep(4000);
@@ -138,7 +138,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		// Choosing the user username from the list for this case
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+        driver.findElement(By.xpath("//td[contains(text(),'"+username+"')]")).click();
 
 
 		try {

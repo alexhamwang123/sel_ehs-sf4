@@ -27,7 +27,7 @@ public class EHSR_CourseCompletionStatistic {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
@@ -52,7 +52,7 @@ public class EHSR_CourseCompletionStatistic {
         Thread.sleep(4500);
 		
 		//Clicking on EHS Reports under Reports
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
         Thread.sleep(1000);
 
@@ -168,7 +168,7 @@ public class EHSR_CourseCompletionStatistic {
         WebElement Go=driver.findElement(By.xpath("//button[contains(text(),'Go')]"));
         js.executeScript("arguments[0].click();",Go);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(1500);

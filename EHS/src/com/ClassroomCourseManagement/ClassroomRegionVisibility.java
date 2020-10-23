@@ -26,7 +26,7 @@ public class ClassroomRegionVisibility {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -55,7 +55,7 @@ public class ClassroomRegionVisibility {
         //Click on course admin
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -69,17 +69,17 @@ public class ClassroomRegionVisibility {
 
 
         //Click on classroom course management
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(1000);
         WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
         js.executeScript("arguments[0].click()", CreateBtn);
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
@@ -106,12 +106,12 @@ public class ClassroomRegionVisibility {
 
         //Click Classroom Details
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
         new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
         Thread.sleep(2000);;
 
         //input Classroom Details
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
         //CLick Viewable btn
         WebElement ViewBtn = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[2]/div/input"));
          js.executeScript("arguments[0].click()", ViewBtn);
@@ -122,26 +122,26 @@ public class ClassroomRegionVisibility {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Offer Schedule
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Add offer
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")).click();
 
         //Click Region Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[3]/div/div/div/button")).click();
 
         //Search and find Taipei
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
         driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys("Taipei");
 
         //CLick Result
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
         driver.findElement(By.xpath("//td[contains(text(),'Taipei')]")).click();
 
         //Building
@@ -153,22 +153,22 @@ public class ClassroomRegionVisibility {
         //Click Edit Btn of time schedule
         driver.findElement(By.xpath("//*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[2]")).click();
 // Calendar&Time//click save
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[7]/table/tbody/tr/td[6]/div/button[1]")).click();
+        driver.findElement(By.xpath(" //*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[1]")).click();
         Thread.sleep(1000);
         //Click the Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
         Thread.sleep(2500);
 
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']")).click();
 
@@ -186,7 +186,7 @@ public class ClassroomRegionVisibility {
         }
 
           //Clicking on 'User Admin'
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         js.executeScript("arguments[0].click()", Admin1);
@@ -210,7 +210,7 @@ public class ClassroomRegionVisibility {
 // Enter the First Name of the user that you wish to create
         String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
@@ -218,24 +218,24 @@ public class ClassroomRegionVisibility {
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
         Thread.sleep(1000);
 // Enter the search value as "SAC"
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(2500);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SAC");
 
 
 // Click on 'SAC' from the search results
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
 
 // Enter the email of the user that you wish to create
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
@@ -259,7 +259,7 @@ public class ClassroomRegionVisibility {
 
 
 //Click Role Page
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
         Thread.sleep(2000);
@@ -279,11 +279,12 @@ public class ClassroomRegionVisibility {
         driver.findElement(By.id("password")).sendKeys(password);
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]"))));
+        
+ Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"welcomeShowRS\"]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("question[4586]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("question[4586]"))));
         Thread.sleep(2500);
         driver.findElement(By.name("question[4586]")).click();
         driver.findElement(By.name("question[1361]")).click();
@@ -294,25 +295,34 @@ public class ClassroomRegionVisibility {
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
         driver.findElement(By.name("question[7466]")).click();
-        driver.findElement(By.name("question[7467]")).click();
+
 
         driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
-        driver.findElement(By.id("annContinue")).click();
+         driver.findElement(By.id("annContinue")).click();
+         try {
+
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+         }
+         catch (Exception e){
+            System.out.println("there is no OK btn, and it is ok");
+        }
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Home')]"))));
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Home')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']")).click();
 

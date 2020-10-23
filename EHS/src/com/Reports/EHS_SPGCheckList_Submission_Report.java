@@ -21,7 +21,7 @@ public class EHS_SPGCheckList_Submission_Report {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
@@ -44,7 +44,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 
         //Clicking on EHS Reports under Reports
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
         Thread.sleep(1000);
 
@@ -60,7 +60,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         //Click on Select button that appears in front of Checklist
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[1]/div/div/button")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[4]//select[1]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[4]//select[1]")));
         Thread.sleep(1500);
         new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("Y");
 
@@ -75,7 +75,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             Assert.fail("The SPG Filter as Y Failed");
         }
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[4]//select[1]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[4]//select[1]")));
         Thread.sleep(1500);
         new Select(driver.findElement(By.xpath("//div[4]//select[1]"))).selectByVisibleText("N");
         driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[1]/div/input")).clear();

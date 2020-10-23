@@ -26,7 +26,7 @@ public class PrereqDecreaseChecklist {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -53,7 +53,7 @@ public class PrereqDecreaseChecklist {
         //Click on course admin
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -68,17 +68,17 @@ public class PrereqDecreaseChecklist {
 
 
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(1000);
         WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
         js.executeScript("arguments[0].click()", CreateBtn);
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
@@ -105,13 +105,13 @@ public class PrereqDecreaseChecklist {
 
         //Click Classroom Details
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
         new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
         Thread.sleep(2000);;
 
 
         //input Classroom Details
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
         //CLick Viewable btn
         WebElement ViewBtn = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[2]/div/input"));
          js.executeScript("arguments[0].click()", ViewBtn);
@@ -122,22 +122,22 @@ public class PrereqDecreaseChecklist {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Offer Schedule
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Add offer
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")).click();
 
         //Click Site Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")).click();
 
         //Search SCV
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys("SCV");
 
@@ -195,12 +195,12 @@ public class PrereqDecreaseChecklist {
         js.executeScript("arguments[0].click()", CLickPlus);
 
         //click save
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[7]/table/tbody/tr/td[6]/div/button[1]")).click();
+        driver.findElement(By.xpath(" //*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[1]")).click();
 
          */
         Thread.sleep(1000);
         //Click the Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
         Thread.sleep(1500);
 
@@ -212,18 +212,18 @@ public class PrereqDecreaseChecklist {
         Thread.sleep(1800);
 //    driver.findElement(By.name("searchButton")).click();
 //    driver.findElement(By.xpath("//input[@value='Go']")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
         Thread.sleep(2500);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
         Thread.sleep(2500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//body//td//td[5]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//body//td//td[5]"))));
         Thread.sleep(3500);
         driver.findElement(By.xpath("//body//td//td[5]")).click();
 
         Thread.sleep(3500);
 
         //Click on Course Admin
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -240,33 +240,33 @@ public class PrereqDecreaseChecklist {
 
         // Search up class just made and enrolled in
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
 
         //Click result
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[2]/table/tbody/tr/td[1]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[2]/table/tbody/tr/td[1]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
 
         //Click Offer Schedule
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Add attendee
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
-        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[2]"));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[3]"));
         js.executeScript("arguments[0].click()", AddAttendee);
         //CLick Attendee Tab
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")).click();
 
         //CLick Select User
         driver.findElement(By.xpath("//table[@class='table table-sm m-0 table-hover']//tbody//tr//td//input")).click();
 
-        //Mark as No Show
+        //Mark as Completed
         Thread.sleep(1000);
         new Select(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/select"))).
                 selectByVisibleText("Completed");
@@ -277,17 +277,17 @@ public class PrereqDecreaseChecklist {
         //Go back to classroom course management and create another course to use as a second prerequisite
 
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'Classroom Management')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(1000);
         WebElement CreateBtn0 = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
         js.executeScript("arguments[0].click()", CreateBtn0);
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
@@ -310,13 +310,13 @@ public class PrereqDecreaseChecklist {
 
         //Click Classroom Details
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
         new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
         Thread.sleep(2000);;
 
 
         //input Classroom Details
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
         //CLick Viewable btn
         WebElement ViewBtn1 = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[2]/div/input"));
          js.executeScript("arguments[0].click()", ViewBtn1);
@@ -327,22 +327,22 @@ public class PrereqDecreaseChecklist {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Offer Schedule
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Add offer
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")).click();
 
         //Click Site Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[2]/div/div/div/button")).click();
 
         //Search SCV
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys("SCV");
 
@@ -359,110 +359,155 @@ public class PrereqDecreaseChecklist {
         //Click Edit Btn of time schedule
         driver.findElement(By.xpath("//*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[2]")).click();
 // Calendar&Time//click save
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[7]/table/tbody/tr/td[6]/div/button[1]")).click();
+        driver.findElement(By.xpath(" //*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[1]")).click();
         Thread.sleep(1000);
         //Click the Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")));
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
         Thread.sleep(2500);
 
     //Create checklist with both previously made classroom courses as prerequisites
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'Classroom Management')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Checklist Admin")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
-        Thread.sleep(3500);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        WebElement CreateCourse= driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
+        js.executeScript("arguments[0].click();", CreateCourse);
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Safety");
+        new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
+
+        String CapitalLetter1 = generator.generate(1).toUpperCase();
         String courseId1 = generator.generate(10);
-        System.out.println("Checklist id: " + courseId1);
-        driver.findElement(By.name("detailCheckListCode")).sendKeys(courseId1);
-        new Select(driver.findElement(By.id("detailCategoryType"))).selectByVisibleText("EHS - Ergonomics");
-        new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
-        new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse1"))).selectByVisibleText(courseId + " - New CourseThis is title");
-        new Select(driver.findElement(By.id("detailCoursePrerequisitesCourse2"))).selectByVisibleText(courseId0 + " - New CourseThis is title");
+        courseId1=CapitalLetter.concat(courseId1);
+        System.out.println(courseId1);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
-        Thread.sleep(1000);
-        driver.findElement(By.id("saveBtn")).click();
+        driver.findElement(By.id("course-num")).sendKeys(courseId1);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
-        Thread.sleep(2500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-        Thread.sleep(3000);
+        //input description
+        driver.findElement(By.id("input-description")).sendKeys("This is description");
 
-        driver.findElement(By.id("detailCheckListTitle")).sendKeys("test checklist title");
-        driver.findElement(By.id("detailCheckListHeader")).sendKeys("test checklist header");
-        driver.findElement(By.id("detailCheckListDescription")).sendKeys("test checklist description");
-        driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
-        driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
-        Thread.sleep(1000);
+        //Completion Message
+        driver.findElement(By.id("completion-message")).sendKeys("Congrats Completion");
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+        //input Course Number
+        driver.findElement(By.id("input-courseTitle")).sendKeys("This is title");
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("createContent"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("createContent")).click();
+        //Save btn
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Create']"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"detailChecklistContentSaveAs\"]")).click();
-        driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
-        Thread.sleep(2500);
-        driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("saveBtn")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("fancyConfirm_ok"))));
-        Thread.sleep(1000);
-        driver.findElement(By.id("fancyConfirm_ok")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+        //Click  Details
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-expiration")));
+        new Select(driver.findElement(By.id("course-expiration"))).selectByVisibleText("6 months");
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+        //Click Prereq Select
+        driver.findElement(By.xpath("//div[@class='prereq col']//div//button[@class='btn btn-primary']")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
+        driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys(courseId0);
+
+        //Click result
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+
+        //Click Prereq Select
+        driver.findElement(By.xpath("//div[@class='prereq col']//div//button[@class='btn btn-primary']")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Type to filter result']")));
+        driver.findElement(By.xpath("//input[@placeholder='Type to filter result']")).sendKeys(courseId);
+
+        //Click result
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+
+
+        //Click Save
+        driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+
+        //Click Course Variant
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Checklist Course Management')]")));
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
-        //driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
-        //Thread.sleep(1500);
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("langIsViewable")));
-        Thread.sleep(1000);
-        driver.findElement(By.id("langIsViewable")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("detailIsActive")));
+        //Click Edit Btn
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
-        driver.findElement(By.id("detailIsActive")).click();
+        driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        //Click Add new Version
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'New version')]")));
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
+        driver.findElement(By.xpath("//Button[contains(text(),'New version')]")).click();
+
+        //Click Add Question
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Add Question')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//Button[contains(text(),'Add Question')]")).click();
+
+        //input all question information
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
+        driver.switchTo().frame("question-content_ifr");
+        driver.findElement(By.id("tinymce")).sendKeys("This is test question content only");
+        driver.switchTo().defaultContent();
+
+        driver.findElement(By.xpath("/html/body/div[5]/div[1]/div/div/div/div/div[3]/div/div/div[2]/div[1]/div[1]/div/input")).sendKeys("Correct");
+        driver.findElement(By.xpath("/html/body/div[5]/div[1]/div/div/div/div/div[3]/div/div/div[3]/div[1]/div[1]/div/input")).sendKeys("Wrong");
+
+        //Click Default input btn
+        WebElement Defaultinut= driver.findElement(By.xpath("/html/body/div[5]/div[1]/div/div/div/div/div[3]/div/div/div[2]/div[3]/div/input"));
+        js.executeScript("arguments[0].click()", Defaultinut);
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+
+        //Click Btn Finalize
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Finalize')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'Finalize')]")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+
+        //CLick Active input
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
+        WebElement activeinput= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[7]/div[2]/table/tbody/tr/td[1]/div/input"));
+        js.executeScript("arguments[0].click()", activeinput);
+
+        //Click Course Variant
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Checklist Course Management')]")));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
+
+        //Click Visibility Btn
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(2000);
+        WebElement visibility = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div/div[1]/input"));
+        js.executeScript("arguments[0].click()", visibility);
+
+        //Click Viewable Btn
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
+        WebElement viewablebtn= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div/a[2]/div/input"));
+        js.executeScript("arguments[0].click()", viewablebtn);
 
 
         //Go back to courses tab and try to enroll in the checklist just made
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
         Thread.sleep(1000);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId1);

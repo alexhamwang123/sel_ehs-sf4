@@ -27,7 +27,7 @@ public class OnlineButtonSource_DirectLink {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
@@ -57,7 +57,7 @@ public class OnlineButtonSource_DirectLink {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+                Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -67,17 +67,17 @@ public class OnlineButtonSource_DirectLink {
 
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Online Course Admin")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
         js.executeScript("arguments[0].click()", CreateBtn);
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
@@ -100,12 +100,12 @@ public class OnlineButtonSource_DirectLink {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Details
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         //input training time
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
         driver.findElement(By.id("course-trainingTime")).sendKeys("1");
         //input credit
@@ -115,24 +115,24 @@ public class OnlineButtonSource_DirectLink {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //input course type
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
         Thread.sleep(1000);
-        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Course Creator Content");
+        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Course Builder");
 
         //Save btn
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Edit Course Content Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'Edit Course Content')]")).click();
 
@@ -141,7 +141,7 @@ public class OnlineButtonSource_DirectLink {
         }
         Thread.sleep(1000);
         //input content
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(2000);
         WebElement Frame= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/iframe"));
         driver.switchTo().frame(Frame);
@@ -159,7 +159,7 @@ public class OnlineButtonSource_DirectLink {
         js.executeScript("arguments[0].click()", Save_Btn);
         Thread.sleep(1000);
         //Click OK Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
         //Click Question Tab
@@ -181,21 +181,21 @@ public class OnlineButtonSource_DirectLink {
         js.executeScript("arguments[0].click()", CorrectBtn);
 
         //Click OK btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Click Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         js.executeScript("arguments[0].click()", Save_Btn);
 
         //Click OK Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
 
         //Close the window
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         driver.close();
 
@@ -207,7 +207,7 @@ public class OnlineButtonSource_DirectLink {
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Visibility btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
 
         WebElement VisibilityBtn=driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
@@ -218,7 +218,7 @@ public class OnlineButtonSource_DirectLink {
         js.executeScript("arguments[0].click()", ViewableBtn);
 
         //Wait until the success message shows up
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
         if(!ViewableBtn.isEnabled()){
             Assert.fail("Creation Failed");
         }//CLick DirectLInk
@@ -226,7 +226,7 @@ public class OnlineButtonSource_DirectLink {
 
         //CLick OK Btn
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         WebElement OKBtn= driver.findElement(By.xpath("//button[contains(text(),'OK')]"));
         js.executeScript("arguments[0].click()", OKBtn);
 
@@ -235,8 +235,8 @@ public class OnlineButtonSource_DirectLink {
                 driver.switchTo().window(Handle);
         }
 
-        //wait for take course btn
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div/form/button"))));
+        //Wait for take course btn
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div/form/button"))));
         Thread.sleep(1000);
         if(driver.getPageSource().contains(courseId)){
                 System.out.println("Test is successful");

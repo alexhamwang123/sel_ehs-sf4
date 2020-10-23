@@ -30,7 +30,7 @@ public class OnlineRandomQuestionOrder {
 
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -56,7 +56,7 @@ public class OnlineRandomQuestionOrder {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -67,31 +67,31 @@ public class OnlineRandomQuestionOrder {
         WebElement courseAdmin1 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js1.executeScript("arguments[0].click()", courseAdmin1);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Online Course Admin")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input")).sendKeys("DanielOnlineRandom01");
         Thread.sleep(1000);
 
         //CLick the result
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //Click Edit Course Content Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'Edit Course Content')]")).click();
 
@@ -101,7 +101,7 @@ public class OnlineRandomQuestionOrder {
         Thread.sleep(1000);
 
         //Select question order as normal
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         new Select(driver.findElement(By.xpath("//div[3]//div[1]//select[1]"))).selectByVisibleText("Display quiz questions in order");
 
@@ -112,11 +112,11 @@ public class OnlineRandomQuestionOrder {
         js.executeScript("arguments[0].click()", Save_Btn);
         Thread.sleep(1000);
         //Click OK Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Close the window
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         driver.close();
 
@@ -138,7 +138,7 @@ public class OnlineRandomQuestionOrder {
             driver.switchTo().window(winHandle);
         }
         //Click English btn
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
         WebElement English= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]"));
         js1.executeScript("arguments[0].click()", English);
 
@@ -156,7 +156,7 @@ public class OnlineRandomQuestionOrder {
         }
         Thread.sleep(3000);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[1]/div[1]/p")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[1]/div[1]/p")));
         String Q1=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[1]/div[1]/p")).getText();
         String Q2=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[2]/div[1]/p")).getText();
         String Q3=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[3]/div[1]/p")).getText();
@@ -181,7 +181,7 @@ public class OnlineRandomQuestionOrder {
 
 
         //Select & Test Random Order
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         JavascriptExecutor js2 = (JavascriptExecutor)driver;
@@ -191,31 +191,31 @@ public class OnlineRandomQuestionOrder {
         WebElement courseAdmin2 = driver.findElement(By.xpath("//a[contains(text(),'Course Admin')]"));
         js2.executeScript("arguments[0].click()", courseAdmin2);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Online Course Admin")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[1]/div[1]/div/input")).sendKeys("DanielOnlineRandom01");
         Thread.sleep(1000);
 
         //CLick the result
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //Click Edit Course Content Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'Edit Course Content')]")).click();
 
@@ -225,7 +225,7 @@ public class OnlineRandomQuestionOrder {
         Thread.sleep(1000);
 
         //Select question order as normal
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         new Select(driver.findElement(By.xpath("//div[3]//div[1]//select[1]"))).selectByVisibleText("Display quiz questions in random order");
 
@@ -236,11 +236,11 @@ public class OnlineRandomQuestionOrder {
         js.executeScript("arguments[0].click()", Save_Btn1);
         Thread.sleep(1000);
         //Click OK Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 
         //Close the window
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         driver.close();
 
@@ -262,7 +262,7 @@ public class OnlineRandomQuestionOrder {
             driver.switchTo().window(winHandle);
         }
         //Click English btn
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
         WebElement English1= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]"));
         js1.executeScript("arguments[0].click()", English1);
 
@@ -281,7 +281,7 @@ public class OnlineRandomQuestionOrder {
 
         Thread.sleep(3000);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[1]/div[1]/p")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[1]/div[1]/p")));
         String Q01=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[1]/div[1]/p")).getText();
         String Q02=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[2]/div[1]/p")).getText();
         String Q03=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div/div[2]/div[1]/ol/li[3]/div[1]/p")).getText();

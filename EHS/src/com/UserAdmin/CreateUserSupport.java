@@ -25,7 +25,7 @@ public class CreateUserSupport {
 
 		WebDriver driver = new ChromeDriver();
 
-		WebDriverWait wait= new WebDriverWait(driver,30);
+		WebDriverWait Wait= new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.manage().window().maximize();
@@ -58,7 +58,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		//Clicking on 'User Admin'
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 
@@ -83,7 +83,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 // Enter the First Name of the user that you wish to create
 		String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
 		Thread.sleep(1000);
 		driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
@@ -91,24 +91,24 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
 		Thread.sleep(1000);
 // Enter the search value as "SCV"
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
 
 // Click on 'SCV' from the search results
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
 
 // Enter the email of the user that you wish to create
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
 		Thread.sleep(1000);
 		driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
@@ -132,7 +132,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 //Click Role Page
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
 		Thread.sleep(2000);

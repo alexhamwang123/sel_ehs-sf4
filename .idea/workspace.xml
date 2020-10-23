@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="All Pass (Except PrereqLink Scripts) 2 11/May">
-      <change afterPath="$PROJECT_DIR$/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/NewCategoryCourseCompletionReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/NewCategoryCourseCompletionStatics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" afterDir="false" />
+    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="EHS 13.4-D3 Not All Passed(with tickets but code should be fine) 28/July 2020">
+      <change afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NewCreateChecklist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/Failed_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/Failed_Test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/PasswordFileEHS.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/chromedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryDeletion.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryDeletion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/CategoryVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/CreateAndEditCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CreateAndEditCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/CategoryManagement/NewCategoryCourseCompletionStatics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryDeletion.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryDeletion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/NewCategoryCourseCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/NewCategoryCourseCompletionReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" afterDir="false" />
@@ -44,7 +35,6 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseCreation.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" afterDir="false" />
@@ -81,18 +71,17 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateAnnouncement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/ForgotPassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_Duplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_Duplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_Duplicate.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" afterDir="false" />
@@ -101,10 +90,13 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGCourseCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" afterDir="false" />
@@ -136,17 +128,8 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/FindExistingUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testNG_EHSAdmin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testNG_Miscellaneous.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testNG_UsserAdmin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testNg_Checklist.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testNg_OnlineCourse.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" afterDir="false" />
     </list>
@@ -226,7 +209,7 @@
       <recent name="$PROJECT_DIR$/EHS/src" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CategoryDeletion.CategoryDeletion">
+  <component name="RunManager" selected="TestNG.CreateScormClass and 4 more">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -258,35 +241,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryDeletion" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ChecklistRegionVisibility and 11 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CategoryManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CategoryManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.CategoryManagement.CategoryDeletion" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/JetBrains/IdeaIC2020.2/temp-testng-customsuite.xml" />
+      <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+      <patterns>
+        <pattern testClass="com.ChecklistManagement.ChecklistRegionVisibility" />
+        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereqDecrease" />
+        <pattern testClass="com.OnlineCourseManagement.ClassroomRegionVariantVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.CreateonlineCourseclass" />
+        <pattern testClass="com.OnlineCourseManagement.CreateScormClass" />
+        <pattern testClass="com.ClassroomCourseManagement.EmailAtt" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRegionVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineScormVerify" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineSPGRC" />
+        <pattern testClass="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryDeletion.CategoryDeletion" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateAndEditLab.CreateLab" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.CategoryManagement.*" />
+          <option name="PATTERN" value="com.EHSAdmin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.CategoryManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.CategoryManagement.CategoryDeletion" />
-      <option name="METHOD_NAME" value="CategoryDeletion" />
+      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
+      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateAndEditLab" />
+      <option name="METHOD_NAME" value="CreateLab" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
@@ -295,34 +285,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassroomSPGRC.ClassroomSPGRCCompletion" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateScormClass and 4 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.ClassroomSPGRC" />
-      <option name="METHOD_NAME" value="ClassroomSPGRCCompletion" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/JetBrains/IdeaIC2020.2/temp-testng-customsuite.xml" />
+      <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+      <patterns>
+        <pattern testClass="com.OnlineCourseManagement.CreateScormClass" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineScormVerify" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineSPGRC" />
+        <pattern testClass="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewCategoryCourseCompletionReport and 1 more" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="* and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
       <patterns>
-        <pattern testClass="com.CategoryManagement.NewCategoryCourseCompletionReport" />
-        <pattern testClass="com.CategoryManagement.NewCategoryCourseCompletionStatics" />
+        <pattern testClass="com.ChecklistManagement.*" />
+        <pattern testClass="com.ClassroomCourseManagement.*" />
+        <pattern testClass="com.OnlineCourseManagement.*" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="/Users/trismax/Library/Caches/JetBrains/IdeaIC2020.2/temp-testng-customsuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/JetBrains/IdeaIC2020.2/temp-testng-customsuite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.ChecklistManagement.*" />
+        <pattern testClass="com.ClassroomCourseManagement.*" />
+        <pattern testClass="com.OnlineCourseManagement.*" />
       </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -361,23 +367,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.CategoryManagement" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CategoryManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CategoryManagement" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="createCourseManagerFirst" type="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
@@ -398,24 +387,25 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.All testng-customsuite.xml" />
+      <item itemvalue="TestNG.ChecklistRegionVisibility and 11 more" />
+      <item itemvalue="TestNG.CreateAndEditLab.CreateLab" />
+      <item itemvalue="TestNG.CreateScormClass and 4 more" />
+      <item itemvalue="TestNG.* and 2 more" />
+      <item itemvalue="TestNG./Users/trismax/Library/Caches/JetBrains/IdeaIC2020.2/temp-testng-customsuite.xml" />
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.ClassroomSPGRC.ClassroomSPGRCCompletion" />
-      <item itemvalue="TestNG.CategoryDeletion" />
-      <item itemvalue="TestNG.com.CategoryManagement" />
-      <item itemvalue="TestNG.NewCategoryCourseCompletionReport and 1 more" />
-      <item itemvalue="TestNG.CategoryDeletion.CategoryDeletion" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CategoryDeletion.CategoryDeletion" />
-        <item itemvalue="TestNG.CategoryDeletion" />
-        <item itemvalue="TestNG.NewCategoryCourseCompletionReport and 1 more" />
-        <item itemvalue="TestNG.com.CategoryManagement" />
-        <item itemvalue="TestNG.ClassroomSPGRC.ClassroomSPGRCCompletion" />
+        <item itemvalue="TestNG.CreateScormClass and 4 more" />
+        <item itemvalue="TestNG.ChecklistRegionVisibility and 11 more" />
+        <item itemvalue="TestNG./Users/trismax/Library/Caches/JetBrains/IdeaIC2020.2/temp-testng-customsuite.xml" />
+        <item itemvalue="TestNG.* and 2 more" />
+        <item itemvalue="TestNG.CreateAndEditLab.CreateLab" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -742,7 +732,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589171719423</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="EHS 13.4-D3 Not All Passed(with tickets but code should be fine) 28/July 2020">
+      <created>1595955516730</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1595955516730</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -783,7 +780,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="OnlineCourse_CompleteAndSubmit" />
     <MESSAGE value="OnlineCourse_PartiallyCompleteAndSubmit" />
     <MESSAGE value="OnlineCourseEditContent" />
     <MESSAGE value="OnlineCoursePrereq" />
@@ -808,169 +804,122 @@
     <MESSAGE value="2019/09/28 EHS All Scripts Passed Version" />
     <MESSAGE value="All Pass Version 2 20/Dec" />
     <MESSAGE value="All Pass (Except PrereqLink Scripts) 2 11/May" />
-    <option name="LAST_COMMIT_MESSAGE" value="All Pass (Except PrereqLink Scripts) 2 11/May" />
+    <MESSAGE value="EHS 13.4-D3 Not All Passed(with tickets but code should be fine) 28/July 2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="EHS 13.4-D3 Not All Passed(with tickets but code should be fine) 28/July 2020" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="180" width="800" height="765" key="#Intentions" timestamp="1590096041488">
+    <state x="646" y="241" key="#Console" timestamp="1600765634734">
       <screen x="0" y="23" width="1920" height="985" />
     </state>
-    <state x="560" y="180" width="800" height="765" key="#Intentions/0.23.1920.985@0.23.1920.985" timestamp="1590096041488" />
-    <state x="732" y="122" key="#OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" timestamp="1594262014480">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state x="732" y="122" key="#OnlineRandomQuestionOrder.OnlineRandomQuestionOrder/0.23.1920.982@0.23.1920.982" timestamp="1594262014480" />
-    <state x="698" y="288" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1590224818880">
-      <screen x="0" y="23" width="1920" height="985" />
-    </state>
-    <state x="698" y="288" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.985@0.23.1920.985" timestamp="1590224818880" />
+    <state x="646" y="241" key="#Console/0.23.1920.985@0.23.1920.985" timestamp="1600765634734" />
     <state x="553" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595597522940">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
     <state x="553" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.982@0.23.1920.982" timestamp="1595597522940" />
-    <state x="798" y="232" width="686" height="564" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1590690372999">
-      <screen x="0" y="23" width="1920" height="983" />
-    </state>
-    <state x="798" y="232" width="686" height="564" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.23.1920.983@0.23.1920.983" timestamp="1590690372999" />
-    <state x="747" y="406" width="423" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590166184647">
-      <screen x="0" y="23" width="1920" height="985" />
-    </state>
-    <state x="747" y="406" width="423" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.985@0.23.1920.985" timestamp="1590166184647" />
-    <state x="747" y="407" width="427" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.987@0.23.1920.987" timestamp="1590090196191" />
-    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593281733448">
+    <state x="648" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601469896532">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state x="698" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.982@0.23.1920.982" timestamp="1593281733448" />
-    <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.985@0.23.1920.985" timestamp="1590759784868" />
+    <state x="648" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1920.982@0.23.1920.982" timestamp="1601469896532" />
+    <state x="747" y="406" width="430" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597387120845">
+      <screen x="0" y="23" width="1920" height="985" />
+    </state>
+    <state x="747" y="406" width="430" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.985@0.23.1920.985" timestamp="1597387120845" />
+    <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600768018564">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.987@0.23.1920.987" timestamp="1600768018564" />
     <state x="711" y="412" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595772386842">
       <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state x="711" y="412" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.983@0.23.1920.983" timestamp="1595772386842" />
-    <state x="581" y="118" key="CommitChangelistDialog2" timestamp="1589171717440">
-      <screen x="0" y="23" width="1920" height="985" />
-    </state>
-    <state x="581" y="118" key="CommitChangelistDialog2/0.23.1920.985@0.23.1920.985" timestamp="1589171717440" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom" timestamp="1595955311083">
+    <state x="581" y="118" key="CommitChangelistDialog2" timestamp="1595955514244">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131289" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544655" />
-    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241918" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1595955311083" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1595952163540" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.985@0.23.1920.985" timestamp="1593624131372" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.987@0.23.1920.987" timestamp="1595922637238" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1590419669962" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.990@0.23.1920.990" timestamp="1591196017358" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.991@0.23.1920.991" timestamp="1591342440939" />
-    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.993@0.23.1920.993" timestamp="1590755346061" />
-    <state width="1878" height="325" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1592569631961" />
-    <state width="1878" height="413" key="GridCell.Tab.0.bottom/0.23.1920.996@0.23.1920.996" timestamp="1589116181129" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center" timestamp="1595955311081">
+    <state x="581" y="118" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1595955514244" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom" timestamp="1601831059674">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131288" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544654" />
-    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241852" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1595955311081" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1595952163539" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.985@0.23.1920.985" timestamp="1593624131371" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.987@0.23.1920.987" timestamp="1595922637235" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1590419669961" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.990@0.23.1920.990" timestamp="1591196017353" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.991@0.23.1920.991" timestamp="1591342440935" />
-    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.993@0.23.1920.993" timestamp="1590755346060" />
-    <state width="1878" height="325" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1592569631957" />
-    <state width="1878" height="413" key="GridCell.Tab.0.center/0.23.1920.996@0.23.1920.996" timestamp="1589116181127" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left" timestamp="1595955311081">
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.1011@0.23.1920.1011" timestamp="1597425284201" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1601831059674" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1601731399917" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.985@0.23.1920.985" timestamp="1601472988083" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.987@0.23.1920.987" timestamp="1600768034514" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1600866038963" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.993@0.23.1920.993" timestamp="1601806864821" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1601481136388" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center" timestamp="1601831059673">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131288" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544652" />
-    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241812" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1595955311081" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1595952163539" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.985@0.23.1920.985" timestamp="1593624131370" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.987@0.23.1920.987" timestamp="1595922637234" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1590419669960" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.990@0.23.1920.990" timestamp="1591196017351" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.991@0.23.1920.991" timestamp="1591342440934" />
-    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.993@0.23.1920.993" timestamp="1590755346060" />
-    <state width="1878" height="325" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1592569631956" />
-    <state width="1878" height="413" key="GridCell.Tab.0.left/0.23.1920.996@0.23.1920.996" timestamp="1589116181125" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right" timestamp="1595955311082">
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.1011@0.23.1920.1011" timestamp="1597425284199" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1601831059673" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1601731399909" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.985@0.23.1920.985" timestamp="1601472988082" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.987@0.23.1920.987" timestamp="1600768034512" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1600866038960" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.993@0.23.1920.993" timestamp="1601806864818" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1601481136387" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left" timestamp="1601831059672">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.1004@0.23.1920.1004" timestamp="1590668131289" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.1007@0.23.1920.1007" timestamp="1590407544655" />
-    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.1014@0.23.1920.1014" timestamp="1589885241908" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1595955311082" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1595952163540" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.985@0.23.1920.985" timestamp="1593624131371" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1595922637237" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1590419669961" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.990@0.23.1920.990" timestamp="1591196017355" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.991@0.23.1920.991" timestamp="1591342440936" />
-    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.993@0.23.1920.993" timestamp="1590755346061" />
-    <state width="1878" height="325" key="GridCell.Tab.0.right/0.23.1920.994@0.23.1920.994" timestamp="1592569631958" />
-    <state width="1878" height="413" key="GridCell.Tab.0.right/0.23.1920.996@0.23.1920.996" timestamp="1589116181128" />
-    <state width="1878" height="336" key="GridCell.Tab.1.bottom" timestamp="1595787769557">
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.1011@0.23.1920.1011" timestamp="1597425284198" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1601831059672" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1601731399908" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.985@0.23.1920.985" timestamp="1601472988082" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.987@0.23.1920.987" timestamp="1600768034512" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1600866038957" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.993@0.23.1920.993" timestamp="1601806864817" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1601481136386" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right" timestamp="1601831059673">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.23.1920.982@0.23.1920.982" timestamp="1595787769557" />
-    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.23.1920.983@0.23.1920.983" timestamp="1595773239095" />
-    <state width="1878" height="338" key="GridCell.Tab.1.bottom/0.23.1920.985@0.23.1920.985" timestamp="1590225279883" />
-    <state width="1878" height="337" key="GridCell.Tab.1.bottom/0.23.1920.987@0.23.1920.987" timestamp="1590713743927" />
-    <state width="1878" height="336" key="GridCell.Tab.1.center" timestamp="1595787769556">
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.1011@0.23.1920.1011" timestamp="1597425284199" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1601831059673" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1601731399911" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.985@0.23.1920.985" timestamp="1601472988083" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1600768034513" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1600866038961" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.993@0.23.1920.993" timestamp="1601806864819" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.994@0.23.1920.994" timestamp="1601481136387" />
+    <state width="1878" height="336" key="GridCell.Tab.1.bottom" timestamp="1600876599607">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.center/0.23.1920.982@0.23.1920.982" timestamp="1595787769556" />
-    <state width="1878" height="336" key="GridCell.Tab.1.center/0.23.1920.983@0.23.1920.983" timestamp="1595773239094" />
-    <state width="1878" height="338" key="GridCell.Tab.1.center/0.23.1920.985@0.23.1920.985" timestamp="1590225279883" />
-    <state width="1878" height="337" key="GridCell.Tab.1.center/0.23.1920.987@0.23.1920.987" timestamp="1590713743926" />
-    <state width="1878" height="336" key="GridCell.Tab.1.left" timestamp="1595787769556">
+    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.23.1920.982@0.23.1920.982" timestamp="1600876599607" />
+    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.23.1920.983@0.23.1920.983" timestamp="1600773364365" />
+    <state width="1878" height="336" key="GridCell.Tab.1.center" timestamp="1600876599606">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.left/0.23.1920.982@0.23.1920.982" timestamp="1595787769556" />
-    <state width="1878" height="336" key="GridCell.Tab.1.left/0.23.1920.983@0.23.1920.983" timestamp="1595773239094" />
-    <state width="1878" height="338" key="GridCell.Tab.1.left/0.23.1920.985@0.23.1920.985" timestamp="1590225279882" />
-    <state width="1878" height="337" key="GridCell.Tab.1.left/0.23.1920.987@0.23.1920.987" timestamp="1590713743925" />
-    <state width="1878" height="336" key="GridCell.Tab.1.right" timestamp="1595787769557">
+    <state width="1878" height="336" key="GridCell.Tab.1.center/0.23.1920.982@0.23.1920.982" timestamp="1600876599606" />
+    <state width="1878" height="336" key="GridCell.Tab.1.center/0.23.1920.983@0.23.1920.983" timestamp="1600773364363" />
+    <state width="1878" height="336" key="GridCell.Tab.1.left" timestamp="1600876599606">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.982@0.23.1920.982" timestamp="1595787769557" />
-    <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.983@0.23.1920.983" timestamp="1595773239095" />
-    <state width="1878" height="338" key="GridCell.Tab.1.right/0.23.1920.985@0.23.1920.985" timestamp="1590225279883" />
-    <state width="1878" height="337" key="GridCell.Tab.1.right/0.23.1920.987@0.23.1920.987" timestamp="1590713743926" />
-    <state x="448" y="96" key="SettingsEditor" timestamp="1594262701681">
+    <state width="1878" height="336" key="GridCell.Tab.1.left/0.23.1920.982@0.23.1920.982" timestamp="1600876599606" />
+    <state width="1878" height="336" key="GridCell.Tab.1.left/0.23.1920.983@0.23.1920.983" timestamp="1600773364362" />
+    <state width="1878" height="336" key="GridCell.Tab.1.right" timestamp="1600876599607">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state x="448" y="96" key="SettingsEditor/0.23.1920.982@0.23.1920.982" timestamp="1594262701681" />
-    <state x="448" y="96" key="SettingsEditor/0.23.1920.983@0.23.1920.983" timestamp="1590690669133" />
-    <state x="560" y="244" key="Vcs.Push.Dialog.v2" timestamp="1589171726009">
-      <screen x="0" y="23" width="1920" height="985" />
-    </state>
-    <state x="560" y="244" key="Vcs.Push.Dialog.v2/0.23.1920.985@0.23.1920.985" timestamp="1589171726009" />
-    <state x="653" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1590409480530">
-      <screen x="0" y="23" width="1920" height="983" />
-    </state>
-    <state x="653" y="347" key="com.intellij.ide.util.TipDialog/0.23.1920.983@0.23.1920.983" timestamp="1590409480530" />
-    <state x="653" y="348" key="com.intellij.ide.util.TipDialog/0.23.1920.985@0.23.1920.985" timestamp="1590251843464" />
-    <state x="440" y="192" width="1172" height="700" key="find.popup" timestamp="1595773185583">
-      <screen x="0" y="23" width="1920" height="983" />
-    </state>
-    <state x="425" y="140" width="1159" height="870" key="find.popup/0.23.1920.1017@0.23.1920.1017" timestamp="1589885221329" />
-    <state x="490" y="97" width="1159" height="840" key="find.popup/0.23.1920.982@0.23.1920.982" timestamp="1595597744932" />
-    <state x="440" y="192" width="1172" height="700" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1595773185583" />
-    <state x="557" y="74" width="1159" height="844" key="find.popup/0.23.1920.985@0.23.1920.985" timestamp="1590676087868" />
-    <state x="557" y="74" width="1159" height="844" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1591202713435" />
-    <state x="397" y="79" width="1159" height="844" key="find.popup/0.23.1920.988@0.23.1920.988" timestamp="1590226704468" />
-    <state x="661" y="184" width="1030" height="793" key="find.popup/0.23.1920.990@0.23.1920.990" timestamp="1590250499274" />
-    <state x="397" y="79" width="1159" height="847" key="find.popup/0.23.1920.991@0.23.1920.991" timestamp="1591342136233" />
-    <state x="383" y="177" key="new project wizard" timestamp="1594256181216">
+    <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.982@0.23.1920.982" timestamp="1600876599607" />
+    <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.983@0.23.1920.983" timestamp="1600773364364" />
+    <state x="560" y="243" key="Vcs.Push.Dialog.v2" timestamp="1595955523442">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state x="383" y="177" key="new project wizard/0.23.1920.982@0.23.1920.982" timestamp="1594256181216" />
-    <state x="383" y="177" key="new project wizard/0.23.1920.983@0.23.1920.983" timestamp="1590690720144" />
+    <state x="560" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.982@0.23.1920.982" timestamp="1595955523442" />
+    <state x="462" y="89" width="1159" height="840" key="find.popup" timestamp="1603357409992">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state x="367" y="241" width="1172" height="711" key="find.popup/0.23.1920.1001@0.23.1920.1001" timestamp="1600865257232" />
+    <state x="440" y="195" width="1172" height="714" key="find.popup/0.23.1920.1005@0.23.1920.1005" timestamp="1600597543988" />
+    <state x="462" y="89" width="1159" height="840" key="find.popup/0.23.1920.982@0.23.1920.982" timestamp="1603357409992" />
+    <state x="440" y="192" width="1172" height="700" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1601442424346" />
+    <state x="440" y="192" width="1172" height="700" key="find.popup/0.23.1920.985@0.23.1920.985" timestamp="1601442126672" />
+    <state x="440" y="192" width="1172" height="700" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1601441901727" />
+    <state x="440" y="193" width="1172" height="704" key="find.popup/0.23.1920.988@0.23.1920.988" timestamp="1601471751117" />
+    <state x="226" y="253" width="1172" height="705" key="find.popup/0.23.1920.993@0.23.1920.993" timestamp="1601380870887" />
+    <state x="367" y="239" width="1172" height="707" key="find.popup/0.23.1920.994@0.23.1920.994" timestamp="1600865999002" />
+    <state x="383" y="177" key="new project wizard" timestamp="1596517266680">
+      <screen x="0" y="23" width="1920" height="982" />
+    </state>
+    <state x="383" y="177" key="new project wizard/0.23.1920.982@0.23.1920.982" timestamp="1596517266680" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$CreateAndEditCertificate_CreateAndEditCertificate__1_.ic" NAME="CreateAndEditCertificate.CreateAndEditCertificate (1) Coverage Results" MODIFIED="1566393554884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

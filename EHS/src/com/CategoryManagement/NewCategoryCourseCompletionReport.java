@@ -20,7 +20,7 @@ public class NewCategoryCourseCompletionReport {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //driver.manage().window().maximize();

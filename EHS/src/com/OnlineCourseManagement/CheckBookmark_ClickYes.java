@@ -26,7 +26,7 @@ public class CheckBookmark_ClickYes {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
@@ -52,11 +52,11 @@ public class CheckBookmark_ClickYes {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("DanielOnline01");
 
@@ -85,7 +85,7 @@ public class CheckBookmark_ClickYes {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
         Thread.sleep(2000);
 
         JavascriptExecutor js= (JavascriptExecutor)driver;

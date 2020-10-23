@@ -92,7 +92,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             }
             JavascriptExecutor js = (JavascriptExecutor) driver;
 
-                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+                    Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));

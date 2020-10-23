@@ -29,7 +29,7 @@ public class CreateAndEditRiskCategory {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -53,7 +53,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         //Clicking on EHS Admin
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         js.executeScript("arguments[0].click()", Admin);
@@ -72,7 +72,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 		
 		//Click on the 'Create Risk Category' button
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button"))));
+            Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button"))));
             Thread.sleep(1000);
             driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/button")).click();
             Thread.sleep(1000);
@@ -87,7 +87,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String title = generator.generate(10);
             //Enter the Risk Category Name
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
+            Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-name"))));
             Thread.sleep(1000);
             driver.findElement(By.id("input-name")).sendKeys(title);
 
@@ -100,17 +100,17 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             Thread.sleep(1500);
             driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
             Thread.sleep(2500);
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
+            Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
             Thread.sleep(1000);
             driver.findElement(By.id("criteriaBadge")).sendKeys(username);
             //Click Search
             Thread.sleep(2500);
-            driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/footer/div/button")).click();
+            driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
             Thread.sleep(2500);
             //Click Result
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+            Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//td[contains(text(),'"+username+"')]"))));
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
+            driver.findElement(By.xpath("//td[contains(text(),'"+username+"')]")).click();
             Thread.sleep(1000);
             //Click Save btn
             WebElement Save= driver.findElement(By.xpath("//*[@id=\"admin-curriculum\"]/div/div[2]/button"));
@@ -119,7 +119,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         Thread.sleep(3500);
             //Clicking on EHS Admin
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         js.executeScript("arguments[0].click()", Admin1);
@@ -150,7 +150,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.xpath("//*[@id=\"admin-curriculum\"]/div/div[2]/button")).click();
         Thread.sleep(4500);
             //Clicking on EHS Admin
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin2=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         js.executeScript("arguments[0].click()", Admin2);

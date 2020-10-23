@@ -32,9 +32,8 @@ public class CreateAnnouncement {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebDriverWait Wait= new WebDriverWait(driver,30);
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
@@ -61,7 +60,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 
 		//Clicking on 'EHS Admin'
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 
@@ -180,13 +179,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(1000);
 		new Select(driver.findElement(By.id("annRegion"))).selectByVisibleText("Taipei");
 		//Click Save Btn
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
 		Thread.sleep(1000);
 	    WebElement Save=	driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 		js10.executeScript("arguments[0].click();", Save);
 
 		// clicking the 'Back' button
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Back')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Back')]")));
 		Thread.sleep(1000);
 		WebElement Back=	driver.findElement(By.xpath("//button[contains(text(),'Back')]"));
 		js10.executeScript("arguments[0].click();", Back);
@@ -223,13 +222,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;
 
 		//Click Save Btn
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
 		Thread.sleep(1000);
 		WebElement Save1=	driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 		js10.executeScript("arguments[0].click();", Save1);
 
 		// clicking the 'Back' button
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Back')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Back')]")));
 		Thread.sleep(1000);
 		WebElement Back1=	driver.findElement(By.xpath("//button[contains(text(),'Back')]"));
 		js10.executeScript("arguments[0].click();", Back1);

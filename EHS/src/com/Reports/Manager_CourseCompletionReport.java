@@ -22,7 +22,7 @@ public class Manager_CourseCompletionReport {
         WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().window().maximize();
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
         FileInputStream inStream=new FileInputStream(file);
@@ -44,7 +44,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         Thread.sleep(4500);
 
         //Clicking on Manager Reports under Reports
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
         Thread.sleep(1000);
 
@@ -53,7 +53,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         js.executeScript("arguments[0].click();",ele);
         Thread.sleep(2500);
         //Click on CourseCompletionReport
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Course Completion Report')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Course Completion Report')]"))));
         Thread.sleep(500);
         driver.findElement(By.xpath("//a[contains(text(),'Course Completion Report')]")).click();
         Thread.sleep(1000);
@@ -168,7 +168,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         WebElement Go=driver.findElement(By.xpath("//button[contains(text(),'Go')]"));
         js.executeScript("arguments[0].click();",Go);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(3500);

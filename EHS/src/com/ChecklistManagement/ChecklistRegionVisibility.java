@@ -26,7 +26,7 @@ public class ChecklistRegionVisibility {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         File file = new File(System.getProperty("user.dir") + "/PasswordFileEHS.properties");
 
@@ -35,9 +35,9 @@ public class ChecklistRegionVisibility {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-actions.build().perform(); }
-catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+                actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         driver.manage().window().maximize();
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         ;
@@ -50,7 +50,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -61,11 +61,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         js.executeScript("arguments[0].click();", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Checklist Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Checklist Admin")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button"))));
         driver.findElement(By.xpath("//*[@id=\"search_result\"]/div/button")).click();
         Thread.sleep(3500);
                 String CapitalLetter = generator.generate(1).toUpperCase();
@@ -79,10 +79,10 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         new Select(driver.findElement(By.id("detailCourseRegion"))).selectByVisibleText("SITE_SCV");
         new Select(driver.findElement(By.id("detailCourseType"))).selectByVisibleText("Checklist");
         new Select(driver.findElement(By.id("detailCourseExpiration"))).selectByVisibleText("Never Expires");
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("saveBtn")));
         driver.findElement(By.id("saveBtn")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Edit']")));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
         Thread.sleep(1500);
@@ -92,63 +92,63 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.id("detailCheckListFooter")).sendKeys("test checklist footer");
         driver.findElement(By.id("detailInstructionalText")).sendKeys("gratz dude");
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("createContent"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("createContent"))));
         Thread.sleep(1000);
         driver.findElement(By.id("createContent")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Create']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='submit'][value='Create']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"detailChecklistContentSaveAs\"]")).click();
         driver.findElement(By.cssSelector("input[type='submit'][value='Create']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Edit']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Edit']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("saveBtn"))));
         driver.findElement(By.id("saveBtn")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("fancyConfirm_ok"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("fancyConfirm_ok"))));
         Thread.sleep(1000);
         driver.findElement(By.id("fancyConfirm_ok")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Back']"))));
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
 
         //driver.findElement(By.cssSelector("input[type='button'][value='Back']")).click();
         //Thread.sleep(1500);
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("langIsViewable")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("langIsViewable")));
         Thread.sleep(1000);
         driver.findElement(By.id("langIsViewable")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("detailIsActive")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("detailIsActive")));
         Thread.sleep(1000);
         driver.findElement(By.id("detailIsActive")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("input[type='button'][value='Save']"))));
         driver.findElement(By.cssSelector("input[type='button'][value='Save']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 
         //Clicking on 'User Admin'
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin1=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         js.executeScript("arguments[0].click()", Admin1);
@@ -166,7 +166,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 // Enter the First Name of the user that you wish to create
         String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
@@ -174,24 +174,24 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
+            Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
             Thread.sleep(1000);
             driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
             Thread.sleep(1000);
 // Enter the search value as "SCV"
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
 
 // Click on 'SCV' from the search results
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
 
 // Enter the email of the user that you wish to create
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
         Thread.sleep(1000);
         driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
@@ -236,7 +236,8 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
+        
+ Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
         Thread.sleep(1000);
         driver.findElement(By.id("welcomeShowRS")).click();
         Thread.sleep(1500);
@@ -249,20 +250,29 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.name("question[1164]")).click();
         driver.findElement(By.name("question[4676]")).click();
         driver.findElement(By.name("question[7466]")).click();
-        driver.findElement(By.name("question[7467]")).click();
+
 
 
         driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
         Thread.sleep(1000);
-        driver.findElement(By.id("annContinue")).click();
+         driver.findElement(By.id("annContinue")).click();
+         try {
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+         }
+         catch (Exception e){
+            System.out.println("there is no OK btn, and it is ok");
+        }
+
+
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
 

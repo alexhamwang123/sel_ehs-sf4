@@ -3,18 +3,10 @@
 <suite name="Default Suite">
     <test name="sel_ehs-sf4">
         <classes>
+            <class name="com.ChecklistManagement.ChecklistRegionVisibility"/>
+            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
+            <class name="com.ClassroomCourseManagement.ClassroomRegionVisibility"/>
 
-            <!--等下一個版本 進一步測試-->
-            <class name="com.ChecklistManagement.RefreshChecklist"/><!--Refresh course itself has no Prereq nor Refresh course 未修改-->
-            <class name="com.ChecklistManagement.NormalRefreshChecklist"/><!--No Expiration has no Refresh Course 未修改-->
-            <class name="com.ChecklistManagement.CheckListSPGVisibility"/><!--RC Assign SPG Course 只有Classroom 可以看見-->
-            <class name="com.ClassroomCourseManagement.ClassroomRegionVisibility"/><!--after User got Assigned to a Region, region needs to be saved-->
-            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/><!--after User got Assigned to a Region, region needs to be saved-->
-
-
-
-            <!--Not Finished in Coding-->
-            <class name="com.OnlineCourseManagement.OnlineRandomQuestionOrder"/>
         </classes>
     </test> <!-- sel_ehs-sf4 -->
 </suite> <!-- Default Suite -->

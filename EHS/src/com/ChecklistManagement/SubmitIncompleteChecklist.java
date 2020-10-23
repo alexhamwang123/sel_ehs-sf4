@@ -33,16 +33,15 @@ public class SubmitIncompleteChecklist {
 		WebDriver driver = new ChromeDriver();
 		WebDriverWait Wait= new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
 		Properties prop=new Properties();
 		prop.load(inStream);
 		String urladdr = prop.getProperty("url");
 		driver.get(urladdr);
-try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-actions.build().perform(); }
-catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+		try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+			actions.build().perform(); }
+		catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 		driver.manage().window().maximize();
 		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 		String username = prop.getProperty("username");
@@ -54,18 +53,18 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='text']")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='text']")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-checklist-006"); //checklist name on localhost
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("DanielChecklistUnfinished"); //checklist name on localhost
 
 
 
 		//Click on the Enroll button
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
@@ -83,35 +82,17 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		Thread.sleep(3000);
 
-
-		//Clicking the Radio Button
-		//driver.findElement(By.xpath("//*[@name='cf29c8de74fb0d0f2846573a541e8737'][@value='N']")).click();
-
-//		driver.findElement(By.cssSelector("input[type='radio'][value='Y']")).click();
-
-
-		Thread.sleep(2000);
-
-	//Click Save
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='buttons d-inline-block float-right']//button[@class='btn btn-secondary'][contains(text(),'Save')]")));
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='buttons d-inline-block float-right']//button[@class='btn btn-secondary'][contains(text(),'Save')]")).click();
-
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
-		Thread.sleep(2000);
         driver.close();
 		for(String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Courses")));
 		Thread.sleep(1000);
 		driver.findElement(By.partialLinkText("Courses")).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("kimi-checklist-006");//checklist name is on localhost
+		driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys("DanielChecklistUnfinished");//checklist name is on localhost
 
 
 		try {

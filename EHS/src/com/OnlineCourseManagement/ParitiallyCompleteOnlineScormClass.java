@@ -54,7 +54,7 @@ public class ParitiallyCompleteOnlineScormClass {
         robot.keyRelease(KeyEvent.VK_TAB);
 
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -68,7 +68,7 @@ public class ParitiallyCompleteOnlineScormClass {
         Thread.sleep(4500);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+                Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -78,17 +78,17 @@ public class ParitiallyCompleteOnlineScormClass {
 
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Online Course Admin")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
         js.executeScript("arguments[0].click()", CreateBtn);
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
@@ -111,12 +111,12 @@ public class ParitiallyCompleteOnlineScormClass {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Details
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         //input training time
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
         driver.findElement(By.id("course-trainingTime")).sendKeys("1");
         //input credit
@@ -126,18 +126,18 @@ public class ParitiallyCompleteOnlineScormClass {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //input course type
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
         Thread.sleep(1000);
-        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Scorm Content");
+        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Scorm Course");
 
 
 
@@ -160,7 +160,7 @@ public class ParitiallyCompleteOnlineScormClass {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(2000);
         Thread.sleep(2000);
         Thread.sleep(10000);
@@ -169,7 +169,7 @@ public class ParitiallyCompleteOnlineScormClass {
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Visibility btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
 
         WebElement VisibilityBtn=driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
@@ -180,14 +180,14 @@ public class ParitiallyCompleteOnlineScormClass {
         js.executeScript("arguments[0].click()", ViewableBtn);
 
         //Wait until the success message shows up
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
         if(!ViewableBtn.isEnabled()){
             Assert.fail("Creation Failed");
         }Thread.sleep(5000);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Courses")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         Thread.sleep(1500);
@@ -205,8 +205,8 @@ public class ParitiallyCompleteOnlineScormClass {
         js.executeScript("arguments[0].click();",English);
         Thread.sleep(3500);
         //Wait for next btn to close window
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("scorm-container"))));
-        Thread.sleep(1500);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("scorm-container"))));
+        Thread.sleep(2500);
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_W);
         robot.keyRelease(KeyEvent.VK_META);
@@ -219,7 +219,7 @@ public class ParitiallyCompleteOnlineScormClass {
         }
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Courses"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Courses")).click();
         Thread.sleep(1500);

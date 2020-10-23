@@ -23,7 +23,7 @@ public class DirectReport {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
@@ -46,7 +46,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         //Clicking on 'User Admin'
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
         js.executeScript("arguments[0].click()", Admin);
@@ -55,27 +55,27 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         WebElement ele = driver.findElement(By.xpath("//a[contains(text(),'User Admin')]"));
         js.executeScript("arguments[0].click();",ele);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("badgeNo"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("badgeNo"))));
         Thread.sleep(2000);
         driver.findElement(By.id("badgeNo")).sendKeys("X00001572");
 
         //CLick Find Button
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Find Users')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Find Users')]"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[contains(text(),'Find Users')]")).click();
 
         //CLick on the User found
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" /html/body/div[1]/main/div/div[1]/div/div/div[2]/div/div/table/tbody/tr/td[1]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(" /html/body/div[1]/main/div/div[1]/div/div/div[2]/div/div/table/tbody/tr/td[1]"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath(" /html/body/div[1]/main/div/div[1]/div/div/div[2]/div/div/table/tbody/tr/td[1]")).click();
 
         //Click on the Direct Report Page
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
         Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//a[contains(text(),'Manager Reports')]")).click();
         Thread.sleep(2000);

@@ -27,7 +27,7 @@ public class FindExistingUser {
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait Wait = new WebDriverWait(driver, 30);
 		driver.manage().window().maximize();
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 		FileInputStream inStream=new FileInputStream(file);
@@ -54,7 +54,7 @@ public class FindExistingUser {
 		}
 		
 		//Clicking on 'User Admin'
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 

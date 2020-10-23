@@ -27,7 +27,7 @@ public class CreateAndEditCertificate {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait Wait = new WebDriverWait(driver, 30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -52,7 +52,7 @@ public class CreateAndEditCertificate {
 
 
 		//Clicking on EHS Admin
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 
@@ -66,7 +66,7 @@ public class CreateAndEditCertificate {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 
@@ -115,7 +115,7 @@ public class CreateAndEditCertificate {
 		}
 
 		// Clicking on the 'Save' button
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Save')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Save')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 
@@ -127,7 +127,7 @@ public class CreateAndEditCertificate {
 		}
 		Thread.sleep(2000);
 		// clicking the 'Back' button
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Back')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Back')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 
@@ -154,11 +154,11 @@ public class CreateAndEditCertificate {
 		driver.findElement(By.id("descr")).clear();
 		driver.findElement(By.id("descr")).sendKeys("im editing the certificate description");
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Save')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Save')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 		Thread.sleep(1500);
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Back')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Back')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 		Thread.sleep(1500);

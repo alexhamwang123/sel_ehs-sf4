@@ -30,7 +30,7 @@ public class OnlineCourse_PartiallyCompleteAndSubmit {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-		WebDriverWait wait= new WebDriverWait(driver,30);
+		WebDriverWait Wait= new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -60,11 +60,11 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 		//got to the prerequisite and complete it
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("kimi-online-006"); //checklist name on localhost
 
@@ -73,7 +73,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 		//Click on the Enroll button
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 

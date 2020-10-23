@@ -27,8 +27,6 @@ public class CategoryDeletion {
 
         WebDriver driver = new ChromeDriver();
 
-
-
         WebDriverWait Wait= new WebDriverWait(driver,30);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");

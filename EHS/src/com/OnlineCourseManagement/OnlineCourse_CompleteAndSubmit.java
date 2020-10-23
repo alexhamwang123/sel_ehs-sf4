@@ -25,7 +25,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 
 		WebDriver driver = new ChromeDriver();
-		WebDriverWait wait= new WebDriverWait(driver,30);
+		WebDriverWait Wait= new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -50,7 +50,7 @@ public class OnlineCourse_CompleteAndSubmit {
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 
@@ -75,7 +75,7 @@ public class OnlineCourse_CompleteAndSubmit {
 // Enter the First Name of the user that you wish to create
 		String userid = driver.findElement(By.id("input-badgeNo")).getAttribute("value");
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-firstName"))));
 		Thread.sleep(1000);
 		driver.findElement(By.id("input-firstName")).sendKeys(userid);
 
@@ -83,24 +83,24 @@ public class OnlineCourse_CompleteAndSubmit {
 		driver.findElement(By.id("input-lastName")).sendKeys(userid);
 
 // Click on 'Select' for Site
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[7]/div/div[1]/button")).click();
 		Thread.sleep(1000);
 // Enter the search value as "SCV"
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input")).sendKeys("SCV");
 
 
 // Click on 'SCV' from the search results
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr/td[1]")).click();
 
 
 // Enter the email of the user that you wish to create
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("input-email"))));
 		Thread.sleep(1000);
 		driver.findElement(By.id("input-email")).sendKeys(userid + "@trismax.com");
 
@@ -122,7 +122,7 @@ public class OnlineCourse_CompleteAndSubmit {
 
 		Thread.sleep(2000);
 //Click Role Page
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Roles')]"))));
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
 		Thread.sleep(2000);
@@ -144,7 +144,8 @@ public class OnlineCourse_CompleteAndSubmit {
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
+		
+ Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("welcomeShowRS"))));
 		Thread.sleep(1000);
 		driver.findElement(By.id("welcomeShowRS")).click();
 		Thread.sleep(1500);
@@ -157,23 +158,23 @@ public class OnlineCourse_CompleteAndSubmit {
 		driver.findElement(By.name("question[1164]")).click();
 		driver.findElement(By.name("question[4676]")).click();
 		driver.findElement(By.name("question[7466]")).click();
-		driver.findElement(By.name("question[7467]")).click();
+
 
 		Thread.sleep(1500);
 
 		driver.findElement(By.xpath("//*[@id=\"rs-modal1___BV_modal_footer_\"]/div/button")).click();
 		Thread.sleep(4500);
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("annContinue"))));
 		Thread.sleep(1000);
 		driver.findElement(By.id("annContinue")).click();
 
 		//got to the prerequisite and complete it
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("kimi-online-006"); //checklist name on localhost
 
@@ -183,7 +184,7 @@ public class OnlineCourse_CompleteAndSubmit {
 
 
 		//Click on the Enroll button
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
 
@@ -210,7 +211,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		Thread.sleep(2000);
 
 		//Clicking on 'Which of these are animals' options - Cat, Elephant, Fox
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"c-quiz\"]/ol/li/div[2]/label[4]/input"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"c-quiz\"]/ol/li/div[2]/label[4]/input"))));
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
 		driver.findElement(By.xpath("//*[@id=\"c-quiz\"]/ol/li/div[2]/label[4]/input")).click(); // Cat
@@ -233,11 +234,11 @@ public class OnlineCourse_CompleteAndSubmit {
 			driver.switchTo().window(winhandle);
 		}
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Courses')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'Courses')]")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("kimi-online-006"); //checklist name on localhost
 
@@ -251,11 +252,11 @@ public class OnlineCourse_CompleteAndSubmit {
 			System.out.println("The course page status is not correct");
 		}
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'My History')]"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'My History')]"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'My History')]")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='form-control']"))));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("kimi-online-006"); //checklist name on localhost
 		Thread.sleep(2000);

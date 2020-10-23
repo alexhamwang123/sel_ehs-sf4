@@ -28,7 +28,7 @@ public class EHSR_ComplianceReport {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-		WebDriverWait wait= new WebDriverWait(driver,30);
+		WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
@@ -48,7 +48,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Admin')]")).click();
 		Thread.sleep(1000);
 
@@ -65,16 +65,16 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		driver.findElement(By.xpath("//a[contains(text(),'RC Admin')]")).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='form-control']")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys("R2zMeXamXC");
 
 		//Click the Result
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]")).click();
 		//CLick Statistics
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Statistics')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Statistics')]")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[contains(text(),'Statistics')]")).click();
 		Thread.sleep(2000);
@@ -83,7 +83,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		System.out.println("Active_Number"+Active_Number);
 
 		//Clicking on EHS Reports under Reports
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 		driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
 		Thread.sleep(1000);
 
@@ -119,7 +119,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		WebElement Go=driver.findElement(By.xpath("//button[contains(text(),'Go')]"));
 		js.executeScript("arguments[0].click();",Go);
 		//Click OK Btn
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+		Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 

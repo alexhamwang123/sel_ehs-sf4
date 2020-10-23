@@ -25,7 +25,7 @@ public class OnlineMinTime {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait= new WebDriverWait(driver,30);
+        WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
@@ -54,7 +54,7 @@ public class OnlineMinTime {
 
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Courses')]")));
 
         Thread.sleep(1000);
         WebElement Admin=driver.findElement(By.xpath("//span[contains(text(),'Admin')]"));
@@ -64,17 +64,17 @@ public class OnlineMinTime {
 
         js.executeScript("arguments[0].click()", courseAdmin);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         driver.findElement(By.partialLinkText("Online Course Admin")).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
         WebElement CreateBtn = driver.findElement(By.xpath("//a[contains(text(),'Create new course')]"));
         js.executeScript("arguments[0].click()", CreateBtn);
 
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("EHS - Others");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
@@ -97,12 +97,12 @@ public class OnlineMinTime {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Details
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         //input training time
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
         driver.findElement(By.id("course-trainingTime")).sendKeys("1");
         //input credit
@@ -112,24 +112,24 @@ public class OnlineMinTime {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Online Variants
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Edit Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@class='btn-sm btn btn-outline-primary border-0']")).click();
 
         //input course type
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.id("input-type")));
         Thread.sleep(1000);
-        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Course Creator Content");
+        new Select(driver.findElement(By.id("input-type"))).selectByVisibleText("Course Builder");
 
         //Save btn
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Edit Course Content Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Edit Course Content')]")));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'Edit Course Content')]")).click();
 
@@ -138,7 +138,7 @@ public class OnlineMinTime {
         }
         Thread.sleep(1000);
         //input content
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(2000);
         WebElement Frame= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/iframe"));
         driver.switchTo().frame(Frame);
@@ -152,8 +152,10 @@ public class OnlineMinTime {
         //Click Save btn
         Thread.sleep(1000);
 
+
+        JavascriptExecutor js1 = (JavascriptExecutor)driver;
         WebElement Save_Btn=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
-        js.executeScript("arguments[0].click()", Save_Btn);
+        js1.executeScript("arguments[0].click()", Save_Btn);
         Thread.sleep(1000);
         //Click OK Btn
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
@@ -161,26 +163,30 @@ public class OnlineMinTime {
 
         //upload voiceover file
         driver.findElement(By.id("course-voice-over")).sendKeys("/Users/trismax/IdeaProjects/sel_ehs-sf4/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         //Select MIN Time 15 sec
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Thread.sleep(10000);
         new Select(driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/select[1]"))).selectByVisibleText("15 seconds");
-
         //CLick Save&OK
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
-        js.executeScript("arguments[0].click()", Save_Btn);
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Thread.sleep(2000);
+        WebElement Save_Btn1=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
+        js1.executeScript("arguments[0].click()", Save_Btn1);
         //Click OK Btn
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
-
+        Thread.sleep(1000);
         //CLick Add Page
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         WebElement AddPage=   driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"));
-        js.executeScript("arguments[0].click()", AddPage);
+        js1.executeScript("arguments[0].click()", AddPage);
 
         //input content
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(2000);
         WebElement Frame1= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/iframe"));
         driver.switchTo().frame(Frame1);
@@ -194,39 +200,45 @@ public class OnlineMinTime {
 
 
         //Click Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
-        js.executeScript("arguments[0].click()", Save_Btn);
+        WebElement Save_Btn2=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
+        js1.executeScript("arguments[0].click()", Save_Btn2);
 
         //Click OK Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
 
         //upload voiceover file
         driver.findElement(By.id("course-voice-over")).sendKeys("/Users/trismax/IdeaProjects/sel_ehs-sf4/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         //Select MIN Time 30 sec
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Thread.sleep(10000);
         new Select(driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/select[1]"))).selectByVisibleText("30 seconds");
 
         //Click Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
-        Thread.sleep(1000);
-        js.executeScript("arguments[0].click()", Save_Btn);
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Thread.sleep(2000);
+        WebElement Save_Btn3=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
+        js1.executeScript("arguments[0].click()", Save_Btn3);
 
         //Click OK Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
-
+        Thread.sleep(1000);
         //CLick Add Page
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         WebElement AddPage1=   driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"));
-        js.executeScript("arguments[0].click()", AddPage1);
-
+        js1.executeScript("arguments[0].click()", AddPage1);
+        Thread.sleep(2000);
         //input content
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(2000);
         WebElement Frame2= driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[1]/div[2]/div[1]/iframe"));
         driver.switchTo().frame(Frame2);
@@ -240,16 +252,17 @@ public class OnlineMinTime {
 
 
         //Click Save Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
-        js.executeScript("arguments[0].click()", Save_Btn);
+        WebElement Save_Btn4=driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
+        js1.executeScript("arguments[0].click()", Save_Btn4);
 
         //Click OK Btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(1000);
         //Close the window
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
         Thread.sleep(1000);
         driver.close();
 
@@ -261,7 +274,7 @@ public class OnlineMinTime {
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Visibility btn
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
         Thread.sleep(1000);
 
         WebElement VisibilityBtn=driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
@@ -272,7 +285,7 @@ public class OnlineMinTime {
         js.executeScript("arguments[0].click()", ViewableBtn);
 
         //Wait until the success message shows up
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/header")));
         if(!ViewableBtn.isEnabled()){
             Assert.fail("Creation Failed");
         }
@@ -293,16 +306,18 @@ public class OnlineMinTime {
             driver.switchTo().window(winHandle);
         }
         //Click English btn
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
+        Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]")));
         WebElement English= driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div/div/div[2]/div/button[1]"));
-        JavascriptExecutor js1 = (JavascriptExecutor)driver;
-        js1.executeScript("arguments[0].click()", English);
+        JavascriptExecutor js2 = (JavascriptExecutor)driver;
+        js2.executeScript("arguments[0].click()", English);
 
         Thread.sleep(2000);
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
 
+        //Click Play
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div[2]/div/div")).click();
 
         Thread.sleep(5000);
 
@@ -316,13 +331,18 @@ public class OnlineMinTime {
         Thread.sleep(23000);
         try {
             WebElement NextBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div/div[3]/button[3]"));
-            JavascriptExecutor js2 = (JavascriptExecutor)driver;
-            js2.executeScript("arguments[0].click()", NextBtn);
+            JavascriptExecutor js3 = (JavascriptExecutor)driver;
+            js3.executeScript("arguments[0].click()", NextBtn);
             System.out.println("Min Time is 15 sec, More than 15 sec is the time clickable");
         }
         catch (ElementClickInterceptedException e) {
             Assert.fail("Next Btn should  be clickable,when the actual time is more than Min Time");
         }
+        Thread.sleep(2000);
+        //Click Play
+       //  driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[1]/div[2]/div/div")).click();
+
+
         //Min> VoiceOverDuration
         Thread.sleep(2000);
         for(String winHandle : driver.getWindowHandles()) {
@@ -339,13 +359,14 @@ public class OnlineMinTime {
         Thread.sleep(8000);
         try {
             WebElement NextBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div/div[3]/button[3]"));
-            JavascriptExecutor js2 = (JavascriptExecutor)driver;
-            js2.executeScript("arguments[0].click()", NextBtn);
+            JavascriptExecutor js4 = (JavascriptExecutor)driver;
+            js4.executeScript("arguments[0].click()", NextBtn);
             System.out.println("users can only move forward once min time  done, even though the voice over has finished");
         }
         catch (ElementClickInterceptedException e) {
             Assert.fail("users can not move forward once min time is done");
         }
+
 
         Thread.sleep(1500);
         driver.quit();
