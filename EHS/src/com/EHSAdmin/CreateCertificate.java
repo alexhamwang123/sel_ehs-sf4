@@ -569,7 +569,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		}
 		Thread.sleep(800);
 		JavascriptExecutor js3 = (JavascriptExecutor)driver;
-		driver.findElement(By.xpath("/html/body/div[1]/div/header/div[2]/nav/div/ul/li[6]/a")).click();
+		driver.findElement(By.xpath("//span[contains(text(),'Reports')]")).click();
 		Thread.sleep(1000);
 		WebElement myTrainingReport = driver.findElement(By.xpath("//a[contains(text(),'My Training Report')]"));
 		js3.executeScript("arguments[0].click()", myTrainingReport);

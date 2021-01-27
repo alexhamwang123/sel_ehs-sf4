@@ -137,7 +137,7 @@ public class OnlineCourse_CompleteAndSubmit {
 		// driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
 		//Thread.sleep(2000);
 		//Sign in the user that never completed the prerequisite & try the prerequisite
-		driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+		driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.id("username")).sendKeys(userid);
 		driver.findElement(By.id("password")).sendKeys(password);

@@ -155,7 +155,7 @@ public class ClassroomPrereqDecrease {
 
         //Click Edit Btn of time schedule
         driver.findElement(By.xpath("//*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[2]")).click();
-// Calendar&Time//click save
+        // Calendar&Time//click save
         driver.findElement(By.xpath(" //*[@id=\"classTimeTable\"]/tbody/tr/td[6]/div/button[1]")).click();
         Thread.sleep(1000);
         //Click the Save Btn
@@ -215,7 +215,7 @@ public class ClassroomPrereqDecrease {
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Add attendee
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
-        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[3]"));
+        WebElement AddAttendee=driver.findElement(By.xpath("//button[@title='Attendee List']"));
         js.executeScript("arguments[0].click()", AddAttendee);
         //CLick Attendee Tab
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
@@ -369,7 +369,7 @@ public class ClassroomPrereqDecrease {
 
         //CLick the result
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//td[contains(text(),'"+courseId+"')]")).click();
+        driver.findElement(By.xpath("//td[contains(text(),'"+courseId.substring(1)+"')]")).click();
         Thread.sleep(1000);
 
         //CLick Prereq Btn
@@ -381,7 +381,7 @@ public class ClassroomPrereqDecrease {
 
         //CLick the result
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//td[contains(text(),'"+courseId0+"')]")).click();
+        driver.findElement(By.xpath("//td[contains(text(),'"+courseId0.substring(1)+"')]")).click();
         Thread.sleep(1000);
 
         //input Classroom Details

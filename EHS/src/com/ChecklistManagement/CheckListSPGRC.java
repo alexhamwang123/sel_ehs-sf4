@@ -313,7 +313,7 @@ public class CheckListSPGRC {
         driver.findElement(By.id("input-desc")).sendKeys("this is the description for at least 20 characters!");
 
         Thread.sleep(1500);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div[4]/div/div/div[1]/div/div/button")).click();
         Thread.sleep(2500);
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
@@ -456,7 +456,7 @@ public class CheckListSPGRC {
         WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
 
 

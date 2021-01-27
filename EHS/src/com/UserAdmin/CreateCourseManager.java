@@ -146,7 +146,7 @@ public class CreateCourseManager {
 		WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
 		js.executeScript("arguments[0].click()",Logout);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+		driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
 		Thread.sleep(1000);
 
 		driver.findElement(By.id("username")).sendKeys(userid);

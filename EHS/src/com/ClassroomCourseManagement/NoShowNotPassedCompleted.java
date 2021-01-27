@@ -149,6 +149,9 @@ public class NoShowNotPassedCompleted {
         //Click the left calendar
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[8]/table/tbody/tr/td[1]/div/div/button")).click();
         Thread.sleep(1000);
+        //Click Currentmonth Btn
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[8]/table/tbody/tr/td[1]/div/div/div/div/div/div[1]/button[3]")).click();
+        Thread.sleep(1000);
         WebElement CalendarBox02=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div[2]/div[8]/table/tbody/tr/td[1]/div/div/div/div/div/div[2]"));
         List<WebElement> list2 = CalendarBox02.findElements(By.tagName("span"));
         //Reverse the list to find the end day in case there are two todays or two yesterdays
@@ -233,7 +236,7 @@ public class NoShowNotPassedCompleted {
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
         //Click Add attendee
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
-        WebElement AddAttendee=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/button[3]"));
+        WebElement AddAttendee=driver.findElement(By.xpath("//button[@title='Attendee List']"));
         js.executeScript("arguments[0].click()", AddAttendee);
         //CLick Attendee Tab
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[2]/a")));
@@ -341,6 +344,8 @@ public class NoShowNotPassedCompleted {
         //Click the left calendar
         driver.findElement(By.xpath("//div[@class='input-group']//div[1]//button[1]")).click();
         Thread.sleep(1000);
+        //click current month btn
+        driver.findElement(By.xpath("//button[@title='Current month']")).click();
         WebElement CalendarBox01=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[2]"));
         List<WebElement> list1 = CalendarBox01.findElements(By.tagName("span"));
         //Reverse the list to find the end day in case there are two todays or two yesterdays
@@ -411,6 +416,8 @@ public class NoShowNotPassedCompleted {
         //Click the right calendar
         driver.findElement(By.xpath("//div[@class='form-group row']//div[2]//button[1]")).click();
         Thread.sleep(1000);
+        //click current month btn
+        driver.findElement(By.xpath("//button[@title='Current month']")).click();
         WebElement CalendarBox3=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[2]/div/div/div[2]/div/div/div/div[2]"));
         List<WebElement> list3 = CalendarBox3.findElements(By.tagName("span"));
         //Reverse the list to find the end day in case there are two todays or two yesterdays

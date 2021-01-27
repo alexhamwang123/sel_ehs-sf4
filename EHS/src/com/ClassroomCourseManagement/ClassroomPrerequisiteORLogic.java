@@ -40,7 +40,7 @@ public class ClassroomPrerequisiteORLogic {
             try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
                     actions.build().perform(); }
             catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
-
+            driver.manage().window().maximize();
             RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
             String username = prop.getProperty("username");
             String password = prop.getProperty("password");
@@ -162,13 +162,18 @@ public class ClassroomPrerequisiteORLogic {
             Thread.sleep(2000);
             driver.findElement(By.xpath("//td[contains(text(),'"+unfinishedClassroom+"')]")).click();
             Thread.sleep(1000);
-
+            //Click Save
+            driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+            Thread.sleep(1000);
             //Click the first and
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
             driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div" +
                     "[2]/div[2]/div[2]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
             Thread.sleep(1000);
             driver.findElement(By.id("training-hour")).click();
+            Thread.sleep(1000);
+            //Click Save
+            driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
             Thread.sleep(1000);
 
             //click second and
@@ -290,7 +295,9 @@ public class ClassroomPrerequisiteORLogic {
             Thread.sleep(2000);
             driver.findElement(By.xpath("//td[contains(text(),'"+finishedOnline+"')]")).click();
             Thread.sleep(1000);
-
+            //Save btn
+            driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+            Thread.sleep(1000);
             //Click the and btn
             driver.findElement(By.xpath("//button[contains(text(),'and')]")).click();
             Thread.sleep(1000);

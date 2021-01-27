@@ -176,8 +176,9 @@ public class ClassroomPrerequisiteLInkedOR {
             Thread.sleep(1000);
             driver.findElement(By.id("training-hour")).click();
             Thread.sleep(1000);
-
-
+            //Click Save
+            driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+            Thread.sleep(1000);
             //Click the first link
             driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]" +
                     "/div[2]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/button[2]")).click();
@@ -304,8 +305,9 @@ public class ClassroomPrerequisiteLInkedOR {
             Thread.sleep(1000);
             driver.findElement(By.id("training-hour")).click();
             Thread.sleep(1000);
-
-
+            //Click Save
+            driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
+            Thread.sleep(1000);
             //click second and
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
             driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/di" +

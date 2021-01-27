@@ -130,7 +130,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 			if (dateofcanlendar1.equals(Number1)) {
 				System.out.println("Object Found Yeah Yeah Yeah");
-				js1.executeScript("arguments[0].click();", e);
+				js1.executeScript("arguments[0].click()",e);
 				break;
 			}
 			else{System.out.println("Object Not Found ");
@@ -152,7 +152,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 			if (dateofcanlendar2.equals(Number1)) {
 				System.out.println("Object Found Yeah Yeah Yeah");
-				js1.executeScript("arguments[0].click();", e);
+				js1.executeScript("arguments[0].click();",e);
 				break;
 			}
 			else{System.out.println("Object Not Found ");

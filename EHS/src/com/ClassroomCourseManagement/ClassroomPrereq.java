@@ -201,7 +201,7 @@ public class ClassroomPrereq {
         js1.executeScript("arguments[0].click()", Logout0);
         Thread.sleep(1500);
 
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
         // driver.findElement(By.cssSelector("input[type='submit'][value='OK']")).click();
         //Thread.sleep(2000);

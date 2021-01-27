@@ -126,7 +126,7 @@ public class OnlineCourseSPGVisibility {
 
         Thread.sleep(1500);
         //Click Manager
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div[4]/div/div/div[1]/div/div/button")).click();
         Thread.sleep(2500);
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);
@@ -260,7 +260,7 @@ public class OnlineCourseSPGVisibility {
         WebElement Logout=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click()",Logout);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);
@@ -368,7 +368,7 @@ public class OnlineCourseSPGVisibility {
 
 
         Thread.sleep(1500);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div/div[4]/div/div/div/div[1]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div[4]/div/div/div[1]/div/div/button")).click();
         Thread.sleep(2500);
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("criteriaBadge"))));
         Thread.sleep(1000);

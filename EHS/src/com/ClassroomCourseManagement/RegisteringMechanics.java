@@ -336,7 +336,7 @@ public class RegisteringMechanics {
         WebElement Logout= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click();", Logout);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
         System.out.println("Check Point 1");
         driver.findElement(By.id("username")).sendKeys(userid);
@@ -399,7 +399,7 @@ public class RegisteringMechanics {
         WebElement Logout1= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click();", Logout1);
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("username")).sendKeys(userid1);
         driver.findElement(By.id("password")).sendKeys(password);
@@ -460,7 +460,7 @@ public class RegisteringMechanics {
             WebElement Logout2= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
             js.executeScript("arguments[0].click();", Logout2);
             Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(username);
@@ -490,7 +490,7 @@ public class RegisteringMechanics {
             WebElement Logout3= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
             js.executeScript("arguments[0].click();", Logout3);
             Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
 
         driver.findElement(By.id("username")).sendKeys(userid);

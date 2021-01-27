@@ -118,9 +118,9 @@ public class NormalOnlineAndAddOnlineCourseManager {
         WebElement Logout0=driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click()", Logout0);
         Thread.sleep(1500);
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2000);
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("username"))));

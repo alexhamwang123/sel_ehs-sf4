@@ -177,7 +177,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         WebElement Logout1= driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
         js.executeScript("arguments[0].click();", Logout1);
         Thread.sleep(1500);
-        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/img")).click();
+        driver.findElement(By.xpath("//*[@id=\"top-menu\"]/div/a/div/span")).click();
         Thread.sleep(2500);
         driver.findElement(By.id("username")).sendKeys("X00003037");
         driver.findElement(By.id("password")).sendKeys("11111111");

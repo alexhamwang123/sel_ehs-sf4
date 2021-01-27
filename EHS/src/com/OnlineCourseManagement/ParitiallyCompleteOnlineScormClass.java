@@ -207,6 +207,7 @@ public class ParitiallyCompleteOnlineScormClass {
         //Wait for next btn to close window
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("scorm-container"))));
         Thread.sleep(2500);
+
         robot.keyPress(KeyEvent.VK_META);
         robot.keyPress(KeyEvent.VK_W);
         robot.keyRelease(KeyEvent.VK_META);
