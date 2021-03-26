@@ -85,7 +85,7 @@ public class OnlineCoursePrereqDecrease {
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
-                String CapitalLetter = generator.generate(1).toUpperCase();
+        String CapitalLetter = generator.generate(1).toUpperCase();
         String courseId = generator.generate(10);
         courseId=CapitalLetter.concat(courseId);
         System.out.println(courseId);
@@ -108,11 +108,14 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Classroom Details
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
         Thread.sleep(2000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
         new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
-        Thread.sleep(2000);;
+        Thread.sleep(2000);
 
 
         //input Classroom Details
@@ -128,7 +131,7 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Offer Schedule
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
@@ -242,9 +245,9 @@ public class OnlineCoursePrereqDecrease {
         //Go back to classroom course management and create another course to use as a second prerequisite
 
         Thread.sleep(2000);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//a[contains(text(),'Classroom Management')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(1000);
@@ -258,6 +261,7 @@ public class OnlineCoursePrereqDecrease {
 
         String courseId0 = generator.generate(10);
         String Building0 = generator.generate(11);
+        courseId0=CapitalLetter.concat(courseId0);
         System.out.println(courseId0);
         driver.findElement(By.id("course-num")).sendKeys(courseId0);
 
@@ -275,7 +279,10 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Classroom Details
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
         Thread.sleep(2000);
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
         new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
@@ -294,7 +301,7 @@ public class OnlineCoursePrereqDecrease {
         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
         //Click Offer Schedule
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
@@ -331,9 +338,9 @@ public class OnlineCoursePrereqDecrease {
 
         //Create Online Course to contain all Prereq
         Thread.sleep(2000);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//a[contains(text(),'Classroom Management')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Classroom Course Management')]")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);
@@ -351,6 +358,7 @@ public class OnlineCoursePrereqDecrease {
         new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
         String courseId1 = generator.generate(10);
+        courseId1=CapitalLetter.concat(courseId1);
         System.out.println(courseId1);
         //input Course Number
         driver.findElement(By.id("course-num")).sendKeys(courseId1);
@@ -367,7 +375,9 @@ public class OnlineCoursePrereqDecrease {
         //Click Online Details
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
         //input training time
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));

@@ -38,7 +38,7 @@ public class CheckListSPGCourseCreation {
                 actions.build().perform(); }
         catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
         driver.manage().window().maximize();
-        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();;
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
 
@@ -96,7 +96,9 @@ public class CheckListSPGCourseCreation {
             //Click  Details
             Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
             Thread.sleep(2000);
-            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-expiration")));
             new Select(driver.findElement(By.id("course-expiration"))).selectByVisibleText("6 months");
             Thread.sleep(2000);

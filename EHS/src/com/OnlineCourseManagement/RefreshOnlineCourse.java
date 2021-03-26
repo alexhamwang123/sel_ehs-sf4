@@ -102,7 +102,9 @@ public class RefreshOnlineCourse {
             //Click Online Details
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-num")));
             Thread.sleep(2000);
-            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
             //input training time
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-trainingTime")));
@@ -280,11 +282,13 @@ public class RefreshOnlineCourse {
             driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
 
             //Click Classroom Details
-            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
 
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
             new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
-        Thread.sleep(2000);;
+        Thread.sleep(2000);
 
             Thread.sleep(1000);
 

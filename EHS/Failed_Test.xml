@@ -4,16 +4,8 @@
     <test name="sel_ehs-sf4">
         <classes>
             <class name="com.ChecklistManagement.ChecklistRegionVisibility"/>
-            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
-            <class name="com.ClassroomCourseManagement.ClassroomRegionVisibility"/>
             <class name="com.OnlineCourseManagement.OnlineRandomQuestionOrder"/>
-
-
-
-
-            <class name="com.ClassroomCourseManagement.CreateOfferingRegisterWithMgrUserAndEmail"/>
-            <class name="com.ClassroomCourseManagement.EmailAtt"/>
-
+            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
         </classes>
     </test> <!-- sel_ehs-sf4 -->
 </suite> <!-- Default Suite -->

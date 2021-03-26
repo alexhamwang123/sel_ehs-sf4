@@ -89,7 +89,9 @@ public class ClassroomPrereq {
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div/div[2]/div[2]/table/tbody/tr/td[1]")).click();
 
         //Click Classroom Details
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
         Thread.sleep(2000);
         //see if the prereq exists

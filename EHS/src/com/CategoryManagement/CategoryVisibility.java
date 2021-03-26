@@ -102,7 +102,7 @@ public class CategoryVisibility {
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("course-category")));
         new Select(driver.findElement(By.id("course-category"))).selectByVisibleText(CreateAndEditCategory.CLassroom_Sub_Category_Name);
 
-        driver.findElement(By.partialLinkText("Classroom Management")).click();
+        driver.findElement(By.partialLinkText("Classroom Course Management")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText("Online Course Admin"))));
         Thread.sleep(1000);

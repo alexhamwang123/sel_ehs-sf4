@@ -75,6 +75,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             // Enter the FAQ Title
             RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
             String title = generator.generate(10);
+            System.out.println("Title is ="+title);
 
             driver.findElement(By.xpath("//*[@id=\"title\"]")).sendKeys(title);
 
@@ -158,6 +159,8 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
             for(String winhandle: driver.getWindowHandles()){
                     driver.switchTo().window(winhandle);
             }
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'TRAINING PLAN')]")));
+            driver.findElement(By.xpath("//a[contains(text(),'TRAINING PLAN')]")).click();
 
             Thread.sleep(3000);
             if(!driver.getPageSource().contains(title)){

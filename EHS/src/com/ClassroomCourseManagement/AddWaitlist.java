@@ -77,10 +77,10 @@ public class AddWaitlist {
             new Select(driver.findElement(By.id("course-category"))).selectByVisibleText("Regular");
             new Select(driver.findElement(By.id("course-fulfill"))).selectByVisibleText("Normal & Refresh");
 
-                    String CapitalLetter = generator.generate(1).toUpperCase();
-        String courseId = generator.generate(10);
-        courseId=CapitalLetter.concat(courseId);
-        System.out.println(courseId);
+            String CapitalLetter = generator.generate(1).toUpperCase();
+            String courseId = generator.generate(10);
+            courseId=CapitalLetter.concat(courseId);
+            System.out.println(courseId);
 
             String Building = generator.generate(11);
             System.out.println(courseId);
@@ -97,12 +97,17 @@ public class AddWaitlist {
 
             //Save btn
             driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
-
+            Thread.sleep(1000);
             //Click Classroom Details
-            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+            Thread.sleep(1000);
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+            Thread.sleep(1000);
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
             new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
-        Thread.sleep(2000);;
+            Thread.sleep(2000);
 
             //input Classroom Details
         Wait.until(ExpectedConditions.elementToBeClickable(By.id("training-hour")));
@@ -221,10 +226,11 @@ public class AddWaitlist {
 
             //CLick Waitlist Btn
             Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[3]/a")));
+            Thread.sleep(1000);
             driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div/div/div/div[1]/ul/li[3]/a")).click();
             Thread.sleep(2000);
 
-            if(!driver.getPageSource().contains("547891")){
+            if(!driver.getPageSource().contains("X00002380")){
 
                     Assert.fail("Waitlist failed");
             }

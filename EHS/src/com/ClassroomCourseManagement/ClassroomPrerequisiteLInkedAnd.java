@@ -115,10 +115,12 @@ public class ClassroomPrerequisiteLInkedAnd {
 
             //Click Classroom Details
             Thread.sleep(2000);
-            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
             Wait.until(ExpectedConditions.elementToBeClickable(By.id("expiration")));
             new Select(driver.findElement(By.id("expiration"))).selectByVisibleText("6 months");
-        Thread.sleep(2000);;
+        Thread.sleep(2000);
 
 
 
@@ -192,7 +194,7 @@ public class ClassroomPrerequisiteLInkedAnd {
 
             //Click Offer Schedule
             Thread.sleep(2000);
-            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Management')]")));
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
             Thread.sleep(2000);
             driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
@@ -281,7 +283,9 @@ public class ClassroomPrerequisiteLInkedAnd {
             Thread.sleep(2000);
             //Click Classroom Details
             Thread.sleep(2000);
-            driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
+            Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")));
+Thread.sleep(1000);
+driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[2]/a")).click();
             Thread.sleep(2000);
             //Delete the existing first Prereq
             driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div/div/div[5]/div/div/div[1]/div/div/div/button[2]")).click();

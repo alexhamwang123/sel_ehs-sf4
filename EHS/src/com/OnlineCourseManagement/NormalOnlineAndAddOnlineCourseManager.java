@@ -29,7 +29,7 @@ public class NormalOnlineAndAddOnlineCourseManager {
         WebDriver driver = new ChromeDriver();
         WebDriverWait Wait= new WebDriverWait(driver,30);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();;
+        RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build();
 
         File file = new File(System.getProperty("user.dir")+"/PasswordFileEHS.properties");
 
