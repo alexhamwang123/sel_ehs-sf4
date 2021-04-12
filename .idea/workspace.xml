@@ -1,85 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="All Pass Version">
+    <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="New Backup Version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/Failed_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/Failed_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/chromedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/CategoryManagement/CategoryVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGCourseCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistButtonSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistDownLoadURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistDownLoadURL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteAndLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteAndLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedAnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteORLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteORLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NewCreateChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NewCreateChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalChecklistAndAddChecklistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalChecklistAndAddChecklistManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/NormalRefreshChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/RefreshChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomCourseSourceButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomDirectLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomMultiSections.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomMultiSections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedAnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedOR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomRegionVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGCourseCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSiteVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSiteVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomVisibilityCheckbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomVisibilityCheckbox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegisterWithMgrUserAndEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegisterWithMgrUserAndEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/EmailAtt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ManuallyRemoveWaitlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NoShowNotPassedCompleted.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalClassroomAndAddClassroomCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalClassroomAndAddClassroomCourseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/NormalRefreshClassroomCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RefreshClassroomCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterWaitlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateFAQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateScormClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalOnlineAndAddOnlineCourseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/NormalRefreshOnlineCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineButtonSource_DirectLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGCourseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGCourseCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineScormVerify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ParitiallyCompleteOnlineScormClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ParitiallyCompleteOnlineScormClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/RefreshOnlineCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +82,7 @@
       <recent name="$PROJECT_DIR$/EHS/src" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UnregisterWaitlist">
+  <component name="RunManager" selected="TestNG.OnlineRandomQuestionOrder.OnlineRandomQuestionOrder">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -186,16 +114,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassroomPrerequisiteLInkedAnd" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CancelAndNotify and 13 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.ClassroomCourseManagement.CancelAndNotify" />
+        <pattern testClass="com.ChecklistManagement.ChecklistRegionVisibility" />
+        <pattern testClass="com.ClassroomCourseManagement.ClasrromSPGVisibility" />
+        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereqDecrease" />
+        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic" />
+        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic" />
+        <pattern testClass="com.ClassroomCourseManagement.ClassroomSPGRC" />
+        <pattern testClass="com.ClassroomCourseManagement.CreateOfferingRegister" />
+        <pattern testClass="com.OnlineCourseManagement.CreateScormClass" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineMinTime" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRegionVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass" />
+        <pattern testClass="com.ClassroomCourseManagement.RegisteringMechanics" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OnlineRandomQuestionOrder" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
+          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedAnd" />
+      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
@@ -204,53 +158,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassroomSiteVisibility" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
+          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.ClassroomSiteVisibility" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NormalRefreshClassroomCourse" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.NormalRefreshClassroomCourse" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NormalRefreshClassroomCourse.NormalRefreshClassroomCourse" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.NormalRefreshClassroomCourse" />
-      <option name="METHOD_NAME" value="NormalRefreshClassroomCourse" />
+      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
+      <option name="METHOD_NAME" value="OnlineRandomQuestionOrder" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
@@ -273,6 +191,25 @@
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="* and 6 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.ChecklistManagement.*" />
+        <pattern testClass="com.ClassroomCourseManagement.*" />
+        <pattern testClass="com.EHSAdmin.*" />
+        <pattern testClass="com.Miscellaneous.*" />
+        <pattern testClass="com.OnlineCourseManagement.*" />
+        <pattern testClass="com.Reports.*" />
+        <pattern testClass="com.UserAdmin.*" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -330,21 +267,21 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.All testng-customsuite.xml" />
-      <item itemvalue="TestNG.ClassroomPrerequisiteLInkedAnd" />
-      <item itemvalue="TestNG.ClassroomSiteVisibility" />
-      <item itemvalue="TestNG.NormalRefreshClassroomCourse" />
-      <item itemvalue="TestNG.NormalRefreshClassroomCourse.NormalRefreshClassroomCourse" />
-      <item itemvalue="TestNG.UnregisterWaitlist" />
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
+      <item itemvalue="TestNG.UnregisterWaitlist" />
+      <item itemvalue="TestNG.* and 6 more" />
+      <item itemvalue="TestNG.CancelAndNotify and 13 more" />
+      <item itemvalue="TestNG.OnlineRandomQuestionOrder" />
+      <item itemvalue="TestNG.OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" />
+        <item itemvalue="TestNG.OnlineRandomQuestionOrder" />
+        <item itemvalue="TestNG.CancelAndNotify and 13 more" />
+        <item itemvalue="TestNG.* and 6 more" />
         <item itemvalue="TestNG.UnregisterWaitlist" />
-        <item itemvalue="TestNG.NormalRefreshClassroomCourse.NormalRefreshClassroomCourse" />
-        <item itemvalue="TestNG.NormalRefreshClassroomCourse" />
-        <item itemvalue="TestNG.ClassroomSiteVisibility" />
-        <item itemvalue="TestNG.ClassroomPrerequisiteLInkedAnd" />
       </list>
     </recent_temporary>
   </component>
@@ -696,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611750955336</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="New Backup Version">
+      <created>1616724444986</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1616724444986</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -737,7 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="OnlineCoursePrereq" />
     <MESSAGE value="OnlineCoursePrereqDecrease" />
     <MESSAGE value="OnlinePrereqComplete" />
     <MESSAGE value="Daily PUSH／19／NOV" />
@@ -762,51 +705,52 @@
     <MESSAGE value="EHS 13.4-D3 Not All Passed(with tickets but code should be fine) 28/July 2020" />
     <MESSAGE value="Backup Version" />
     <MESSAGE value="All Pass Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="All Pass Version" />
+    <MESSAGE value="New Backup Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Backup Version" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="581" y="118" key="CommitChangelistDialog2" timestamp="1611750952769">
+    <state x="581" y="118" key="CommitChangelistDialog2" timestamp="1616724442454">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state x="581" y="118" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1611750952769" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom" timestamp="1616723339743">
-      <screen x="0" y="23" width="1920" height="982" />
+    <state x="581" y="118" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1616724442454" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom" timestamp="1618242316235">
+      <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764906" />
     <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198641" />
     <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713706" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1616723339743" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1616717547585" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1618242163375" />
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1618242316235" />
     <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.985@0.23.1920.985" timestamp="1614307269436" />
     <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1611744701438" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center" timestamp="1616723339742">
-      <screen x="0" y="23" width="1920" height="982" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center" timestamp="1618242316225">
+      <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764904" />
     <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198639" />
     <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713703" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1616723339742" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1616717547545" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1618242163372" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1618242316225" />
     <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.985@0.23.1920.985" timestamp="1614307269433" />
     <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1611744701437" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left" timestamp="1616723339742">
-      <screen x="0" y="23" width="1920" height="982" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left" timestamp="1618242316222">
+      <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764902" />
     <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198639" />
     <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713702" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1616723339742" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1616717547530" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1618242163371" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1618242316222" />
     <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.985@0.23.1920.985" timestamp="1614307269431" />
     <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1611744701436" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right" timestamp="1616723339743">
-      <screen x="0" y="23" width="1920" height="982" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right" timestamp="1618242316233">
+      <screen x="0" y="23" width="1920" height="983" />
     </state>
     <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764905" />
     <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198640" />
     <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713704" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1616723339743" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1616717547577" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1618242163373" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1618242316233" />
     <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.985@0.23.1920.985" timestamp="1614307269434" />
     <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.994@0.23.1920.994" timestamp="1611744701437" />
     <state width="1878" height="336" key="GridCell.Tab.1.bottom" timestamp="1611751083287">
@@ -825,10 +769,10 @@
       <screen x="0" y="23" width="1920" height="982" />
     </state>
     <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.982@0.23.1920.982" timestamp="1611751083286" />
-    <state x="560" y="243" key="Vcs.Push.Dialog.v2" timestamp="1611750965430">
+    <state x="560" y="243" key="Vcs.Push.Dialog.v2" timestamp="1616724450338">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state x="560" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.982@0.23.1920.982" timestamp="1611750965430" />
+    <state x="560" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.982@0.23.1920.982" timestamp="1616724450338" />
     <state x="321" y="189" width="1172" height="700" key="find.popup" timestamp="1616718492754">
       <screen x="0" y="23" width="1920" height="982" />
     </state>

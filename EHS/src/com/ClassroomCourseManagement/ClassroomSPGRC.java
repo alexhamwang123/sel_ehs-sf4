@@ -346,7 +346,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Thread.sleep(1500);
         WebElement EmailUser = driver.findElement(By.xpath("//button[contains(text(),'OK')]"));
         js0.executeScript("arguments[0].click();", EmailUser);
-
+        Thread.sleep(1000);
         //Assign the RC
         //Click the Assign Btn
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//main//li[4]//a[1]"))));

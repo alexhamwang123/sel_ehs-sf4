@@ -145,10 +145,10 @@ public class OnlineRandomQuestionOrder {
         Thread.sleep(2000);
 
         try{
-            driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+            driver.findElement(By.xpath("//button[contains(text(),'Cancel')]")).click();
 
         } catch (Exception e) {
-           System.out.println("Check Point 01");
+            System.out.println("Check Point 01");
         }
 
         for(String winHandle : driver.getWindowHandles()) {
@@ -171,9 +171,27 @@ public class OnlineRandomQuestionOrder {
             Assert.fail("Normal Order Failed");
         }
 
-        //Close the window
+        //complete the course to prevent session save from question order change
+        driver.findElement(By.xpath("//label[contains(text(),'C1')]")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'C2')]")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'C3')]")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'C4')]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Grade Quiz')]")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         Thread.sleep(1000);
-        driver.close();
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Exit Course')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        Thread.sleep(1000);
 
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
@@ -268,11 +286,6 @@ public class OnlineRandomQuestionOrder {
 
         Thread.sleep(2000);
 
-        try {
-            driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
         for(String winHandle : driver.getWindowHandles()) {
@@ -291,13 +304,33 @@ public class OnlineRandomQuestionOrder {
 
         if(Q01=="Q1"&&Q02=="Q2"&&Q03=="Q3"&&Q04=="Q4"){
 
-            Assert.fail("Random Order Failed");
+            Assert.fail("randcom Order Failed");
         }
         else{
-            System.out.println("Random Order Successful");
+            System.out.println("randcom Order Successful");
 
         }
+        //complete the course to prevent session save from question order change
+        driver.findElement(By.xpath("//label[contains(text(),'C1')]")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'C2')]")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'C3')]")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'C4')]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Grade Quiz')]")).click();
 
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Exit Course')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'Exit Course')]")).click();
+
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+        Thread.sleep(1000);
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         driver.quit();
 
     }

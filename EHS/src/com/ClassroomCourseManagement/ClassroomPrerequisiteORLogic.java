@@ -194,7 +194,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
             Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Classroom Course Management')]")));
             Thread.sleep(2000);
             driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
-
+            Thread.sleep(2000);
             //Click Add offer
             Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[3]/div/div/div[1]/button")));
             Thread.sleep(2000);
