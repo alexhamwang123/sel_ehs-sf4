@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="New Backup Version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +79,7 @@
       <recent name="$PROJECT_DIR$/EHS/src" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.OnlineRandomQuestionOrder.OnlineRandomQuestionOrder">
+  <component name="RunManager" selected="TestNG.OnlineCoursePrereqDecrease">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -114,33 +111,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CancelAndNotify and 13 more" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryVisibility" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <option name="TEST_OBJECT" value="PATTERN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CategoryManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.CategoryManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.CategoryManagement.CategoryVisibility" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
-      <patterns>
-        <pattern testClass="com.ClassroomCourseManagement.CancelAndNotify" />
-        <pattern testClass="com.ChecklistManagement.ChecklistRegionVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.ClasrromSPGVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereqDecrease" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomSPGRC" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateOfferingRegister" />
-        <pattern testClass="com.OnlineCourseManagement.CreateScormClass" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineMinTime" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineRegionVisibility" />
-        <pattern testClass="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass" />
-        <pattern testClass="com.ClassroomCourseManagement.RegisteringMechanics" />
-      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OnlineRandomQuestionOrder" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="OnlineCoursePrereqDecrease" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
@@ -149,11 +138,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
+      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+      <patterns>
+        <pattern testClass="com.Reports.Manager_ChecklistCompletionReport" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursewithExpiration" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRegionVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass" />
+        <pattern testClass="com.ChecklistManagement.ChecklistExpirationDate" />
+        <pattern testClass="com.ChecklistManagement.ChecklistRegionVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.CreateScormClass" />
+        <pattern testClass="com.ClassroomCourseManagement.ClassroomExpirationDate" />
+        <pattern testClass="com.ClassroomCourseManagement.CancelAndNotify" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,24 +171,6 @@
       <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
       <option name="METHOD_NAME" value="OnlineRandomQuestionOrder" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UnregisterWaitlist" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.UnregisterWaitlist" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -247,6 +230,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.Reports.Manager_ChecklistCompletionReport and 9 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.Reports.Manager_ChecklistCompletionReport" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursewithExpiration" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRegionVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.ParitiallyCompleteOnlineScormClass" />
+        <pattern testClass="com.ChecklistManagement.ChecklistExpirationDate" />
+        <pattern testClass="com.ChecklistManagement.ChecklistRegionVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.CreateScormClass" />
+        <pattern testClass="com.ClassroomCourseManagement.ClassroomExpirationDate" />
+        <pattern testClass="com.ClassroomCourseManagement.CancelAndNotify" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="createCourseManagerFirst" type="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
@@ -267,21 +272,21 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.All testng-customsuite.xml" />
-      <item itemvalue="TestNG.com" />
-      <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.UnregisterWaitlist" />
-      <item itemvalue="TestNG.* and 6 more" />
-      <item itemvalue="TestNG.CancelAndNotify and 13 more" />
-      <item itemvalue="TestNG.OnlineRandomQuestionOrder" />
+      <item itemvalue="TestNG.CategoryVisibility" />
+      <item itemvalue="TestNG.OnlineCoursePrereqDecrease" />
       <item itemvalue="TestNG.OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" />
+      <item itemvalue="TestNG.* and 6 more" />
+      <item itemvalue="TestNG.com" />
+      <item itemvalue="TestNG.com.Reports.Manager_ChecklistCompletionReport and 9 more" />
+      <item itemvalue="TestNG.createCourseManagerFirst" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" />
-        <item itemvalue="TestNG.OnlineRandomQuestionOrder" />
-        <item itemvalue="TestNG.CancelAndNotify and 13 more" />
+        <item itemvalue="TestNG.OnlineCoursePrereqDecrease" />
+        <item itemvalue="TestNG.com.Reports.Manager_ChecklistCompletionReport and 9 more" />
         <item itemvalue="TestNG.* and 6 more" />
-        <item itemvalue="TestNG.UnregisterWaitlist" />
+        <item itemvalue="TestNG.CategoryVisibility" />
+        <item itemvalue="TestNG.OnlineRandomQuestionOrder.OnlineRandomQuestionOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -296,13 +301,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531764690341</updated>
-    </task>
-    <task id="LOCAL-00001" summary="New Class Missing">
-      <created>1541757425512</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1541757425512</updated>
     </task>
     <task id="LOCAL-00002" summary="New Class Missing">
       <created>1541757670690</created>
@@ -640,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616724444986</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="New Backup Version">
+      <created>1618242476118</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1618242476119</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -708,82 +713,11 @@
     <MESSAGE value="New Backup Version" />
     <option name="LAST_COMMIT_MESSAGE" value="New Backup Version" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="581" y="118" key="CommitChangelistDialog2" timestamp="1616724442454">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state x="581" y="118" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1616724442454" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom" timestamp="1618242316235">
-      <screen x="0" y="23" width="1920" height="983" />
-    </state>
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764906" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198641" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713706" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1618242163375" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.983@0.23.1920.983" timestamp="1618242316235" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.985@0.23.1920.985" timestamp="1614307269436" />
-    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1611744701438" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center" timestamp="1618242316225">
-      <screen x="0" y="23" width="1920" height="983" />
-    </state>
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764904" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198639" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713703" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1618242163372" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.983@0.23.1920.983" timestamp="1618242316225" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.985@0.23.1920.985" timestamp="1614307269433" />
-    <state width="1878" height="331" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1611744701437" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left" timestamp="1618242316222">
-      <screen x="0" y="23" width="1920" height="983" />
-    </state>
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764902" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198639" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713702" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1618242163371" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.983@0.23.1920.983" timestamp="1618242316222" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.985@0.23.1920.985" timestamp="1614307269431" />
-    <state width="1878" height="331" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1611744701436" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right" timestamp="1618242316233">
-      <screen x="0" y="23" width="1920" height="983" />
-    </state>
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.1002@0.23.1920.1002" timestamp="1611713764905" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.1017@0.23.1920.1017" timestamp="1616717198640" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1616684713704" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1618242163373" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.983@0.23.1920.983" timestamp="1618242316233" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.985@0.23.1920.985" timestamp="1614307269434" />
-    <state width="1878" height="331" key="GridCell.Tab.0.right/0.23.1920.994@0.23.1920.994" timestamp="1611744701437" />
-    <state width="1878" height="336" key="GridCell.Tab.1.bottom" timestamp="1611751083287">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.23.1920.982@0.23.1920.982" timestamp="1611751083287" />
-    <state width="1878" height="336" key="GridCell.Tab.1.center" timestamp="1611751083286">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.center/0.23.1920.982@0.23.1920.982" timestamp="1611751083286" />
-    <state width="1878" height="336" key="GridCell.Tab.1.left" timestamp="1611751083285">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.left/0.23.1920.982@0.23.1920.982" timestamp="1611751083285" />
-    <state width="1878" height="336" key="GridCell.Tab.1.right" timestamp="1611751083286">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.right/0.23.1920.982@0.23.1920.982" timestamp="1611751083286" />
-    <state x="560" y="243" key="Vcs.Push.Dialog.v2" timestamp="1616724450338">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state x="560" y="243" key="Vcs.Push.Dialog.v2/0.23.1920.982@0.23.1920.982" timestamp="1616724450338" />
-    <state x="321" y="189" width="1172" height="700" key="find.popup" timestamp="1616718492754">
-      <screen x="0" y="23" width="1920" height="982" />
-    </state>
-    <state x="321" y="189" width="1172" height="700" key="find.popup/0.23.1920.982@0.23.1920.982" timestamp="1616718492754" />
-    <state x="440" y="192" width="1172" height="700" key="find.popup/0.23.1920.983@0.23.1920.983" timestamp="1614305611646" />
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sel_ehs_sf4$_Users_trismax_IdeaProjects_sel_ehs_sf4_EHS_Failed_Test_xml.ic" NAME="$PROJECT_DIR$/EHS/Failed_Test.xml Coverage Results" MODIFIED="1614305657178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$CreateAndEditCertificate_CreateAndEditCertificate__1_.ic" NAME="CreateAndEditCertificate.CreateAndEditCertificate (1) Coverage Results" MODIFIED="1566393554884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.EHSAdmin.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/sel_ehs_sf4$_Users_trismax_IdeaProjects_sel_ehs_sf4_EHS_Failed_Test_xml.ic" NAME="$PROJECT_DIR$/EHS/Failed_Test.xml Coverage Results" MODIFIED="1614305657178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$com_ChecklistManagement___and_6_more.ic" NAME="com.ChecklistManagement.* and 6 more Coverage Results" MODIFIED="1590690930335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

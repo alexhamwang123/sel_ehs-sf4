@@ -121,6 +121,41 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 		JavascriptExecutor js1 = ((JavascriptExecutor) driver);
 		js1.executeScript("window.scrollBy(0,850)", "");
+//Add User manager
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[6]/div/div/div/button"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[6]/div/div/div/button")).click();
+		Thread.sleep(1000);
+		//Search and Click
+		driver.findElement(By.xpath("//input[@id='criteriaFirstname']")).sendKeys("chris");
+		driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
+		//CLick first Result
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/form/div/div[2]/table/tbody/tr/td[1]")).click();
+
+//Add user division
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[8]/div/div/button"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[8]/div/div/button")).click();
+
+		//Click the first result
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr[1]/td")).click();
+
+//Add user department
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[9]/div/div/button"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[9]/div/div/button")).click();
+
+		//Click the first result
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr[1]/td")).click();
+
+//Add user building
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[10]/div/div/button"))));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[10]/div/div/button")).click();
+
+		//Click the first result
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[2]/table/tbody/tr[1]/td")).click();
+
 
 // Clicking on USA Normal User
 //driver.findElement(By.cssSelector("input[type='checkbox'][value='1']")).click();
