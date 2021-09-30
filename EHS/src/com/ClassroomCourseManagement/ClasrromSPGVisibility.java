@@ -158,9 +158,14 @@ public class ClasrromSPGVisibility {
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
         //Click add course Btn
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Add Course')]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Add Course')]")).click();
+        Thread.sleep(1000);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Add Core Course')]"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[contains(text(),'Add Core Course')]")).click();
+        Thread.sleep(1000);
         Thread.sleep(1000);
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));
@@ -400,9 +405,14 @@ public class ClasrromSPGVisibility {
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/ul/li[3]/a")).click();
         //Click add course Btn
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button"))));
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[contains(text(),'Add Course')]"))));
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/button")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Add Course')]")).click();
+        Thread.sleep(1000);
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Add Core Course')]"))));
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[contains(text(),'Add Core Course')]")).click();
+        Thread.sleep(1000);
         Thread.sleep(1000);
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div/input"))));

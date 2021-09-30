@@ -4,8 +4,29 @@
     <test name="sel_ehs-sf4">
         <classes>
             <class name="com.ChecklistManagement.ChecklistRegionVisibility"/>
-            <class name="com.OnlineCourseManagement.OnlineRandomQuestionOrder"/>
-            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
+            <class name="com.ChecklistManagement.CheckListSPGRC"/>
+            <class name="com.ClassroomCourseManagement.ClassroomExpirationDate"/>
+            <class name="com.ClassroomCourseManagement.ClassroomMultiSections"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrereq"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrereqDecrease"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedAnd"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR"/>
+            <class name="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic"/>
+            <class name="com.ClassroomCourseManagement.ClassroomRegionVisibility"/>
+            <class name="com.ClassroomCourseManagement.ClassroomSiteVisibility"/>
+            <class name="com.ClassroomCourseManagement.ClassroomSPGRC"/>
+            <class name="com.Miscellaneous.EHS_ContactUs"/>
+            <class name="com.EHSAdmin.CreateAnnouncement"/>
+            <class name="com.ClassroomCourseManagement.CreateFullOffering"/>
+            <class name="com.ClassroomCourseManagement.CreateOfferingRegister"/>
+            <class name="com.ClassroomCourseManagement.AddAtt"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursePrereqDecrease"/>
+            <class name="com.OnlineCourseManagement.OnlineSPGRC"/>
+            <class name="com.ChecklistManagement.PrereqDecreaseChecklist"/>
+            <class name="com.ClassroomCourseManagement.RegisteringMechanics"/>
+            <class name="com.ClassroomCourseManagement.UnregisterClassroom"/>
+            <class name="com.ClassroomCourseManagement.UnregisterWaitlist"/>
         </classes>
     </test> <!-- sel_ehs-sf4 -->
 </suite> <!-- Default Suite -->

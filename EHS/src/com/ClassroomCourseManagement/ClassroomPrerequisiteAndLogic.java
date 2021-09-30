@@ -49,7 +49,7 @@ public class ClassroomPrerequisiteAndLogic {
         String finishedOnline = prop.getProperty("finished_Online");
         String finishedChecklist = prop.getProperty("finished_Checklist");
         String finishedClassroom = prop.getProperty("finished_Classroom");
-
+//button[@title='Save variant information']
 
         driver.findElement(By.id("username")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
