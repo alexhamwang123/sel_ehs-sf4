@@ -304,6 +304,8 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
             //Click Save
             driver.findElement(By.xpath("//button[@class='btn btn-primary btn-lg shadow rounded-circle']")).click();
             //click first or btn to and
+            Thread.sleep(2100);
+
             driver.findElement(By.xpath("//button[contains(text(),'or')]")).click();
             Thread.sleep(1000);
             driver.findElement(By.id("training-hour")).click();

@@ -296,7 +296,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Date SixMonthLater = cal.getTime();
 
          */
-        DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy",Locale.ENGLISH);
 
         String Expiration= dateFormat.format(current);
         System.out.println(Expiration);

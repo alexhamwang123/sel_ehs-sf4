@@ -2,16 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="New version">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/EHS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/EHS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/Failed_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/Failed_Test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/chromedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseSPGVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistRegionVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CancelAndNotify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedAnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/EHS_ContactUs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/DirectReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateAnnouncement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/EHS_ContactUs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/Miscellaneous/ForgotPassword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/FinalDisabledCourseIfNeed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +43,7 @@
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="2" />
   </component>
-  <component name="ExportTestResults" exportFormat="Xml" outputFolder="$USER_HOME$/Desktop" userTempatePath="" />
+  <component name="ExportTestResults" outputFolder="$USER_HOME$/Desktop" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -72,7 +86,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="two.files.diff.last.used.folder" value="$USER_HOME$/sel_ehs-sf4/EHS" />
   </component>
   <component name="RecentsManager">
@@ -86,7 +100,7 @@
       <recent name="$PROJECT_DIR$/EHS/src" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.OnlineMinTime">
+  <component name="RunManager" selected="TestNG.com.ChecklistManagement.* and 6 more">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -96,24 +110,6 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AddAtt" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.AddAtt" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,17 +132,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateAnnouncement" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ChecklistRegionVisibility.ChecklistRegionVisibility" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.EHSAdmin.*" />
+          <option name="PATTERN" value="com.ChecklistManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.EHSAdmin" />
-      <option name="MAIN_CLASS_NAME" value="com.EHSAdmin.CreateAnnouncement" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="com.ChecklistManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.ChecklistManagement.ChecklistRegionVisibility" />
+      <option name="METHOD_NAME" value="ChecklistRegionVisibility" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -154,17 +151,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateScormClass" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ModulesCheckUp.moduleCheck" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
+          <option name="PATTERN" value="com.Miscellaneous.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.CreateScormClass" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="com.Miscellaneous" />
+      <option name="MAIN_CLASS_NAME" value="com.Miscellaneous.ModulesCheckUp" />
+      <option name="METHOD_NAME" value="moduleCheck" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -172,35 +170,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OnlineCourseSPGVisibility" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SPGAccessinAllCourses.SPGAccessinAllCourses" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
+          <option name="PATTERN" value="com.Miscellaneous.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineCourseSPGVisibility" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OnlineMinTime" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.OnlineCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.OnlineCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.OnlineCourseManagement.OnlineMinTime" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="com.Miscellaneous" />
+      <option name="MAIN_CLASS_NAME" value="com.Miscellaneous.SPGAccessinAllCourses" />
+      <option name="METHOD_NAME" value="SPGAccessinAllCourses" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -241,6 +222,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.ChecklistManagement.* and 6 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.ChecklistManagement.*" />
+        <pattern testClass="com.ClassroomCourseManagement.*" />
+        <pattern testClass="com.EHSAdmin.*" />
+        <pattern testClass="com.Miscellaneous.*" />
+        <pattern testClass="com.OnlineCourseManagement.*" />
+        <pattern testClass="com.Reports.*" />
+        <pattern testClass="com.UserAdmin.*" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Miscellaneous.EHS_ContactUs and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.Miscellaneous.EHS_ContactUs" />
+        <pattern testClass="com.Miscellaneous.ModulesCheckUp" />
+        <pattern testClass="com.Miscellaneous.SPGAccessinAllCourses" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="createCourseManagerFirst" type="TestNG" nameIsGenerated="true">
       <module name="EHS" />
       <extension name="coverage">
@@ -263,19 +278,19 @@
       <item itemvalue="TestNG.All testng-customsuite.xml" />
       <item itemvalue="TestNG.com" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
-      <item itemvalue="TestNG.AddAtt" />
-      <item itemvalue="TestNG.CreateAnnouncement" />
-      <item itemvalue="TestNG.CreateScormClass" />
-      <item itemvalue="TestNG.OnlineCourseSPGVisibility" />
-      <item itemvalue="TestNG.OnlineMinTime" />
+      <item itemvalue="TestNG.ChecklistRegionVisibility.ChecklistRegionVisibility" />
+      <item itemvalue="TestNG.ModulesCheckUp.moduleCheck" />
+      <item itemvalue="TestNG.SPGAccessinAllCourses.SPGAccessinAllCourses" />
+      <item itemvalue="TestNG.com.ChecklistManagement.* and 6 more" />
+      <item itemvalue="TestNG.com.Miscellaneous.EHS_ContactUs and 2 more" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.OnlineMinTime" />
-        <item itemvalue="TestNG.OnlineCourseSPGVisibility" />
-        <item itemvalue="TestNG.CreateScormClass" />
-        <item itemvalue="TestNG.CreateAnnouncement" />
-        <item itemvalue="TestNG.AddAtt" />
+        <item itemvalue="TestNG.com.ChecklistManagement.* and 6 more" />
+        <item itemvalue="TestNG.com.Miscellaneous.EHS_ContactUs and 2 more" />
+        <item itemvalue="TestNG.ChecklistRegionVisibility.ChecklistRegionVisibility" />
+        <item itemvalue="TestNG.SPGAccessinAllCourses.SPGAccessinAllCourses" />
+        <item itemvalue="TestNG.ModulesCheckUp.moduleCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -701,6 +716,10 @@
     <MESSAGE value="New Backup Version" />
     <MESSAGE value="New version" />
     <option name="LAST_COMMIT_MESSAGE" value="New version" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sel_ehs_sf4$CreateAndEditCertificate_CreateAndEditCertificate__1_.ic" NAME="CreateAndEditCertificate.CreateAndEditCertificate (1) Coverage Results" MODIFIED="1566393554884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

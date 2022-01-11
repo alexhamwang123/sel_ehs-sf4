@@ -106,6 +106,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
         for(int i=0;i<BadgeList.size();i++){
           String OutputBadgeName=  BadgeList.get(i);
+          System.out.println(OutputBadgeName);
            if(!driver.getPageSource().contains(OutputBadgeName)){
                Assert.fail("The direct Report in Manager Portal doesnt match the value in User Profile Page");
            }

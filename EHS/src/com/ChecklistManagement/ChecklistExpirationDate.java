@@ -17,6 +17,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -236,7 +237,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
 		cal.setTime(current);
 		cal.set(Calendar.MONTH, (cal.get(Calendar.MONTH)+6));
 		Date SixMonthLater = cal.getTime();
-		DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+		DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH);
 		System.out.println(dateFormat.format(SixMonthLater));
 		if(!driver.getPageSource().contains(dateFormat.format(SixMonthLater))){
 			Assert.fail("THere is no Expiration Date");

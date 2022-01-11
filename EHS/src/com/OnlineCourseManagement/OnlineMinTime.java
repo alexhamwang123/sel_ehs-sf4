@@ -164,7 +164,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Thread.sleep(1000);
 
         //upload voiceover file
-        driver.findElement(By.id("course-voice-over")).sendKeys("/Users/trismax/IdeaProjects/sel_ehs-sf4/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3");
+        driver.findElement(By.id("course-voice-over")).sendKeys("/Users/danielwang/IdeaProjects/sel_ehs-sf4/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3");
         Thread.sleep(1000);
         //Select MIN Time 15 sec
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));
@@ -214,7 +214,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Thread.sleep(1000);
 
         //upload voiceover file
-        driver.findElement(By.id("course-voice-over")).sendKeys("/Users/trismax/IdeaProjects/sel_ehs-sf4/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3");
+        driver.findElement(By.id("course-voice-over")).sendKeys("/Users/danielwang/IdeaProjects/sel_ehs-sf4/EHS/20 seconds of River Flows in You - Yiruma (Piano Cover).mp3");
         Thread.sleep(1000);
         //Select MIN Time 30 sec
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));

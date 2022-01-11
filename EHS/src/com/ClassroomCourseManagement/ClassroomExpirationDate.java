@@ -256,7 +256,7 @@ public class ClassroomExpirationDate {
         cal.setTime(current);
         cal.set(Calendar.MONTH, (cal.get(Calendar.MONTH)+6));
         Date SixMonthLater = cal.getTime();
-        DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy",Locale.ENGLISH);
 
         String Expiration= dateFormat.format(SixMonthLater);
         System.out.println(Expiration);

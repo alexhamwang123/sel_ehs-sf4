@@ -20,7 +20,16 @@ import java.util.concurrent.TimeUnit;
 //@Test
 @Test
 public class EHS_ContactUs {
+    /*
+    calendar.add(Calendar.DATE,1);
+    Date date= calendar.getTime();
+    String FullDateofToday= date.toString();
+    String DateofToday=FullDateofToday.substring(FullDateofToday.length()-2);
+    System.out.println("DateofToday:"+DateofToday);
+    String TodayOnly1= DateofToday;
+    System.out.println("TodayOnly1:"+TodayOnly1);
 
+     */
 	public void EHS_ContactUs1() throws IOException, InterruptedException {
 		
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -71,6 +80,7 @@ public class EHS_ContactUs {
 		//Enter the detail
 
 
+/*
 
         //Click the  calendar
         JavascriptExecutor js1 = (JavascriptExecutor)driver;
@@ -86,16 +96,8 @@ public class EHS_ContactUs {
 
         String TodayOnly1= String.valueOf(DateofToday);
         System.out.println("TodayOnly:"+TodayOnly1);
-        /*
-        calendar.add(Calendar.DATE,1);
-        Date date= calendar.getTime();
-        String FullDateofToday= date.toString();
-        String DateofToday=FullDateofToday.substring(FullDateofToday.length()-2);
-        System.out.println("DateofToday:"+DateofToday);
-        String TodayOnly1= DateofToday;
-        System.out.println("TodayOnly1:"+TodayOnly1);
 
-         */
+
 
         if (TodayOnly1.equals("01")){
             TodayOnly1="1";
@@ -144,6 +146,8 @@ public class EHS_ContactUs {
         Thread.sleep(1000);
 
 
+ */
+
 
 
         new Select(driver.findElement(By.xpath("//select[@class='form-control custom-select']"))).selectByVisibleText("Can’t Login");
@@ -164,6 +168,9 @@ public class EHS_ContactUs {
             e.printStackTrace();
         }
         driver.quit();
+
+
+
 
 	}
 

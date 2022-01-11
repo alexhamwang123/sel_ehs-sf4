@@ -102,8 +102,8 @@ public class CancelAndNotify {
         driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
 
         //Click Result
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[4]/div[1]/div/div/div/form/div/div[2]/table/tbody/tr/td[1]")));
-        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div/div/form/div/div[2]/table/tbody/tr/td[1]")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div[1]/div/div/div/form/div/div[2]/table/tbody/tr/td[1]")));
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/form/div/div[2]/table/tbody/tr/td[1]")).click();
         Thread.sleep(1000);
         Thread.sleep(1000);
         //CLick Select User
