@@ -190,8 +190,8 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         //driver.findElement(By.name("searchButton")).click();
 
         //Complete the Course
-        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@title='Start']"))));
+        driver.findElement(By.xpath("//button[@title='Start']")).click();
 
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
@@ -281,9 +281,9 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         // Wait.until(ExpectedConditions.elementToBeClickable(By.name("searchButton")));
         // driver.findElement(By.name("searchButton")).click();
         // Thread.sleep(15500);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='Start']")));
         Thread.sleep(1500);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.xpath("//button[@title='Start']")).click();
         Thread.sleep(2500);
         for(String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);

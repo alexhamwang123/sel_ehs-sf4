@@ -304,7 +304,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
 		Thread.sleep(2600);
 		String currentWin = driver.getWindowHandle();
 		try {
-			driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+			driver.findElement(By.xpath("//button[@title='Start']")).click();
 		} catch (NoSuchElementException e) {
 			Assert.fail("something went wrong while creating and uploading the scorm course");
 		}

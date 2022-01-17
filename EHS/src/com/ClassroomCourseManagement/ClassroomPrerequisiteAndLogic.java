@@ -228,7 +228,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Thread.sleep(1500);
         String working = "";
         try {
-            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
+            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
             System.out.println(working);
         } catch (NoSuchElementException e) {
             Assert.fail("was able to register for the course without completing the prereq");
@@ -299,15 +299,15 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
 
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.partialLinkText(courseId))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.xpath("//button[@title='View Detail']")).click();
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("//*[@id=\"courses\"]/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
+        driver.findElement(By.xpath("//span[contains(text(),'Enroll')]")).click();
 
 
         Thread.sleep(1000);
         try {
-            String Cancel=    driver.findElement(By.xpath("//*[@id=\"courses\"]/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).getText();
+            String Cancel=    driver.findElement(By.xpath("//button[contains(text(),'Cancel')]")).getText();
             if(Cancel.equals("Cancel")){
                 System.out.println("Test succeeded");
             }

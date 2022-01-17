@@ -71,7 +71,7 @@ public class CheckBookmark_ClickYes {
 
         String mainWindow = driver.getWindowHandle();
         //msg_head857e61d0-2598-102a-b70c-b707fad2 -> it is a EHS-1000 - EHS Essentials
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.xpath("//button[@title='Start']")).click();
 
         for(String winHandle : driver.getWindowHandles()){
             if(winHandle!=mainWindow)
@@ -101,7 +101,7 @@ public class CheckBookmark_ClickYes {
         driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         Thread.sleep(3000);
 
-        if(driver.getPageSource().contains("Page 2 of 2")){
+        if(driver.getPageSource().contains("Page 2 Of 2")){
             System.out.println("The test is successful");
         }
         else{

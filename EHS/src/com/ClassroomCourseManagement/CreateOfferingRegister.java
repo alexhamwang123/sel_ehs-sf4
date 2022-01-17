@@ -169,12 +169,12 @@ public class CreateOfferingRegister {
         driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
         // driver.findElement(By.name("searchButton")).click();
 
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr[1]//td[5]//button[1]")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='View Detail']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//tr[1]//td[5]//button[1]")).click();
+        driver.findElement(By.xpath("//button[@title='View Detail']")).click();
         Thread.sleep(4500);
         //Enroll
-        WebElement Enroll=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"));
+        WebElement Enroll=driver.findElement(By.xpath("//span[contains(text(),'Enroll')]"));
         js.executeScript("arguments[0].click();",Enroll);
         Thread.sleep(3500);
         //Logout
@@ -199,13 +199,13 @@ public class CreateOfferingRegister {
         driver.findElement(By.xpath("//input[@class='form-control']")).sendKeys(courseId);
         //  driver.findElement(By.name("searchButton")).click();
 
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='View Detail']")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.xpath("//button[@title='View Detail']")).click();
 
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Waitlist')]")));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button")).click();
+        driver.findElement(By.xpath("//span[contains(text(),'Waitlist')]")).click();
         Thread.sleep(1500);
         if(!driver.getPageSource().contains("Waitlisted")) {
             Assert.fail("the user did not get Waitlisted for the course");

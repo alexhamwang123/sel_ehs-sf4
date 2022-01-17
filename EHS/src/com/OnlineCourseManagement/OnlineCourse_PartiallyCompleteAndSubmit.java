@@ -73,9 +73,9 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 
 
 		//Click on the Enroll button
-		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button"))));
+		Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@title='Start']"))));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+		driver.findElement(By.xpath("//button[@title='Start']")).click();
 
 		Thread.sleep(3000);
 		for(String winHandle : driver.getWindowHandles()) {
@@ -122,7 +122,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(1500);
 		String working = "";
 
-		working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
+		working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
 
 		System.out.println(working);
 

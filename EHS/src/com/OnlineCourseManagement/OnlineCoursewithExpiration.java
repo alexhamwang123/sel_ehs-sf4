@@ -247,7 +247,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Thread.sleep(1000);
 
         //click the result
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.xpath("//button[@title='Start']")).click();
 
         for(String winHandle : driver.getWindowHandles()) {
                     driver.switchTo().window(winHandle);

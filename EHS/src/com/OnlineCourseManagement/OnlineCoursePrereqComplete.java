@@ -126,7 +126,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
 
 
         //Click on the Enroll button
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.xpath("//button[@title='Start']")).click();
 
         Thread.sleep(3000);
         for(String winHandle : driver.getWindowHandles()) {

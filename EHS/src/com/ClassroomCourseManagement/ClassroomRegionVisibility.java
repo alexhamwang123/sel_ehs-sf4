@@ -329,7 +329,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         driver.findElement(By.xpath("//button[@class='btn rounded-circle btn-outline-primary border-0']")).click();
 
 
-        WebElement EnrollBtn1=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[5]/button"));
+        WebElement EnrollBtn1=driver.findElement(By.xpath("//span[contains(text(),'Enroll')]"));
         if(!EnrollBtn1.isDisplayed()) {
             Assert.fail("The user can't Enroll the course which is  in his Site");
         }

@@ -202,13 +202,13 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
        // Wait.until(ExpectedConditions.elementToBeClickable(By.name("searchButton")));
        // driver.findElement(By.name("searchButton")).click();
        // Thread.sleep(15500);
-        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")));
+        Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='Start']")));
         Thread.sleep(1500);
-        driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/button")).click();
+        driver.findElement(By.xpath("//button[@title='Start']")).click();
         Thread.sleep(5500);
         String working = "";
         try {
-            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
+            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
         } catch (NoSuchElementException e) {
             Assert.fail("was able to register for the course without completing the prereq");
         }
