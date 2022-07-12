@@ -341,7 +341,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         //Click SCV Variant Default - English
         driver.findElement(By.xpath("//button[contains(text(),'Default - English')]")).click();
 
-        Wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Grade Quiz')]"))));
+        Wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Submit')]"))));
         Thread.sleep(1500);
         if(driver.getPageSource().contains("Mars Page Variant only")){
             Assert.fail("SCV region can  see the Mars Page Variant");
@@ -390,7 +390,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         //Click SCV Variant Default - English
         driver.findElement(By.xpath("//button[contains(text(),'Default - English')]")).click();
 
-        Wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Grade Quiz')]"))));
+        Wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(text(),'Submit')]"))));
         Thread.sleep(1500);
         if(!driver.getPageSource().contains("Mars Page Variant only")){
             Assert.fail("Mars region can not see the Mars Page Variant");

@@ -193,7 +193,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
-        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__92\"]"));
+        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__93\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
 
         Thread.sleep(4000);
@@ -263,7 +263,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Thread.sleep(1500);
         String working = "";
         try {
-            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
+            working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div")).getAttribute("innerHTML");
         } catch (NoSuchElementException e) {
             Assert.fail("was able to register for the course without completing the prereq");
         }

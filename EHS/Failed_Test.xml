@@ -3,9 +3,17 @@
 <suite name="Default Suite">
     <test name="sel_ehs-sf4">
         <classes>
-            <class name="com.ChecklistManagement.ChecklistRegionVisibility"/>
+            <class name="com.ClassroomCourseManagement.AddWaitlist"/>
+            <class name="com.OnlineCourseManagement.ClassroomRegionVariantVisibility"/>
+            <class name="com.ClassroomCourseManagement.ClassroomSPGRC"/>
+            <class name="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit"/>
+            <class name="com.OnlineCourseManagement.OnlineCoursewithExpiration"/>
             <class name="com.OnlineCourseManagement.OnlineRandomQuestionOrder"/>
-            <class name="com.OnlineCourseManagement.OnlineRegionVisibility"/>
+            <class name="com.Reports.EHS_SPGCourseCompletionReport"/>
+            <class name="com.Reports.EHS_SPGCourseCompletionStatistic"/>
+            <class name="com.Reports.EHSR_CourseCompletionReport"/>
+            <class name="com.UserAdmin.CreateAdmin"/>
+            <class name="com.ChecklistManagement.SubmitIncompleteChecklist"/>
         </classes>
     </test> <!-- sel_ehs-sf4 -->
 </suite> <!-- Default Suite -->

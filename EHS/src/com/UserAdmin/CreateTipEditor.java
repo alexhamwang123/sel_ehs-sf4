@@ -134,7 +134,7 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
         driver.findElement(By.xpath("//a[contains(text(),'Roles')]")).click();
         Thread.sleep(2000);
 //Click the DanielAdmin Btn
-        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__92\"]"));
+        WebElement RolePicking= driver.findElement(By.xpath("//*[@id=\"__BVID__104\"]"));
         js.executeScript("arguments[0].click();", RolePicking);
 
 

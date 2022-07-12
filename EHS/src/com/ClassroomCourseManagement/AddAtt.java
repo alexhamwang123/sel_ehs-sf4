@@ -121,6 +121,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
 
         //Click Offer Schedule
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[3]/a")).click();
 
         //Click Add offer
@@ -231,8 +232,13 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         driver.findElement(By.xpath("//div[@class='input-group input-group-sm']//input[@type='text']")).sendKeys(courseId);
         Thread.sleep(2000);
 
+        Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@title='View Detail']"))));
+        Thread.sleep(2500);
+        driver.findElement(By.xpath("//button[@title='View Detail']")).click();
 
-        if(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getText().contains("Enrolled")){
+
+
+        if(driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr/td[4]")).getText().contains("Enrolled")){
             System.out.println("The test is successful");
         }
         else{

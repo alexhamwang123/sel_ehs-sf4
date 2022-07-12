@@ -264,7 +264,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         driver.findElement(By.xpath("//label[contains(text(),'Correct Answer')]")).click();
 
         //Click Grade Quiz Btn
-        driver.findElement(By.xpath("//button[contains(text(),'Grade Quiz')]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
 
         //Click OK Btn
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));

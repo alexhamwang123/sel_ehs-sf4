@@ -176,7 +176,7 @@ public class OnlineRandomQuestionOrder {
         driver.findElement(By.xpath("//label[contains(text(),'C2')]")).click();
         driver.findElement(By.xpath("//label[contains(text(),'C3')]")).click();
         driver.findElement(By.xpath("//label[contains(text(),'C4')]")).click();
-        driver.findElement(By.xpath("//button[contains(text(),'Grade Quiz')]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         Thread.sleep(1000);
@@ -315,7 +315,7 @@ public class OnlineRandomQuestionOrder {
         driver.findElement(By.xpath("//label[contains(text(),'C2')]")).click();
         driver.findElement(By.xpath("//label[contains(text(),'C3')]")).click();
         driver.findElement(By.xpath("//label[contains(text(),'C4')]")).click();
-        driver.findElement(By.xpath("//button[contains(text(),'Grade Quiz')]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
 
         Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'OK')]")));
         Thread.sleep(1000);

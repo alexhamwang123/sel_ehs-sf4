@@ -3,20 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="bad078ba-983b-46d9-9823-2ed5d24ee5d8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistDownLoadURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistDownLoadURL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistExpirationDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/Failed_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/Failed_Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CheckListSPGVisibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrereqComplete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteAndLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteAndLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedAnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteLInkedOR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteORLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/ChecklistPrerequisiteORLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CompleteAndSubmitChecklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/CreateChecklist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/PrereqDecreaseChecklist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ChecklistManagement/SubmitIncompleteChecklist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddAtt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomExpirationDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/AddWaitlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClasrromSPGVisibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrereqDecrease.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteAndLogic.java" afterDir="false" />
@@ -24,31 +24,36 @@
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteLInkedOR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomPrerequisiteORLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomRegionVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSPGRC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSiteVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/ClassroomSiteVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateFullOffering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/CreateOfferingRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/UnregisterClassroom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/EHSAdmin/CreateCertificate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CheckBookmark_ClickYes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/ClassroomCourseManagement/RegisteringMechanics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Miscellaneous/SPGAccessinAllCourses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/ClassroomRegionVariantVisibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/CreateonlineCourseclass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseEditContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqComplete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseSPGVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourseSPGVisibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_CompleteAndSubmit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCourse_PartiallyCompleteAndSubmit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineCoursewithExpiration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMaxQuestions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineMinTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteAnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedAnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteLInkedOR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlinePrerequisiteOR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRandomQuestionOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHS/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/EHSAdmin/CreateCertificate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineRegionVisibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/OnlineCourseManagement/OnlineSPGRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHSR_CourseCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionStatistic.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/Reports/EHS_SPGCourseCompletionStatistic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateCourseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateNormalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSiteAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSiteAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateSuperAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateTipEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateTipEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUSAManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHS/src/com/UserAdmin/CreateUserSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EHS/testng.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereq.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EHS/com/OnlineCourseManagement/OnlineCoursePrereqDecrease.class" afterDir="false" />
     </list>
@@ -125,7 +130,7 @@
       <recent name="$PROJECT_DIR$/EHS/src" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR and 2 more">
+  <component name="RunManager" selected="TestNG.com.UserAdmin.CreateAdmin and 8 more">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -135,46 +140,6 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AddAtt" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="EHS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ClassroomCourseManagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/EHS/testng.xml" />
-      <option name="PACKAGE_NAME" value="com.ClassroomCourseManagement" />
-      <option name="MAIN_CLASS_NAME" value="com.ClassroomCourseManagement.AddAtt" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <patterns>
-        <pattern testClass="com.ClassroomCourseManagement.AddAtt" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomExpirationDate" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereq" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereqDecrease" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomRegionVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomRegionVisibility,ClassroomExClassroomRegionVisibilitypirationDate" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomSiteVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.UnregisterClassroom" />
-        <pattern testClass="com.ChecklistManagement.SubmitIncompleteChecklist" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
-        <pattern testClass="com.OnlineCourseManagement.OnlinePrerequisiteLInkedOR" />
-        <pattern testClass="com.EHSAdmin.CreateCertificate" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateFullOffering" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateOfferingRegister" />
-        <pattern testClass="com.ChecklistManagement.PrereqDecreaseChecklist" />
-      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -197,33 +162,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="/Users/danielwang/Library/Caches/JetBrains/IdeaIC2021.2/temp-testng-customsuite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="EHSR_CourseCompletionReport.EHSR_CourseCompletionReport" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/JetBrains/IdeaIC2021.2/temp-testng-customsuite.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Reports.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Reports" />
+      <option name="MAIN_CLASS_NAME" value="com.Reports.EHSR_CourseCompletionReport" />
+      <option name="METHOD_NAME" value="EHSR_CourseCompletionReport" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
-      <patterns>
-        <pattern testClass="com.ClassroomCourseManagement.AddAtt" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomExpirationDate" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereq" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereqDecrease" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomRegionVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomSiteVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.UnregisterClassroom" />
-        <pattern testClass="com.ChecklistManagement.SubmitIncompleteChecklist" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
-        <pattern testClass="com.OnlineCourseManagement.OnlinePrerequisiteLInkedOR" />
-        <pattern testClass="com.EHSAdmin.CreateCertificate" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateFullOffering" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateOfferingRegister" />
-        <pattern testClass="com.ChecklistManagement.PrereqDecreaseChecklist" />
-      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -261,67 +214,88 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.ClassroomCourseManagement.AddAtt and 17 more" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="com.ChecklistManagement.* and 6 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/EHS/testng.xml" />
       <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
       <patterns>
-        <pattern testClass="com.ClassroomCourseManagement.AddAtt" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomExpirationDate" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereq" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrereqDecrease" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomRegionVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomSiteVisibility" />
-        <pattern testClass="com.ClassroomCourseManagement.UnregisterClassroom" />
-        <pattern testClass="com.ChecklistManagement.SubmitIncompleteChecklist" />
+        <pattern testClass="com.ChecklistManagement.*" />
+        <pattern testClass="com.ClassroomCourseManagement.*" />
+        <pattern testClass="com.EHSAdmin.*" />
+        <pattern testClass="com.Miscellaneous.*" />
+        <pattern testClass="com.OnlineCourseManagement.*" />
+        <pattern testClass="com.Reports.*" />
+        <pattern testClass="com.UserAdmin.*" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.ClassroomCourseManagement.AddWaitlist and 10 more" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EHS" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/EHS/Failed_Test.xml" />
+      <option name="TEST_OBJECT" value="PATTERN" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <patterns>
+        <pattern testClass="com.ClassroomCourseManagement.AddWaitlist" />
+        <pattern testClass="com.OnlineCourseManagement.ClassroomRegionVariantVisibility" />
         <pattern testClass="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit" />
-        <pattern testClass="com.OnlineCourseManagement.OnlineCoursePrereqDecrease" />
-        <pattern testClass="com.OnlineCourseManagement.OnlinePrerequisiteLInkedOR" />
-        <pattern testClass="com.EHSAdmin.CreateCertificate" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateFullOffering" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateOfferingRegister" />
-        <pattern testClass="com.ChecklistManagement.PrereqDecreaseChecklist" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursewithExpiration" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursewithExpiration,OnlineCourseExpiration" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
+        <pattern testClass="com.Reports.EHSR_CourseCompletionReport" />
+        <pattern testClass="com.UserAdmin.CreateAdmin" />
+        <pattern testClass="com.ChecklistManagement.SubmitIncompleteChecklist" />
       </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic and 5 more" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="com.ClassroomCourseManagement.AddWaitlist and 9 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/JetBrains/IdeaIC2021.2/temp-testng-customsuite.xml" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/EHS/Failed_Test.xml" />
       <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
       <patterns>
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic" />
-        <pattern testClass="com.EHSAdmin.CreateCertificate" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateFullOffering" />
-        <pattern testClass="com.ClassroomCourseManagement.CreateOfferingRegister" />
+        <pattern testClass="com.ClassroomCourseManagement.AddWaitlist" />
+        <pattern testClass="com.OnlineCourseManagement.ClassroomRegionVariantVisibility" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCourse_PartiallyCompleteAndSubmit" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCoursewithExpiration" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineRandomQuestionOrder" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionReport" />
+        <pattern testClass="com.Reports.EHS_SPGCourseCompletionStatistic" />
+        <pattern testClass="com.Reports.EHSR_CourseCompletionReport" />
+        <pattern testClass="com.UserAdmin.CreateAdmin" />
+        <pattern testClass="com.ChecklistManagement.SubmitIncompleteChecklist" />
       </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR and 2 more" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="com.UserAdmin.CreateAdmin and 8 more" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="EHS" />
-      <option name="SUITE_NAME" value="$USER_HOME$/Library/Caches/JetBrains/IdeaIC2021.2/temp-testng-customsuite.xml" />
       <option name="TEST_OBJECT" value="PATTERN" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
       <patterns>
+        <pattern testClass="com.UserAdmin.CreateAdmin" />
+        <pattern testClass="com.UserAdmin.CreateSiteAdmin" />
         <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR" />
-        <pattern testClass="com.ClassroomCourseManagement.ClassroomPrerequisiteORLogic" />
-        <pattern testClass="com.EHSAdmin.CreateCertificate" />
+        <pattern testClass="com.ClassroomCourseManagement.ClasrromSPGVisibility" />
+        <pattern testClass="com.ChecklistManagement.CheckListSPGVisibility" />
+        <pattern testClass="com.ClassroomCourseManagement.LablistAndRC" />
+        <pattern testClass="com.ClassroomCourseManagement.RegisteringMechanics" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCourse_CompleteAndSubmit" />
+        <pattern testClass="com.OnlineCourseManagement.OnlineCourseSPGVisibility" />
       </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -346,22 +320,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.AddAtt" />
       <item itemvalue="TestNG.All testng-customsuite.xml" />
-      <item itemvalue="TestNG./Users/danielwang/Library/Caches/JetBrains/IdeaIC2021.2/temp-testng-customsuite.xml" />
       <item itemvalue="TestNG.com" />
-      <item itemvalue="TestNG.com.ClassroomCourseManagement.AddAtt and 17 more" />
-      <item itemvalue="TestNG.com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic and 5 more" />
-      <item itemvalue="TestNG.com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR and 2 more" />
       <item itemvalue="TestNG.createCourseManagerFirst" />
+      <item itemvalue="TestNG.com.ClassroomCourseManagement.AddWaitlist and 10 more" />
+      <item itemvalue="TestNG.com.ClassroomCourseManagement.AddWaitlist and 9 more" />
+      <item itemvalue="TestNG.EHSR_CourseCompletionReport.EHSR_CourseCompletionReport" />
+      <item itemvalue="TestNG.com.ChecklistManagement.* and 6 more" />
+      <item itemvalue="TestNG.com.UserAdmin.CreateAdmin and 8 more" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.com.ClassroomCourseManagement.ClassroomPrerequisiteLInkedOR and 2 more" />
-        <item itemvalue="TestNG.com.ClassroomCourseManagement.ClassroomPrerequisiteAndLogic and 5 more" />
-        <item itemvalue="TestNG./Users/danielwang/Library/Caches/JetBrains/IdeaIC2021.2/temp-testng-customsuite.xml" />
-        <item itemvalue="TestNG.com.ClassroomCourseManagement.AddAtt and 17 more" />
-        <item itemvalue="TestNG.AddAtt" />
+        <item itemvalue="TestNG.com.UserAdmin.CreateAdmin and 8 more" />
+        <item itemvalue="TestNG.com.ChecklistManagement.* and 6 more" />
+        <item itemvalue="TestNG.EHSR_CourseCompletionReport.EHSR_CourseCompletionReport" />
+        <item itemvalue="TestNG.com.ClassroomCourseManagement.AddWaitlist and 9 more" />
+        <item itemvalue="TestNG.com.ClassroomCourseManagement.AddWaitlist and 10 more" />
       </list>
     </recent_temporary>
   </component>
@@ -376,13 +350,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531764690341</updated>
-    </task>
-    <task id="LOCAL-00004" summary="New Class so called Missing">
-      <created>1541759542483</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1541759542483</updated>
     </task>
     <task id="LOCAL-00005" summary="Visible_OnlineCourse_Creation">
       <created>1541767002848</created>
@@ -720,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641861926018</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="New version">
+      <created>1642408745536</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1642408745536</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

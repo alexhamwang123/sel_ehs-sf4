@@ -102,7 +102,7 @@ public class SubmitIncompleteChecklist {
 			e.printStackTrace();
 		}
 		//it's for test course
-		String paused = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
+		String paused = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
 //		System.out.println(paused);
 
 		if (!paused.contains("Paused")) {

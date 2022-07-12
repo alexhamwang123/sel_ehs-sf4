@@ -251,7 +251,7 @@ driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[1]/ul/li[
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@title='Start']")).click();
 
-        WebElement Require=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div"));
+        WebElement Require=driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td/div/div/div/div[1]/div"));
         if(!Require.getText().contains("Required")){
             Assert.fail("Test Failed");
         }

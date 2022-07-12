@@ -120,13 +120,13 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		//Search the Course
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("kimi-online-006");
 		Thread.sleep(1500);
-		String working = "";
+		String Paused = "";
 
-		working = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[3]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
+		Paused = driver.findElement(By.xpath("/html/body/div[1]/main/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[3]")).getAttribute("innerHTML");
 
-		System.out.println(working);
+		System.out.println(Paused);
 
-		if (!working.contains("Paused")) {
+		if (!Paused.contains("Paused")) {
 			Assert.fail("There is no Paused notification");
 		}
 

@@ -38,9 +38,9 @@ public class EHSR_CourseCompletionReport {
         prop.load(inStream);
         String urladdr = prop.getProperty("url");
         driver.get(urladdr);
-try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
-actions.build().perform(); }
-catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
+        try { Actions actions = new Actions(driver); actions.sendKeys("thisisunsafe");
+            actions.build().perform(); }
+        catch (NoSuchElementException e) { System.out.println("Bypass mode is no more needed"); }
 
         String username = prop.getProperty("username");
         String password = prop.getProperty("password");
@@ -163,19 +163,19 @@ catch (NoSuchElementException e) { System.out.println("Bypass mode is no more ne
 		Thread.sleep(3500);
         //Click Course-Select Btn
         Thread.sleep(2000);
-        WebElement CourseBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[12]/label/input"));
+        WebElement CourseBtn=driver.findElement(By.xpath("//input[@value='course']"));
         js.executeScript("arguments[0].click();",CourseBtn);
 
         Thread.sleep(1000);
 
-        WebElement SelectBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div/div[12]/div/div/button"));
+        WebElement SelectBtn=driver.findElement(By.xpath("/html/body/div[1]/main/div/div[1]/div/div[3]/div[1]/div[11]/div/div/button"));
         js.executeScript("arguments[0].click();",SelectBtn);
         Thread.sleep(2000);
         //Search the Course
         Wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input"))));
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input")).click();
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input")).sendKeys("EHS-2140");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/input")).sendKeys("EHS-2105");
 
         Thread.sleep(2000);
         new Select(driver.findElement(By.xpath("//*[@id=\"modal-result\"]/div[1]/div[2]/div[4]/select"))).selectByVisibleText("N");
